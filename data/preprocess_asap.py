@@ -18,20 +18,23 @@ def extract_based_on_ids(dataset, id_file):
 			try:
 				lines.append(dataset[id])
 			except:
-				print >> sys.stederr, 'ERROR: Invalid ID %s in %s' % (id, id_file)
+				print('ERROR: Invalid ID %s in %s' % (id, id_file), file=sys.stederr)
 	return lines
 
 def create_dataset(lines, output_fname):
 	f_write = open(output_fname, 'w')
-	f_write.write(dataset['header'])
+	# f_write.write(dataset['header'])
 	for line in lines:
-		f_write.write(line.decode('cp1252', 'replace').encode('utf-8'))
+		f_write.write(line)
 
 def collect_dataset(input_file):
 	dataset = dict()
 	lcount = 0
-	with open(input_file) as f:
+	# with open(input_file) as f:
+	with codecs.open(input_file, "r", encoding='utf-8', errors='ignore') as f:
+		#print(f)
 		for line in f:
+			# print(line)
 			lcount += 1
 			if lcount == 1:
 				dataset['header'] = line
@@ -42,7 +45,7 @@ def collect_dataset(input_file):
 	return dataset
 
 dataset = collect_dataset(args.input_file)
-for fold_idx in xrange(0, 5):
+for fold_idx in range(0, 5):
 	for dataset_type in ['dev', 'test', 'train']:
 		lines = extract_based_on_ids(dataset, 'fold_%d/%s_ids.txt' % (fold_idx, dataset_type))
 		create_dataset(lines, 'fold_%d/%s.tsv' % (fold_idx, dataset_type))

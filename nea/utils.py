@@ -142,7 +142,7 @@ def print_args(args, path=None):
 	logger.info("Arguments:")
 	args.command = ' '.join(sys.argv)
 	items = vars(args)
-	for key in sorted(items.keys(), key=lambda s: s.lower()):
+	for key in sorted(list(items.keys()), key=lambda s: s.lower()):
 		value = items[key]
 		if not value:
 			value = "None"

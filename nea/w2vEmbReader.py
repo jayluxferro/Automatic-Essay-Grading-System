@@ -28,9 +28,11 @@ class W2VEmbReader:
 				counter = 0
 				for line in emb_file:
 					tokens = line.split()
-					assert len(tokens) == self.emb_dim + 1, 'The number of dimensions does not match the header info'
 					word = tokens[0]
-					vec = tokens[1:]
+					vec = tokens[1].split(',')
+
+					assert len(vec) == self.emb_dim, 'The number of dimensions does not match the header info'
+
 					self.embeddings[word] = vec
 					counter += 1
 				assert counter == self.vocab_size, 'Vocab size does not match the header info'
@@ -41,38 +43,35 @@ class W2VEmbReader:
 				self.embeddings = {}
 				for line in emb_file:
 					tokens = line.split()
+					word = tokens[0]
+					vec = tokens[1].split(',')
 					if self.emb_dim == -1:
-						self.emb_dim = len(tokens) - 1
+						self.emb_dim = len(vec)
 						assert self.emb_dim == emb_dim, 'The embeddings dimension does not match with the requested dimension'
 					else:
-						assert len(tokens) == self.emb_dim + 1, 'The number of dimensions does not match the header info'
-					word = tokens[0]
-					vec = tokens[1:]
+						assert len(vec) == self.emb_dim, 'The number of dimensions does not match the header info'
+
 					self.embeddings[word] = vec
 					self.vocab_size += 1
-		
+
 		logger.info('  #vectors: %i, #dimensions: %i' % (self.vocab_size, self.emb_dim))
-	
+
 	def get_emb_given_word(self, word):
 		try:
 			return self.embeddings[word]
 		except KeyError:
 			return None
-	
+
 	def get_emb_matrix_given_vocab(self, vocab, emb_matrix):
 		counter = 0.
-		for word, index in vocab.iteritems():
+		for word, index in vocab.items():
 			try:
-				emb_matrix[index] = self.embeddings[word]
+				emb_matrix[0][index] = self.embeddings[word]
 				counter += 1
 			except KeyError:
 				pass
 		logger.info('%i/%i word vectors initialized (hit rate: %.2f%%)' % (counter, len(vocab), 100*counter/len(vocab)))
 		return emb_matrix
-	
+
 	def get_emb_dim(self):
 		return self.emb_dim
-	
-	
-	
-	

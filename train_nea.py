@@ -8,7 +8,10 @@ from time import time
 import sys
 import nea.utils as U
 import pickle as pk
+import os
 
+
+os.environ['KERAS_BACKEND'] = 'theano'
 logger = logging.getLogger(__name__)
 
 ###############################################################################################################################
@@ -164,9 +167,9 @@ model.compile(loss=loss, optimizer=optimizer, metrics=[metric])
 ## Plotting model
 #
 
-from keras.utils.visualize_util import plot
+from keras.utils.vis_utils import plot_model
 
-plot(model, to_file = out_dir + '/model.png')
+plot_model(model, to_file = out_dir + '/model.png')
 
 ###############################################################################################################################
 ## Save model architecture
@@ -176,7 +179,7 @@ logger.info('Saving model architecture')
 with open(out_dir + '/model_arch.json', 'w') as arch:
 	arch.write(model.to_json(indent=2))
 logger.info('  Done')
-	
+
 ###############################################################################################################################
 ## Evaluator
 #
@@ -197,16 +200,16 @@ total_eval_time = 0
 for ii in range(args.epochs):
 	# Training
 	t0 = time()
-	train_history = model.fit(train_x, train_y, batch_size=args.batch_size, nb_epoch=1, verbose=0)
+	train_history = model.fit(train_x, train_y, batch_size=args.batch_size, epochs=1, verbose=1)
 	tr_time = time() - t0
 	total_train_time += tr_time
-	
+
 	# Evaluate
 	t0 = time()
 	evl.evaluate(model, ii)
 	evl_time = time() - t0
 	total_eval_time += evl_time
-	
+
 	# Print information
 	train_loss = train_history.history['loss'][0]
 	train_metric = train_history.history[metric][0]
@@ -222,16 +225,3 @@ logger.info('Training:   %i seconds in total' % total_train_time)
 logger.info('Evaluation: %i seconds in total' % total_eval_time)
 
 evl.print_final_info()
-
-
-
-
-
-
-
-
-
-
-
-
-

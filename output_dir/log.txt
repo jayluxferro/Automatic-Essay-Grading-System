@@ -2,17 +2,17 @@
 [INFO] (nea.utils)   aggregation: mot
 [INFO] (nea.utils)   algorithm: rmsprop
 [INFO] (nea.utils)   batch_size: 32
-[INFO] (nea.utils)   cnn_dim: 0
+[INFO] (nea.utils)   cnn_dim: 50
 [INFO] (nea.utils)   cnn_window_size: 3
-[INFO] (nea.utils)   command: train_nea.py -tr data/fold_0/train.tsv -tu data/fold_0/dev.tsv -ts data/fold_0/test.tsv -p 1 -o output_dir
+[INFO] (nea.utils)   command: train_nea.py -tr data/fold_0/train.tsv -tu data/fold_0/dev.tsv -ts data/fold_0/test.tsv -p 1 --emb embeddings.w2v.txt -o output_dir --cnndim 50 -t reg
 [INFO] (nea.utils)   dev_path: data/fold_0/dev.tsv
 [INFO] (nea.utils)   dropout_prob: 0.5
 [INFO] (nea.utils)   emb_dim: 50
-[INFO] (nea.utils)   emb_path: None
+[INFO] (nea.utils)   emb_path: embeddings.w2v.txt
 [INFO] (nea.utils)   epochs: 50
 [INFO] (nea.utils)   loss: mse
 [INFO] (nea.utils)   maxlen: 0
-[INFO] (nea.utils)   model_type: regp
+[INFO] (nea.utils)   model_type: reg
 [INFO] (nea.utils)   out_dir_path: output_dir
 [INFO] (nea.utils)   prompt_id: 1
 [INFO] (nea.utils)   recurrent_unit: lstm
@@ -23,3 +23,36 @@
 [INFO] (nea.utils)   train_path: data/fold_0/train.tsv
 [INFO] (nea.utils)   vocab_path: None
 [INFO] (nea.utils)   vocab_size: 4000
+[INFO] (nea.asap_reader) Creating vocabulary from: data/fold_0/train.tsv
+[INFO] (nea.asap_reader)   443251 total words, 12129 unique words
+[INFO] (nea.asap_reader)   Vocab size: 4000
+[INFO] (nea.asap_reader) Reading dataset from: data/fold_0/train.tsv
+[INFO] (nea.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.19%
+[INFO] (nea.asap_reader) Reading dataset from: data/fold_0/dev.tsv
+[INFO] (nea.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.81%
+[INFO] (nea.asap_reader) Reading dataset from: data/fold_0/test.tsv
+[INFO] (nea.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.84%
+[INFO] (__main__) Statistics:
+[INFO] (__main__)   train_x shape: (1069, 939)
+[INFO] (__main__)   dev_x shape:   (355, 886)
+[INFO] (__main__)   test_x shape:  (356, 867)
+[INFO] (__main__)   train_y shape: (1069,)
+[INFO] (__main__)   dev_y shape:   (355,)
+[INFO] (__main__)   test_y shape:  (356,)
+[INFO] (__main__)   train_y mean: 8.55192, stdev: 1.5373, MFC: [8.0]
+[INFO] (nea.models) Building a REGRESSION model
+[INFO] (nea.models)   Done
+[INFO] (nea.models) Initializing lookup table
+[INFO] (nea.w2vEmbReader) Loading embeddings from: embeddings.w2v.txt
+[INFO] (nea.w2vEmbReader)   #vectors: 100229, #dimensions: 50
+[INFO] (nea.w2vEmbReader) 3475/4000 word vectors initialized (hit rate: 86.88%)
+[INFO] (nea.models)   Done
+[INFO] (__main__) Saving model architecture
+[INFO] (__main__)   Done
+[INFO] (__main__) --------------------------------------------------------------------------------------------------------------------------
+[INFO] (__main__) Initial Evaluation:
+[INFO] (nea.asap_evaluator) [Dev]   loss: 0.0487, metric: 0.1836, mean: 6.914 (8.499), stdev: 0.112 (1.530)
+[INFO] (nea.asap_evaluator) [Test]  loss: 0.0484, metric: 0.1876, mean: 6.909 (8.475), stdev: 0.109 (1.540)
+[INFO] (nea.asap_evaluator) [DEV]   QWK:  0.000, LWK: 0.000, PRS: -0.029, SPR: 0.042, Tau: 0.033 (Best @ -1: {{0.000}}, 0.000, -0.029, 0.042, 0.033)
+[INFO] (nea.asap_evaluator) [TEST]  QWK:  0.000, LWK: 0.000, PRS: 0.000, SPR: 0.094, Tau: 0.069 (Best @ -1: {{0.000}}, 0.000, 0.000, 0.094, 0.069)
+[INFO] (nea.asap_evaluator) --------------------------------------------------------------------------------------------------------------------------
