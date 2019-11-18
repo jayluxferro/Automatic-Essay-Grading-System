@@ -12,6 +12,7 @@ import os
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
+os.environ['THEANO_FLAGS'] = 'device=gpu0,floatX=float32'
 logger = logging.getLogger(__name__)
 
 ###############################################################################################################################
