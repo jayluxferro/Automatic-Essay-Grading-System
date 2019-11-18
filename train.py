@@ -230,7 +230,7 @@ for ii in range(args.epochs):
 
         # data format
         # epoch, train_loss, train_metric, dev_loss, dev_metric, test_loss, test_metric, dev_qwk, test_qwk
-        results_data += "%d,%.4f,%.4f,".format(ii, train_loss, train_metric)
+        results_data += "%d,%.4f,%.4f," % (ii + 1, train_loss, train_metric)
         results_data += evl.return_info()
 
 ###############################################################################################################################
