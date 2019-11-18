@@ -171,6 +171,14 @@ from keras.utils.vis_utils import plot_model
 
 plot_model(model, to_file = out_dir + '/model.png')
 
+
+###############################################################################################################################
+## Model summary
+logger.info('Saving model summary')
+with open(out_dir + '/model_summary.txt', 'w') as ms:
+    ms.write(model.summary())
+logger.info(' Done')
+
 ###############################################################################################################################
 ## Save model architecture
 #
@@ -197,6 +205,7 @@ evl.evaluate(model, -1, print_info=True)
 total_train_time = 0
 total_eval_time = 0
 
+results_data = ""
 for ii in range(args.epochs):
 	# Training
 	t0 = time()
@@ -217,6 +226,11 @@ for ii in range(args.epochs):
 	logger.info('[Train] loss: %.4f, metric: %.4f' % (train_loss, train_metric))
 	evl.print_info()
 
+        # data format
+        # epoch, train_loss, train_metric, dev_loss, dev_metric, test_loss, test_metric, dev_qwk, test_qwk
+        results_data += "%d,%.4f,%.4f,".format(epoch, train_loss, train_metric)
+        results_data += evl.return_info()
+
 ###############################################################################################################################
 ## Summary of the results
 #
@@ -225,3 +239,9 @@ logger.info('Training:   %i seconds in total' % total_train_time)
 logger.info('Evaluation: %i seconds in total' % total_eval_time)
 
 evl.print_final_info()
+
+# save data to file
+logger.info(' Saving results to file')
+with open(out_dir + '/results.txt', 'w') as rs:
+    rs.write(results_data)
+logger.info(' Done')
