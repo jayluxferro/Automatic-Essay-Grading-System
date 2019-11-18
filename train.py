@@ -176,7 +176,7 @@ plot_model(model, to_file = out_dir + '/model.png')
 ## Model summary
 logger.info('Saving model summary')
 with open(out_dir + '/model_summary.txt', 'w') as ms:
-    ms.write(model.summary())
+    ms.write(str(model.summary()))
 logger.info(' Done')
 
 ###############################################################################################################################
