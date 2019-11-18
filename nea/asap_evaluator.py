@@ -98,7 +98,7 @@ class Evaluator():
 		
 		logger.info('--------------------------------------------------------------------------------------------------------------------------')
 
-        def return_info():
+        def return_info(self):
             # dev_loss, dev_metric, test_loss, test_metric, dev_qwk, test_qwk
             return "%.4f,%.4f,%.4f,%.4f,%.4f,%.4f\n".format(self.dev_loss, self.dev_metric, self.test_loss, self.test_metric, self.dev_qwk, self.test_qwk)
 
