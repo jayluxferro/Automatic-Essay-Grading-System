@@ -176,7 +176,7 @@ plot_model(model, to_file = out_dir + '/model.png')
 ## Model summary
 logger.info('Saving model summary')
 with open(out_dir + '/model_summary.txt', 'w') as ms:
-    ms.write(str(model.summary()))
+    model.summary(print_fn=lambda x: ms.write(x + '\n'))
 logger.info(' Done')
 
 ###############################################################################################################################
@@ -228,7 +228,7 @@ for ii in range(args.epochs):
 
         # data format
         # epoch, train_loss, train_metric, dev_loss, dev_metric, test_loss, test_metric, dev_qwk, test_qwk
-        results_data += "%d,%.4f,%.4f,".format(epoch, train_loss, train_metric)
+        results_data += "%d,%.4f,%.4f,".format(ii, train_loss, train_metric)
         results_data += evl.return_info()
 
 ###############################################################################################################################
