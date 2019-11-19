@@ -1,5 +1,56 @@
 import matplotlib.pyplot as plt
-import os
-import sys
+import numpy as np
 
-out_dir = 'output_dir/'
+out_dir = 'output_dir'
+
+epoch = []
+train_loss = []
+train_metric = []
+dev_loss = []
+dev_metric = []
+test_loss = []
+test_metric = []
+dev_qwk = []
+test_qwk = []
+
+
+with open(out_dir + '/results.txt') as r:
+    for x in r.readlines():
+        # data format
+        # epoch, train_loss, train_metric, dev_loss, dev_metric, test_loss, test_metric, dev_qwk, test_qwk
+        data = x.strip().split(',')
+        epoch.append(data[0])
+        train_loss.append(data[1])
+        train_metric.append(data[2])
+        dev_loss.append(data[3])
+        dev_metric.append(data[4])
+        test_loss.append(data[5])
+        test_metric.append(data[6])
+        dev_qwk.append(data[7])
+        test_qwk.append(data[8])
+# loss
+plt.figure()
+plt.plot(epoch, train_loss, '-o', epoch, test_loss, '-o')
+plt.legend(['Train Loss', 'Test Loss'])
+plt.title('Train and Test Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.show()
+
+# mse
+plt.figure()
+plt.plot(epoch, train_metric, '-o', epoch, test_metric, '-o')
+plt.legend(['Train Metric', 'Test Metric'])
+plt.xlabel('Epochs')
+plt.ylabel('MSE')
+plt.title('Train and Test Metric (MSE)')
+plt.show()
+
+# accuracy
+plt.figure()
+plt.plot(epoch, dev_qwk, '-o', epoch, test_qwk, '-o')
+plt.legend(['Validation Accuracy', 'Test Accuracy'])
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.title('Validation and Test Accuracy')
+plt.show()
