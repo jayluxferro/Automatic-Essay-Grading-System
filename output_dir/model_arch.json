@@ -30,44 +30,6 @@
       }
     }, 
     {
-      "class_name": "Conv1DWithMasking", 
-      "config": {
-        "kernel_constraint": null, 
-        "kernel_initializer": {
-          "class_name": "VarianceScaling", 
-          "config": {
-            "distribution": "uniform", 
-            "scale": 1.0, 
-            "seed": null, 
-            "mode": "fan_avg"
-          }
-        }, 
-        "name": "conv1d_with_masking_1", 
-        "bias_regularizer": null, 
-        "bias_constraint": null, 
-        "activation": "linear", 
-        "trainable": true, 
-        "padding": "same", 
-        "strides": [
-          1
-        ], 
-        "dilation_rate": [
-          1
-        ], 
-        "kernel_regularizer": null, 
-        "filters": 50, 
-        "bias_initializer": {
-          "class_name": "Zeros", 
-          "config": {}
-        }, 
-        "use_bias": true, 
-        "activity_regularizer": null, 
-        "kernel_size": [
-          3
-        ]
-      }
-    }, 
-    {
       "class_name": "LSTM", 
       "config": {
         "recurrent_activation": "hard_sigmoid", 
@@ -110,7 +72,7 @@
         "go_backwards": false, 
         "implementation": 0, 
         "kernel_regularizer": null, 
-        "return_sequences": false, 
+        "return_sequences": true, 
         "recurrent_constraint": null
       }
     }, 
@@ -120,6 +82,14 @@
         "rate": 0.5, 
         "trainable": true, 
         "name": "dropout_1"
+      }
+    }, 
+    {
+      "class_name": "MeanOverTime", 
+      "config": {
+        "mask_zero": true, 
+        "trainable": true, 
+        "name": "mean_over_time_1"
       }
     }, 
     {
