@@ -1,6 +1,6 @@
 import numpy as np
-from nea.quadratic_weighted_kappa import quadratic_weighted_kappa as qwk
-from nea.quadratic_weighted_kappa import linear_weighted_kappa as lwk
+from lux.quadratic_weighted_kappa import quadratic_weighted_kappa as qwk
+from lux.quadratic_weighted_kappa import linear_weighted_kappa as lwk
 
 def assert_inputs(rater_a, rater_b):
 	assert np.issubdtype(rater_a.dtype, np.integer), 'Integer array expected, got ' + str(rater_a.dtype)

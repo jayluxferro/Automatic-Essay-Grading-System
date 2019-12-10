@@ -6,14 +6,14 @@ import numpy as np
 import scipy
 from time import time
 import sys
-import nea.utils as U
+import lux.utils as U
 import pickle as pk
 import os
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
-os.environ['THEANO_FLAGS'] = 'device=cuda0,floatX=float32' # cpu
-os.environ['OMP_NUM_THREADS'] = '8'
+os.environ['THEANO_FLAGS'] = 'device=cuda0,floatX=float32' # cpu, cuda0
+os.environ['OMP_NUM_THREADS'] = '4'
 os.environ['openmp'] = 'True'
 logger = logging.getLogger(__name__)
 
@@ -63,8 +63,8 @@ if args.seed > 0:
 	np.random.seed(args.seed)
 
 if args.prompt_id:
-	from nea.asap_evaluator import Evaluator
-	import nea.asap_reader as dataset
+	from lux.asap_evaluator import Evaluator
+	import lux.asap_reader as dataset
 else:
 	raise NotImplementedError
 
@@ -143,10 +143,10 @@ dev_y = dataset.get_model_friendly_scores(dev_y, dev_pmt)
 test_y = dataset.get_model_friendly_scores(test_y, test_pmt)
 
 ###############################################################################################################################
-## Optimizaer algorithm
+## Optimizer algorithm
 #
 
-from nea.optimizers import get_optimizer
+from lux.optimizers import get_optimizer
 
 optimizer = get_optimizer(args)
 
@@ -154,7 +154,7 @@ optimizer = get_optimizer(args)
 ## Building model
 #
 
-from nea.models import create_model
+from lux.models import create_model
 
 if args.loss == 'mse':
 	loss = 'mean_squared_error'

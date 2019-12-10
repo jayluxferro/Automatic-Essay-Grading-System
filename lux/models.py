@@ -9,7 +9,7 @@ def create_model(args, initial_mean_value, overal_maxlen, vocab):
 	from keras.layers.embeddings import Embedding
 	from keras.models import Sequential, Model
 	from keras.layers.core import Dense, Dropout, Activation
-	from nea.my_layers import Attention, MeanOverTime, Conv1DWithMasking
+	from lux.my_layers import Attention, MeanOverTime, Conv1DWithMasking
 
 	###############################################################################################################################
 	## Recurrence unit type
