@@ -89,9 +89,9 @@ def create_vocab(file_path, prompt_id, maxlen, vocab_size, tokenize_text, to_low
 	with codecs.open(file_path, mode='r', encoding='UTF8') as input_file:
 		# input_file.next()
 		for line in input_file:
-			print(input_file)
+		#	print(input_file)
 			tokens = line.strip().split('\t')
-			print(tokens)
+		#	print(tokens)
 			essay_id = int(tokens[0])
 			essay_set = int(tokens[1])
 			content = tokens[2].strip()
