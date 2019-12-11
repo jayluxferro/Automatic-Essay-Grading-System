@@ -1,3 +1,4 @@
+#!/bin/bash
 # all prompts with lstm
 for x in $(seq 1 8);
 do

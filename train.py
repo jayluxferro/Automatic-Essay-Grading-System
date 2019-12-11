@@ -13,7 +13,7 @@ import os
 
 os.environ['KERAS_BACKEND'] = 'theano'
 os.environ['THEANO_FLAGS'] = 'device=cpu,floatX=float32' # cpu, cuda0
-os.environ['OMP_NUM_THREADS'] = '8'
+os.environ['OMP_NUM_THREADS'] = '32'
 os.environ['openmp'] = 'True'
 logger = logging.getLogger(__name__)
 
