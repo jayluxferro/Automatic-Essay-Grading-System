@@ -13,6 +13,10 @@ import pandas as pd
 from sklearn.cross_validation import KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import cohen_kappa_score
+from gensim.models import Word2Vec
+import utils as utl
+import models as mdl
+import numpy as np
 
 X = pd.read_csv(os.path.join(dataset_dir, 'training_set_rel3.tsv'), sep='\t', encoding='ISO-8859-1')
 y = X['domain1_score']
@@ -42,7 +46,7 @@ for traincv, testcv in cv:
     
     for essay in train_essays:
             # Obtaining all sentences from the training essays.
-            sentences += essay_to_sentences(essay, remove_stopwords = True)
+            sentences += utl.essay_to_sentences(essay, remove_stopwords = True)
             
     # Initializing variables for word2vec model.
     num_features = 300 
@@ -61,13 +65,13 @@ for traincv, testcv in cv:
     
     # Generate training and testing data word vectors.
     for essay_v in train_essays:
-        clean_train_essays.append(essay_to_wordlist(essay_v, remove_stopwords=True))
-    trainDataVecs = getAvgFeatureVecs(clean_train_essays, model, num_features)
+        clean_train_essays.append(utl.essay_to_wordlist(essay_v, remove_stopwords=True))
+    trainDataVecs = utl.getAvgFeatureVecs(clean_train_essays, model, num_features)
     
     clean_test_essays = []
     for essay_v in test_essays:
-        clean_test_essays.append(essay_to_wordlist( essay_v, remove_stopwords=True ))
-    testDataVecs = getAvgFeatureVecs( clean_test_essays, model, num_features )
+        clean_test_essays.append(utl.essay_to_wordlist( essay_v, remove_stopwords=True ))
+    testDataVecs = utl.getAvgFeatureVecs( clean_test_essays, model, num_features )
     
     trainDataVecs = np.array(trainDataVecs)
     testDataVecs = np.array(testDataVecs)
@@ -75,7 +79,7 @@ for traincv, testcv in cv:
     trainDataVecs = np.reshape(trainDataVecs, (trainDataVecs.shape[0], 1, trainDataVecs.shape[1]))
     testDataVecs = np.reshape(testDataVecs, (testDataVecs.shape[0], 1, testDataVecs.shape[1]))
     
-    lstm_model = get_model()
+    lstm_model = mdl.lstm()
     lstm_model.fit(trainDataVecs, y_train, batch_size=64, epochs=50)
     #lstm_model.load_weights('./model_weights/final_lstm.h5')
     y_pred = lstm_model.predict(testDataVecs)
