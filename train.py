@@ -12,9 +12,12 @@ import os
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
-os.environ['THEANO_FLAGS'] = 'device=gpu0,floatX=float32' # cpu, cuda0
+#os.environ['THEANO_FLAGS'] = 'device=gpu0,floatX=float32' # cpu, cuda0
 #os.environ['OMP_NUM_THREADS'] = '32'
 #os.environ['openmp'] = 'True'
+import theano.sandbox.cuda
+theano.sandbox.cuda.use("gpu0")
+
 logger = logging.getLogger(__name__)
 
 ###############################################################################################################################
