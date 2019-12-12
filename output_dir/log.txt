@@ -4,7 +4,7 @@
 [INFO] (lux.utils)   batch_size: 32
 [INFO] (lux.utils)   cnn_dim: 0
 [INFO] (lux.utils)   cnn_window_size: 3
-[INFO] (lux.utils)   command: train.py -tr data/fold_0/train.tsv -tu data/fold_0/dev.tsv -ts data/fold_0/test.tsv -p 3 --emb embeddings.w2v.txt -o output_dir -u lstm
+[INFO] (lux.utils)   command: train.py -tr data/fold_0/train.tsv -tu data/fold_0/dev.tsv -ts data/fold_0/test.tsv -p 1 --emb embeddings.w2v.txt -o output_dir -u lstm
 [INFO] (lux.utils)   dev_path: data/fold_0/dev.tsv
 [INFO] (lux.utils)   dropout_prob: 0.5
 [INFO] (lux.utils)   emb_dim: 50
@@ -14,7 +14,7 @@
 [INFO] (lux.utils)   maxlen: 0
 [INFO] (lux.utils)   model_type: regp
 [INFO] (lux.utils)   out_dir_path: output_dir
-[INFO] (lux.utils)   prompt_id: 3
+[INFO] (lux.utils)   prompt_id: 1
 [INFO] (lux.utils)   recurrent_unit: lstm
 [INFO] (lux.utils)   rnn_dim: 300
 [INFO] (lux.utils)   seed: 1234
@@ -23,3 +23,27 @@
 [INFO] (lux.utils)   train_path: data/fold_0/train.tsv
 [INFO] (lux.utils)   vocab_path: None
 [INFO] (lux.utils)   vocab_size: 4000
+[WARNING] (theano.tensor.blas) Using NumPy C-API based implementation for BLAS functions.
+[ERROR] (theano.gpuarray) pygpu was configured but could not be imported or is too old (version 0.7 or higher required)
+Traceback (most recent call last):
+  File "/media/root/Lux/dev/ml/aegs/.venv/local/lib/python2.7/site-packages/theano/gpuarray/__init__.py", line 23, in <module>
+    import pygpu
+ImportError: No module named pygpu
+[INFO] (lux.asap_reader) Creating vocabulary from: data/fold_0/train.tsv
+[INFO] (lux.asap_reader)   443251 total words, 12129 unique words
+[INFO] (lux.asap_reader)   Vocab size: 4000
+[INFO] (lux.asap_reader) Reading dataset from: data/fold_0/train.tsv
+[INFO] (lux.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.19%
+[INFO] (lux.asap_reader) Reading dataset from: data/fold_0/dev.tsv
+[INFO] (lux.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.81%
+[INFO] (lux.asap_reader) Reading dataset from: data/fold_0/test.tsv
+[INFO] (lux.asap_reader)   <num> hit rate: 0.00%, <unk> hit rate: 2.84%
+[INFO] (__main__) Statistics:
+[INFO] (__main__)   train_x shape: (1069, 939)
+[INFO] (__main__)   dev_x shape:   (355, 886)
+[INFO] (__main__)   test_x shape:  (356, 867)
+[INFO] (__main__)   train_y shape: (1069,)
+[INFO] (__main__)   dev_y shape:   (355,)
+[INFO] (__main__)   test_y shape:  (356,)
+[INFO] (__main__)   train_y mean: 8.55192, stdev: 1.5373, MFC: [8.0]
+[INFO] (lux.models) Building a REGRESSION model with POOLING
