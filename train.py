@@ -79,8 +79,8 @@ for traincv, testcv in cv:
     trainDataVecs = np.reshape(trainDataVecs, (trainDataVecs.shape[0], 1, trainDataVecs.shape[1]))
     testDataVecs = np.reshape(testDataVecs, (testDataVecs.shape[0], 1, testDataVecs.shape[1]))
     
-    lstm_model = mdl.lstm()
-    lstm_model.fit(trainDataVecs, y_train, batch_size=64, epochs=50)
+    lstm_model = mdl.lstm_gru()
+    lstm_model.fit(trainDataVecs, y_train, batch_size=64, epochs=100)
     #lstm_model.load_weights('./model_weights/final_lstm.h5')
     y_pred = lstm_model.predict(testDataVecs)
     
