@@ -1,0 +1,58 @@
+digraph "CFG forkotlin.io.FilesKt__UtilsKt.endsWith(Ljava\/io\/File;Ljava\/io\/File;)Z" {
+subgraph cluster_Region_1852877156 {
+label = "R(2:0|(2:(1:3)|(2:4|(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"other\")\lkotlin.io.FilePathComponents kotlin.p019io.FilePathComponents r0 = kotlin.p019io.FilesKt.toComponents(r3)\lkotlin.io.FilePathComponents kotlin.p019io.FilePathComponents r1 = kotlin.p019io.FilesKt.toComponents(r4)\l}"];
+subgraph cluster_Region_320288598 {
+label = "R(2:(1:3)|(2:4|(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1148272440 {
+label = "IF [B:1:0x0016] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r1.isRooted() == true) goto L_0x0018\l}"];
+subgraph cluster_Region_868950271 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|RETURN\l|return kotlin.jvm.internal.Intrinsics.areEqual((java.lang.Object) r3, (java.lang.Object) r4)\l}"];
+}
+}
+subgraph cluster_Region_1627710093 {
+label = "R(2:4|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|int int r3 = r0.getSize() \- r1.getSize()\l}"];
+subgraph cluster_Region_187422782 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_790725979 {
+label = "IF [B:5:0x0026] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|if (r3 \< 0) goto L_0x0028\l}"];
+subgraph cluster_Region_978865575 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_276630450 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0.getSegments().subList(r3, r0.getSize()).equals(r1.getSegments())\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.io.FilesKt__UtilsKt.endsWith((r3v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

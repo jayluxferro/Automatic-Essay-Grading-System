@@ -1,0 +1,74 @@
+digraph "CFG forandroid.support.v7.view.menu.MenuItemImpl.hasCollapsibleActionView()Z" {
+subgraph cluster_Region_1006880572 {
+label = "R(1:(2:(1:10)|(2:(1:6)|(2:(1:9)|(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1396266307 {
+label = "R(2:(1:10)|(2:(1:6)|(2:(1:9)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1002335070 {
+label = "IF [B:1:0x0005] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if ((r2.mShowAsAction & 8) == 0) goto L_0x001d\l}"];
+subgraph cluster_Region_1750591674 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1246750891 {
+label = "R(2:(1:6)|(2:(1:9)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1405431788 {
+label = "IF [B:3:0x0009, B:5:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (r2.mActionView == null) goto L_0x000b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|ADDED_TO_REGION\l|if (r2.mActionProvider != null) goto L_0x000f\l}"];
+subgraph cluster_Region_459885137 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|r2.mActionView = r2.mActionProvider.onCreateActionView(r2)\l}"];
+}
+}
+subgraph cluster_Region_1277981630 {
+label = "R(2:(1:9)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2039730208 {
+label = "IF [B:8:0x0019] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|if (r2.mActionView != null) goto L_0x001b\l}"];
+subgraph cluster_Region_64170673 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1379517272 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.view.menu.MenuItemImpl.hasCollapsibleActionView((r2v0 'this' android.support.v7.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

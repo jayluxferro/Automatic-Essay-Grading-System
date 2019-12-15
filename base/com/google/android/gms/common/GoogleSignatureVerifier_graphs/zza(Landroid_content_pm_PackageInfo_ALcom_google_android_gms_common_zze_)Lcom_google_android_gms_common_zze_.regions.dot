@@ -1,0 +1,101 @@
+digraph "CFG forcom.google.android.gms.common.GoogleSignatureVerifier.zza(Landroid\/content\/pm\/PackageInfo;[Lcom\/google\/android\/gms\/common\/zze;)Lcom\/google\/android\/gms\/common\/zze;" {
+subgraph cluster_Region_1244920221 {
+label = "R(1:(2:(1:2)|(1:(2:(2:5|6)|(3:7|(1:(2:(1:13)|(1:14)))|15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1902432773 {
+label = "R(2:(1:2)|(1:(2:(2:5|6)|(3:7|(1:(2:(1:13)|(1:14)))|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_701066724 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.signatures == null) goto L_0x0005\l}"];
+subgraph cluster_Region_1781965721 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1058816083 {
+label = "R(1:(2:(2:5|6)|(3:7|(1:(2:(1:13)|(1:14)))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1748982095 {
+label = "R(2:(2:5|6)|(3:7|(1:(2:(1:13)|(1:14)))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_184270817 {
+label = "IF [B:4:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r3.signatures.length != 1) goto L_0x000c\l}"];
+subgraph cluster_Region_1427046220 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|android.util.Log.w(\"GoogleSignatureVerifier\", \"Package has more than one signature.\")\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1760810693 {
+label = "R(3:7|(1:(2:(1:13)|(1:14)))|15)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|int r2 = 0\lcom.google.android.gms.common.zzf com.google.android.gms.common.zzf r0 = new com.google.android.gms.common.zzf(r3.signatures[0].toByteArray())\l}"];
+subgraph cluster_LoopRegion_1044175593 {
+label = "LOOP:0: (1:(2:(1:13)|(1:14)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r2 \< r4.length) goto L_0x0025\l}"];
+subgraph cluster_Region_139273062 {
+label = "R(1:(2:(1:13)|(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_439019009 {
+label = "R(2:(1:13)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1892414406 {
+label = "IF [B:11:0x002b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|if (r4[r2].equals(r0) == true) goto L_0x002d\l}"];
+subgraph cluster_Region_1290161982 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002f|RETURN\l|return r4[r2]\l}"];
+}
+}
+subgraph cluster_Region_987099999 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0030|LOOP_END\lLOOP:0: B:8:0x0022\-\>B:14:0x0030\l|r2++\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0033|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022|LOOP_START\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:7:0x0014, B:14:0x0030] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x0022\-\>B:14:0x0030\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002d}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0033|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static com.google.android.gms.common.zze com.google.android.gms.common.GoogleSignatureVerifier.zza((r3v0 android.content.pm.PackageInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.google.android.gms.common.zze[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_11 -> Node_14[style=dashed];
+Node_11 -> Node_17;
+Node_14 -> Node_8;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_16 -> Node_15;
+Node_17 -> Node_12;
+}
+

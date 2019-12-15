@@ -1,0 +1,95 @@
+digraph "CFG forcom.squareup.picasso.NetworkRequestHandler.createRequest(Lcom\/squareup\/picasso\/Request;I)Lokhttp3\/Request;" {
+subgraph cluster_Region_1653944553 {
+label = "R(4:(1:11)(1:(1:3)(4:4|(1:6)|(1:9)|10))|12|(1:14)|16) | DECL_VAR: okhttp3.CacheControl null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_132929891 {
+label = "IF [B:0:0x0000] THEN: R(1:11) ELSE: R(1:(1:3)(4:4|(1:6)|(1:9)|10))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == 0) goto L_0x0027\l}"];
+subgraph cluster_Region_422273294 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0027|r3 = null\l}"];
+}
+subgraph cluster_Region_1439171730 {
+label = "R(1:(1:3)(4:4|(1:6)|(1:9)|10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_76980186 {
+label = "IF [B:2:0x0006] THEN: R(1:3) ELSE: R(4:4|(1:6)|(1:9)|10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (com.squareup.picasso.NetworkPolicy.isOfflineOnly(r3) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_587837345 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|okhttp3.CacheControl r3 = okhttp3.CacheControl.FORCE_CACHE\l}"];
+}
+subgraph cluster_Region_1549448409 {
+label = "R(4:4|(1:6)|(1:9)|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|okhttp3.CacheControl$Builder okhttp3.CacheControl.Builder r0 = new okhttp3.CacheControl.Builder()\l}"];
+subgraph cluster_IfRegion_278994106 {
+label = "IF [B:5:0x0014] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (com.squareup.picasso.NetworkPolicy.shouldReadFromDiskCache(r3) == false) goto L_0x0016\l}"];
+subgraph cluster_Region_687970831 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r0.noCache()\l}"];
+}
+}
+subgraph cluster_IfRegion_1969453196 {
+label = "IF [B:8:0x001d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|if (com.squareup.picasso.NetworkPolicy.shouldWriteToDiskCache(r3) == false) goto L_0x001f\l}"];
+subgraph cluster_Region_1201364009 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|r0.noStore()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0022|okhttp3.CacheControl r3 = r0.build()\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0028|PHI: r3 \l  PHI: (r3v1 okhttp3.CacheControl) = (r3v2 okhttp3.CacheControl), (r3v4 okhttp3.CacheControl), (r3v5 okhttp3.CacheControl) binds: [B:11:0x0027, B:10:0x0022, B:3:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|okhttp3.Request$Builder okhttp3.Request.Builder r2 = new okhttp3.Request.Builder().url(r2.uri.toString())\l}"];
+subgraph cluster_IfRegion_1612324390 {
+label = "IF [B:13:0x0037] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0037|if (r3 != null) goto L_0x0039\l}"];
+subgraph cluster_Region_544480932 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0039|r2.cacheControl(r3)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0040|RETURN\l|return r2.build()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003c}"];
+MethodNode[shape=record,label="{private static okhttp3.Request com.squareup.picasso.NetworkRequestHandler.createRequest((r2v0 com.squareup.picasso.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_11;
+Node_11 -> Node_12;
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_1 -> Node_2;
+Node_7 -> Node_8;
+Node_15 -> Node_16;
+}
+

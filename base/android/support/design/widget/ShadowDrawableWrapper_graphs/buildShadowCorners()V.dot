@@ -1,0 +1,24 @@
+digraph "CFG forandroid.support.design.widget.ShadowDrawableWrapper.buildShadowCorners()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r16\landroid.graphics.RectF r1 = new android.graphics.RectF(\-r0.cornerRadius, \-r0.cornerRadius, r0.cornerRadius, r0.cornerRadius)\landroid.graphics.RectF r2 = new android.graphics.RectF(r1)\lr2.inset(\-r0.shadowSize, \-r0.shadowSize)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0021|if (r0.cornerShadowPath != null) goto L_0x002b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0023|r0.cornerShadowPath = new android.graphics.Path()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002b|r0.cornerShadowPath.reset()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0030|r0.cornerShadowPath.setFillType(android.graphics.Path.FillType.EVEN_ODD)\lr0.cornerShadowPath.moveTo(\-r0.cornerRadius, 0.0f)\lr0.cornerShadowPath.rLineTo(\-r0.shadowSize, 0.0f)\lr0.cornerShadowPath.arcTo(r2, 180.0f, 90.0f, false)\lr0.cornerShadowPath.arcTo(r1, 270.0f, \-90.0f, false)\lr0.cornerShadowPath.close()\lfloat r11 = \-r2.top\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0068|if ((r11 \> 0.0f ? 1 : (r11 == 0.0f ? 0 : \-1)) \<= 0) goto L_0x00a3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006a|float r8 = r0.cornerRadius \/ r11\landroid.graphics.Paint r15 = r0.cornerShadowPaint\lint[] r12 = new int[]\{0, r0.shadowStartColor, r0.shadowMiddleColor, r0.shadowEndColor\}\lfloat[] r13 = new float[]\{0.0f, r8, ((1.0f \- r8) \/ 2.0f) + r8, 1.0f\}\lr3 = r8\landroid.graphics.RadialGradient r8 = new android.graphics.RadialGradient(0.0f, 0.0f, r11, r12, r13, android.graphics.Shader.TileMode.CLAMP)\lr15.setShader(r3)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x00a3|android.graphics.Paint r3 = r0.edgeShadowPaint\lfloat r10 = r1.top\lfloat r12 = r2.top\lint[] r13 = new int[]\{r0.shadowStartColor, r0.shadowMiddleColor, r0.shadowEndColor\}\lr3.setShader(new android.graphics.LinearGradient(0.0f, r10, 0.0f, r12, r13, new float[]\{0.0f, 0.5f, 1.0f\}, android.graphics.Shader.TileMode.CLAMP))\lr0.edgeShadowPaint.setAntiAlias(false)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x00cf|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void android.support.design.widget.ShadowDrawableWrapper.buildShadowCorners((r16v0 'this' android.support.design.widget.ShadowDrawableWrapper A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

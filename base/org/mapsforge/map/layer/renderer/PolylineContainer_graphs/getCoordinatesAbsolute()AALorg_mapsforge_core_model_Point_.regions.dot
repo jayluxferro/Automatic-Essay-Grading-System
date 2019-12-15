@@ -1,0 +1,65 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.PolylineContainer.getCoordinatesAbsolute()[[Lorg\/mapsforge\/core\/model\/Point;" {
+subgraph cluster_Region_1614361184 {
+label = "R(2:(3:2|(3:5|(1:8)|9)|10)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_16152280 {
+label = "IF [B:1:0x0002] THEN: R(3:2|(3:5|(1:8)|9)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.coordinatesAbsolute == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1798812623 {
+label = "R(3:2|(3:5|(1:8)|9)|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r7.coordinatesAbsolute = new org.mapsforge.core.model.Point[r7.way.latLongs.length][]\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_732583049 {
+label = "LOOP:0: (3:5|(1:8)|9)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r1 \< r7.way.latLongs.length) goto L_0x0016\l}"];
+subgraph cluster_Region_711783540 {
+label = "R(3:5|(1:8)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r7.coordinatesAbsolute[r1] = new org.mapsforge.core.model.Point[r7.way.latLongs[r1].length]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_686442795 {
+label = "LOOP:1: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|if (r2 \< r7.way.latLongs[r1].length) goto L_0x002d\l}"];
+subgraph cluster_Region_2123705906 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|LOOP_END\lLOOP:1: B:6:0x0024\-\>B:8:0x002d\l|r7.coordinatesAbsolute[r1][r2] = org.mapsforge.core.util.MercatorProjection.getPixelAbsolute(r7.way.latLongs[r1][r2], r7.upperLeft.mapSize)\lr2++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0046|LOOP_END\lLOOP:0: B:3:0x000f\-\>B:9:0x0046\l|r1++\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0049|r7.way = null\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004e|RETURN\l|return r7.coordinatesAbsolute\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:2:0x0004, B:9:0x0046] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000f\-\>B:9:0x0046\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0024|LOOP_START\lPHI: r2 \l  PHI: (r2v5 int) = (r2v4 int), (r2v6 int) binds: [B:5:0x0016, B:8:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:6:0x0024\-\>B:8:0x002d\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0049|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0046|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.Point[][] org.mapsforge.map.layer.renderer.PolylineContainer.getCoordinatesAbsolute((r7v0 'this' org.mapsforge.map.layer.renderer.PolylineContainer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_3;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_13 -> Node_10;
+Node_14 -> Node_9;
+}
+

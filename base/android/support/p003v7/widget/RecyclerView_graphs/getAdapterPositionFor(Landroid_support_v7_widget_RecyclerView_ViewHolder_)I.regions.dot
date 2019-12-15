@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.getAdapterPositionFor(Landroid\/support\/v7\/widget\/RecyclerView$ViewHolder;)I" {
+subgraph cluster_Region_65395501 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1278738924 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1544636957 {
+label = "IF [B:1:0x0006, B:3:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r2.hasAnyOfTheFlags(524) == true) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (r2.isBound() == false) goto L_?\l}"];
+subgraph cluster_Region_73923919 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_695624285 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|RETURN\l|return r1.mAdapterHelper.applyPendingUpdatesToPosition(r2.mPosition)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return \-1\l}"];
+MethodNode[shape=record,label="{int android.support.v7.widget.RecyclerView.getAdapterPositionFor((r1v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

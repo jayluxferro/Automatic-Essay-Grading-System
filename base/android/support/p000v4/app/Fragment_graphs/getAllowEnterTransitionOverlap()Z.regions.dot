@@ -1,0 +1,39 @@
+digraph "CFG forandroid.support.v4.app.Fragment.getAllowEnterTransitionOverlap()Z" {
+subgraph cluster_Region_1104775494 {
+label = "R(1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1184106654 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_883801789 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mAnimationInfo == null) goto L_0x0014\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r1.mAnimationInfo.mAllowEnterTransitionOverlap == null) goto L_0x0014\l}"];
+subgraph cluster_Region_265018260 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_47571090 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r1.mAnimationInfo.mAllowEnterTransitionOverlap.booleanValue()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.app.Fragment.getAllowEnterTransitionOverlap((r1v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+}
+

@@ -1,0 +1,82 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.H264Reader.SampleReader.endNalUnit(JI)V" {
+subgraph cluster_Region_56092224 {
+label = "R(5:0|(2:(1:8)|9)|10|(1:18)|19)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = false\l}"];
+subgraph cluster_IfRegion_316194060 {
+label = "IF [B:1:0x0006, B:3:0x000a, B:5:0x0014] THEN: R(2:(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|ADDED_TO_REGION\l|if (r7.nalUnitType == 9) goto L_0x0016\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r7.detectAccessUnits == true) goto L_0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r7.sliceHeader.isFirstVclNalUnitOfPicture(r7.previousSliceHeader) == true) goto L_0x0016\l}"];
+subgraph cluster_Region_713787172 {
+label = "R(2:(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1906680682 {
+label = "IF [B:7:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|if (r7.readingSample == true) goto L_0x001a\l}"];
+subgraph cluster_Region_1361674341 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|outputSample(r10 + ((int) (r8 \- r7.nalUnitStartPosition)))\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0024|r7.samplePosition = r7.nalUnitStartPosition\lr7.sampleTimeUs = r7.nalUnitTimeUs\lr7.sampleIsKeyframe = false\lr7.readingSample = true\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0030|boolean boolean r3 = r7.sampleIsKeyframe\l}"];
+subgraph cluster_IfRegion_114194321 {
+label = "IF [B:11:0x0035, B:13:0x0039, B:15:0x003d, B:17:0x0045] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0035|ADDED_TO_REGION\l|if (r7.nalUnitType == 5) goto L_0x0047\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0039|ADDED_TO_REGION\l|if (r7.allowNonIdrKeyframes == true) goto L_0x003b\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003d|ADDED_TO_REGION\l|if (r7.nalUnitType == 1) goto L_0x003f\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0045|ADDED_TO_REGION\l|if (r7.sliceHeader.isISlice() == true) goto L_0x0047\l}"];
+subgraph cluster_Region_1452725399 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0047|r1 = true\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0048|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v3 boolean), (r1v0 boolean), (r1v0 boolean), (r1v0 boolean) binds: [B:18:0x0047, B:13:0x0039, B:15:0x003d, B:17:0x0045] A[DONT_GENERATE, DONT_INLINE]\l|r7.sampleIsKeyframe = r1 \| r3\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0037}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003b}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003f}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004b}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.extractor.ts.H264Reader.SampleReader.endNalUnit((r7v0 'this' com.google.android.exoplayer2.extractor.ts.H264Reader$SampleReader A[IMMUTABLE_TYPE, THIS]), (r8v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_18;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

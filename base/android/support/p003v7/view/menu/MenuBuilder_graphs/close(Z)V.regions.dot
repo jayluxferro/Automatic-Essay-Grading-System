@@ -1,0 +1,74 @@
+digraph "CFG forandroid.support.v7.view.menu.MenuBuilder.close(Z)V" {
+subgraph cluster_Region_1776536089 {
+label = "R(1:(1:(3:3|(2:6|(1:8)(1:9))|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1072667022 {
+label = "R(1:(3:3|(2:6|(1:8)(1:9))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_195823052 {
+label = "IF [B:1:0x0002] THEN: R(3:3|(2:6|(1:8)(1:9))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.mIsClosing != true) goto L_0x0005\l}"];
+subgraph cluster_Region_453636467 {
+label = "R(3:3|(2:6|(1:8)(1:9))|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|r3.mIsClosing = true\ljava.util.Iterator java.util.Iterator\<java.lang.ref.WeakReference\<android.support.p003v7.view.menu.MenuPresenter\>\> r0 = r3.mPresenters.iterator()\l}"];
+subgraph cluster_LoopRegion_1031512767 {
+label = "LOOP:0: (2:6|(1:8)(1:9))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (r0.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_2119179624 {
+label = "R(2:6|(1:8)(1:9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|java.lang.ref.WeakReference java.lang.ref.WeakReference r1 = r0.next()\landroid.support.v7.view.menu.MenuPresenter android.support.p003v7.view.menu.MenuPresenter r2 = (android.support.p003v7.view.menu.MenuPresenter) r1.get()\l}"];
+subgraph cluster_IfRegion_1235409634 {
+label = "IF [B:7:0x0020] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|if (r2 == null) goto L_0x0022\l}"];
+subgraph cluster_Region_494154326 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|r3.mPresenters.remove(r1)\l}"];
+}
+subgraph cluster_Region_690808627 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|r2.onCloseMenu(r3, r4)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002c|r3.mIsClosing = false\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e|LOOP_START\lLOOP:0: B:4:0x000e\-\>B:12:0x000e\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000e|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x000e\-\>B:12:0x000e\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002c|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000e|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void android.support.v7.view.menu.MenuBuilder.close((r3v0 'this' android.support.v7.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_14;
+Node_9 -> Node_15;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_12 -> Node_4;
+Node_13 -> Node_10;
+Node_14 -> Node_12;
+Node_15 -> Node_12;
+}
+

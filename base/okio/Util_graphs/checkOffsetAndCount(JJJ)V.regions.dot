@@ -1,0 +1,40 @@
+digraph "CFG forokio.Util.checkOffsetAndCount(JJJ)V" {
+subgraph cluster_Region_733066421 {
+label = "R(1:(1:(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_131810811 {
+label = "R(1:(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_101537295 {
+label = "IF [B:1:0x0006, B:3:0x000a, B:5:0x0010] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r6 \| r8) \< 0) goto L_0x0013\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r6 \> r4) goto L_0x0013\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if ((r4 \- r6) \< r8) goto L_0x0013\l}"];
+subgraph cluster_Region_1130461822 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013}"];
+Node_8 [shape=record,label="{8\:\ 0x0036|throw new java.lang.ArrayIndexOutOfBoundsException(java.lang.String.format(\"size=%s offset=%s byteCount=%s\", new java.lang.Object[]\{java.lang.Long.valueOf(r4), java.lang.Long.valueOf(r6), java.lang.Long.valueOf(r8)\}))\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+MethodNode[shape=record,label="{public static void okio.Util.checkOffsetAndCount((r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.LayoutManager.scrapOrRecycleView(Landroid\/support\/v7\/widget\/RecyclerView$Recycler;ILandroid\/view\/View;)V" {
+subgraph cluster_Region_1361952957 {
+label = "R(2:0|(1:(1:(2:(2:10|11)|(1:9)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.widget.RecyclerView$ViewHolder android.support.p003v7.widget.RecyclerView.ViewHolder r0 = android.support.p003v7.widget.RecyclerView.getChildViewHolderInt(r5)\l}"];
+subgraph cluster_Region_796210553 {
+label = "R(1:(1:(2:(2:10|11)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_758444940 {
+label = "IF [B:1:0x0008] THEN: R(1:(2:(2:10|11)|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0.shouldIgnore() != true) goto L_0x000b\l}"];
+subgraph cluster_Region_1221114560 {
+label = "R(1:(2:(2:10|11)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_846816397 {
+label = "R(2:(2:10|11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1283438059 {
+label = "IF [B:4:0x000f, B:6:0x0015, B:8:0x001f] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|if (r0.isInvalid() == false) goto L_0x0028\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|ADDED_TO_REGION\l|if (r0.isRemoved() == true) goto L_0x0028\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|ADDED_TO_REGION\l|if (r2.mRecyclerView.mAdapter.hasStableIds() == true) goto L_0x0028\l}"];
+subgraph cluster_Region_532524846 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|detachViewAt(r4)\lr3.scrapView(r5)\lr2.mRecyclerView.mViewInfoStore.onViewDetached(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_548056140 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|removeViewAt(r4)\lr3.recycleViewHolderInternal(r0)\l}"];
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.RecyclerView.LayoutManager.scrapOrRecycleView((r2v0 'this' android.support.v7.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_9 -> Node_12;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

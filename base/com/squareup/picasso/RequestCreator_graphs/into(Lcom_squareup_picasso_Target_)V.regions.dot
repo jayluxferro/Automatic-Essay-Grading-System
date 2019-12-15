@@ -1,0 +1,135 @@
+digraph "CFG forcom.squareup.picasso.RequestCreator.into(Lcom\/squareup\/picasso\/Target;)V" {
+subgraph cluster_Region_1909345110 {
+label = "R(2:0|(1:25)(1:(2:4|(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15)))))(1:23))) | DECL_VAR: android.graphics.Bitmap null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = java.lang.System.nanoTime()\lcom.squareup.picasso.Utils.checkMain()\l}"];
+subgraph cluster_IfRegion_1674021533 {
+label = "IF [B:1:0x0007] THEN: R(1:25) ELSE: R(1:(2:4|(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15)))))(1:23))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r15 == null) goto L_0x0076\l}"];
+subgraph cluster_Region_1076332461 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x007d|throw new java.lang.IllegalArgumentException(\"Target must not be null.\")\l}"];
+}
+subgraph cluster_Region_1140396642 {
+label = "R(1:(2:4|(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15)))))(1:23)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1159819603 {
+label = "IF [B:3:0x000b] THEN: R(2:4|(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15))))) ELSE: R(1:23) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r14.deferred == false) goto L_0x000d\l}"];
+subgraph cluster_Region_1182703248 {
+label = "R(2:4|(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15)))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|android.graphics.drawable.Drawable r3 = null\l}"];
+subgraph cluster_Region_451774472 {
+label = "R(2:(4:6|(1:8)|9|10)|(2:11|(2:(3:(1:19)|20|21)|(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1712029207 {
+label = "IF [B:5:0x0014] THEN: R(4:6|(1:8)|9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r14.data.hasImage() == false) goto L_0x0016\l}"];
+subgraph cluster_Region_1835690517 {
+label = "R(4:6|(1:8)|9|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r14.picasso.cancelRequest(r15)\l}"];
+subgraph cluster_IfRegion_1835666102 {
+label = "IF [B:7:0x001d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r14.setPlaceholder == true) goto L_0x001f\l}"];
+subgraph cluster_Region_1247223686 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|android.graphics.drawable.Drawable r3 = getPlaceholderDrawable()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0023|PHI: r3 \l  PHI: (r3v3 android.graphics.drawable.Drawable) = (r3v0 android.graphics.drawable.Drawable), (r3v4 android.graphics.drawable.Drawable) binds: [B:7:0x001d, B:8:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|r15.onPrepareLoad(r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1636729822 {
+label = "R(2:11|(2:(3:(1:19)|20|21)|(1:15)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0027|com.squareup.picasso.Request com.squareup.picasso.Request r7 = createRequest(r0)\ljava.lang.String java.lang.String r11 = com.squareup.picasso.Utils.createKey(r7)\l}"];
+subgraph cluster_Region_596596129 {
+label = "R(2:(3:(1:19)|20|21)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_665362138 {
+label = "IF [B:12:0x0035, B:14:0x003d] THEN: R(3:(1:19)|20|21) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0035|if (com.squareup.picasso.MemoryPolicy.shouldReadFromMemoryCache(r14.memoryPolicy) == false) goto L_0x004a\l}"];
+Node_14 [shape=record,label="{14\:\ 0x003d|ADDED_TO_REGION\l|if ((r0 = r14.picasso.quickMemoryCacheCheck(r11)) == null) goto L_0x004a\l}"];
+subgraph cluster_Region_1607656801 {
+label = "R(3:(1:19)|20|21)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1431577616 {
+label = "IF [B:18:0x004c] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004c|if (r14.setPlaceholder == true) goto L_0x004e\l}"];
+subgraph cluster_Region_1228962051 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004e|android.graphics.drawable.Drawable r3 = getPlaceholderDrawable()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0052|PHI: r3 \l  PHI: (r3v1 android.graphics.drawable.Drawable) = (r3v0 android.graphics.drawable.Drawable), (r3v2 android.graphics.drawable.Drawable) binds: [B:18:0x004c, B:19:0x004e] A[DONT_GENERATE, DONT_INLINE]\l|r15.onPrepareLoad(r3)\lr14.picasso.enqueueAndSubmit(new com.squareup.picasso.TargetAction(r14.picasso, r15, r7, r14.memoryPolicy, r14.networkPolicy, r14.errorDrawable, r11, r14.tag, r14.errorResId))\l}"];
+Node_21 [shape=record,label="{21\:\ 0x006d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1746010987 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003f|r14.picasso.cancelRequest(r15)\lr15.onBitmapLoaded(r0, com.squareup.picasso.Picasso.LoadedFrom.MEMORY)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1435536229 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0075|throw new java.lang.IllegalStateException(\"Fit cannot be used with a Target.\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0037}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0049}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004a}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x006e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0076}"];
+MethodNode[shape=record,label="{public void com.squareup.picasso.RequestCreator.into((r14v0 'this' com.squareup.picasso.RequestCreator A[IMMUTABLE_TYPE, THIS]), (r15v0 com.squareup.picasso.Target A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_24;
+Node_3 -> Node_4;
+Node_3 -> Node_22[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_15 -> Node_16;
+Node_2 -> Node_3;
+Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+}
+

@@ -1,0 +1,73 @@
+digraph "CFG forandroid.support.v4.util.Preconditions.checkArrayElementsNotNull([Ljava\/lang\/Object;Ljava\/lang\/String;)[Ljava\/lang\/Object;" {
+subgraph cluster_Region_721013874 {
+label = "R(1:(2:(3:1|(1:(1:6)(2:7|8))|9)|(2:10|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_739391697 {
+label = "R(2:(3:1|(1:(1:6)(2:7|8))|9)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1606499208 {
+label = "IF [B:0:0x0000] THEN: R(3:1|(1:(1:6)(2:7|8))|9) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1797998300 {
+label = "R(3:1|(1:(1:6)(2:7|8))|9)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_390496584 {
+label = "LOOP:0: (1:(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r1 \< r4.length) goto L_0x0007\l}"];
+subgraph cluster_Region_863647266 {
+label = "R(1:(1:6)(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1712612858 {
+label = "IF [B:5:0x0009] THEN: R(1:6) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (r4[r1] != null) goto L_0x000b\l}"];
+subgraph cluster_Region_1460422814 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|LOOP_END\lLOOP:0: B:2:0x0004\-\>B:6:0x000b\l|r1++\l}"];
+}
+subgraph cluster_Region_1463337538 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|throw new java.lang.NullPointerException(java.lang.String.format(java.util.Locale.US, \"%s[%d] must not be null\", new java.lang.Object[]\{r5, java.lang.Integer.valueOf(r1)\}))\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1468331619 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029}"];
+Node_11 [shape=record,label="{11\:\ 0x003f|throw new java.lang.NullPointerException(r5 + \" must not be null\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:1:0x0002, B:6:0x000b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:2:0x0004\-\>B:6:0x000b\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0028|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static T[] android.support.v4.util.Preconditions.checkArrayElementsNotNull((r4v0 T[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>([TT;, Ljava\/lang\/String;, )[TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_10[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_2;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_12 -> Node_9;
+Node_13 -> Node_7;
+}
+

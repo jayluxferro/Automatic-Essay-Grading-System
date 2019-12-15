@@ -1,0 +1,25 @@
+digraph "CFG formil.nga.geopackage.user.UserDao.prepareResult(Lmil\/nga\/geopackage\/user\/UserCursor;)Lmil\/nga\/geopackage\/user\/UserCursor;" {
+subgraph cluster_Region_1180309258 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_48859565 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.invalidRequery == true) goto L_0x0004\l}"];
+subgraph cluster_Region_306919423 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.enableInvalidRequery(r1)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0007|RETURN\l|return r2\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public TResult mil.nga.geopackage.user.UserDao.prepareResult((r1v0 'this' mil.nga.geopackage.user.UserDao A[IMMUTABLE_TYPE, THIS]), (r2v0 TResult A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: protected\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TTResult;)TTResult;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

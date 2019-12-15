@@ -1,0 +1,68 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageImpl.getAttributesDao(Ljava\/lang\/String;)Lmil\/nga\/geopackage\/attributes\/AttributesDao;" {
+subgraph cluster_Region_2067479792 {
+label = "R(1:(2:2|(2:(1:5)|(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1209080046 {
+label = "Try: R(2:2|(2:(1:5)|(2:6|7))) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1654707627 {
+label = "R(2:2|(2:(1:5)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x0028 \}\lSplitter:B:1:0x0004\l|mil.nga.geopackage.core.contents.Contents mil.nga.geopackage.core.contents.Contents r0 = (mil.nga.geopackage.core.contents.Contents) getContentsDao().queryForId(r5)     \/\/ Catch:\{ SQLException \-\> 0x0028 \}\l}"];
+subgraph cluster_Region_1399138733 {
+label = "R(2:(1:5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_123360936 {
+label = "IF [B:3:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_141115830 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return getAttributesDao(r0)\l}"];
+}
+}
+subgraph cluster_Region_731546150 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|throw new mil.nga.geopackage.GeoPackageException(\"No Contents Table exists for table name: \" + r5)\l}"];
+}
+}
+}
+subgraph cluster_Region_165996313 {
+label = "R(3:8|9|10) | ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029}"];
+Node_10 [shape=record,label="{10\:\ 0x004d|throw new mil.nga.geopackage.GeoPackageException(\"Failed to retrieve \" + mil.nga.geopackage.core.contents.Contents.class.getSimpleName() + \" for table name: \" + r5, r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_165996313 {
+label = "R(3:8|9|10) | ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029}"];
+Node_10 [shape=record,label="{10\:\ 0x004d|throw new mil.nga.geopackage.GeoPackageException(\"Failed to retrieve \" + mil.nga.geopackage.core.contents.Contents.class.getSimpleName() + \" for table name: \" + r5, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|SYNTHETIC\lSplitter:B:1:0x0004\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.attributes.AttributesDao mil.nga.geopackage.factory.GeoPackageImpl.getAttributesDao((r4v0 'this' mil.nga.geopackage.factory.GeoPackageImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_4 -> Node_5;
+}
+

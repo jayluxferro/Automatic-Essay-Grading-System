@@ -1,0 +1,35 @@
+digraph "CFG forokhttp3.Cache.Entry.readCertificateList(Lokio\/BufferedSource;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = okhttp3.Cache.readInt(r7)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 != \-1) goto L_0x000c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return java.util.Collections.emptyList()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|SYNTHETIC\lSplitter:B:5:0x000e\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ CertificateException \-\> 0x0039 \}\lSplitter:B:5:0x000e\l|java.security.cert.CertificateFactory r1 = java.security.cert.CertificateFactory.getInstance(\"X.509\")     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\ljava.util.ArrayList r2 = new java.util.ArrayList(r0)     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\lr3 = 0     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|LOOP_START\lCatch:\{ CertificateException \-\> 0x0039 \}\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:6:?, B:9:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0018\-\>B:9:0x0035\l|if (r3 \>= r0) goto L_0x0038     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|Catch:\{ CertificateException \-\> 0x0039 \}\l|java.lang.String r4 = r7.readUtf8LineStrict()     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\lokio.Buffer r5 = new okio.Buffer()     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\lr5.write(okio.ByteString.decodeBase64(r4))     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\lr2.add(r1.generateCertificate(r5.inputStream()))     \/\/ Catch:\{ CertificateException \-\> 0x0039 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0035|LOOP_END\lLOOP:0: B:7:0x0018\-\>B:9:0x0035\l|int r3 = r3 + 1\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0038|RETURN\l|return r2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0039|ExcHandler: CertificateException (r7v1 'e' java.security.cert.CertificateException A[CUSTOM_DECLARE])\lSplitter:B:5:0x000e\l|java.security.cert.CertificateException r7 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003a}"];
+Node_13 [shape=record,label="{13\:\ 0x0043|throw new java.io.IOException(r7.getMessage())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0038|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.util.List\<java.security.cert.Certificate\> okhttp3.Cache.Entry.readCertificateList((r6v0 'this' okhttp3.Cache$Entry A[IMMUTABLE_TYPE, THIS]), (r7v0 okio.BufferedSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lokio\/BufferedSource;, ), Ljava\/util\/List\<, Ljava\/security\/cert\/Certificate;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_8 -> Node_9;
+Node_9 -> Node_7;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_10;
+}
+

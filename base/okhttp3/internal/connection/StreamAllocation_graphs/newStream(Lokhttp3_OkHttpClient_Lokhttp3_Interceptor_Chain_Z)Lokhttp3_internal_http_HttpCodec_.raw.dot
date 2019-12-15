@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.connection.StreamAllocation.newStream(Lokhttp3\/OkHttpClient;Lokhttp3\/Interceptor$Chain;Z)Lokhttp3\/internal\/http\/HttpCodec;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:int) = (r9 I:okhttp3.Interceptor$Chain) okhttp3.Interceptor.Chain.connectTimeoutMillis():int type: INTERFACE \l0x0004: INVOKE  (r2 I:int) = (r9 I:okhttp3.Interceptor$Chain) okhttp3.Interceptor.Chain.readTimeoutMillis():int type: INTERFACE \l0x0008: INVOKE  (r3 I:int) = (r9 I:okhttp3.Interceptor$Chain) okhttp3.Interceptor.Chain.writeTimeoutMillis():int type: INTERFACE \l0x000c: INVOKE  (r4 I:int) = (r8 I:okhttp3.OkHttpClient) okhttp3.OkHttpClient.pingIntervalMillis():int type: VIRTUAL \l0x0010: INVOKE  (r5 I:boolean) = (r8 I:okhttp3.OkHttpClient) okhttp3.OkHttpClient.retryOnConnectionFailure():boolean type: VIRTUAL \l0x0014: MOVE  (r0 I:?[OBJECT, ARRAY]) = (r7 I:?[OBJECT, ARRAY]) \l0x0015: MOVE  (r6 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r10 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0016|SYNTHETIC\lSplitter:B:1:0x0016\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0016\l|0x0016: INVOKE  (r10 I:okhttp3.internal.connection.RealConnection) = \l  (r0 I:okhttp3.internal.connection.StreamAllocation)\l  (r1 I:int)\l  (r2 I:int)\l  (r3 I:int)\l  (r4 I:int)\l  (r5 I:boolean)\l  (r6 I:boolean)\l okhttp3.internal.connection.StreamAllocation.findHealthyConnection(int, int, int, int, boolean, boolean):okhttp3.internal.connection.RealConnection type: DIRECT A[Catch:\{ IOException \-\> 0x0028 \}, TRY_ENTER]\l0x001a: INVOKE  (r8 I:okhttp3.internal.http.HttpCodec) = \l  (r10 I:okhttp3.internal.connection.RealConnection)\l  (r8 I:okhttp3.OkHttpClient)\l  (r9 I:okhttp3.Interceptor$Chain)\l  (r7 I:okhttp3.internal.connection.StreamAllocation)\l okhttp3.internal.connection.RealConnection.newCodec(okhttp3.OkHttpClient, okhttp3.Interceptor$Chain, okhttp3.internal.connection.StreamAllocation):okhttp3.internal.http.HttpCodec type: VIRTUAL A[Catch:\{ IOException \-\> 0x0028 \}]\l0x001e: IGET  (r9 I:okhttp3.ConnectionPool) = (r7 I:okhttp3.internal.connection.StreamAllocation) okhttp3.internal.connection.StreamAllocation.connectionPool okhttp3.ConnectionPool A[Catch:\{ IOException \-\> 0x0028 \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|0x0020: MONITOR_ENTER  (r9 I:?[OBJECT, ARRAY]) A[Catch:\{ IOException \-\> 0x0028 \}, TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|SYNTHETIC\lSplitter:B:4:0x0021\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Splitter:B:4:0x0021\l|0x0021: IPUT  \l  (r8 I:okhttp3.internal.http.HttpCodec)\l  (r7 I:okhttp3.internal.connection.StreamAllocation)\l okhttp3.internal.connection.StreamAllocation.codec okhttp3.internal.http.HttpCodec A[Catch:\{ all \-\> 0x0025 \}, TRY_ENTER]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|0x0023: MONITOR_EXIT  (r9 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x0025 \}]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|0x0024: RETURN  (r8 I:okhttp3.internal.http.HttpCodec) A[Catch:\{ all \-\> 0x0025 \}]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|ExcHandler: all null\lSplitter:B:4:0x0021\l|0x0025: MOVE_EXCEPTION  (r8 I:?[OBJECT]) =  A[Catch:\{ all \-\> 0x0025 \}]\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0026|0x0026: MONITOR_EXIT  (r9 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x0025 \}, TRY_LEAVE]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|SYNTHETIC\lSplitter:B:10:0x0027\l}"];
+Node_11 [shape=record,label="{11\:\ ?|Splitter:B:10:0x0027\l|0x0027: THROW  (r8 I:java.lang.Throwable) A[Catch:\{ IOException \-\> 0x0028 \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0028|ExcHandler: IOException null\lSplitter:B:1:0x0016\l|0x0028: MOVE_EXCEPTION  (r8 I:?[OBJECT]) =  \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0029|0x0029: NEW_INSTANCE  (r9 I:okhttp3.internal.connection.RouteException) =  okhttp3.internal.connection.RouteException \l0x002b: INVOKE  \l  (r9 I:okhttp3.internal.connection.RouteException)\l  (r8 I:java.io.IOException)\l okhttp3.internal.connection.RouteException.\<init\>(java.io.IOException):void type: DIRECT \l}"];
+Node_14 [shape=record,label="{14\:\ 0x002e|0x002e: THROW  (r9 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public okhttp3.internal.http.HttpCodec okhttp3.internal.connection.StreamAllocation.newStream((r7 'this' I:okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, THIS]), (r8 I:okhttp3.OkHttpClient A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:okhttp3.Interceptor$Chain A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+}
+

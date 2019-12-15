@@ -1,0 +1,72 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.TileWriter.loadTile(Lorg\/osmdroid\/tileprovider\/tilesource\/ITileSource;J)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_657188102 {
+label = "R(2:0|(2:(1:2)|(3:3|(2:(1:11)|12)|13)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File java.io.File r0 = getFile(r8, r9)\l}"];
+subgraph cluster_Region_2097891885 {
+label = "R(2:(1:2)|(3:3|(2:(1:11)|12)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1497150139 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0.exists() == false) goto L_0x000a\l}"];
+subgraph cluster_Region_1842276173 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2087528410 {
+label = "R(3:3|(2:(1:11)|12)|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r8 = r8.getDrawable(r0.getPath())\l}"];
+subgraph cluster_IfRegion_1763028381 {
+label = "IF [B:7:0x0026, B:8:0x0028] THEN: R(2:(1:11)|12) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|ADDED_TO_REGION\lPHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0.lastModified() \< java.lang.System.currentTimeMillis() \- r7.mMaximumCachedFileAge) == true) goto L_0x0028\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|ADDED_TO_REGION\l|if (r8 != null) goto L_0x002a\l}"];
+subgraph cluster_Region_300836460 {
+label = "R(2:(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2047038707 {
+label = "IF [B:10:0x0032] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|if (org.osmdroid.config.Configuration.getInstance().isDebugMode() == true) goto L_0x0034\l}"];
+subgraph cluster_Region_1269873149 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0034|android.util.Log.d(org.osmdroid.api.IMapView.LOGTAG, \"Tile expired: \" + org.osmdroid.util.MapTileIndex.toString(r9))\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004e|org.osmdroid.tileprovider.ExpirableBitmapDrawable.setState(r8, \-2)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0052|RETURN\l|return r8\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0021}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable org.osmdroid.tileprovider.modules.TileWriter.loadTile((r7v0 'this' org.osmdroid.tileprovider.modules.TileWriter A[IMMUTABLE_TYPE, THIS]), (r8v0 org.osmdroid.tileprovider.tilesource.ITileSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.Exception]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

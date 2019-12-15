@@ -1,0 +1,40 @@
+digraph "CFG forio.fabric.sdk.android.services.settings.DefaultSettingsSpiCall.getQueryParamsFor(Lio\/fabric\/sdk\/android\/services\/settings\/SettingsRequest;)Ljava\/util\/Map;" {
+subgraph cluster_Region_220325144 {
+label = "R(5:0|(1:2)|3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashMap java.util.HashMap r0 = new java.util.HashMap()\lr0.put(BUILD_VERSION_PARAM, r4.buildVersion)\lr0.put(DISPLAY_VERSION_PARAM, r4.displayVersion)\lr0.put(\"source\", java.lang.Integer.toString(r4.source))\l}"];
+subgraph cluster_IfRegion_1962518417 {
+label = "IF [B:1:0x0020] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0020|if (r4.iconHash != null) goto L_0x0022\l}"];
+subgraph cluster_Region_2131237780 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0022|r0.put(ICON_HASH, r4.iconHash)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0029|java.lang.String java.lang.String r4 = r4.instanceId\l}"];
+subgraph cluster_IfRegion_1895420353 {
+label = "IF [B:4:0x002f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002f|if (p018io.fabric.sdk.android.services.common.CommonUtils.isNullOrEmpty(r4) == false) goto L_0x0031\l}"];
+subgraph cluster_Region_87977664 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0031|r0.put(INSTANCE_PARAM, r4)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0036|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{private java.util.Map\<java.lang.String, java.lang.String\> io.fabric.sdk.android.services.settings.DefaultSettingsSpiCall.getQueryParamsFor((r3v0 'this' io.fabric.sdk.android.services.settings.DefaultSettingsSpiCall A[IMMUTABLE_TYPE, THIS]), (r4v0 io.fabric.sdk.android.services.settings.SettingsRequest A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lio\/fabric\/sdk\/android\/services\/settings\/SettingsRequest;, ), Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+}
+

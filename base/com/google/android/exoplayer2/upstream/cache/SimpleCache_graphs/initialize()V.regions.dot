@@ -1,0 +1,122 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.SimpleCache.initialize()V" {
+subgraph cluster_Region_3366566 {
+label = "R(1:(2:(2:2|22)|(2:3|(1:(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1602070053 {
+label = "R(2:(2:2|22)|(2:3|(1:(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_746792431 {
+label = "IF [B:1:0x0006] THEN: R(2:2|22) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r10.cacheDir.exists() == false) goto L_0x0008\l}"];
+subgraph cluster_Region_1088767701 {
+label = "R(2:2|22)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r10.cacheDir.mkdirs()\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1396739619 {
+label = "R(2:3|(1:(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|r10.index.load()\ljava.io.File[] java.io.File[] r1 = r10.cacheDir.listFiles()\l}"];
+subgraph cluster_Region_1522136577 {
+label = "R(1:(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1474920159 {
+label = "IF [B:4:0x0019] THEN: R(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|if (r1 != null) goto L_0x001b\l}"];
+subgraph cluster_Region_748412400 {
+label = "R(3:5|(3:7|(2:11|(1:14)(1:16))(0)|9)|17)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|int int r4 = r1.length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1757888509 {
+label = "LOOP:0: (3:7|(2:11|(1:14)(1:16))(0)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001d|LOOP_START\lPHI: r3 \l  PHI: (r3v5 int) = (r3v4 int), (r3v8 int) binds: [B:5:0x001b, B:9:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x001d\-\>B:9:0x002d\l|if (r3 \< r4) goto L_0x001f\l}"];
+subgraph cluster_Region_826509317 {
+label = "R(3:7|(2:11|(1:14)(1:16))(0)|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|r0 = r1[r3]\l}"];
+subgraph cluster_IfRegion_1566491479 {
+label = "IF [B:8:0x002b] THEN: R(2:11|(1:14)(1:16)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|if (r0.getName().equals(com.google.android.exoplayer2.upstream.cache.CachedContentIndex.FILE_NAME) == false) goto L_0x0030\l}"];
+subgraph cluster_Region_1713715608 {
+label = "R(2:11|(1:14)(1:16))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0038|com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r2 = r0.length() \> 0 ? com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.createCacheEntry(r0, r10.index) : null\l}"];
+subgraph cluster_IfRegion_2049358853 {
+label = "IF [B:13:0x0040] THEN: R(1:14) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0040|PHI: r2 \l  PHI: (r2v1 'span' com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != null) goto L_0x0042\l}"];
+subgraph cluster_Region_136350444 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0042|addSpan(r2)\l}"];
+}
+subgraph cluster_Region_929560007 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0048|r0.delete()\l}"];
+}
+}
+}
+subgraph cluster_Region_586880212 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002d|LOOP_END\lLOOP:0: B:6:0x001d\-\>B:9:0x002d\l|r3++\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x004c|r10.index.removeEmpty()\lr10.index.store()\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0030}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003a}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0046}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004c|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002d|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x002d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x002d|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.upstream.cache.SimpleCache.initialize((r10v0 'this' com.google.android.exoplayer2.upstream.cache.SimpleCache A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.upstream.cache.Cache$CacheException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_22;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_23[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_8 -> Node_19[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_15;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_20;
+Node_16 -> Node_21;
+Node_9 -> Node_6;
+Node_17 -> Node_24;
+Node_0 -> Node_1;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_15 -> Node_13;
+Node_18 -> Node_17;
+Node_19 -> Node_9;
+Node_20 -> Node_9;
+Node_21 -> Node_9;
+}
+

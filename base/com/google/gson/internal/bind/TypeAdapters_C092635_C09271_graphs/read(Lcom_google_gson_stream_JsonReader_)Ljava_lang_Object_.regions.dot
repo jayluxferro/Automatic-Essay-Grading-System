@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapters.35.1.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1973487968 {
+label = "R(2:0|(2:(1:6)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Object T1 r4 = r2.read(r4)\l}"];
+subgraph cluster_Region_1764485502 {
+label = "R(2:(1:6)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1619198068 {
+label = "IF [B:1:0x0008, B:3:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r4 == null) goto L_0x0040\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r1.isInstance(r4) == true) goto L_0x0040\l}"];
+subgraph cluster_Region_1102222106 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0040|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_828543626 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013}"];
+Node_5 [shape=record,label="{5\:\ 0x003f|throw new com.google.gson.JsonSyntaxException(\"Expected a \" + r1.getName() + \" but was \" + r4.getClass().getName())\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+MethodNode[shape=record,label="{public T1 com.google.gson.internal.bind.TypeAdapters.35.1.read((r3v0 'this' com.google.gson.internal.bind.TypeAdapters$35$1 A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/stream\/JsonReader;, )TT1;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

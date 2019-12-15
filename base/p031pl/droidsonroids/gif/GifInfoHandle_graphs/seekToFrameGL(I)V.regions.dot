@@ -1,0 +1,39 @@
+digraph "CFG forpl.droidsonroids.gif.GifInfoHandle.seekToFrameGL(I)V" {
+subgraph cluster_Region_1846548432 {
+label = "R(1:(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_280060000 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_463436891 {
+label = "IF [B:0:0x0000, B:2:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 \< 0) goto L_0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|ADDED_TO_REGION\l|if (r3 \>= getNumberOfFrames(r2.gifInfoPtr)) goto L_0x0010\l}"];
+subgraph cluster_Region_436586809 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|throw new java.lang.IndexOutOfBoundsException(\"Frame index is out of bounds\")\l}"];
+}
+}
+subgraph cluster_Region_1959129918 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|seekToFrameGL(r2.gifInfoPtr, r3)\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+MethodNode[shape=record,label="{void pl.droidsonroids.gif.GifInfoHandle.seekToFrameGL((r2v0 'this' pl.droidsonroids.gif.GifInfoHandle A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.IntRange, \{from=0\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+}
+

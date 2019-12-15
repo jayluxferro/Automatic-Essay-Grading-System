@@ -1,0 +1,102 @@
+digraph "CFG forokhttp3.Cache.2.hasNext()Z" {
+subgraph cluster_Region_210322321 {
+label = "R(1:(2:(1:2)|(3:3|(2:6|(2:8|10))|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1888261769 {
+label = "R(2:(1:2)|(3:3|(2:6|(2:8|10))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1273617848 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r4.nextUrl != null) goto L_0x0005\l}"];
+subgraph cluster_Region_249872674 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1219993252 {
+label = "R(3:3|(2:6|(2:8|10))|16)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r4.canRemove = false\l}"];
+subgraph cluster_LoopRegion_1545298405 {
+label = "LOOP:0: (2:6|(2:8|10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r4.delegate.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_193299641 {
+label = "R(2:6|(2:8|10))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|okhttp3.internal.cache.DiskLruCache$Snapshot okhttp3.internal.cache.DiskLruCache.Snapshot r2 = r4.delegate.next()\l}"];
+subgraph cluster_TryCatchRegion_1494905795 {
+label = "Try: R(2:8|10) catches: R(0) finally: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1695232087 {
+label = "R(2:8|10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ IOException \-\> 0x0030, all \-\> 0x002b \}\lSplitter:B:7:0x0019\l|r4.nextUrl = okio.Okio.buffer(r2.getSource(0)).readUtf8LineStrict()     \/\/ Catch:\{ IOException \-\> 0x0030, all \-\> 0x002b \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002a|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1910457363 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1747339034 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|ExcHandler:  FINALLY\lSplitter:B:7:0x0019\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002c|FINALLY_INSNS\l|r2.close()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002f|throw r0\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0034|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1910457363 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1747339034 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|ExcHandler:  FINALLY\lSplitter:B:7:0x0019\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002c|FINALLY_INSNS\l|r2.close()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002f|throw r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009|LOOP_START\lLOOP:0: B:4:0x0009\-\>B:14:0x0030\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019|SYNTHETIC\lSplitter:B:7:0x0019\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027|DONT_GENERATE\l|r2.close()\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030|LOOP_END\lDONT_GENERATE\lLOOP:0: B:4:0x0009\-\>B:14:0x0030\l|r2.close()\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:7:0x0019\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0027|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean okhttp3.Cache.2.hasNext((r4v0 'this' okhttp3.Cache$2 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_18[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_15;
+Node_8 -> Node_11;
+Node_8 -> Node_17;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_15;
+Node_7 -> Node_11;
+Node_9 -> Node_10;
+Node_14 -> Node_4;
+Node_15 -> Node_14;
+Node_17 -> Node_9;
+Node_18 -> Node_16;
+}
+

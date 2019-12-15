@@ -1,0 +1,28 @@
+digraph "CFG fororg.osgeo.proj4j.parser.Proj4Parser.parseDatum(Ljava\/util\/Map;Lorg\/osgeo\/proj4j\/parser\/DatumParameters;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"towgs84\" \l0x0002: INVOKE  (r0 I:java.lang.Object) = (r3 I:java.util.Map), (r0 I:java.lang.Object) java.util.Map.get(java.lang.Object):java.lang.Object type: INTERFACE \l0x0006: CHECK_CAST  (r0 I:java.lang.String) = (java.lang.String) (r0 I:?[OBJECT, ARRAY]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0011 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: INVOKE  (r0 I:double[]) = \l  (r2 I:org.osgeo.proj4j.parser.Proj4Parser)\l  (r0 I:java.lang.String)\l org.osgeo.proj4j.parser.Proj4Parser.parseToWGS84(java.lang.String):double[] type: DIRECT \l0x000e: INVOKE  \l  (r4 I:org.osgeo.proj4j.parser.DatumParameters)\l  (r0 I:double[])\l org.osgeo.proj4j.parser.DatumParameters.setDatumTransform(double[]):void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: CONST_STR  (r0 I:java.lang.String) =  \"datum\" \l0x0013: INVOKE  (r3 I:java.lang.Object) = (r3 I:java.util.Map), (r0 I:java.lang.Object) java.util.Map.get(java.lang.Object):java.lang.Object type: INTERFACE \l0x0017: CHECK_CAST  (r3 I:java.lang.String) = (java.lang.String) (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|0x0019: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x003e \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|0x001b: IGET  (r0 I:org.osgeo.proj4j.Registry) = (r2 I:org.osgeo.proj4j.parser.Proj4Parser) org.osgeo.proj4j.parser.Proj4Parser.registry org.osgeo.proj4j.Registry \l0x001d: INVOKE  (r0 I:org.osgeo.proj4j.datum.Datum) = (r0 I:org.osgeo.proj4j.Registry), (r3 I:java.lang.String) org.osgeo.proj4j.Registry.getDatum(java.lang.String):org.osgeo.proj4j.datum.Datum type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0021|0x0021: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0027 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: INVOKE  \l  (r4 I:org.osgeo.proj4j.parser.DatumParameters)\l  (r0 I:org.osgeo.proj4j.datum.Datum)\l org.osgeo.proj4j.parser.DatumParameters.setDatum(org.osgeo.proj4j.datum.Datum):void type: VIRTUAL \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|0x0027: NEW_INSTANCE  (r4 I:org.osgeo.proj4j.InvalidValueException) =  org.osgeo.proj4j.InvalidValueException \l0x0029: NEW_INSTANCE  (r0 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x002b: INVOKE  (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x002e: CONST_STR  (r1 I:java.lang.String) =  \"Unknown datum: \" \l0x0030: INVOKE  (r0 I:java.lang.StringBuilder), (r1 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0033: INVOKE  (r0 I:java.lang.StringBuilder), (r3 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0036: INVOKE  (r3 I:java.lang.String) = (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x003a: INVOKE  \l  (r4 I:org.osgeo.proj4j.InvalidValueException)\l  (r3 I:java.lang.String)\l org.osgeo.proj4j.InvalidValueException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_9 [shape=record,label="{9\:\ 0x003d|0x003d: THROW  (r4 I:java.lang.Throwable) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x003e|0x003e: RETURN   \l}"];
+MethodNode[shape=record,label="{private void org.osgeo.proj4j.parser.Proj4Parser.parseDatum((r2 'this' I:org.osgeo.proj4j.parser.Proj4Parser A[IMMUTABLE_TYPE, THIS]), (r3 I:java.util.Map A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:org.osgeo.proj4j.parser.DatumParameters A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+}
+

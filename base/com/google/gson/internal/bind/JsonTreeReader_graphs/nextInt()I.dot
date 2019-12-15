@@ -1,0 +1,26 @@
+digraph "CFG forcom.google.gson.internal.bind.JsonTreeReader.nextInt()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.stream.JsonToken r0 = peek()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 == com.google.gson.stream.JsonToken.NUMBER) goto L_0x0035\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0 != com.google.gson.stream.JsonToken.STRING) goto L_0x000d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Expected \")\lr2.append(com.google.gson.stream.JsonToken.NUMBER)\lr2.append(\" but was \")\lr2.append(r0)\lr2.append(locationString())\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|throw new java.lang.IllegalStateException(r2.toString())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0035|int r0 = ((com.google.gson.JsonPrimitive) peekStack()).getAsInt()\lpopStack()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0044|if (r4.stackSize \<= 0) goto L_0x0052\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0046|int[] r1 = r4.pathIndices\lint r2 = r4.stackSize + \-1\lr1[r2] = r1[r2] + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0052|RETURN\l|return r0\l}"];
+MethodNode[shape=record,label="{public int com.google.gson.internal.bind.JsonTreeReader.nextInt((r4v0 'this' com.google.gson.internal.bind.JsonTreeReader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+}
+

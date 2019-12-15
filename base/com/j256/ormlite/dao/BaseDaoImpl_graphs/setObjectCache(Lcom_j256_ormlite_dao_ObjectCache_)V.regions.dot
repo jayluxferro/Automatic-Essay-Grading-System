@@ -1,0 +1,92 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseDaoImpl.setObjectCache(Lcom\/j256\/ormlite\/dao\/ObjectCache;)V" {
+subgraph cluster_Region_870415706 {
+label = "R(1:(2:(1:8)|(2:(2:11|14)|(2:12|13)))(1:(1:3)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2110300689 {
+label = "IF [B:0:0x0000] THEN: R(2:(1:8)|(2:(2:11|14)|(2:12|13))) ELSE: R(1:(1:3)(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_1054414557 {
+label = "R(2:(1:8)|(2:(2:11|14)|(2:12|13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1455379968 {
+label = "IF [B:5:0x0013, B:7:0x0017] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|ADDED_TO_REGION\l|if (r2.objectCache == null) goto L_0x0020\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|ADDED_TO_REGION\l|if (r2.objectCache == r3) goto L_0x0020\l}"];
+subgraph cluster_Region_1846340128 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|r2.objectCache.clear(r2.dataClass)\l}"];
+}
+}
+subgraph cluster_Region_1458312666 {
+label = "R(2:(2:11|14)|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_544575012 {
+label = "IF [B:10:0x0026] THEN: R(2:11|14) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0026|if (r2.tableInfo.getIdField() != null) goto L_0x0028\l}"];
+subgraph cluster_Region_207012732 {
+label = "R(2:11|14)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0028|r2.objectCache = r3\lr2.objectCache.registerClass(r2.dataClass)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_84043068 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0032}"];
+Node_13 [shape=record,label="{13\:\ 0x004f|throw new java.sql.SQLException(\"Class \" + r2.dataClass + \" must have an id field to enable the object cache\")\l}"];
+}
+}
+}
+subgraph cluster_Region_863433347 {
+label = "R(1:(1:3)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1065242215 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r2.objectCache != null) goto L_0x0006\l}"];
+subgraph cluster_Region_84490199 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r2.objectCache.clear(r2.dataClass)\lr2.objectCache = null\l}"];
+}
+subgraph cluster_Region_330598863 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.dao.BaseDaoImpl.setObjectCache((r2v0 'this' com.j256.ormlite.dao.BaseDaoImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_2 -> Node_3;
+Node_2 -> Node_15[style=dashed];
+Node_3 -> Node_16;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

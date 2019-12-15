@@ -1,0 +1,36 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.symbol(Lorg\/xml\/sax\/Attributes;)V" {
+subgraph cluster_Region_553515379 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|debug(\"\<symbol\>\", new java.lang.Object[0])\l}"];
+subgraph cluster_Region_1763507751 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_804556042 {
+label = "IF [B:1:0x000a] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.currentElement != null) goto L_0x000c\l}"];
+subgraph cluster_Region_1963697387 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|com.caverock.androidsvg.SVG$Symbol com.caverock.androidsvg.SVG.Symbol r0 = new com.caverock.androidsvg.SVG.Symbol()\lr0.document = r2.svgDocument\lr0.parent = r2.currentElement\lparseAttributesCore(r0, r3)\lparseAttributesStyle(r0, r3)\lparseAttributesConditional(r0, r3)\lparseAttributesViewBox(r0, r3)\lr2.currentElement.addChild(r0)\lr2.currentElement = r0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_879609015 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|throw new com.caverock.androidsvg.SVGParseException(\"Invalid document. Root element must be \<svg\>\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002d}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGParser.symbol((r2v0 'this' com.caverock.androidsvg.SVGParser A[IMMUTABLE_TYPE, THIS]), (r3v0 org.xml.sax.Attributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.SVGParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

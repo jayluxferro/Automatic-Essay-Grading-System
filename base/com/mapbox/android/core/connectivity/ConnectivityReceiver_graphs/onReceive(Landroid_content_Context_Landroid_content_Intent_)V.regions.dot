@@ -1,0 +1,29 @@
+digraph "CFG forcom.mapbox.android.core.connectivity.ConnectivityReceiver.onReceive(Landroid\/content\/Context;Landroid\/content\/Intent;)V" {
+subgraph cluster_Region_2035757589 {
+label = "R(2:0|(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean boolean r2 = getManagedConnectivity()\ljava.util.Iterator java.util.Iterator\<com.mapbox.android.core.connectivity.ConnectivityListener\> r3 = r1.connectivityListeners.iterator()\l}"];
+subgraph cluster_LoopRegion_1489528305 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r3.hasNext() != false) goto L_0x0010\l}"];
+subgraph cluster_Region_134319904 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:3:0x0010\l|r3.next().onConnectivityChanged(r2)\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:3:0x0010\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.android.core.connectivity.ConnectivityReceiver.onReceive((r1v0 'this' com.mapbox.android.core.connectivity.ConnectivityReceiver A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

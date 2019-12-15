@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.enlargeOutputBufferIfNeeded(I)V" {
+subgraph cluster_Region_699382006 {
+label = "R(1:(1:(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1608787666 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_245238925 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if ((r3.numOutputSamples + r4) \> r3.outputBufferSize) goto L_0x0007\l}"];
+subgraph cluster_Region_1512747287 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r3.outputBufferSize += (r3.outputBufferSize \/ 2) + r4\lr3.outputBuffer = java.util.Arrays.copyOf(r3.outputBuffer, r3.outputBufferSize * r3.numChannels)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.audio.Sonic.enlargeOutputBufferIfNeeded((r3v0 'this' com.google.android.exoplayer2.audio.Sonic A[IMMUTABLE_TYPE, THIS]), (r4v0 'numSamples' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

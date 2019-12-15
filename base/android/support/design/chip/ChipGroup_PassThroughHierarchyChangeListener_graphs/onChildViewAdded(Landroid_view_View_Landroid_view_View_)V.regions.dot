@@ -1,0 +1,86 @@
+digraph "CFG forandroid.support.design.chip.ChipGroup.PassThroughHierarchyChangeListener.onChildViewAdded(Landroid\/view\/View;Landroid\/view\/View;)V" {
+subgraph cluster_Region_891483409 {
+label = "R(2:(2:(2:(1:8)(1:9)|10)|11)|(1:(1:14))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1306489207 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(2:(2:(1:8)(1:9)|10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r3 == android.support.design.chip.ChipGroup.this) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if ((r4 instanceof android.support.design.chip.Chip) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_512955517 {
+label = "R(2:(2:(1:8)(1:9)|10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1300288816 {
+label = "IF [B:5:0x000d] THEN: R(2:(1:8)(1:9)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r4.getId() == \-1) goto L_0x000f\l}"];
+subgraph cluster_Region_1873296364 {
+label = "R(2:(1:8)(1:9)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1506454439 {
+label = "IF [B:7:0x0013] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|if (android.os.Build.VERSION.SDK_INT \>= 17) goto L_0x0015\l}"];
+subgraph cluster_Region_1185130948 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|int r0 = android.view.View.generateViewId()\l}"];
+}
+subgraph cluster_Region_1410392246 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|int r0 = r4.hashCode()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001e|PHI: r0 \l  PHI: (r0v8 int) = (r0v9 int), (r0v10 int) binds: [B:9:0x001a, B:8:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|r4.setId(r0)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0021|((android.support.design.chip.Chip) r4).setOnCheckedChangeListenerInternal(android.support.design.chip.ChipGroup.this.checkedStateTracker)\l}"];
+}
+}
+subgraph cluster_Region_1601989663 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_345901973 {
+label = "IF [B:13:0x002f] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002f|if (r2.onHierarchyChangeListener != null) goto L_0x0031\l}"];
+subgraph cluster_Region_986129841 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0031|r2.onHierarchyChangeListener.onChildViewAdded(r3, r4)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002d}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.chip.ChipGroup.PassThroughHierarchyChangeListener.onChildViewAdded((r2v0 'this' android.support.design.chip.ChipGroup$PassThroughHierarchyChangeListener A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_12 -> Node_13;
+}
+

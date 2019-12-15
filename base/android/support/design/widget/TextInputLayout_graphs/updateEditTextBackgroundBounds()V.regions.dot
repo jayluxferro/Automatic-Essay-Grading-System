@@ -1,0 +1,69 @@
+digraph "CFG forandroid.support.design.widget.TextInputLayout.updateEditTextBackgroundBounds()V" {
+subgraph cluster_Region_1978831264 {
+label = "R(1:(1:(3:(1:8)|9|(1:(1:11))))) | DECL_VAR: android.graphics.drawable.Drawable null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_991589848 {
+label = "R(1:(3:(1:8)|9|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_670643989 {
+label = "IF [B:1:0x0002, B:4:0x000b] THEN: R(3:(1:8)|9|(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.editText != null) goto L_0x0005\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|ADDED_TO_REGION\l|if ((r0 = r5.editText.getBackground()) != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1983503006 {
+label = "R(3:(1:8)|9|(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_594774525 {
+label = "IF [B:7:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (android.support.p003v7.widget.DrawableUtils.canSafelyMutateDrawable(r0) == true) goto L_0x0014\l}"];
+subgraph cluster_Region_1307734855 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|android.graphics.drawable.Drawable r0 = r0.mutate()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0018|PHI: r0 \l  PHI: (r0v3 android.graphics.drawable.Drawable) = (r0v2 android.graphics.drawable.Drawable), (r0v4 android.graphics.drawable.Drawable) binds: [B:7:0x0012, B:8:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|android.support.design.widget.DescendantOffsetUtils.getDescendantRect(r5, r5.editText, new android.graphics.Rect())\landroid.graphics.Rect android.graphics.Rect r1 = r0.getBounds()\l}"];
+subgraph cluster_Region_487409392 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_283701200 {
+label = "IF [B:10:0x002a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a|if (r1.left != r1.right) goto L_0x002c\l}"];
+subgraph cluster_Region_1314833687 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002c|android.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\lr0.getPadding(r2)\lr0.setBounds(r1.left \- r2.left, r1.top, r1.right + (r2.right * 2), r5.editText.getBottom())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.design.widget.TextInputLayout.updateEditTextBackgroundBounds((r5v0 'this' android.support.design.widget.TextInputLayout A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

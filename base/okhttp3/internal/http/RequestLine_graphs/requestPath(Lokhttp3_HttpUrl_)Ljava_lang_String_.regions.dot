@@ -1,0 +1,34 @@
+digraph "CFG forokhttp3.internal.http.RequestLine.requestPath(Lokhttp3\/HttpUrl;)Ljava\/lang\/String;" {
+subgraph cluster_Region_2128154360 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r2.encodedPath()\ljava.lang.String java.lang.String r2 = r2.encodedQuery()\l}"];
+subgraph cluster_Region_801820515 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_418269802 {
+label = "IF [B:1:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r2 == null) goto L_?\l}"];
+subgraph cluster_Region_1219111745 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_16662983 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0 + '?' + r2\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public static java.lang.String okhttp3.internal.http.RequestLine.requestPath((r2v0 okhttp3.HttpUrl A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

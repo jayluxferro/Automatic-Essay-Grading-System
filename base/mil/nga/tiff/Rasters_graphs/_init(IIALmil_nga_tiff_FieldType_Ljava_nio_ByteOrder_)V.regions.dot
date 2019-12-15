@@ -1,0 +1,29 @@
+digraph "CFG formil.nga.tiff.Rasters.\<init\>(II[Lmil\/nga\/tiff\/FieldType;Ljava\/nio\/ByteOrder;)V" {
+subgraph cluster_Region_611210820 {
+label = "R(2:0|(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|this(r5, r6, r7, new java.nio.ByteBuffer[r7.length])\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_975133878 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r0 \< r4.sampleValues.length) goto L_0x000c\l}"];
+subgraph cluster_Region_2075121824 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:3:0x000c\l|r4.sampleValues[r0] = java.nio.ByteBuffer.allocateDirect(r5 * r6 * r7[r0].getBytes()).order(r8)\lr0++\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:3:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:3:0x000c\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0025}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void mil.nga.tiff.Rasters.\<init\>((r4v0 'this' mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 mil.nga.tiff.FieldType[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.nio.ByteOrder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

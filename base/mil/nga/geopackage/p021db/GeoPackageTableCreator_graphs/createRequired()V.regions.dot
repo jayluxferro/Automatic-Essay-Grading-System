@@ -1,0 +1,42 @@
+digraph "CFG formil.nga.geopackage.db.GeoPackageTableCreator.createRequired()V" {
+subgraph cluster_Region_253134621 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|createSpatialReferenceSystem()\lcreateContents()\l}"];
+subgraph cluster_TryCatchRegion_1391207340 {
+label = "Try: R(1:2) catches: R(2:4|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_611356334 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x001e \}\lSplitter:B:1:0x0006\l|mil.nga.geopackage.core.srs.SpatialReferenceSystemDao mil.nga.geopackage.core.srs.SpatialReferenceSystemDao r0 = (mil.nga.geopackage.core.srs.SpatialReferenceSystemDao) com.j256.ormlite.dao.DaoManager.createDao(r3.f232db.getConnectionSource(), mil.nga.geopackage.core.srs.SpatialReferenceSystem.class)     \/\/ Catch:\{ SQLException \-\> 0x001e \}\lr0.createWgs84()     \/\/ Catch:\{ SQLException \-\> 0x001e \}\lr0.createUndefinedCartesian()     \/\/ Catch:\{ SQLException \-\> 0x001e \}\lr0.createUndefinedGeographic()     \/\/ Catch:\{ SQLException \-\> 0x001e \}\l}"];
+}
+subgraph cluster_Region_1040615348 {
+label = "R(2:4|6) | ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|throw new mil.nga.geopackage.GeoPackageException(\"Error creating default required Spatial Reference Systems\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1040615348 {
+label = "R(2:4|6) | ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|throw new mil.nga.geopackage.GeoPackageException(\"Error creating default required Spatial Reference Systems\", r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001f}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.db.GeoPackageTableCreator.createRequired((r3v0 'this' mil.nga.geopackage.db.GeoPackageTableCreator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_5 -> Node_6;
+}
+

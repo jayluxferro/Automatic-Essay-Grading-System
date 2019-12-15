@@ -1,0 +1,82 @@
+digraph "CFG forcom.google.android.exoplayer2.trackselection.DefaultTrackSelector.getMaxVideoSizeInViewport(ZIIII)Landroid\/graphics\/Point;" {
+subgraph cluster_Region_549519526 {
+label = "R(3:0|(3:2|(1:11)|(1:6))|(2:(1:13)|(1:14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\l}"];
+subgraph cluster_IfRegion_233893229 {
+label = "IF [B:1:0x0002] THEN: R(3:2|(1:11)|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4 == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1309360775 {
+label = "R(3:2|(1:11)|(1:6))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|boolean r3 = r7 \> r8\l}"];
+subgraph cluster_IfRegion_1804189879 {
+label = "IF [B:4:0x0007] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|PHI: r3 \l  PHI: (r3v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 \<= r6) goto L_0x0022\l}"];
+subgraph cluster_Region_2868714 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0022|r1 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_1966404759 {
+label = "IF [B:5:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|PHI: r1 \l  PHI: (r1v5 boolean) = (r1v0 boolean), (r1v4 boolean) binds: [B:4:0x0007, B:11:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 != r1) goto L_0x000b\l}"];
+subgraph cluster_Region_1726463952 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|int r0 = r5\lr5 = r6\lr6 = r0\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1652863203 {
+label = "R(2:(1:13)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_709826289 {
+label = "IF [B:8:0x0012] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0012|if ((r7 * r6) \>= (r8 * r5)) goto L_0x0014\l}"];
+subgraph cluster_Region_543038800 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new android.graphics.Point(r5, com.google.android.exoplayer2.util.Util.ceilDivide(r5 * r8, r7))\l}"];
+}
+}
+subgraph cluster_Region_91745684 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return new android.graphics.Point(com.google.android.exoplayer2.util.Util.ceilDivide(r6 * r7, r8), r6)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e|PHI: r5 r6 \l  PHI: (r5v1 'viewportWidth' int) = (r5v0 'viewportWidth' int), (r5v0 'viewportWidth' int), (r5v2 'viewportWidth' int) binds: [B:1:0x0002, B:5:0x0009, B:6:0x000b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'viewportHeight' int) = (r6v0 'viewportHeight' int), (r6v0 'viewportHeight' int), (r6v2 'viewportHeight' int) binds: [B:1:0x0002, B:5:0x0009, B:6:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0024}"];
+MethodNode[shape=record,label="{private static android.graphics.Point com.google.android.exoplayer2.trackselection.DefaultTrackSelector.getMaxVideoSizeInViewport((r4v0 'orientationMayChange' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'viewportWidth' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'viewportHeight' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'videoWidth' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'videoHeight' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_11 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_13;
+Node_10 -> Node_4;
+Node_12 -> Node_14;
+}
+

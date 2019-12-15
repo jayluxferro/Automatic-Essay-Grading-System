@@ -1,0 +1,36 @@
+digraph "CFG forio.fabric.sdk.android.services.common.QueueFile.readHeader()V" {
+subgraph cluster_Region_2146829462 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.raf.seek(0)\lr4.raf.readFully(r4.buffer)\lr4.fileLength = readInt(r4.buffer, 0)\l}"];
+subgraph cluster_Region_844908599 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237954563 {
+label = "IF [B:1:0x0022] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0022|if (((long) r4.fileLength) \<= r4.raf.length()) goto L_0x0024\l}"];
+subgraph cluster_Region_1171797719 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0024|r4.elementCount = readInt(r4.buffer, 4)\lint int r0 = readInt(r4.buffer, 8)\lint int r1 = readInt(r4.buffer, 12)\lr4.first = readElement(r0)\lr4.last = readElement(r1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0049|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1426430084 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x004a}"];
+Node_5 [shape=record,label="{5\:\ 0x0070|throw new java.io.IOException(\"File is truncated. Expected length: \" + r4.fileLength + \", Actual length: \" + r4.raf.length())\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{private void io.fabric.sdk.android.services.common.QueueFile.readHeader((r4v0 'this' io.fabric.sdk.android.services.common.QueueFile A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

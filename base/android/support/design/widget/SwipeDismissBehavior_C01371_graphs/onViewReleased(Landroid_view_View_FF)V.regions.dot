@@ -1,0 +1,84 @@
+digraph "CFG forandroid.support.design.widget.SwipeDismissBehavior.1.onViewReleased(Landroid\/view\/View;FF)V" {
+subgraph cluster_Region_317682213 {
+label = "R(3:0|(2:3|6)(1:7)|(1:10)(1:(1:14)(0))) | DECL_VAR: boolean null, int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.activePointerId = \-1\lint int r5 = r3.getWidth()\l}"];
+subgraph cluster_IfRegion_242081932 {
+label = "IF [B:1:0x000b] THEN: R(2:3|6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (shouldDismiss(r3, r4) == true) goto L_0x000d\l}"];
+subgraph cluster_Region_884864952 {
+label = "R(2:3|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|r4 = r3.getLeft() \< r2.originalCapturedViewLeft ? r2.originalCapturedViewLeft \- r5 : r2.originalCapturedViewLeft + r5\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|PHI: r4 \l  PHI: (r4v11 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5 = true\l}"];
+}
+subgraph cluster_Region_1434150502 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|int r4 = r2.originalCapturedViewLeft\lr5 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_1135207846 {
+label = "IF [B:9:0x002d] THEN: R(1:10) ELSE: R(1:(1:14)(0))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002d|if (android.support.design.widget.SwipeDismissBehavior.this.viewDragHelper.settleCapturedViewAt(r4, r3.getTop()) == true) goto L_0x002f\l}"];
+subgraph cluster_Region_614582264 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002f|android.support.p000v4.view.ViewCompat.postOnAnimation(r3, new android.support.design.widget.SwipeDismissBehavior.SettleRunnable(r3, r5))\l}"];
+}
+subgraph cluster_Region_1419386039 {
+label = "R(1:(1:14)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_890433320 {
+label = "IF [B:11:0x003a, B:13:0x0040] THEN: R(1:14) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003a|if (r5 != false) goto L_0x003c\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0040|ADDED_TO_REGION\l|if (android.support.design.widget.SwipeDismissBehavior.this.listener != null) goto L_0x0042\l}"];
+subgraph cluster_Region_958052601 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0042|android.support.design.widget.SwipeDismissBehavior.this.listener.onDismiss(r3)\l}"];
+}
+subgraph cluster_Region_321795621 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0019}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0021|PHI: r4 r5 \l  PHI: (r4v2 int) = (r4v9 int), (r4v11 int) binds: [B:7:0x001e, B:6:0x001c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v3 boolean) = (r5v4 boolean), (r5v5 boolean) binds: [B:7:0x001e, B:6:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003c}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.SwipeDismissBehavior.1.onViewReleased((r2v0 'this' android.support.design.widget.SwipeDismissBehavior$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_12;
+Node_11 -> Node_17[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+}
+

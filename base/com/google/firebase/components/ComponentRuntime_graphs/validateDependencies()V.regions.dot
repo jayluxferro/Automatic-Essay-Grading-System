@@ -1,0 +1,89 @@
+digraph "CFG forcom.google.firebase.components.ComponentRuntime.validateDependencies()V" {
+subgraph cluster_Region_215279339 {
+label = "R(2:0|(2:3|(1:(2:6|(1:(2:10|11)))(0))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = r6.components.keySet().iterator()\l}"];
+subgraph cluster_LoopRegion_77443420 {
+label = "LOOP:0: (2:3|(1:(2:6|(1:(2:10|11)))(0)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0.hasNext() != false) goto L_0x0010\l}"];
+subgraph cluster_Region_771640512 {
+label = "R(2:3|(1:(2:6|(1:(2:10|11)))(0)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|com.google.firebase.components.Component r1 = r0.next()\ljava.util.Iterator java.util.Iterator\<com.google.firebase.components.Dependency\> r2 = r1.getDependencies().iterator()\l}"];
+subgraph cluster_LoopRegion_547359101 {
+label = "LOOP:1: (1:(2:6|(1:(2:10|11)))(0))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1685334652 {
+label = "R(1:(2:6|(1:(2:10|11)))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_688738969 {
+label = "IF [B:5:0x0022] THEN: R(2:6|(1:(2:10|11))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (r2.hasNext() == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1668039882 {
+label = "R(2:6|(1:(2:10|11)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|com.google.firebase.components.Dependency com.google.firebase.components.Dependency r3 = r2.next()\l}"];
+subgraph cluster_Region_1337748391 {
+label = "R(1:(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1623619446 {
+label = "IF [B:7:0x002e, B:9:0x003a] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|if (r3.isRequired() != false) goto L_0x0030\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|ADDED_TO_REGION\l|if (r6.lazyInstanceMap.containsKey(r3.getInterface()) != true) goto L_0x003d\l}"];
+subgraph cluster_Region_1057079266 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d}"];
+Node_11 [shape=record,label="{11\:\ 0x0055|throw new com.google.firebase.components.MissingDependencyException(java.lang.String.format(\"Unsatisfied dependency for component %s: %s\", new java.lang.Object[]\{r1, r3.getInterface()\}))\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_650261597 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:16:0x000a\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e|LOOP_START\lLOOP:1: B:4:0x001e\-\>B:15:0x001e\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0030}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0056}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003d|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0056|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001e|LOOP_END\lSYNTHETIC\lLOOP:1: B:4:0x001e\-\>B:15:0x001e\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x000a\-\>B:16:0x000a\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.firebase.components.ComponentRuntime.validateDependencies((r6v0 'this' com.google.firebase.components.ComponentRuntime A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_14[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_16[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_17[style=dashed];
+Node_9 -> Node_13;
+Node_9 -> Node_18[style=dashed];
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_13 -> Node_10;
+Node_14 -> Node_12;
+Node_15 -> Node_4;
+Node_16 -> Node_1;
+Node_17 -> Node_15;
+Node_18 -> Node_15;
+}
+

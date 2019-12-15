@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultExtractorInput.readFromDataSource([BIIIZ)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r1 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l0x0001: INVOKE  (r2 I:boolean) =  java.lang.Thread.interrupted():boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: NEW_INSTANCE  (r1 I:java.lang.InterruptedException) =  java.lang.InterruptedException \l0x0009: INVOKE  (r1 I:java.lang.InterruptedException) java.lang.InterruptedException.\<init\>():void type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: IGET  (r2 I:com.google.android.exoplayer2.upstream.DataSource) = \l  (r5 I:com.google.android.exoplayer2.extractor.DefaultExtractorInput)\l com.google.android.exoplayer2.extractor.DefaultExtractorInput.dataSource com.google.android.exoplayer2.upstream.DataSource \l0x000f: ARITH  (r3 I:int) = (r7 I:int A[D('offset' int)]) + (r9 I:int A[D('bytesAlreadyRead' int)]) \l0x0011: ARITH  (r4 I:int) = (r8 I:int A[D('length' int)]) \- (r9 I:int A[D('bytesAlreadyRead' int)]) \l0x0013: INVOKE  (r0 I:int) = \l  (r2 I:com.google.android.exoplayer2.upstream.DataSource)\l  (r6 I:byte[] A[D('target' byte[])])\l  (r3 I:int)\l  (r4 I:int)\l com.google.android.exoplayer2.upstream.DataSource.read(byte[], int, int):int type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|0x0017: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('bytesRead' int)]) != (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0024 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: IF  (r9 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('bytesAlreadyRead' int)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x001e \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001b|0x001b: IF  (r10 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('allowEndOfInput' boolean)]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x001e \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|0x001d: RETURN  (r1 I:int) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001e|0x001e: NEW_INSTANCE  (r1 I:java.io.EOFException) =  java.io.EOFException \l0x0020: INVOKE  (r1 I:java.io.EOFException) java.io.EOFException.\<init\>():void type: DIRECT \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0023|0x0023: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0024|0x0024: ARITH  (r1 I:int) = (r9 I:int A[D('bytesAlreadyRead' int)]) + (r0 I:int A[D('bytesRead' int)]) \l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.extractor.DefaultExtractorInput.readFromDataSource((r5 'this' I:com.google.android.exoplayer2.extractor.DefaultExtractorInput A[IMMUTABLE_TYPE, THIS]), (r6 I:byte[] A[D('target' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7 I:int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:int A[D('bytesAlreadyRead' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:boolean A[D('allowEndOfInput' boolean), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0017\-0x0026: r0 'bytesRead' int\l  ?\-0x0026: r6 'target' byte[]\l  ?\-0x0026: r7 'offset' int\l  ?\-0x0026: r8 'length' int\l  ?\-0x0026: r9 'bytesAlreadyRead' int\l  ?\-0x0026: r10 'allowEndOfInput' boolean\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.InterruptedException, java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_8;
+}
+

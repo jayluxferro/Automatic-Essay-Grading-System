@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.setWindowInsets(Landroid\/support\/v4\/view\/WindowInsetsCompat;)Landroid\/support\/v4\/view\/WindowInsetsCompat;" {
+subgraph cluster_Region_868632111 {
+label = "R(1:(2:(1:15)|(5:2|8|(1:12)|13|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_755474825 {
+label = "R(2:(1:15)|(5:2|8|(1:12)|13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_330596260 {
+label = "IF [B:1:0x0006] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (android.support.p000v4.util.ObjectsCompat.equals(r3.mLastInsets, r4) != false) goto L_?\l}"];
+subgraph cluster_Region_839984570 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1463075992 {
+label = "R(5:2|8|(1:12)|13|14)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r3.mLastInsets = r4\lboolean r0 = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|PHI: r2 \l  PHI: (r2v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.mDrawStatusBarBackground = r4 != null && r4.getSystemWindowInsetTop() \> 0\l}"];
+subgraph cluster_IfRegion_870841065 {
+label = "IF [B:9:0x001b, B:11:0x0021] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|ADDED_TO_REGION\l|if (r3.mDrawStatusBarBackground == true) goto L_0x0024\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0021|ADDED_TO_REGION\l|if (getBackground() != null) goto L_0x0024\l}"];
+subgraph cluster_Region_1721449141 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0024|r0 = false\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0025|PHI: r0 \l  PHI: (r0v3 boolean) = (r0v4 boolean), (r0v2 boolean) binds: [B:12:0x0024, B:11:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|setWillNotDraw(r0)\landroid.support.v4.view.WindowInsetsCompat android.support.p000v4.view.WindowInsetsCompat r4 = dispatchApplyWindowInsetsToBehaviors(r4)\lrequestLayout()\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r4\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012|REMOVE\lADDED_TO_REGION\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001d}"];
+MethodNode[shape=record,label="{final android.support.v4.view.WindowInsetsCompat android.support.design.widget.CoordinatorLayout.setWindowInsets((r3v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.v4.view.WindowInsetsCompat A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+}
+

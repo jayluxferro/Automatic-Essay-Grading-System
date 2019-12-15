@@ -1,0 +1,99 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand.Event.\<init\>(Landroid\/os\/Parcel;)V" {
+subgraph cluster_Region_1497935028 {
+label = "R(10:0|(1:2)(1:12)|3|(1:5)(1:13)|6|(1:8)(1:14)|9|(1:11)|15|17) | DECL_VAR: boolean null, boolean null, boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r4 = true\lr8.spliceEventId = r9.readLong()\l}"];
+subgraph cluster_IfRegion_374769764 {
+label = "IF [B:1:0x000f] THEN: R(1:2) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r9.readByte() == 1) goto L_0x0011\l}"];
+subgraph cluster_Region_505470213 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|r3 = true\l}"];
+}
+subgraph cluster_Region_194970527 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003c|r3 = false\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0012|PHI: r3 \l  PHI: (r3v2 boolean) = (r3v1 boolean), (r3v17 boolean) binds: [B:12:0x003c, B:2:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r8.spliceEventCancelIndicator = r3\l}"];
+subgraph cluster_IfRegion_465323996 {
+label = "IF [B:4:0x0018] THEN: R(1:5) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r9.readByte() == 1) goto L_0x001a\l}"];
+subgraph cluster_Region_762884603 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|r3 = true\l}"];
+}
+subgraph cluster_Region_826906218 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003e|r3 = false\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001b|PHI: r3 \l  PHI: (r3v5 boolean) = (r3v4 boolean), (r3v16 boolean) binds: [B:13:0x003e, B:5:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r8.outOfNetworkIndicator = r3\l}"];
+subgraph cluster_IfRegion_247489499 {
+label = "IF [B:7:0x0021] THEN: R(1:8) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|if (r9.readByte() == 1) goto L_0x0023\l}"];
+subgraph cluster_Region_1180236305 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|r3 = true\l}"];
+}
+subgraph cluster_Region_1586023472 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0040|r3 = false\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0024|PHI: r3 \l  PHI: (r3v8 boolean) = (r3v7 boolean), (r3v15 boolean) binds: [B:14:0x0040, B:8:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|r8.programSpliceFlag = r3\lint int r1 = r9.readInt()\ljava.util.ArrayList java.util.ArrayList\<com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand.ComponentSplice\> r0 = new java.util.ArrayList\<\>(r1)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1004523126 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0030|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:9:0x0024, B:11:0x0032] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:10:0x0030\-\>B:11:0x0032\l|if (r2 \< r1) goto L_0x0032\l}"];
+subgraph cluster_Region_1405114271 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0032|LOOP_END\lLOOP:0: B:10:0x0030\-\>B:11:0x0032\l|r0.add(com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand.ComponentSplice.createFromParcel(r9))\lr2++\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0042|r8.componentSpliceList = java.util.Collections.unmodifiableList(r0)\lr8.utcSpliceTime = r9.readLong()\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r4 \l  PHI: (r4v2 boolean) = (r4v0 boolean), (r4v1 boolean) binds: [B:16:0x0052, B:19:0x006f] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r8.autoReturn = r9.readByte() != 1 ? false : r4\lr8.breakDuration = r9.readLong()\lr8.uniqueProgramId = r9.readInt()\lr8.availNum = r9.readInt()\lr8.availsExpected = r9.readInt()\l}"];
+}
+Node_16 [shape=record,color=red,label="{16\:\ 0x0052}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x006e}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x006f}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0042|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand.Event.\<init\>((r8v0 'this' com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand$Event A[IMMUTABLE_TYPE, THIS]), (r9v0 'in' android.os.Parcel A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_12 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_13 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_14 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_20[style=dashed];
+Node_11 -> Node_10;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_16 -> Node_17;
+Node_16 -> Node_19;
+Node_19 -> Node_17;
+Node_20 -> Node_15;
+}
+

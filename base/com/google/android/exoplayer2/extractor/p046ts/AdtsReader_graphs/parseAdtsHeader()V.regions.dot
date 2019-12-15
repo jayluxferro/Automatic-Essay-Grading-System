@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.AdtsReader.parseAdtsHeader()V" {
+subgraph cluster_Region_969748400 {
+label = "R(5:0|(3:2|(1:4)|5)(1:11)|6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r19.adtsScratch.setPosition(0)\l}"];
+subgraph cluster_IfRegion_286337197 {
+label = "IF [B:1:0x000c] THEN: R(3:2|(1:4)|5) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r19.hasOutputFormat == false) goto L_0x000e\l}"];
+subgraph cluster_Region_1162618298 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|int int r13 = r19.adtsScratch.readBits(2) + 1\l}"];
+subgraph cluster_IfRegion_315887244 {
+label = "IF [B:3:0x001a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (r13 != 2) goto L_0x001c\l}"];
+subgraph cluster_Region_1110706645 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|android.util.Log.w(TAG, \"Detected audio object type: \" + r13 + \", but assuming AAC LC.\")\lr13 = 2\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x003b|PHI: r13 \l  PHI: (r13v1 'audioObjectType' int) = (r13v0 'audioObjectType' int), (r13v2 'audioObjectType' int) binds: [B:3:0x001a, B:4:0x001c] A[DONT_GENERATE, DONT_INLINE]\l|int int r18 = r19.adtsScratch.readBits(4)\lr19.adtsScratch.skipBits(1)\lbyte[] byte[] r15 = com.google.android.exoplayer2.util.CodecSpecificDataUtil.buildAacAudioSpecificConfig(r13, r18, r19.adtsScratch.readBits(3))\landroid.util.Pair android.util.Pair\<java.lang.Integer, java.lang.Integer\> r14 = com.google.android.exoplayer2.util.CodecSpecificDataUtil.parseAacAudioSpecificConfig(r15)\lcom.google.android.exoplayer2.Format com.google.android.exoplayer2.Format r17 = com.google.android.exoplayer2.Format.createAudioSampleFormat(r19.formatId, com.google.android.exoplayer2.util.MimeTypes.AUDIO_AAC, (java.lang.String) null, \-1, \-1, ((java.lang.Integer) r14.second).intValue(), ((java.lang.Integer) r14.first).intValue(), java.util.Collections.singletonList(r15), (com.google.android.exoplayer2.drm.DrmInitData) null, 0, r19.language)\lr19.sampleDurationUs = 1024000000 \/ ((long) r17.sampleRate)\lr19.output.format(r17)\lr19.hasOutputFormat = true\l}"];
+}
+subgraph cluster_Region_1193507144 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x00d0|r19.adtsScratch.skipBits(10)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x00a3|r19.adtsScratch.skipBits(4)\lint int r7 = (r19.adtsScratch.readBits(13) \- 2) \- 5\l}"];
+subgraph cluster_IfRegion_918599954 {
+label = "IF [B:7:0x00bd] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x00bd|if (r19.hasCrc == true) goto L_0x00bf\l}"];
+subgraph cluster_Region_583330368 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x00bf|r7 \-= 2\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x00c1|PHI: r7 \l  PHI: (r7v1 'sampleSize' int) = (r7v0 'sampleSize' int), (r7v2 'sampleSize' int) binds: [B:7:0x00bd, B:8:0x00bf] A[DONT_GENERATE, DONT_INLINE]\l|setReadingSampleState(r19.output, r19.sampleDurationUs, 0, r7)\l}"];
+}
+Node_10 [shape=record,color=red,label="{10\:\ 0x00cf}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.ts.AdtsReader.parseAdtsHeader((r19v0 'this' com.google.android.exoplayer2.extractor.ts.AdtsReader A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_11 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

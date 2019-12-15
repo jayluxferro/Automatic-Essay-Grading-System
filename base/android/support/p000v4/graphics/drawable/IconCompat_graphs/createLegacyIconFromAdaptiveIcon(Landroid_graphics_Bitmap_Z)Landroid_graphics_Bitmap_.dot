@@ -1,0 +1,15 @@
+digraph "CFG forandroid.support.v4.graphics.drawable.IconCompat.createLegacyIconFromAdaptiveIcon(Landroid\/graphics\/Bitmap;Z)Landroid\/graphics\/Bitmap;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = (int) (((float) java.lang.Math.min(r9.getWidth(), r9.getHeight())) * DEFAULT_VIEW_PORT_SCALE)\landroid.graphics.Bitmap r1 = android.graphics.Bitmap.createBitmap(r0, r0, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas r2 = new android.graphics.Canvas(r1)\landroid.graphics.Paint r3 = new android.graphics.Paint(3)\lfloat r4 = (float) r0\lfloat r5 = 0.5f * r4\lfloat r6 = ICON_DIAMETER_FACTOR * r5\l}"];
+Node_1 [shape=record,label="{1\:\ 0x002e|if (r10 == false) goto L_0x0052\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0030|float r10 = BLUR_FACTOR * r4\lr3.setColor(0)\lr3.setShadowLayer(r10, 0.0f, r4 * KEY_SHADOW_OFFSET_FACTOR, 1023410176)\lr2.drawCircle(r5, r5, r6, r3)\lr3.setShadowLayer(r10, 0.0f, 0.0f, 503316480)\lr2.drawCircle(r5, r5, r6, r3)\lr3.clearShadowLayer()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0052|r3.setColor(android.support.p000v4.view.ViewCompat.MEASURED_STATE_MASK)\landroid.graphics.BitmapShader r10 = new android.graphics.BitmapShader(r9, android.graphics.Shader.TileMode.CLAMP, android.graphics.Shader.TileMode.CLAMP)\landroid.graphics.Matrix r4 = new android.graphics.Matrix()\lr4.setTranslate((float) ((\-(r9.getWidth() \- r0)) \/ 2), (float) ((\-(r9.getHeight() \- r0)) \/ 2))\lr10.setLocalMatrix(r4)\lr3.setShader(r10)\lr2.drawCircle(r5, r5, r6, r3)\lr2.setBitmap((android.graphics.Bitmap) null)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0087|RETURN\l|return r1\l}"];
+MethodNode[shape=record,label="{static android.graphics.Bitmap android.support.v4.graphics.drawable.IconCompat.createLegacyIconFromAdaptiveIcon((r9v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

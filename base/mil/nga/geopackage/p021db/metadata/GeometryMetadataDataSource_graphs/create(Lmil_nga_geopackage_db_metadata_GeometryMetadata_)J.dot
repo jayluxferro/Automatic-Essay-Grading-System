@@ -1,0 +1,16 @@
+digraph "CFG formil.nga.geopackage.db.metadata.GeometryMetadataDataSource.create(Lmil\/nga\/geopackage\/db\/metadata\/GeometryMetadata;)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.ContentValues r0 = new android.content.ContentValues()\lr0.put(\"geopackage_id\", java.lang.Long.valueOf(r5.getGeoPackageId()))\lr0.put(\"table_name\", r5.getTableName())\lr0.put(\"geom_id\", java.lang.Long.valueOf(r5.getId()))\lr0.put(\"min_x\", java.lang.Double.valueOf(r5.getMinX()))\lr0.put(\"max_x\", java.lang.Double.valueOf(r5.getMaxX()))\lr0.put(\"min_y\", java.lang.Double.valueOf(r5.getMinY()))\lr0.put(\"max_y\", java.lang.Double.valueOf(r5.getMaxY()))\lr0.put(\"min_z\", r5.getMinZ())\lr0.put(\"max_z\", r5.getMaxZ())\lr0.put(\"min_m\", r5.getMinM())\lr0.put(\"max_m\", r5.getMaxM())\llong r0 = r4.f237db.insert(mil.nga.geopackage.p021db.metadata.GeometryMetadata.TABLE_NAME, (java.lang.String) null, r0)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x008d|if ((r0 \> \-1 ? 1 : (r0 == \-1 ? 0 : \-1)) == 0) goto L_0x0093\l}"];
+Node_2 [shape=record,label="{2\:\ 0x008f|r5.setId(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0092|RETURN\l|return r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0093|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Failed to insert geometry metadata. GeoPackage Id: \")\lr1.append(r5.getGeoPackageId())\lr1.append(\", Table Name: \")\lr1.append(r5.getTableName())\lr1.append(\", Geometry Id: \")\lr1.append(r5.getId())\l}"];
+Node_5 [shape=record,label="{5\:\ 0x00c5|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+MethodNode[shape=record,label="{public long mil.nga.geopackage.db.metadata.GeometryMetadataDataSource.create((r4v0 'this' mil.nga.geopackage.db.metadata.GeometryMetadataDataSource A[IMMUTABLE_TYPE, THIS]), (r5v0 mil.nga.geopackage.db.metadata.GeometryMetadata A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

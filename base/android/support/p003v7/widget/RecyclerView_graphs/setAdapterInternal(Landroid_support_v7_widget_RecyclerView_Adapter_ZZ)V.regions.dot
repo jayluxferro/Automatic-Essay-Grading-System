@@ -1,0 +1,73 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.setAdapterInternal(Landroid\/support\/v7\/widget\/RecyclerView$Adapter;ZZ)V" {
+subgraph cluster_Region_1741692974 {
+label = "R(6:(1:2)|(1:5)|6|(1:8)|(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1301310724 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mAdapter != null) goto L_0x0004\l}"];
+subgraph cluster_Region_195022636 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mAdapter.unregisterAdapterDataObserver(r2.mObserver)\lr2.mAdapter.onDetachedFromRecyclerView(r2)\l}"];
+}
+}
+subgraph cluster_IfRegion_1312553358 {
+label = "IF [B:3:0x0010, B:4:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r4 == false) goto L_0x0014\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|ADDED_TO_REGION\l|if (r5 == true) goto L_0x0014\l}"];
+subgraph cluster_Region_691972736 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|removeAndRecycleViews()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0017|r2.mAdapterHelper.reset()\landroid.support.v7.widget.RecyclerView$Adapter android.support.p003v7.widget.RecyclerView.C0504Adapter r5 = r2.mAdapter\lr2.mAdapter = r3\l}"];
+subgraph cluster_IfRegion_1728584430 {
+label = "IF [B:7:0x0020] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|if (r3 != null) goto L_0x0022\l}"];
+subgraph cluster_Region_303779724 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|r3.registerAdapterDataObserver(r2.mObserver)\lr3.onAttachedToRecyclerView(r2)\l}"];
+}
+}
+subgraph cluster_IfRegion_58536904 {
+label = "IF [B:10:0x002c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|if (r2.mLayout != null) goto L_0x002e\l}"];
+subgraph cluster_Region_1343590504 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002e|r2.mLayout.onAdapterChanged(r5, r2.mAdapter)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0035|r2.mRecycler.onAdapterChanged(r5, r2.mAdapter, r4)\lr2.mState.mStructureChanged = true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0041}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.RecyclerView.setAdapterInternal((r2v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.widget.RecyclerView$Adapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}], , \l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+}
+

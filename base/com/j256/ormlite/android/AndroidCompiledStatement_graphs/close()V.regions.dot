@@ -1,0 +1,60 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidCompiledStatement.close()V" {
+subgraph cluster_Region_591454704 {
+label = "R(2:(1:(1:5))|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1772228907 {
+label = "IF [B:1:0x0002, B:3:0x000a] THEN: R(1:(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r3.cursor != null) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r3.cursor.isClosed() == false) goto L_0x000c\l}"];
+subgraph cluster_Region_948833341 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_899564172 {
+label = "Try: R(1:5) catches: R(2:6|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_292911790 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ SQLException \-\> 0x0012 \}\lSplitter:B:4:0x000c\l|r3.cursor.close()     \/\/ Catch:\{ SQLException \-\> 0x0012 \}\l}"];
+}
+subgraph cluster_Region_1755781858 {
+label = "R(2:6|8) | ExcHandler: SQLException (r0v4 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|ExcHandler: SQLException (r0v4 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|throw new java.io.IOException(\"Problems closing Android cursor\", r0)\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001b|r3.cancellationHook = null\l}"];
+}
+subgraph cluster_Region_1755781858 {
+label = "R(2:6|8) | ExcHandler: SQLException (r0v4 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|ExcHandler: SQLException (r0v4 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|throw new java.io.IOException(\"Problems closing Android cursor\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c|SYNTHETIC\lSplitter:B:4:0x000c\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001e}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.android.AndroidCompiledStatement.close((r3v0 'this' com.j256.ormlite.android.AndroidCompiledStatement A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+}
+

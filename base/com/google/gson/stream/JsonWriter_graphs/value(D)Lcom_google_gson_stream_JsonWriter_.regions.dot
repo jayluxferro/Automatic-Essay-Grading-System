@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.gson.stream.JsonWriter.value(D)Lcom\/google\/gson\/stream\/JsonWriter;" {
+subgraph cluster_Region_433672001 {
+label = "R(2:0|(2:(2:8|9)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|writeDeferredName()\l}"];
+subgraph cluster_Region_2034727846 {
+label = "R(2:(2:8|9)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_667219876 {
+label = "IF [B:1:0x0005, B:3:0x000b, B:5:0x0011] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r3.lenient == true) goto L_0x002b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ADDED_TO_REGION\l|if (java.lang.Double.isNaN(r4) == false) goto L_0x000d\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|ADDED_TO_REGION\l|if (java.lang.Double.isInfinite(r4) == false) goto L_0x002b\l}"];
+subgraph cluster_Region_521653369 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|beforeValue()\lr3.out.append(java.lang.Double.toString(r4))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0037|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1281829789 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|throw new java.lang.IllegalArgumentException(\"Numeric values must be finite, but was \" + r4)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+MethodNode[shape=record,label="{public com.google.gson.stream.JsonWriter com.google.gson.stream.JsonWriter.value((r3v0 'this' com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, THIS]), (r4v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_8 -> Node_9;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,51 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnectionPool.finishAcquireConnectionLocked(Lorg\/spatialite\/database\/SQLiteConnection;I)V" {
+subgraph cluster_Region_1717063575 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1692406853 {
+label = "Try: R(1:5) catches: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_808997416 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ RuntimeException \-\> 0x0012 \}\lSplitter:B:4:0x0007\l|r4.setOnlyAllowReadOnlyOperations((r5 & 1) != 0)     \/\/ Catch:\{ RuntimeException \-\> 0x0012 \}\lr3.mAcquiredConnections.put(r4, org.spatialite.database.SQLiteConnectionPool.AcquiredConnectionStatus.NORMAL)     \/\/ Catch:\{ RuntimeException \-\> 0x0012 \}\l}"];
+}
+subgraph cluster_Region_1432961748 {
+label = "R(3:7|8|9) | ExcHandler: RuntimeException (r0v2 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|ExcHandler: RuntimeException (r0v2 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0007\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013|android.util.Log.e(TAG, \"Failed to prepare acquired connection for session, closing it: \" + r4 + \", connectionFlags=\" + r5)\lcloseConnectionAndLogExceptionsLocked(r4)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0034|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1432961748 {
+label = "R(3:7|8|9) | ExcHandler: RuntimeException (r0v2 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|ExcHandler: RuntimeException (r0v2 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0007\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013|android.util.Log.e(TAG, \"Failed to prepare acquired connection for session, closing it: \" + r4 + \", connectionFlags=\" + r5)\lcloseConnectionAndLogExceptionsLocked(r4)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0034|throw r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007|SYNTHETIC\lPHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:4:0x0007\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnectionPool.finishAcquireConnectionLocked((r3v0 'this' org.spatialite.database.SQLiteConnectionPool A[IMMUTABLE_TYPE, THIS]), (r4v0 org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+}
+

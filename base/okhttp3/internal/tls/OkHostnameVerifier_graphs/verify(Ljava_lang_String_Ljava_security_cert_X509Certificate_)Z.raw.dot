@@ -1,0 +1,15 @@
+digraph "CFG forokhttp3.internal.tls.OkHostnameVerifier.verify(Ljava\/lang\/String;Ljava\/security\/cert\/X509Certificate;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:boolean) = (r2 I:java.lang.String) okhttp3.internal.Util.verifyAsIpAddress(java.lang.String):boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x000b \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: INVOKE  (r2 I:boolean) = \l  (r1 I:okhttp3.internal.tls.OkHostnameVerifier)\l  (r2 I:java.lang.String)\l  (r3 I:java.security.cert.X509Certificate)\l okhttp3.internal.tls.OkHostnameVerifier.verifyIpAddress(java.lang.String, java.security.cert.X509Certificate):boolean type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: INVOKE  (r2 I:boolean) = \l  (r1 I:okhttp3.internal.tls.OkHostnameVerifier)\l  (r2 I:java.lang.String)\l  (r3 I:java.security.cert.X509Certificate)\l okhttp3.internal.tls.OkHostnameVerifier.verifyHostname(java.lang.String, java.security.cert.X509Certificate):boolean type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: RETURN  (r2 I:boolean) \l}"];
+MethodNode[shape=record,label="{public boolean okhttp3.internal.tls.OkHostnameVerifier.verify((r1 'this' I:okhttp3.internal.tls.OkHostnameVerifier A[IMMUTABLE_TYPE, THIS]), (r2 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:java.security.cert.X509Certificate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

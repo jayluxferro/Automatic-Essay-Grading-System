@@ -1,0 +1,78 @@
+digraph "CFG forandroid.support.v4.graphics.TypefaceCompatUtil.getTempFile(Landroid\/content\/Context;)Ljava\/io\/File;" {
+subgraph cluster_Region_2012891588 {
+label = "R(3:0|(2:3|(1:(2:(1:7)|(1:8))))|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = CACHE_FILE_PREFIX + android.os.Process.myPid() + \"\-\" + android.os.Process.myTid() + \"\-\"\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1718651639 {
+label = "LOOP:0: (2:3|(1:(2:(1:7)|(1:8))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0029|if (r1 \< 100) goto L_0x002b\l}"];
+subgraph cluster_Region_1717863943 {
+label = "R(2:3|(1:(2:(1:7)|(1:8))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002b|java.io.File java.io.File r2 = new java.io.File(r5.getCacheDir(), r0 + r1)\l}"];
+subgraph cluster_TryCatchRegion_843471608 {
+label = "Try: R(1:(2:(1:7)|(1:8))) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_671944101 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1765276145 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1130453908 {
+label = "IF [B:6:0x0047] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0047|if (r2.createNewFile() == true) goto L_0x0049\l}"];
+subgraph cluster_Region_24619329 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0049|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1450059203 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004a|LOOP_END\lLOOP:0: B:1:0x0027\-\>B:8:0x004a\l|r1++\l}"];
+}
+}
+}
+subgraph cluster_Region_436275784 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x004d|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_436275784 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0027|LOOP_START\lPHI: r1 \l  PHI: (r1v6 int) = (r1v5 int), (r1v7 int) binds: [B:0:0x0000, B:8:0x004a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0027\-\>B:8:0x004a\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0043|SYNTHETIC\lSplitter:B:4:0x0043\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ IOException \-\> 0x004a \}\lSplitter:B:4:0x0043\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:4:0x0043\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0049|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004d|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.io.File android.support.v4.graphics.TypefaceCompatUtil.getTempFile((r5v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_11;
+Node_6 -> Node_13[style=dashed];
+Node_8 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_9 -> Node_8;
+Node_11 -> Node_7;
+Node_12 -> Node_10;
+Node_13 -> Node_8;
+}
+

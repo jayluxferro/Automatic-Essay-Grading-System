@@ -1,0 +1,71 @@
+digraph "CFG formil.nga.geopackage.extension.index.FeatureTableCoreIndex.queryBuilder(Lmil\/nga\/wkb\/geom\/GeometryEnvelope;)Lcom\/j256\/ormlite\/stmt\/QueryBuilder;" {
+subgraph cluster_Region_1106168951 {
+label = "R(2:0|(4:2|(1:4)|(1:7)|8))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.stmt.QueryBuilder com.j256.ormlite.stmt.QueryBuilder\<mil.nga.geopackage.extension.index.GeometryIndex, mil.nga.geopackage.extension.index.GeometryIndexKey\> r0 = r6.geometryIndexDao.queryBuilder()\l}"];
+subgraph cluster_TryCatchRegion_1775862164 {
+label = "Try: R(4:2|(1:4)|(1:7)|8) catches: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1836084916 {
+label = "R(4:2|(1:4)|(1:7)|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x009c \}\lSplitter:B:1:0x0006\l|com.j256.ormlite.stmt.Where com.j256.ormlite.stmt.Where\<mil.nga.geopackage.extension.index.GeometryIndex, mil.nga.geopackage.extension.index.GeometryIndexKey\> r1 = r0.where()     \/\/ Catch:\{ SQLException \-\> 0x009c \}\lr1.mo17213eq(\"table_name\", r6.tableName).and().mo17226le(\"min_x\", java.lang.Double.valueOf(r7.getMaxX())).and().mo17215ge(\"max_x\", java.lang.Double.valueOf(r7.getMinX())).and().mo17226le(\"min_y\", java.lang.Double.valueOf(r7.getMaxY())).and().mo17215ge(\"max_y\", java.lang.Double.valueOf(r7.getMinY()))     \/\/ Catch:\{ SQLException \-\> 0x009c \}\l}"];
+subgraph cluster_IfRegion_1194287513 {
+label = "IF [B:3:0x005d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005d|Catch:\{ SQLException \-\> 0x009c \}\l|if (r7.hasZ() == true) goto L_0x005f     \/\/ Catch:\{ SQLException \-\> 0x009c \}\l}"];
+subgraph cluster_Region_1349906763 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x005f|Catch:\{ SQLException \-\> 0x009c \}\l|r1.and().mo17226le(\"min_z\", r7.getMaxZ()).and().mo17215ge(\"max_z\", r7.getMinZ())     \/\/ Catch:\{ SQLException \-\> 0x009c \}\l}"];
+}
+}
+subgraph cluster_IfRegion_15893403 {
+label = "IF [B:6:0x007e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x007e|Catch:\{ SQLException \-\> 0x009c \}\l|if (r7.hasM() == true) goto L_0x0080     \/\/ Catch:\{ SQLException \-\> 0x009c \}\l}"];
+subgraph cluster_Region_1818745086 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0080|Catch:\{ SQLException \-\> 0x009c \}\l|r1.and().mo17226le(\"min_m\", r7.getMaxM()).and().mo17215ge(\"max_m\", r7.getMinM())     \/\/ Catch:\{ SQLException \-\> 0x009c \}\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x009b|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_239697043 {
+label = "R(3:9|10|11) | ExcHandler: SQLException (r7v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x009c|ExcHandler: SQLException (r7v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l}"];
+Node_10 [shape=record,label="{10\:\ 0x009d}"];
+Node_11 [shape=record,label="{11\:\ 0x00cd|throw new mil.nga.geopackage.GeoPackageException(\"Failed to build query for Geometry Indices. GeoPackage: \" + r6.geoPackage.getName() + \", Table Name: \" + r6.tableName + \", Column Name: \" + r6.columnName, r7)\l}"];
+}
+}
+}
+subgraph cluster_Region_239697043 {
+label = "R(3:9|10|11) | ExcHandler: SQLException (r7v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x009c|ExcHandler: SQLException (r7v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l}"];
+Node_10 [shape=record,label="{10\:\ 0x009d}"];
+Node_11 [shape=record,label="{11\:\ 0x00cd|throw new mil.nga.geopackage.GeoPackageException(\"Failed to build query for Geometry Indices. GeoPackage: \" + r6.geoPackage.getName() + \", Table Name: \" + r6.tableName + \", Column Name: \" + r6.columnName, r7)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x007a|Catch:\{ SQLException \-\> 0x009c \}\l}"];
+MethodNode[shape=record,label="{public com.j256.ormlite.stmt.QueryBuilder\<mil.nga.geopackage.extension.index.GeometryIndex, mil.nga.geopackage.extension.index.GeometryIndexKey\> mil.nga.geopackage.extension.index.FeatureTableCoreIndex.queryBuilder((r6v0 'this' mil.nga.geopackage.extension.index.FeatureTableCoreIndex A[IMMUTABLE_TYPE, THIS]), (r7v0 mil.nga.wkb.geom.GeometryEnvelope A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lmil\/nga\/wkb\/geom\/GeometryEnvelope;, ), Lcom\/j256\/ormlite\/stmt\/QueryBuilder\<, Lmil\/nga\/geopackage\/extension\/index\/GeometryIndex;, Lmil\/nga\/geopackage\/extension\/index\/GeometryIndexKey;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_5 -> Node_6;
+}
+

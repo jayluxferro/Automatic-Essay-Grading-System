@@ -1,0 +1,81 @@
+digraph "CFG forcom.google.android.gms.common.api.GoogleApiActivity.onActivityResult(IILandroid\/content\/Intent;)V" {
+subgraph cluster_Region_2127968697 {
+label = "R(3:0|(2:2|(2:4|5))(1:(1:10))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onActivityResult(r4, r5, r6)\l}"];
+subgraph cluster_IfRegion_1811052177 {
+label = "IF [B:1:0x0005] THEN: R(2:2|(2:4|5)) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4 == 1) goto L_0x0007\l}"];
+subgraph cluster_Region_1383083472 {
+label = "R(2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|boolean boolean r4 = getIntent().getBooleanExtra(\"notify_manager\", true)\lr3.zabp = 0\lsetResult(r5, r6)\l}"];
+subgraph cluster_IfRegion_1385459979 {
+label = "IF [B:3:0x0016] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r4 == true) goto L_0x0018\l}"];
+subgraph cluster_Region_938060201 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|com.google.android.gms.common.api.internal.GoogleApiManager com.google.android.gms.common.api.internal.GoogleApiManager r4 = com.google.android.gms.common.api.internal.GoogleApiManager.zab((android.content.Context) r3)\l}"];
+subgraph cluster_SwitchRegion_1743560557 {
+label = "Switch: 2, default: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|switch(r5) \{\l    case \-1: goto L_0x0037;\l    case 0: goto L_0x0020;\l    default: goto L_0x001f;\l\}\l}"];
+subgraph cluster_Region_1683279678 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0037|r4.zao()\l}"];
+Node_InsnContainer_1229707449 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_932798665 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|r4.zaa(new com.google.android.gms.common.ConnectionResult(13, (android.app.PendingIntent) null), getIntent().getIntExtra(\"failing_client_id\", \-1))\l}"];
+Node_InsnContainer_102710232 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_2116125556 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2100653098 {
+label = "IF [B:9:0x003c] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003c|if (r4 == 2) goto L_0x003e\l}"];
+subgraph cluster_Region_1789721893 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003e|r3.zabp = 0\lsetResult(r5, r6)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0043|finish()\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x003b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0046}"];
+MethodNode[shape=record,label="{protected void com.google.android.gms.common.api.GoogleApiActivity.onActivityResult((r3v0 'this' com.google.android.gms.common.api.GoogleApiActivity A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_5 -> Node_11;
+Node_7 -> Node_11;
+Node_6 -> Node_11;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_8 -> Node_9;
+}
+

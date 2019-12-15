@@ -1,0 +1,46 @@
+digraph "CFG forandroid.support.multidex.MultiDex.install(Landroid\/content\/Context;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.Log.i(TAG, \"Installing application\")\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (IS_VM_MULTIDEX_CAPABLE == false) goto L_0x0014\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|android.util.Log.i(TAG, \"VM has multidex support, MultiDex support library is disabled.\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (android.os.Build.VERSION.SDK_INT \>= 4) goto L_0x0043\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018}"];
+Node_6 [shape=record,label="{6\:\ 0x0042|throw new java.lang.RuntimeException(new java.lang.StringBuilder().append(\"MultiDex installation failed. SDK \").append(android.os.Build.VERSION.SDK_INT).append(\" is unsupported. Min SDK version is \").append(4).append(\".\").toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0043|SYNTHETIC\lSplitter:B:7:0x0043\l}"];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ Exception \-\> 0x0051 \}\lSplitter:B:7:0x0043\l|android.content.pm.ApplicationInfo r6 = getApplicationInfo(r8)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0047|Catch:\{ Exception \-\> 0x0051 \}\l|if (r6 != null) goto L_0x007c     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0049|Catch:\{ Exception \-\> 0x0051 \}\l|android.util.Log.i(TAG, \"No ApplicationInfo available, i.e. running on a test Context: MultiDex support library is disabled.\")     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0051|ExcHandler: Exception (r7v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:7:0x0043\l|java.lang.Exception r7 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0052|android.util.Log.e(TAG, \"MultiDex installation failure\", r7)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007b|throw new java.lang.RuntimeException(new java.lang.StringBuilder().append(\"MultiDex installation failed (\").append(r7.getMessage()).append(\").\").toString())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x007c|SYNTHETIC\lSplitter:B:14:0x007c\l}"];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ Exception \-\> 0x0051 \}\lSplitter:B:14:0x007c\l|java.io.File r1 = new java.io.File(r6.sourceDir)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\ljava.io.File r2 = new java.io.File(r6.dataDir)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\ldoInstallation(r8, r1, r2, \"secondary\-dexes\", \"\", true)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0093|android.util.Log.i(TAG, \"install done\")\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public static void android.support.multidex.MultiDex.install((r8v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_19;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_11;
+Node_15 -> Node_16;
+Node_15 -> Node_11;
+Node_16 -> Node_18;
+}
+

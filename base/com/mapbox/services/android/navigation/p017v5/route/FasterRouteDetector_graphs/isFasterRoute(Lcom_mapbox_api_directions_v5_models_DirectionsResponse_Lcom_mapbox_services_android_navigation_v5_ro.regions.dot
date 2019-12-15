@@ -1,0 +1,82 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.route.FasterRouteDetector.isFasterRoute(Lcom\/mapbox\/api\/directions\/v5\/models\/DirectionsResponse;Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)Z" {
+subgraph cluster_Region_1801998496 {
+label = "R(2:(3:2|(2:4|(2:6|(1:10)))|(1:13))|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_619734182 {
+label = "IF [B:1:0x0005] THEN: R(3:2|(2:4|(2:6|(1:10)))|(1:13)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (validRouteResponse(r8) == true) goto L_0x0007\l}"];
+subgraph cluster_Region_107167016 {
+label = "R(3:2|(2:4|(2:6|(1:10)))|(1:13))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|double double r2 = r9.durationRemaining()\lcom.mapbox.api.directions.v5.models.DirectionsRoute com.mapbox.api.directions.p008v5.models.DirectionsRoute r8 = r8.routes().get(0)\l}"];
+subgraph cluster_IfRegion_1068385903 {
+label = "IF [B:3:0x001a] THEN: R(2:4|(2:6|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (hasLegs(r8) == true) goto L_0x001c\l}"];
+subgraph cluster_Region_2117597057 {
+label = "R(2:4|(2:6|(1:10)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|com.mapbox.api.directions.v5.models.RouteLeg com.mapbox.api.directions.p008v5.models.RouteLeg r0 = r8.legs().get(0)\l}"];
+subgraph cluster_IfRegion_1629626130 {
+label = "IF [B:5:0x002a] THEN: R(2:6|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002a|if (hasAtLeastTwoSteps(r0) == true) goto L_0x002c\l}"];
+subgraph cluster_Region_1615767788 {
+label = "R(2:6|(1:10))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|com.mapbox.api.directions.v5.models.LegStep com.mapbox.api.directions.p008v5.models.LegStep r0 = r0.steps().get(1)\l}"];
+subgraph cluster_IfRegion_756946868 {
+label = "IF [B:7:0x0044, B:9:0x004a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0044|ADDED_TO_REGION\l|if (validFirstStep(r0.steps().get(0)) == false) goto L_0x004c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004a|ADDED_TO_REGION\l|if (validSecondStep(r0, r9) == false) goto L_0x004c\l}"];
+subgraph cluster_Region_1636875097 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004c|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_1213806220 {
+label = "IF [B:12:0x005e] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005e|if (r8.duration().doubleValue() \<= (r2 * 0.9d)) goto L_0x0060\l}"];
+subgraph cluster_Region_1681264680 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0060|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0061|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0046}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004d}"];
+MethodNode[shape=record,label="{public boolean com.mapbox.services.android.navigation.v5.route.FasterRouteDetector.isFasterRoute((r7v0 'this' com.mapbox.services.android.navigation.v5.route.FasterRouteDetector A[IMMUTABLE_TYPE, THIS]), (r8v0 com.mapbox.api.directions.v5.models.DirectionsResponse A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_0 -> Node_1;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+}
+

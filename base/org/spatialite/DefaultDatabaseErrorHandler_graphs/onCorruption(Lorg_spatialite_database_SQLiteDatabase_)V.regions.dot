@@ -1,0 +1,161 @@
+digraph "CFG fororg.spatialite.DefaultDatabaseErrorHandler.onCorruption(Lorg\/spatialite\/database\/SQLiteDatabase;)V" {
+subgraph cluster_Region_1079415903 {
+label = "R(2:0|(2:(2:2|3)|(3:4|(2:7|10)|(2:(3:20|(1:23)|28)|(1:24)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.Log.e(TAG, \"Corruption reported by sqlite on database: \" + r4.getPath())\l}"];
+subgraph cluster_Region_996472177 {
+label = "R(2:(2:2|3)|(3:4|(2:7|10)|(2:(3:20|(1:23)|28)|(1:24))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1791880724 {
+label = "IF [B:1:0x001e] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001e|if (r4.isOpen() == false) goto L_0x0020\l}"];
+subgraph cluster_Region_973688846 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0020|deleteDatabaseFile(r4.getPath())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_98379820 {
+label = "R(3:4|(2:7|10)|(2:(3:20|(1:23)|28)|(1:24)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0028|java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\> r0 = null\l}"];
+subgraph cluster_TryCatchRegion_1309269884 {
+label = "Try: R(2:7|10) catches: R(0), R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_404613952 {
+label = "R(2:7|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|r0 = r4.getAttachedDbs()     \/\/ Catch:\{ SQLiteException \-\> 0x0031, all \-\> 0x002f \}\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ SQLiteException \-\> 0x0057, all \-\> 0x002f \}\lSplitter:B:9:0x0031\l|r4.close()     \/\/ Catch:\{ SQLiteException \-\> 0x0057, all \-\> 0x002f \}\l}"];
+}
+subgraph cluster_Region_1390044337 {
+label = "R(0) | ExcHandler: SQLiteException (unused android.database.sqlite.SQLiteException)\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1466080688 {
+label = "R(0) | ExcHandler: all (r1v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_Region_656096882 {
+label = "R(2:(3:20|(1:23)|28)|(1:24))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_466142701 {
+label = "IF [B:18:0x0057] THEN: R(3:20|(1:23)|28) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0057|if (r0 == null) goto L_0x0071\l}"];
+subgraph cluster_Region_245432303 {
+label = "R(3:20|(1:23)|28)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0059|java.util.Iterator r4 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_669640658 {
+label = "LOOP:1: (1:23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0061|if (r4.hasNext() != false) goto L_0x0063\l}"];
+subgraph cluster_Region_647487602 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0063|LOOP_END\lLOOP:1: B:21:0x005d\-\>B:23:0x0063\l|deleteDatabaseFile((java.lang.String) r0.second)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1700492813 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0071|deleteDatabaseFile(r4.getPath())\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_466435194 {
+label = "R(3:9|10|(0)(0))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0031|SYNTHETIC\lPHI: r0 \l  PHI: (r0v3 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) = (r0v2 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>), (r0v15 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) binds: [B:5:0x0029, B:7:0x002d] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:9:0x0031\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ SQLiteException \-\> 0x0057, all \-\> 0x002f \}\lSplitter:B:9:0x0031\l|r4.close()     \/\/ Catch:\{ SQLiteException \-\> 0x0057, all \-\> 0x002f \}\l}"];
+subgraph cluster_IfRegion_1945280422 {
+label = "IF [B:18:0x0057] THEN: R(0) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0057|if (r0 == null) goto L_0x0071\l}"];
+subgraph cluster_Region_1795122650 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1420467606 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1466080688 {
+label = "R(0) | ExcHandler: all (r1v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1390044337 {
+label = "R(0) | ExcHandler: SQLiteException (unused android.database.sqlite.SQLiteException)\l";
+node [shape=record,color=blue];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029|SYNTHETIC\lSplitter:B:5:0x0029\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|Catch:\{ SQLiteException \-\> 0x0031, all \-\> 0x002f \}\lSplitter:B:5:0x0029\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f|PHI: r0 \l  PHI: (r0v9 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) = (r0v2 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>), (r0v3 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>), (r0v3 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) binds: [B:5:0x0029, B:9:0x0031, B:10:?] A[DONT_GENERATE, DONT_INLINE]\lExcHandler: all (r1v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:5:0x0029\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0035|if (r0 != null) goto L_0x0037\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0037|java.util.Iterator r4 = r0.iterator()\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003b|LOOP_START\lLOOP:0: B:13:0x003b\-\>B:15:0x0041\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003f|if (r4.hasNext() != false) goto L_0x0041\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0041|LOOP_END\lLOOP:0: B:13:0x003b\-\>B:15:0x0041\l|deleteDatabaseFile((java.lang.String) r4.next().second)\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x004f|deleteDatabaseFile(r4.getPath())\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0056|throw r1\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lExcHandler: SQLiteException (unused android.database.sqlite.SQLiteException)\lSplitter:B:9:0x0031\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x005d|LOOP_START\lLOOP:1: B:21:0x005d\-\>B:23:0x0063\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0056|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0078|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void org.spatialite.DefaultDatabaseErrorHandler.onCorruption((r3v0 'this' org.spatialite.DefaultDatabaseErrorHandler A[IMMUTABLE_TYPE, THIS]), (r4v0 org.spatialite.database.SQLiteDatabase A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:24:0x0071 \lRemoved duplicated region for block: B:20:0x0059 \lMissing exception handler attribute for start block: B:9:0x0031\lRemoved duplicated region for block: B:8:0x002f A[ExcHandler: all (r1v2 'th' java.lang.Throwable A[CUSTOM_DECLARE]), PHI: r0 \l  PHI: (r0v9 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) = (r0v2 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>), (r0v3 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>), (r0v3 java.util.List\<android.util.Pair\<java.lang.String, java.lang.String\>\>) binds: [B:5:0x0029, B:9:0x0031, B:10:?] A[DONT_GENERATE, DONT_INLINE], Splitter:B:5:0x0029]\lFailed to process nested try\/catch\lCode restructure failed: missing block: B:8:0x002f, code lost:\l    r1 = move\-exception;\l\lCode restructure failed: missing block: B:11:0x0035, code lost:\l    if (r0 != null) goto L_0x0037;\l\lCode restructure failed: missing block: B:12:0x0037, code lost:\l    r4 = r0.iterator();\l\lCode restructure failed: missing block: B:14:0x003f, code lost:\l    if (r4.hasNext() != false) goto L_0x0041;\l\lCode restructure failed: missing block: B:15:0x0041, code lost:\l    deleteDatabaseFile((java.lang.String) r4.next().second);\l\lCode restructure failed: missing block: B:16:0x004f, code lost:\l    deleteDatabaseFile(r4.getPath());\l\lCode restructure failed: missing block: B:17:0x0056, code lost:\l    throw r1;\l\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_9;
+Node_10 -> Node_19;
+Node_10 -> Node_8;
+Node_10 -> Node_18;
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_24;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_26[style=dashed];
+Node_23 -> Node_21;
+Node_24 -> Node_27;
+Node_9 -> Node_10;
+Node_9 -> Node_19;
+Node_9 -> Node_8;
+Node_10 -> Node_19;
+Node_10 -> Node_8;
+Node_10 -> Node_18;
+Node_18 -> Node_20[style=dashed];
+Node_18 -> Node_24;
+Node_5 -> Node_6;
+Node_5 -> Node_9;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_25[style=dashed];
+Node_15 -> Node_13;
+Node_16 -> Node_17;
+Node_19 -> Node_18;
+Node_21 -> Node_22;
+Node_25 -> Node_17;
+Node_26 -> Node_28;
+}
+

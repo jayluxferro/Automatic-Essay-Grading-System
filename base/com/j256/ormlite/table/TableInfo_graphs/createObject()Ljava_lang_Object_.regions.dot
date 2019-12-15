@@ -1,0 +1,77 @@
+digraph "CFG forcom.j256.ormlite.table.TableInfo.createObject()Ljava\/lang\/Object;" {
+subgraph cluster_Region_805277187 {
+label = "R(2:0|(4:(1:4)|(1:6)(1:7)|8|9)) | DECL_VAR: T null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.table.ObjectFactory\<T\> r0 = null\l}"];
+subgraph cluster_TryCatchRegion_278620979 {
+label = "Try: R(4:(1:4)|(1:6)(1:7)|8|9) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_776294549 {
+label = "R(4:(1:4)|(1:6)(1:7)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_294902588 {
+label = "IF [B:3:0x0003] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|Catch:\{ Exception \-\> 0x0029 \}\l|if (r3.baseDaoImpl != null) goto L_0x0005     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+subgraph cluster_Region_1068380060 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|Catch:\{ Exception \-\> 0x0029 \}\l|com.j256.ormlite.table.ObjectFactory r0 = r3.baseDaoImpl.getObjectFactory()     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+}
+}
+subgraph cluster_IfRegion_1734549577 {
+label = "IF [B:5:0x000b] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|Catch:\{ Exception \-\> 0x0029 \}\lPHI: r0 \l  PHI: (r0v3 com.j256.ormlite.table.ObjectFactory\<T\>) = (r0v0 com.j256.ormlite.table.ObjectFactory\<T\>), (r0v9 com.j256.ormlite.table.ObjectFactory\<T\>) binds: [B:3:0x0003, B:4:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L_0x000d     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+subgraph cluster_Region_1981039655 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|Catch:\{ Exception \-\> 0x0029 \}\l|java.lang.Object r0 = r3.constructor.newInstance(new java.lang.Object[0])     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+}
+subgraph cluster_Region_633882891 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|Catch:\{ Exception \-\> 0x0029 \}\l|java.lang.Object r0 = r0.createObject(r3.constructor, r3.baseDaoImpl.getDataClass())     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0023|Catch:\{ Exception \-\> 0x0029 \}\lPHI: r0 \l  PHI: (r0v4 T) = (r0v5 T), (r0v7 T) binds: [B:7:0x0017, B:6:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|wireNewInstance(r3.baseDaoImpl, r0)     \/\/ Catch:\{ Exception \-\> 0x0029 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_991277341 {
+label = "R(3:10|11|12) | ExcHandler: Exception (r0v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|ExcHandler: Exception (r0v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a}"];
+Node_12 [shape=record,label="{12\:\ 0x0045|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Could not create object for \" + r3.constructor.getDeclaringClass(), r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_991277341 {
+label = "R(3:10|11|12) | ExcHandler: Exception (r0v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|ExcHandler: Exception (r0v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a}"];
+Node_12 [shape=record,label="{12\:\ 0x0045|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Could not create object for \" + r3.constructor.getDeclaringClass(), r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ Exception \-\> 0x0029 \}\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.table.TableInfo.createObject((r3v0 'this' com.j256.ormlite.table.TableInfo A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+}
+

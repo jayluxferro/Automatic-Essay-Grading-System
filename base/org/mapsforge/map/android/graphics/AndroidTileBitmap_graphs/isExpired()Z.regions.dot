@@ -1,0 +1,38 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidTileBitmap.isExpired()Z" {
+subgraph cluster_Region_359323473 {
+label = "R(1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2106354264 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1951024870 {
+label = "IF [B:1:0x0007, B:4:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5.expiration != 0) goto L_0x000a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|ADDED_TO_REGION\l|if (r5.expiration \<= java.lang.System.currentTimeMillis()) goto L_0x0014\l}"];
+subgraph cluster_Region_975214757 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2033389807 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{public boolean org.mapsforge.map.android.graphics.AndroidTileBitmap.isExpired((r5v0 'this' org.mapsforge.map.android.graphics.AndroidTileBitmap A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

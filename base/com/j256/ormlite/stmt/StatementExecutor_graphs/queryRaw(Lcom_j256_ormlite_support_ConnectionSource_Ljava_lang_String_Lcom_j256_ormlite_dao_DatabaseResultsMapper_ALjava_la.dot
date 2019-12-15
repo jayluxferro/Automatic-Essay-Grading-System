@@ -1,0 +1,42 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.queryRaw(Lcom\/j256\/ormlite\/support\/ConnectionSource;Ljava\/lang\/String;Lcom\/j256\/ormlite\/dao\/DatabaseResultsMapper;[Ljava\/lang\/String;Lcom\/j256\/ormlite\/dao\/ObjectCache;)Lcom\/j256\/ormlite\/dao\/GenericRawResults;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1 = r15\lr10 = r16\lr0 = r19\llogger.debug(\"executing raw query for: \{\}\", (java.lang.Object) r17)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r0.length \<= 0) goto L_0x0018\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|logger.trace(\"query arguments: \{\}\", (java.lang.Object) r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|com.j256.ormlite.support.DatabaseConnection r12 = r10.getReadOnlyConnection(r1.tableInfo.getTableName())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|SYNTHETIC\lSplitter:B:4:0x0023\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ all \-\> 0x0052 \}\lSplitter:B:4:0x0023\l|r4 = r12     \/\/ Catch:\{ all \-\> 0x0052 \}\lr5 = r17     \/\/ Catch:\{ all \-\> 0x0052 \}\lcom.j256.ormlite.support.CompiledStatement r14 = r4.compileStatement(r5, com.j256.ormlite.stmt.StatementBuilder.StatementType.SELECT, noFieldTypes, \-1, false)     \/\/ Catch:\{ all \-\> 0x0052 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0030|SYNTHETIC\lSplitter:B:6:0x0030\l}"];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ all \-\> 0x0050 \}\lSplitter:B:6:0x0030\l|assignStatementArguments(r14, r0)     \/\/ Catch:\{ all \-\> 0x0050 \}\lr3 = r16     \/\/ Catch:\{ all \-\> 0x0050 \}\lr4 = r12     \/\/ Catch:\{ all \-\> 0x0050 \}\lr5 = r17     \/\/ Catch:\{ all \-\> 0x0050 \}\lr7 = r14     \/\/ Catch:\{ all \-\> 0x0050 \}\lcom.j256.ormlite.stmt.RawResultsImpl r2 = new com.j256.ormlite.stmt.RawResultsImpl(r3, r4, r5, java.lang.Object[].class, r7, new com.j256.ormlite.stmt.StatementExecutor.UserDatabaseResultsMapper(r18, (com.j256.ormlite.stmt.StatementExecutor.C09581) null), r20)     \/\/ Catch:\{ all \-\> 0x0050 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004a|com.j256.ormlite.misc.IOUtils.closeThrowSqlException((java.io.Closeable) null, \"compiled statement\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004f|RETURN\l|return r2\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0050|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:6:0x0030\l|java.lang.Throwable r0 = th\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0052|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:4:0x0023\l|java.lang.Throwable r0 = th\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0053|r14 = null\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0054|PHI: r0 r14 \l  PHI: (r0v1 'th' java.lang.Throwable) = (r0v2 'th' java.lang.Throwable), (r0v3 'th' java.lang.Throwable) binds: [B:12:0x0053, B:10:0x0050] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r14v0 com.j256.ormlite.support.CompiledStatement) = (r14v1 com.j256.ormlite.support.CompiledStatement), (r14v2 com.j256.ormlite.support.CompiledStatement) binds: [B:12:0x0053, B:10:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|com.j256.ormlite.misc.IOUtils.closeThrowSqlException(r14, \"compiled statement\")\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0059|if (r12 == null) goto L_0x005e\l}"];
+Node_15 [shape=record,label="{15\:\ 0x005b|r10.releaseConnection(r12)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005e|throw r0\l}"];
+MethodNode[shape=record,label="{public com.j256.ormlite.dao.GenericRawResults\<UO\> com.j256.ormlite.stmt.StatementExecutor.queryRaw((r15v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r16v0 com.j256.ormlite.support.ConnectionSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 com.j256.ormlite.dao.DatabaseResultsMapper\<UO\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 java.lang.String[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<UO:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/support\/ConnectionSource;, Ljava\/lang\/String;, Lcom\/j256\/ormlite\/dao\/DatabaseResultsMapper\<, TUO;\>;[, Ljava\/lang\/String;, Lcom\/j256\/ormlite\/dao\/ObjectCache;, ), Lcom\/j256\/ormlite\/dao\/GenericRawResults\<, TUO;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+}
+

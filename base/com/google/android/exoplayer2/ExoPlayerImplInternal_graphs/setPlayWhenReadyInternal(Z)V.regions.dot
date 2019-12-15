@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImplInternal.setPlayWhenReadyInternal(Z)V" {
+subgraph cluster_Region_992333945 {
+label = "R(2:0|(1:2)(1:(1:5)(1:(1:8)(0))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.rebuffering = false\lr3.playWhenReady = r4\l}"];
+subgraph cluster_IfRegion_491877008 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: R(1:(1:5)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4 == false) goto L_0x0008\l}"];
+subgraph cluster_Region_794646285 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|stopRenderers()\lupdatePlaybackPositions()\l}"];
+}
+subgraph cluster_Region_1785601307 {
+label = "R(1:(1:5)(1:(1:8)(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2145238583 {
+label = "IF [B:4:0x0012] THEN: R(1:5) ELSE: R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r3.state == 3) goto L_0x0014\l}"];
+subgraph cluster_Region_1770952366 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|startRenderers()\lr3.handler.sendEmptyMessage(2)\l}"];
+}
+subgraph cluster_Region_741228973 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_909248502 {
+label = "IF [B:7:0x001f] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|if (r3.state == 2) goto L_0x0021\l}"];
+subgraph cluster_Region_604781313 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|r3.handler.sendEmptyMessage(2)\l}"];
+}
+subgraph cluster_Region_959115976 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.ExoPlayerImplInternal.setPlayWhenReadyInternal((r3v0 'this' com.google.android.exoplayer2.ExoPlayerImplInternal A[IMMUTABLE_TYPE, THIS]), (r4v0 'playWhenReady' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_12;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

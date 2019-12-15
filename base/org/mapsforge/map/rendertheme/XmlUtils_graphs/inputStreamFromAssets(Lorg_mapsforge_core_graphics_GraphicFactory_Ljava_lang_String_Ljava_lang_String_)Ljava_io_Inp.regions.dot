@@ -1,0 +1,59 @@
+digraph "CFG fororg.mapsforge.map.rendertheme.XmlUtils.inputStreamFromAssets(Lorg\/mapsforge\/core\/graphics\/GraphicFactory;Ljava\/lang\/String;Ljava\/lang\/String;)Ljava\/io\/InputStream;" {
+subgraph cluster_Region_1676035700 {
+label = "R(2:(1:2)|(2:(1:6)|(1:7))) | DECL_VAR: java.io.InputStream null\l";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1105021591 {
+label = "Try: R(1:2) catches: R(1:3)";
+node [shape=record,color=blue];
+subgraph cluster_Region_287695131 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x0006 \}\lSplitter:B:1:0x0001\l|java.io.InputStream r1 = r1.platformSpecificSources(r2, r3)     \/\/ Catch:\{ IOException \-\> 0x0006 \}\l}"];
+}
+subgraph cluster_Region_2058937431 {
+label = "R(1:3) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r1 = null\l}"];
+}
+}
+subgraph cluster_Region_971738220 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2660322 {
+label = "IF [B:5:0x0007] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|PHI: r1 \l  PHI: (r1v1 java.io.InputStream) = (r1v2 java.io.InputStream), (r1v3 java.io.InputStream) binds: [B:3:0x0006, B:2:?] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L_0x0009\l}"];
+subgraph cluster_Region_1361880181 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0009|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_2056176949 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000a|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_2058937431 {
+label = "R(1:3) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r1 = null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{private static java.io.InputStream org.mapsforge.map.rendertheme.XmlUtils.inputStreamFromAssets((r1v0 org.mapsforge.core.graphics.GraphicFactory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_2 -> Node_5;
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_4 -> Node_3;
+}
+

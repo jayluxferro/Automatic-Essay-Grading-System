@@ -1,0 +1,24 @@
+digraph "CFG fororg.osgeo.proj4j.util.ProjectionMath.phi2(DD)D" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r2 I:?[long, double]) = \l  (4602678819172646912(0x3fe0000000000000, double:0.5) ?[long, double])\l \l0x0002: ARITH  (r2 I:double) = (r2 I:double) * (r19 I:double) \l0x0004: INVOKE  (r4 I:double) = (r17 I:double) java.lang.Math.atan(double):double type: STATIC \l0x0008: CONST  (r6 I:?[long, double]) = \l  (4611686018427387904(0x4000000000000000, double:2.0) ?[long, double])\l \l0x000a: ARITH  (r4 I:double) = (r4 I:double) * (r6 I:double) \l0x000c: CONST  (r8 I:?[long, double]) = \l  (4609753056924675352(0x3ff921fb54442d18, double:1.5707963267948966) ?[long, double])\l \l0x0011: ARITH  (r4 I:double) = (r8 I:double) \- (r4 I:double) \l0x0013: CONST  (r10 I:?[int, float, short, byte, char]) = (15 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0015|0x0015: INVOKE  (r11 I:double) = (r4 I:double) java.lang.Math.sin(double):double type: STATIC \l0x0019: ARITH  (r11 I:double) = (r11 I:double) * (r19 I:double) \l0x001b: CONST  (r13 I:?[long, double]) = \l  (4607182418800017408(0x3ff0000000000000, double:1.0) ?[long, double])\l \l0x001d: ARITH  (r15 I:double) = (r13 I:double) \- (r11 I:double) \l0x001f: ARITH  (r11 I:double) = (r11 I:double) + (r13 I:double) \l0x0020: ARITH  (r11 I:double) = (r15 I:double) \/ (r11 I:double) \l0x0022: INVOKE  (r11 I:double) = (r11 I:double), (r2 I:double) java.lang.Math.pow(double, double):double type: STATIC \l0x0026: ARITH  (r11 I:double) = (r11 I:double) * (r17 I:double) \l0x0028: INVOKE  (r11 I:double) = (r11 I:double) java.lang.Math.atan(double):double type: STATIC \l0x002c: ARITH  (r11 I:double) = (r11 I:double) * (r6 I:double) \l0x002e: ARITH  (r11 I:double) = (r8 I:double) \- (r11 I:double) \l0x0030: ARITH  (r11 I:double) = (r11 I:double) \- (r4 I:double) \l0x0031: ARITH  (r4 I:double) = (r4 I:double) + (r11 I:double) \l0x0032: INVOKE  (r11 I:double) = (r11 I:double) java.lang.Math.abs(double):double type: STATIC \l0x0036: CONST  (r15 I:?[long, double]) = \l  (4457293557087583675(0x3ddb7cdfd9d7bdbb, double:1.0E\-10) ?[long, double])\l \l0x003b: CMP_L  (r11 I:int) = (r11 I:double), (r15 I:double) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x003d|0x003d: IF  (r11 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:5:0x0043 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x003f|0x003f: ARITH  (r10 I:int) = (r10 I:int) + (\-1 int) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0041|0x0041: IF  (r10 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x0015 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0043|0x0043: IF  (r10 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:7:0x0046 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0045|0x0045: RETURN  (r4 I:double) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0046|0x0046: NEW_INSTANCE  (r0 I:org.osgeo.proj4j.ConvergenceFailureException) =  org.osgeo.proj4j.ConvergenceFailureException \l0x0048: CONST_STR  (r1 I:java.lang.String) =  \"Computation of phi2 failed to converage after 15 iterations\" \l0x004a: INVOKE  \l  (r0 I:org.osgeo.proj4j.ConvergenceFailureException)\l  (r1 I:java.lang.String)\l org.osgeo.proj4j.ConvergenceFailureException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x004d|0x004d: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static double org.osgeo.proj4j.util.ProjectionMath.phi2((r17 I:double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19 I:double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_4 -> Node_5[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+}
+

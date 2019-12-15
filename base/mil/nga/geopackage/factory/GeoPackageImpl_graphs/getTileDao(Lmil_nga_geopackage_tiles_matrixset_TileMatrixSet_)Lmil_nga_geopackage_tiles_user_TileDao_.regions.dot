@@ -1,0 +1,61 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageImpl.getTileDao(Lmil\/nga\/geopackage\/tiles\/matrixset\/TileMatrixSet;)Lmil\/nga\/geopackage\/tiles\/user\/TileDao;" {
+subgraph cluster_Region_1523836465 {
+label = "R(1:(1:(3:2|3|4))(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1640450976 {
+label = "IF [B:0:0x0000] THEN: R(1:(3:2|3|4)) ELSE: R(2:8|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r10 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_517099676 {
+label = "R(1:(3:2|3|4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_108067816 {
+label = "Try: R(3:2|3|4) catches: R(3:5|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_391127850 {
+label = "R(3:2|3|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x006a \}\lSplitter:B:1:0x0002\l|mil.nga.geopackage.tiles.matrix.TileMatrixDao mil.nga.geopackage.tiles.matrix.TileMatrixDao r0 = getTileMatrixDao()     \/\/ Catch:\{ SQLException \-\> 0x006a \}\lcom.j256.ormlite.stmt.QueryBuilder com.j256.ormlite.stmt.QueryBuilder r1 = r0.queryBuilder()     \/\/ Catch:\{ SQLException \-\> 0x006a \}\lr1.where().mo17213eq(\"table_name\", r10.getTableName())     \/\/ Catch:\{ SQLException \-\> 0x006a \}\lr1.orderBy(\"zoom_level\", true)     \/\/ Catch:\{ SQLException \-\> 0x006a \}\lr1.orderBy(mil.nga.geopackage.tiles.matrix.TileMatrix.COLUMN_PIXEL_X_SIZE, false)     \/\/ Catch:\{ SQLException \-\> 0x006a \}\lr1.orderBy(mil.nga.geopackage.tiles.matrix.TileMatrix.COLUMN_PIXEL_Y_SIZE, false)     \/\/ Catch:\{ SQLException \-\> 0x006a \}\ljava.util.List java.util.List r7 = r0.query(r1.prepare())     \/\/ Catch:\{ SQLException \-\> 0x006a \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0030|mil.nga.geopackage.tiles.user.TileTable final mil.nga.geopackage.tiles.user.TileTable r0 = (mil.nga.geopackage.tiles.user.TileTable) new mil.nga.geopackage.tiles.user.TileTableReader(r10.getTableName()).readTable(new mil.nga.geopackage.tiles.user.TileWrapperConnection(r9.database))\lmil.nga.geopackage.tiles.user.TileDao mil.nga.geopackage.tiles.user.TileDao r2 = new mil.nga.geopackage.tiles.user.TileDao(getName(), r9.database, new mil.nga.geopackage.tiles.user.TileConnection(r9.database), r10, r7, r0)\lr9.cursorFactory.registerTable(r10.getTableName(), new mil.nga.geopackage.factory.GeoPackageImpl.C13422())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0069|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_1129805689 {
+label = "R(3:5|6|7) | ExcHandler: SQLException (r0v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006a|ExcHandler: SQLException (r0v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006b}"];
+Node_7 [shape=record,label="{7\:\ 0x00a6|throw new mil.nga.geopackage.GeoPackageException(\"Failed to retrieve \" + mil.nga.geopackage.tiles.user.TileDao.class.getSimpleName() + \" for table name: \" + r10.getTableName() + \". Exception retrieving \" + mil.nga.geopackage.tiles.matrix.TileMatrix.class.getSimpleName() + \" collection.\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_404143864 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x00a7}"];
+Node_9 [shape=record,label="{9\:\ 0x00d1|throw new mil.nga.geopackage.GeoPackageException(\"Non null \" + mil.nga.geopackage.tiles.matrixset.TileMatrixSet.class.getSimpleName() + \" is required to create \" + mil.nga.geopackage.tiles.user.TileDao.class.getSimpleName())\l}"];
+}
+}
+}
+subgraph cluster_Region_1129805689 {
+label = "R(3:5|6|7) | ExcHandler: SQLException (r0v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006a|ExcHandler: SQLException (r0v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006b}"];
+Node_7 [shape=record,label="{7\:\ 0x00a6|throw new mil.nga.geopackage.GeoPackageException(\"Failed to retrieve \" + mil.nga.geopackage.tiles.user.TileDao.class.getSimpleName() + \" for table name: \" + r10.getTableName() + \". Exception retrieving \" + mil.nga.geopackage.tiles.matrix.TileMatrix.class.getSimpleName() + \" collection.\", r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.tiles.user.TileDao mil.nga.geopackage.factory.GeoPackageImpl.getTileDao((r9v0 'this' mil.nga.geopackage.factory.GeoPackageImpl A[IMMUTABLE_TYPE, THIS]), (r10v0 mil.nga.geopackage.tiles.matrixset.TileMatrixSet A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+}
+

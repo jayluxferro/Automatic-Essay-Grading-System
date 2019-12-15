@@ -1,0 +1,27 @@
+digraph "CFG fororg.mapsforge.core.model.Tile.getOrigin()Lorg\/mapsforge\/core\/model\/Point;" {
+subgraph cluster_Region_1969903419 {
+label = "R(2:(1:2)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1125389663 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.origin == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1476802282 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r5.origin = new org.mapsforge.core.model.Point((double) org.mapsforge.core.util.MercatorProjection.tileToPixel((long) r5.tileX, r5.tileSize), (double) org.mapsforge.core.util.MercatorProjection.tileToPixel((long) r5.tileY, r5.tileSize))\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0021|RETURN\l|return r5.origin\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001f}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.Point org.mapsforge.core.model.Tile.getOrigin((r5v0 'this' org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

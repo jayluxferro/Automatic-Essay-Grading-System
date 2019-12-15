@@ -1,0 +1,52 @@
+digraph "CFG fororg.spatialite.database.SQLiteClosable.acquireReference()V" {
+subgraph cluster_Region_1786250043 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_989884055 {
+label = "Synchronized:R(2:0|(1:(1:4)(2:7|8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1260159077 {
+label = "R(1:(1:4)(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2016213351 {
+label = "IF [B:3:0x0003] THEN: R(1:4) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r3.mReferenceCount \> 0) goto L_0x0005\l}"];
+subgraph cluster_Region_1382501506 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|r3.mReferenceCount++\l}"];
+}
+subgraph cluster_Region_1781261455 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|throw new java.lang.IllegalStateException(\"attempt to re\-open an already\-closed object: \" + r3)\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x000b: MONITOR_EXIT  \l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024|REMOVE\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0026|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public void org.spatialite.database.SQLiteClosable.acquireReference((r3v0 'this' org.spatialite.database.SQLiteClosable A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,120 @@
+digraph "CFG forcom.google.android.exoplayer2.video.VideoFrameReleaseTimeHelper.adjustReleaseTime(JJ)J" {
+subgraph cluster_Region_1172765001 {
+label = "R(5:0|(2:(1:4)|(2:7|(1:9)(1:17))(1:(1:20)))|(1:12)|13|14)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r18 = r24 * 1000\llong r12 = r18\llong r6 = r26\l}"];
+subgraph cluster_IfRegion_1937679603 {
+label = "IF [B:1:0x000c] THEN: R(2:(1:4)|(2:7|(1:9)(1:17))(1:(1:20))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r23.haveSync == true) goto L_0x000e\l}"];
+subgraph cluster_Region_743560637 {
+label = "R(2:(1:4)|(2:7|(1:9)(1:17))(1:(1:20)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1640291982 {
+label = "IF [B:3:0x0014] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r24 != r23.lastFramePresentationTimeUs) goto L_0x0016\l}"];
+subgraph cluster_Region_1549385732 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|r23.frameCount++\lr23.adjustedLastFrameTimeNs = r23.pendingAdjustedFrameTimeNs\l}"];
+}
+}
+subgraph cluster_IfRegion_1510391360 {
+label = "IF [B:6:0x0031] THEN: R(2:7|(1:9)(1:17)) ELSE: R(1:(1:20))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0031|if (r23.frameCount \>= 6) goto L_0x0033\l}"];
+subgraph cluster_Region_2058618302 {
+label = "R(2:7|(1:9)(1:17))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0033|long long r16 = r23.adjustedLastFrameTimeNs + ((r18 \- r23.syncFramePresentationTimeNs) \/ r23.frameCount)\l}"];
+subgraph cluster_IfRegion_749398269 {
+label = "IF [B:8:0x004f] THEN: R(1:9) ELSE: R(1:17)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004f|if (isDriftTooLarge(r16, r26) == true) goto L_0x0051\l}"];
+subgraph cluster_Region_2027447424 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0051|r23.haveSync = false\l}"];
+}
+subgraph cluster_Region_1986632315 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0093|r12 = r16\llong r6 = (r23.syncUnadjustedReleaseTimeNs + r12) \- r23.syncFramePresentationTimeNs\l}"];
+}
+}
+}
+subgraph cluster_Region_1068492219 {
+label = "R(1:(1:20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1473420584 {
+label = "IF [B:19:0x00ab] THEN: R(1:20) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00ab|if (isDriftTooLarge(r18, r26) == true) goto L_0x00ad\l}"];
+subgraph cluster_Region_769936298 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00ad|r23.haveSync = false\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_1124013288 {
+label = "IF [B:11:0x005a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005a|if (r23.haveSync == false) goto L_0x005c\l}"];
+subgraph cluster_Region_70719237 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005c|r23.syncFramePresentationTimeNs = r18\lr23.syncUnadjustedReleaseTimeNs = r26\lr23.frameCount = 0\lr23.haveSync = true\lonSynced()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0076|r23.lastFramePresentationTimeUs = r24\lr23.pendingAdjustedFrameTimeNs = r12\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0084|RETURN\l|return (r23.vsyncSampler == null \|\| r23.vsyncSampler.sampledVsyncTimeNs == 0) ? r6 : closestVsync(r6, r23.vsyncSampler.sampledVsyncTimeNs, r23.vsyncDurationNs) \- r23.vsyncOffsetNs\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0056|PHI: r6 r12 \l  PHI: (r6v1 'adjustedReleaseTimeNs' long) = (r6v0 'adjustedReleaseTimeNs' long), (r6v0 'adjustedReleaseTimeNs' long), (r6v0 'adjustedReleaseTimeNs' long), (r6v3 'adjustedReleaseTimeNs' long), (r6v0 'adjustedReleaseTimeNs' long) binds: [B:1:0x000c, B:19:0x00ab, B:20:0x00ad, B:17:0x0093, B:9:0x0051] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v1 'adjustedFrameTimeNs' long) = (r12v0 'adjustedFrameTimeNs' long), (r12v0 'adjustedFrameTimeNs' long), (r12v0 'adjustedFrameTimeNs' long), (r12v2 'adjustedFrameTimeNs' long), (r12v0 'adjustedFrameTimeNs' long) binds: [B:1:0x000c, B:19:0x00ab, B:20:0x00ad, B:17:0x0093, B:9:0x0051] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0086}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0090|REMOVE\lADDED_TO_REGION\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x00a1}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x00b3}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return r6\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.video.VideoFrameReleaseTimeHelper.adjustReleaseTime((r23v0 'this' com.google.android.exoplayer2.video.VideoFrameReleaseTimeHelper A[IMMUTABLE_TYPE, THIS]), (r24v0 'framePresentationTimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r26v0 'unadjustedReleaseTimeNs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_17[style=dashed];
+Node_9 -> Node_10;
+Node_17 -> Node_10;
+Node_19 -> Node_10[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_22;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_21;
+Node_16 -> Node_23;
+Node_18 -> Node_19;
+Node_21 -> Node_24;
+}
+

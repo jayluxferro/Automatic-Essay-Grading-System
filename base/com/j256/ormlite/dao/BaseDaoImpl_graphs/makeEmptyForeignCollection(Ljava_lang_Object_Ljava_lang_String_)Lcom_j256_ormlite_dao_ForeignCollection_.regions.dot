@@ -1,0 +1,89 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseDaoImpl.makeEmptyForeignCollection(Ljava\/lang\/Object;Ljava\/lang\/String;)Lcom\/j256\/ormlite\/dao\/ForeignCollection;" {
+subgraph cluster_Region_1388598217 {
+label = "R(6:0|(1:2)(1:3)|4|(2:6|(2:(3:8|(1:10)|11)|(1:12)))|13|14) | DECL_VAR: java.lang.Object null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|checkForInitialized()\l}"];
+subgraph cluster_IfRegion_1366642218 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r8 == null) goto L_0x0006\l}"];
+subgraph cluster_Region_1813194237 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1 = null\l}"];
+}
+subgraph cluster_Region_1142518324 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|java.lang.Object r1 = extractId(r8)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000c|PHI: r1 \l  PHI: (r1v0 java.lang.Object) = (r1v3 java.lang.Object), (r1v4 java.lang.Object) binds: [B:3:0x0008, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r7.tableInfo.getFieldTypes().length\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1556610941 {
+label = "LOOP:0: (2:6|(2:(3:8|(1:10)|11)|(1:12)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lPHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:4:0x000c, B:12:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0014\-\>B:12:0x002d\l|if (r4 \< r3) goto L_0x0016\l}"];
+subgraph cluster_Region_666279563 {
+label = "R(2:6|(2:(3:8|(1:10)|11)|(1:12)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r5 = r2[r4]\l}"];
+subgraph cluster_Region_858285178 {
+label = "R(2:(3:8|(1:10)|11)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1605895749 {
+label = "IF [B:7:0x0020] THEN: R(3:8|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|if (r5.getColumnName().equals(r9) == true) goto L_0x0022\l}"];
+subgraph cluster_Region_1576547501 {
+label = "R(3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|com.j256.ormlite.dao.BaseForeignCollection com.j256.ormlite.dao.BaseForeignCollection r9 = r5.buildForeignCollection(r8, r1)\l}"];
+subgraph cluster_IfRegion_617023366 {
+label = "IF [B:9:0x0026] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026|if (r8 != null) goto L_0x0028\l}"];
+subgraph cluster_Region_768765632 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|r5.assignField(r8, r9, true, (com.j256.ormlite.dao.ObjectCache) null)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x002c|RETURN\l|return r9\l}"];
+}
+}
+subgraph cluster_Region_674349211 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002d|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:12:0x002d\l|r4++\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0030}"];
+Node_14 [shape=record,label="{14\:\ 0x0046|throw new java.lang.IllegalArgumentException(\"Could not find a field named \" + r9)\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ 0x0022|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0030|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private com.j256.ormlite.dao.ForeignCollection\<FT\> com.j256.ormlite.dao.BaseDaoImpl.makeEmptyForeignCollection((r7v0 'this' com.j256.ormlite.dao.BaseDaoImpl A[IMMUTABLE_TYPE, THIS]), (r8v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<FT:, Ljava\/lang\/Object;, \>(TT;, Ljava\/lang\/String;, ), Lcom\/j256\/ormlite\/dao\/ForeignCollection\<, TFT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_16[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_12[style=dashed];
+Node_7 -> Node_15;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_5;
+Node_13 -> Node_14;
+Node_15 -> Node_8;
+Node_16 -> Node_13;
+}
+

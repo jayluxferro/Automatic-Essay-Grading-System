@@ -1,0 +1,75 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.MapGestureDetector.RotateGestureListener.onRotateEnd(Lcom\/mapbox\/android\/gestures\/RotateGestureDetector;FFF)V" {
+subgraph cluster_Region_105801761 {
+label = "R(4:0|(1:2)|3|(1:(4:10|13|(1:15)|16)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.maps.MapGestureDetector.this.cameraChangeDispatcher.onCameraIdle()\l}"];
+subgraph cluster_IfRegion_2118264858 {
+label = "IF [B:1:0x0013] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0013|if (com.mapbox.mapboxsdk.maps.MapGestureDetector.this.uiSettings.isIncreaseScaleThresholdWhenRotating() == true) goto L_0x0015\l}"];
+subgraph cluster_Region_184721813 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|com.mapbox.mapboxsdk.maps.MapGestureDetector.this.gesturesManager.getStandardScaleGestureDetector().setSpanSinceStartThreshold(r2.defaultSpanSinceStartThreshold)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0024|com.mapbox.mapboxsdk.maps.MapGestureDetector.this.notifyOnRotateEndListeners(r3)\l}"];
+subgraph cluster_Region_1003168356 {
+label = "R(1:(4:10|13|(1:15)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1320241756 {
+label = "IF [B:4:0x0033, B:7:0x003e] THEN: R(4:10|13|(1:15)|16) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0033|if (com.mapbox.mapboxsdk.maps.MapGestureDetector.this.uiSettings.isRotateVelocityAnimationEnabled() == true) goto L_0x0036\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003e|ADDED_TO_REGION\l|if (java.lang.Math.abs(r6) \>= r2.minimumAngularVelocity) goto L_0x0041\l}"];
+subgraph cluster_Region_1871593539 {
+label = "R(4:10|13|(1:15)|16)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0044|boolean r3 = r6 \< 0.0f\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0049|PHI: r3 \l  PHI: (r3v8 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r4 = com.mapbox.mapboxsdk.utils.MathUtils.clamp((float) java.lang.Math.pow((double) r6, 2.0d), 1.5f, 20.0f)\llong long r5 = (long) (java.lang.Math.log((double) (1.0f + r4)) * 500.0d)\l}"];
+subgraph cluster_IfRegion_909756970 {
+label = "IF [B:14:0x0069] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0069|if (r3 == true) goto L_0x006b\l}"];
+subgraph cluster_Region_188683797 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x006b|float r4 = \-r4\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x006c|PHI: r4 \l  PHI: (r4v12 float) = (r4v11 float), (r4v16 float) binds: [B:14:0x0069, B:15:0x006b] A[DONT_GENERATE, DONT_INLINE]\l|android.animation.Animator unused = com.mapbox.mapboxsdk.maps.MapGestureDetector.this.rotateAnimator = createRotateAnimator(r4, r5)\lcom.mapbox.mapboxsdk.maps.MapGestureDetector.this.scheduleAnimator(com.mapbox.mapboxsdk.maps.MapGestureDetector.this.rotateAnimator)\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0035|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0036}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0040}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0041}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0046}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0048}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0080}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.maps.MapGestureDetector.RotateGestureListener.onRotateEnd((r2v0 'this' com.mapbox.mapboxsdk.maps.MapGestureDetector$RotateGestureListener A[IMMUTABLE_TYPE, THIS]), (r3v0 com.mapbox.android.gestures.RotateGestureDetector A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+}
+

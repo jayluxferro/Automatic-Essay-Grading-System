@@ -1,0 +1,51 @@
+digraph "CFG forokio.Buffer.write([BII)Lokio\/Buffer;" {
+subgraph cluster_Region_803715092 {
+label = "R(1:(2:(4:1|(1:3)|4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_282194743 {
+label = "R(2:(4:1|(1:3)|4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_213392594 {
+label = "IF [B:0:0x0000] THEN: R(4:1|(1:3)|4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r10 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_687792356 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|long long r7 = (long) r12\lokio.Util.checkOffsetAndCount((long) r10.length, (long) r11, r7)\lint int r12 = r12 + r11\l}"];
+subgraph cluster_LoopRegion_1350091618 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|LOOP_START\lPHI: r11 \l  PHI: (r11v2 int) = (r11v0 int), (r11v3 int) binds: [B:1:0x0002, B:3:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:2:0x000b\-\>B:3:0x000d\l|if (r11 \< r12) goto L_0x000d\l}"];
+subgraph cluster_Region_386386644 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|LOOP_END\lLOOP:0: B:2:0x000b\-\>B:3:0x000d\l|okio.Segment okio.Segment r0 = writableSegment(1)\lint int r1 = java.lang.Math.min(r12 \- r11, 8192 \- r0.limit)\ljava.lang.System.arraycopy(r10, r11, r0.data, r0.limit, r1)\lr11 += r1\lr0.limit += r1\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002a|r9.size += r7\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002f|RETURN\l|return r9\l}"];
+}
+}
+subgraph cluster_Region_536901691 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0037|throw new java.lang.IllegalArgumentException(\"source == null\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0030}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public okio.Buffer okio.Buffer.write((r9v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r10v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_3 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_4;
+}
+

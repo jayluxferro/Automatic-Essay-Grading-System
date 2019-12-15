@@ -6,10 +6,12 @@ Task:   AEGS
 
 ### definitions ####
 dataset_dir = './data'
+output_dir = './output_dir'
 
 ### imports     ####
 import os
 import pandas as pd
+import gensim.models as gm
 from sklearn.cross_validation import KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import cohen_kappa_score
@@ -17,6 +19,10 @@ from gensim.models import Word2Vec
 import utils as utl
 import models as mdl
 import numpy as np
+import sys
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from keras.utils.vis_utils import plot_model
 
 X = pd.read_csv(os.path.join(dataset_dir, 'training_set_rel3.tsv'), sep='\t', encoding='ISO-8859-1')
 y = X['domain1_score']
@@ -24,7 +30,7 @@ X = X.dropna(axis=1)
 X = X.drop(columns=['rater1_domain1', 'rater2_domain1'])
 
 # show data; just for fun
-X.head()
+print(X.head())
 
 
 # training phase # K-Fold cross validation ( K = 5)
@@ -35,67 +41,125 @@ results = []
 y_pred_list = []
 
 count = 1
+
+# model
+#model = gm.KeyedVectors.load_word2vec_format('embeddings.w2v.txt')
+best_model = 0
+batch_size = 64
+epochs = 100
+
+# Initializing variables for word2vec model.
+num_features = 300
+min_word_count = 40
+num_workers = 16
+context = 10
+downsampling = 1e-3
+
 for traincv, testcv in cv:
     print("\n--------Fold {}--------\n".format(count))
     X_test, X_train, y_test, y_train = X.iloc[testcv], X.iloc[traincv], y.iloc[testcv], y.iloc[traincv]
-    
+
     train_essays = X_train['essay']
     test_essays = X_test['essay']
-    
+
     sentences = []
-    
+
     for essay in train_essays:
             # Obtaining all sentences from the training essays.
             sentences += utl.essay_to_sentences(essay, remove_stopwords = True)
-            
-    # Initializing variables for word2vec model.
-    num_features = 300 
-    min_word_count = 40
-    num_workers = 4
-    context = 10
-    downsampling = 1e-3
 
     print("Training Word2Vec Model...")
+
     model = Word2Vec(sentences, workers=num_workers, size=num_features, min_count = min_word_count, window = context, sample = downsampling)
 
     model.init_sims(replace=True)
     model.wv.save_word2vec_format('word2vecmodel.bin', binary=True)
 
+
     clean_train_essays = []
-    
+
     # Generate training and testing data word vectors.
     for essay_v in train_essays:
         clean_train_essays.append(utl.essay_to_wordlist(essay_v, remove_stopwords=True))
     trainDataVecs = utl.getAvgFeatureVecs(clean_train_essays, model, num_features)
-    
+
     clean_test_essays = []
     for essay_v in test_essays:
         clean_test_essays.append(utl.essay_to_wordlist( essay_v, remove_stopwords=True ))
     testDataVecs = utl.getAvgFeatureVecs( clean_test_essays, model, num_features )
-    
+
     trainDataVecs = np.array(trainDataVecs)
     testDataVecs = np.array(testDataVecs)
     # Reshaping train and test vectors to 3 dimensions. (1 represents one timestep)
     trainDataVecs = np.reshape(trainDataVecs, (trainDataVecs.shape[0], 1, trainDataVecs.shape[1]))
     testDataVecs = np.reshape(testDataVecs, (testDataVecs.shape[0], 1, testDataVecs.shape[1]))
+
+    """ 
+    valDataNum = int(trainDataVecs.shape[0] * 0.8)
+    valDataVecs = trainDataVecs[valDataNum:]
+    y_val = y_train[valDataNum:]
+    y_train = y_train[:valDataNum]
+    trainDataVecs = trainDataVecs[:valDataNum]
+    """
+
+    rnn_model = mdl.lstm(num_features)
+    plot_model(rnn_model, to_file=output_dir + '/model.eps')
+    #rnn_model.fit(trainDataVecs, y_train, batch_size=batch_size, epochs=epochs, validation_data=(valDataVecs, y_val))
+    rnn_model.fit(trainDataVecs, y_train, batch_size=batch_size, epochs=epochs)
     
-    lstm_model = mdl.lstm_gru()
-    lstm_model.fit(trainDataVecs, y_train, batch_size=64, epochs=100)
+    """
+    # saving history
+    history = rnn_model.history.history
+
+    loss_values = history['loss']
+    val_loss_values = history['val_loss']
+    epochs_values = range(1, epochs + 1)
+    
+    fig = plt.figure()
+    plt.plot(epochs_values, loss_values, 'bo', label='Training Loss')
+    plt.plot(epochs_values, val_loss_values, 'b', label='Validation Loss')
+    plt.title('Training and Validation Loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.legend()
+    fig.savefig(output_dir + '/train_valid_loss.eps')
+
+    plt.clf()
+    acc_values = history['acc']
+    val_acc_values = history['val_acc']
+    plt.plot(epochs_values, acc_values, 'bo', label='Training acc')
+    plt.plot(epochs_values, val_acc_values, 'b', label='Validation acc')
+    plt.title('Traning and Validation Accuracy')
+    plt.xlabel('Epochs')
+    plt.ylabel('Accuracy')
+    plt.legend()
+    fig.savefig(output_dir + '/train_valid_acc.eps')
     #lstm_model.load_weights('./model_weights/final_lstm.h5')
-    y_pred = lstm_model.predict(testDataVecs)
-    
-    # Save any one of the 8 models.
-    if count == 5:
-         lstm_model.save('./model_weights/final_lstm.h5')
-    
+    """
+    y_pred = rnn_model.predict(testDataVecs)
+
+
     # Round y_pred to the nearest integer.
     y_pred = np.around(y_pred)
-    
+
     # Evaluate the model on the evaluation metric. "Quadratic mean averaged Kappa"
     result = cohen_kappa_score(y_test.values,y_pred,weights='quadratic')
     print("Kappa Score: {}".format(result))
     results.append(result)
+   
+    # confusion matrix
+    # print(tf.confusion_matrix(y_test.values, y_pred))
+
+    
+
+    # Save best model.
+    if result > best_model:
+        rnn_model.save('./model_weights/final_lstm.h5')
+        best_model = result
 
     count += 1
 
-print("Average Kappa score after a 5-fold cross validation: ",np.around(np.array(results).mean(),decimals=4))
+    # checking perf
+    sys.exit(1)
+
+print("Average Kappa score after a 5-fold cross validation: ", np.around(np.array(results).mean(),decimals=4))

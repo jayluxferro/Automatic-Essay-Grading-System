@@ -1,0 +1,83 @@
+digraph "CFG forandroid.support.v4.graphics.ColorUtils.compositeColors(Landroid\/graphics\/Color;Landroid\/graphics\/Color;)Landroid\/graphics\/Color;" {
+subgraph cluster_Region_357329847 {
+label = "R(1:(2:(6:(1:4)|5|(1:7)|8|(1:10)|12)|(2:13|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_201312305 {
+label = "R(2:(6:(1:4)|5|(1:7)|8|(1:10)|12)|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_165702036 {
+label = "IF [B:1:0x000c] THEN: R(6:(1:4)|5|(1:7)|8|(1:10)|12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (java.util.Objects.equals(r7.getModel(), r8.getModel()) == true) goto L_0x000e\l}"];
+subgraph cluster_Region_2135715844 {
+label = "R(6:(1:4)|5|(1:7)|8|(1:10)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_345666286 {
+label = "IF [B:3:0x001a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (java.util.Objects.equals(r8.getColorSpace(), r7.getColorSpace()) == false) goto L_0x001d\l}"];
+subgraph cluster_Region_1652404761 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|android.graphics.Color r7 = r7.convert(r8.getColorSpace())\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0025|PHI: r7 \l  PHI: (r7v6 android.graphics.Color) = (r7v0 android.graphics.Color), (r7v12 android.graphics.Color) binds: [B:3:0x001a, B:4:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|float[] float[] r0 = r7.getComponents()\lfloat[] float[] r1 = r8.getComponents()\lfloat float r7 = r7.alpha()\lfloat float r2 = r8.alpha() * (1.0f \- r7)\lint int r3 = r8.getComponentCount() \- 1\lr1[r3] = r7 + r2\l}"];
+subgraph cluster_IfRegion_158550609 {
+label = "IF [B:6:0x0049] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0049|if (r1[r3] \> 0.0f) goto L_0x004b\l}"];
+subgraph cluster_Region_717935970 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004b|r7 \/= r1[r3]\lr2 \/= r1[r3]\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0051|PHI: r2 r7 \l  PHI: (r2v3 float) = (r2v2 float), (r2v4 float) binds: [B:6:0x0049, B:7:0x004b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v8 float) = (r7v7 float), (r7v11 float) binds: [B:6:0x0049, B:7:0x004b] A[DONT_GENERATE, DONT_INLINE]\l|int r4 = 0\l}"];
+subgraph cluster_LoopRegion_907693167 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0052|LOOP_START\lPHI: r4 \l  PHI: (r4v4 int) = (r4v3 int), (r4v5 int) binds: [B:8:0x0051, B:10:0x0054] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0052\-\>B:10:0x0054\l|if (r4 \< r3) goto L_0x0054\l}"];
+subgraph cluster_Region_1911815511 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0054|LOOP_END\lLOOP:0: B:9:0x0052\-\>B:10:0x0054\l|r1[r4] = (r0[r4] * r7) + (r1[r4] * r2)\lr4++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x006a|RETURN\l|return android.graphics.Color.valueOf(r1, r8.getColorSpace())\l}"];
+}
+}
+subgraph cluster_Region_389435431 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006b}"];
+Node_14 [shape=record,label="{14\:\ 0x0096|throw new java.lang.IllegalArgumentException(\"Color models must match (\" + r7.getModel() + \" vs. \" + r8.getModel() + \")\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0062}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0062|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static android.graphics.Color android.support.v4.graphics.ColorUtils.compositeColors((r7v0 android.graphics.Color A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 android.graphics.Color A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.RequiresApi, \{value=26\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_13[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_9;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_11 -> Node_12;
+Node_15 -> Node_11;
+}
+

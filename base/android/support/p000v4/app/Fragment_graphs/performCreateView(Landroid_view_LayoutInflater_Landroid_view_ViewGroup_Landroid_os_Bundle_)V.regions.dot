@@ -1,0 +1,67 @@
+digraph "CFG forandroid.support.v4.app.Fragment.performCreateView(Landroid\/view\/LayoutInflater;Landroid\/view\/ViewGroup;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_102865997 {
+label = "R(3:(1:2)|3|(1:5)(1:(1:8)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_891488913 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mChildFragmentManager != null) goto L_0x0004\l}"];
+subgraph cluster_Region_303194306 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.mChildFragmentManager.noteStateNotSaved()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|r1.mPerformedCreateView = true\lr1.mViewLifecycleOwner = new android.support.p000v4.app.Fragment.C02413()\lr1.mViewLifecycleRegistry = null\lr1.mView = onCreateView(r2, r3, r4)\l}"];
+subgraph cluster_IfRegion_2133865457 {
+label = "IF [B:4:0x001e] THEN: R(1:5) ELSE: R(1:(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|if (r1.mView != null) goto L_0x0020\l}"];
+subgraph cluster_Region_1979259822 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|r1.mViewLifecycleOwner.getLifecycle()\lr1.mViewLifecycleOwnerLiveData.setValue(r1.mViewLifecycleOwner)\l}"];
+}
+subgraph cluster_Region_1478750210 {
+label = "R(1:(1:8)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1505140660 {
+label = "IF [B:7:0x002f] THEN: R(1:8) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|if (r1.mViewLifecycleRegistry == null) goto L_0x0031\l}"];
+subgraph cluster_Region_661098696 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|r1.mViewLifecycleOwner = null\l}"];
+}
+subgraph cluster_Region_444517345 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003b|throw new java.lang.IllegalStateException(\"Called getViewLifecycleOwner() but onCreateView() returned null\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0034}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.app.Fragment.performCreateView((r1v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 android.view.LayoutInflater A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.view.ViewGroup A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

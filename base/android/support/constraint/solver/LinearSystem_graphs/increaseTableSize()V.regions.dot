@@ -1,0 +1,30 @@
+digraph "CFG forandroid.support.constraint.solver.LinearSystem.increaseTableSize()V" {
+subgraph cluster_Region_892827526 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.TABLE_SIZE *= 2\lr5.mRows = (android.support.constraint.solver.ArrayRow[]) java.util.Arrays.copyOf(r5.mRows, r5.TABLE_SIZE)\lr5.mCache.mIndexedVariables = (android.support.constraint.solver.SolverVariable[]) java.util.Arrays.copyOf(r5.mCache.mIndexedVariables, r5.TABLE_SIZE)\lr5.mAlreadyTestedCandidates = new boolean[r5.TABLE_SIZE]\lr5.mMaxColumns = r5.TABLE_SIZE\lr5.mMaxRows = r5.TABLE_SIZE\l}"];
+subgraph cluster_Region_2063849910 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1438305857 {
+label = "IF [B:1:0x0032] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0032|if (sMetrics != null) goto L_0x0034\l}"];
+subgraph cluster_Region_421429265 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0034|sMetrics.tableSizeIncrease++\lsMetrics.maxTableSize = java.lang.Math.max(sMetrics.maxTableSize, (long) r5.TABLE_SIZE)\lsMetrics.lastTableSize = sMetrics.maxTableSize\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.constraint.solver.LinearSystem.increaseTableSize((r5v0 'this' android.support.constraint.solver.LinearSystem A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

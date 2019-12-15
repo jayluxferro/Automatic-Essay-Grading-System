@@ -1,0 +1,16 @@
+digraph "CFG forcom.mapbox.mapboxsdk.LibraryLoader.load()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: SGET  (r0 I:com.mapbox.mapboxsdk.LibraryLoader) =  com.mapbox.mapboxsdk.LibraryLoader.loader com.mapbox.mapboxsdk.LibraryLoader A[Catch:\{ UnsatisfiedLinkError \-\> 0x0008 \}, TRY_ENTER]\l0x0002: CONST_STR  (r1 I:java.lang.String) =  \"mapbox\-gl\" A[Catch:\{ UnsatisfiedLinkError \-\> 0x0008 \}]\l0x0004: INVOKE  \l  (r0 I:com.mapbox.mapboxsdk.LibraryLoader)\l  (r1 I:java.lang.String)\l com.mapbox.mapboxsdk.LibraryLoader.load(java.lang.String):void type: VIRTUAL A[Catch:\{ UnsatisfiedLinkError \-\> 0x0008 \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ExcHandler: UnsatisfiedLinkError null\lSplitter:B:0:0x0000\l|0x0008: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|0x0009: CONST_STR  (r1 I:java.lang.String) =  \"Failed to load native shared library.\" \l0x000b: CONST_STR  (r2 I:java.lang.String) =  \"Mbgl\-LibraryLoader\" \l0x000d: INVOKE  \l  (r2 I:java.lang.String)\l  (r1 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l com.mapbox.mapboxsdk.log.Logger.e(java.lang.String, java.lang.String, java.lang.Throwable):void type: STATIC \l0x0010: INVOKE  (r1 I:java.lang.String), (r0 I:java.lang.Error) com.mapbox.mapboxsdk.MapStrictMode.strictModeViolation(java.lang.String, java.lang.Error):void type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|0x0013: RETURN   \l}"];
+MethodNode[shape=record,label="{public static void com.mapbox.mapboxsdk.LibraryLoader.load() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_3;
+Node_1 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,72 @@
+digraph "CFG forandroid.support.v4.text.ICUCompat.addLikelySubtags(Ljava\/util\/Locale;)Ljava\/lang\/String;" {
+subgraph cluster_Region_151880280 {
+label = "R(3:0|(1:(2:4|5))|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r3 = r3.toString()\l}"];
+subgraph cluster_TryCatchRegion_1541236737 {
+label = "Try: R(1:(2:4|5)) catches: R(2:8|9), R(2:6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_606636646 {
+label = "R(1:(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1727495501 {
+label = "IF [B:3:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|Catch:\{ IllegalAccessException \-\> 0x001f, InvocationTargetException \-\> 0x0018 \}\l|if (sAddLikelySubtagsMethod != null) goto L_0x0008     \/\/ Catch:\{ IllegalAccessException \-\> 0x001f, InvocationTargetException \-\> 0x0018 \}\l}"];
+subgraph cluster_Region_1486975498 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|Catch:\{ IllegalAccessException \-\> 0x001f, InvocationTargetException \-\> 0x0018 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|RETURN\l|return (java.lang.String) sAddLikelySubtagsMethod.invoke((java.lang.Object) null, new java.lang.Object[]\{r3\})\l}"];
+}
+}
+}
+subgraph cluster_Region_719171183 {
+label = "R(2:8|9) | ExcHandler: IllegalAccessException (r0v0 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|ExcHandler: IllegalAccessException (r0v0 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|android.util.Log.w(TAG, r0)\l}"];
+}
+subgraph cluster_Region_451958357 {
+label = "R(2:6|7) | ExcHandler: InvocationTargetException (r0v1 'e' java.lang.reflect.InvocationTargetException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|ExcHandler: InvocationTargetException (r0v1 'e' java.lang.reflect.InvocationTargetException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|android.util.Log.w(TAG, r0)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0025|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_719171183 {
+label = "R(2:8|9) | ExcHandler: IllegalAccessException (r0v0 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|ExcHandler: IllegalAccessException (r0v0 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|android.util.Log.w(TAG, r0)\l}"];
+}
+subgraph cluster_Region_451958357 {
+label = "R(2:6|7) | ExcHandler: InvocationTargetException (r0v1 'e' java.lang.reflect.InvocationTargetException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|ExcHandler: InvocationTargetException (r0v1 'e' java.lang.reflect.InvocationTargetException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|android.util.Log.w(TAG, r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|SYNTHETIC\lSplitter:B:1:0x0004\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ IllegalAccessException \-\> 0x001f, InvocationTargetException \-\> 0x0018 \}\lSplitter:B:1:0x0004\l}"];
+MethodNode[shape=record,label="{private static java.lang.String android.support.v4.text.ICUCompat.addLikelySubtags((r3v0 java.util.Locale A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_10;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CacheUtil.remove(Lcom\/google\/android\/exoplayer2\/upstream\/cache\/Cache;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:java.util.NavigableSet) = \l  (r4 I:com.google.android.exoplayer2.upstream.cache.Cache A[D('cache' com.google.android.exoplayer2.upstream.cache.Cache)])\l  (r5 I:java.lang.String A[D('key' java.lang.String)])\l com.google.android.exoplayer2.upstream.cache.Cache.getCachedSpans(java.lang.String):java.util.NavigableSet type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('cachedSpans' java.util.NavigableSet\<com.google.android.exoplayer2.upstream.cache.CacheSpan\>)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0007 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: RETURN   \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|0x0007: INVOKE  (r2 I:java.util.Iterator) = \l  (r1 I:java.util.NavigableSet A[D('cachedSpans' java.util.NavigableSet\<com.google.android.exoplayer2.upstream.cache.CacheSpan\>)])\l java.util.NavigableSet.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: INVOKE  (r3 I:boolean) = (r2 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|0x000f: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:2:0x0006 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|0x0011: INVOKE  (r0 I:java.lang.Object) = (r2 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0015: CHECK_CAST  (r0 I:com.google.android.exoplayer2.upstream.cache.CacheSpan) = (com.google.android.exoplayer2.upstream.cache.CacheSpan) (r0 I:?[OBJECT, ARRAY]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|SYNTHETIC\lSplitter:B:7:0x0017\l}"];
+Node_8 [shape=record,label="{8\:\ ?|Splitter:B:7:0x0017\l|0x0017: INVOKE  \l  (r4 I:com.google.android.exoplayer2.upstream.cache.Cache A[D('cache' com.google.android.exoplayer2.upstream.cache.Cache)])\l  (r0 I:com.google.android.exoplayer2.upstream.cache.CacheSpan A[D('cachedSpan' com.google.android.exoplayer2.upstream.cache.CacheSpan)])\l com.google.android.exoplayer2.upstream.cache.Cache.removeSpan(com.google.android.exoplayer2.upstream.cache.CacheSpan):void type: INTERFACE A[Catch:\{ CacheException \-\> 0x001b \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|ExcHandler: CacheException null\lSplitter:B:7:0x0017\l|0x001b: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+MethodNode[shape=record,label="{public static void com.google.android.exoplayer2.upstream.cache.CacheUtil.remove((r4 I:com.google.android.exoplayer2.upstream.cache.Cache A[D('cache' com.google.android.exoplayer2.upstream.cache.Cache), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.lang.String A[D('key' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0017\-0x001c: r0 'cachedSpan' com.google.android.exoplayer2.upstream.cache.CacheSpan\l  0x0004\-0x001c: r1 'cachedSpans' java.util.NavigableSet\<com.google.android.exoplayer2.upstream.cache.CacheSpan\>\l  ?\-0x001c: r4 'cache' com.google.android.exoplayer2.upstream.cache.Cache\l  ?\-0x001c: r5 'key' java.lang.String\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_2;
+Node_5 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_10;
+Node_8 -> Node_4;
+Node_10 -> Node_4;
+}
+

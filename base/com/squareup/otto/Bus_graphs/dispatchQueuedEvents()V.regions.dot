@@ -1,0 +1,119 @@
+digraph "CFG forcom.squareup.otto.Bus.dispatchQueuedEvents()V" {
+subgraph cluster_Region_1157766127 {
+label = "R(1:(2:3|(1:(2:6|(1:(1:13)(0))(1:9))))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_636972386 {
+label = "IF [B:1:0x000c] THEN: R(2:3|(1:(2:6|(1:(1:13)(0))(1:9)))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r3.isDispatching.get().booleanValue() != true) goto L_0x000f\l}"];
+subgraph cluster_Region_6600576 {
+label = "R(2:3|(1:(2:6|(1:(1:13)(0))(1:9))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|r3.isDispatching.set(true)\l}"];
+subgraph cluster_LoopRegion_1828950389 {
+label = "LOOP:0: (1:(2:6|(1:(1:13)(0))(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_940257881 {
+label = "R(1:(2:6|(1:(1:13)(0))(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_638178375 {
+label = "Try: R(2:6|(1:(1:13)(0))(1:9)) finally: R(3:14|15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_851577676 {
+label = "R(2:6|(1:(1:13)(0))(1:9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ all \-\> 0x0044 \}\lSplitter:B:5:0x001a\l|com.squareup.otto.Bus$EventWithHandler com.squareup.otto.Bus.EventWithHandler r1 = (com.squareup.otto.Bus.EventWithHandler) r3.eventsToDispatch.get().poll()     \/\/ Catch:\{ all \-\> 0x0044 \}\l}"];
+subgraph cluster_IfRegion_2107856364 {
+label = "IF [B:7:0x0028] THEN: R(1:(1:13)(0)) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|if (r1 != null) goto L_0x0034\l}"];
+subgraph cluster_Region_57978801 {
+label = "R(1:(1:13)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1213189811 {
+label = "IF [B:12:0x003a] THEN: R(1:13) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003a|Catch:\{ all \-\> 0x0044 \}\l|if (r1.handler.isValid() == true) goto L_0x003c     \/\/ Catch:\{ all \-\> 0x0044 \}\l}"];
+subgraph cluster_Region_1102121118 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003c|Catch:\{ all \-\> 0x0044 \}\l|dispatch(r1.event, r1.handler)     \/\/ Catch:\{ all \-\> 0x0044 \}\l}"];
+}
+subgraph cluster_Region_1913462419 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_334848881 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|RETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_2075539108 {
+label = "R(3:14|15|16) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0044|ExcHandler:  FINALLY\lSplitter:B:5:0x001a\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0045|FINALLY_INSNS\l|r3.isDispatching.set(false)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|throw r1\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1561925444 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_2075539108 {
+label = "R(3:14|15|16) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0044|ExcHandler:  FINALLY\lSplitter:B:5:0x001a\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0045|FINALLY_INSNS\l|r3.isDispatching.set(false)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|throw r1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0019|LOOP_START\lLOOP:0: B:4:0x0019\-\>B:17:0x0019\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a|SYNTHETIC\lSplitter:B:5:0x001a\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002a|DONT_GENERATE\l|java.lang.ThreadLocal\<java.lang.Boolean\> r1 = r3.isDispatching\ljava.lang.Boolean r0 = false\lr1.set(r0)\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|SYNTHETIC\lSplitter:B:10:0x0034\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|Catch:\{ all \-\> 0x0044 \}\lSplitter:B:10:0x0034\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0019|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x0019\-\>B:17:0x0019\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002a|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0019|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0019|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.squareup.otto.Bus.dispatchQueuedEvents((r3v0 'this' com.squareup.otto.Bus A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_14;
+Node_7 -> Node_10;
+Node_7 -> Node_18[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_19[style=dashed];
+Node_13 -> Node_20;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_14;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+Node_17 -> Node_4;
+Node_18 -> Node_8;
+Node_19 -> Node_17;
+Node_20 -> Node_17;
+}
+

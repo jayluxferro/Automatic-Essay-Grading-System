@@ -1,0 +1,82 @@
+digraph "CFG forandroid.support.v4.view.ViewConfigurationCompat.getLegacyScrollFactor(Landroid\/view\/ViewConfiguration;Landroid\/content\/Context;)F" {
+subgraph cluster_Region_1810997023 {
+label = "R(3:(1:(1:7))|10|(2:(1:13)|(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_921879975 {
+label = "IF [B:1:0x0004, B:3:0x0008] THEN: R(1:(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 25) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (sGetScaledScrollFactorMethod != null) goto L_0x000a\l}"];
+subgraph cluster_Region_524020400 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_2039138860 {
+label = "Try: R(1:7) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1608983044 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|RETURN\l|return (float) ((java.lang.Integer) sGetScaledScrollFactorMethod.invoke(r3, new java.lang.Object[0])).intValue()\l}"];
+}
+subgraph cluster_Region_2132286370 {
+label = "R(1:8) | ExcHandler: Exception (unused java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|android.util.Log.i(TAG, \"Could not find method getScaledScrollFactor() on ViewConfiguration\")\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0022|android.util.TypedValue android.util.TypedValue r3 = new android.util.TypedValue()\l}"];
+subgraph cluster_Region_1068892315 {
+label = "R(2:(1:13)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_354838201 {
+label = "IF [B:11:0x0033] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033|if (r4.getTheme().resolveAttribute(16842829, r3, true) == true) goto L_0x0035\l}"];
+subgraph cluster_Region_1851664195 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0041|RETURN\l|return r3.getDimension(r4.getResources().getDisplayMetrics())\l}"];
+}
+}
+subgraph cluster_Region_281179883 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0042|RETURN\l|return 0.0f\l}"];
+}
+}
+}
+subgraph cluster_Region_2132286370 {
+label = "R(1:8) | ExcHandler: Exception (unused java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|android.util.Log.i(TAG, \"Could not find method getScaledScrollFactor() on ViewConfiguration\")\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a|SYNTHETIC\lSplitter:B:4:0x000a\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ Exception \-\> 0x001b \}\lSplitter:B:4:0x000a\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lExcHandler: Exception (unused java.lang.Exception)\lSplitter:B:4:0x000a\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0035}"];
+MethodNode[shape=record,label="{private static float android.support.v4.view.ViewConfigurationCompat.getLegacyScrollFactor((r3v0 android.view.ViewConfiguration A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_8 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_9 -> Node_8;
+Node_12 -> Node_13;
+}
+

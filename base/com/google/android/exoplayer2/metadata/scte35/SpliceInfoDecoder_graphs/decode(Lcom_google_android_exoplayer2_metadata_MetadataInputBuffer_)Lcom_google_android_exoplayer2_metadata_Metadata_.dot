@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.scte35.SpliceInfoDecoder.decode(Lcom\/google\/android\/exoplayer2\/metadata\/MetadataInputBuffer;)Lcom\/google\/android\/exoplayer2\/metadata\/Metadata;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r14.timestampAdjuster == null) goto L_0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|if ((r15.subsampleOffsetUs \> r14.timestampAdjuster.getTimestampOffsetUs() ? 1 : (r15.subsampleOffsetUs == r14.timestampAdjuster.getTimestampOffsetUs() ? 0 : \-1)) == 0) goto L_0x0023\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|r14.timestampAdjuster = new com.google.android.exoplayer2.util.TimestampAdjuster(r15.timeUs)\lr14.timestampAdjuster.adjustSampleTimestamp(r15.timeUs \- r15.subsampleOffsetUs)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|java.nio.ByteBuffer r0 = r15.data\lbyte[] r2 = r0.array()\lint r3 = r0.limit()\lr14.sectionData.reset(r2, r3)\lr14.sectionHeader.reset(r2, r3)\lr14.sectionHeader.skipBits(39)\llong r4 = (((long) r14.sectionHeader.readBits(1)) \<\< 32) \| ((long) r14.sectionHeader.readBits(32))\lr14.sectionHeader.skipBits(20)\lint r6 = r14.sectionHeader.readBits(12)\lint r7 = r14.sectionHeader.readBits(8)\lr1 = null\lr14.sectionData.skipBytes(14)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0074|switch(r7) \{\l    case 0: goto L_0x0082;\l    case 4: goto L_0x0088;\l    case 5: goto L_0x008f;\l    case 6: goto L_0x0098;\l    case 255: goto L_0x00a1;\l    default: goto L_0x0077;\l\}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0077|PHI: r1 \l  PHI: (r1v6 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand) = (r1v0 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand), (r1v1 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand), (r1v2 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand), (r1v3 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand), (r1v4 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand), (r1v5 'command' com.google.android.exoplayer2.metadata.scte35.SpliceCommand) binds: [B:6:0x0074, B:13:0x00a1, B:12:0x0098, B:11:0x008f, B:10:0x0088, B:9:0x0082] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L_0x00a8\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0079}"];
+Node_9 [shape=record,label="{9\:\ 0x0082|com.google.android.exoplayer2.metadata.scte35.SpliceNullCommand r1 = new com.google.android.exoplayer2.metadata.scte35.SpliceNullCommand()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0088|com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand r1 = com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand.parseFromSection(r14.sectionData)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x008f|com.google.android.exoplayer2.metadata.scte35.SpliceInsertCommand r1 = com.google.android.exoplayer2.metadata.scte35.SpliceInsertCommand.parseFromSection(r14.sectionData, r4, r14.timestampAdjuster)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0098|com.google.android.exoplayer2.metadata.scte35.TimeSignalCommand r1 = com.google.android.exoplayer2.metadata.scte35.TimeSignalCommand.parseFromSection(r14.sectionData, r4, r14.timestampAdjuster)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x00a1|com.google.android.exoplayer2.metadata.scte35.PrivateCommand r1 = com.google.android.exoplayer2.metadata.scte35.PrivateCommand.parseFromSection(r14.sectionData, r6, r4)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00a8|com.google.android.exoplayer2.metadata.Metadata$Entry[] r9 = new com.google.android.exoplayer2.metadata.Metadata.Entry[]\{r1\}\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new com.google.android.exoplayer2.metadata.Metadata(new com.google.android.exoplayer2.metadata.Metadata.Entry[0])\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.metadata.Metadata(r9)\l}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.metadata.Metadata com.google.android.exoplayer2.metadata.scte35.SpliceInfoDecoder.decode((r14v0 'this' com.google.android.exoplayer2.metadata.scte35.SpliceInfoDecoder A[IMMUTABLE_TYPE, THIS]), (r15v0 'inputBuffer' com.google.android.exoplayer2.metadata.MetadataInputBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.metadata.MetadataDecoderException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9;
+Node_6 -> Node_10;
+Node_6 -> Node_11;
+Node_6 -> Node_12;
+Node_6 -> Node_13;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_8 -> Node_15;
+Node_9 -> Node_7;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+Node_12 -> Node_7;
+Node_13 -> Node_7;
+Node_14 -> Node_16;
+}
+

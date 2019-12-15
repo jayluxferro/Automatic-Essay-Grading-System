@@ -1,0 +1,29 @@
+digraph "CFG forcom.google.gson.JsonObject.deepCopy()Lcom\/google\/gson\/JsonObject;" {
+subgraph cluster_Region_220373763 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.JsonObject com.google.gson.JsonObject r0 = new com.google.gson.JsonObject()\ljava.util.Iterator r1 = r4.members.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_385034521 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|if (r1.hasNext() != false) goto L_0x0015\l}"];
+subgraph cluster_Region_2120604191 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|LOOP_END\lLOOP:0: B:1:0x000f\-\>B:3:0x0015\l|java.util.Map$Entry r2 = r1.next()\lr0.add((java.lang.String) r2.getKey(), ((com.google.gson.JsonElement) r2.getValue()).deepCopy())\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002f|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000f|LOOP_START\lLOOP:0: B:1:0x000f\-\>B:3:0x0015\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.google.gson.JsonObject com.google.gson.JsonObject.deepCopy((r4v0 'this' com.google.gson.JsonObject A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

@@ -1,0 +1,15 @@
+digraph "CFG forcom.crashlytics.android.core.MetaDataStore.jsonToKeysData(Ljava\/lang\/String;)Ljava\/util\/Map;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:org.json.JSONObject) =  org.json.JSONObject \l0x0002: INVOKE  (r0 I:org.json.JSONObject), (r4 I:java.lang.String) org.json.JSONObject.\<init\>(java.lang.String):void type: DIRECT \l0x0005: NEW_INSTANCE  (r4 I:java.util.HashMap) =  java.util.HashMap \l0x0007: INVOKE  (r4 I:java.util.HashMap) java.util.HashMap.\<init\>():void type: DIRECT \l0x000a: INVOKE  (r1 I:java.util.Iterator) = (r0 I:org.json.JSONObject) org.json.JSONObject.keys():java.util.Iterator type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|0x000e: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|0x0012: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0022 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|0x0014: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0018: CHECK_CAST  (r2 I:java.lang.String) = (java.lang.String) (r2 I:?[OBJECT, ARRAY]) \l0x001a: INVOKE  (r3 I:java.lang.String) = (r0 I:org.json.JSONObject), (r2 I:java.lang.String) com.crashlytics.android.core.MetaDataStore.valueOrNull(org.json.JSONObject, java.lang.String):java.lang.String type: STATIC \l0x001e: INVOKE  \l  (r4 I:java.util.Map)\l  (r2 I:java.lang.Object)\l  (r3 I:java.lang.Object)\l java.util.Map.put(java.lang.Object, java.lang.Object):java.lang.Object type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0022|0x0022: RETURN  (r4 I:java.util.Map\<java.lang.String, java.lang.String\>) \l}"];
+MethodNode[shape=record,label="{private static java.util.Map\<java.lang.String, java.lang.String\> com.crashlytics.android.core.MetaDataStore.jsonToKeysData((r4 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.json.JSONException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+}
+

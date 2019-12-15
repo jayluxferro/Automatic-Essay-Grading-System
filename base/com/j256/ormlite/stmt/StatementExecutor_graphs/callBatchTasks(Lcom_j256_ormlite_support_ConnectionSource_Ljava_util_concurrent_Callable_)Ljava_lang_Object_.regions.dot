@@ -1,0 +1,56 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.callBatchTasks(Lcom\/j256\/ormlite\/support\/ConnectionSource;Ljava\/util\/concurrent\/Callable;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1041817528 {
+label = "R(1:(2:(1:11)|(2:c|6))) | DECL_VAR: CT null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2133759735 {
+label = "R(2:(1:11)|(2:c|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_225946394 {
+label = "IF [B:1:0x000a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.isSingleConnection(r1.tableInfo.getTableName()) != true) goto L_0x0016\l}"];
+subgraph cluster_Region_276447747 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001a|RETURN\l|return doCallBatchTasks(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_313730310 {
+label = "R(2:c|6)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_1751624363 {
+label = "Synchronized:R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c}"];
+subgraph cluster_Region_1920135341 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|java.lang.Object r2 = doCallBatchTasks(r2, r3)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0012|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0011: MONITOR_EXIT  \l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013|REMOVE\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0014|REMOVE\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0015|REMOVE\l|throw r2\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0016}"];
+MethodNode[shape=record,label="{public CT com.j256.ormlite.stmt.StatementExecutor.callBatchTasks((r1v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r2v0 com.j256.ormlite.support.ConnectionSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.util.concurrent.Callable\<CT\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<CT:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/support\/ConnectionSource;, Ljava\/util\/concurrent\/Callable\<, TCT;\>;)TCT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

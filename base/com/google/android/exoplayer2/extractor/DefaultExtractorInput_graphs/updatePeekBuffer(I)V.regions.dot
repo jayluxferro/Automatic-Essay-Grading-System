@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultExtractorInput.updatePeekBuffer(I)V" {
+subgraph cluster_Region_1269950742 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.peekBufferLength \-= r6\lr5.peekBufferPosition = 0\lbyte[] byte[] r0 = r5.peekBuffer\l}"];
+subgraph cluster_IfRegion_189625616 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r5.peekBufferLength \< (r5.peekBuffer.length \- 524288)) goto L_0x0014\l}"];
+subgraph cluster_Region_1623336233 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|byte[] r0 = new byte[(r5.peekBufferLength + 65536)]\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001b|PHI: r0 \l  PHI: (r0v1 'newPeekBuffer' byte[]) = (r0v0 'newPeekBuffer' byte[]), (r0v2 'newPeekBuffer' byte[]) binds: [B:1:0x0012, B:2:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.System.arraycopy(r5.peekBuffer, r6, r0, 0, r5.peekBufferLength)\lr5.peekBuffer = r0\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0024}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.DefaultExtractorInput.updatePeekBuffer((r5v0 'this' com.google.android.exoplayer2.extractor.DefaultExtractorInput A[IMMUTABLE_TYPE, THIS]), (r6v0 'bytesConsumed' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

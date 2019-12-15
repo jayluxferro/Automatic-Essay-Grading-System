@@ -1,0 +1,52 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.startLocation()V" {
+subgraph cluster_Region_1625059594 {
+label = "R(1:(1:6)(1:(1:4)(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2112743410 {
+label = "IF [B:1:0x0004] THEN: R(1:6) ELSE: R(1:(1:4)(1:5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 21) goto L_0x0030\l}"];
+subgraph cluster_Region_1224288887 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0030|applicationContext.startService(obtainLocationServiceIntent())\l}"];
+}
+subgraph cluster_Region_1115567558 {
+label = "R(1:(1:4)(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1093228706 {
+label = "IF [B:3:0x0018] THEN: R(1:4) ELSE: R(1:5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|if (android.arch.lifecycle.ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(android.arch.lifecycle.Lifecycle.State.STARTED) == true) goto L_0x001a\l}"];
+subgraph cluster_Region_1407837442 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|applicationContext.startService(obtainLocationServiceIntent())\l}"];
+}
+subgraph cluster_Region_1380108186 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|android.arch.lifecycle.ProcessLifecycleOwner.get().getLifecycle().addObserver(r2)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.android.telemetry.MapboxTelemetry.startLocation((r2v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

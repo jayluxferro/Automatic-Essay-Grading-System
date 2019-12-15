@@ -1,0 +1,27 @@
+digraph "CFG forcom.squareup.picasso.PicassoDrawable.setAlpha(I)V" {
+subgraph cluster_Region_506013565 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.alpha = r2\l}"];
+subgraph cluster_IfRegion_592609916 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1.placeholder != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1719920241 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1.placeholder.setAlpha(r2)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000b|super.setAlpha(r2)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+MethodNode[shape=record,label="{public void com.squareup.picasso.PicassoDrawable.setAlpha((r1v0 'this' com.squareup.picasso.PicassoDrawable A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompatJellybean.toBundle(Landroid\/support\/v4\/app\/RemoteInput;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_1609905964 {
+label = "R(3:0|(3:4|(1:7)|8)|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle()\lr0.putString(KEY_RESULT_KEY, r3.getResultKey())\lr0.putCharSequence(KEY_LABEL, r3.getLabel())\lr0.putCharSequenceArray(KEY_CHOICES, r3.getChoices())\lr0.putBoolean(KEY_ALLOW_FREE_FORM_INPUT, r3.getAllowFreeFormInput())\lr0.putBundle(KEY_EXTRAS, r3.getExtras())\ljava.util.Set java.util.Set\<java.lang.String\> r3 = r3.getAllowedDataTypes()\l}"];
+subgraph cluster_IfRegion_1416849879 {
+label = "IF [B:1:0x0036, B:3:0x003c] THEN: R(3:4|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0036|ADDED_TO_REGION\l|if (r3 != null) goto L_0x0038\l}"];
+Node_3 [shape=record,label="{3\:\ 0x003c|ADDED_TO_REGION\l|if (r3.isEmpty() == false) goto L_0x003e\l}"];
+subgraph cluster_Region_1970799837 {
+label = "R(3:4|(1:7)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003e|java.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r3.size())\ljava.util.Iterator r3 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_1431484863 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x004f|if (r3.hasNext() != false) goto L_0x0051\l}"];
+subgraph cluster_Region_1561905207 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0051|LOOP_END\lLOOP:0: B:5:0x004b\-\>B:7:0x0051\l|r1.add(r2)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x005b|r0.putStringArrayList(KEY_ALLOWED_DATA_TYPES, r1)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0060|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0038}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x004b|LOOP_START\lLOOP:0: B:5:0x004b\-\>B:7:0x0051\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x005b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static android.os.Bundle android.support.v4.app.NotificationCompatJellybean.toBundle((r3v0 android.support.v4.app.RemoteInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_8;
+}
+

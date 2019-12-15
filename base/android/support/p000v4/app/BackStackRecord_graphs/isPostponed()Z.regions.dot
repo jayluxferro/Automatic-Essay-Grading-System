@@ -1,0 +1,53 @@
+digraph "CFG forandroid.support.v4.app.BackStackRecord.isPostponed()Z" {
+subgraph cluster_Region_955886877 {
+label = "R(3:0|(1:(2:(1:5)|(1:6)))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_428344690 {
+label = "LOOP:0: (1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r1 \< r3.mOps.size()) goto L_0x000a\l}"];
+subgraph cluster_Region_802078483 {
+label = "R(1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_870533109 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2036906912 {
+label = "IF [B:4:0x0016] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (isFragmentPostponed(r3.mOps.get(r1)) == true) goto L_0x0018\l}"];
+subgraph cluster_Region_251864816 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1870589104 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:6:0x001a\l|r1++\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return false\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:6:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:6:0x001a\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean android.support.v4.app.BackStackRecord.isPostponed((r3v0 'this' android.support.v4.app.BackStackRecord A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_8;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_5;
+Node_9 -> Node_7;
+}
+

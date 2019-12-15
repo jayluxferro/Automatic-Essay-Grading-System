@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.android.telemetry.SessionIdentifier.getSessionId()Ljava\/lang\/String;" {
+subgraph cluster_Region_1094366888 {
+label = "R(2:(1:4)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1367577027 {
+label = "IF [B:1:0x0011, B:3:0x0015] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|ADDED_TO_REGION\l|if ((java.lang.System.currentTimeMillis() \- r4.lastSessionIdUpdate) \>= ((long) (r4.rotationInterval * HOURS_TO_MILLISECONDS))) goto L_0x0017\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|ADDED_TO_REGION\l|if (r4.sessionId == null) goto L_0x0017\l}"];
+subgraph cluster_Region_829235769 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r4.sessionId = com.mapbox.android.telemetry.TelemetryUtils.obtainUniversalUniqueIdentifier()\lr4.lastSessionIdUpdate = java.lang.System.currentTimeMillis()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0025|RETURN\l|return r4.sessionId\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0013}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+MethodNode[shape=record,label="{java.lang.String com.mapbox.android.telemetry.SessionIdentifier.getSessionId((r4v0 'this' com.mapbox.android.telemetry.SessionIdentifier A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

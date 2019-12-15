@@ -1,0 +1,36 @@
+digraph "CFG forokio.GzipSink.\<init\>(Lokio\/Sink;)V" {
+subgraph cluster_Region_188332069 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1690756312 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1628282366 {
+label = "IF [B:1:0x000a] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r4 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_279379625 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|r3.deflater = new java.util.zip.Deflater(\-1, true)\lr3.sink = okio.Okio.buffer(r4)\lr3.deflaterSink = new okio.DeflaterSink(r3.sink, r3.deflater)\lwriteHeader()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0029|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1444451336 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0031|throw new java.lang.IllegalArgumentException(\"sink == null\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002a}"];
+MethodNode[shape=record,label="{public void okio.GzipSink.\<init\>((r3v0 'this' okio.GzipSink A[IMMUTABLE_TYPE, THIS]), (r4v0 okio.Sink A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

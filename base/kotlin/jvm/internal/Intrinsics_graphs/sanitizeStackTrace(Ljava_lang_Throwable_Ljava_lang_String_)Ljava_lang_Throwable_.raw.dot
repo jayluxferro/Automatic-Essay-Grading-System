@@ -1,0 +1,22 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.sanitizeStackTrace(Ljava\/lang\/Throwable;Ljava\/lang\/String;)Ljava\/lang\/Throwable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.lang.StackTraceElement[]) = (r5 I:java.lang.Throwable) java.lang.Throwable.getStackTrace():java.lang.StackTraceElement[] type: VIRTUAL \l0x0004: ARRAY_LENGTH  (r1 I:int) = (r0 I:?[]) \l0x0005: CONST  (r2 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l0x0006: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IF  (r3 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:6:0x0019 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|0x0009: AGET  (r4 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r3 I:?[int, short, byte, char]) \l0x000b: INVOKE  (r4 I:java.lang.String) = (r4 I:java.lang.StackTraceElement) java.lang.StackTraceElement.getClassName():java.lang.String type: VIRTUAL \l0x000f: INVOKE  (r4 I:boolean) = (r6 I:java.lang.String), (r4 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0016 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: MOVE  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|0x0016: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: INVOKE  (r6 I:java.util.List) = (r0 I:java.lang.Object[]) java.util.Arrays.asList(java.lang.Object[]):java.util.List type: STATIC \l0x001d: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l0x001f: INVOKE  (r6 I:java.util.List) = (r6 I:java.util.List), (r2 I:int), (r1 I:int) java.util.List.subList(int, int):java.util.List type: INTERFACE \l0x0023: INVOKE  (r0 I:int) = (r6 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0027: NEW_ARRAY  (r0 I:java.lang.StackTraceElement[]) = (r0 I:int A[IMMUTABLE_TYPE]) type: java.lang.StackTraceElement[] \l0x0029: INVOKE  (r6 I:java.lang.Object[]) = (r6 I:java.util.List), (r0 I:java.lang.Object[]) java.util.List.toArray(java.lang.Object[]):java.lang.Object[] type: INTERFACE \l0x002d: CHECK_CAST  (r6 I:java.lang.StackTraceElement[]) = (java.lang.StackTraceElement[]) (r6 I:?[OBJECT, ARRAY]) \l0x002f: INVOKE  \l  (r5 I:java.lang.Throwable)\l  (r6 I:java.lang.StackTraceElement[])\l java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[]):void type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|0x0032: RETURN  (r5 I:T) \l}"];
+MethodNode[shape=record,label="{static T kotlin.jvm.internal.Intrinsics.sanitizeStackTrace((r5 I:T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Throwable;, \>(TT;, Ljava\/lang\/String;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+}
+

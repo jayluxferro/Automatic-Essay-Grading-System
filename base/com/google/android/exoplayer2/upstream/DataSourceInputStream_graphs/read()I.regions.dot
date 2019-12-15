@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.DataSourceInputStream.read()I" {
+subgraph cluster_Region_353619457 {
+label = "R(1:(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_772794090 {
+label = "R(2:(1:3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1639776874 {
+label = "IF [B:1:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (read(r3.singleByteArray) == \-1) goto L_?\l}"];
+subgraph cluster_Region_1801995902 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1610673876 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r3.singleByteArray[0] & 255\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.upstream.DataSourceInputStream.read((r3v0 'this' com.google.android.exoplayer2.upstream.DataSourceInputStream A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+}
+

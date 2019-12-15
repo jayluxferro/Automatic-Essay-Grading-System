@@ -1,0 +1,59 @@
+digraph "CFG forandroid.support.v4.graphics.TypefaceCompatApi21Impl.getFile(Landroid\/os\/ParcelFileDescriptor;)Ljava\/io\/File;" {
+subgraph cluster_Region_1567130498 {
+label = "R(1:(2:2|(2:(1:5)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_525796451 {
+label = "Try: R(2:2|(2:(1:5)|(1:6))) catches: R(1:7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1963570166 {
+label = "R(2:2|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ ErrnoException \-\> 0x002d \}\lSplitter:B:1:0x0001\l|java.lang.String java.lang.String r4 = android.system.Os.readlink(\"\/proc\/self\/fd\/\" + r4.getFd())     \/\/ Catch:\{ ErrnoException \-\> 0x002d \}\l}"];
+subgraph cluster_Region_1995920051 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_812843394 {
+label = "IF [B:3:0x0024] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0024|Catch:\{ ErrnoException \-\> 0x002d \}\l|if (android.system.OsConstants.S_ISREG(android.system.Os.stat(r4).st_mode) == true) goto L_0x0026     \/\/ Catch:\{ ErrnoException \-\> 0x002d \}\l}"];
+subgraph cluster_Region_1173109558 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002b|RETURN\l|return new java.io.File(r4)\l}"];
+}
+}
+subgraph cluster_Region_1825548394 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_1965179618 {
+label = "R(1:7) | ExcHandler: ErrnoException (unused android.system.ErrnoException)\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_1965179618 {
+label = "R(1:7) | ExcHandler: ErrnoException (unused android.system.ErrnoException)\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0026|Catch:\{ ErrnoException \-\> 0x002d \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lExcHandler: ErrnoException (unused android.system.ErrnoException)\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{private java.io.File android.support.v4.graphics.TypefaceCompatApi21Impl.getFile((r3v0 'this' android.support.v4.graphics.TypefaceCompatApi21Impl A[IMMUTABLE_TYPE, THIS]), (r4v0 android.os.ParcelFileDescriptor A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_4 -> Node_5;
+Node_8 -> Node_7;
+}
+

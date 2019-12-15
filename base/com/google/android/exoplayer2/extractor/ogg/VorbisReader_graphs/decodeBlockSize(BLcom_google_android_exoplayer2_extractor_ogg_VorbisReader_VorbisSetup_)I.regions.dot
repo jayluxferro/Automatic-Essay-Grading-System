@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.VorbisReader.decodeBlockSize(BLcom\/google\/android\/exoplayer2\/extractor\/ogg\/VorbisReader$VorbisSetup;)I" {
+subgraph cluster_Region_512122171 {
+label = "R(2:0|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1221088977 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1211431223 {
+label = "IF [B:1:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r5.modes[readBits(r4, r5.iLogModes, 1)].blockFlag == false) goto L_0x000f\l}"];
+subgraph cluster_Region_1783019874 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r5.idHeader.blockSize0\l}"];
+}
+}
+subgraph cluster_Region_1183145620 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return r5.idHeader.blockSize1\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014}"];
+MethodNode[shape=record,label="{private static int com.google.android.exoplayer2.extractor.ogg.VorbisReader.decodeBlockSize((r4v0 'firstByteOfAudioPacket' byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'vorbisSetup' com.google.android.exoplayer2.extractor.ogg.VorbisReader$VorbisSetup A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_5;
+}
+

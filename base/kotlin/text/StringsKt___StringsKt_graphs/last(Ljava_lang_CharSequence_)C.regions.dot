@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.last(Ljava\/lang\/CharSequence;)C" {
+subgraph cluster_Region_355849377 {
+label = "R(2:0|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\l}"];
+subgraph cluster_Region_1399439845 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_168534552 {
+label = "IF [B:4:0x000e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|PHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r1.length() == 0) == false) goto L_0x0010\l}"];
+subgraph cluster_Region_858675865 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|RETURN\l|return r1.charAt(kotlin.text.StringsKt.getLastIndex(r1))\l}"];
+}
+}
+subgraph cluster_Region_142934145 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|throw new java.util.NoSuchElementException(\"Char sequence is empty.\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019}"];
+MethodNode[shape=record,label="{public static final char kotlin.text.StringsKt___StringsKt.last((r1v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,87 @@
+digraph "CFG forcom.google.firebase.messaging.RemoteMessage.getTtl()I" {
+subgraph cluster_Region_1093944291 {
+label = "R(2:0|(2:(1:3)|(1:(2:(1:13)|(1:(1:9))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Object java.lang.Object r0 = r4.zzee.get(\"google.ttl\")\l}"];
+subgraph cluster_Region_865542349 {
+label = "R(2:(1:3)|(1:(2:(1:13)|(1:(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_842964571 {
+label = "IF [B:1:0x000a] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if ((r0 instanceof java.lang.Integer) == true) goto L_0x000c\l}"];
+subgraph cluster_Region_354496366 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|RETURN\l|return ((java.lang.Integer) r0).intValue()\l}"];
+}
+}
+subgraph cluster_Region_1014002143 {
+label = "R(1:(2:(1:13)|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1695371971 {
+label = "R(2:(1:13)|(1:(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_804179977 {
+label = "IF [B:5:0x0015] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|if ((r0 instanceof java.lang.String) != true) goto L_?\l}"];
+subgraph cluster_Region_761858960 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_670226360 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_406037520 {
+label = "Try: R(1:9) catches: R(2:10|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1277601100 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|RETURN\l|return java.lang.Integer.parseInt((java.lang.String) r0)\l}"];
+}
+subgraph cluster_Region_170669781 {
+label = "R(2:10|12) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|java.lang.String java.lang.String r0 = java.lang.String.valueOf(r0)\ljava.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder(java.lang.String.valueOf(r0).length() + 13)\lr3.append(\"Invalid TTL: \")\lr3.append(r0)\landroid.util.Log.w(\"FirebaseMessaging\", r3.toString())\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_170669781 {
+label = "R(2:10|12) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|java.lang.String java.lang.String r0 = java.lang.String.valueOf(r0)\ljava.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder(java.lang.String.valueOf(r0).length() + 13)\lr3.append(\"Invalid TTL: \")\lr3.append(r0)\landroid.util.Log.w(\"FirebaseMessaging\", r3.toString())\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018|SYNTHETIC\lSplitter:B:7:0x0018\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|Catch:\{ NumberFormatException \-\> 0x001f \}\lSplitter:B:7:0x0018\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\lSplitter:B:7:0x0018\l}"];
+MethodNode[shape=record,label="{public final int com.google.firebase.messaging.RemoteMessage.getTtl((r4v0 'this' com.google.firebase.messaging.RemoteMessage A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_13;
+Node_10 -> Node_12;
+Node_10 -> Node_12;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_11 -> Node_10;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.onFullQueue(Ljava\/util\/List;)V" {
+subgraph cluster_Region_106293869 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_44515127 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1905331093 {
+label = "IF [B:1:0x000c, B:3:0x0012] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (com.mapbox.android.telemetry.TelemetryEnabler.State.ENABLED.equals(r2.telemetryEnabler.obtainTelemetryState()) != false) goto L_0x000e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if (com.mapbox.android.telemetry.TelemetryUtils.adjustWakeUpMode() != true) goto L_0x0014\l}"];
+subgraph cluster_Region_1152731787 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|sendEventsIfPossible(r3)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.android.telemetry.MapboxTelemetry.onFullQueue((r2v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.List\<com.mapbox.android.telemetry.Event\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/android\/telemetry\/Event;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

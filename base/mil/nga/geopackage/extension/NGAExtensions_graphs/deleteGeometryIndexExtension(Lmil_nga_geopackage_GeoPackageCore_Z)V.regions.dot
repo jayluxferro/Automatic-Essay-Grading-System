@@ -1,0 +1,91 @@
+digraph "CFG formil.nga.geopackage.extension.NGAExtensions.deleteGeometryIndexExtension(Lmil\/nga\/geopackage\/GeoPackageCore;Z)V" {
+subgraph cluster_Region_1177858606 {
+label = "R(2:0|(3:(1:4)|(1:7)|(1:(1:10))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.geopackage.extension.index.GeometryIndexDao mil.nga.geopackage.extension.index.GeometryIndexDao r0 = r4.getGeometryIndexDao()\lmil.nga.geopackage.extension.index.TableIndexDao mil.nga.geopackage.extension.index.TableIndexDao r1 = r4.getTableIndexDao()\lmil.nga.geopackage.extension.ExtensionsDao mil.nga.geopackage.extension.ExtensionsDao r2 = r4.getExtensionsDao()\lcom.j256.ormlite.support.ConnectionSource com.j256.ormlite.support.ConnectionSource r3 = r4.getDatabase().getConnectionSource()\l}"];
+subgraph cluster_TryCatchRegion_312291462 {
+label = "Try: R(3:(1:4)|(1:7)|(1:(1:10))) catches: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1262977595 {
+label = "R(3:(1:4)|(1:7)|(1:(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1291546735 {
+label = "IF [B:3:0x0018] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|Catch:\{ SQLException \-\> 0x0036 \}\l|if (r0.isTableExists() == true) goto L_0x001a     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+subgraph cluster_Region_1740799735 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|Catch:\{ SQLException \-\> 0x0036 \}\l|com.j256.ormlite.table.TableUtils.dropTable(r3, mil.nga.geopackage.extension.index.GeometryIndex.class, r5)     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+}
+}
+subgraph cluster_IfRegion_8206362 {
+label = "IF [B:6:0x0023] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|Catch:\{ SQLException \-\> 0x0036 \}\l|if (r1.isTableExists() == true) goto L_0x0025     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+subgraph cluster_Region_244725757 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|Catch:\{ SQLException \-\> 0x0036 \}\l|com.j256.ormlite.table.TableUtils.dropTable(r3, mil.nga.geopackage.extension.index.TableIndex.class, r5)     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+}
+}
+subgraph cluster_Region_1974261421 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_334193924 {
+label = "IF [B:9:0x002e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002e|Catch:\{ SQLException \-\> 0x0036 \}\l|if (r2.isTableExists() == true) goto L_0x0030     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+subgraph cluster_Region_1881997461 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0030|Catch:\{ SQLException \-\> 0x0036 \}\l|r2.deleteByExtension(mil.nga.geopackage.extension.index.FeatureTableCoreIndex.EXTENSION_NAME)     \/\/ Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2106843175 {
+label = "R(3:11|12|13) | ExcHandler: SQLException (r5v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|ExcHandler: SQLException (r5v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0014\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0037}"];
+Node_13 [shape=record,label="{13\:\ 0x0051|throw new mil.nga.geopackage.GeoPackageException(\"Failed to delete Table Index extension and tables. GeoPackage: \" + r4.getName(), r5)\l}"];
+}
+}
+}
+subgraph cluster_Region_2106843175 {
+label = "R(3:11|12|13) | ExcHandler: SQLException (r5v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|ExcHandler: SQLException (r5v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0014\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0037}"];
+Node_13 [shape=record,label="{13\:\ 0x0051|throw new mil.nga.geopackage.GeoPackageException(\"Failed to delete Table Index extension and tables. GeoPackage: \" + r4.getName(), r5)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0014|SYNTHETIC\lSplitter:B:1:0x0014\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x0036 \}\lSplitter:B:1:0x0014\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001f|Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002a|Catch:\{ SQLException \-\> 0x0036 \}\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void mil.nga.geopackage.extension.NGAExtensions.deleteGeometryIndexExtension((r4v0 mil.nga.geopackage.GeoPackageCore A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_1 -> Node_2;
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

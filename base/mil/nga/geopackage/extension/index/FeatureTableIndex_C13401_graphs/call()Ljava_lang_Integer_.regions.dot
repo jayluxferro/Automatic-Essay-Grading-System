@@ -1,0 +1,32 @@
+digraph "CFG formil.nga.geopackage.extension.index.FeatureTableIndex.1.call()Ljava\/lang\/Integer;" {
+subgraph cluster_Region_1073127636 {
+label = "R(3:0|(1:4)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = mil.nga.geopackage.extension.index.FeatureTableIndex.this.indexRows(r4, (mil.nga.geopackage.features.user.FeatureCursor) mil.nga.geopackage.extension.index.FeatureTableIndex.this.featureDao.queryForAll())\l}"];
+subgraph cluster_IfRegion_1678478791 {
+label = "IF [B:1:0x0018, B:3:0x0022] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0018|ADDED_TO_REGION\l|if (mil.nga.geopackage.extension.index.FeatureTableIndex.this.progress == null) goto L_0x0024\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|ADDED_TO_REGION\l|if (mil.nga.geopackage.extension.index.FeatureTableIndex.this.progress.isActive() == true) goto L_0x0024\l}"];
+subgraph cluster_Region_180328044 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|mil.nga.geopackage.extension.index.FeatureTableIndex.this.updateLastIndexed()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002d|RETURN\l|return java.lang.Integer.valueOf(r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029}"];
+MethodNode[shape=record,label="{public java.lang.Integer mil.nga.geopackage.extension.index.FeatureTableIndex.1.call((r3v0 'this' mil.nga.geopackage.extension.index.FeatureTableIndex$1 A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.Exception]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

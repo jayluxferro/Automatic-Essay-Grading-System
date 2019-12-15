@@ -1,0 +1,24 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.UserLogin.1.onClick(Landroid\/view\/View;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String r3 = r8.this$0.firstNameTxt.getText().toString()\ljava.lang.String r4 = r8.this$0.lastNameTxt.getText().toString()\ljava.lang.String r5 = com.ghanapostgps.ghanapost.AppSharedPreferences.get((android.content.Context) r8.this$0, \"\", com.ghanapostgps.ghanapost.util.Const.UserTelephone)\lkotlin.text.Regex r9 = new kotlin.text.Regex(\"[A\-Za\-z\-'s\-]+\")\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0030|if (r9.matches(r3) != false) goto L_0x0047\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0032|com.ghanapostgps.ghanapost.util.Utils.ShowMsgBox(r8.this$0, r8.this$0.getString(com.ghanapostgps.ghanapost.C0708R.string.invalid_characters_not_allowed), r8.this$0.getString(com.ghanapostgps.ghanapost.C0708R.string.please_enter_first_name))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0046|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0047}"];
+Node_5 [shape=record,label="{5\:\ 0x004b|if (r9.matches(r4) != false) goto L_0x0062\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004d|com.ghanapostgps.ghanapost.util.Utils.ShowMsgBox(r8.this$0, r8.this$0.getString(com.ghanapostgps.ghanapost.C0708R.string.invalid_characters_not_allowed), r8.this$0.getString(com.ghanapostgps.ghanapost.C0708R.string.please_enter_last_name))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0061|RETURN\l|return\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0062|android.app.ProgressDialog r2 = new android.app.ProgressDialog(r8.this$0)\lr2.setMessage(r8.this$0.getString(com.ghanapostgps.ghanapost.C0708R.string.pleasee_wait_creating_count))\lr2.show()\ljava.lang.String r9 = com.ghanapostgps.ghanapost.util.Utils.getDeviceID(r8.this$0)\ljava.util.HashMap r6 = new java.util.HashMap()\lr6.put(\"FirstName\", r3)\lr6.put(\"LastName\", r4)\lr6.put(\"MobileNumber\", r5)\lr6.put(\"Msisdn\", r5)\lr6.put(\"IMSI\", r9)\lr6.put(\"IMEI\", r9)\lr6.put(\"DeviceID\", r9)\lr6.put(\"Action\", \"AddCustomer\")\lr8.this$0.apiReq.postEncrypted(r6, new com.ghanapostgps.ghanapost.UserLogin.C07321.C07331(r8))\lcom.ghanapostgps.ghanapost.util.AsaaseLog.write(r8.this$0.getApplicationContext(), com.ghanapostgps.ghanapost.util.Const.BtnRegisterNameContinue)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x00c6|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.UserLogin.1.onClick((r8v0 'this' com.ghanapostgps.ghanapost.UserLogin$1 A[IMMUTABLE_TYPE, THIS]), (r9v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

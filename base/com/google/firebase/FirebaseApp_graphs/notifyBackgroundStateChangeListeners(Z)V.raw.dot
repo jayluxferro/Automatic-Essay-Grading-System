@@ -1,0 +1,15 @@
+digraph "CFG forcom.google.firebase.FirebaseApp.notifyBackgroundStateChangeListeners(Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"FirebaseApp\" \l0x0002: CONST_STR  (r1 I:java.lang.String) =  \"Notifying background state change listeners.\" \l0x0004: INVOKE  (r0 I:java.lang.String), (r1 I:java.lang.String) android.util.Log.d(java.lang.String, java.lang.String):int type: STATIC \l0x0007: IGET  (r0 I:java.util.List\<com.google.firebase.FirebaseApp$BackgroundStateChangeListener\>) = (r2 I:com.google.firebase.FirebaseApp) com.google.firebase.FirebaseApp.backgroundStateChangeListeners java.util.List \l0x0009: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x001d \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0017: CHECK_CAST  (r1 I:com.google.firebase.FirebaseApp$BackgroundStateChangeListener) = (com.google.firebase.FirebaseApp$BackgroundStateChangeListener) (r1 I:?[OBJECT, ARRAY]) \l0x0019: INVOKE  \l  (r1 I:com.google.firebase.FirebaseApp$BackgroundStateChangeListener)\l  (r3 I:boolean)\l com.google.firebase.FirebaseApp.BackgroundStateChangeListener.onBackgroundStateChanged(boolean):void type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d|0x001d: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.google.firebase.FirebaseApp.notifyBackgroundStateChangeListeners((r2 'this' I:com.google.firebase.FirebaseApp A[IMMUTABLE_TYPE, THIS]), (r3 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+}
+

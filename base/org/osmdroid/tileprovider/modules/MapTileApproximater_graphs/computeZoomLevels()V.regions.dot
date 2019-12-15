@@ -1,0 +1,54 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.MapTileApproximater.computeZoomLevels()V" {
+subgraph cluster_Region_1221913603 {
+label = "R(2:0|(2:3|(1:5)(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.minZoomLevel = 0\ljava.util.Iterator r1 = r5.mProviders.iterator()\lboolean r2 = true\l}"];
+subgraph cluster_LoopRegion_1768020754 {
+label = "LOOP:0: (2:3|(1:5)(1:6))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r1.hasNext() != false) goto L_0x0010\l}"];
+subgraph cluster_Region_915657060 {
+label = "R(2:3|(1:5)(1:6))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|int int r3 = r3.getMinimumZoomLevel()\l}"];
+subgraph cluster_IfRegion_635341130 {
+label = "IF [B:4:0x001a] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r2 == true) goto L_0x001c\l}"];
+subgraph cluster_Region_1667895727 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|r5.minZoomLevel = r3\lr2 = false\l}"];
+}
+subgraph cluster_Region_1497929537 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|r5.minZoomLevel = java.lang.Math.min(r5.minZoomLevel, r3)\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a|LOOP_START\lPHI: r2 \l  PHI: (r2v1 boolean) = (r2v0 boolean), (r2v2 boolean) binds: [B:0:0x0000, B:8:0x000a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:8:0x000a\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0029}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000a|LOOP_END\lSYNTHETIC\lPHI: r2 \l  PHI: (r2v2 boolean) = (r2v1 boolean), (r2v3 boolean) binds: [B:11:0x000a, B:10:0x000a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:8:0x000a\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x000a|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.tileprovider.modules.MapTileApproximater.computeZoomLevels((r5v0 'this' org.osmdroid.tileprovider.modules.MapTileApproximater A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_11;
+Node_1 -> Node_2;
+Node_8 -> Node_1;
+Node_9 -> Node_7;
+Node_10 -> Node_8;
+Node_11 -> Node_8;
+}
+

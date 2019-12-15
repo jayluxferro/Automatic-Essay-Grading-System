@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Ac3Util.parseEAc3SyncframeAudioSampleCount(Ljava\/nio\/ByteBuffer;)I" {
+subgraph cluster_Region_1372225083 {
+label = "R(2:(1:2)(1:5)|4) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_90437275 {
+label = "IF [B:1:0x000f] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (((r3.get(r3.position() + 4) & 192) \>\> 6) == 3) goto L_0x0011\l}"];
+subgraph cluster_Region_925991876 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|r1 = 6\l}"];
+}
+subgraph cluster_Region_271818224 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|r1 = BLOCKS_PER_SYNCFRAME_BY_NUMBLKSCOD[(r3.get(r3.position() + 4) & 48) \>\> 4]\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0014|RETURN\l|return r1 * 256\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012|PHI: r1 \l  PHI: (r1v7 int) = (r1v6 int), (r1v9 int) binds: [B:5:0x0015, B:2:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static int com.google.android.exoplayer2.audio.Ac3Util.parseEAc3SyncframeAudioSampleCount((r3v0 'buffer' java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

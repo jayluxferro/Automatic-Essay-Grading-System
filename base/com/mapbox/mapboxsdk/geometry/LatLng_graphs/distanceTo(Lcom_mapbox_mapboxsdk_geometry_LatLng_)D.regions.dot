@@ -1,0 +1,39 @@
+digraph "CFG forcom.mapbox.mapboxsdk.geometry.LatLng.distanceTo(Lcom\/mapbox\/mapboxsdk\/geometry\/LatLng;)D" {
+subgraph cluster_Region_221847644 {
+label = "R(2:0|(2:(1:4)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r18\lcom.mapbox.mapboxsdk.geometry.LatLng r1 = r19\l}"];
+subgraph cluster_Region_854527999 {
+label = "R(2:(1:4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_273813807 {
+label = "IF [B:1:0x000a, B:3:0x0012] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r0.latitude == r1.latitude) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if (r0.longitude == r1.longitude) goto L_0x0014\l}"];
+subgraph cluster_Region_310971063 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|RETURN\l|return 0.0d\l}"];
+}
+}
+subgraph cluster_Region_1239512862 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|double double r2 = java.lang.Math.toRadians(r0.latitude)\ldouble double r4 = java.lang.Math.toRadians(r0.longitude)\ldouble double r6 = java.lang.Math.toRadians(r19.getLatitude())\ldouble double r8 = java.lang.Math.toRadians(r19.getLongitude())\ldouble double r10 = java.lang.Math.cos(r2)\ldouble double r12 = java.lang.Math.cos(r6)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006e|RETURN\l|return java.lang.Math.acos((java.lang.Math.cos(r4) * r10 * r12 * java.lang.Math.cos(r8)) + (r10 * java.lang.Math.sin(r4) * r12 * java.lang.Math.sin(r8)) + (java.lang.Math.sin(r2) * java.lang.Math.sin(r6))) * 6378137.0d\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+MethodNode[shape=record,label="{public double com.mapbox.mapboxsdk.geometry.LatLng.distanceTo((r18v0 'this' com.mapbox.mapboxsdk.geometry.LatLng A[IMMUTABLE_TYPE, THIS]), (r19v0 com.mapbox.mapboxsdk.geometry.LatLng A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,72 @@
+digraph "CFG forokhttp3.Handshake.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_577641741 {
+label = "R(1:(2:(1:2)|(2:3|(2:(1:15)|(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1503014276 {
+label = "R(2:(1:2)|(2:3|(2:(1:15)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1275981806 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if ((r4 instanceof okhttp3.Handshake) == false) goto L_0x0005\l}"];
+subgraph cluster_Region_337756957 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_856965998 {
+label = "R(2:3|(2:(1:15)|(1:11)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|okhttp3.Handshake okhttp3.Handshake r4 = (okhttp3.Handshake) r4\l}"];
+subgraph cluster_Region_1190474465 {
+label = "R(2:(1:15)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1673189816 {
+label = "IF [B:4:0x0010, B:6:0x001a, B:8:0x0024, B:10:0x002e] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r3.tlsVersion.equals(r4.tlsVersion) == false) goto L_?\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|ADDED_TO_REGION\l|if (r3.cipherSuite.equals(r4.cipherSuite) == false) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0024|ADDED_TO_REGION\l|if (r3.peerCertificates.equals(r4.peerCertificates) == false) goto L_?\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002e|ADDED_TO_REGION\l|if (r3.localCertificates.equals(r4.localCertificates) == false) goto L_?\l}"];
+subgraph cluster_Region_786943414 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_230044955 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0030|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0026}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean okhttp3.Handshake.equals((r3v0 'this' okhttp3.Handshake A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_12;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_14;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

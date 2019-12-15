@@ -1,0 +1,34 @@
+digraph "CFG forretrofit2.converter.gson.GsonConverterFactory.create(Lcom\/google\/gson\/Gson;)Lretrofit2\/converter\/gson\/GsonConverterFactory;" {
+subgraph cluster_Region_787141529 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1275282455 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1037734215 {
+label = "IF [B:0:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_250274346 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return new retrofit2.converter.gson.GsonConverterFactory(r1)\l}"];
+}
+}
+subgraph cluster_Region_1994694261 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|throw new java.lang.NullPointerException(\"gson == null\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{public static retrofit2.converter.gson.GsonConverterFactory retrofit2.converter.gson.GsonConverterFactory.create((r1v0 com.google.gson.Gson A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

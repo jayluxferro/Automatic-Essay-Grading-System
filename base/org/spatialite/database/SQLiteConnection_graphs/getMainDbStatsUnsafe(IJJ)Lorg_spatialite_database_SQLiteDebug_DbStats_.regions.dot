@@ -1,0 +1,27 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.getMainDbStatsUnsafe(IJJ)Lorg\/spatialite\/database\/SQLiteDebug$DbStats;" {
+subgraph cluster_Region_1933145547 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r12\ljava.lang.String java.lang.String r1 = r0.mConfiguration.path\l}"];
+subgraph cluster_IfRegion_635147648 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r0.mIsPrimaryConnection == false) goto L_0x0009\l}"];
+subgraph cluster_Region_944807414 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|java.lang.String r1 = r1 + \" (\" + r0.mConnectionId + \")\"\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0024|PHI: r1 \l  PHI: (r1v2 java.lang.String) = (r1v1 java.lang.String), (r1v7 java.lang.String) binds: [B:1:0x0007, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0041|RETURN\l|return new org.spatialite.database.SQLiteDebug.DbStats(r1, r14, r16, r13, r0.mPreparedStatementCache.hitCount(), r0.mPreparedStatementCache.missCount(), r0.mPreparedStatementCache.size())\l}"];
+}
+MethodNode[shape=record,label="{private org.spatialite.database.SQLiteDebug$DbStats org.spatialite.database.SQLiteConnection.getMainDbStatsUnsafe((r12v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r13v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

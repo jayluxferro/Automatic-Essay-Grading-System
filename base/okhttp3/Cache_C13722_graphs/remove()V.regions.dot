@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.Cache.2.remove()V" {
+subgraph cluster_Region_510038467 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_907830527 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_875482151 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.canRemove == true) goto L_0x0004\l}"];
+subgraph cluster_Region_2109004035 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.delegate.remove()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1475782655 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|throw new java.lang.IllegalStateException(\"remove() before next()\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void okhttp3.Cache.2.remove((r2v0 'this' okhttp3.Cache$2 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

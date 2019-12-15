@@ -1,0 +1,73 @@
+digraph "CFG fororg.mapsforge.map.layer.hills.HgtCache.HgtFileInfo.getUnmergedAsMergePartner()Lorg\/mapsforge\/map\/layer\/hills\/HgtCache$LoadUnmergedFuture;" {
+subgraph cluster_Region_956619016 {
+label = "R(3:0|(1:2)(1:3)|(2:6|12)(1:(2:9|13)(2:10|11))) | DECL_VAR: java.util.concurrent.Future null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.ref.WeakReference\<java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>\> java.lang.ref.WeakReference\<java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>\> r0 = r2.weakRef\l}"];
+subgraph cluster_IfRegion_1372760175 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 == null) goto L_0x0004\l}"];
+subgraph cluster_Region_146414965 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r0 = null\l}"];
+}
+subgraph cluster_Region_1660844444 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|java.util.concurrent.Future r0 = (java.util.concurrent.Future) r0.get()\l}"];
+}
+}
+subgraph cluster_IfRegion_1950293995 {
+label = "IF [B:5:0x000e] THEN: R(2:6|12) ELSE: R(1:(2:9|13)(2:10|11))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if ((r0 instanceof org.mapsforge.map.layer.hills.HgtCache.LoadUnmergedFuture) == true) goto L_0x0010\l}"];
+subgraph cluster_Region_369135696 {
+label = "R(2:6|12)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|r2.this$0.secondaryLru.markUsed(r0)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return (org.mapsforge.map.layer.hills.HgtCache.LoadUnmergedFuture) r0\l}"];
+}
+subgraph cluster_Region_171326735 {
+label = "R(1:(2:9|13)(2:10|11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1581567359 {
+label = "IF [B:8:0x001e] THEN: R(2:9|13) ELSE: R(2:10|11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|if ((r0 instanceof org.mapsforge.map.layer.hills.HgtCache.MergeOverlapFuture) == true) goto L_0x0020\l}"];
+subgraph cluster_Region_1376276763 {
+label = "R(2:9|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0020|r2.this$0.mainLru.markUsed(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return ((org.mapsforge.map.layer.hills.HgtCache.MergeOverlapFuture) r0).loadFuture\l}"];
+}
+subgraph cluster_Region_392780275 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002e|org.mapsforge.map.layer.hills.HgtCache$LoadUnmergedFuture org.mapsforge.map.layer.hills.HgtCache.LoadUnmergedFuture r0 = new org.mapsforge.map.layer.hills.HgtCache.LoadUnmergedFuture(r2)\lr2.weakRef = new java.lang.ref.WeakReference\<\>(r0)\lr2.this$0.secondaryLru.markUsed(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 java.util.concurrent.Future) = (r0v7 java.util.concurrent.Future), (r0v8 java.util.concurrent.Future) binds: [B:3:0x0006, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c}"];
+MethodNode[shape=record,label="{public org.mapsforge.map.layer.hills.HgtCache$LoadUnmergedFuture org.mapsforge.map.layer.hills.HgtCache.HgtFileInfo.getUnmergedAsMergePartner((r2v0 'this' org.mapsforge.map.layer.hills.HgtCache$HgtFileInfo A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

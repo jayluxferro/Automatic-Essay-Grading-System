@@ -1,0 +1,31 @@
+digraph "CFG forcom.google.firebase.iid.zzz.zzc(Ljava\/lang\/String;Ljava\/lang\/String;)Ljava\/security\/KeyPair;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IllegalArgumentException \-\> 0x0053 \}\lSplitter:B:1:0x0002\l|byte[] r2 = android.util.Base64.decode(r2, 8)     \/\/ Catch:\{ IllegalArgumentException \-\> 0x0053 \}\lbyte[] r3 = android.util.Base64.decode(r3, 8)     \/\/ Catch:\{ IllegalArgumentException \-\> 0x0053 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|SYNTHETIC\lSplitter:B:4:0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ NoSuchAlgorithmException \| InvalidKeySpecException \-\> 0x0028 \}\lSplitter:B:4:0x000c\l|java.security.KeyFactory r0 = java.security.KeyFactory.getInstance(\"RSA\")     \/\/ Catch:\{ NoSuchAlgorithmException \| InvalidKeySpecException \-\> 0x0028 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0027|RETURN\l|return new java.security.KeyPair(r0.generatePublic(new java.security.spec.X509EncodedKeySpec(r2)), r0.generatePrivate(new java.security.spec.PKCS8EncodedKeySpec(r3)))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|ExcHandler: NoSuchAlgorithmException \| InvalidKeySpecException (r2v3 'e' java.security.GeneralSecurityException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000c\l|java.lang.Throwable r2 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|java.lang.String r3 = java.lang.String.valueOf(r2)\ljava.lang.StringBuilder r1 = new java.lang.StringBuilder(java.lang.String.valueOf(r3).length() + 19)\lr1.append(\"Invalid key stored \")\lr1.append(r3)\landroid.util.Log.w(\"FirebaseInstanceId\", r1.toString())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0052|throw new com.google.firebase.iid.zzaa((java.lang.Exception) r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0053|ExcHandler: IllegalArgumentException (r2v1 'e' java.lang.IllegalArgumentException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l|java.lang.IllegalArgumentException r2 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0054}"];
+Node_12 [shape=record,label="{12\:\ 0x0059|throw new com.google.firebase.iid.zzaa((java.lang.Exception) r2)\l}"];
+MethodNode[shape=record,label="{private static java.security.KeyPair com.google.firebase.iid.zzz.zzc((r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.firebase.iid.zzaa]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

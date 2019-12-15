@@ -1,0 +1,88 @@
+digraph "CFG formil.nga.geopackage.tiles.TileBoundingBoxUtils.overlap(Lmil\/nga\/geopackage\/BoundingBox;Lmil\/nga\/geopackage\/BoundingBox;DZ)Lmil\/nga\/geopackage\/BoundingBox;" {
+subgraph cluster_Region_1178271206 {
+label = "R(4:(3:(1:4)(1:(1:7))|(1:11)|13)|8|(0)|13) | DECL_VAR: double null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_795246317 {
+label = "IF [B:1:0x0004] THEN: R(3:(1:4)(1:(1:7))|(1:11)|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r8 \> 0.0d) goto L_0x0006\l}"];
+subgraph cluster_Region_1596195343 {
+label = "R(3:(1:4)(1:(1:7))|(1:11)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_360014046 {
+label = "IF [B:3:0x0010] THEN: R(1:4) ELSE: R(1:(1:7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r6.getMinLongitude() \> r7.getMaxLongitude()) goto L_0x0012\l}"];
+subgraph cluster_Region_1597498680 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|double r8 = r8 * 2.0d\l}"];
+}
+subgraph cluster_Region_931384077 {
+label = "R(1:(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_730745350 {
+label = "IF [B:6:0x0021] THEN: R(1:7) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|if (r6.getMaxLongitude() \< r7.getMinLongitude()) goto L_0x0023\l}"];
+subgraph cluster_Region_110040542 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|double r8 = r8 * \-2.0d\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1422201090 {
+label = "IF [B:10:0x002b] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|if (r8 != 0.0d) goto L_0x002d\l}"];
+subgraph cluster_Region_1228291026 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002d|mil.nga.geopackage.BoundingBox mil.nga.geopackage.BoundingBox r0 = new mil.nga.geopackage.BoundingBox(r7)\lr0.setMinLongitude(r0.getMinLongitude() + r8)\lr0.setMaxLongitude(r0.getMaxLongitude() + r8)\lr7 = r0\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0047|RETURN\l|return overlap(r6, r7, r10)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0028|r8 = 0.0d\l}"];
+subgraph cluster_IfRegion_1778968788 {
+label = "IF [B:10:0x002b] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|if (r8 != 0.0d) goto L_0x002d\l}"];
+subgraph cluster_Region_1140497723 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0047|RETURN\l|return overlap(r6, r7, r10)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029|PHI: r8 \l  PHI: (r8v1 double) = (r8v2 double), (r8v3 double), (r8v4 double) binds: [B:8:0x0028, B:7:0x0023, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0043|PHI: r7 \l  PHI: (r7v1 mil.nga.geopackage.BoundingBox) = (r7v0 mil.nga.geopackage.BoundingBox), (r7v2 mil.nga.geopackage.BoundingBox) binds: [B:10:0x002b, B:11:0x002d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static mil.nga.geopackage.BoundingBox mil.nga.geopackage.tiles.TileBoundingBoxUtils.overlap((r6v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:11:0x002d \l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+}
+

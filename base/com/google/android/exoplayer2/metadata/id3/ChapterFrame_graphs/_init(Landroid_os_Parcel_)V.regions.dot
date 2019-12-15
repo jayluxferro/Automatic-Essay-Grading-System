@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.id3.ChapterFrame.\<init\>(Landroid\/os\/Parcel;)V" {
+subgraph cluster_Region_2003648821 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super(f2452ID)\lr4.chapterId = r5.readString()\lr4.startTimeMs = r5.readInt()\lr4.endTimeMs = r5.readInt()\lr4.startOffset = r5.readLong()\lr4.endOffset = r5.readLong()\lint int r1 = r5.readInt()\lr4.subFrames = new com.google.android.exoplayer2.metadata.id3.Id3Frame[r1]\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_2077743931 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002c|LOOP_START\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:0:0x0000, B:2:0x002e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x002c\-\>B:2:0x002e\l|if (r0 \< r1) goto L_0x002e\l}"];
+subgraph cluster_Region_59293842 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002e|LOOP_END\lLOOP:0: B:1:0x002c\-\>B:2:0x002e\l|r4.subFrames[r0] = (com.google.android.exoplayer2.metadata.id3.Id3Frame) r5.readParcelable(com.google.android.exoplayer2.metadata.id3.Id3Frame.class.getClassLoader())\lr0++\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0041}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0041|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.google.android.exoplayer2.metadata.id3.ChapterFrame.\<init\>((r4v0 'this' com.google.android.exoplayer2.metadata.id3.ChapterFrame A[IMMUTABLE_TYPE, THIS]), (r5v0 'in' android.os.Parcel A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

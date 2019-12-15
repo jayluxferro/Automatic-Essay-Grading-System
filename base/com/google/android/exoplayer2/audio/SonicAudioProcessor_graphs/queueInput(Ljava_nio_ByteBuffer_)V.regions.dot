@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.SonicAudioProcessor.queueInput(Ljava\/nio\/ByteBuffer;)V" {
+subgraph cluster_Region_690911919 {
+label = "R(3:(1:2)|3|(1:(2:(1:7)(1:9)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1761376501 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r9.hasRemaining() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_79115388 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.nio.ShortBuffer java.nio.ShortBuffer r2 = r9.asShortBuffer()\lint int r0 = r9.remaining()\lr8.inputBytes += (long) r0\lr8.sonic.queueInput(r2)\lr9.position(r9.position() + r0)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0021|int int r1 = r8.sonic.getSamplesAvailable() * r8.channelCount * 2\l}"];
+subgraph cluster_Region_1294472030 {
+label = "R(1:(2:(1:7)(1:9)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_710041691 {
+label = "IF [B:4:0x002c] THEN: R(2:(1:7)(1:9)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002c|if (r1 \> 0) goto L_0x002e\l}"];
+subgraph cluster_Region_1029626676 {
+label = "R(2:(1:7)(1:9)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_494211241 {
+label = "IF [B:6:0x0034] THEN: R(1:7) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0034|if (r8.buffer.capacity() \< r1) goto L_0x0036\l}"];
+subgraph cluster_Region_1744776806 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|r8.buffer = java.nio.ByteBuffer.allocateDirect(r1).order(java.nio.ByteOrder.nativeOrder())\lr8.shortBuffer = r8.buffer.asShortBuffer()\l}"];
+}
+subgraph cluster_Region_1005413410 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0063|r8.buffer.clear()\lr8.shortBuffer.clear()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x004c|r8.sonic.getOutput(r8.shortBuffer)\lr8.outputBytes += (long) r1\lr8.buffer.limit(r1)\lr8.outputBuffer = r8.buffer\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002e}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.audio.SonicAudioProcessor.queueInput((r8v0 'this' com.google.android.exoplayer2.audio.SonicAudioProcessor A[IMMUTABLE_TYPE, THIS]), (r9v0 'inputBuffer' java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_8;
+Node_8 -> Node_10;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

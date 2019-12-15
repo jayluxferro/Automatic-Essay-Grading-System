@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.gson.stream.JsonWriter.flush()V" {
+subgraph cluster_Region_1670551814 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_450457537 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_369303464 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.stackSize != 0) goto L_0x0004\l}"];
+subgraph cluster_Region_1829869058 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.out.flush()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_448555023 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|throw new java.lang.IllegalStateException(\"JsonWriter is closed.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void com.google.gson.stream.JsonWriter.flush((r2v0 'this' com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

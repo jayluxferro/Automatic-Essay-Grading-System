@@ -1,0 +1,49 @@
+digraph "CFG fororg.osmdroid.util.MapTileAreaBorderComputer.computeFromSource(Lorg\/osmdroid\/util\/MapTileArea;Lorg\/osmdroid\/util\/MapTileArea;)Lorg\/osmdroid\/util\/MapTileArea;" {
+subgraph cluster_Region_646112331 {
+label = "R(2:(1:1)|(2:(2:4|5)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1695428214 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_1426245304 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|org.osmdroid.util.MapTileArea r8 = new org.osmdroid.util.MapTileArea()\l}"];
+}
+}
+subgraph cluster_Region_1592985081 {
+label = "R(2:(2:4|5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1868694224 {
+label = "IF [B:3:0x000c] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r7.size() == 0) goto L_0x000e\l}"];
+subgraph cluster_Region_2072771796 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|r8.reset()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|RETURN\l|return r8\l}"];
+}
+}
+subgraph cluster_Region_2142892199 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|int int r2 = r7.getLeft() \- r6.mBorder\lint int r3 = r7.getTop() \- r6.mBorder\lint int r0 = (r6.mBorder * 2) \- 1\lr8.set(r7.getZoom(), r2, r3, r7.getWidth() + r2 + r0, r7.getHeight() + r3 + r0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003d|RETURN\l|return r8\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008|PHI: r8 \l  PHI: (r8v1 org.osmdroid.util.MapTileArea) = (r8v0 org.osmdroid.util.MapTileArea), (r8v2 org.osmdroid.util.MapTileArea) binds: [B:0:0x0000, B:1:0x0003] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public org.osmdroid.util.MapTileArea org.osmdroid.util.MapTileAreaBorderComputer.computeFromSource((r6v0 'this' org.osmdroid.util.MapTileAreaBorderComputer A[IMMUTABLE_TYPE, THIS]), (r7v0 org.osmdroid.util.MapTileArea A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 org.osmdroid.util.MapTileArea A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+}
+

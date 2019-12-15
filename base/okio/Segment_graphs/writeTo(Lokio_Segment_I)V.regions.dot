@@ -1,0 +1,91 @@
+digraph "CFG forokio.Segment.writeTo(Lokio\/Segment;I)V" {
+subgraph cluster_Region_434017590 {
+label = "R(1:(2:(3:(1:(1:12)(1:(1:8)(1:10)))|13|14)|(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1123147400 {
+label = "R(2:(3:(1:(1:12)(1:(1:8)(1:10)))|13|14)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1518079130 {
+label = "IF [B:1:0x0002] THEN: R(3:(1:(1:12)(1:(1:8)(1:10)))|13|14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r6.owner == true) goto L_0x0004\l}"];
+subgraph cluster_Region_92250539 {
+label = "R(3:(1:(1:12)(1:(1:8)(1:10)))|13|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1751511831 {
+label = "IF [B:3:0x0009] THEN: R(1:(1:12)(1:(1:8)(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if ((r6.limit + r7) \> 8192) goto L_0x000b\l}"];
+subgraph cluster_Region_606889229 {
+label = "R(1:(1:12)(1:(1:8)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_512665038 {
+label = "IF [B:5:0x000d] THEN: R(1:12) ELSE: R(1:(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r6.shared != false) goto L_0x0036\l}"];
+subgraph cluster_Region_1711553869 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003b|throw new java.lang.IllegalArgumentException()\l}"];
+}
+subgraph cluster_Region_566134737 {
+label = "R(1:(1:8)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1727892198 {
+label = "IF [B:7:0x0015] THEN: R(1:8) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|if (((r6.limit + r7) \- r6.pos) \<= 8192) goto L_0x0017\l}"];
+subgraph cluster_Region_230093602 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|java.lang.System.arraycopy(r6.data, r6.pos, r6.data, 0, r6.limit \- r6.pos)\lr6.limit \-= r6.pos\lr6.pos = 0\l}"];
+}
+subgraph cluster_Region_1243568524 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0035|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x003c|java.lang.System.arraycopy(r5.data, r5.pos, r6.data, r6.limit, r7)\lr6.limit += r7\lr5.pos += r7\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0051|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_524996369 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0057|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000f}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0036}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0052}"];
+MethodNode[shape=record,label="{public void okio.Segment.writeTo((r5v0 'this' okio.Segment A[IMMUTABLE_TYPE, THIS]), (r6v0 okio.Segment A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_15[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+}
+

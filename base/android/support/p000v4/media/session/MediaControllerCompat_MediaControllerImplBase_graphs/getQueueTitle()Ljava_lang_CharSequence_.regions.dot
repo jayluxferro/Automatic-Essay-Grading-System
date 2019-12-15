@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v4.media.session.MediaControllerCompat.MediaControllerImplBase.getQueueTitle()Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_660397342 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1366939162 {
+label = "Try: R(1:2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_919729707 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r3.mBinder.getQueueTitle()\l}"];
+}
+subgraph cluster_Region_566401135 {
+label = "R(3:3|4|5) | ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in getQueueTitle.\", r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_566401135 {
+label = "R(3:3|4|5) | ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in getQueueTitle.\", r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ RemoteException \-\> 0x0007 \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public java.lang.CharSequence android.support.v4.media.session.MediaControllerCompat.MediaControllerImplBase.getQueueTitle((r3v0 'this' android.support.v4.media.session.MediaControllerCompat$MediaControllerImplBase A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

@@ -1,0 +1,113 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultTrackOutput.InfoQueue.discardUpstreamSamples(I)J" {
+subgraph cluster_Region_1595632548 {
+label = "R(3:0|5|(3:16|(2:18|(2:(1:22)|(1:21)))|25)(1:(1:9)(2:14|24)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getWriteIndex() \- r9\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|PHI: r4 \l  PHI: (r4v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkArgument(r0 \>= 0 && r0 \<= r8.queueSize)\l}"];
+subgraph cluster_IfRegion_912224623 {
+label = "IF [B:6:0x0010] THEN: R(3:16|(2:18|(2:(1:22)|(1:21)))|25) ELSE: R(1:(1:9)(2:14|24))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|if (r0 != 0) goto L_0x0031\l}"];
+subgraph cluster_Region_480496682 {
+label = "R(3:16|(2:18|(2:(1:22)|(1:21)))|25)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0031|r8.queueSize \-= r0\lr8.relativeWriteIndex = ((r8.relativeWriteIndex + r8.capacity) \- r0) % r8.capacity\lr8.largestQueuedTimestampUs = Long.MIN_VALUE\lint int r1 = r8.queueSize \- 1\l}"];
+subgraph cluster_LoopRegion_1113401357 {
+label = "LOOP:0: (2:18|(2:(1:22)|(1:21)))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0049|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:16:0x0031, B:21:0x006d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:17:0x0049\-\>B:21:0x006d\l|if (r1 \>= 0) goto L_0x004b\l}"];
+subgraph cluster_Region_193394700 {
+label = "R(2:18|(2:(1:22)|(1:21)))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004b|int int r3 = (r8.relativeReadIndex + r1) % r8.capacity\lr8.largestQueuedTimestampUs = java.lang.Math.max(r8.largestQueuedTimestampUs, r8.timesUs[r3])\l}"];
+subgraph cluster_Region_716617774 {
+label = "R(2:(1:22)|(1:21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_164018122 {
+label = "IF [B:19:0x0064] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0064|if ((r8.flags[r3] & 1) != 0) goto L_0x0066\l}"];
+subgraph cluster_Region_598564403 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0066|SYNTHETIC\lEDGE_INSN: B:22:0x0066\-\>B:20:0x0066 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1176452521 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006d|LOOP_END\lLOOP:0: B:17:0x0049\-\>B:21:0x006d\l|r1\-\-\l}"];
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return r8.offsets[r8.relativeWriteIndex]\l}"];
+}
+subgraph cluster_Region_168935514 {
+label = "R(1:(1:9)(2:14|24)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1923167918 {
+label = "IF [B:8:0x0014] THEN: R(1:9) ELSE: R(2:14|24) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|if (r8.absoluteReadIndex == 0) goto L_0x0016\l}"];
+subgraph cluster_Region_1841923868 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_586214335 {
+label = "R(2:14|24)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0021|PHI: r4 \l  PHI: (r4v23 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = (r8.relativeWriteIndex == 0 ? r8.capacity : r8.relativeWriteIndex) \- 1\l}"];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return r8.offsets[r2] + ((long) r8.sizes[r2])\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0019}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002e}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0066|EDGE_INSN: B:22:0x0066\-\>B:20:0x0066 ?: BREAK  \l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0066|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.DefaultTrackOutput.InfoQueue.discardUpstreamSamples((r8v0 'this' com.google.android.exoplayer2.extractor.DefaultTrackOutput$InfoQueue A[IMMUTABLE_TYPE, THIS]), (r9v0 'discardFromIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_21[style=dashed];
+Node_19 -> Node_22;
+Node_22 -> Node_20;
+Node_21 -> Node_17;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_14 -> Node_24;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_5;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_15 -> Node_14;
+Node_20 -> Node_25;
+Node_23 -> Node_20;
+}
+

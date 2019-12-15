@@ -1,0 +1,84 @@
+digraph "CFG fororg.osmdroid.views.overlay.milestones.MilestoneLister.getOrientation(JJJJ)D" {
+subgraph cluster_Region_1613354944 {
+label = "R(1:(2:(2:2|(2:(1:4)|(1:5)))|(5:8|9|12|(1:14)|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_42531542 {
+label = "R(2:(2:2|(2:(1:4)|(1:5)))|(5:8|9|12|(1:14)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1051438197 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(2:(1:4)|(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1 == r5) goto L_0x0004\l}"];
+subgraph cluster_Region_1395263724 {
+label = "R(2:2|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int int r1 = (r3 \> r7 ? 1 : (r3 == r7 ? 0 : \-1))\l}"];
+subgraph cluster_Region_1155000477 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1503748608 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r1 == 0) goto L_0x0008\l}"];
+subgraph cluster_Region_1794023440 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|RETURN\l|return 0.0d\l}"];
+}
+}
+subgraph cluster_Region_2050770488 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|RETURN\l|return r1 \> 0 ? \-90.0d : 90.0d\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1602920808 {
+label = "R(5:8|9|12|(1:14)|16)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|double double r3 = ((double) (r7 \- r3)) \/ ((double) (r5 \- r1))\lint r7 = 0\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|boolean r1 = r5 \< r1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0028|PHI: r1 \l  PHI: (r1v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|double double r2 = java.lang.Math.atan(r3) * 57.29577951308232d\l}"];
+subgraph cluster_IfRegion_760964024 {
+label = "IF [B:13:0x0033] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0033|if (r1 == true) goto L_0x0035\l}"];
+subgraph cluster_Region_812808605 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0035|r7 = 180\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0039|RETURN\l|return r2 + ((double) r7)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0037|PHI: r7 \l  PHI: (r7v5 int) = (r7v4 int), (r7v6 int) binds: [B:13:0x0033, B:14:0x0035] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static double org.osmdroid.views.overlay.milestones.MilestoneLister.getOrientation((r1v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,54 @@
+digraph "CFG fororg.osgeo.proj4j.proj.CassiniProjection.initialize()V" {
+subgraph cluster_Region_1347014929 {
+label = "R(2:0|(1:(2:2|(2:(2:4|8)|(1:6)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.initialize()\l}"];
+subgraph cluster_Region_499830709 {
+label = "R(1:(2:2|(2:(2:4|8)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_72366867 {
+label = "IF [B:1:0x0005] THEN: R(2:2|(2:(2:4|8)|(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r8.spherical == false) goto L_0x0007\l}"];
+subgraph cluster_Region_1638255586 {
+label = "R(2:2|(2:(2:4|8)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|double[] double[] r0 = org.osgeo.proj4j.util.ProjectionMath.enfn(r8.f424es)\lr8.f335en = r0\l}"];
+subgraph cluster_Region_194108479 {
+label = "R(2:(2:4|8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_899283613 {
+label = "IF [B:3:0x000f] THEN: R(2:4|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (r0 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_357451013 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|r8.f336m0 = org.osgeo.proj4j.util.ProjectionMath.mlfn(r8.projectionLatitude, java.lang.Math.sin(r8.projectionLatitude), java.lang.Math.cos(r8.projectionLatitude), r8.f335en)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1580373886 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002d|throw new org.osgeo.proj4j.ProjectionException()\l}"];
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0028}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.proj.CassiniProjection.initialize((r8v0 'this' org.osgeo.proj4j.proj.CassiniProjection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+}
+

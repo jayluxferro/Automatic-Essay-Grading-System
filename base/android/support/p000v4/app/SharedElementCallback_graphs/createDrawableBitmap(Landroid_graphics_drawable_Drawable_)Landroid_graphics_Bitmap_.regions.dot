@@ -1,0 +1,67 @@
+digraph "CFG forandroid.support.v4.app.SharedElementCallback.createDrawableBitmap(Landroid\/graphics\/drawable\/Drawable;)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_31054027 {
+label = "R(2:0|(2:(1:12)|(2:3|(2:(1:8)|(2:9|10)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r9.getIntrinsicWidth()\lint int r1 = r9.getIntrinsicHeight()\l}"];
+subgraph cluster_Region_327545082 {
+label = "R(2:(1:12)|(2:3|(2:(1:8)|(2:9|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_770004945 {
+label = "IF [B:1:0x0008, B:2:0x000a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 \<= 0) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|ADDED_TO_REGION\l|if (r1 \<= 0) goto L_?\l}"];
+subgraph cluster_Region_2455215 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_348762535 {
+label = "R(2:3|(2:(1:8)|(2:9|10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|float float r2 = java.lang.Math.min(1.0f, 1048576.0f \/ ((float) (r0 * r1)))\l}"];
+subgraph cluster_Region_99275910 {
+label = "R(2:(1:8)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1681081515 {
+label = "IF [B:4:0x001b, B:6:0x001f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|if ((r9 instanceof android.graphics.drawable.BitmapDrawable) != false) goto L_0x001d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|ADDED_TO_REGION\l|if (r2 == 1.0f) goto L_0x0021\l}"];
+subgraph cluster_Region_118210278 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|RETURN\l|return ((android.graphics.drawable.BitmapDrawable) r9).getBitmap()\l}"];
+}
+}
+subgraph cluster_Region_736349852 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|int int r0 = (int) (((float) r0) * r2)\lint int r1 = (int) (((float) r1) * r2)\landroid.graphics.Bitmap android.graphics.Bitmap r2 = android.graphics.Bitmap.createBitmap(r0, r1, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas android.graphics.Canvas r3 = new android.graphics.Canvas(r2)\landroid.graphics.Rect android.graphics.Rect r4 = r9.getBounds()\lint int r5 = r4.left\lint int r6 = r4.top\lint int r7 = r4.right\lint int r4 = r4.bottom\lr9.setBounds(0, 0, r0, r1)\lr9.draw(r3)\lr9.setBounds(r5, r6, r7, r4)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0051|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private static android.graphics.Bitmap android.support.v4.app.SharedElementCallback.createDrawableBitmap((r9v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_12;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroid.support.v4.widget.ViewDragHelper.computeAxisDuration(III)I" {
+subgraph cluster_Region_606159333 {
+label = "R(1:(2:(1:1)|(3:2|(1:4)(1:5)|7))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_454544266 {
+label = "R(2:(1:1)|(3:2|(1:4)(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1054879598 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == 0) goto L_0x0002\l}"];
+subgraph cluster_Region_1777842896 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1528057731 {
+label = "R(3:2|(1:4)(1:5)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int int r0 = r3.mParentView.getWidth()\lfloat float r1 = (float) (r0 \/ 2)\lfloat float r1 = r1 + (distanceInfluenceForSnapDuration(java.lang.Math.min(1.0f, ((float) java.lang.Math.abs(r4)) \/ ((float) r0))) * r1)\lint int r5 = java.lang.Math.abs(r5)\l}"];
+subgraph cluster_IfRegion_1375364109 {
+label = "IF [B:3:0x0025] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0025|if (r5 \> 0) goto L_0x0027\l}"];
+subgraph cluster_Region_624409987 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|int r4 = java.lang.Math.round(java.lang.Math.abs(r1 \/ ((float) r5)) * 1000.0f) * 4\l}"];
+}
+subgraph cluster_Region_206190762 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0038|int r4 = (int) (((((float) java.lang.Math.abs(r4)) \/ ((float) r6)) + 1.0f) * 256.0f)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x004b|RETURN\l|return java.lang.Math.min(r4, 600)\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0045|PHI: r4 \l  PHI: (r4v1 int) = (r4v8 int), (r4v11 int) binds: [B:5:0x0038, B:4:0x0027] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private int android.support.v4.widget.ViewDragHelper.computeAxisDuration((r3v0 'this' android.support.v4.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

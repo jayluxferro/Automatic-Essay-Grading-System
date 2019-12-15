@@ -1,0 +1,62 @@
+digraph "CFG forcom.android.volley.toolbox.BasicNetwork.getCacheHeaders(Lcom\/android\/volley\/Cache$Entry;)Ljava\/util\/Map;" {
+subgraph cluster_Region_728176323 {
+label = "R(1:(2:(1:2)|(4:3|(1:5)|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_803358479 {
+label = "R(2:(1:2)|(4:3|(1:5)|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1458777783 {
+label = "IF [B:0:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1160033828 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return java.util.Collections.emptyMap()\l}"];
+}
+}
+subgraph cluster_Region_323578007 {
+label = "R(4:3|(1:5)|(1:8)|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.util.HashMap java.util.HashMap r0 = new java.util.HashMap()\l}"];
+subgraph cluster_IfRegion_1449550157 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r6.etag != null) goto L_0x0010\l}"];
+subgraph cluster_Region_686239743 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|r0.put(p018io.fabric.sdk.android.services.network.HttpRequest.HEADER_IF_NONE_MATCH, r6.etag)\l}"];
+}
+}
+subgraph cluster_IfRegion_1795268273 {
+label = "IF [B:7:0x001d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r6.lastModified \> 0) goto L_0x001f\l}"];
+subgraph cluster_Region_1335751528 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r0.put(\"If\-Modified\-Since\", com.android.volley.toolbox.HttpHeaderParser.formatEpochAsRfc1123(r6.lastModified))\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002a|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+MethodNode[shape=record,label="{private java.util.Map\<java.lang.String, java.lang.String\> com.android.volley.toolbox.BasicNetwork.getCacheHeaders((r5v0 'this' com.android.volley.toolbox.BasicNetwork A[IMMUTABLE_TYPE, THIS]), (r6v0 com.android.volley.Cache$Entry A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/android\/volley\/Cache$Entry;, ), Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+}
+

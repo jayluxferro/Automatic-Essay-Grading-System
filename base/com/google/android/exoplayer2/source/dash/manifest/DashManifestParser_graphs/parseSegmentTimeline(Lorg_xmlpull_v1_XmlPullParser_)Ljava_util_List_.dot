@@ -1,0 +1,29 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseSegmentTimeline(Lorg\/xmlpull\/v1\/XmlPullParser;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList r6 = new java.util.ArrayList\<\>()\lr4 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r4 \l  PHI: (r4v1 'elapsedTime' long) = (r4v0 'elapsedTime' long), (r4v2 'elapsedTime' long) binds: [B:0:0x0000, B:7:0x0040] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:7:0x0040\l|r11.next()\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|if (com.google.android.exoplayer2.util.XmlPullParserUtil.isStartTag(r11, \"S\") == false) goto L_0x003a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|long r4 = parseLong(r11, \"t\", r4)\llong r2 = parseLong(r11, \"d\", com.google.android.exoplayer2.C1260C.TIME_UNSET)\lint r0 = parseInt(r11, \"r\", 0) + 1\lr1 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002d|LOOP_START\lPHI: r1 r4 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:3:0x0012, B:5:0x002f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v4 'elapsedTime' long) = (r4v3 'elapsedTime' long), (r4v5 'elapsedTime' long) binds: [B:3:0x0012, B:5:0x002f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:4:0x002d\-\>B:5:0x002f\l|if (r1 \>= r0) goto L_0x003a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002f|LOOP_END\lLOOP:1: B:4:0x002d\-\>B:5:0x002f\l|r6.add(buildSegmentTimelineElement(r4, r2))\llong r4 = r4 + r2\lint r1 = r1 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x003a|PHI: r4 \l  PHI: (r4v2 'elapsedTime' long) = (r4v1 'elapsedTime' long), (r4v4 'elapsedTime' long) binds: [B:2:0x0010, B:10:0x003a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0040|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:7:0x0040\l|if (com.google.android.exoplayer2.util.XmlPullParserUtil.isEndTag(r11, \"SegmentTimeline\") == false) goto L_0x0007\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0042|RETURN\l|return r6\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0042|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected java.util.List\<com.google.android.exoplayer2.source.dash.manifest.SegmentBase$SegmentTimelineElement\> com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseSegmentTimeline((r10v0 'this' com.google.android.exoplayer2.source.dash.manifest.DashManifestParser A[IMMUTABLE_TYPE, THIS]), (r11v0 'xpp' org.xmlpull.v1.XmlPullParser A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException, java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/xmlpull\/v1\/XmlPullParser;, ), Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/SegmentBase$SegmentTimelineElement;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_4;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_7 -> Node_9[style=dashed];
+Node_9 -> Node_8;
+Node_10 -> Node_6;
+}
+

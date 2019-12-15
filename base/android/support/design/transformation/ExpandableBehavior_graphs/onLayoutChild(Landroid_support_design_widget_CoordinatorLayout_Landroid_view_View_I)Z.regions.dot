@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.design.transformation.ExpandableBehavior.onLayoutChild(Landroid\/support\/design\/widget\/CoordinatorLayout;Landroid\/view\/View;I)Z" {
+subgraph cluster_Region_2013543131 {
+label = "R(1:(2:(1:14)|(2:10|11))) | DECL_VAR: final android.support.design.expandable.ExpandableWidget null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1296033107 {
+label = "R(2:(1:14)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_531086784 {
+label = "IF [B:1:0x0004, B:3:0x000a, B:5:0x0014] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.support.p000v4.view.ViewCompat.isLaidOut(r4) == true) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r3 == null) goto L_?\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (didStateChange(r3.isExpanded()) == false) goto L_?\l}"];
+subgraph cluster_Region_1714651924 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_795467198 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|PHI: r5 \l  PHI: (r5v5 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2.currentState = r3.isExpanded() ? 1 : 2\lint final int r5 = r2.currentState\lr4.getViewTreeObserver().addOnPreDrawListener(new android.support.design.transformation.ExpandableBehavior.C00891())\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006|android.support.design.expandable.ExpandableWidget r3 = findExpandableWidget(r3, r4)\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean android.support.design.transformation.ExpandableBehavior.onLayoutChild((r2v0 'this' android.support.design.transformation.ExpandableBehavior A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lCode restructure failed: missing block: B:2:0x0006, code lost:\l    r3 = findExpandableWidget(r3, r4);\l\lAnnotation[BUILD, android.support.annotation.CallSuper, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_12;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+}
+

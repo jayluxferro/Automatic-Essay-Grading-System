@@ -1,0 +1,13 @@
+digraph "CFG forokio.SegmentedByteString.segment(I)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:int[]) = (r3 I:okio.SegmentedByteString) okio.SegmentedByteString.directory int[] \l0x0002: IGET  (r1 I:byte[][]) = (r3 I:okio.SegmentedByteString) okio.SegmentedByteString.segments byte[][] \l0x0004: ARRAY_LENGTH  (r1 I:int) = (r1 I:?[]) \l0x0005: ARITH  (r4 I:int) = (r4 I:int) + (1 int) \l0x0007: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0008: INVOKE  (r4 I:int) = (r0 I:int[]), (r2 I:int), (r1 I:int), (r4 I:int) java.util.Arrays.binarySearch(int[], int, int, int):int type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r4 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:3:0x000f \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|0x000f: NOT  (r4 I:int) = (r4 I:int) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|0x0010: RETURN  (r4 I:int) \l}"];
+MethodNode[shape=record,label="{private int okio.SegmentedByteString.segment((r3 'this' I:okio.SegmentedByteString A[IMMUTABLE_TYPE, THIS]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_3;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+}
+

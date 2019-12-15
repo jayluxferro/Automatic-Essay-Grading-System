@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.wkb.util.GeometryUtils.perpendicularDistance(Lmil\/nga\/wkb\/geom\/Point;Lmil\/nga\/wkb\/geom\/Point;Lmil\/nga\/wkb\/geom\/Point;)D" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r0 = r22.getX()\ldouble r2 = r22.getY()\ldouble r4 = r23.getX()\ldouble r6 = r23.getY()\ldouble r8 = r24.getX()\ldouble r10 = r24.getY()\ldouble r12 = r8 \- r4\ldouble r14 = r10 \- r6\ldouble r16 = ((r0 \- r4) * r12) + ((r2 \- r6) * r14)\ldouble r18 = (r12 * r12) + (r14 * r14)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0030|if ((r16 \> 0.0d ? 1 : (r16 == 0.0d ? 0 : \-1)) \> 0) goto L_0x0033\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0033}"];
+Node_3 [shape=record,label="{3\:\ 0x0035|if ((r18 \> r16 ? 1 : (r18 == r16 ? 0 : \-1)) \> 0) goto L_0x003a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0037|r4 = r8\lr6 = r10\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003a|double r16 = r16 \/ r18\ldouble r4 = r4 + (r12 * r16)\ldouble r6 = r6 + (r16 * r14)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0044|PHI: r4 r6 \l  PHI: (r4v1 double) = (r4v0 double), (r4v5 double), (r4v6 double) binds: [B:1:0x0030, B:5:0x003a, B:4:0x0037] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 double) = (r6v0 double), (r6v3 double), (r6v4 double) binds: [B:1:0x0030, B:5:0x003a, B:4:0x0037] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0056|RETURN\l|return java.lang.Math.sqrt(java.lang.Math.pow(r4 \- r0, 2.0d) + java.lang.Math.pow(r6 \- r2, 2.0d))\l}"];
+MethodNode[shape=record,label="{public static double mil.nga.wkb.util.GeometryUtils.perpendicularDistance((r22v0 mil.nga.wkb.geom.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 mil.nga.wkb.geom.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 mil.nga.wkb.geom.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

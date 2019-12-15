@@ -1,0 +1,149 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.fragments.LocationFragment.searchAddress()V" {
+subgraph cluster_Region_1412513229 {
+label = "R(3:0|(1:(2:3|4))|(2:(3:9|(2:11|(2:16|(1:18)))|(2:(2:20|24)|(1:23)))|(1:21)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7.SearchAddressCode = r7.inputSearchAddress.getText().toString()\lr7.SearchAddressCode = r7.SearchAddressCode.trim()\lcom.ghanapostgps.ghanapost.util.Utils.hideKeyboardFrom(getActivity(), r7.inputSearchAddress)\lboolean r1 = true\l}"];
+subgraph cluster_IfRegion_214762734 {
+label = "IF [B:1:0x0027] THEN: R(1:(2:3|4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0027|if (r7.SearchAddressCode.contains(\",\") == true) goto L_0x0029\l}"];
+subgraph cluster_Region_1582772691 {
+label = "R(1:(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1286647538 {
+label = "Try: R(2:3|4) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_828080050 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ Exception \-\> 0x0058 \}\lSplitter:B:2:0x0029\l|java.lang.String[] java.lang.String[] r0 = r7.SearchAddressCode.replace(\" \", \"\").split(\",\")     \/\/ Catch:\{ Exception \-\> 0x0058 \}\ljava.lang.String r3 = r0[0]     \/\/ Catch:\{ Exception \-\> 0x0058 \}\ljava.lang.String r0 = r0[1]     \/\/ Catch:\{ Exception \-\> 0x0058 \}\ldouble double r3 = java.lang.Double.parseDouble(r3)     \/\/ Catch:\{ Exception \-\> 0x0058 \}\ldouble double r5 = java.lang.Double.parseDouble(r0)     \/\/ Catch:\{ Exception \-\> 0x0058 \}\lr7.isAddressGenerated = false     \/\/ Catch:\{ Exception \-\> 0x0058 \}\lStartCallAsaaseGetAddress(java.lang.Double.valueOf(r3), java.lang.Double.valueOf(r5), 2)     \/\/ Catch:\{ Exception \-\> 0x0058 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0057|RETURN\l|return\l}"];
+}
+subgraph cluster_Region_1670741310 {
+label = "R(2:5|6) | ExcHandler: Exception (r0v18 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0058|ExcHandler: Exception (r0v18 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:2:0x0029\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0059|r0.printStackTrace()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_119271382 {
+label = "R(2:(3:9|(2:11|(2:16|(1:18)))|(2:(2:20|24)|(1:23)))|(1:21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1621466959 {
+label = "IF [B:8:0x0062] THEN: R(3:9|(2:11|(2:16|(1:18)))|(2:(2:20|24)|(1:23))) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0062|if (r7.SearchAddressCode.isEmpty() == false) goto L_0x0064\l}"];
+subgraph cluster_Region_1739153704 {
+label = "R(3:9|(2:11|(2:16|(1:18)))|(2:(2:20|24)|(1:23)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0064|java.lang.String java.lang.String r0 = r7.SearchAddressCode.toUpperCase().replace(\"\-\", \"\").replace(\" \", \"\")\lint int r3 = r0.length()\l}"];
+subgraph cluster_IfRegion_984736035 {
+label = "IF [B:10:0x007f] THEN: R(2:11|(2:16|(1:18))) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x007f|if (r3 \> 6) goto L_0x0081\l}"];
+subgraph cluster_Region_984348485 {
+label = "R(2:11|(2:16|(1:18)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0081|boolean boolean r4 = android.text.TextUtils.isDigitsOnly(r0.substring(6))\l}"];
+subgraph cluster_IfRegion_381511548 {
+label = "IF [B:12:0x008b, B:14:0x008f, B:15:0x0091] THEN: R(2:16|(1:18)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x008b|ADDED_TO_REGION\l|if (r3 \> 8) goto L_0x008d\l}"];
+Node_14 [shape=record,label="{14\:\ 0x008f|ADDED_TO_REGION\l|if (r3 \< 15) goto L_0x0091\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0091|ADDED_TO_REGION\l|if (r4 == true) goto L_0x0093\l}"];
+subgraph cluster_Region_1722956633 {
+label = "R(2:16|(1:18))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0093|java.util.HashMap java.util.HashMap\<java.lang.String, java.lang.String\> r0 = r7.SpatialDBUtil.getLocationByCode(r0)\l}"];
+subgraph cluster_IfRegion_72761058 {
+label = "IF [B:17:0x009d] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x009d|if (r0.isEmpty() == false) goto L_0x009f\l}"];
+subgraph cluster_Region_1106491079 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x009f|setLocationFromDB(r0)\lr1 = false\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_690711191 {
+label = "R(2:(2:20|24)|(1:23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1767285029 {
+label = "IF [B:19:0x00a3] THEN: R(2:20|24) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00a3|PHI: r1 \l  PHI: (r1v3 boolean) = (r1v2 boolean), (r1v2 boolean), (r1v2 boolean), (r1v2 boolean), (r1v2 boolean), (r1v8 boolean) binds: [B:10:0x007f, B:12:0x008b, B:14:0x008f, B:15:0x0091, B:17:0x009d, B:18:0x009f] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == true) goto L_0x00a5\l}"];
+subgraph cluster_Region_1942600497 {
+label = "R(2:20|24)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00a5|android.app.ProgressDialog final android.app.ProgressDialog r0 = new android.app.ProgressDialog(getActivity())\lr0.setCancelable(false)\lr0.setMessage(getString(com.ghanapostgps.ghanapost.C0708R.string.getting_location_information))\lr0.show()\ljava.util.HashMap java.util.HashMap r1 = new java.util.HashMap()\lr1.put(\"Action\", \"GetLocation\")\lr1.put(\"GPSName\", r7.SearchAddressCode)\lr7.isAddressGenerated = false\lr7.apiReq.postEncrypted(r1, new com.ghanapostgps.ghanapost.fragments.LocationFragment.C075010())\l}"];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1637850625 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_958576827 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00e2|android.widget.Toast.makeText(getActivity(), getString(com.ghanapostgps.ghanapost.C0708R.string.enter_a_valid_address), 1).show()\l}"];
+}
+}
+}
+subgraph cluster_Region_1670741310 {
+label = "R(2:5|6) | ExcHandler: Exception (r0v18 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0058|ExcHandler: Exception (r0v18 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:2:0x0029\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0059|r0.printStackTrace()\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0029|SYNTHETIC\lSplitter:B:2:0x0029\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x005c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x008d}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.fragments.LocationFragment.searchAddress((r7v0 'this' com.ghanapostgps.ghanapost.fragments.LocationFragment A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_21[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_19[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_20 -> Node_24;
+Node_21 -> Node_22;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_7 -> Node_8;
+Node_13 -> Node_14;
+}
+

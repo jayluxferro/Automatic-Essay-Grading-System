@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImpl.getBufferedPercentage()I" {
+subgraph cluster_Region_1587112016 {
+label = "R(2:0|(2:(1:11)|(3:2|(1:6)(1:(1:10))|12)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r4 = 100\l}"];
+subgraph cluster_Region_1877447632 {
+label = "R(2:(1:11)|(3:2|(1:6)(1:(1:10))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_414627659 {
+label = "IF [B:1:0x000e] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r10.timeline.isEmpty() == true) goto L_?\l}"];
+subgraph cluster_Region_975348410 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_2071382140 {
+label = "R(3:2|(1:6)(1:(1:10))|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|long long r2 = getBufferedPosition()\llong long r0 = getDuration()\l}"];
+subgraph cluster_IfRegion_1849226410 {
+label = "IF [B:3:0x001b, B:5:0x001f] THEN: R(1:6) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|if (r2 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0021\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|ADDED_TO_REGION\l|if (r0 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0021\l}"];
+subgraph cluster_Region_356147165 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|r4 = 0\l}"];
+}
+subgraph cluster_Region_888980833 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_700160519 {
+label = "IF [B:9:0x0028] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|if (r0 != 0) goto L_0x002a\l}"];
+subgraph cluster_Region_343728638 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a|int r4 = com.google.android.exoplayer2.util.Util.constrainValue((int) ((100 * r2) \/ r0), 0, 100)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022|PHI: r4 \l  PHI: (r4v1 int) = (r4v2 int), (r4v0 int), (r4v3 int) binds: [B:6:0x0021, B:9:0x0028, B:10:0x002a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.ExoPlayerImpl.getBufferedPercentage((r10v0 'this' com.google.android.exoplayer2.ExoPlayerImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_9 -> Node_7[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_7;
+Node_4 -> Node_5;
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+}
+

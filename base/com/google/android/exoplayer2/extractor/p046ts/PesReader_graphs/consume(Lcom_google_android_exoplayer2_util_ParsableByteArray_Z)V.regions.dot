@@ -1,0 +1,258 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.PesReader.consume(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;Z)V" {
+subgraph cluster_Region_1765757022 {
+label = "R(2:(2:3|4)|(1:8)) | DECL_VAR: int padding\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1886593477 {
+label = "IF [B:1:0x0003] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r11 == true) goto L_0x0005\l}"];
+subgraph cluster_Region_969415365 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_835773873 {
+label = "Switch: 2, default: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|switch(r9.state) \{\l    case 0: goto L_0x000a;\l    case 1: goto L_0x000a;\l    case 2: goto L_0x0021;\l    case 3: goto L_0x0029;\l    default: goto L_0x000a;\l\}\l}"];
+subgraph cluster_Region_578748021 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|android.util.Log.w(TAG, \"Unexpected start indicator reading extended header\")\l}"];
+Node_InsnContainer_1265274614 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_839756652 {
+label = "R(3:(1:13)|14|1)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_71712241 {
+label = "IF [B:12:0x002b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002b|if (r9.payloadSize != \-1) goto L_0x002d\l}"];
+subgraph cluster_Region_1360983642 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002d|android.util.Log.w(TAG, \"Unexpected start indicator: expected \" + r9.payloadSize + \" more bytes\")\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x004d|r9.reader.packetFinished()\l}"];
+Node_InsnContainer_1310515121 [shape=record,label="{|break\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000a|setState(1)\l}"];
+}
+}
+subgraph cluster_LoopRegion_286608341 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|if (r10.bytesLeft() \> 0) goto L_0x0013\l}"];
+subgraph cluster_Region_604591539 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_33803086 {
+label = "Switch: 4, default: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|switch(r9.state) \{\l    case 0: goto L_0x0019;\l    case 1: goto L_0x0053;\l    case 2: goto L_0x006c;\l    case 3: goto L_0x0099;\l    default: goto L_0x0018;\l\}\l}"];
+subgraph cluster_Region_709524968 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0019|r10.skipBytes(r10.bytesLeft())\l}"];
+Node_InsnContainer_297451671 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2146479070 {
+label = "R(1:(2:20|1)(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1672828629 {
+label = "IF [B:16:0x005d] THEN: R(2:20|1) ELSE: R(1:1)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x005d|if (continueRead(r10, r9.pesScratch.data, 9) != false) goto L_0x005f\l}"];
+subgraph cluster_Region_451531382 {
+label = "R(2:20|1)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0066|PHI: r2 \l  PHI: (r2v25 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setState(parseHeader() ? 2 : 0)\l}"];
+Node_InsnContainer_1569724356 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_658831859 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1846415408 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_975181285 {
+label = "R(1:(2:26|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1733499730 {
+label = "IF [B:23:0x007c, B:25:0x0085] THEN: R(2:26|1) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x007c|ADDED_TO_REGION\l|if (continueRead(r10, r9.pesScratch.data, java.lang.Math.min(10, r9.extendedHeaderLength)) == true) goto L_0x007e\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0085|ADDED_TO_REGION\l|if (continueRead(r10, (byte[]) null, r9.extendedHeaderLength) == true) goto L_0x0087\l}"];
+subgraph cluster_Region_1733881130 {
+label = "R(2:26|1)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0087|parseHeaderExtension()\lr9.reader.packetStarted(r9.timeUs, r9.dataAlignmentIndicator)\lsetState(3)\l}"];
+Node_InsnContainer_2034892385 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_21468561 {
+label = "R(5:27|(1:29)(1:37)|(1:31)|32|(1:1)(2:34|(1:1)(2:36|1)))";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0099|int int r1 = r10.bytesLeft()\l}"];
+subgraph cluster_IfRegion_1132221328 {
+label = "IF [B:28:0x009f] THEN: R(1:29) ELSE: R(1:37)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x009f|if (r9.payloadSize == \-1) goto L_0x00a1\l}"];
+subgraph cluster_Region_1985199055 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x00a1|r0 = 0\l}"];
+}
+subgraph cluster_Region_192602054 {
+label = "R(1:37)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x00c9|int r0 = r1 \- r9.payloadSize\l}"];
+}
+}
+subgraph cluster_IfRegion_1015699750 {
+label = "IF [B:30:0x00a2] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00a2|PHI: r0 \l  PHI: (r0v1 'padding' int) = (r0v0 'padding' int), (r0v2 'padding' int) binds: [B:37:0x00c9, B:29:0x00a1] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \> 0) goto L_0x00a4\l}"];
+subgraph cluster_Region_1155709147 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x00a4|r1 \-= r0\lr10.setLimit(r10.getPosition() + r1)\l}"];
+}
+}
+Node_32 [shape=record,label="{32\:\ 0x00ad|PHI: r1 \l  PHI: (r1v1 'readLength' int) = (r1v0 'readLength' int), (r1v2 'readLength' int) binds: [B:30:0x00a2, B:31:0x00a4] A[DONT_GENERATE, DONT_INLINE]\l|r9.reader.consume(r10)\l}"];
+subgraph cluster_IfRegion_471585312 {
+label = "IF [B:33:0x00b4] THEN: R(1:1) ELSE: R(2:34|(1:1)(2:36|1))";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x00b4|if (r9.payloadSize == \-1) goto L_0x000d\l}"];
+subgraph cluster_Region_706186548 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_190233397 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1267024947 {
+label = "R(2:34|(1:1)(2:36|1))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x00b6|r9.payloadSize \-= r1\l}"];
+subgraph cluster_IfRegion_1702592528 {
+label = "IF [B:35:0x00bd] THEN: R(1:1) ELSE: R(2:36|1)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00bd|if (r9.payloadSize != 0) goto L_0x000d\l}"];
+subgraph cluster_Region_666092621 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_828081058 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_267000239 {
+label = "R(2:36|1)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x00bf|r9.reader.packetFinished()\lsetState(1)\l}"];
+Node_InsnContainer_917005122 [shape=record,label="{|break\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d|LOOP_START\lLOOP:0: B:5:0x000d\-\>B:39:0x000d\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0053}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x005f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0063}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0065}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x006a}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x006c}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x007e}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x00ce}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x000d|LOOP_END\lSYNTHETIC\lLOOP:0: B:5:0x000d\-\>B:39:0x000d\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x00ce|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x000d|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x000d|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x000d|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x000d|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x000d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x000d|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x000d|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x000d|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x000d|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x000d|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x000d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.exoplayer2.extractor.ts.PesReader.consume((r9v0 'this' com.google.android.exoplayer2.extractor.ts.PesReader A[IMMUTABLE_TYPE, THIS]), (r10v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'payloadUnitStartIndicator' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_51[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_3 -> Node_11;
+Node_10 -> Node_4;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_4;
+Node_4 -> Node_51;
+Node_6 -> Node_7;
+Node_6 -> Node_40[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_15;
+Node_8 -> Node_22;
+Node_8 -> Node_27;
+Node_8 -> Node_41;
+Node_9 -> Node_42;
+Node_16 -> Node_17;
+Node_16 -> Node_43[style=dashed];
+Node_20 -> Node_44;
+Node_23 -> Node_24;
+Node_23 -> Node_45[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_46[style=dashed];
+Node_26 -> Node_47;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_28 -> Node_37[style=dashed];
+Node_29 -> Node_30;
+Node_37 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_33 -> Node_34[style=dashed];
+Node_33 -> Node_48;
+Node_34 -> Node_35;
+Node_35 -> Node_36[style=dashed];
+Node_35 -> Node_49;
+Node_36 -> Node_50;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+Node_21 -> Node_20;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_39 -> Node_5;
+Node_40 -> Node_38;
+Node_41 -> Node_39;
+Node_42 -> Node_39;
+Node_43 -> Node_39;
+Node_44 -> Node_39;
+Node_45 -> Node_39;
+Node_46 -> Node_39;
+Node_47 -> Node_39;
+Node_48 -> Node_39;
+Node_49 -> Node_39;
+Node_50 -> Node_39;
+Node_51 -> Node_5;
+}
+

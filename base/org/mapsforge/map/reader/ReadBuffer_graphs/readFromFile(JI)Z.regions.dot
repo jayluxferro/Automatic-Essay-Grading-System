@@ -1,0 +1,91 @@
+digraph "CFG fororg.mapsforge.map.reader.ReadBuffer.readFromFile(JI)Z" {
+subgraph cluster_Region_1733262776 {
+label = "R(5:0|(1:(2:(2:6|7)|(1:8)))|9|3a|16)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = false\l}"];
+subgraph cluster_IfRegion_2097075564 {
+label = "IF [B:1:0x0003, B:3:0x0008] THEN: R(1:(2:(2:6|7)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|ADDED_TO_REGION\l|if (r3.bufferData == null) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r3.bufferData.length \< r6) goto L_0x000a\l}"];
+subgraph cluster_Region_1794163297 {
+label = "R(1:(2:(2:6|7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2070213706 {
+label = "R(2:(2:6|7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_364171619 {
+label = "IF [B:5:0x000c] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r6 \> org.mapsforge.core.util.Parameters.MAXIMUM_BUFFER_SIZE) goto L_0x000e\l}"];
+subgraph cluster_Region_1580481442 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|java.util.logging.Logger java.util.logging.Logger r4 = LOGGER\lr4.warning(\"invalid read length: \" + r6)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_527119116 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|r3.bufferData = new byte[r6]\lr3.bufferWrapper = java.nio.ByteBuffer.wrap(r3.bufferData, 0, r6)\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0031|r3.bufferPosition = 0\lr3.bufferWrapper.clear()\l}"];
+subgraph cluster_SynchronizedRegion_1935935818 {
+label = "Synchronized:R(2:10|(2:12|(1:14)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003a}"];
+subgraph cluster_Region_805201352 {
+label = "R(2:12|(1:14))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|r3.inputChannel.position(r4)\l}"];
+subgraph cluster_IfRegion_477271709 {
+label = "IF [B:13:0x0048] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0048|if (r3.inputChannel.read(r3.bufferWrapper) == r6) goto L_0x004a\l}"];
+subgraph cluster_Region_403650275 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004a|r1 = true\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x004c|RETURN\l|return r1\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004b|DONT_GENERATE\lPHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:13:0x0048, B:14:0x004a] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x004b: MONITOR_EXIT  \l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004d|REMOVE\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004e|REMOVE\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004f|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public boolean org.mapsforge.map.reader.ReadBuffer.readFromFile((r3v0 'this' org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+}
+

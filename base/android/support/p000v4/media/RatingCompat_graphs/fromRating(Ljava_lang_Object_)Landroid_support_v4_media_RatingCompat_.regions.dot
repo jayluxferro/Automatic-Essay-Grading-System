@@ -1,0 +1,101 @@
+digraph "CFG forandroid.support.v4.media.RatingCompat.fromRating(Ljava\/lang\/Object;)Landroid\/support\/v4\/media\/RatingCompat;" {
+subgraph cluster_Region_690107130 {
+label = "R(1:(2:(1:15)|(4:4|(1:6)(1:12)|13|14))) | DECL_VAR: android.support.v4.media.RatingCompat null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2128595044 {
+label = "R(2:(1:15)|(4:4|(1:6)(1:12)|13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1681634047 {
+label = "IF [B:1:0x0001, B:3:0x0007] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x0045\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 19) goto L_0x0045\l}"];
+subgraph cluster_Region_2047008571 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0045|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_844237765 {
+label = "R(4:4|(1:6)(1:12)|13|14)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|android.media.Rating android.media.Rating r1 = (android.media.Rating) r4\lint int r2 = r1.getRatingStyle()\l}"];
+subgraph cluster_IfRegion_1347366562 {
+label = "IF [B:5:0x0014] THEN: R(1:6) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r1.isRated() == true) goto L_0x0016\l}"];
+subgraph cluster_Region_1108318051 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1635018251 {
+label = "Switch: 4, default: R(1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|switch(r2) \{\l    case 1: goto L_0x0035;\l    case 2: goto L_0x002c;\l    case 3: goto L_0x0023;\l    case 4: goto L_0x0023;\l    case 5: goto L_0x0023;\l    case 6: goto L_0x001a;\l    default: goto L_0x0019;\l\}\l}"];
+subgraph cluster_Region_10704390 {
+label = "R(2:11|1)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0035|android.support.v4.media.RatingCompat r0 = newHeartRating(r1.hasHeart())\l}"];
+Node_InsnContainer_1116990382 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1891644203 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|android.support.v4.media.RatingCompat r0 = newThumbRating(r1.isThumbUp())\l}"];
+Node_InsnContainer_2072380745 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1382945493 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|android.support.v4.media.RatingCompat r0 = newStarRating(r2, r1.getStarRating())\l}"];
+Node_InsnContainer_395437573 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2071792644 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|android.support.v4.media.RatingCompat r0 = newPercentageRating(r1.getPercentRating())\l}"];
+Node_InsnContainer_689692443 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1946717965 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_274483301 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003e|android.support.v4.media.RatingCompat r0 = newUnratedRating(r2)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0042|PHI: r0 \l  PHI: (r0v1 android.support.v4.media.RatingCompat) = (r0v2 android.support.v4.media.RatingCompat), (r0v4 android.support.v4.media.RatingCompat), (r0v6 android.support.v4.media.RatingCompat), (r0v8 android.support.v4.media.RatingCompat), (r0v10 android.support.v4.media.RatingCompat) binds: [B:12:0x003e, B:11:0x0035, B:10:0x002c, B:9:0x0023, B:8:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r0.mRatingObj = r4\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0044|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+MethodNode[shape=record,label="{public static android.support.v4.media.RatingCompat android.support.v4.media.RatingCompat.fromRating((r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_15;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_6 -> Node_9;
+Node_6 -> Node_10;
+Node_6 -> Node_11;
+Node_11 -> Node_13;
+Node_10 -> Node_13;
+Node_9 -> Node_13;
+Node_8 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

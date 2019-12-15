@@ -1,0 +1,28 @@
+digraph "CFG forokio.InflaterSource.refill()Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5.inflater.needsInput() != false) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return false\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|releaseInflatedBytes()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r5.inflater.getRemaining() != 0) goto L_0x003a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|if (r5.source.exhausted() == false) goto L_0x001f\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|okio.Segment r0 = r5.source.buffer().head\lr5.bufferBytesHeldByInflater = r0.limit \- r0.pos\lr5.inflater.setInput(r0.data, r0.pos, r5.bufferBytesHeldByInflater)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|RETURN\l|return false\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a}"];
+Node_11 [shape=record,label="{11\:\ 0x0041|throw new java.lang.IllegalStateException(\"?\")\l}"];
+MethodNode[shape=record,label="{public boolean okio.InflaterSource.refill((r5v0 'this' okio.InflaterSource A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

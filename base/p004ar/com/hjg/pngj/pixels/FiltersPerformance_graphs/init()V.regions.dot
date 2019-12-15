@@ -1,0 +1,85 @@
+digraph "CFG forar.com.hjg.pngj.pixels.FiltersPerformance.init()V" {
+subgraph cluster_Region_1647418703 {
+label = "R(2:(3:2|(1:4)(1:(1:7)(1:(1:12)))|13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1010726203 {
+label = "IF [B:1:0x0009] THEN: R(3:2|(1:4)(1:(1:7)(1:(1:12)))|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r6.filter_weights[0] \< 0.0d) goto L_0x000b\l}"];
+subgraph cluster_Region_936708837 {
+label = "R(3:2|(1:4)(1:(1:7)(1:(1:12)))|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|java.lang.System.arraycopy(FILTER_WEIGHTS_DEFAULT, 0, r6.filter_weights, 0, 5)\ldouble r2 = r6.filter_weights[0]\l}"];
+subgraph cluster_IfRegion_405524568 {
+label = "IF [B:3:0x001d] THEN: R(1:4) ELSE: R(1:(1:7)(1:(1:12)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001d|if (r6.iminfo.bitDepth == 16) goto L_0x001f\l}"];
+subgraph cluster_Region_1769539595 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|r2 = 1.2d\l}"];
+}
+subgraph cluster_Region_1862778112 {
+label = "R(1:(1:7)(1:(1:12))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_20090442 {
+label = "IF [B:6:0x0029] THEN: R(1:7) ELSE: R(1:(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|if (r6.iminfo.alpha == true) goto L_0x002b\l}"];
+subgraph cluster_Region_1609176366 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|r2 = 0.8d\l}"];
+}
+subgraph cluster_Region_1315611898 {
+label = "R(1:(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134550655 {
+label = "IF [B:9:0x0035, B:11:0x003d] THEN: R(1:12) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|ADDED_TO_REGION\l|if (r6.iminfo.indexed == true) goto L_0x003f\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003d|ADDED_TO_REGION\l|if (r6.iminfo.bitDepth \< 8) goto L_0x003f\l}"];
+subgraph cluster_Region_1258198521 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003f|r2 = 0.4d\l}"];
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0044|PHI: r2 \l  PHI: (r2v3 double) = (r2v5 double), (r2v2 double), (r2v6 double), (r2v7 double) binds: [B:12:0x003f, B:11:0x003d, B:7:0x002b, B:4:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|r6.filter_weights[0] = r2 \/ r6.preferenceForNone\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x004b|java.util.Arrays.fill(r6.cost, 1.0d)\lr6.initdone = true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0031}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0037}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0055}"];
+MethodNode[shape=record,label="{private void ar.com.hjg.pngj.pixels.FiltersPerformance.init((r6v0 'this' ar.com.hjg.pngj.pixels.FiltersPerformance A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_13;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_13;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

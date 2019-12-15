@@ -1,0 +1,56 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.TextScanner.advanceChar()I" {
+subgraph cluster_Region_2111096259 {
+label = "R(1:(2:(1:2)|(2:3|(2:(1:6)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2138879400 {
+label = "R(2:(1:2)|(2:3|(2:(1:6)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1035895003 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r3.position == r3.inputLength) goto L_0x0007\l}"];
+subgraph cluster_Region_1798020440 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_806004515 {
+label = "R(2:3|(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|r3.position++\l}"];
+subgraph cluster_Region_708937087 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1664118964 {
+label = "IF [B:4:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r3.position \< r3.inputLength) goto L_0x0014\l}"];
+subgraph cluster_Region_1413931223 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return r3.input.charAt(r3.position)\l}"];
+}
+}
+subgraph cluster_Region_823162563 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return \-1\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+MethodNode[shape=record,label="{int com.caverock.androidsvg.SVGParser.TextScanner.advanceChar((r3v0 'this' com.caverock.androidsvg.SVGParser$TextScanner A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.Ac3Reader.parseHeader()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r12.headerScratchBits.setPosition(0)\lcom.google.android.exoplayer2.audio.Ac3Util$Ac3SyncFrameInfo r11 = com.google.android.exoplayer2.audio.Ac3Util.parseAc3SyncframeInfo(r12.headerScratchBits)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r12.format == null) goto L_0x002a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|if (r11.channelCount != r12.format.channelCount) goto L_0x002a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r11.sampleRate != r12.format.sampleRate) goto L_0x002a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|if (r11.mimeType == r12.format.sampleMimeType) goto L_0x0044\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|r12.format = com.google.android.exoplayer2.Format.createAudioSampleFormat(r12.trackFormatId, r11.mimeType, (java.lang.String) null, \-1, \-1, r11.channelCount, r11.sampleRate, (java.util.List\<byte[]\>) null, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, r12.language)\lr12.output.format(r12.format)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0044|r12.sampleSize = r11.frameSize\lr12.sampleDurationUs = (com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND * ((long) r11.sampleCount)) \/ ((long) r12.format.sampleRate)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0057|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.ts.Ac3Reader.parseHeader((r12v0 'this' com.google.android.exoplayer2.extractor.ts.Ac3Reader A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

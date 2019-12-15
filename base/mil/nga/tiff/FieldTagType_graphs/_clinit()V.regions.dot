@@ -1,0 +1,27 @@
+digraph "CFG formil.nga.tiff.FieldTagType.\<clinit\>()V" {
+subgraph cluster_Region_2002649686 {
+label = "R(2:0|(1:2)) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|idMapping = new java.util.HashMap()\lint int r1 = values().length\l}"];
+subgraph cluster_LoopRegion_634381107 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x077a|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:2:0x077c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x077a\-\>B:2:0x077c\l|if (r2 \< r1) goto L_0x077c\l}"];
+subgraph cluster_Region_2116870541 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x077c|LOOP_END\lLOOP:0: B:1:0x077a\-\>B:2:0x077c\l|r3 = r0[r2]\lidMapping.put(java.lang.Integer.valueOf(r3.getId()), r3)\lr2++\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x078e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x078e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static void mil.nga.tiff.FieldTagType.\<clinit\>() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

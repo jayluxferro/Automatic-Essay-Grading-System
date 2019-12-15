@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.platform.ConscryptPlatform.getSelectedProtocol(Ljavax\/net\/ssl\/SSLSocket;)Ljava\/lang\/String;" {
+subgraph cluster_Region_529306040 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_427095034 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_224931337 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (org.conscrypt.Conscrypt.isConscrypt(r2) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_982113933 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return org.conscrypt.Conscrypt.getApplicationProtocol(r2)\l}"];
+}
+}
+subgraph cluster_Region_1106483509 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|RETURN\l|return super.getSelectedProtocol(r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public java.lang.String okhttp3.internal.platform.ConscryptPlatform.getSelectedProtocol((r1v0 'this' okhttp3.internal.platform.ConscryptPlatform A[IMMUTABLE_TYPE, THIS]), (r2v0 javax.net.ssl.SSLSocket A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

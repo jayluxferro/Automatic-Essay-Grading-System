@@ -1,0 +1,62 @@
+digraph "CFG formil.nga.geopackage.db.GeoPackageCoreConnection.getApplicationId()Ljava\/lang\/String;" {
+subgraph cluster_Region_1953547040 {
+label = "R(2:0|(2:(1:7)|(1:(1:8))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Integer java.lang.Integer r0 = querySingleIntResult(\"PRAGMA application_id\", (java.lang.String[]) null)\l}"];
+subgraph cluster_Region_234089377 {
+label = "R(2:(1:7)|(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1986695443 {
+label = "IF [B:1:0x0007] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r0 == null) goto L_?\l}"];
+subgraph cluster_Region_1564694270 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_283801050 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1313124633 {
+label = "Try: R(1:8) catches: R(2:4|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1964990255 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return new java.lang.String(java.nio.ByteBuffer.allocate(4).putInt(r0.intValue()).array(), p018io.fabric.sdk.android.services.network.HttpRequest.CHARSET_UTF8)\l}"];
+}
+subgraph cluster_Region_1551426963 {
+label = "R(2:4|6) | ExcHandler: UnsupportedEncodingException (r0v2 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|ExcHandler: UnsupportedEncodingException (r0v2 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0009\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected application id character encoding\", r0)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1551426963 {
+label = "R(2:4|6) | ExcHandler: UnsupportedEncodingException (r0v2 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|ExcHandler: UnsupportedEncodingException (r0v2 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0009\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected application id character encoding\", r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009|SYNTHETIC\lSplitter:B:2:0x0009\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|Catch:\{ UnsupportedEncodingException \-\> 0x0022 \}\lSplitter:B:2:0x0009\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+MethodNode[shape=record,label="{public java.lang.String mil.nga.geopackage.db.GeoPackageCoreConnection.getApplicationId((r3v0 'this' mil.nga.geopackage.db.GeoPackageCoreConnection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_4 -> Node_5;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,92 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.dispose(Z)V" {
+subgraph cluster_Region_1710244926 {
+label = "R(2:(2:(1:3)|4)|(2:7|(1:9))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1975826097 {
+label = "IF [B:1:0x0002] THEN: R(2:(1:3)|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mCloseGuard != null) goto L_0x0004\l}"];
+subgraph cluster_Region_909024489 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_516305842 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r5 == true) goto L_0x0006\l}"];
+subgraph cluster_Region_2037401056 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r4.mCloseGuard.warnIfOpen()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000b|r4.mCloseGuard.close()\l}"];
+}
+}
+subgraph cluster_IfRegion_693179713 {
+label = "IF [B:6:0x0016] THEN: R(2:7|(1:9)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r4.mConnectionPtr != 0) goto L_0x0018\l}"];
+subgraph cluster_Region_693481491 {
+label = "R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|int int r5 = r4.mRecentOperations.beginOperation(\"close\", (java.lang.String) null, (java.lang.Object[]) null)\l}"];
+subgraph cluster_TryCatchRegion_1809456470 {
+label = "Try: R(1:9) finally: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1143928892 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|Catch:\{ all \-\> 0x0033 \}\lSplitter:B:8:0x0021\l|r4.mPreparedStatementCache.evictAll()     \/\/ Catch:\{ all \-\> 0x0033 \}\lnativeClose(r4.mConnectionPtr)     \/\/ Catch:\{ all \-\> 0x0033 \}\lr4.mConnectionPtr = 0     \/\/ Catch:\{ all \-\> 0x0033 \}\l}"];
+}
+subgraph cluster_Region_1925440982 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033|ExcHandler:  FINALLY\lSplitter:B:8:0x0021\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0034|FINALLY_INSNS\l|r4.mRecentOperations.endOperation(r5)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0039|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1057679900 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1925440982 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033|ExcHandler:  FINALLY\lSplitter:B:8:0x0021\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0034|FINALLY_INSNS\l|r4.mRecentOperations.endOperation(r5)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0039|throw r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0021|SYNTHETIC\lSplitter:B:8:0x0021\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d|DONT_GENERATE\l|org.spatialite.database.SQLiteConnection$OperationLog r0 = r4.mRecentOperations\lr0.endOperation(r5)\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.dispose((r4v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_8 -> Node_11;
+Node_10 -> Node_15;
+}
+

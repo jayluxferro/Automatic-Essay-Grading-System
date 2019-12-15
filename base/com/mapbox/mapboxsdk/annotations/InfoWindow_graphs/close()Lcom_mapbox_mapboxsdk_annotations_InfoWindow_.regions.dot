@@ -1,0 +1,63 @@
+digraph "CFG forcom.mapbox.mapboxsdk.annotations.InfoWindow.close()Lcom\/mapbox\/mapboxsdk\/annotations\/InfoWindow;" {
+subgraph cluster_Region_550194344 {
+label = "R(3:0|(5:3|(1:7)|8|(1:10)|11)|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.maps.MapboxMap com.mapbox.mapboxsdk.maps.MapboxMap r0 = (com.mapbox.mapboxsdk.maps.MapboxMap) r3.mapboxMap.get()\l}"];
+subgraph cluster_IfRegion_85947471 {
+label = "IF [B:1:0x000a, B:2:0x000c] THEN: R(5:3|(1:7)|8|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|ADDED_TO_REGION\l|if (r3.isVisible == true) goto L_0x000c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|ADDED_TO_REGION\l|if (r0 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_104644994 {
+label = "R(5:3|(1:7)|8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|r3.isVisible = false\landroid.view.View android.view.View r1 = (android.view.View) r3.view.get()\l}"];
+subgraph cluster_IfRegion_1022043192 {
+label = "IF [B:4:0x0019, B:6:0x001f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|ADDED_TO_REGION\l|if (r1 == null) goto L_0x002a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|ADDED_TO_REGION\l|if (r1.getParent() == null) goto L_0x002a\l}"];
+subgraph cluster_Region_1186955521 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|((android.view.ViewGroup) r1.getParent()).removeView(r1)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002a|com.mapbox.mapboxsdk.annotations.Marker com.mapbox.mapboxsdk.annotations.Marker r1 = getBoundMarker()\lcom.mapbox.mapboxsdk.maps.MapboxMap$OnInfoWindowCloseListener com.mapbox.mapboxsdk.maps.MapboxMap.OnInfoWindowCloseListener r0 = r0.getOnInfoWindowCloseListener()\l}"];
+subgraph cluster_IfRegion_1487724233 {
+label = "IF [B:9:0x0032] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|if (r0 != null) goto L_0x0034\l}"];
+subgraph cluster_Region_947660949 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|r0.onInfoWindowClose(r1)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0037|setBoundMarker((com.mapbox.mapboxsdk.annotations.Marker) null)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x003b|RETURN\l|return r3\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{com.mapbox.mapboxsdk.annotations.InfoWindow com.mapbox.mapboxsdk.annotations.InfoWindow.close((r3v0 'this' com.mapbox.mapboxsdk.annotations.InfoWindow A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG fororg.osmdroid.views.overlay.ScaleBarOverlay.setTextPaint(Landroid\/graphics\/Paint;)V" {
+subgraph cluster_Region_1435695981 {
+label = "R(1:(2:(2:1|2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2002278969 {
+label = "R(2:(2:1|2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_758700290 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_542883140 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r2.textPaint = r3\lr2.lastZoomLevel = \-1.0d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1657824177 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|throw new java.lang.IllegalArgumentException(\"pTextPaint argument cannot be null\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.ScaleBarOverlay.setTextPaint((r2v0 'this' org.osmdroid.views.overlay.ScaleBarOverlay A[IMMUTABLE_TYPE, THIS]), (r3v0 android.graphics.Paint A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

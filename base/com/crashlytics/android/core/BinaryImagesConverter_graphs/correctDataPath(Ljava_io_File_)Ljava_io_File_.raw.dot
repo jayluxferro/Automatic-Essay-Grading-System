@@ -1,0 +1,29 @@
+digraph "CFG forcom.crashlytics.android.core.BinaryImagesConverter.correctDataPath(Ljava\/io\/File;)Ljava\/io\/File;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: SGET  (r0 I:int) =  android.os.Build.VERSION.SDK_INT int \l0x0002: CONST  (r1 I:?[int, float, short, byte, char]) = (9 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:3:0x0007 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: RETURN  (r5 I:java.io.File) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|0x0007: INVOKE  (r0 I:java.lang.String) = (r5 I:java.io.File) java.io.File.getAbsolutePath():java.lang.String type: VIRTUAL \l0x000b: CONST_STR  (r1 I:java.lang.String) =  \"\/data\" \l0x000d: INVOKE  (r0 I:boolean) = (r0 I:java.lang.String), (r1 I:java.lang.String) java.lang.String.startsWith(java.lang.String):boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|0x0011: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x003d \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|SYNTHETIC\lSplitter:B:5:0x0013\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Splitter:B:5:0x0013\l|0x0013: IGET  (r0 I:android.content.Context) = (r4 I:com.crashlytics.android.core.BinaryImagesConverter) com.crashlytics.android.core.BinaryImagesConverter.context android.content.Context A[Catch:\{ NameNotFoundException \-\> 0x0031 \}, TRY_ENTER]\l0x0015: INVOKE  (r0 I:android.content.pm.PackageManager) = (r0 I:android.content.Context) android.content.Context.getPackageManager():android.content.pm.PackageManager type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x0019: IGET  (r1 I:android.content.Context) = (r4 I:com.crashlytics.android.core.BinaryImagesConverter) com.crashlytics.android.core.BinaryImagesConverter.context android.content.Context A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x001b: INVOKE  (r1 I:java.lang.String) = (r1 I:android.content.Context) android.content.Context.getPackageName():java.lang.String type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x001f: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x0020: INVOKE  (r0 I:android.content.pm.ApplicationInfo) = \l  (r0 I:android.content.pm.PackageManager)\l  (r1 I:java.lang.String)\l  (r2 I:int)\l android.content.pm.PackageManager.getApplicationInfo(java.lang.String, int):android.content.pm.ApplicationInfo type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x0024: NEW_INSTANCE  (r1 I:java.io.File) =  java.io.File A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x0026: IGET  (r0 I:java.lang.String) = (r0 I:android.content.pm.ApplicationInfo) android.content.pm.ApplicationInfo.nativeLibraryDir java.lang.String A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x0028: INVOKE  (r2 I:java.lang.String) = (r5 I:java.io.File) java.io.File.getName():java.lang.String type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x0031 \}]\l0x002c: INVOKE  \l  (r1 I:java.io.File)\l  (r0 I:java.lang.String)\l  (r2 I:java.lang.String)\l java.io.File.\<init\>(java.lang.String, java.lang.String):void type: DIRECT A[Catch:\{ NameNotFoundException \-\> 0x0031 \}, TRY_LEAVE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002f|0x002f: MOVE  (r5 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0031|ExcHandler: NameNotFoundException null\lSplitter:B:5:0x0013\l|0x0031: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|0x0032: INVOKE  (r1 I:io.fabric.sdk.android.Logger) =  io.fabric.sdk.android.Fabric.getLogger():io.fabric.sdk.android.Logger type: STATIC \l0x0036: CONST_STR  (r2 I:java.lang.String) =  \"CrashlyticsCore\" \l0x0038: CONST_STR  (r3 I:java.lang.String) =  \"Error getting ApplicationInfo\" \l0x003a: INVOKE  \l  (r1 I:io.fabric.sdk.android.Logger)\l  (r2 I:java.lang.String)\l  (r3 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l io.fabric.sdk.android.Logger.e(java.lang.String, java.lang.String, java.lang.Throwable):void type: INTERFACE \l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|0x003d: RETURN  (r5 I:java.io.File) \l}"];
+MethodNode[shape=record,label="{private java.io.File com.crashlytics.android.core.BinaryImagesConverter.correctDataPath((r4 'this' I:com.crashlytics.android.core.BinaryImagesConverter A[IMMUTABLE_TYPE, THIS]), (r5 I:java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

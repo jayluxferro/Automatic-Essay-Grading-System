@@ -1,0 +1,47 @@
+digraph "CFG fororg.mapsforge.map.reader.ReadBuffer.readFromFile(JI)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.bufferData == null) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.bufferData.length \>= r6) goto L_0x0031\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r6 \<= org.mapsforge.core.util.Parameters.MAXIMUM_BUFFER_SIZE) goto L_0x0025\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|java.util.logging.Logger r4 = LOGGER\ljava.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"invalid read length: \")\lr5.append(r6)\lr4.warning(r5.toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|RETURN\l|return false\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|r3.bufferData = new byte[r6]\lr3.bufferWrapper = java.nio.ByteBuffer.wrap(r3.bufferData, 0, r6)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0031|r3.bufferPosition = 0\lr3.bufferWrapper.clear()\ljava.nio.channels.FileChannel r0 = r3.inputChannel\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|monitor\-enter(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ ?|r3.inputChannel.position(r4)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0048|if (r3.inputChannel.read(r3.bufferWrapper) != r6) goto L_0x004b\l}"];
+Node_14 [shape=record,label="{14\:\ 0x004a|r1 = true\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004b|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:13:0x0048, B:14:0x004a] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(r0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004c|RETURN\l|return r1\l}"];
+Node_17 [shape=record,label="{17\:\ 0x004d|REMOVE\l|java.lang.Throwable r4 = move\-exception\l}"];
+Node_18 [shape=record,label="{18\:\ 0x004e|REMOVE\l}"];
+Node_19 [shape=record,label="{19\:\ 0x004f|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public boolean org.mapsforge.map.reader.ReadBuffer.readFromFile((r3v0 'this' org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+}
+

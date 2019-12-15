@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.AudioTrack.reset()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (isInitialized() == false) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|r10.submittedPcmBytes = 0\lr10.submittedEncodedFrames = 0\lr10.writtenPcmBytes = 0\lr10.writtenEncodedFrames = 0\lr10.framesPerEncodedSample = 0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r10.drainingPlaybackParameters == null) goto L_0x0043\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|r10.playbackParameters = r10.drainingPlaybackParameters\lr10.drainingPlaybackParameters = null\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|r10.playbackParametersCheckpoints.clear()\lr10.playbackParametersOffsetUs = 0\lr10.playbackParametersPositionUs = 0\lr10.inputBuffer = null\lr10.outputBuffer = null\lr1 = 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002c|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:5:0x001e, B:8:0x0031] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x002c\-\>B:8:0x0031\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002f|if (r1 \>= r10.audioProcessors.length) goto L_0x005a\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0031|LOOP_END\lLOOP:0: B:6:0x002c\-\>B:8:0x0031\l|r0 = r10.audioProcessors[r1]\lr0.flush()\lr10.outputBuffers[r1] = r0.getOutput()\lint r1 = r1 + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0043}"];
+Node_10 [shape=record,label="{10\:\ 0x0049|if (r10.playbackParametersCheckpoints.isEmpty() != false) goto L_0x001e\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004b|r10.playbackParameters = com.google.android.exoplayer2.audio.AudioTrack.PlaybackParametersCheckpoint.access$200(r10.playbackParametersCheckpoints.getLast())\l}"];
+Node_12 [shape=record,label="{12\:\ 0x005a|r10.handledEndOfStream = false\lr10.drainingAudioProcessorIndex = \-1\lr10.avSyncHeader = null\lr10.bytesUntilNextAvSync = 0\lr10.startMediaTimeState = 0\lr10.latencyUs = 0\lresetSyncParams()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0071|if (r10.audioTrack.getPlayState() != 3) goto L_0x0078\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0073|r10.audioTrack.pause()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0078|android.media.AudioTrack r3 = r10.audioTrack\lr10.audioTrack = null\lr10.audioTrackUtil.reconfigure((android.media.AudioTrack) null, false)\lr10.releasingConditionVariable.close()\lnew com.google.android.exoplayer2.audio.AudioTrack.C12731(r10).start()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005a|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.audio.AudioTrack.reset((r10v0 'this' com.google.android.exoplayer2.audio.AudioTrack A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_18;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_16;
+Node_8 -> Node_6;
+Node_9 -> Node_10;
+Node_10 -> Node_5;
+Node_10 -> Node_11[style=dashed];
+Node_11 -> Node_5;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_17;
+Node_16 -> Node_12;
+}
+

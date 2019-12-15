@@ -1,0 +1,44 @@
+digraph "CFG fororg.mapsforge.map.android.input.TouchGestureHandler.onFling(Landroid\/view\/MotionEvent;Landroid\/view\/MotionEvent;FF)Z" {
+subgraph cluster_Region_2137201657 {
+label = "R(1:(2:(1:8)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1292359925 {
+label = "R(2:(1:8)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1380809197 {
+label = "IF [B:1:0x0003, B:3:0x000a, B:5:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r11.isInScale == true) goto L_0x0037\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r12.getPointerCount() != 1) goto L_0x0037\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r13.getPointerCount() != 1) goto L_0x0037\l}"];
+subgraph cluster_Region_394740104 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0037|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1885088850 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|r11.flinger.fling(0, 0, (int) (\-r14), (int) (\-r15), Integer.MIN_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE)\lr11.flingLastY = 0\lr11.flingLastX = 0\lr11.handler.removeCallbacksAndMessages((java.lang.Object) null)\lr11.handler.post(r11)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0036|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+MethodNode[shape=record,label="{public boolean org.mapsforge.map.android.input.TouchGestureHandler.onFling((r11v0 'this' org.mapsforge.map.android.input.TouchGestureHandler A[IMMUTABLE_TYPE, THIS]), (r12v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

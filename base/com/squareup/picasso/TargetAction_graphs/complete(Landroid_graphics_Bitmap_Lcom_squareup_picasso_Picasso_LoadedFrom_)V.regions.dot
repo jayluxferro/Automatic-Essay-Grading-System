@@ -1,0 +1,78 @@
+digraph "CFG forcom.squareup.picasso.TargetAction.complete(Landroid\/graphics\/Bitmap;Lcom\/squareup\/picasso\/Picasso$LoadedFrom;)V" {
+subgraph cluster_Region_1358285457 {
+label = "R(1:(2:(2:1|(2:(2:3|(2:(1:6)|(1:10)))|(1:9)))|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_276893355 {
+label = "R(2:(2:1|(2:(2:3|(2:(1:6)|(1:10)))|(1:9)))|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_162882218 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(2:(2:3|(2:(1:6)|(1:10)))|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1674555187 {
+label = "R(2:1|(2:(2:3|(2:(1:6)|(1:10)))|(1:9)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|com.squareup.picasso.Target com.squareup.picasso.Target r0 = (com.squareup.picasso.Target) getTarget()\l}"];
+subgraph cluster_Region_2129872420 {
+label = "R(2:(2:3|(2:(1:6)|(1:10)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1517916582 {
+label = "IF [B:2:0x0008] THEN: R(2:3|(2:(1:6)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r0 != null) goto L_0x000a\l}"];
+subgraph cluster_Region_1425337468 {
+label = "R(2:3|(2:(1:6)|(1:10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|r0.onBitmapLoaded(r2, r3)\l}"];
+subgraph cluster_Region_11319849 {
+label = "R(2:(1:6)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_415242433 {
+label = "IF [B:4:0x0011] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r2.isRecycled() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_985831745 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|throw new java.lang.IllegalStateException(\"Target callback must not recycle bitmap!\")\l}"];
+}
+}
+subgraph cluster_Region_1583626843 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_998030924 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_602058738 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d}"];
+Node_8 [shape=record,label="{8\:\ 0x002e|throw new java.lang.AssertionError(java.lang.String.format(\"Attempted to complete action with no result!n%s\", new java.lang.Object[]\{r1\}))\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.TargetAction.complete((r1v0 'this' com.squareup.picasso.TargetAction A[IMMUTABLE_TYPE, THIS]), (r2v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.squareup.picasso.Picasso$LoadedFrom A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_7[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_5 -> Node_6;
+}
+

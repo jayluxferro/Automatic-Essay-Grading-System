@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.v4.app.AppComponentFactory.instantiateActivityCompat(Ljava\/lang\/ClassLoader;Ljava\/lang\/String;Landroid\/content\/Intent;)Landroid\/app\/Activity;" {
+subgraph cluster_Region_449286137 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_158722171 {
+label = "Try: R(1:2) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_135439714 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|RETURN\l|return (android.app.Activity) r1.loadClass(r2).getDeclaredConstructor(new java.lang.Class[0]).newInstance(new java.lang.Object[0])\l}"];
+}
+subgraph cluster_Region_1765768545 {
+label = "R(2:3|5) | ExcHandler: NoSuchMethodException \| InvocationTargetException (r1v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|ExcHandler: NoSuchMethodException \| InvocationTargetException (r1v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|throw new java.lang.RuntimeException(\"Couldn't call constructor\", r1)\l}"];
+}
+}
+}
+subgraph cluster_Region_1765768545 {
+label = "R(2:3|5) | ExcHandler: NoSuchMethodException \| InvocationTargetException (r1v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|ExcHandler: NoSuchMethodException \| InvocationTargetException (r1v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|throw new java.lang.RuntimeException(\"Couldn't call constructor\", r1)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ NoSuchMethodException \| InvocationTargetException \-\> 0x0014 \}\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+MethodNode[shape=record,label="{public android.app.Activity android.support.v4.app.AppComponentFactory.instantiateActivityCompat((r0v0 'this' android.support.v4.app.AppComponentFactory A[IMMUTABLE_TYPE, THIS]), (r1v0 java.lang.ClassLoader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.InstantiationException, java.lang.IllegalAccessException, java.lang.ClassNotFoundException]\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+}
+

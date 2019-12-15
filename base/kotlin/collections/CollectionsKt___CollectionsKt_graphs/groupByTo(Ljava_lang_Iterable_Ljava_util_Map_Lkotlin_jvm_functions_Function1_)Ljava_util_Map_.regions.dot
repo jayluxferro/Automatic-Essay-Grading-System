@@ -1,0 +1,52 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.groupByTo(Ljava\/lang\/Iterable;Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1475152175 {
+label = "R(3:0|(3:3|(1:5)(0)|6)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, com.google.firebase.analytics.FirebaseAnalytics.Param.DESTINATION)\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"keySelector\")\ljava.util.Iterator r3 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_803074044 {
+label = "LOOP:0: (3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|if (r3.hasNext() != false) goto L_0x0019\l}"];
+subgraph cluster_Region_849837079 {
+label = "R(3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0019|java.lang.Object r0 = r3.next()\ljava.lang.Object java.lang.Object r1 = r5.invoke(r0)\ljava.lang.Object java.lang.Object r2 = r4.get(r1)\l}"];
+subgraph cluster_IfRegion_1121691615 {
+label = "IF [B:4:0x0025] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0025|if (r2 == null) goto L_0x0027\l}"];
+subgraph cluster_Region_824400185 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|java.util.ArrayList r2 = new java.util.ArrayList()\lr4.put(r1, r2)\l}"];
+}
+subgraph cluster_Region_1038799668 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002f|LOOP_END\lPHI: r2 \l  PHI: (r2v1 java.lang.Object) = (r2v0 java.lang.Object), (r2v3 java.lang.Object) binds: [B:10:0x002f, B:9:0x002f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0013\-\>B:6:0x002f\l|((java.util.List) r2).add(r0)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0035|RETURN\l|return r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0013|LOOP_START\lLOOP:0: B:1:0x0013\-\>B:6:0x002f\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0035|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002f|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final M kotlin.collections.CollectionsKt___CollectionsKt.groupByTo((r3v0 java.lang.Iterable\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 M A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super T, ? extends K\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, K:, Ljava\/lang\/Object;, M::, Ljava\/util\/Map\<, \-TK;, Ljava\/util\/List\<, TT;\>;\>;\>(, Ljava\/lang\/Iterable\<, +TT;\>;TM;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;+TK;\>;)TM;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

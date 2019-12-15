@@ -1,0 +1,50 @@
+digraph "CFG fororg.spatialite.database.SQLiteDatabaseConfiguration.updateParametersFrom(Lorg\/spatialite\/database\/SQLiteDatabaseConfiguration;)V" {
+subgraph cluster_Region_793419223 {
+label = "R(1:(1:8)(1:(1:3)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1794425273 {
+label = "IF [B:0:0x0000] THEN: R(1:8) ELSE: R(1:(1:3)(1:6))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x003d\l}"];
+subgraph cluster_Region_165014915 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0044|throw new java.lang.IllegalArgumentException(\"other must not be null.\")\l}"];
+}
+subgraph cluster_Region_1236417460 {
+label = "R(1:(1:3)(1:6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_854438768 {
+label = "IF [B:2:0x000a] THEN: R(1:3) ELSE: R(1:6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r2.path.equals(r3.path) == true) goto L_0x000c\l}"];
+subgraph cluster_Region_2119718301 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|r2.openFlags = r3.openFlags\lr2.maxSqlCacheSize = r3.maxSqlCacheSize\lr2.locale = r3.locale\lr2.foreignKeyConstraintsEnabled = r3.foreignKeyConstraintsEnabled\lr2.customFunctions.clear()\lr2.customFunctions.addAll(r3.customFunctions)\lr2.customExtensions.clear()\lr2.customExtensions.addAll(r3.customExtensions)\l}"];
+}
+subgraph cluster_Region_1481049632 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003c|throw new java.lang.IllegalArgumentException(\"other configuration must refer to the same database.\")\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0034}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0035}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x003d}"];
+MethodNode[shape=record,label="{void org.spatialite.database.SQLiteDatabaseConfiguration.updateParametersFrom((r2v0 'this' org.spatialite.database.SQLiteDatabaseConfiguration A[IMMUTABLE_TYPE, THIS]), (r3v0 org.spatialite.database.SQLiteDatabaseConfiguration A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

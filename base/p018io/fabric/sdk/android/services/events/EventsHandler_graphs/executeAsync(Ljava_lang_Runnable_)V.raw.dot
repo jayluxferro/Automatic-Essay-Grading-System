@@ -1,0 +1,16 @@
+digraph "CFG forio.fabric.sdk.android.services.events.EventsHandler.executeAsync(Ljava\/lang\/Runnable;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: IGET  (r0 I:java.util.concurrent.ScheduledExecutorService) = (r2 I:io.fabric.sdk.android.services.events.EventsHandler) io.fabric.sdk.android.services.events.EventsHandler.executor java.util.concurrent.ScheduledExecutorService A[Catch:\{ Exception \-\> 0x0006 \}, TRY_ENTER]\l0x0002: INVOKE  \l  (r0 I:java.util.concurrent.ScheduledExecutorService)\l  (r3 I:java.lang.Runnable)\l java.util.concurrent.ScheduledExecutorService.submit(java.lang.Runnable):java.util.concurrent.Future type: INTERFACE A[Catch:\{ Exception \-\> 0x0006 \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ExcHandler: Exception null\lSplitter:B:0:0x0000\l|0x0006: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|0x0007: IGET  (r0 I:android.content.Context) = (r2 I:io.fabric.sdk.android.services.events.EventsHandler) io.fabric.sdk.android.services.events.EventsHandler.context android.content.Context \l0x0009: CONST_STR  (r1 I:java.lang.String) =  \"Failed to submit events task\" \l0x000b: INVOKE  \l  (r0 I:android.content.Context)\l  (r1 I:java.lang.String)\l  (r3 I:java.lang.Throwable)\l io.fabric.sdk.android.services.common.CommonUtils.logControlledError(android.content.Context, java.lang.String, java.lang.Throwable):void type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|0x000e: RETURN   \l}"];
+MethodNode[shape=record,label="{protected void io.fabric.sdk.android.services.events.EventsHandler.executeAsync((r2 'this' I:io.fabric.sdk.android.services.events.EventsHandler A[IMMUTABLE_TYPE, THIS]), (r3 I:java.lang.Runnable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_3;
+Node_1 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

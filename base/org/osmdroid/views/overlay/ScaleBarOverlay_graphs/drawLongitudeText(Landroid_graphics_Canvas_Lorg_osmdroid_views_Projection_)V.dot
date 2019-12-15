@@ -1,0 +1,33 @@
+digraph "CFG fororg.osmdroid.views.overlay.ScaleBarOverlay.drawLongitudeText(Landroid\/graphics\/Canvas;Lorg\/osmdroid\/views\/Projection;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = (int) (r7.maxLength * ((float) ((int) (((double) r7.ydpi) \/ 2.54d))))\lint r3 = r0 \/ 2\lorg.osmdroid.api.IGeoPoint r1 = r9.fromPixels(r7.screenWidth \/ 2, (r7.screenHeight \/ 2) \- r3, (org.osmdroid.util.GeoPoint) null)\lorg.osmdroid.util.GeoPoint r1 = (org.osmdroid.util.GeoPoint) r1\ldouble r1 = r1.distanceToAsDouble(r9.fromPixels(r7.screenWidth \/ 2, (r7.screenHeight \/ 2) + r3, (org.osmdroid.util.GeoPoint) null))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0035|if (r7.adjustLength == false) goto L_0x003c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0037|double r3 = adjustScaleBarLength(r1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x003c|r3 = r1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x003d|PHI: r3 \l  PHI: (r3v1 double) = (r3v10 double), (r3v11 double) binds: [B:3:0x003c, B:2:0x0037] A[DONT_GENERATE, DONT_INLINE]\l|int r9 = (int) ((((double) r0) * r3) \/ r1)\ljava.lang.String r0 = scaleBarLengthText(r3)\lr7.textPaint.getTextBounds(r0, 0, r0.length(), sTextBoundsRect)\lint r1 = (int) (((double) sTextBoundsRect.height()) \/ 5.0d)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x005f|if (r7.alignRight == false) goto L_0x0068\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0061|float r1 = (float) (r7.screenWidth \- (r1 * 2))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0068|float r1 = (float) (sTextBoundsRect.height() + r1)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0070|PHI: r1 \l  PHI: (r1v13 float) = (r1v14 float), (r1v16 float) binds: [B:7:0x0068, B:6:0x0061] A[DONT_GENERATE, DONT_INLINE]\l|float r2 = (float) ((r9 \/ 2) + (sTextBoundsRect.width() \/ 2))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x007e|if (r7.alignBottom == false) goto L_0x0085\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0080|float r2 = r2 + ((float) (r7.screenHeight \- r9))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0085|PHI: r2 \l  PHI: (r2v11 float) = (r2v10 float), (r2v12 float) binds: [B:9:0x007e, B:10:0x0080] A[DONT_GENERATE, DONT_INLINE]\l|r8.save()\lr8.rotate(\-90.0f, r1, r2)\lr8.drawText(r0, r1, r2, r7.textPaint)\lr8.restore()\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0095|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.views.overlay.ScaleBarOverlay.drawLongitudeText((r7v0 'this' org.osmdroid.views.overlay.ScaleBarOverlay A[IMMUTABLE_TYPE, THIS]), (r8v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

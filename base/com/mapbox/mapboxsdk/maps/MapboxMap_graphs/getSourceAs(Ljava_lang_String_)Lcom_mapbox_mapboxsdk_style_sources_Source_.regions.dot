@@ -1,0 +1,41 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.MapboxMap.getSourceAs(Ljava\/lang\/String;)Lcom\/mapbox\/mapboxsdk\/style\/sources\/Source;" {
+subgraph cluster_Region_1226159556 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1845793456 {
+label = "Try: R(1:2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_146829999 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r4.nativeMapView.getSource(r5)\l}"];
+}
+subgraph cluster_Region_551615028 {
+label = "R(3:3|4|5) | ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|java.lang.String java.lang.String r5 = java.lang.String.format(\"Source: %s is a different type: \", new java.lang.Object[]\{r5\})\lcom.mapbox.mapboxsdk.log.Logger.m81e(TAG, r5, r0)\lcom.mapbox.mapboxsdk.MapStrictMode.strictModeViolation(r5, (java.lang.Exception) r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_551615028 {
+label = "R(3:3|4|5) | ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|java.lang.String java.lang.String r5 = java.lang.String.format(\"Source: %s is a different type: \", new java.lang.Object[]\{r5\})\lcom.mapbox.mapboxsdk.log.Logger.m81e(TAG, r5, r0)\lcom.mapbox.mapboxsdk.MapStrictMode.strictModeViolation(r5, (java.lang.Exception) r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ ClassCastException \-\> 0x0007 \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public T com.mapbox.mapboxsdk.maps.MapboxMap.getSourceAs((r4v0 'this' com.mapbox.mapboxsdk.maps.MapboxMap A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Lcom\/mapbox\/mapboxsdk\/style\/sources\/Source;, \>(, Ljava\/lang\/String;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

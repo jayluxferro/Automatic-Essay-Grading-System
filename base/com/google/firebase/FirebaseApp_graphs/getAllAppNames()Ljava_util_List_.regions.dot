@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.firebase.FirebaseApp.getAllAppNames()Ljava\/util\/List;" {
+subgraph cluster_Region_276992770 {
+label = "R(4:0|7|8|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\l}"];
+subgraph cluster_SynchronizedRegion_1386551967 {
+label = "Synchronized:R(2:1|(2:3|(1:6)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007}"];
+subgraph cluster_Region_1965529485 {
+label = "R(2:3|(1:6))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|java.util.Iterator r2 = INSTANCES.values().iterator()\l}"];
+subgraph cluster_LoopRegion_91443921 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|if (r2.hasNext() != false) goto L_0x0018\l}"];
+subgraph cluster_Region_1426069342 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|LOOP_END\lLOOP:0: B:4:0x0012\-\>B:6:0x0018\l|r0.add(r3.getName())\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0027|java.util.Collections.sort(r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002a|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008|SYNTHETIC\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012|LOOP_START\lLOOP:0: B:4:0x0012\-\>B:6:0x0018\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0026|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0026: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b|LOOP_START\lREMOVE\lLOOP:1: B:10:0x002b\-\>B:15:0x002b\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c|SYNTHETIC\lREMOVE\lSplitter:B:11:0x002c\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|REMOVE\lSplitter:B:11:0x002c\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002d|REMOVE\l|throw r0\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0026|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002b|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:1: B:10:0x002b\-\>B:15:0x002b\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002d|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002b|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<java.lang.String\> com.google.firebase.FirebaseApp.getAllAppNames()  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_14[style=dashed];
+Node_6 -> Node_4;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15;
+Node_12 -> Node_16;
+Node_12 -> Node_17;
+Node_14 -> Node_7;
+Node_15 -> Node_10;
+Node_16 -> Node_13;
+Node_17 -> Node_15;
+}
+

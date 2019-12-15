@@ -1,0 +1,152 @@
+digraph "CFG forcom.crashlytics.android.answers.EnabledSessionAnalyticsManagerStrategy.sendEvents()V" {
+subgraph cluster_Region_1937162141 {
+label = "R(1:(2:(2:2|3)|(3:4|(1:(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))))|(1:(1:17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1338557469 {
+label = "R(2:(2:2|3)|(3:4|(1:(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))))|(1:(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_565826281 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r8.filesSender == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1288815643 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|p018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r8.context, \"skipping files send because we don't yet know the target endpoint\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_954201918 {
+label = "R(3:4|(1:(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))))|(1:(1:17)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|p018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r8.context, \"Sending all files\")\ljava.util.List java.util.List\<java.io.File\> r0 = r8.filesManager.getBatchOfFilesToSend()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_178065483 {
+label = "LOOP:0: (1:(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_58508585 {
+label = "R(1:(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1824350517 {
+label = "Try: R(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))) catches: R(2:14|15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_781091237 {
+label = "R(1:(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1291043703 {
+label = "R(2:(1:19)|(3:8|(1:10)|(2:(1:12)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1999444965 {
+label = "IF [B:7:0x001f] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|Catch:\{ Exception \-\> 0x0057 \}\l|if (r0.size() \<= 0) goto L_0x0072     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+subgraph cluster_Region_700645965 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0072|SYNTHETIC\lEDGE_INSN: B:19:0x0072\-\>B:16:0x0072 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_873319381 {
+label = "R(3:8|(1:10)|(2:(1:12)|(1:13)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|Catch:\{ Exception \-\> 0x0057 \}\l|p018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r8.context, java.lang.String.format(java.util.Locale.US, \"attempt to send batch of %d files\", new java.lang.Object[]\{java.lang.Integer.valueOf(r0.size())\}))     \/\/ Catch:\{ Exception \-\> 0x0057 \}\lboolean boolean r3 = r8.filesSender.send(r0)     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+subgraph cluster_IfRegion_1154097430 {
+label = "IF [B:9:0x0041] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0041|Catch:\{ Exception \-\> 0x0057 \}\l|if (r3 == true) goto L_0x0043     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+subgraph cluster_Region_1932311661 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0043|Catch:\{ Exception \-\> 0x0057 \}\l|r2 += r0.size()     \/\/ Catch:\{ Exception \-\> 0x0057 \}\lr8.filesManager.deleteSentFiles(r0)     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+}
+}
+subgraph cluster_Region_787507849 {
+label = "R(2:(1:12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1385378358 {
+label = "IF [B:11:0x004d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004d|Catch:\{ Exception \-\> 0x0057 \}\lPHI: r2 \l  PHI: (r2v3 int) = (r2v1 int), (r2v4 int) binds: [B:9:0x0041, B:10:0x0043] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == false) goto L_0x004f     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+subgraph cluster_Region_1957250395 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004f|EDGE_INSN: B:12:0x004f\-\>B:16:0x0072 ?: BREAK  \lCatch:\{ Exception \-\> 0x0057 \}\l|break\l}"];
+}
+}
+subgraph cluster_Region_913871106 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0050|LOOP_END\lCatch:\{ Exception \-\> 0x0057 \}\lLOOP:0: B:5:0x001b\-\>B:13:0x0050\l|java.util.List r0 = r8.filesManager.getBatchOfFilesToSend()     \/\/ Catch:\{ Exception \-\> 0x0057 \}\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_507708008 {
+label = "R(2:14|15) | ExcHandler: Exception (r0v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0057|ExcHandler: Exception (r0v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:5:0x001b\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0058|android.content.Context android.content.Context r1 = r8.context\lp018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r1, \"Failed to send batch of analytics files to server: \" + r0.getMessage(), r0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_638830786 {
+label = "R(1:(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_28234635 {
+label = "IF [B:16:0x0072] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0072|EDGE_INSN: B:12:0x004f\-\>B:16:0x0072 ?: BREAK  \lEDGE_INSN: B:19:0x0072\-\>B:16:0x0072 ?: BREAK  \lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v1 int), (r2v3 int) binds: [B:15:0x0058, B:19:0x0072, B:12:0x004f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == 0) goto L_0x0074\l}"];
+subgraph cluster_Region_393439015 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0074|r8.filesManager.deleteOldestInRollOverIfOverMax()\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_507708008 {
+label = "R(2:14|15) | ExcHandler: Exception (r0v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0057|ExcHandler: Exception (r0v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:5:0x001b\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0058|android.content.Context android.content.Context r1 = r8.context\lp018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r1, \"Failed to send batch of analytics files to server: \" + r0.getMessage(), r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b|LOOP_START\lSYNTHETIC\lPHI: r0 r2 \l  PHI: (r0v4 java.util.List\<java.io.File\>) = (r0v3 java.util.List\<java.io.File\>), (r0v8 java.util.List\<java.io.File\>) binds: [B:4:0x000c, B:13:0x0050] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v3 int) binds: [B:4:0x000c, B:13:0x0050] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:5:0x001b\lLOOP:0: B:5:0x001b\-\>B:13:0x0050\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|Catch:\{ Exception \-\> 0x0057 \}\lSplitter:B:5:0x001b\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004f|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.EnabledSessionAnalyticsManagerStrategy.sendEvents((r8v0 'this' com.crashlytics.android.answers.EnabledSessionAnalyticsManagerStrategy A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_19;
+Node_19 -> Node_16;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_13[style=dashed];
+Node_11 -> Node_18;
+Node_12 -> Node_16;
+Node_13 -> Node_5;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_20;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_5 -> Node_14;
+Node_6 -> Node_7;
+Node_18 -> Node_12;
+}
+

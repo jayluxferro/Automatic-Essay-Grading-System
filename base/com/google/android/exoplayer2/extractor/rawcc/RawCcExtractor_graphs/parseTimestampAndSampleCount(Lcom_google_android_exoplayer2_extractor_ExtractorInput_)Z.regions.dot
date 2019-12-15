@@ -1,0 +1,93 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.rawcc.RawCcExtractor.parseTimestampAndSampleCount(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)Z" {
+subgraph cluster_Region_1872663780 {
+label = "R(4:0|(1:(2:(1:13)|(1:4)))(1:(1:12)(1:(1:15)(1:10)))|5|14)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.dataScratch.reset()\l}"];
+subgraph cluster_IfRegion_1519711694 {
+label = "IF [B:1:0x0009] THEN: R(1:(2:(1:13)|(1:4))) ELSE: R(1:(1:12)(1:(1:15)(1:10)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r6.version == 0) goto L_0x000b\l}"];
+subgraph cluster_Region_1902722558 {
+label = "R(1:(2:(1:13)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_323212479 {
+label = "R(2:(1:13)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_148986759 {
+label = "IF [B:3:0x0014] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r7.readFully(r6.dataScratch.data, 0, 5, true) == false) goto L_?\l}"];
+subgraph cluster_Region_1965487568 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1293463623 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r6.timestampUs = (r6.dataScratch.readUnsignedInt() * 1000) \/ 45\l}"];
+}
+}
+}
+subgraph cluster_Region_1089692535 {
+label = "R(1:(1:12)(1:(1:15)(1:10))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1112286605 {
+label = "IF [B:7:0x0033] THEN: R(1:12) ELSE: R(1:(1:15)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0033|if (r6.version != 1) goto L_0x004a\l}"];
+subgraph cluster_Region_8835169 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0064|throw new com.google.android.exoplayer2.ParserException(\"Unsupported version number: \" + r6.version)\l}"];
+}
+subgraph cluster_Region_135578302 {
+label = "R(1:(1:15)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1403514896 {
+label = "IF [B:9:0x003f] THEN: R(1:15) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003f|if (r7.readFully(r6.dataScratch.data, 0, 9, true) != true) goto L_?\l}"];
+subgraph cluster_Region_1894045604 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1188496385 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|r6.timestampUs = r6.dataScratch.readLong()\l}"];
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0025|r6.remainingSampleCount = r6.dataScratch.readUnsignedByte()\lr6.sampleBytesWritten = 0\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0031}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0035}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004a}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor.parseTimestampAndSampleCount((r6v0 'this' com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor A[IMMUTABLE_TYPE, THIS]), (r7v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_15;
+Node_10 -> Node_5;
+Node_5 -> Node_14;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+}
+

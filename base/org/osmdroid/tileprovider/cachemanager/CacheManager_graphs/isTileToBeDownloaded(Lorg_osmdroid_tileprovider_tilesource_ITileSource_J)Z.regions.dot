@@ -1,0 +1,38 @@
+digraph "CFG fororg.osmdroid.tileprovider.cachemanager.CacheManager.isTileToBeDownloaded(Lorg\/osmdroid\/tileprovider\/tilesource\/ITileSource;J)Z" {
+subgraph cluster_Region_377135763 {
+label = "R(2:0|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Long java.lang.Long r5 = r4.mTileWriter.getExpirationTimestamp(r5, r6)\l}"];
+subgraph cluster_Region_610287207 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2028757792 {
+label = "IF [B:1:0x0007, B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5 != null) goto L_0x000a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|ADDED_TO_REGION\l|if (java.lang.System.currentTimeMillis() \<= r5.longValue()) goto L_0x0017\l}"];
+subgraph cluster_Region_1857311836 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_738841994 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return true\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.tileprovider.cachemanager.CacheManager.isTileToBeDownloaded((r4v0 'this' org.osmdroid.tileprovider.cachemanager.CacheManager A[IMMUTABLE_TYPE, THIS]), (r5v0 org.osmdroid.tileprovider.tilesource.ITileSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+}
+

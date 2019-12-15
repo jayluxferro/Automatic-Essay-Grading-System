@@ -1,0 +1,107 @@
+digraph "CFG forandroid.support.multidex.MultiDexExtractor.load(Landroid\/content\/Context;Ljava\/lang\/String;Z)Ljava\/util\/List;" {
+subgraph cluster_Region_2004315801 {
+label = "R(2:0|(2:(1:3)|(3:(2:(1:14)(1:16)|15)(1:(1:8))|9|10))) | DECL_VAR: java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\> files\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.Log.i(TAG, \"MultiDexExtractor.load(\" + r8.sourceApk.getPath() + \", \" + r11 + \", \" + r10 + \")\")\l}"];
+subgraph cluster_Region_314459124 {
+label = "R(2:(1:3)|(3:(2:(1:14)(1:16)|15)(1:(1:8))|9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1860971946 {
+label = "IF [B:1:0x003e] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x003e|if (r8.cacheLock.isValid() == false) goto L_0x0040\l}"];
+subgraph cluster_Region_1323180924 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0047|throw new java.lang.IllegalStateException(\"MultiDexExtractor was closed\")\l}"];
+}
+}
+subgraph cluster_Region_43098008 {
+label = "R(3:(2:(1:14)(1:16)|15)(1:(1:8))|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1649462749 {
+label = "IF [B:4:0x0048, B:6:0x0052] THEN: R(2:(1:14)(1:16)|15) ELSE: R(1:(1:8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0048|if (r11 == true) goto L_0x0095\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0052|ADDED_TO_REGION\l|if (isModified(r9, r8.sourceApk, r8.sourceCrc, r10) == true) goto L_0x0095\l}"];
+subgraph cluster_Region_1115754284 {
+label = "R(2:(1:14)(1:16)|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1843277120 {
+label = "IF [B:13:0x0095] THEN: R(1:14) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0095|if (r11 == true) goto L_0x0097\l}"];
+subgraph cluster_Region_1378104900 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0097|android.util.Log.i(TAG, \"Forced extraction must be performed.\")\l}"];
+}
+subgraph cluster_Region_1548164807 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00b0|android.util.Log.i(TAG, \"Detected that extraction must be performed.\")\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x009e|java.util.List r6 = performExtractions()\lputStoredApkInfo(r9, r10, getTimeStamp(r8.sourceApk), r8.sourceCrc, r6)\l}"];
+}
+subgraph cluster_Region_941432503 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_615878873 {
+label = "Try: R(1:8) catches: R(2:11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1246224307 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ IOException \-\> 0x007b \}\lSplitter:B:7:0x0054\l|java.util.List r6 = loadExistingExtractions(r9, r10)     \/\/ Catch:\{ IOException \-\> 0x007b \}\l}"];
+}
+subgraph cluster_Region_461012598 {
+label = "R(2:11|12) | ExcHandler: IOException (r7v0 'ioe' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007b|ExcHandler: IOException (r7v0 'ioe' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0054\l}"];
+Node_12 [shape=record,label="{12\:\ 0x007c|android.util.Log.w(TAG, \"Failed to reload existing extracted secondary dex files, falling back to fresh extraction\", r7)\ljava.util.List r6 = performExtractions()\lputStoredApkInfo(r9, r10, getTimeStamp(r8.sourceApk), r8.sourceCrc, r6)\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0058|PHI: r6 \l  PHI: (r6v1 'files' java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\>) = (r6v0 'files' java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\>), (r6v2 'files' java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\>), (r6v3 'files' java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\>) binds: [B:15:0x009e, B:12:0x007c, B:8:?] A[DONT_GENERATE, DONT_INLINE]\l|android.util.Log.i(TAG, \"load found \" + r6.size() + \" secondary dex files\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007a|RETURN\l|return r6\l}"];
+}
+}
+}
+subgraph cluster_Region_461012598 {
+label = "R(2:11|12) | ExcHandler: IOException (r7v0 'ioe' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007b|ExcHandler: IOException (r7v0 'ioe' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0054\l}"];
+Node_12 [shape=record,label="{12\:\ 0x007c|android.util.Log.w(TAG, \"Failed to reload existing extracted secondary dex files, falling back to fresh extraction\", r7)\ljava.util.List r6 = performExtractions()\lputStoredApkInfo(r9, r10, getTimeStamp(r8.sourceApk), r8.sourceCrc, r6)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0040}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x004a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0054|SYNTHETIC\lSplitter:B:7:0x0054\l}"];
+MethodNode[shape=record,label="{java.util.List\<? extends java.io.File\> android.support.multidex.MultiDexExtractor.load((r8v0 'this' android.support.multidex.MultiDexExtractor A[IMMUTABLE_TYPE, THIS]), (r9v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'prefsKeyPrefix' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'forceReload' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/content\/Context;, Ljava\/lang\/String;, Z), Ljava\/util\/List, \<+, Ljava\/io\/File;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_13;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_15;
+Node_15 -> Node_9;
+Node_8 -> Node_11;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_12 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_9;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+}
+

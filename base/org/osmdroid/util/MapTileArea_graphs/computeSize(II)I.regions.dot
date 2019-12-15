@@ -1,0 +1,27 @@
+digraph "CFG fororg.osmdroid.util.MapTileArea.computeSize(II)I" {
+subgraph cluster_Region_470784724 {
+label = "R(2:(1:1)|3)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1681704403 {
+label = "LOOP:0: (1:1)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v4 int) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:0:0x0000\-\>B:1:0x0002\l|if (r2 \> r3) goto L_0x0002\l}"];
+subgraph cluster_Region_1982567283 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|LOOP_END\lLOOP:0: B:0:0x0000\-\>B:1:0x0002\l|r3 += r1.mMapTileUpperBound\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000f|RETURN\l|return java.lang.Math.min(r1.mMapTileUpperBound, (r3 \- r2) + 1)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int org.osmdroid.util.MapTileArea.computeSize((r1v0 'this' org.osmdroid.util.MapTileArea A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4[style=dashed];
+Node_1 -> Node_0;
+Node_2 -> Node_3;
+Node_4 -> Node_2;
+}
+

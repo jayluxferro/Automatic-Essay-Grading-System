@@ -1,0 +1,67 @@
+digraph "CFG forcom.facebook.ads.internal.r.a.a(Landroid\/view\/View;)F" {
+subgraph cluster_Region_557750868 {
+label = "R(3:0|(4:3|(1:5)|(1:8)(0)|9)|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float r1 = r6.getAlpha()\l}"];
+subgraph cluster_LoopRegion_1600474458 {
+label = "LOOP:0: (4:3|(1:5)|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if ((r6.getParent() instanceof android.view.ViewGroup) != false) goto L_0x0010\l}"];
+subgraph cluster_Region_853177277 {
+label = "R(4:3|(1:5)|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|android.view.View android.view.View r0 = (android.view.View) r6.getParent()\lfloat float r2 = r0.getAlpha()\l}"];
+subgraph cluster_IfRegion_926752896 {
+label = "IF [B:4:0x001c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r2 \< 0.0f) goto L_0x001e\l}"];
+subgraph cluster_Region_1652882110 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|r2 = 0.0f\l}"];
+}
+}
+subgraph cluster_IfRegion_1453062721 {
+label = "IF [B:7:0x0021] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|if (r2 \> 1.0f) goto L_0x0023\l}"];
+subgraph cluster_Region_679509674 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|r2 = 1.0f\l}"];
+}
+subgraph cluster_Region_81902254 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0024|LOOP_END\lPHI: r2 \l  PHI: (r2v2 float) = (r2v1 float), (r2v3 float) binds: [B:13:0x0024, B:12:0x0024] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:9:0x0024\l|r1 *= r2\lr6 = r0\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lPHI: r1 r6 \l  PHI: (r1v1 float) = (r1v0 float), (r1v2 float) binds: [B:0:0x0000, B:9:0x0024] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 android.view.View) = (r6v0 android.view.View), (r6v2 android.view.View) binds: [B:0:0x0000, B:9:0x0024] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:9:0x0024\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f|PHI: r2 \l  PHI: (r2v1 float) = (r2v0 float), (r2v4 float) binds: [B:4:0x001c, B:5:0x001e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0024|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static float com.facebook.ads.internal.r.a.a((r6v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_1;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+Node_11 -> Node_10;
+Node_12 -> Node_9;
+Node_13 -> Node_9;
+}
+

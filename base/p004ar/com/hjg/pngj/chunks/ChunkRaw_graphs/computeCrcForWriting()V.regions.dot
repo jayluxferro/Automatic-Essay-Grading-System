@@ -1,0 +1,27 @@
+digraph "CFG forar.com.hjg.pngj.chunks.ChunkRaw.computeCrcForWriting()V" {
+subgraph cluster_Region_405108628 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.crcengine = new java.util.zip.CRC32()\lr4.crcengine.update(r4.idbytes, 0, 4)\l}"];
+subgraph cluster_IfRegion_1855642219 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r4.len \> 0) goto L_0x0014\l}"];
+subgraph cluster_Region_542724254 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|r4.crcengine.update(r4.data, 0, r4.len)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001d|p004ar.com.hjg.pngj.PngHelperInternal.writeInt4tobytes((int) r4.crcengine.getValue(), r4.crcval, 0)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0029}"];
+MethodNode[shape=record,label="{private void ar.com.hjg.pngj.chunks.ChunkRaw.computeCrcForWriting((r4v0 'this' ar.com.hjg.pngj.chunks.ChunkRaw A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

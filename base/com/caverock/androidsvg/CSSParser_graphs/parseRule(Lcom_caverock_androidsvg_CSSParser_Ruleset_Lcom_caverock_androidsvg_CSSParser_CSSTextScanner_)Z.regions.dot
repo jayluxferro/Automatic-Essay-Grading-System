@@ -1,0 +1,81 @@
+digraph "CFG forcom.caverock.androidsvg.CSSParser.parseRule(Lcom\/caverock\/androidsvg\/CSSParser$Ruleset;Lcom\/caverock\/androidsvg\/CSSParser$CSSTextScanner;)Z" {
+subgraph cluster_Region_746028134 {
+label = "R(2:0|(2:(1:15)|(1:(2:(3:6|(1:9)|10)|(1:12)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<com.caverock.androidsvg.CSSParser.Selector\> r0 = r6.nextSelectorGroup()\l}"];
+subgraph cluster_Region_1156535292 {
+label = "R(2:(1:15)|(1:(2:(3:6|(1:9)|10)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_677558087 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r0.isEmpty() == true) goto L_?\l}"];
+subgraph cluster_Region_114350698 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_927980659 {
+label = "R(1:(2:(3:6|(1:9)|10)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_71268224 {
+label = "R(2:(3:6|(1:9)|10)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_988914760 {
+label = "IF [B:5:0x0012] THEN: R(3:6|(1:9)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (r6.consume('\{') == true) goto L_0x0014\l}"];
+subgraph cluster_Region_1971631898 {
+label = "R(3:6|(1:9)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|r6.skipWhitespace()\lcom.caverock.androidsvg.SVG$Style com.caverock.androidsvg.SVG.Style r1 = parseDeclarations(r6)\lr6.skipWhitespace()\ljava.util.Iterator r6 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_988949238 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|if (r6.hasNext() != false) goto L_0x0028\l}"];
+subgraph cluster_Region_2012634015 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|LOOP_END\lLOOP:0: B:7:0x0022\-\>B:9:0x0028\l|r5.add(new com.caverock.androidsvg.CSSParser.Rule(r0, r1, r4.source))\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0039|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1939326367 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0042|throw new com.caverock.androidsvg.CSSParseException(\"Malformed rule block: expected '\{'\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022|LOOP_START\lLOOP:0: B:7:0x0022\-\>B:9:0x0028\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0039|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean com.caverock.androidsvg.CSSParser.parseRule((r4v0 'this' com.caverock.androidsvg.CSSParser A[IMMUTABLE_TYPE, THIS]), (r5v0 com.caverock.androidsvg.CSSParser$Ruleset A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 com.caverock.androidsvg.CSSParser$CSSTextScanner A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.CSSParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_15;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_9 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_13 -> Node_10;
+}
+

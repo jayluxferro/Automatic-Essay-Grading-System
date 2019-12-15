@@ -1,0 +1,30 @@
+digraph "CFG forio.fabric.sdk.android.services.common.IdManager.checkAdvertisingIdRotation(Landroid\/content\/SharedPreferences;)V" {
+subgraph cluster_Region_2098859728 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|io.fabric.sdk.android.services.common.AdvertisingInfo p018io.fabric.sdk.android.services.common.AdvertisingInfo r0 = getAdvertisingInfo()\l}"];
+subgraph cluster_Region_927327252 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1262047438 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_372634459 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|flushInstallationIdIfNecessary(r2, r0.advertisingId)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void io.fabric.sdk.android.services.common.IdManager.checkAdvertisingIdRotation((r1v0 'this' io.fabric.sdk.android.services.common.IdManager A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.SharedPreferences A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

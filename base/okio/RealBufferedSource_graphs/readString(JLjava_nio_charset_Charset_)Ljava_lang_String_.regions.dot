@@ -1,0 +1,36 @@
+digraph "CFG forokio.RealBufferedSource.readString(JLjava\/nio\/charset\/Charset;)Ljava\/lang\/String;" {
+subgraph cluster_Region_235729868 {
+label = "R(2:0|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|require(r2)\l}"];
+subgraph cluster_Region_205496487 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1064024393 {
+label = "IF [B:1:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r4 != null) goto L_0x0005\l}"];
+subgraph cluster_Region_753213143 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return r1.buffer.readString(r2, r4)\l}"];
+}
+}
+subgraph cluster_Region_1167989268 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|throw new java.lang.IllegalArgumentException(\"charset == null\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+MethodNode[shape=record,label="{public java.lang.String okio.RealBufferedSource.readString((r1v0 'this' okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r2v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.nio.charset.Charset A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

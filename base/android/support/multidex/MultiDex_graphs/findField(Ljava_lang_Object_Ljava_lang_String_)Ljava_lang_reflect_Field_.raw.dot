@@ -1,0 +1,28 @@
+digraph "CFG forandroid.support.multidex.MultiDex.findField(Ljava\/lang\/Object;Ljava\/lang\/String;)Ljava\/lang\/reflect\/Field;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.lang.Class) = (r5 I:java.lang.Object A[D('instance' java.lang.Object)]) java.lang.Object.getClass():java.lang.Class type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('clazz' java.lang.Class\<?\>)]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x001b \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|SYNTHETIC\lSplitter:B:2:0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0006\l|0x0006: INVOKE  (r1 I:java.lang.reflect.Field) = \l  (r0 I:java.lang.Class A[D('clazz' java.lang.Class\<?\>)])\l  (r6 I:java.lang.String A[D('name' java.lang.String)])\l java.lang.Class.getDeclaredField(java.lang.String):java.lang.reflect.Field type: VIRTUAL A[Catch:\{ NoSuchFieldException \-\> 0x0015 \}, TRY_ENTER]\l0x000a: INVOKE  (r2 I:boolean) = \l  (r1 I:java.lang.reflect.Field A[D('field' java.lang.reflect.Field)])\l java.lang.reflect.Field.isAccessible():boolean type: VIRTUAL A[Catch:\{ NoSuchFieldException \-\> 0x0015 \}]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|0x000e: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0014 A[Catch:\{ NoSuchFieldException \-\> 0x0015 \}]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: CONST  (r2 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) A[Catch:\{ NoSuchFieldException \-\> 0x0015 \}]\l0x0011: INVOKE  \l  (r1 I:java.lang.reflect.Field A[D('field' java.lang.reflect.Field)])\l  (r2 I:boolean)\l java.lang.reflect.Field.setAccessible(boolean):void type: VIRTUAL A[Catch:\{ NoSuchFieldException \-\> 0x0015 \}, TRY_LEAVE]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|0x0014: RETURN  \l  (r1 I:java.lang.reflect.Field A[D('field' java.lang.reflect.Field)])\l \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0015|ExcHandler: NoSuchFieldException null\lSplitter:B:2:0x0006\l|0x0015: MOVE_EXCEPTION  (r2 I:?[OBJECT]) =  \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0016|0x0016: INVOKE  (r0 I:java.lang.Class A[D('clazz' java.lang.Class\<?\>)]) = (r0 I:java.lang.Class A[D('clazz' java.lang.Class\<?\>)]) java.lang.Class.getSuperclass():java.lang.Class type: VIRTUAL \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|0x001b: NEW_INSTANCE  (r2 I:java.lang.NoSuchFieldException) =  java.lang.NoSuchFieldException \l0x001d: NEW_INSTANCE  (r3 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001f: INVOKE  (r3 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0022: CONST_STR  (r4 I:java.lang.String) =  \"Field \" \l0x0024: INVOKE  (r3 I:java.lang.StringBuilder) = (r3 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0028: INVOKE  (r3 I:java.lang.StringBuilder) = \l  (r3 I:java.lang.StringBuilder)\l  (r6 I:java.lang.String A[D('name' java.lang.String)])\l java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x002c: CONST_STR  (r4 I:java.lang.String) =  \" not found in \" \l0x002e: INVOKE  (r3 I:java.lang.StringBuilder) = (r3 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0032: INVOKE  (r4 I:java.lang.Class) = (r5 I:java.lang.Object A[D('instance' java.lang.Object)]) java.lang.Object.getClass():java.lang.Class type: VIRTUAL \l0x0036: INVOKE  (r3 I:java.lang.StringBuilder) = (r3 I:java.lang.StringBuilder), (r4 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x003a: INVOKE  (r3 I:java.lang.String) = (r3 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x003e: INVOKE  \l  (r2 I:java.lang.NoSuchFieldException)\l  (r3 I:java.lang.String)\l java.lang.NoSuchFieldException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|0x0041: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private static java.lang.reflect.Field android.support.multidex.MultiDex.findField((r5 I:java.lang.Object A[D('instance' java.lang.Object), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:java.lang.String A[D('name' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x000a\-0x0015: r1 'field' java.lang.reflect.Field\l  0x0004\-0x0041: r0 'clazz' java.lang.Class\<?\>\l  ?\-0x0041: r5 'instance' java.lang.Object\l  ?\-0x0041: r6 'name' java.lang.String\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.NoSuchFieldException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+}
+

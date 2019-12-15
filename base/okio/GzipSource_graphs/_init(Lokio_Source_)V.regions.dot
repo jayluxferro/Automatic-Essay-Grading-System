@@ -1,0 +1,36 @@
+digraph "CFG forokio.GzipSource.\<init\>(Lokio\/Source;)V" {
+subgraph cluster_Region_79376321 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1152811023 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_622919038 {
+label = "IF [B:1:0x000d] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r3 != null) goto L_0x000f\l}"];
+subgraph cluster_Region_1047461694 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|r2.inflater = new java.util.zip.Inflater(true)\lr2.source = okio.Okio.buffer(r3)\lr2.inflaterSource = new okio.InflaterSource(r2.source, r2.inflater)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0028|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1668680213 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0030|throw new java.lang.IllegalArgumentException(\"source == null\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0029}"];
+MethodNode[shape=record,label="{public void okio.GzipSource.\<init\>((r2v0 'this' okio.GzipSource A[IMMUTABLE_TYPE, THIS]), (r3v0 okio.Source A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

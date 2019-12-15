@@ -1,0 +1,36 @@
+digraph "CFG fororg.osgeo.proj4j.util.ProjectionMath.qsfn(DDD)D" {
+subgraph cluster_Region_1724306754 {
+label = "R(1:(2:(1:5)|(2:2|3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_264610356 {
+label = "R(2:(1:5)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_441138086 {
+label = "IF [B:1:0x0007] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r8 \< 1.0E\-7d) goto L_0x0023\l}"];
+subgraph cluster_Region_349852853 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|RETURN\l|return r6 + r6\l}"];
+}
+}
+subgraph cluster_Region_2020050738 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|double double r0 = r8 * r6\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|RETURN\l|return r10 * ((r6 \/ (C00 \- (r0 * r0))) \- ((0.5d \/ r8) * java.lang.Math.log((C00 \- r0) \/ (r0 + C00))))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0023}"];
+MethodNode[shape=record,label="{public static double org.osgeo.proj4j.util.ProjectionMath.qsfn((r6v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG fororg.spatialite.AbstractCursor.copyStringToBuffer(ILandroid\/database\/CharArrayBuffer;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r5 I:java.lang.String) = (r4 I:org.spatialite.AbstractCursor), (r5 I:int) org.spatialite.AbstractCursor.getString(int):java.lang.String type: VIRTUAL \l0x0004: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0028 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: IGET  (r1 I:char[]) = (r6 I:android.database.CharArrayBuffer) android.database.CharArrayBuffer.data char[] \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x001b \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: ARRAY_LENGTH  (r2 I:int) = (r1 I:?[]) \l0x000c: INVOKE  (r3 I:int) = (r5 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: IF  (r2 I:?[int, byte, short, char]) \>= (r3 I:?[int, byte, short, char])  \-\> B:7:0x0013 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0013|0x0013: INVOKE  (r2 I:int) = (r5 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l0x0017: INVOKE  \l  (r5 I:java.lang.String)\l  (r0 I:int)\l  (r2 I:int)\l  (r1 I:char[])\l  (r0 I:int)\l java.lang.String.getChars(int, int, char[], int):void type: VIRTUAL \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|0x001b: INVOKE  (r0 I:char[]) = (r5 I:java.lang.String) java.lang.String.toCharArray():char[] type: VIRTUAL \l0x001f: IPUT  (r0 I:char[]), (r6 I:android.database.CharArrayBuffer) android.database.CharArrayBuffer.data char[] \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0021|0x0021: INVOKE  (r5 I:int) = (r5 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l0x0025: IPUT  (r5 I:int), (r6 I:android.database.CharArrayBuffer) android.database.CharArrayBuffer.sizeCopied int \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|0x0028: IPUT  (r0 I:int), (r6 I:android.database.CharArrayBuffer) android.database.CharArrayBuffer.sizeCopied int \l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a|0x002a: RETURN   \l}"];
+MethodNode[shape=record,label="{public void org.spatialite.AbstractCursor.copyStringToBuffer((r4 'this' I:org.spatialite.AbstractCursor A[IMMUTABLE_TYPE, THIS]), (r5 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:android.database.CharArrayBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_7;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.OpusReader.readHeaders(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;JLcom\/google\/android\/exoplayer2\/extractor\/ogg\/StreamReader$SetupData;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r15.headerRead != false) goto L_0x0050\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|byte[] r13 = java.util.Arrays.copyOf(r16.data, r16.limit())\lr6 = r13[9] & 255\ljava.util.ArrayList r8 = new java.util.ArrayList\<\>(3)\lr8.add(r13)\lputNativeOrderLong(r8, ((r13[11] & 255) \<\< 8) \| (r13[10] & 255))\lputNativeOrderLong(r8, DEFAULT_SEEK_PRE_ROLL_SAMPLES)\lr19.format = com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_OPUS, (java.lang.String) null, \-1, \-1, r6, SAMPLE_RATE, r8, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null)\lr15.headerRead = true\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0050}"];
+Node_4 [shape=record,label="{4\:\ 0x0056|if (r16.readInt() != OPUS_CODE) goto L_0x0060\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0058|r12 = true\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0059|PHI: r12 \l  PHI: (r12v1 'headerPacket' boolean) = (r12v0 'headerPacket' boolean), (r12v2 'headerPacket' boolean) binds: [B:7:0x0060, B:5:0x0058] A[DONT_GENERATE, DONT_INLINE]\l|r16.setPosition(0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0060|r12 = false\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r12\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.extractor.ogg.OpusReader.readHeaders((r15v0 'this' com.google.android.exoplayer2.extractor.ogg.OpusReader A[IMMUTABLE_TYPE, THIS]), (r16v0 'packet' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'setupData' com.google.android.exoplayer2.extractor.ogg.StreamReader$SetupData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_9;
+Node_7 -> Node_6;
+}
+

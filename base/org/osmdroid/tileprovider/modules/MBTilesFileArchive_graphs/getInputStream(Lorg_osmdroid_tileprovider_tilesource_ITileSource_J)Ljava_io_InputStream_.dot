@@ -1,0 +1,30 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.MBTilesFileArchive.getInputStream(Lorg\/osmdroid\/tileprovider\/tilesource\/ITileSource;J)Ljava\/io\/InputStream;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|SYNTHETIC\lSplitter:B:1:0x0003\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Throwable \-\> 0x0062 \}\lSplitter:B:1:0x0003\l|java.lang.String[] r5 = new java.lang.String[]\{java.lang.Integer.toString(org.osmdroid.util.MapTileIndex.getX(r12)), java.lang.Double.toString((java.lang.Math.pow(2.0d, (double) org.osmdroid.util.MapTileIndex.getZoom(r12)) \- ((double) org.osmdroid.util.MapTileIndex.getY(r12))) \- 1.0d), java.lang.Integer.toString(org.osmdroid.util.MapTileIndex.getZoom(r12))\}\landroid.database.sqlite.SQLiteDatabase r1 = r10.mDatabase     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\landroid.database.Cursor r0 = r1.query(\"tiles\", new java.lang.String[]\{\"tile_data\"\}, \"tile_column=? and tile_row=? and zoom_level=?\", r5, (java.lang.String) null, (java.lang.String) null, (java.lang.String) null)     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x004c|Catch:\{ Throwable \-\> 0x0062 \}\l|if (r0.getCount() == 0) goto L_0x005b     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x004e|Catch:\{ Throwable \-\> 0x0062 \}\l|r0.moveToFirst()     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\ljava.io.ByteArrayInputStream r1 = new java.io.ByteArrayInputStream(r0.getBlob(0))     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x005b|Catch:\{ Throwable \-\> 0x0062 \}\l|r1 = null     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005c|Catch:\{ Throwable \-\> 0x0062 \}\lPHI: r1 \l  PHI: (r1v10 java.io.ByteArrayInputStream) = (r1v11 java.io.ByteArrayInputStream), (r1v12 java.io.ByteArrayInputStream) binds: [B:5:0x005b, B:4:0x004e] A[DONT_GENERATE, DONT_INLINE]\l|r0.close()     \/\/ Catch:\{ Throwable \-\> 0x0062 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x005f|if (r1 == null) goto L_0x007d\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0061|RETURN\l|return r1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0062|ExcHandler: Throwable (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0003\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0063|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Error getting db stream: \")\lr2.append(org.osmdroid.util.MapTileIndex.toString(r12))\landroid.util.Log.w(org.osmdroid.api.IMapView.LOGTAG, r2.toString(), r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x007d|RETURN\l|return null\l}"];
+MethodNode[shape=record,label="{public java.io.InputStream org.osmdroid.tileprovider.modules.MBTilesFileArchive.getInputStream((r10v0 'this' org.osmdroid.tileprovider.modules.MBTilesFileArchive A[IMMUTABLE_TYPE, THIS]), (r11v0 org.osmdroid.tileprovider.tilesource.ITileSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG forkotlin.jvm.internal.ArrayIntIterator.nextInt()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ ArrayIndexOutOfBoundsException \-\> 0x000b \}\lSplitter:B:0:0x0000\l|int[] r0 = r3.array     \/\/ Catch:\{ ArrayIndexOutOfBoundsException \-\> 0x000b \}\lint r1 = r3.index     \/\/ Catch:\{ ArrayIndexOutOfBoundsException \-\> 0x000b \}\lr3.index = r1 + 1     \/\/ Catch:\{ ArrayIndexOutOfBoundsException \-\> 0x000b \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|RETURN\l|return r0[r1]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ExcHandler: ArrayIndexOutOfBoundsException (r0v0 'e' java.lang.ArrayIndexOutOfBoundsException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.lang.ArrayIndexOutOfBoundsException r0 = move\-exception\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|r3.index = r3.index + \-1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|throw new java.util.NoSuchElementException(r0.getMessage())\l}"];
+MethodNode[shape=record,label="{public int kotlin.jvm.internal.ArrayIntIterator.nextInt((r3v0 'this' kotlin.jvm.internal.ArrayIntIterator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

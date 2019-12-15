@@ -1,0 +1,29 @@
+digraph "CFG forokio.ByteString.hex()Ljava\/lang\/String;" {
+subgraph cluster_Region_856248761 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|char[] char[] r0 = new char[(r9.data.length * 2)]\lint int r2 = r9.data.length\lint r3 = 0\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_953582827 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|LOOP_START\lPHI: r3 r4 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000c\-\>B:2:0x000e\l|if (r3 \< r2) goto L_0x000e\l}"];
+subgraph cluster_Region_1534070414 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|LOOP_END\lLOOP:0: B:1:0x000c\-\>B:2:0x000e\l|byte r5 = r1[r3]\lint int r6 = r4 + 1\lr0[r4] = HEX_DIGITS[(r5 \>\> 4) & 15]\lint r4 = r6 + 1\lr0[r6] = HEX_DIGITS[r5 & 15]\lr3++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002e|RETURN\l|return new java.lang.String(r0)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0029}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.lang.String okio.ByteString.hex((r9v0 'this' okio.ByteString A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

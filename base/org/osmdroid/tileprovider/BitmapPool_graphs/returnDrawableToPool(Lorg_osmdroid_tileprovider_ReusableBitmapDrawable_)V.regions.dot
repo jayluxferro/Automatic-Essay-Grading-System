@@ -1,0 +1,87 @@
+digraph "CFG fororg.osmdroid.tileprovider.BitmapPool.returnDrawableToPool(Lorg\/osmdroid\/tileprovider\/ReusableBitmapDrawable;)V" {
+subgraph cluster_Region_864094389 {
+label = "R(2:0|(2:8|1a)(1:(1:18)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.Bitmap android.graphics.Bitmap r3 = r3.tryRecycle()\l}"];
+subgraph cluster_IfRegion_1712811712 {
+label = "IF [B:1:0x0004, B:3:0x000a, B:5:0x0010, B:7:0x0016] THEN: R(2:8|1a) ELSE: R(1:(1:18)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3 != null) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r3.isRecycled() != true) goto L_0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r3.isMutable() != false) goto L_0x0012\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|ADDED_TO_REGION\l|if (r3.getConfig() != null) goto L_0x0018\l}"];
+subgraph cluster_Region_2111389891 {
+label = "R(2:8|1a)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018}"];
+subgraph cluster_SynchronizedRegion_1854036585 {
+label = "Synchronized:R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a}"];
+subgraph cluster_Region_1047245789 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|r2.mPool.addLast(r3)\l}"];
+}
+}
+}
+subgraph cluster_Region_2010282457 {
+label = "R(1:(1:18)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1207259294 {
+label = "IF [B:17:0x0025] THEN: R(1:18) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0025|if (r3 != null) goto L_0x0027\l}"];
+subgraph cluster_Region_1353828218 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0027|android.util.Log.d(org.osmdroid.api.IMapView.LOGTAG, \"Rejected bitmap from being added to BitmapPool.\")\l}"];
+}
+subgraph cluster_Region_1733909239 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0020: MONITOR_EXIT  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0022|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0024|REMOVE\l|throw r3\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.tileprovider.BitmapPool.returnDrawableToPool((r2v0 'this' org.osmdroid.tileprovider.BitmapPool A[IMMUTABLE_TYPE, THIS]), (r3v0 org.osmdroid.tileprovider.ReusableBitmapDrawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_17[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_17[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_17[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_17[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_17 -> Node_18;
+Node_17 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_20;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

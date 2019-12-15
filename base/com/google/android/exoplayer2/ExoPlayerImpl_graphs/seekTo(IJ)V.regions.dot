@@ -1,0 +1,160 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImpl.seekTo(IJ)V" {
+subgraph cluster_Region_2019477814 {
+label = "R(1:(2:(1:6)|(3:7|(1:9)(5:13|(1:15)(1:24)|16|(1:23)|25)|(2:(2:12|34)|(2:26|(1:29)))))) | DECL_VAR: long resolvedPositionMs\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_610844146 {
+label = "R(2:(1:6)|(3:7|(1:9)(5:13|(1:15)(1:24)|16|(1:23)|25)|(2:(2:12|34)|(2:26|(1:29)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_44215194 {
+label = "IF [B:0:0x0000, B:2:0x0008, B:4:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r13 \< 0) goto L_0x0012\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|ADDED_TO_REGION\l|if (r12.timeline.isEmpty() == false) goto L_0x000a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|ADDED_TO_REGION\l|if (r13 \>= r12.timeline.getWindowCount()) goto L_0x0012\l}"];
+subgraph cluster_Region_1302532386 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|throw new com.google.android.exoplayer2.IllegalSeekPositionException(r12.timeline, r13, r14)\l}"];
+}
+}
+subgraph cluster_Region_1136293593 {
+label = "R(3:7|(1:9)(5:13|(1:15)(1:24)|16|(1:23)|25)|(2:(2:12|34)|(2:26|(1:29))))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|r12.pendingSeekAcks++\lr12.maskingWindowIndex = r13\l}"];
+subgraph cluster_IfRegion_584897649 {
+label = "IF [B:8:0x0028] THEN: R(1:9) ELSE: R(5:13|(1:15)(1:24)|16|(1:23)|25)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|if (r12.timeline.isEmpty() == true) goto L_0x002a\l}"];
+subgraph cluster_Region_901072331 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|r12.maskingPeriodIndex = 0\l}"];
+}
+subgraph cluster_Region_245426903 {
+label = "R(5:13|(1:15)(1:24)|16|(1:23)|25)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0047|r12.timeline.getWindow(r13, r12.window)\l}"];
+subgraph cluster_IfRegion_1623877726 {
+label = "IF [B:14:0x0055] THEN: R(1:15) ELSE: R(1:24)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0055|if (r14 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0057\l}"];
+subgraph cluster_Region_1918384112 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0057|long r6 = r12.window.getDefaultPositionUs()\l}"];
+}
+subgraph cluster_Region_871679473 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x009c|r6 = r14\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x005d|PHI: r6 \l  PHI: (r6v1 'resolvedPositionMs' long) = (r6v0 'resolvedPositionMs' long), (r6v2 'resolvedPositionMs' long) binds: [B:24:0x009c, B:15:0x0057] A[DONT_GENERATE, DONT_INLINE]\l|int int r1 = r12.window.firstPeriodIndex\llong long r4 = r12.window.getPositionInFirstPeriodUs() + com.google.android.exoplayer2.C1260C.msToUs(r6)\llong long r2 = r12.timeline.getPeriod(r1, r12.period).getDurationUs()\l}"];
+subgraph cluster_LoopRegion_1265179686 {
+label = "LOOP:0: (1:23)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0080|if (r2 != com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0082\l}"];
+subgraph cluster_Region_1588035918 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x008c|LOOP_END\lLOOP:0: B:17:0x0079\-\>B:23:0x008c\l|r4 \-= r2\lr1++\llong r2 = r12.timeline.getPeriod(r1, r12.period).getDurationUs()\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x009e|r12.maskingPeriodIndex = r1\l}"];
+}
+}
+subgraph cluster_Region_1884739104 {
+label = "R(2:(2:12|34)|(2:26|(1:29)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_879618823 {
+label = "IF [B:11:0x0034] THEN: R(2:12|34) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0034|if (r14 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0036\l}"];
+subgraph cluster_Region_728333148 {
+label = "R(2:12|34)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0036|r12.maskingWindowPositionMs = 0\lr12.internalPlayer.seekTo(r12.timeline, r13, com.google.android.exoplayer2.C1260C.TIME_UNSET)\l}"];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2025669900 {
+label = "R(2:26|(1:29))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00a1|r12.maskingWindowPositionMs = r14\lr12.internalPlayer.seekTo(r12.timeline, r13, com.google.android.exoplayer2.C1260C.msToUs(r14))\ljava.util.Iterator java.util.Iterator\<com.google.android.exoplayer2.ExoPlayer.EventListener\> r8 = r12.listeners.iterator()\l}"];
+subgraph cluster_LoopRegion_1908600478 {
+label = "LOOP:1: (1:29)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00b8|if (r8.hasNext() != false) goto L_0x00ba\l}"];
+subgraph cluster_Region_319663129 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x00ba|LOOP_END\lLOOP:1: B:27:0x00b4\-\>B:29:0x00ba\l|r8.next().onPositionDiscontinuity()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0079|LOOP_START\lPHI: r1 r2 r4 \l  PHI: (r1v1 'periodIndex' int) = (r1v0 'periodIndex' int), (r1v2 'periodIndex' int) binds: [B:16:0x005d, B:23:0x008c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'periodDurationUs' long) = (r2v0 'periodDurationUs' long), (r2v2 'periodDurationUs' long) binds: [B:16:0x005d, B:23:0x008c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'periodPositionUs' long) = (r4v0 'periodPositionUs' long), (r4v2 'periodPositionUs' long) binds: [B:16:0x005d, B:23:0x008c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:17:0x0079\-\>B:23:0x008c\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0082}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0084|ADDED_TO_REGION\l|if (r4 \>= r2) goto L_0x0086\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0086}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x008a|ADDED_TO_REGION\l|if (r1 \< r12.window.lastPeriodIndex) goto L_0x008c\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x00b4|LOOP_START\lLOOP:1: B:27:0x00b4\-\>B:29:0x00ba\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x009e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x009e|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x009e|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0046|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.ExoPlayerImpl.seekTo((r12v0 'this' com.google.android.exoplayer2.ExoPlayerImpl A[IMMUTABLE_TYPE, THIS]), (r13v0 'windowIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'positionMs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_9 -> Node_10;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_24[style=dashed];
+Node_15 -> Node_16;
+Node_24 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_30[style=dashed];
+Node_23 -> Node_17;
+Node_25 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_26[style=dashed];
+Node_12 -> Node_34;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_28 -> Node_33[style=dashed];
+Node_29 -> Node_27;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_10 -> Node_11;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_31[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_32[style=dashed];
+Node_27 -> Node_28;
+Node_30 -> Node_25;
+Node_31 -> Node_25;
+Node_32 -> Node_25;
+Node_33 -> Node_35;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v4.app.Fragment.requireActivity()Landroid\/support\/v4\/app\/FragmentActivity;" {
+subgraph cluster_Region_389761134 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v4.app.FragmentActivity android.support.p000v4.app.FragmentActivity r0 = getActivity()\l}"];
+subgraph cluster_Region_662473487 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_998986933 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1643853717 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_467833052 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007}"];
+Node_4 [shape=record,label="{4\:\ 0x0022|throw new java.lang.IllegalStateException(\"Fragment \" + r3 + \" not attached to an activity.\")\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public final android.support.v4.app.FragmentActivity android.support.v4.app.Fragment.requireActivity((r3v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

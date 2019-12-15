@@ -1,0 +1,51 @@
+digraph "CFG forio.fabric.sdk.android.services.common.AdvertisingInfoServiceStrategy.AdvertisingInterface.isLimitAdTrackingEnabled()Z" {
+subgraph cluster_Region_943774766 {
+label = "R(5:0|2|(1:4)|8|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Parcel android.os.Parcel r0 = android.os.Parcel.obtain()\landroid.os.Parcel android.os.Parcel r1 = android.os.Parcel.obtain()\lboolean r2 = false\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x0025 \}\lSplitter:B:1:0x000b\l|r0.writeInterfaceToken(ADVERTISING_ID_SERVICE_INTERFACE_TOKEN)     \/\/ Catch:\{ Exception \-\> 0x0025 \}\lr0.writeInt(1)     \/\/ Catch:\{ Exception \-\> 0x0025 \}\lr6.binder.transact(2, r0, r1, 0)     \/\/ Catch:\{ Exception \-\> 0x0025 \}\lr1.readException()     \/\/ Catch:\{ Exception \-\> 0x0025 \}\l}"];
+subgraph cluster_IfRegion_382805338 {
+label = "IF [B:3:0x001f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001f|if (r1.readInt() != 0) goto L_0x0021\l}"];
+subgraph cluster_Region_987362389 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|r2 = true\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0030|PHI: r2 \l  PHI: (r2v1 boolean) = (r2v0 boolean), (r2v0 boolean), (r2v3 boolean) binds: [B:7:?, B:3:0x001f, B:4:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|r1.recycle()\lr0.recycle()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0036|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_1863953230 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|SYNTHETIC\lSplitter:B:6:0x0025\l}"];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ all \-\> 0x0023 \}\lSplitter:B:6:0x0025\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Could not get parcel from Google Play Service to capture Advertising limitAdTracking\")     \/\/ Catch:\{ all \-\> 0x0023 \}\l}"];
+}
+subgraph cluster_Region_1431346699 {
+label = "R(3:5|10|11) | ExcHandler: all (r2v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|ExcHandler: all (r2v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:6:0x0025\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0037|r1.recycle()\lr0.recycle()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003d|throw r2\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|SYNTHETIC\lSplitter:B:1:0x000b\l}"];
+MethodNode[shape=record,label="{public boolean io.fabric.sdk.android.services.common.AdvertisingInfoServiceStrategy.AdvertisingInterface.isLimitAdTrackingEnabled((r6v0 'this' io.fabric.sdk.android.services.common.AdvertisingInfoServiceStrategy$AdvertisingInterface A[IMMUTABLE_TYPE, THIS]))  | INCONSISTENT_CODE\lMissing exception handler attribute for start block: B:6:0x0025\lFailed to process nested try\/catch\lCan't wrap try\/catch for region: R(2:6\|7)\lCode restructure failed: missing block: B:5:0x0023, code lost:\l    r2 = move\-exception;\l\lCode restructure failed: missing block: B:7:?, code lost:\l    p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Could not get parcel from Google Play Service to capture Advertising limitAdTracking\");\l\lCode restructure failed: missing block: B:10:0x0037, code lost:\l    r1.recycle();\l    r0.recycle();\l\lCode restructure failed: missing block: B:11:0x003d, code lost:\l    throw r2;\l\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[android.os.RemoteException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_8;
+Node_8 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_5;
+Node_5 -> Node_10;
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_1 -> Node_6;
+}
+

@@ -1,0 +1,245 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseTrun(Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/FragmentedMp4Extractor$TrackBundle;IJILcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;I)I" {
+subgraph cluster_Region_866613872 {
+label = "R(19:0|(1:2)|4|6|(1:8)|10|13|16|19|21|(1:27)|28|29|33|(1:35)(1:60)|36|(6:39|41|(1:63)(1:45)|(1:47)(1:66)|48|53)|68|69) | DECL_VAR: long cumulativeTime, int sampleFlags\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r41.setPosition(8)\lint int r8 = com.google.android.exoplayer2.extractor.mp4.Atom.parseFullAtomFlags(r41.readInt())\lcom.google.android.exoplayer2.extractor.mp4.Track r29 = r36.track\lcom.google.android.exoplayer2.extractor.mp4.TrackFragment com.google.android.exoplayer2.extractor.mp4.TrackFragment r14 = r36.fragment\lcom.google.android.exoplayer2.extractor.mp4.DefaultSampleValues com.google.android.exoplayer2.extractor.mp4.DefaultSampleValues r9 = r14.header\lr14.trunLength[r37] = r41.readUnsignedIntToInt()\lr14.trunDataPosition[r37] = r14.dataPosition\l}"];
+subgraph cluster_IfRegion_2003132175 {
+label = "IF [B:1:0x002d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002d|if ((r8 & 1) != 0) goto L_0x002f\l}"];
+subgraph cluster_Region_1039947716 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002f|long[] long[] r4 = r14.trunDataPosition\lr4[r37] = r4[r37] + ((long) r41.readInt())\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0040|boolean r13 = (r8 & 4) != 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0043|PHI: r13 \l  PHI: (r13v1 'firstSampleFlagsPresent' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r12 = r9.flags\l}"];
+subgraph cluster_IfRegion_180478994 {
+label = "IF [B:7:0x0045] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0045|if (r13 == true) goto L_0x0047\l}"];
+subgraph cluster_Region_1810012936 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0047|int r12 = r41.readUnsignedIntToInt()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x004d|boolean r21 = (r8 & 256) != 0\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0053|boolean r28 = (r8 & 512) != 0\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0059|boolean r23 = (r8 & 1024) != 0\l}"];
+Node_19 [shape=record,label="{19\:\ 0x005f|boolean r18 = (r8 & 2048) != 0\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0063|PHI: r18 \l  PHI: (r18v1 'sampleCompositionTimeOffsetsPresent' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|long r10 = 0\l}"];
+subgraph cluster_IfRegion_359820054 {
+label = "IF [B:22:0x0069, B:24:0x0071, B:26:0x007e] THEN: R(1:27) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0069|ADDED_TO_REGION\l|if (r29.editListDurations != null) goto L_0x006b\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0071|ADDED_TO_REGION\l|if (r29.editListDurations.length == 1) goto L_0x0073\l}"];
+Node_26 [shape=record,label="{26\:\ 0x007e|ADDED_TO_REGION\l|if (r29.editListDurations[0] == 0) goto L_0x0080\l}"];
+subgraph cluster_Region_889245678 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0080|long r10 = com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r29.editListMediaTimes[0], 1000, r29.timescale)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x0091|PHI: r10 \l  PHI: (r10v1 'edtsOffset' long) = (r10v0 'edtsOffset' long), (r10v0 'edtsOffset' long), (r10v0 'edtsOffset' long), (r10v2 'edtsOffset' long) binds: [B:22:0x0069, B:24:0x0071, B:26:0x007e, B:27:0x0080] A[DONT_GENERATE, DONT_INLINE]\l|int[] r27 = r14.sampleSizeTable\lint[] r17 = r14.sampleCompositionTimeOffsetTable\llong[] r19 = r14.sampleDecodingTimeTable\lboolean[] r24 = r14.sampleIsSyncFrameTable\l}"];
+Node_29 [shape=record,label="{29\:\ 0x00a6|boolean r31 = r29.type == 2 && (r40 & 1) != 0\l}"];
+Node_33 [shape=record,label="{33\:\ 0x00ae|PHI: r31 \l  PHI: (r31v1 'workaroundEveryVideoFrameIsSyncFrame' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r30 = r42 + r14.trunLength[r37]\llong long r6 = r29.timescale\l}"];
+subgraph cluster_IfRegion_1260174445 {
+label = "IF [B:34:0x00b8] THEN: R(1:35) ELSE: R(1:60)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x00b8|if (r37 \> 0) goto L_0x00ba\l}"];
+subgraph cluster_Region_1622993491 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00ba|long r2 = r14.nextFragmentDecodeTime\l}"];
+}
+subgraph cluster_Region_1307527770 {
+label = "R(1:60)";
+node [shape=record,color=blue];
+Node_60 [shape=record,label="{60\:\ 0x011a|r2 = r38\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x00bc|PHI: r2 \l  PHI: (r2v1 'cumulativeTime' long) = (r2v0 'cumulativeTime' long), (r2v4 'cumulativeTime' long) binds: [B:60:0x011a, B:35:0x00ba] A[DONT_GENERATE, DONT_INLINE]\l|int r16 = r42\l}"];
+subgraph cluster_LoopRegion_414653338 {
+label = "LOOP:0: (6:39|41|(1:63)(1:45)|(1:47)(1:66)|48|53)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x00c2|if (r16 \< r30) goto L_0x00c4\l}"];
+subgraph cluster_Region_1720715145 {
+label = "R(6:39|41|(1:63)(1:45)|(1:47)(1:66)|48|53)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x00c4|int r20 = r21 ? r41.readUnsignedIntToInt() : r9.duration\l}"];
+Node_41 [shape=record,label="{41\:\ 0x00ca|PHI: r20 \l  PHI: (r20v1 'sampleDuration' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r26 = r28 ? r41.readUnsignedIntToInt() : r9.size\l}"];
+subgraph cluster_IfRegion_220752235 {
+label = "IF [B:43:0x00d0, B:44:0x00d2] THEN: R(1:63) ELSE: R(1:45)";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x00d0|PHI: r26 \l  PHI: (r26v1 'sampleSize' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r16 != 0) goto L_0x0127\l}"];
+Node_44 [shape=record,label="{44\:\ 0x00d2|ADDED_TO_REGION\l|if (r13 == false) goto L_0x0127\l}"];
+subgraph cluster_Region_1432148746 {
+label = "R(1:63)";
+node [shape=record,color=blue];
+Node_63 [shape=record,label="{63\:\ 0x0127|int r22 = r23 ? r41.readInt() : r9.flags\l}"];
+}
+subgraph cluster_Region_1490389493 {
+label = "R(1:45)";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x00d4|r22 = r12\l}"];
+}
+}
+subgraph cluster_IfRegion_1571886985 {
+label = "IF [B:46:0x00d6] THEN: R(1:47) ELSE: R(1:66)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x00d6|PHI: r22 \l  PHI: (r22v2 'sampleFlags' int) = (r22v1 'sampleFlags' int), (r22v3 'sampleFlags' int) binds: [B:64:0x0129, B:45:0x00d4] A[DONT_GENERATE, DONT_INLINE]\l|if (r18 == true) goto L_0x00d8\l}"];
+subgraph cluster_Region_320626277 {
+label = "R(1:47)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ 0x00d8|r17[r16] = (int) (((long) (r41.readInt() * 1000)) \/ r6)\l}"];
+}
+subgraph cluster_Region_1826209237 {
+label = "R(1:66)";
+node [shape=record,color=blue];
+Node_66 [shape=record,label="{66\:\ 0x0133|r17[r16] = 0\l}"];
+}
+}
+Node_48 [shape=record,label="{48\:\ 0x00e5|r19[r16] = com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r2, 1000, r6) \- r10\lr27[r16] = r26\l}"];
+Node_53 [shape=record,label="{53\:\ 0x00fb|LOOP_END\lPHI: r4 \l  PHI: (r4v20 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:37:0x00be\-\>B:53:0x00fb\l|r24[r16] = ((r22 \>\> 16) & 1) == 0 && (!r31 \|\| r16 == 0)\lr2 += (long) r20\lr16++\l}"];
+}
+}
+Node_68 [shape=record,label="{68\:\ 0x0139|r14.nextFragmentDecodeTime = r2\l}"];
+Node_69 [shape=record,label="{69\:\ 0x013b|RETURN\l|return r30\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x003e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0042}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x004b|PHI: r12 \l  PHI: (r12v1 'firstSampleFlags' int) = (r12v0 'firstSampleFlags' int), (r12v2 'firstSampleFlags' int) binds: [B:7:0x0045, B:8:0x0047] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0051|PHI: r21 \l  PHI: (r21v1 'sampleDurationsPresent' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0055}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0057|PHI: r28 \l  PHI: (r28v1 'sampleSizesPresent' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x005b}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x005d|PHI: r23 \l  PHI: (r23v1 'sampleFlagsPresent' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0061}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x006b}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0073}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00a8}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x00aa|REMOVE\lADDED_TO_REGION\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x00ac}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x00be|LOOP_START\lPHI: r2 r16 \l  PHI: (r2v2 'cumulativeTime' long) = (r2v1 'cumulativeTime' long), (r2v3 'cumulativeTime' long) binds: [B:36:0x00bc, B:53:0x00fb] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r16v1 'i' int) = (r16v0 'i' int), (r16v2 'i' int) binds: [B:36:0x00bc, B:53:0x00fb] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:37:0x00be\-\>B:53:0x00fb\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x00c6}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x00cc}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x00f4}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x00f6|REMOVE\lADDED_TO_REGION\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ 0x00f8|REMOVE\lADDED_TO_REGION\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x00fa}"];
+Node_54 [shape=record,color=red,label="{54\:\ 0x0104}"];
+Node_55 [shape=record,color=red,label="{55\:\ 0x0107}"];
+Node_56 [shape=record,color=red,label="{56\:\ 0x010b}"];
+Node_57 [shape=record,color=red,label="{57\:\ 0x010f}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x0113}"];
+Node_59 [shape=record,color=red,label="{59\:\ 0x0117}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x011d}"];
+Node_62 [shape=record,color=red,label="{62\:\ 0x0122}"];
+Node_64 [shape=record,color=red,label="{64\:\ 0x0129}"];
+Node_65 [shape=record,color=red,label="{65\:\ 0x012e}"];
+Node_67 [shape=record,color=red,label="{67\:\ 0x0137}"];
+Node_70 [shape=record,color=red,label="{70\:\ 0x0139|SYNTHETIC\l}"];
+Node_71 [shape=record,color=red,label="{71\:\ 0x00fb|SYNTHETIC\l}"];
+Node_72 [shape=record,color=red,label="{72\:\ 0x00fb|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static int com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseTrun((r36v0 'trackBundle' com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor$TrackBundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r37v0 'index' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r38v0 'decodeTime' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r40v0 'flags' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r41v0 'trun' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r42v0 'trackRunStart' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_54;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_55;
+Node_13 -> Node_14;
+Node_13 -> Node_56;
+Node_16 -> Node_17;
+Node_16 -> Node_57;
+Node_19 -> Node_20;
+Node_19 -> Node_58;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_59;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_60[style=dashed];
+Node_35 -> Node_36;
+Node_60 -> Node_36;
+Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_38 -> Node_70[style=dashed];
+Node_39 -> Node_40;
+Node_39 -> Node_61;
+Node_41 -> Node_42;
+Node_41 -> Node_62;
+Node_43 -> Node_44[style=dashed];
+Node_43 -> Node_63;
+Node_44 -> Node_45[style=dashed];
+Node_44 -> Node_63;
+Node_63 -> Node_64;
+Node_63 -> Node_65;
+Node_45 -> Node_46;
+Node_46 -> Node_47;
+Node_46 -> Node_66[style=dashed];
+Node_47 -> Node_48;
+Node_66 -> Node_48;
+Node_48 -> Node_49;
+Node_53 -> Node_37;
+Node_68 -> Node_69;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_31 -> Node_59;
+Node_32 -> Node_33;
+Node_37 -> Node_38;
+Node_40 -> Node_41;
+Node_42 -> Node_43;
+Node_49 -> Node_50;
+Node_49 -> Node_67;
+Node_50 -> Node_51;
+Node_50 -> Node_52;
+Node_51 -> Node_52;
+Node_51 -> Node_67;
+Node_52 -> Node_71;
+Node_54 -> Node_6;
+Node_55 -> Node_12;
+Node_56 -> Node_15;
+Node_57 -> Node_18;
+Node_58 -> Node_21;
+Node_59 -> Node_33;
+Node_61 -> Node_41;
+Node_62 -> Node_43;
+Node_64 -> Node_46;
+Node_65 -> Node_46;
+Node_67 -> Node_72;
+Node_70 -> Node_68;
+Node_71 -> Node_53;
+Node_72 -> Node_53;
+}
+

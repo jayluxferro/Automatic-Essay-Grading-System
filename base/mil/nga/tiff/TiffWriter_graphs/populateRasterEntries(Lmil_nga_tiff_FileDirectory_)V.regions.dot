@@ -1,0 +1,52 @@
+digraph "CFG formil.nga.tiff.TiffWriter.populateRasterEntries(Lmil\/nga\/tiff\/FileDirectory;)V" {
+subgraph cluster_Region_1583852805 {
+label = "R(1:(1:9)(1:(1:4)(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_797500411 {
+label = "IF [B:1:0x0004] THEN: R(1:9) ELSE: R(1:(1:4)(1:7))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1.getWriteRasters() == null) goto L_0x0018\l}"];
+subgraph cluster_Region_2043342587 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|throw new mil.nga.tiff.util.TiffException(\"File Directory Writer Rasters is required to create a TIFF\")\l}"];
+}
+subgraph cluster_Region_524912304 {
+label = "R(1:(1:4)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2082803673 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r1.isTiled() == false) goto L_0x000c\l}"];
+subgraph cluster_Region_349875357 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|populateStripEntries(r1)\l}"];
+}
+subgraph cluster_Region_986260939 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|throw new mil.nga.tiff.util.TiffException(\"Tiled images are not supported\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+MethodNode[shape=record,label="{private static void mil.nga.tiff.TiffWriter.populateRasterEntries((r1v0 mil.nga.tiff.FileDirectory A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

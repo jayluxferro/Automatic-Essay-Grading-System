@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.net.TrafficStatsCompat.untagDatagramSocket(Ljava\/net\/DatagramSocket;)V" {
+subgraph cluster_Region_852290234 {
+label = "R(1:(2:(2:2|5)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1475727508 {
+label = "R(2:(2:2|5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2038035315 {
+label = "IF [B:1:0x0004] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L_0x0006\l}"];
+subgraph cluster_Region_313034778 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.net.TrafficStats.untagDatagramSocket(r3)\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_578103233 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|android.os.ParcelFileDescriptor android.os.ParcelFileDescriptor r0 = android.os.ParcelFileDescriptor.fromDatagramSocket(r3)\landroid.net.TrafficStats.untagSocket(new android.support.p000v4.net.DatagramSocketWrapper(r3, r0.getFileDescriptor()))\lr0.detachFd()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void android.support.v4.net.TrafficStatsCompat.untagDatagramSocket((r3v0 java.net.DatagramSocket A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.net.SocketException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

@@ -1,0 +1,41 @@
+digraph "CFG fororg.osmdroid.views.Projection.refresh()V" {
+subgraph cluster_Region_1183935671 {
+label = "R(2:0|(2:(2:5|6)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|fromPixels((r11.mIntrinsicScreenRectProjection.left + r11.mIntrinsicScreenRectProjection.right) \/ 2, (r11.mIntrinsicScreenRectProjection.top + r11.mIntrinsicScreenRectProjection.bottom) \/ 2, r11.mCurrentCenter)\lorg.osmdroid.api.IGeoPoint org.osmdroid.api.IGeoPoint r0 = fromPixels(r11.mIntrinsicScreenRectProjection.right, r11.mIntrinsicScreenRectProjection.top, (org.osmdroid.util.GeoPoint) null, true)\lorg.osmdroid.api.IGeoPoint org.osmdroid.api.IGeoPoint r1 = fromPixels(r11.mIntrinsicScreenRectProjection.left, r11.mIntrinsicScreenRectProjection.bottom, (org.osmdroid.util.GeoPoint) null, true)\lr11.mBoundingBoxProjection.set(r0.getLatitude(), r0.getLongitude(), r1.getLatitude(), r1.getLongitude())\l}"];
+subgraph cluster_Region_1280759519 {
+label = "R(2:(2:5|6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1762752061 {
+label = "IF [B:1:0x004f, B:3:0x0057] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x004f|if (r11.mOrientation == 0.0f) goto L_0x006b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0057|ADDED_TO_REGION\l|if (r11.mOrientation == 180.0f) goto L_0x006b\l}"];
+subgraph cluster_Region_1167587242 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006b|r11.mScreenRectProjection.left = r11.mIntrinsicScreenRectProjection.left\lr11.mScreenRectProjection.top = r11.mIntrinsicScreenRectProjection.top\lr11.mScreenRectProjection.right = r11.mIntrinsicScreenRectProjection.right\lr11.mScreenRectProjection.bottom = r11.mIntrinsicScreenRectProjection.bottom\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1442560277 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0059|org.osmdroid.util.GeometryMath.getBoundingBoxForRotatatedRectangle(r11.mIntrinsicScreenRectProjection, getScreenCenterX(), getScreenCenterY(), r11.mOrientation, r11.mScreenRectProjection)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0051}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.views.Projection.refresh((r11v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_4 -> Node_7;
+Node_2 -> Node_3;
+}
+

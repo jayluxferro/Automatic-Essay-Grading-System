@@ -1,0 +1,43 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.updateLocationEngine(Lcom\/mapbox\/android\/core\/location\/LocationEngine;)V" {
+subgraph cluster_Region_725193262 {
+label = "R(2:(1:2)|(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_552128214 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.navigationLocationEngine != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1781716881 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.navigationLocationEngine.removeLocationEngineListener(r1)\l}"];
+}
+}
+subgraph cluster_Region_629629590 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1120419050 {
+label = "IF [B:3:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r2 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_615568411 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|r1.navigationLocationEngine = r2\lr1.navigationLocationEngine.addLocationEngineListener(r1)\lr1.navigationSessionState.toBuilder().locationEngineName(r2.getClass().getName())\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.updateLocationEngine((r1v0 'this' com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry A[IMMUTABLE_TYPE, THIS]), (r2v0 com.mapbox.android.core.location.LocationEngine A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG forandroid.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.MediaSessionStub.sendMediaButton(Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1216662247 {
+label = "R(4:0|(1:2)|(1:4)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\l}"];
+subgraph cluster_IfRegion_1472808976 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((android.support.p000v4.media.session.MediaSessionCompat.MediaSessionImplBase.this.mFlags & 1) == 0) goto L_0x0009\l}"];
+subgraph cluster_Region_578897212 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r1 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_425046824 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:1:0x0006, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == true) goto L_0x000c\l}"];
+subgraph cluster_Region_807560975 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|postToHandler(21, (java.lang.Object) r3)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0011|RETURN\l|return r1\l}"];
+}
+MethodNode[shape=record,label="{public boolean android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.MediaSessionStub.sendMediaButton((r2v0 'this' android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase$MediaSessionStub A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.KeyEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+}
+

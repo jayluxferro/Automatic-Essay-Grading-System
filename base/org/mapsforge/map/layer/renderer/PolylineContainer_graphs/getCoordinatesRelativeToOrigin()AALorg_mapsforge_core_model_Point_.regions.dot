@@ -1,0 +1,63 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.PolylineContainer.getCoordinatesRelativeToOrigin()[[Lorg\/mapsforge\/core\/model\/Point;" {
+subgraph cluster_Region_1868963860 {
+label = "R(2:(2:2|(3:5|(1:8)|9))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_44196744 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(3:5|(1:8)|9)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r10.coordinatesRelativeToTile == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1737121620 {
+label = "R(2:2|(3:5|(1:8)|9))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|org.mapsforge.core.model.Point org.mapsforge.core.model.Point r0 = r10.upperLeft.getOrigin()\lr10.coordinatesRelativeToTile = new org.mapsforge.core.model.Point[getCoordinatesAbsolute().length][]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1049623214 {
+label = "LOOP:0: (3:5|(1:8)|9)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r2 \< r10.coordinatesRelativeToTile.length) goto L_0x001a\l}"];
+subgraph cluster_Region_1179656539 {
+label = "R(3:5|(1:8)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|r10.coordinatesRelativeToTile[r2] = new org.mapsforge.core.model.Point[r10.coordinatesAbsolute[r2].length]\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1930802746 {
+label = "LOOP:1: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|if (r3 \< r10.coordinatesRelativeToTile[r2].length) goto L_0x002d\l}"];
+subgraph cluster_Region_1910874459 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|LOOP_END\lLOOP:1: B:6:0x0026\-\>B:8:0x002d\l|r10.coordinatesRelativeToTile[r2][r3] = r10.coordinatesAbsolute[r2][r3].offset(\-r0.f266x, \-r0.f267y)\lr3++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0046|LOOP_END\lLOOP:0: B:3:0x0015\-\>B:9:0x0046\l|r2++\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x004b|RETURN\l|return r10.coordinatesRelativeToTile\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0004, B:9:0x0046] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0015\-\>B:9:0x0046\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026|LOOP_START\lPHI: r3 \l  PHI: (r3v4 int) = (r3v3 int), (r3v5 int) binds: [B:5:0x001a, B:8:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:6:0x0026\-\>B:8:0x002d\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0049}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0049|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0046|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.Point[][] org.mapsforge.map.layer.renderer.PolylineContainer.getCoordinatesRelativeToOrigin((r10v0 'this' org.mapsforge.map.layer.renderer.PolylineContainer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_12 -> Node_10;
+Node_13 -> Node_9;
+}
+

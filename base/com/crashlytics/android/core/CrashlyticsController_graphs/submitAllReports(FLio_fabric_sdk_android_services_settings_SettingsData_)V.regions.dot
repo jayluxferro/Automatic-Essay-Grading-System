@@ -1,0 +1,43 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.submitAllReports(FLio\/fabric\/sdk\/android\/services\/settings\/SettingsData;)V" {
+subgraph cluster_Region_1682681138 {
+label = "R(1:(2:(2:1|2)|(2:3|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2131756971 {
+label = "R(2:(2:1|2)|(2:3|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1320014690 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_427728627 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|p018io.fabric.sdk.android.Fabric.getLogger().mo22234w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not send reports. Settings are not available.\")\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_543523539 {
+label = "R(2:3|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e}"];
+Node_7 [shape=record,label="{7\:\ 0x0031|PHI: r1 \l  PHI: (r1v3 com.crashlytics.android.core.ReportUploader$SendCheck) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|new com.crashlytics.android.core.ReportUploader(r5.appData.apiKey, getCreateReportSpiCall(r7.appData.reportsUrl, r7.appData.ndkReportsUrl), r5.reportFilesProvider, r5.handlingExceptionCheck).uploadReports(r6, shouldPromptUserBeforeSendingCrashReports(r7) ? new com.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck(r5.crashlyticsCore, r5.preferenceManager, r7.promptData) : new com.crashlytics.android.core.ReportUploader.AlwaysSendCheck())\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0020}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0041}"];
+MethodNode[shape=record,label="{void com.crashlytics.android.core.CrashlyticsController.submitAllReports((r5v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 io.fabric.sdk.android.services.settings.SettingsData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forcom.caverock.androidsvg.CSSParser.ruleMatch(Lcom\/caverock\/androidsvg\/CSSParser$RuleMatchContext;Lcom\/caverock\/androidsvg\/CSSParser$Selector;Lcom\/caverock\/androidsvg\/SVG$SvgElementBase;)Z" {
+subgraph cluster_Region_1076595934 {
+label = "R(4:0|(1:3)|4|(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r3 = new java.util.ArrayList()\lcom.caverock.androidsvg.SVG$SvgContainer com.caverock.androidsvg.SVG.SvgContainer r0 = r8.parent\l}"];
+subgraph cluster_LoopRegion_1843414374 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r0 != null) goto L_0x000a\l}"];
+subgraph cluster_Region_1492901076 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:3:0x000a\l|r3.add(0, r0)\lcom.caverock.androidsvg.SVG$SvgContainer r0 = ((com.caverock.androidsvg.SVG.SvgObject) r0).parent\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0012|int int r4 = r3.size() \- 1\l}"];
+subgraph cluster_Region_1274667685 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1369260120 {
+label = "IF [B:5:0x001d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|if (r7.size() == 1) goto L_0x001f\l}"];
+subgraph cluster_Region_721751232 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|RETURN\l|return selectorMatch(r6, r7.get(0), r3, r4, r8)\l}"];
+}
+}
+subgraph cluster_Region_1899068130 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028}"];
+Node_9 [shape=record,label="{9\:\ 0x0035|RETURN\l|return ruleMatch(r6, r7, r7.size() \- 1, r3, r4, r8)\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007|LOOP_START\lPHI: r0 \l  PHI: (r0v1 com.caverock.androidsvg.SVG$SvgContainer) = (r0v0 com.caverock.androidsvg.SVG$SvgContainer), (r0v7 com.caverock.androidsvg.SVG$SvgContainer) binds: [B:0:0x0000, B:3:0x000a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:3:0x000a\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static boolean com.caverock.androidsvg.CSSParser.ruleMatch((r6v0 com.caverock.androidsvg.CSSParser$RuleMatchContext A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 com.caverock.androidsvg.CSSParser$Selector A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 com.caverock.androidsvg.SVG$SvgElementBase A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+Node_10 -> Node_4;
+}
+

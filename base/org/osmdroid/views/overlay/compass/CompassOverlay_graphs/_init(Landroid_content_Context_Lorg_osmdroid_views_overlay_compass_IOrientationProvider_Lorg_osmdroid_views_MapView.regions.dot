@@ -1,0 +1,33 @@
+digraph "CFG fororg.osmdroid.views.overlay.compass.CompassOverlay.\<init\>(Landroid\/content\/Context;Lorg\/osmdroid\/views\/overlay\/compass\/IOrientationProvider;Lorg\/osmdroid\/views\/MapView;)V" {
+subgraph cluster_Region_1262521538 {
+label = "R(3:0|(1:2)(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.sSmoothPaint = new android.graphics.Paint(2)\lr5.mCompassMatrix = new android.graphics.Matrix()\lr5.wasEnabledOnPause = false\lr5.mMode = 1\lr5.mAzimuth = Float.NaN\lr5.mAzimuthOffset = 0.0f\lr5.mInCenter = false\lr5.mCompassCenterX = 35.0f\lr5.mCompassCenterY = 35.0f\lr5.mCompassRadius = 20.0f\lr5.mLastRender = 0\lr5.mOptionsMenuEnabled = true\lr5.mScale = r6.getResources().getDisplayMetrics().density\lr5.mMapView = r8\lr5.mDisplay = ((android.view.WindowManager) r6.getSystemService(\"window\")).getDefaultDisplay()\lcreateCompassFramePicture()\l}"];
+subgraph cluster_IfRegion_1110152868 {
+label = "IF [B:1:0x0052] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0052|if (r5.mMode \> 0) goto L_0x0054\l}"];
+subgraph cluster_Region_1536887343 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0054|createCompassRosePicture()\l}"];
+}
+subgraph cluster_Region_1875354106 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0058|createPointerPicture()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x005b|r5.mCompassFrameCenterX = ((float) (r5.mCompassFrameBitmap.getWidth() \/ 2)) \- 0.5f\lr5.mCompassFrameCenterY = ((float) (r5.mCompassFrameBitmap.getHeight() \/ 2)) \- 0.5f\lr5.mCompassRoseCenterX = ((float) (r5.mCompassRoseBitmap.getWidth() \/ 2)) \- 0.5f\lr5.mCompassRoseCenterY = ((float) (r5.mCompassRoseBitmap.getHeight() \/ 2)) \- 0.5f\lsetOrientationProvider(r7)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x008c}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.compass.CompassOverlay.\<init\>((r5v0 'this' org.osmdroid.views.overlay.compass.CompassOverlay A[IMMUTABLE_TYPE, THIS]), (r6v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 org.osmdroid.views.overlay.compass.IOrientationProvider A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 org.osmdroid.views.MapView A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

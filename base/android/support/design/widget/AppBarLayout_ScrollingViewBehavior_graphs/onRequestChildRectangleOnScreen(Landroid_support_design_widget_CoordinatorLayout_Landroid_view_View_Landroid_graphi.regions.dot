@@ -1,0 +1,39 @@
+digraph "CFG forandroid.support.design.widget.AppBarLayout.ScrollingViewBehavior.onRequestChildRectangleOnScreen(Landroid\/support\/design\/widget\/CoordinatorLayout;Landroid\/view\/View;Landroid\/graphics\/Rect;Z)Z" {
+subgraph cluster_Region_451075261 {
+label = "R(3:0|(2:2|(2:4|5))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.design.widget.AppBarLayout android.support.design.widget.AppBarLayout r0 = findFirstDependency(r4.getDependencies(r5))\l}"];
+subgraph cluster_IfRegion_1383093031 {
+label = "IF [B:1:0x0009] THEN: R(2:2|(2:4|5)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r0 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_1209207347 {
+label = "R(2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|r6.offset(r5.getLeft(), r5.getTop())\landroid.graphics.Rect android.graphics.Rect r5 = r3.tempRect1\lr5.set(0, 0, r4.getWidth(), r4.getHeight())\l}"];
+subgraph cluster_IfRegion_1150824632 {
+label = "IF [B:3:0x0027] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0027|if (r5.contains(r6) == false) goto L_0x0029\l}"];
+subgraph cluster_Region_1504628104 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0029|r0.setExpanded(false, !r7)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002f|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0030|RETURN\l|return false\l}"];
+}
+MethodNode[shape=record,label="{public boolean android.support.design.widget.AppBarLayout.ScrollingViewBehavior.onRequestChildRectangleOnScreen((r3v0 'this' android.support.design.widget.AppBarLayout$ScrollingViewBehavior A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,37 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.upgradeFile(Ljava\/io\/File;Lcom\/google\/android\/exoplayer2\/upstream\/cache\/CachedContentIndex;)Ljava\/io\/File;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String r6 = r11.getName()\ljava.util.regex.Matcher r8 = CACHE_FILE_PATTERN_V2.matcher(r6)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r8.matches() == false) goto L_0x001e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|java.lang.String r7 = com.google.android.exoplayer2.util.Util.unescapeFileName(r8.group(1))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (r7 != null) goto L_0x0030\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|java.util.regex.Matcher r8 = CACHE_FILE_PATTERN_V1.matcher(r6)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|if (r8.matches() != false) goto L_0x002c\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a}"];
+Node_8 [shape=record,label="{8\:\ 0x002c|java.lang.String r7 = r8.group(1)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0030|PHI: r7 r8 \l  PHI: (r7v0 'key' java.lang.String) = (r7v1 'key' java.lang.String), (r7v2 'key' java.lang.String) binds: [B:8:0x002c, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'matcher' java.util.regex.Matcher) = (r8v2 'matcher' java.util.regex.Matcher), (r8v0 'matcher' java.util.regex.Matcher) binds: [B:8:0x002c, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|java.io.File r9 = getCacheFile(r11.getParentFile(), r12.assignIdForKey(r7), java.lang.Long.parseLong(r8.group(2)), java.lang.Long.parseLong(r8.group(3)))\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0052|if (r11.renameTo(r9) != false) goto L_?\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0054}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return r9\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+MethodNode[shape=record,label="{private static java.io.File com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.upgradeFile((r11v0 'file' java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'index' com.google.android.exoplayer2.upstream.cache.CachedContentIndex A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_12;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_13;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_11 -> Node_15;
+}
+

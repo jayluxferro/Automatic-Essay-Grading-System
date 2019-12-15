@@ -1,0 +1,48 @@
+digraph "CFG forcom.mapbox.android.gestures.MultiFingerGesture.calculateDistances()V" {
+subgraph cluster_Region_1132309141 {
+label = "R(2:0|(3:3|(1:6)|7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r12.pointersDistanceMap.clear()\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_960625096 {
+label = "LOOP:0: (3:3|(1:6)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0 \< (r12.pointerIdList.size() \- 1)) goto L_0x0010\l}"];
+subgraph cluster_Region_579544887 {
+label = "R(3:3|(1:6)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|int int r1 = r0 + 1\lint r2 = r1\l}"];
+subgraph cluster_LoopRegion_505632810 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|if (r2 \< r12.pointerIdList.size()) goto L_0x001b\l}"];
+subgraph cluster_Region_807695801 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|LOOP_END\lLOOP:1: B:4:0x0013\-\>B:6:0x001b\l|int int r3 = r12.pointerIdList.get(r0).intValue()\lint int r4 = r12.pointerIdList.get(r2).intValue()\lfloat float r5 = getPreviousEvent().getX(getPreviousEvent().findPointerIndex(r3))\lfloat float r6 = getPreviousEvent().getY(getPreviousEvent().findPointerIndex(r3))\lfloat float r7 = getPreviousEvent().getX(getPreviousEvent().findPointerIndex(r4)) \- r5\lfloat float r8 = getPreviousEvent().getY(getPreviousEvent().findPointerIndex(r4)) \- r6\lfloat float r5 = getCurrentEvent().getX(getCurrentEvent().findPointerIndex(r3))\lfloat float r6 = getCurrentEvent().getY(getCurrentEvent().findPointerIndex(r3))\lr12.pointersDistanceMap.put(new com.mapbox.android.gestures.PointerDistancePair(java.lang.Integer.valueOf(r3), java.lang.Integer.valueOf(r4)), new com.mapbox.android.gestures.MultiFingerDistancesObject(r7, r8, getCurrentEvent().getX(getCurrentEvent().findPointerIndex(r4)) \- r5, getCurrentEvent().getY(getCurrentEvent().findPointerIndex(r4)) \- r6))\lr2++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x00d2|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:7:0x00d2\l|r0 = r1\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|LOOP_START\lPHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v3 int) binds: [B:0:0x0000, B:7:0x00d2] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:7:0x00d2\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:3:0x0010, B:6:0x001b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:4:0x0013\-\>B:6:0x001b\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x00d5}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x00d5|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x00d2|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.android.gestures.MultiFingerGesture.calculateDistances((r12v0 'this' com.mapbox.android.gestures.MultiFingerGesture A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_9 -> Node_8;
+Node_10 -> Node_7;
+}
+

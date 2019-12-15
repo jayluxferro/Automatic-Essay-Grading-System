@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.v4.app.Fragment.setInitialSavedState(Landroid\/support\/v4\/app\/Fragment$SavedState;)V" {
+subgraph cluster_Region_2046413320 {
+label = "R(1:(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_803390487 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_263900518 {
+label = "IF [B:1:0x0002] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mIndex \< 0) goto L_0x0004\l}"];
+subgraph cluster_Region_690481335 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|PHI: r2 \l  PHI: (r2v2 android.os.Bundle) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1.mSavedFragmentState = (r2 == null \|\| r2.mState == null) ? null : r2.mState\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0010|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_515497489 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0018|throw new java.lang.IllegalStateException(\"Fragment already active\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008|REMOVE\lADDED_TO_REGION\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0011}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.Fragment.setInitialSavedState((r1v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.v4.app.Fragment$SavedState A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

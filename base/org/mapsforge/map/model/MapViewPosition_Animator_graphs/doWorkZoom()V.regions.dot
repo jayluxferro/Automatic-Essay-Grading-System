@@ -1,0 +1,54 @@
+digraph "CFG fororg.mapsforge.map.model.MapViewPosition.Animator.doWorkZoom()V" {
+subgraph cluster_Region_320528345 {
+label = "R(1:(1:(1:(2:(2:5|8)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_278035480 {
+label = "R(1:(1:(2:(2:5|8)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2078876334 {
+label = "IF [B:1:0x0002] THEN: R(1:(2:(2:5|8)|(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.zoomAnimation != false) goto L_0x0005\l}"];
+subgraph cluster_Region_1059993604 {
+label = "R(1:(2:(2:5|8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2047855663 {
+label = "R(2:(2:5|8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2046696906 {
+label = "IF [B:4:0x000d] THEN: R(2:5|8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|if (java.lang.System.currentTimeMillis() \>= r4.timeEnd) goto L_0x000f\l}"];
+subgraph cluster_Region_1269873673 {
+label = "R(2:5|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|r4.zoomAnimation = false\lorg.mapsforge.map.model.MapViewPosition.this.setScaleFactor(calculateScaleFactor(1.0f))\lorg.mapsforge.map.model.MapViewPosition.this.setPivot((org.mapsforge.core.model.LatLong) null)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_84956003 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|org.mapsforge.map.model.MapViewPosition.this.setScaleFactor(calculateScaleFactor(((float) (java.lang.System.currentTimeMillis() \- r4.timeStart)) \/ 250.0f))\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.model.MapViewPosition.Animator.doWorkZoom((r4v0 'this' org.mapsforge.map.model.MapViewPosition$Animator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

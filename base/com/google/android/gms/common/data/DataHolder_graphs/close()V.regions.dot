@@ -1,0 +1,62 @@
+digraph "CFG forcom.google.android.gms.common.data.DataHolder.close()V" {
+subgraph cluster_Region_743407046 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_847004177 {
+label = "Synchronized:R(2:0|(1:(2:4|(1:7))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1594586272 {
+label = "R(1:(2:4|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_663957334 {
+label = "IF [B:3:0x0003] THEN: R(2:4|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r2.mClosed == false) goto L_0x0005\l}"];
+subgraph cluster_Region_701046258 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|r2.mClosed = true\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_1894106927 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|if (r0 \< r2.zalr.length) goto L_0x000e\l}"];
+subgraph cluster_Region_1990731716 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|LOOP_END\lLOOP:0: B:5:0x0009\-\>B:7:0x000e\l|r1.close()\lr0++\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009|LOOP_START\lPHI: r0 \l  PHI: (r0v4 int) = (r0v3 int), (r0v5 int) binds: [B:4:0x0005, B:7:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0009\-\>B:7:0x000e\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0018: MONITOR_EXIT  \l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0019}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001a|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001b|REMOVE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|REMOVE\l|throw r0\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.gms.common.data.DataHolder.close((r2v0 'this' com.google.android.gms.common.data.DataHolder A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_8;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG formil.nga.geopackage.tiles.features.FeatureTiles.simplifyPoints(DLjava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_1673538326 {
+label = "R(1:(2:(1:13)|(3:(1:6)|7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_146600557 {
+label = "R(2:(1:13)|(3:(1:6)|7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_725648460 {
+label = "IF [B:1:0x0002] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.simplifyGeometries != true) goto L_?\l}"];
+subgraph cluster_Region_1367147158 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_946968028 {
+label = "R(3:(1:6)|7|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_856099636 {
+label = "IF [B:3:0x0006, B:5:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r2.projection == null) goto L_0x001e\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r2.projection.getUnit() == org.osgeo.proj4j.units.Units.METRES) goto L_0x001e\l}"];
+subgraph cluster_Region_1548200099 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|java.util.List r5 = r2.projection.getTransformation(WEB_MERCATOR_PROJECTION).transform(r5)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001e|PHI: r5 \l  PHI: (r5v1 java.util.List\<mil.nga.wkb.geom.Point\>) = (r5v0 java.util.List\<mil.nga.wkb.geom.Point\>), (r5v0 java.util.List\<mil.nga.wkb.geom.Point\>), (r5v4 java.util.List\<mil.nga.wkb.geom.Point\>) binds: [B:3:0x0006, B:5:0x0010, B:6:0x0012] A[DONT_GENERATE, DONT_INLINE]\l|java.util.List java.util.List\<mil.nga.wkb.geom.Point\> r5 = mil.nga.wkb.util.GeometryUtils.simplifyPoints(r5, r3)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0024|RETURN\l|return (r2.projection == null \|\| r2.projection.getUnit() == org.osgeo.proj4j.units.Units.METRES) ? r5 : WEB_MERCATOR_PROJECTION.getTransformation(r2.projection).transform(r5)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002e|REMOVE\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0030}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r5\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected java.util.List\<mil.nga.wkb.geom.Point\> mil.nga.geopackage.tiles.features.FeatureTiles.simplifyPoints((r2v0 'this' mil.nga.geopackage.tiles.features.FeatureTiles A[IMMUTABLE_TYPE, THIS]), (r3v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.util.List\<mil.nga.wkb.geom.Point\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(D, Ljava\/util\/List\<, Lmil\/nga\/wkb\/geom\/Point;, \>;), Ljava\/util\/List\<, Lmil\/nga\/wkb\/geom\/Point;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_15;
+Node_11 -> Node_12;
+}
+

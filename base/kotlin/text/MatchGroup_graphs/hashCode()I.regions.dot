@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.text.MatchGroup.hashCode()I" {
+subgraph cluster_Region_217573048 {
+label = "R(4:0|4|(1:6)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r3.value\lint r1 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|PHI: r0 \l  PHI: (r0v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = (r0 != null ? r0.hashCode() : 0) * 31\lkotlin.ranges.IntRange kotlin.ranges.IntRange r2 = r3.range\l}"];
+subgraph cluster_IfRegion_1405281060 {
+label = "IF [B:5:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r2 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_1298379773 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|int r1 = r2.hashCode()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0016|RETURN\l|return r0 + r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0003}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0015|PHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:5:0x000f, B:6:0x0011] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public int kotlin.text.MatchGroup.hashCode((r3v0 'this' kotlin.text.MatchGroup A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

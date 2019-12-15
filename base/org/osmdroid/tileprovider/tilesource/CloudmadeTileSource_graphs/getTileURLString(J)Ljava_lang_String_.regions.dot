@@ -1,0 +1,27 @@
+digraph "CFG fororg.osmdroid.tileprovider.tilesource.CloudmadeTileSource.getTileURLString(J)Ljava\/lang\/String;" {
+subgraph cluster_Region_968128463 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = org.osmdroid.tileprovider.util.CloudmadeUtil.getCloudmadeKey()\l}"];
+subgraph cluster_IfRegion_392234818 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0.length() == 0) goto L_0x000a\l}"];
+subgraph cluster_Region_892964194 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.util.Log.e(org.osmdroid.api.IMapView.LOGTAG, \"CloudMade key is not set. You should enter it in the manifest and call CloudmadeUtil.retrieveCloudmadeKey()\")\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0011|java.lang.String java.lang.String r1 = org.osmdroid.tileprovider.util.CloudmadeUtil.getCloudmadeToken()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x005d|RETURN\l|return java.lang.String.format(getBaseUrl(), new java.lang.Object[]\{r0, r5.mStyle, java.lang.Integer.valueOf(getTileSizePixels()), java.lang.Integer.valueOf(org.osmdroid.util.MapTileIndex.getZoom(r6)), java.lang.Integer.valueOf(org.osmdroid.util.MapTileIndex.getX(r6)), java.lang.Integer.valueOf(org.osmdroid.util.MapTileIndex.getY(r6)), r5.mImageFilenameEnding, r1\})\l}"];
+}
+MethodNode[shape=record,label="{public java.lang.String org.osmdroid.tileprovider.tilesource.CloudmadeTileSource.getTileURLString((r5v0 'this' org.osmdroid.tileprovider.tilesource.CloudmadeTileSource A[IMMUTABLE_TYPE, THIS]), (r6v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

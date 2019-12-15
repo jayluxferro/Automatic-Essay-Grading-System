@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.firebase.FirebaseApp.initializeAllApis()V" {
+subgraph cluster_Region_1189508834 {
+label = "R(4:0|(1:2)(1:3)|4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean boolean r0 = android.support.p000v4.content.ContextCompat.isDeviceProtectedStorage(r4.applicationContext)\l}"];
+subgraph cluster_IfRegion_192927894 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 == true) goto L_0x0008\l}"];
+subgraph cluster_Region_940560935 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|com.google.firebase.FirebaseApp.UserUnlockReceiver.ensureReceiverRegistered(r4.applicationContext)\l}"];
+}
+subgraph cluster_Region_1113121085 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|r4.componentRuntime.initializeEagerComponents(isDefaultApp())\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0017|initializeApis(com.google.firebase.FirebaseApp.class, r4, API_INITIALIZERS, r0)\l}"];
+subgraph cluster_Region_1222666235 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1134485870 {
+label = "IF [B:5:0x0022] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (isDefaultApp() == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1956830731 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|initializeApis(com.google.firebase.FirebaseApp.class, r4, DEFAULT_APP_API_INITITALIZERS, r0)\linitializeApis(android.content.Context.class, r4.applicationContext, DEFAULT_CONTEXT_API_INITITALIZERS, r0)\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.firebase.FirebaseApp.initializeAllApis((r4v0 'this' com.google.firebase.FirebaseApp A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+}
+

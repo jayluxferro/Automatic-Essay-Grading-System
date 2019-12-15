@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.milestone.TriggerProperty.getSparseArray(Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)Landroid\/util\/SparseArray;" {
+subgraph cluster_Region_1811391561 {
+label = "R(5:0|4|(1:6)|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.SparseArray android.util.SparseArray\<java.lang.Number[]\> r0 = new android.util.SparseArray\<\>(13)\lr0.put(2, new java.lang.Number[]\{java.lang.Double.valueOf(r11.currentLegProgress().currentStep().distance())\})\lr0.put(3, new java.lang.Number[]\{java.lang.Double.valueOf(r11.currentLegProgress().currentStep().duration())\})\lr0.put(1, new java.lang.Number[]\{java.lang.Double.valueOf(r11.currentLegProgress().currentStepProgress().distanceRemaining())\})\lr0.put(0, new java.lang.Number[]\{java.lang.Double.valueOf(r11.currentLegProgress().currentStepProgress().durationRemaining())\})\lr0.put(9, new java.lang.Number[]\{java.lang.Double.valueOf(r11.currentLegProgress().currentStepProgress().distanceTraveled())\})\lr0.put(4, new java.lang.Number[]\{java.lang.Integer.valueOf(r11.currentLegProgress().stepIndex())\})\lr0.put(5, new java.lang.Number[]\{java.lang.Integer.valueOf(r10.currentLegProgress().stepIndex()), java.lang.Integer.valueOf(r11.currentLegProgress().stepIndex())\})\lr0.put(6, new java.lang.Number[]\{java.lang.Integer.valueOf(r11.currentLegProgress().stepIndex()), java.lang.Integer.valueOf(r11.currentLeg().steps().size() \- 2)\})\lr0.put(8, new java.lang.Number[]\{java.lang.Integer.valueOf(r11.currentLegProgress().stepIndex()), 0\})\ljava.lang.Number[] java.lang.Number[] r10 = new java.lang.Number[1]\ldouble r6 = 0.0d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0114|PHI: r8 \l  PHI: (r8v0 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r10[0] = java.lang.Double.valueOf(r11.currentLegProgress().upComingStep() != null ? r11.currentLegProgress().upComingStep().duration() : 0.0d)\lr0.put(17, r10)\ljava.lang.Number[] java.lang.Number[] r2 = new java.lang.Number[1]\l}"];
+subgraph cluster_IfRegion_1776843478 {
+label = "IF [B:5:0x012a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x012a|if (r11.currentLegProgress().upComingStep() != null) goto L_0x012c\l}"];
+subgraph cluster_Region_187690218 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x012c|double r6 = r11.currentLegProgress().upComingStep().distance()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0138|PHI: r6 \l  PHI: (r6v5 double) = (r6v4 double), (r6v9 double) binds: [B:5:0x012a, B:6:0x012c] A[DONT_GENERATE, DONT_INLINE]\l|r2[0] = java.lang.Double.valueOf(r6)\lr0.put(7, r2)\lr0.put(9, new java.lang.Number[]\{java.lang.Integer.valueOf(r11.legIndex()), 0\})\lr0.put(16, new java.lang.Number[]\{java.lang.Integer.valueOf(r11.legIndex()), java.lang.Integer.valueOf(r11.directionsRoute().legs().size() \- 1)\})\l}"];
+Node_8 [shape=record,label="{8\:\ 0x017a|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0104}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0106}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0113}"];
+MethodNode[shape=record,label="{static android.util.SparseArray\<java.lang.Number[]\> com.mapbox.services.android.navigation.v5.milestone.TriggerProperty.getSparseArray((r10v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;, Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;, ), Landroid\/util\/SparseArray\<, [, Ljava\/lang\/Number;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,98 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.hslToRgb(FFF)I" {
+subgraph cluster_Region_878167328 {
+label = "R(6:4|(1:6)(1:(1:9))|(1:12)(1:(1:15))|17|20|21)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|PHI: r3 \l  PHI: (r3v1 float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r3 = (r3 \>= 0.0f ? r3 % 360.0f : (r3 % 360.0f) + 360.0f) \/ 60.0f\lfloat float r4 = r4 \/ 100.0f\lfloat float r5 = r5 \/ 100.0f\l}"];
+subgraph cluster_IfRegion_86781742 {
+label = "IF [B:5:0x0016] THEN: R(1:6) ELSE: R(1:(1:9))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|if (r4 \< 0.0f) goto L_0x0018\l}"];
+subgraph cluster_Region_875688744 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|r4 = 0.0f\l}"];
+}
+subgraph cluster_Region_494136103 {
+label = "R(1:(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_257459310 {
+label = "IF [B:8:0x001c] THEN: R(1:9) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|if (r4 \> 1.0f) goto L_0x001e\l}"];
+subgraph cluster_Region_985502057 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|r4 = 1.0f\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_102399165 {
+label = "IF [B:11:0x0022] THEN: R(1:12) ELSE: R(1:(1:15))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0022|if (r5 \< 0.0f) goto L_0x0024\l}"];
+subgraph cluster_Region_1655401113 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0024|r5 = 0.0f\l}"];
+}
+subgraph cluster_Region_677268721 {
+label = "R(1:(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1294660580 {
+label = "IF [B:14:0x0028] THEN: R(1:15) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0028|if (r5 \> 1.0f) goto L_0x002a\l}"];
+subgraph cluster_Region_1505262133 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002a|r5 = 1.0f\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0030|float r4 = r5 \<= 0.5f ? (r4 + 1.0f) * r5 : (r5 + r4) \- (r4 * r5)\l}"];
+Node_20 [shape=record,label="{20\:\ 0x003c|PHI: r4 \l  PHI: (r4v3 float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float float r5 = (r5 * 2.0f) \- r4\l}"];
+Node_21 [shape=record,label="{21\:\ 0x006a|RETURN\l|return clamp255(hueToRgb(r5, r4, r3 \- 2.0f) * 256.0f) \| (clamp255(hueToRgb(r5, r4, r3 + 2.0f) * 256.0f) \<\< 16) \| (clamp255(hueToRgb(r5, r4, r3) * 256.0f) \<\< 8)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020|PHI: r4 \l  PHI: (r4v2 float) = (r4v1 float), (r4v9 float), (r4v10 float) binds: [B:8:0x001c, B:9:0x001e, B:6:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0026}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002c|PHI: r5 \l  PHI: (r5v2 float) = (r5v1 float), (r5v8 float), (r5v9 float) binds: [B:14:0x0028, B:15:0x002a, B:12:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0032}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0036}"];
+MethodNode[shape=record,label="{private static int com.caverock.androidsvg.SVGParser.hslToRgb((r3v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+}
+

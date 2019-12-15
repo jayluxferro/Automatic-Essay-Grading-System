@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.Loader.release(Ljava\/lang\/Runnable;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:com.google.android.exoplayer2.upstream.Loader$LoadTask\<? extends com.google.android.exoplayer2.upstream.Loader$Loadable\>) = (r2 I:com.google.android.exoplayer2.upstream.Loader) com.google.android.exoplayer2.upstream.Loader.currentTask com.google.android.exoplayer2.upstream.Loader$LoadTask \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x000a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:com.google.android.exoplayer2.upstream.Loader$LoadTask\<? extends com.google.android.exoplayer2.upstream.Loader$Loadable\>) = (r2 I:com.google.android.exoplayer2.upstream.Loader) com.google.android.exoplayer2.upstream.Loader.currentTask com.google.android.exoplayer2.upstream.Loader$LoadTask \l0x0006: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0007: INVOKE  \l  (r0 I:com.google.android.exoplayer2.upstream.Loader$LoadTask)\l  (r1 I:boolean)\l com.google.android.exoplayer2.upstream.Loader.LoadTask.cancel(boolean):void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('postLoadAction' java.lang.Runnable)]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0011 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: IGET  (r0 I:java.util.concurrent.ExecutorService) = (r2 I:com.google.android.exoplayer2.upstream.Loader) com.google.android.exoplayer2.upstream.Loader.downloadExecutorService java.util.concurrent.ExecutorService \l0x000e: INVOKE  \l  (r0 I:java.util.concurrent.ExecutorService)\l  (r3 I:java.lang.Runnable A[D('postLoadAction' java.lang.Runnable)])\l java.util.concurrent.ExecutorService.execute(java.lang.Runnable):void type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|0x0011: IGET  (r0 I:java.util.concurrent.ExecutorService) = (r2 I:com.google.android.exoplayer2.upstream.Loader) com.google.android.exoplayer2.upstream.Loader.downloadExecutorService java.util.concurrent.ExecutorService \l0x0013: INVOKE  (r0 I:java.util.concurrent.ExecutorService) java.util.concurrent.ExecutorService.shutdown():void type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: RETURN   \l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.upstream.Loader.release((r2 'this' I:com.google.android.exoplayer2.upstream.Loader A[IMMUTABLE_TYPE, THIS]), (r3 I:java.lang.Runnable A[D('postLoadAction' java.lang.Runnable), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  ?\-0x0016: r3 'postLoadAction' java.lang.Runnable\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

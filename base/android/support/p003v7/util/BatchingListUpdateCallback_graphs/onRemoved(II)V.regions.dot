@@ -1,0 +1,46 @@
+digraph "CFG forandroid.support.v7.util.BatchingListUpdateCallback.onRemoved(II)V" {
+subgraph cluster_Region_177048053 {
+label = "R(1:(2:(2:8|9)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1615745486 {
+label = "R(2:(2:8|9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_613093194 {
+label = "IF [B:1:0x0003, B:3:0x0007, B:5:0x000d] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.mLastEventType != 2) goto L_0x0017\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r3.mLastEventPosition \< r4) goto L_0x0017\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|ADDED_TO_REGION\l|if (r3.mLastEventPosition \> (r4 + r5)) goto L_0x0017\l}"];
+subgraph cluster_Region_793177296 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|dispatchLastEvent()\lr3.mLastEventPosition = r4\lr3.mLastEventCount = r5\lr3.mLastEventType = 2\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1239550700 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|r3.mLastEventCount += r5\lr3.mLastEventPosition = r4\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+MethodNode[shape=record,label="{public void android.support.v7.util.BatchingListUpdateCallback.onRemoved((r3v0 'this' android.support.v7.util.BatchingListUpdateCallback A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_8 -> Node_9;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,78 @@
+digraph "CFG forcom.j256.ormlite.stmt.mapped.MappedQueryForFieldEq.execute(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/lang\/Object;Lcom\/j256\/ormlite\/dao\/ObjectCache;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1493976710 {
+label = "R(1:(2:(1:3)|(4:4|(1:6)(1:(1:9)(2:12|13))|10|11))) | DECL_VAR: T null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1155499939 {
+label = "R(2:(1:3)|(4:4|(1:6)(1:(1:9)(2:12|13))|10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1740248483 {
+label = "IF [B:0:0x0000, B:2:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r10 != null) goto L_0x0002\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 = r10.get(r7.clazz, r9)) != null) goto L_0x000a\l}"];
+subgraph cluster_Region_953340631 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_285147196 {
+label = "R(4:4|(1:6)(1:(1:9)(2:12|13))|10|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|java.lang.Object[] java.lang.Object[] r0 = \{convertIdToFieldObject(r9)\}\ljava.lang.Object T r8 = r8.queryForOne(r7.statement, r0, r7.argFieldTypes, r7, r10)\l}"];
+subgraph cluster_IfRegion_1295194755 {
+label = "IF [B:5:0x0021] THEN: R(1:6) ELSE: R(1:(1:9)(2:12|13))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|if (r8 == null) goto L_0x0023\l}"];
+subgraph cluster_Region_1875617997 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|logger.debug(\"\{\} using '\{\}' and \{\} args, got no results\", (java.lang.Object) r7.label, (java.lang.Object) r7.statement, (java.lang.Object) java.lang.Integer.valueOf(r0.length))\l}"];
+}
+subgraph cluster_Region_55675709 {
+label = "R(1:(1:9)(2:12|13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2131512872 {
+label = "IF [B:8:0x0036] THEN: R(1:9) ELSE: R(2:12|13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0036|if (r8 != com.j256.ormlite.support.DatabaseConnection.MORE_THAN_ONE) goto L_0x0038\l}"];
+subgraph cluster_Region_1104137107 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0038|logger.debug(\"\{\} using '\{\}' and \{\} args, got 1 result\", (java.lang.Object) r7.label, (java.lang.Object) r7.statement, (java.lang.Object) java.lang.Integer.valueOf(r0.length))\l}"];
+}
+subgraph cluster_Region_623182075 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004c|logger.error(\"\{\} using '\{\}' and \{\} args, got \>1 results\", (java.lang.Object) r7.label, (java.lang.Object) r7.statement, (java.lang.Object) java.lang.Integer.valueOf(r0.length))\llogArgs(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007c|throw new java.sql.SQLException(r7.label + \" got more than 1 result: \" + r7.statement)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0048|logArgs(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004b|RETURN\l|return r8\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0034}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.stmt.mapped.MappedQueryForFieldEq.execute((r7v0 'this' com.j256.ormlite.stmt.mapped.MappedQueryForFieldEq A[IMMUTABLE_TYPE, THIS]), (r8v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 ID A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, TID;, Lcom\/j256\/ormlite\/dao\/ObjectCache;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_7 -> Node_8;
+}
+

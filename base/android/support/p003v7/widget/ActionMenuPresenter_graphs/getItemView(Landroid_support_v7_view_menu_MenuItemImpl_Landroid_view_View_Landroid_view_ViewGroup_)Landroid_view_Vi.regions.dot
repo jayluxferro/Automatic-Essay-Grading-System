@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.v7.widget.ActionMenuPresenter.getItemView(Landroid\/support\/v7\/view\/menu\/MenuItemImpl;Landroid\/view\/View;Landroid\/view\/ViewGroup;)Landroid\/view\/View;" {
+subgraph cluster_Region_787471260 {
+label = "R(5:0|(1:4)|9|(1:11)|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.View android.view.View r0 = r3.getActionView()\l}"];
+subgraph cluster_IfRegion_146001577 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (r0 == null) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r3.hasCollapsibleActionView() == true) goto L_0x000c\l}"];
+subgraph cluster_Region_611114043 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.view.View r0 = super.getItemView(r3, r4, r5)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001a|PHI: r3 \l  PHI: (r3v2 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0.setVisibility(r3.isActionViewExpanded() ? 8 : 0)\landroid.support.v7.widget.ActionMenuView android.support.p003v7.widget.ActionMenuView r5 = (android.support.p003v7.widget.ActionMenuView) r5\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r3 = r0.getLayoutParams()\l}"];
+subgraph cluster_IfRegion_482788952 {
+label = "IF [B:10:0x0027] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|if (r5.checkLayoutParams(r3) == false) goto L_0x0029\l}"];
+subgraph cluster_Region_1277548411 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0029|r0.setLayoutParams(r5.generateLayoutParams(r3))\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0030|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010|PHI: r0 \l  PHI: (r0v1 android.view.View) = (r0v2 android.view.View), (r0v0 android.view.View) binds: [B:4:0x000c, B:3:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0019}"];
+MethodNode[shape=record,label="{public android.view.View android.support.v7.widget.ActionMenuPresenter.getItemView((r2v0 'this' android.support.v7.widget.ActionMenuPresenter A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.view.ViewGroup A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+}
+

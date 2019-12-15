@@ -1,0 +1,32 @@
+digraph "CFG forandroid.support.v7.widget.Toolbar.onSaveInstanceState()Landroid\/os\/Parcelable;" {
+subgraph cluster_Region_347920164 {
+label = "R(4:0|(1:4)|5|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.widget.Toolbar$SavedState android.support.p003v7.widget.Toolbar.SavedState r0 = new android.support.p003v7.widget.Toolbar.SavedState(super.onSaveInstanceState())\l}"];
+subgraph cluster_IfRegion_1439195888 {
+label = "IF [B:1:0x000b, B:3:0x0011] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|ADDED_TO_REGION\l|if (r2.mExpandedMenuPresenter == null) goto L_0x001d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|ADDED_TO_REGION\l|if (r2.mExpandedMenuPresenter.mCurrentExpandedItem == null) goto L_0x001d\l}"];
+subgraph cluster_Region_1533917652 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|r0.expandedMenuItemId = r2.mExpandedMenuPresenter.mCurrentExpandedItem.getItemId()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001d|r0.isOverflowOpen = isOverflowMenuShowing()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+MethodNode[shape=record,label="{protected android.os.Parcelable android.support.v7.widget.Toolbar.onSaveInstanceState((r2v0 'this' android.support.v7.widget.Toolbar A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_2 -> Node_3;
+}
+

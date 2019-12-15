@@ -1,0 +1,116 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.H264Reader.endNalUnit(JIIJ)V" {
+subgraph cluster_Region_249425734 {
+label = "R(3:(2:4|(1:(1:10))(1:(1:18)(1:(1:21))))|(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_448565326 {
+label = "IF [B:1:0x0004, B:3:0x000e] THEN: R(2:4|(1:(1:10))(1:(1:18)(1:(1:21)))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (r19.hasOutputFormat == false) goto L_0x0010\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if (r19.sampleReader.needsSpsPps() == true) goto L_0x0010\l}"];
+subgraph cluster_Region_142386904 {
+label = "R(2:4|(1:(1:10))(1:(1:18)(1:(1:21))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r19.sps.endNalUnit(r23)\lr19.pps.endNalUnit(r23)\l}"];
+subgraph cluster_IfRegion_858175628 {
+label = "IF [B:5:0x0026] THEN: R(1:(1:10)) ELSE: R(1:(1:18)(1:(1:21)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|if (r19.hasOutputFormat == false) goto L_0x0028\l}"];
+subgraph cluster_Region_1390462577 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_748688003 {
+label = "IF [B:7:0x0030, B:9:0x003a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|ADDED_TO_REGION\l|if (r19.sps.isCompleted() == true) goto L_0x0032\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|ADDED_TO_REGION\l|if (r19.pps.isCompleted() == true) goto L_0x003c\l}"];
+subgraph cluster_Region_813280275 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|java.util.ArrayList java.util.List\<byte[]\> r11 = new java.util.ArrayList\<\>()\lr11.add(java.util.Arrays.copyOf(r19.sps.nalData, r19.sps.nalLength))\lr11.add(java.util.Arrays.copyOf(r19.pps.nalData, r19.pps.nalLength))\lcom.google.android.exoplayer2.util.NalUnitUtil$SpsData com.google.android.exoplayer2.util.NalUnitUtil.SpsData r16 = com.google.android.exoplayer2.util.NalUnitUtil.parseSpsNalUnit(r19.sps.nalData, 3, r19.sps.nalLength)\lcom.google.android.exoplayer2.util.NalUnitUtil$PpsData com.google.android.exoplayer2.util.NalUnitUtil.PpsData r15 = com.google.android.exoplayer2.util.NalUnitUtil.parsePpsNalUnit(r19.pps.nalData, 3, r19.pps.nalLength)\lr19.output.format(com.google.android.exoplayer2.Format.createVideoSampleFormat(r19.formatId, com.google.android.exoplayer2.util.MimeTypes.VIDEO_H264, (java.lang.String) null, \-1, \-1, r16.width, r16.height, \-1.0f, r11, \-1, r16.pixelWidthAspectRatio, (com.google.android.exoplayer2.drm.DrmInitData) null))\lr19.hasOutputFormat = true\lr19.sampleReader.putSps(r16)\lr19.sampleReader.putPps(r15)\lr19.sps.reset()\lr19.pps.reset()\l}"];
+}
+}
+}
+subgraph cluster_Region_1090993065 {
+label = "R(1:(1:18)(1:(1:21))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1206065629 {
+label = "IF [B:17:0x0128] THEN: R(1:18) ELSE: R(1:(1:21)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0128|if (r19.sps.isCompleted() == true) goto L_0x012a\l}"];
+subgraph cluster_Region_325360670 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x012a|r19.sampleReader.putSps(com.google.android.exoplayer2.util.NalUnitUtil.parseSpsNalUnit(r19.sps.nalData, 3, r19.sps.nalLength))\lr19.sps.reset()\l}"];
+}
+subgraph cluster_Region_1065136379 {
+label = "R(1:(1:21)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1197346510 {
+label = "IF [B:20:0x0154] THEN: R(1:21) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0154|if (r19.pps.isCompleted() == true) goto L_0x0156\l}"];
+subgraph cluster_Region_413981193 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0156|r19.sampleReader.putPps(com.google.android.exoplayer2.util.NalUnitUtil.parsePpsNalUnit(r19.pps.nalData, 3, r19.pps.nalLength))\lr19.pps.reset()\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_798957934 {
+label = "IF [B:12:0x00de] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x00de|if (r19.sei.endNalUnit(r23) == true) goto L_0x00e0\l}"];
+subgraph cluster_Region_1967044366 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00e0|r19.seiWrapper.reset(r19.sei.nalData, com.google.android.exoplayer2.util.NalUnitUtil.unescapeStream(r19.sei.nalData, r19.sei.nalLength))\lr19.seiWrapper.setPosition(4)\lr19.seiReader.consume(r24, r19.seiWrapper)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0114|r19.sampleReader.endNalUnit(r20, r22)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0028}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0032}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x00d4}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x011f}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0120}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x014c}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.ts.H264Reader.endNalUnit((r19v0 'this' com.google.android.exoplayer2.extractor.ts.H264Reader A[IMMUTABLE_TYPE, THIS]), (r20v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'discardPadding' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'pesTimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_16[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_11;
+Node_20 -> Node_11[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+}
+

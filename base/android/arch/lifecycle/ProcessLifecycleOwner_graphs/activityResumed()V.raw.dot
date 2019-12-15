@@ -1,0 +1,20 @@
+digraph "CFG forandroid.arch.lifecycle.ProcessLifecycleOwner.activityResumed()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:int) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mResumedCounter int \l0x0002: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0003: ARITH  (r0 I:int) = (r0 I:int) + (r1 I:int) \l0x0004: IPUT  \l  (r0 I:int)\l  (r2 I:android.arch.lifecycle.ProcessLifecycleOwner)\l android.arch.lifecycle.ProcessLifecycleOwner.mResumedCounter int \l0x0006: IGET  (r0 I:int) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mResumedCounter int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0020 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: IGET  (r0 I:boolean) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mPauseSent boolean \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0019 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|0x000e: IGET  (r0 I:android.arch.lifecycle.LifecycleRegistry) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mRegistry android.arch.lifecycle.LifecycleRegistry \l0x0010: SGET  (r1 I:android.arch.lifecycle.Lifecycle$Event) =  android.arch.lifecycle.Lifecycle.Event.ON_RESUME android.arch.lifecycle.Lifecycle$Event \l0x0012: INVOKE  \l  (r0 I:android.arch.lifecycle.LifecycleRegistry)\l  (r1 I:android.arch.lifecycle.Lifecycle$Event)\l android.arch.lifecycle.LifecycleRegistry.handleLifecycleEvent(android.arch.lifecycle.Lifecycle$Event):void type: VIRTUAL \l0x0015: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0016: IPUT  \l  (r0 I:boolean)\l  (r2 I:android.arch.lifecycle.ProcessLifecycleOwner)\l android.arch.lifecycle.ProcessLifecycleOwner.mPauseSent boolean \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|0x0019: IGET  (r0 I:android.os.Handler) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mHandler android.os.Handler \l0x001b: IGET  (r1 I:java.lang.Runnable) = (r2 I:android.arch.lifecycle.ProcessLifecycleOwner) android.arch.lifecycle.ProcessLifecycleOwner.mDelayedPauseRunnable java.lang.Runnable \l0x001d: INVOKE  (r0 I:android.os.Handler), (r1 I:java.lang.Runnable) android.os.Handler.removeCallbacks(java.lang.Runnable):void type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|0x0020: RETURN   \l}"];
+MethodNode[shape=record,label="{void android.arch.lifecycle.ProcessLifecycleOwner.activityResumed((r2 'this' I:android.arch.lifecycle.ProcessLifecycleOwner A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

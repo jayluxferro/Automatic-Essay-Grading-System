@@ -1,0 +1,182 @@
+digraph "CFG forokio.Buffer.UnsafeCursor.seek(J)I" {
+subgraph cluster_Region_28356768 {
+label = "R(2:0|(2:34|35)(1:(2:32|33)(6:7|(2:9|(1:11)(1:12))|(1:(1:17))(2:18|(1:21))|(3:26|(1:28)|29)|30|31))) | DECL_VAR: okio.Segment null, long null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (r11 \> \-1 ? 1 : (r11 == \-1 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_1610227055 {
+label = "IF [B:1:0x0004, B:3:0x000c] THEN: R(2:34|35) ELSE: R(1:(2:32|33)(6:7|(2:9|(1:11)(1:12))|(1:(1:17))(2:18|(1:21))|(3:26|(1:28)|29)|30|31))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \< 0) goto L_0x00b5\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (r11 \> r10.buffer.size) goto L_0x00b5\l}"];
+subgraph cluster_Region_1184675155 {
+label = "R(2:34|35)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x00b5}"];
+Node_35 [shape=record,label="{35\:\ 0x00d5|throw new java.lang.ArrayIndexOutOfBoundsException(java.lang.String.format(\"offset=%s \> size=%s\", new java.lang.Object[]\{java.lang.Long.valueOf(r11), java.lang.Long.valueOf(r10.buffer.size)\}))\l}"];
+}
+subgraph cluster_Region_1382646624 {
+label = "R(1:(2:32|33)(6:7|(2:9|(1:11)(1:12))|(1:(1:17))(2:18|(1:21))|(3:26|(1:28)|29)|30|31)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_968441410 {
+label = "IF [B:4:0x000e, B:6:0x0016] THEN: R(2:32|33) ELSE: R(6:7|(2:9|(1:11)(1:12))|(1:(1:17))(2:18|(1:21))|(3:26|(1:28)|29)|30|31) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r0 == 0) goto L_0x00a8\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|ADDED_TO_REGION\l|if (r11 == r10.buffer.size) goto L_0x00a8\l}"];
+subgraph cluster_Region_117631158 {
+label = "R(2:32|33)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00a8|r10.segment = null\lr10.offset = r11\lr10.data = null\lr10.start = \-1\lr10.end = \-1\l}"];
+Node_33 [shape=record,label="{33\:\ 0x00b4|RETURN\l|return \-1\l}"];
+}
+subgraph cluster_Region_117098139 {
+label = "R(6:7|(2:9|(1:11)(1:12))|(1:(1:17))(2:18|(1:21))|(3:26|(1:28)|29)|30|31)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|long r0 = 0\llong long r2 = r10.buffer.size\lokio.Segment okio.Segment r4 = r10.buffer.head\lokio.Segment okio.Segment r5 = r10.buffer.head\l}"];
+subgraph cluster_IfRegion_1981007914 {
+label = "IF [B:8:0x002a] THEN: R(2:9|(1:11)(1:12)) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|if (r10.segment != null) goto L_0x002c\l}"];
+subgraph cluster_Region_1038844092 {
+label = "R(2:9|(1:11)(1:12))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002c|long long r6 = r10.offset \- ((long) (r10.start \- r10.segment.pos))\l}"];
+subgraph cluster_IfRegion_1133532248 {
+label = "IF [B:10:0x0039] THEN: R(1:11) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0039|if (r6 \> r11) goto L_0x003b\l}"];
+subgraph cluster_Region_762354937 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003b|okio.Segment r5 = r10.segment\lr2 = r6\l}"];
+}
+subgraph cluster_Region_223684375 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003f|okio.Segment r4 = r10.segment\lr0 = r6\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_2104382417 {
+label = "IF [B:14:0x0049] THEN: R(1:(1:17)) ELSE: R(2:18|(1:21))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0049|if ((r2 \- r11) \> (r11 \- r0)) goto L_0x004b\l}"];
+subgraph cluster_Region_1426513302 {
+label = "R(1:(1:17))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1265348010 {
+label = "LOOP:0: (1:17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0054|if (r11 \>= (((long) (r4.limit \- r4.pos)) + r0)) goto L_0x0056\l}"];
+subgraph cluster_Region_38486868 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0056|LOOP_END\lLOOP:0: B:15:0x004b\-\>B:17:0x0056\l|long r0 = r0 + ((long) (r4.limit \- r4.pos))\lokio.Segment r4 = r4.next\l}"];
+}
+}
+}
+subgraph cluster_Region_1979263968 {
+label = "R(2:18|(1:21))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0060|r0 = r2\lr4 = r5\l}"];
+subgraph cluster_LoopRegion_2012298911 {
+label = "LOOP:1: (1:21)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0064|if (r0 \> r11) goto L_0x0066\l}"];
+subgraph cluster_Region_1590687467 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0066|LOOP_END\lLOOP:1: B:19:0x0062\-\>B:21:0x0066\l|okio.Segment r4 = r4.prev\lr0 \-= (long) (r4.limit \- r4.pos)\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1273636565 {
+label = "IF [B:23:0x0072, B:25:0x0076] THEN: R(3:26|(1:28)|29) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0072|ADDED_TO_REGION\l|if (r10.readWrite == true) goto L_0x0074\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0076|ADDED_TO_REGION\l|if (r4.shared == true) goto L_0x0078\l}"];
+subgraph cluster_Region_1370539991 {
+label = "R(3:26|(1:28)|29)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0078|okio.Segment okio.Segment r2 = r4.unsharedCopy()\l}"];
+subgraph cluster_IfRegion_1539121222 {
+label = "IF [B:27:0x0080] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0080|if (r10.buffer.head == r4) goto L_0x0082\l}"];
+subgraph cluster_Region_481445231 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0082|r10.buffer.head = r2\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0086|okio.Segment r4 = r4.push(r2)\lr4.prev.pop()\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x008f|PHI: r4 \l  PHI: (r4v4 okio.Segment) = (r4v3 okio.Segment), (r4v3 okio.Segment), (r4v5 okio.Segment) binds: [B:23:0x0072, B:25:0x0076, B:29:0x0086] A[DONT_GENERATE, DONT_INLINE]\l|r10.segment = r4\lr10.offset = r11\lr10.data = r4.data\lr10.start = r4.pos + ((int) (r11 \- r0))\lr10.end = r4.limit\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00a7|RETURN\l|return r10.end \- r10.start\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0042|PHI: r0 r2 r4 r5 \l  PHI: (r0v8 long) = (r0v7 long), (r0v15 long), (r0v7 long) binds: [B:8:0x002a, B:12:0x003f, B:11:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 long) = (r2v3 long), (r2v3 long), (r2v24 long) binds: [B:8:0x002a, B:12:0x003f, B:11:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v2 okio.Segment) = (r4v1 okio.Segment), (r4v11 okio.Segment), (r4v1 okio.Segment) binds: [B:8:0x002a, B:12:0x003f, B:11:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 okio.Segment) = (r5v1 okio.Segment), (r5v1 okio.Segment), (r5v3 okio.Segment) binds: [B:8:0x002a, B:12:0x003f, B:11:0x003b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004b|LOOP_START\lPHI: r0 r4 \l  PHI: (r0v13 long) = (r0v8 long), (r0v14 long) binds: [B:14:0x0049, B:17:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v9 okio.Segment) = (r4v2 okio.Segment), (r4v10 okio.Segment) binds: [B:14:0x0049, B:17:0x0056] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:15:0x004b\-\>B:17:0x0056\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0062|LOOP_START\lPHI: r0 r4 \l  PHI: (r0v11 long) = (r0v10 long), (r0v12 long) binds: [B:18:0x0060, B:21:0x0066] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v7 okio.Segment) = (r4v6 okio.Segment), (r4v8 okio.Segment) binds: [B:18:0x0060, B:21:0x0066] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:19:0x0062\-\>B:21:0x0066\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0070|PHI: r0 r4 \l  PHI: (r0v9 long) = (r0v11 long), (r0v13 long) binds: [B:37:0x0070, B:36:0x0070] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v3 okio.Segment) = (r4v7 okio.Segment), (r4v9 okio.Segment) binds: [B:37:0x0070, B:36:0x0070] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0074}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0070|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0070|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.UnsafeCursor.seek((r10v0 'this' okio.Buffer$UnsafeCursor A[IMMUTABLE_TYPE, THIS]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_34;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_34;
+Node_34 -> Node_35;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_32;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_32;
+Node_32 -> Node_33;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_36[style=dashed];
+Node_17 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_20 -> Node_37[style=dashed];
+Node_21 -> Node_19;
+Node_23 -> Node_24;
+Node_23 -> Node_30[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_30[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_36 -> Node_22;
+Node_37 -> Node_22;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forcom.j256.ormlite.table.TableUtils.addDropTableStatements(Lcom\/j256\/ormlite\/db\/DatabaseType;Lcom\/j256\/ormlite\/table\/TableInfo;Ljava\/util\/List;)V" {
+subgraph cluster_Region_958347614 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()\lint int r3 = r7.getFieldTypes().length\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1066921952 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|LOOP_START\lPHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:2:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0010\-\>B:2:0x0012\l|if (r4 \< r3) goto L_0x0012\l}"];
+subgraph cluster_Region_564641753 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|LOOP_END\lLOOP:0: B:1:0x0010\-\>B:2:0x0012\l|r6.dropColumnArg(r5, r0, r1)\lr4++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001a|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(64)\lr2.append(\"DROP TABLE \")\lr6.appendEscapedEntityName(r2, r7.getTableName())\lr2.append(' ')\lr8.addAll(r0)\lr8.add(r2.toString())\lr8.addAll(r1)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x003f}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.j256.ormlite.table.TableUtils.addDropTableStatements((r6v0 com.j256.ormlite.db.DatabaseType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 com.j256.ormlite.table.TableInfo\<T, ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.util.List\<java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, ID:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/db\/DatabaseType;, Lcom\/j256\/ormlite\/table\/TableInfo\<, TT;TID;\>;, Ljava\/util\/List\<, Ljava\/lang\/String;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

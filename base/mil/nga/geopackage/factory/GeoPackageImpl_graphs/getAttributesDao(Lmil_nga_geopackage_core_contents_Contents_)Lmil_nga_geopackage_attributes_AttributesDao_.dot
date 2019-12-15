@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageImpl.getAttributesDao(Lmil\/nga\/geopackage\/core\/contents\/Contents;)Lmil\/nga\/geopackage\/attributes\/AttributesDao;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x0072\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r5.getDataType() != mil.nga.geopackage.core.contents.ContentsDataType.ATTRIBUTES) goto L_0x0044\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|mil.nga.geopackage.attributes.AttributesTable r0 = (mil.nga.geopackage.attributes.AttributesTable) new mil.nga.geopackage.attributes.AttributesTableReader(r5.getTableName()).readTable(new mil.nga.geopackage.attributes.AttributesWrapperConnection(r4.database))\lr0.setContents(r5)\lmil.nga.geopackage.attributes.AttributesConnection r5 = new mil.nga.geopackage.attributes.AttributesConnection(r4.database)\lmil.nga.geopackage.attributes.AttributesDao r1 = new mil.nga.geopackage.attributes.AttributesDao(getName(), r4.database, r5, r0)\lr4.cursorFactory.registerTable(r0.getTableName(), new mil.nga.geopackage.factory.GeoPackageImpl.C13433(r4))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0043|RETURN\l|return r1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0044|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(mil.nga.geopackage.core.contents.Contents.class.getSimpleName())\lr1.append(\" is required to be of type \")\lr1.append(mil.nga.geopackage.core.contents.ContentsDataType.ATTRIBUTES)\lr1.append(\". Actual: \")\lr1.append(r5.getDataTypeString())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0071|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0072|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Non null \")\lr0.append(mil.nga.geopackage.core.contents.Contents.class.getSimpleName())\lr0.append(\" is required to create \")\lr0.append(mil.nga.geopackage.attributes.AttributesDao.class.getSimpleName())\l}"];
+Node_8 [shape=record,label="{8\:\ 0x009c|throw new mil.nga.geopackage.GeoPackageException(r0.toString())\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.attributes.AttributesDao mil.nga.geopackage.factory.GeoPackageImpl.getAttributesDao((r4v0 'this' mil.nga.geopackage.factory.GeoPackageImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 mil.nga.geopackage.core.contents.Contents A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_7;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

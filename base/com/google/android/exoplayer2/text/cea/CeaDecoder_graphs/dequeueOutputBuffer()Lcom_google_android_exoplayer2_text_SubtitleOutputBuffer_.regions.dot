@@ -1,0 +1,126 @@
+digraph "CFG forcom.google.android.exoplayer2.text.cea.CeaDecoder.dequeueOutputBuffer()Lcom\/google\/android\/exoplayer2\/text\/SubtitleOutputBuffer;" {
+subgraph cluster_Region_758603087 {
+label = "R(1:(2:(1:21)|(2:(2:7|(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2)))|24)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_870647406 {
+label = "R(2:(1:21)|(2:(2:7|(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2)))|24))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1534386330 {
+label = "IF [B:1:0x0007] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r10.availableOutputBuffers.isEmpty() == true) goto L_?\l}"];
+subgraph cluster_Region_4720141 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_394456686 {
+label = "R(2:(2:7|(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2)))|24)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_214916230 {
+label = "LOOP:0: (2:7|(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r10.queuedInputBuffers.isEmpty() == false) goto L_0x0015\l}"];
+subgraph cluster_Region_2112351293 {
+label = "R(2:7|(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|com.google.android.exoplayer2.text.SubtitleInputBuffer com.google.android.exoplayer2.text.SubtitleInputBuffer r6 = r10.queuedInputBuffers.pollFirst()\l}"];
+subgraph cluster_Region_1891835317 {
+label = "R(2:(2:9|22)|(3:10|(2:12|(1:(2:14|23)))(0)|2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_725573131 {
+label = "IF [B:8:0x0031] THEN: R(2:9|22) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|if (r6.isEndOfStream() == true) goto L_0x0033\l}"];
+subgraph cluster_Region_1245796762 {
+label = "R(2:9|22)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|com.google.android.exoplayer2.text.SubtitleOutputBuffer com.google.android.exoplayer2.text.SubtitleOutputBuffer r0 = r10.availableOutputBuffers.pollFirst()\lr0.addFlag(4)\lreleaseInputBuffer(r6)\l}"];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2079166503 {
+label = "R(3:10|(2:12|(1:(2:14|23)))(0)|2)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0043|decode(r6)\l}"];
+subgraph cluster_IfRegion_813368782 {
+label = "IF [B:11:0x004a] THEN: R(2:12|(1:(2:14|23))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004a|if (isNewSubtitleDataAvailable() == true) goto L_0x004c\l}"];
+subgraph cluster_Region_687524430 {
+label = "R(2:12|(1:(2:14|23)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004c|com.google.android.exoplayer2.text.Subtitle com.google.android.exoplayer2.text.Subtitle r3 = createSubtitle()\l}"];
+subgraph cluster_Region_805993521 {
+label = "R(1:(2:14|23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_958991715 {
+label = "IF [B:13:0x0054] THEN: R(2:14|23) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0054|if (r6.isDecodeOnly() == false) goto L_0x0056\l}"];
+subgraph cluster_Region_1756877643 {
+label = "R(2:14|23)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0056|com.google.android.exoplayer2.text.SubtitleOutputBuffer com.google.android.exoplayer2.text.SubtitleOutputBuffer r0 = r10.availableOutputBuffers.pollFirst()\lr0.setContent(r6.timeUs, r3, Long.MAX_VALUE)\lreleaseInputBuffer(r6)\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1180122586 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x000a|LOOP_END\lLOOP:0: B:3:0x000d\-\>B:2:0x000a\l|releaseInputBuffer(r6)\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|LOOP_START\lLOOP:0: B:3:0x000d\-\>B:2:0x000a\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0023|ADDED_TO_REGION\l|if (r10.queuedInputBuffers.first().timeUs \<= r10.playbackPositionUs) goto L_0x0025\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0033|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0009|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0056|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x000a|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x000a|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.text.SubtitleOutputBuffer com.google.android.exoplayer2.text.cea.CeaDecoder.dequeueOutputBuffer((r10v0 'this' com.google.android.exoplayer2.text.cea.CeaDecoder A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.text.SubtitleDecoderException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_3[style=dashed];
+Node_1 -> Node_21;
+Node_4 -> Node_5;
+Node_4 -> Node_17[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10[style=dashed];
+Node_8 -> Node_15;
+Node_9 -> Node_22;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_19[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_18;
+Node_13 -> Node_20[style=dashed];
+Node_14 -> Node_23;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_16[style=dashed];
+Node_15 -> Node_9;
+Node_16 -> Node_24;
+Node_17 -> Node_25;
+Node_18 -> Node_14;
+Node_19 -> Node_2;
+Node_20 -> Node_2;
+}
+

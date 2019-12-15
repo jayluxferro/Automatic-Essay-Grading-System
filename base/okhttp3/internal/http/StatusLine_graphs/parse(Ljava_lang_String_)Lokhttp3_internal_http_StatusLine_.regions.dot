@@ -1,0 +1,205 @@
+digraph "CFG forokhttp3.internal.http.StatusLine.parse(Ljava\/lang\/String;)Lokhttp3\/internal\/http\/StatusLine;" {
+subgraph cluster_Region_153919083 {
+label = "R(4:0|(1:(2:(2:14|15)|(2:6|(1:8)(1:(1:11)(2:12|13)))))(1:(1:18)(2:37|38))|19|(1:(4:22|23|(1:(1:27)(2:28|29))|31))(2:35|36)) | DECL_VAR: okhttp3.Protocol null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r3 = 9\l}"];
+subgraph cluster_IfRegion_1999448654 {
+label = "IF [B:1:0x000b] THEN: R(1:(2:(2:14|15)|(2:6|(1:8)(1:(1:11)(2:12|13))))) ELSE: R(1:(1:18)(2:37|38))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r8.startsWith(\"HTTP\/1.\") == true) goto L_0x000d\l}"];
+subgraph cluster_Region_1544625908 {
+label = "R(1:(2:(2:14|15)|(2:6|(1:8)(1:(1:11)(2:12|13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1817156514 {
+label = "R(2:(2:14|15)|(2:6|(1:8)(1:(1:11)(2:12|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_92361346 {
+label = "IF [B:3:0x0011, B:5:0x0019] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|if (r8.length() \< 9) goto L_0x0044\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|ADDED_TO_REGION\l|if (r8.charAt(8) != ' ') goto L_0x0044\l}"];
+subgraph cluster_Region_467691302 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0044}"];
+Node_15 [shape=record,label="{15\:\ 0x005a|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+subgraph cluster_Region_1757464219 {
+label = "R(2:6|(1:8)(1:(1:11)(2:12|13)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|int int r0 = r8.charAt(7) \- '0'\l}"];
+subgraph cluster_IfRegion_1329583341 {
+label = "IF [B:7:0x0022] THEN: R(1:8) ELSE: R(1:(1:11)(2:12|13))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|if (r0 == 0) goto L_0x0024\l}"];
+subgraph cluster_Region_1540890730 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|okhttp3.Protocol r0 = okhttp3.Protocol.HTTP_1_0\l}"];
+}
+subgraph cluster_Region_1330785296 {
+label = "R(1:(1:11)(2:12|13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1286407114 {
+label = "IF [B:10:0x0028] THEN: R(1:11) ELSE: R(2:12|13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|if (r0 == 1) goto L_0x002a\l}"];
+subgraph cluster_Region_1266576838 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002a|okhttp3.Protocol r0 = okhttp3.Protocol.HTTP_1_1\l}"];
+}
+subgraph cluster_Region_1599089875 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002d}"];
+Node_13 [shape=record,label="{13\:\ 0x0043|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1355444473 {
+label = "R(1:(1:18)(2:37|38)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1217127569 {
+label = "IF [B:17:0x0061] THEN: R(1:18) ELSE: R(2:37|38) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0061|if (r8.startsWith(\"ICY \") == true) goto L_0x0063\l}"];
+subgraph cluster_Region_803727905 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0063|okhttp3.Protocol r0 = okhttp3.Protocol.HTTP_1_0\lr3 = 4\l}"];
+}
+subgraph cluster_Region_384267068 {
+label = "R(2:37|38)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x00d5}"];
+Node_38 [shape=record,label="{38\:\ 0x00eb|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0066|PHI: r0 r3 \l  PHI: (r0v2 okhttp3.Protocol) = (r0v9 okhttp3.Protocol), (r0v18 okhttp3.Protocol), (r0v19 okhttp3.Protocol) binds: [B:18:0x0063, B:11:0x002a, B:8:0x0024] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v3 int), (r3v0 int), (r3v0 int) binds: [B:18:0x0063, B:11:0x002a, B:8:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|int int r5 = r3 + 3\l}"];
+subgraph cluster_IfRegion_254091193 {
+label = "IF [B:20:0x006c] THEN: R(1:(4:22|23|(1:(1:27)(2:28|29))|31)) ELSE: R(2:35|36)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006c|if (r8.length() \>= r5) goto L_0x006e\l}"];
+subgraph cluster_Region_1209004935 {
+label = "R(1:(4:22|23|(1:(1:27)(2:28|29))|31))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1270947783 {
+label = "Try: R(4:22|23|(1:(1:27)(2:28|29))|31) catches: R(2:32|34)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1963206053 {
+label = "R(4:22|23|(1:(1:27)(2:28|29))|31)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ ?|Catch:\{ NumberFormatException \-\> 0x00a7 \}\lSplitter:B:21:0x006e\l|int int r4 = java.lang.Integer.parseInt(r8.substring(r3, r5))     \/\/ Catch:\{ NumberFormatException \-\> 0x00a7 \}\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0076|java.lang.String java.lang.String r6 = \"\"\l}"];
+subgraph cluster_IfRegion_1244210975 {
+label = "IF [B:24:0x007c] THEN: R(1:(1:27)(2:28|29)) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x007c|if (r8.length() \> r5) goto L_0x007e\l}"];
+subgraph cluster_Region_1551488322 {
+label = "R(1:(1:27)(2:28|29))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1912697793 {
+label = "IF [B:26:0x0082] THEN: R(1:27) ELSE: R(2:28|29)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0082|if (r8.charAt(r5) == ' ') goto L_0x0084\l}"];
+subgraph cluster_Region_650928306 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0084|java.lang.String r6 = r8.substring(r3 + 4)\l}"];
+}
+subgraph cluster_Region_1898591074 {
+label = "R(2:28|29)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x008a}"];
+Node_29 [shape=record,label="{29\:\ 0x00a0|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x00a6|RETURN\l|return new okhttp3.internal.http.StatusLine(r0, r4, r6)\l}"];
+}
+subgraph cluster_Region_1175348491 {
+label = "R(2:32|34) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00a7}"];
+Node_34 [shape=record,label="{34\:\ 0x00bd|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+}
+subgraph cluster_Region_91383082 {
+label = "R(2:35|36)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00be}"];
+Node_36 [shape=record,label="{36\:\ 0x00d4|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+}
+}
+subgraph cluster_Region_1175348491 {
+label = "R(2:32|34) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00a7}"];
+Node_34 [shape=record,label="{34\:\ 0x00bd|throw new java.net.ProtocolException(\"Unexpected status line: \" + r8)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x005b}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x006e|SYNTHETIC\lSplitter:B:21:0x006e\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x007e}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00a1|PHI: r6 \l  PHI: (r6v1 java.lang.String) = (r6v0 java.lang.String), (r6v2 java.lang.String) binds: [B:24:0x007c, B:27:0x0084] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\lSplitter:B:21:0x006e\l}"];
+MethodNode[shape=record,label="{public static okhttp3.internal.http.StatusLine okhttp3.internal.http.StatusLine.parse((r8v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_14 -> Node_15;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_19;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_19;
+Node_12 -> Node_13;
+Node_17 -> Node_18;
+Node_17 -> Node_37[style=dashed];
+Node_18 -> Node_19;
+Node_37 -> Node_38;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_35[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_30[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_30;
+Node_28 -> Node_29;
+Node_32 -> Node_34;
+Node_35 -> Node_36;
+Node_32 -> Node_34;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+Node_21 -> Node_33;
+Node_25 -> Node_26;
+Node_30 -> Node_31;
+Node_33 -> Node_32;
+}
+

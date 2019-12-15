@@ -1,0 +1,67 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.route.RouteFetcher.buildRequestFromLocation(Landroid\/location\/Location;Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/NavigationRoute$Builder;" {
+subgraph cluster_Region_1390522394 {
+label = "R(2:0|(2:(1:2)|(4:3|4|7|(2:(2:9|10)|(2:11|12)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.Context android.content.Context r0 = (android.content.Context) r6.contextWeakReference.get()\l}"];
+subgraph cluster_Region_704123747 {
+label = "R(2:(1:2)|(4:3|4|7|(2:(2:9|10)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1118531216 {
+label = "IF [B:1:0x0009] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r0 == null) goto L_0x000b\l}"];
+subgraph cluster_Region_200703620 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_983347260 {
+label = "R(4:3|4|7|(2:(2:9|10)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c}"];
+Node_4 [shape=record,label="{4\:\ 0x001c}"];
+Node_7 [shape=record,label="{7\:\ 0x0030|PHI: r7 \l  PHI: (r7v1 java.lang.Double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.mapbox.services.android.navigation.v5.navigation.NavigationRoute$Builder com.mapbox.services.android.navigation.p017v5.navigation.NavigationRoute.Builder r7 = com.mapbox.services.android.navigation.p017v5.navigation.NavigationRoute.builder(r0).origin(com.mapbox.geojson.Point.fromLngLat(r7.getLongitude(), r7.getLatitude()), r7.hasBearing() ? java.lang.Double.valueOf(java.lang.Float.valueOf(r7.getBearing()).doubleValue()) : null, java.lang.Double.valueOf(90.0d)).routeOptions(r8.directionsRoute().routeOptions())\ljava.util.List java.util.List\<com.mapbox.geojson.Point\> r0 = r6.routeUtils.calculateRemainingWaypoints(r8)\l}"];
+subgraph cluster_Region_1291736487 {
+label = "R(2:(2:9|10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1502155659 {
+label = "IF [B:8:0x0053] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0053|if (r0 == null) goto L_0x0055\l}"];
+subgraph cluster_Region_1409017778 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0055|timber.log.Timber.m192e(\"An error occurred fetching a new route\", new java.lang.Object[0])\l}"];
+Node_10 [shape=record,label="{10\:\ 0x005d|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_112656935 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005e|addDestination(r0, r7)\laddWaypoints(r0, r7)\laddWaypointNames(r8, r7)\laddApproaches(r8, r7)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|RETURN\l|return r7\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002f}"];
+MethodNode[shape=record,label="{private com.mapbox.services.android.navigation.v5.navigation.NavigationRoute$Builder com.mapbox.services.android.navigation.v5.route.RouteFetcher.buildRequestFromLocation((r6v0 'this' com.mapbox.services.android.navigation.v5.route.RouteFetcher A[IMMUTABLE_TYPE, THIS]), (r7v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+}
+

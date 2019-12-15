@@ -1,0 +1,62 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.InboxStyle.apply(Landroid\/support\/v4\/app\/NotificationBuilderWithBuilderAccessor;)V" {
+subgraph cluster_Region_956153230 {
+label = "R(1:(1:(4:2|(1:4)|5|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1761292031 {
+label = "R(1:(4:2|(1:4)|5|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1547619431 {
+label = "IF [B:1:0x0004] THEN: R(4:2|(1:4)|5|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0006\l}"];
+subgraph cluster_Region_1427330200 {
+label = "R(4:2|(1:4)|5|(1:8))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.app.Notification$InboxStyle android.app.Notification.InboxStyle r3 = new android.app.Notification.InboxStyle(r3.getBuilder()).setBigContentTitle(r2.mBigContentTitle)\l}"];
+subgraph cluster_IfRegion_2104867596 {
+label = "IF [B:3:0x0017] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|if (r2.mSummaryTextSet == true) goto L_0x0019\l}"];
+subgraph cluster_Region_1236175557 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|r3.setSummaryText(r2.mSummaryText)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001e|java.util.Iterator java.util.Iterator\<java.lang.CharSequence\> r0 = r2.mTexts.iterator()\l}"];
+subgraph cluster_LoopRegion_1695224260 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|if (r0.hasNext() != false) goto L_0x002a\l}"];
+subgraph cluster_Region_1931817528 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|LOOP_END\lLOOP:0: B:6:0x0024\-\>B:8:0x002a\l|r3.addLine(r0.next())\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0024|LOOP_START\lLOOP:0: B:6:0x0024\-\>B:8:0x002a\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0034|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.NotificationCompat.InboxStyle.apply((r2v0 'this' android.support.v4.app.NotificationCompat$InboxStyle A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v4.app.NotificationBuilderWithBuilderAccessor A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RestrictTo, \{value=[android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP android.support.annotation.RestrictTo$Scope]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_6;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_9 -> Node_11;
+}
+

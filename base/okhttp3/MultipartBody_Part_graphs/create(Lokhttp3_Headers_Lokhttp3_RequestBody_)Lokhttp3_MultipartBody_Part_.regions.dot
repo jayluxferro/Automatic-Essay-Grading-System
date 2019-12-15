@@ -1,0 +1,76 @@
+digraph "CFG forokhttp3.MultipartBody.Part.create(Lokhttp3\/Headers;Lokhttp3\/RequestBody;)Lokhttp3\/MultipartBody$Part;" {
+subgraph cluster_Region_194033881 {
+label = "R(1:(1:14)(1:(1:5)(1:(1:12)(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1823670138 {
+label = "IF [B:0:0x0000] THEN: R(1:14) ELSE: R(1:(1:5)(1:(1:12)(1:10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x002e\l}"];
+subgraph cluster_Region_2060252803 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0035|throw new java.lang.NullPointerException(\"body == null\")\l}"];
+}
+subgraph cluster_Region_1715540111 {
+label = "R(1:(1:5)(1:(1:12)(1:10))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1746479854 {
+label = "IF [B:1:0x0002, B:3:0x000a] THEN: R(1:5) ELSE: R(1:(1:12)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1 != null) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r1.get(p018io.fabric.sdk.android.services.network.HttpRequest.HEADER_CONTENT_TYPE) != null) goto L_0x000d\l}"];
+subgraph cluster_Region_329994680 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new java.lang.IllegalArgumentException(\"Unexpected header: Content\-Type\")\l}"];
+}
+subgraph cluster_Region_240043424 {
+label = "R(1:(1:12)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1617262990 {
+label = "IF [B:6:0x0015, B:8:0x001d] THEN: R(1:12) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (r1 == null) goto L_0x0028\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|ADDED_TO_REGION\l|if (r1.get(p018io.fabric.sdk.android.services.network.HttpRequest.HEADER_CONTENT_LENGTH) == null) goto L_0x0028\l}"];
+subgraph cluster_Region_1091199286 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002d|RETURN\l|return new okhttp3.MultipartBody.Part(r1, r2)\l}"];
+}
+subgraph cluster_Region_140893758 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|throw new java.lang.IllegalArgumentException(\"Unexpected header: Content\-Length\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002e}"];
+MethodNode[shape=record,label="{public static okhttp3.MultipartBody$Part okhttp3.MultipartBody.Part.create((r1v0 okhttp3.Headers A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 okhttp3.RequestBody A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_13;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_11;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

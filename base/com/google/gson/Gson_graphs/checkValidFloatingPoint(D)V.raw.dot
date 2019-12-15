@@ -1,0 +1,19 @@
+digraph "CFG forcom.google.gson.Gson.checkValidFloatingPoint(D)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:boolean) = (r2 I:double) java.lang.Double.isNaN(double):boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: INVOKE  (r0 I:boolean) = (r2 I:double) java.lang.Double.isInfinite(double):boolean type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000d \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: RETURN   \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|0x000d: NEW_INSTANCE  (r0 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x000f: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0011: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0014: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:double) java.lang.StringBuilder.append(double):java.lang.StringBuilder type: VIRTUAL \l0x0017: CONST_STR  (r2 I:java.lang.String) =  \" is not a valid double value as per JSON specification. To override this behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.\" \l0x0019: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001c: INVOKE  (r2 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0020: INVOKE  \l  (r0 I:java.lang.IllegalArgumentException)\l  (r2 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|0x0023: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{static void com.google.gson.Gson.checkValidFloatingPoint((r2 I:double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+}
+

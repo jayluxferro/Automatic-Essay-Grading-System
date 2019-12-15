@@ -1,0 +1,39 @@
+digraph "CFG forandroid.support.v4.widget.SlidingPaneLayout.closePane(Landroid\/view\/View;I)Z" {
+subgraph cluster_Region_802731124 {
+label = "R(1:(2:(1:4)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_537939220 {
+label = "R(2:(1:4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_328081975 {
+label = "IF [B:1:0x0003, B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r1.mFirstLayout != true) goto L_0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (smoothSlideTo(0.0f, r3) != true) goto L_0x000d\l}"];
+subgraph cluster_Region_1101135157 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_724605537 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r1.mPreservedOpenState = false\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+MethodNode[shape=record,label="{private boolean android.support.v4.widget.SlidingPaneLayout.closePane((r1v0 'this' android.support.v4.widget.SlidingPaneLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,13 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.maybeNotifyDroppedFrames()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r4 I:int) = \l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.droppedFrames int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r4 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:3:0x0018 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: INVOKE  (r2 I:long) =  android.os.SystemClock.elapsedRealtime():long type: STATIC \l0x0008: IGET  (r4 I:long) = \l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.droppedFrameAccumulationStartTimeMs long \l0x000a: ARITH  (r0 I:long) = (r2 I:long A[D('now' long)]) \- (r4 I:long) \l0x000c: IGET  (r4 I:com.google.android.exoplayer2.video.VideoRendererEventListener$EventDispatcher) = \l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.eventDispatcher com.google.android.exoplayer2.video.VideoRendererEventListener$EventDispatcher \l0x000e: IGET  (r5 I:int) = \l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.droppedFrames int \l0x0010: INVOKE  \l  (r4 I:com.google.android.exoplayer2.video.VideoRendererEventListener$EventDispatcher)\l  (r5 I:int)\l  (r0 I:long A[D('elapsedMs' long)])\l com.google.android.exoplayer2.video.VideoRendererEventListener.EventDispatcher.droppedFrames(int, long):void type: VIRTUAL \l0x0013: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0014: IPUT  \l  (r4 I:int)\l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.droppedFrames int \l0x0016: IPUT  \l  (r2 I:long A[D('now' long)])\l  (r6 I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer)\l com.google.android.exoplayer2.video.MediaCodecVideoRenderer.droppedFrameAccumulationStartTimeMs long \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.video.MediaCodecVideoRenderer.maybeNotifyDroppedFrames((r6 'this' I:com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS]))  | Debug Info:\l  0x000c\-0x0018: r0 'elapsedMs' long\l  0x0008\-0x0018: r2 'now' long\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+}
+

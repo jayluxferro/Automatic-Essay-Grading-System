@@ -1,0 +1,150 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp3.Mp3Extractor.readSample(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)I" {
+subgraph cluster_Region_1550138934 {
+label = "R(3:(2:2|(2:(1:4)|(2:5|(2:(2:9|23)|(3:10|(2:12|(1:14))|15)))))|16|(2:(1:18)|(2:19|(2:(1:21)|(2:22|24)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_733874301 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(2:(1:4)|(2:5|(2:(2:9|23)|(3:10|(2:12|(1:14))|15))))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r14.sampleBytesRemaining == 0) goto L_0x0004\l}"];
+subgraph cluster_Region_997668386 {
+label = "R(2:2|(2:(1:4)|(2:5|(2:(2:9|23)|(3:10|(2:12|(1:14))|15)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r15.resetPeekPosition()\l}"];
+subgraph cluster_Region_1159172318 {
+label = "R(2:(1:4)|(2:5|(2:(2:9|23)|(3:10|(2:12|(1:14))|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_417225224 {
+label = "IF [B:3:0x0012] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r15.peekFully(r14.scratch.data, 0, 4, true) == false) goto L_0x0014\l}"];
+subgraph cluster_Region_1131955342 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1528250746 {
+label = "R(2:5|(2:(2:9|23)|(3:10|(2:12|(1:14))|15)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r14.scratch.setPosition(0)\lint int r10 = r14.scratch.readInt()\l}"];
+subgraph cluster_Region_1102884069 {
+label = "R(2:(2:9|23)|(3:10|(2:12|(1:14))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_779501728 {
+label = "IF [B:6:0x0029, B:8:0x0030] THEN: R(2:9|23) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|if (headersMatch(r10, (long) r14.synchronizedHeaderData) == false) goto L_0x0032\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030|ADDED_TO_REGION\l|if (com.google.android.exoplayer2.extractor.MpegAudioHeader.getFrameSize(r10) == \-1) goto L_0x0032\l}"];
+subgraph cluster_Region_945050988 {
+label = "R(2:9|23)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|r15.skipFully(1)\lr14.synchronizedHeaderData = 0\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_2111374023 {
+label = "R(3:10|(2:12|(1:14))|15)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003b|com.google.android.exoplayer2.extractor.MpegAudioHeader.populateHeader(r10, r14.synchronizedHeader)\l}"];
+subgraph cluster_IfRegion_1387284084 {
+label = "IF [B:11:0x0049] THEN: R(2:12|(1:14)) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0049|if (r14.basisTimeUs == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x004b\l}"];
+subgraph cluster_Region_1399665816 {
+label = "R(2:12|(1:14))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004b|r14.basisTimeUs = r14.seeker.getTimeUs(r15.getPosition())\l}"];
+subgraph cluster_IfRegion_1997693332 {
+label = "IF [B:13:0x0060] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0060|if (r14.forcedFirstSampleTimestampUs != com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0062\l}"];
+subgraph cluster_Region_1836561711 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0062|r14.basisTimeUs += r14.forcedFirstSampleTimestampUs \- r14.seeker.getTimeUs(0)\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0072|r14.sampleBytesRemaining = r14.synchronizedHeader.frameSize\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0078|int int r0 = r14.trackOutput.sampleData(r15, r14.sampleBytesRemaining, true)\l}"];
+subgraph cluster_Region_1034214675 {
+label = "R(2:(1:18)|(2:19|(2:(1:21)|(2:22|24))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1444981650 {
+label = "IF [B:17:0x0082] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0082|if (r0 == \-1) goto L_0x0084\l}"];
+subgraph cluster_Region_123201483 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0084|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1339963023 {
+label = "R(2:19|(2:(1:21)|(2:22|24)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0086|r14.sampleBytesRemaining \-= r0\l}"];
+subgraph cluster_Region_1663907956 {
+label = "R(2:(1:21)|(2:22|24))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_857942003 {
+label = "IF [B:20:0x008d] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008d|if (r14.sampleBytesRemaining \> 0) goto L_0x008f\l}"];
+subgraph cluster_Region_678705345 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x008f|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_279313339 {
+label = "R(2:22|24)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0091|r14.trackOutput.sampleMetadata(r14.basisTimeUs + ((r14.samplesRead * com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND) \/ ((long) r14.synchronizedHeader.sampleRate)), 1, r14.synchronizedHeader.frameSize, 0, (byte[]) null)\lr14.samplesRead += (long) r14.synchronizedHeader.samplesPerFrame\lr14.sampleBytesRemaining = 0\l}"];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002b}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.extractor.mp3.Mp3Extractor.readSample((r14v0 'this' com.google.android.exoplayer2.extractor.mp3.Mp3Extractor A[IMMUTABLE_TYPE, THIS]), (r15v0 'extractorInput' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_23;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_22 -> Node_24;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+}
+

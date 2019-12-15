@@ -1,0 +1,74 @@
+digraph "CFG forar.com.hjg.pngj.pixels.FiltersPerformance.computeEntropyFromHistogram()D" {
+subgraph cluster_Region_255170855 {
+label = "R(4:0|(3:2|(1:4)(0)|5)|6|(2:(1:12)|(1:13)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r2 = 1.0d \/ ((double) r15.iminfo.bytesPerRow)\ldouble double r0 = java.lang.Math.log(r2)\lint int r5 = r15.histog.length\lint r8 = 0\ldouble r9 = 0.0d\l}"];
+subgraph cluster_LoopRegion_1114440605 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0013|LOOP_START\lPHI: r8 r9 \l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:0:0x0000, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v1 double) = (r9v0 double), (r9v2 double) binds: [B:0:0x0000, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0013\-\>B:5:0x0022\l|if (r8 \< r5) goto L_0x0015\l}"];
+subgraph cluster_Region_1141535320 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|r11 = r4[r8]\l}"];
+subgraph cluster_IfRegion_1144995657 {
+label = "IF [B:3:0x0017] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|if (r11 \> 0) goto L_0x0019\l}"];
+subgraph cluster_Region_940335160 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|double double r11 = (double) r11\lr9 += (java.lang.Math.log(r11) + r0) * r11\l}"];
+}
+subgraph cluster_Region_940291494 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0022|LOOP_END\lPHI: r9 \l  PHI: (r9v2 double) = (r9v1 double), (r9v3 double) binds: [B:11:0x0022, B:10:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0013\-\>B:5:0x0022\l|r8++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0025|double double r0 = r9 * r2 * LOG2NI\l}"];
+subgraph cluster_Region_1324214200 {
+label = "R(2:(1:12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1575089105 {
+label = "IF [B:7:0x002d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|if (r0 \< 0.0d) goto L_0x002f\l}"];
+subgraph cluster_Region_1689674771 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0.0d\l}"];
+}
+}
+subgraph cluster_Region_2126423531 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0025|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0022|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final double ar.com.hjg.pngj.pixels.FiltersPerformance.computeEntropyFromHistogram((r15v0 'this' ar.com.hjg.pngj.pixels.FiltersPerformance A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_6;
+Node_10 -> Node_5;
+Node_11 -> Node_5;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG formil.nga.geopackage.db.GeoPackageTableCreator.createTable(Ljava\/lang\/String;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"sql\" \l0x0002: CONST_STR  (r1 I:java.lang.String) =  \"directory\" \l0x0004: INVOKE  (r0 I:java.lang.String) = (r0 I:java.lang.String), (r1 I:java.lang.String) mil.nga.geopackage.property.GeoPackageProperties.getProperty(java.lang.String, java.lang.String):java.lang.String type: STATIC \l0x0008: INVOKE  (r4 I:java.util.List) = (r0 I:java.lang.String), (r4 I:java.lang.String) mil.nga.geopackage.io.ResourceIOUtils.parseSQLStatements(java.lang.String, java.lang.String):java.util.List type: STATIC \l0x000c: INVOKE  (r0 I:java.util.Iterator) = (r4 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|0x0010: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0014|0x0014: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0022 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|0x0016: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x001a: CHECK_CAST  (r1 I:java.lang.String) = (java.lang.String) (r1 I:?[OBJECT, ARRAY]) \l0x001c: IGET  (r2 I:mil.nga.geopackage.db.GeoPackageCoreConnection) = (r3 I:mil.nga.geopackage.db.GeoPackageTableCreator) mil.nga.geopackage.db.GeoPackageTableCreator.db mil.nga.geopackage.db.GeoPackageCoreConnection \l0x001e: INVOKE  \l  (r2 I:mil.nga.geopackage.db.GeoPackageCoreConnection)\l  (r1 I:java.lang.String)\l mil.nga.geopackage.db.GeoPackageCoreConnection.execSQL(java.lang.String):void type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0022|0x0022: INVOKE  (r4 I:int) = (r4 I:java.util.List) java.util.List.size():int type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0026|0x0026: RETURN  (r4 I:int) \l}"];
+MethodNode[shape=record,label="{private int mil.nga.geopackage.db.GeoPackageTableCreator.createTable((r3 'this' I:mil.nga.geopackage.db.GeoPackageTableCreator A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+}
+

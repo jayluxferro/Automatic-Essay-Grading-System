@@ -1,0 +1,39 @@
+digraph "CFG forandroid.support.media.ExifInterface.getThumbnail()[B" {
+subgraph cluster_Region_1493692993 {
+label = "R(1:(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1039614670 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_913895569 {
+label = "IF [B:1:0x0003, B:3:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.mThumbnailCompression == 6) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mThumbnailCompression == 7) goto L_0x000d\l}"];
+subgraph cluster_Region_583882102 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return getThumbnailBytes()\l}"];
+}
+}
+subgraph cluster_Region_1144925844 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+MethodNode[shape=record,label="{public byte[] android.support.media.ExifInterface.getThumbnail((r2v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

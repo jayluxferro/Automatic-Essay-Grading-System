@@ -1,0 +1,24 @@
+digraph "CFG forokio.Buffer.UnsafeCursor.next()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if ((r4.offset \> r4.buffer.size ? 1 : (r4.offset == r4.buffer.size ? 0 : \-1)) == 0) goto L_0x0027\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|if ((r4.offset \> \-1 ? 1 : (r4.offset == \-1 ? 0 : \-1)) != 0) goto L_0x0019\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|RETURN\l|return seek(0)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019}"];
+Node_7 [shape=record,label="{7\:\ 0x0026|RETURN\l|return seek(r4.offset + ((long) (r4.end \- r4.start)))\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|throw new java.lang.IllegalStateException()\l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.UnsafeCursor.next((r4v0 'this' okio.Buffer$UnsafeCursor A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.onNestedScrollAccepted(Landroid\/view\/View;Landroid\/view\/View;II)V" {
+subgraph cluster_Region_1697772760 {
+label = "R(2:0|(3:2|(1:6)|7)) | DECL_VAR: android.support.design.widget.CoordinatorLayout$Behavior null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r9.mNestedScrollingParentHelper.onNestedScrollAccepted(r10, r11, r12, r13)\lr9.mNestedScrollingTarget = r11\lint int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_843010064 {
+label = "LOOP:0: (3:2|(1:6)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:7:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000c\-\>B:7:0x002d\l|if (r1 \< r0) goto L_0x000e\l}"];
+subgraph cluster_Region_1868005993 {
+label = "R(3:2|(1:6)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|android.view.View android.view.View r4 = getChildAt(r1)\landroid.support.design.widget.CoordinatorLayout$LayoutParams android.support.design.widget.CoordinatorLayout.LayoutParams r2 = (android.support.design.widget.CoordinatorLayout.LayoutParams) r4.getLayoutParams()\l}"];
+subgraph cluster_IfRegion_76413047 {
+label = "IF [B:3:0x001c, B:5:0x0023] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|ADDED_TO_REGION\l|if (r2.isNestedScrollAccepted(r13) == true) goto L_0x001f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|ADDED_TO_REGION\l|if ((r2 = r2.getBehavior()) != null) goto L_0x0025\l}"];
+subgraph cluster_Region_1861244485 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|r2.onNestedScrollAccepted(r9, r4, r10, r11, r12, r13)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002d|LOOP_END\lLOOP:0: B:1:0x000c\-\>B:7:0x002d\l|r1++\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0030}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002d|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.CoordinatorLayout.onNestedScrollAccepted((r9v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r10v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_1;
+Node_4 -> Node_5;
+Node_9 -> Node_8;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+Node_12 -> Node_7;
+}
+

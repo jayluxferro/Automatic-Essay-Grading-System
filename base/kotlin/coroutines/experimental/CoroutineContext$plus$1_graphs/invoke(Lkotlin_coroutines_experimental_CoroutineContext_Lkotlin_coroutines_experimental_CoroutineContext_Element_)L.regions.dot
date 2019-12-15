@@ -1,0 +1,76 @@
+digraph "CFG forkotlin.coroutines.experimental.CoroutineContext$plus$1.invoke(Lkotlin\/coroutines\/experimental\/CoroutineContext;Lkotlin\/coroutines\/experimental\/CoroutineContext$Element;)Lkotlin\/coroutines\/experimental\/CoroutineContext;" {
+subgraph cluster_Region_1489897526 {
+label = "R(2:0|(2:(1:12)|(3:3|(1:5)(2:6|(1:8)(1:9))|11))) | DECL_VAR: kotlin.coroutines.experimental.CombinedContext null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"acc\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"element\")\lkotlin.coroutines.experimental.CoroutineContext kotlin.coroutines.experimental.CoroutineContext r4 = r4.minusKey(r5.getKey())\l}"];
+subgraph cluster_Region_1732462844 {
+label = "R(2:(1:12)|(3:3|(1:5)(2:6|(1:8)(1:9))|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1557535086 {
+label = "IF [B:1:0x0014] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|if (r4 == kotlin.coroutines.experimental.EmptyCoroutineContext.INSTANCE) goto L_0x0016\l}"];
+subgraph cluster_Region_1276271972 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_353043400 {
+label = "R(3:3|(1:5)(2:6|(1:8)(1:9))|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0019|kotlin.coroutines.experimental.ContinuationInterceptor kotlin.coroutines.experimental.ContinuationInterceptor r0 = (kotlin.coroutines.experimental.ContinuationInterceptor) r4.get(kotlin.coroutines.experimental.ContinuationInterceptor.Key)\l}"];
+subgraph cluster_IfRegion_1486364187 {
+label = "IF [B:4:0x0023] THEN: R(1:5) ELSE: R(2:6|(1:8)(1:9))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|if (r0 == null) goto L_0x0025\l}"];
+subgraph cluster_Region_483285126 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|r4 = new kotlin.coroutines.experimental.CombinedContext(r4, r5)\l}"];
+}
+subgraph cluster_Region_879328401 {
+label = "R(2:6|(1:8)(1:9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|kotlin.coroutines.experimental.CoroutineContext kotlin.coroutines.experimental.CoroutineContext r4 = r4.minusKey(kotlin.coroutines.experimental.ContinuationInterceptor.Key)\l}"];
+subgraph cluster_IfRegion_72762836 {
+label = "IF [B:7:0x0036] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|if (r4 == kotlin.coroutines.experimental.EmptyCoroutineContext.INSTANCE) goto L_0x0038\l}"];
+subgraph cluster_Region_364921731 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0038|kotlin.coroutines.experimental.CombinedContext r4 = new kotlin.coroutines.experimental.CombinedContext(r5, r0)\l}"];
+}
+subgraph cluster_Region_2065966037 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0042|r4 = new kotlin.coroutines.experimental.CombinedContext(new kotlin.coroutines.experimental.CombinedContext(r4, r5), r0)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r4\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0051|PHI: r4 \l  PHI: (r4v2 kotlin.coroutines.experimental.CombinedContext) = (r4v4 kotlin.coroutines.experimental.CombinedContext), (r4v5 kotlin.coroutines.experimental.CombinedContext), (r4v6 kotlin.coroutines.experimental.CombinedContext) binds: [B:9:0x0042, B:8:0x0038, B:5:0x0025] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public final kotlin.coroutines.experimental.CoroutineContext kotlin.coroutines.experimental.CoroutineContext$plus$1.invoke((r3v0 'this' kotlin.coroutines.experimental.CoroutineContext$plus$1 A[IMMUTABLE_TYPE, THIS]), (r4v0 kotlin.coroutines.experimental.CoroutineContext A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.coroutines.experimental.CoroutineContext$Element A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_2 -> Node_12;
+Node_10 -> Node_11;
+}
+

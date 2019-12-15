@@ -1,0 +1,16 @@
+digraph "CFG forkotlin.collections.RingBuffer.add(Ljava\/lang\/Object;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isFull() != false) goto L_0x0020\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|r3.buffer[(r3.startIndex + size()) % getCapacity()] = r4\lsetSize(size() + 1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001f|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|throw new java.lang.IllegalStateException(\"ring buffer is full\")\l}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.RingBuffer.add((r3v0 'this' kotlin.collections.RingBuffer A[IMMUTABLE_TYPE, THIS]), (r4v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.j256.ormlite.stmt.mapped.MappedCreate.assignSequenceId(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/lang\/Object;Lcom\/j256\/ormlite\/dao\/ObjectCache;)V" {
+subgraph cluster_Region_1574573128 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = r6.queryForLong(r5.queryNextSequenceStmt)\llogger.debug(\"queried for sequence \{\} using stmt: \{\}\", (java.lang.Object) java.lang.Long.valueOf(r0), (java.lang.Object) r5.queryNextSequenceStmt)\l}"];
+subgraph cluster_Region_1833897387 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_60042543 {
+label = "IF [B:1:0x0017] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0017|if (r0 != 0) goto L_0x0019\l}"];
+subgraph cluster_Region_28670708 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0019|assignIdValue(r7, java.lang.Long.valueOf(r0), \"sequence\", r8)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1208115665 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023}"];
+Node_5 [shape=record,label="{5\:\ 0x003b|throw new java.sql.SQLException(\"Should not have returned 0 for stmt: \" + r5.queryNextSequenceStmt)\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{private void com.j256.ormlite.stmt.mapped.MappedCreate.assignSequenceId((r5v0 'this' com.j256.ormlite.stmt.mapped.MappedCreate A[IMMUTABLE_TYPE, THIS]), (r6v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, TT;, Lcom\/j256\/ormlite\/dao\/ObjectCache;, )V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

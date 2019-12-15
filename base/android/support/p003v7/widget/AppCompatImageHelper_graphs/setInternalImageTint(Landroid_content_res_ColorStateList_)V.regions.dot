@@ -1,0 +1,46 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatImageHelper.setInternalImageTint(Landroid\/content\/res\/ColorStateList;)V" {
+subgraph cluster_Region_1967325951 {
+label = "R(2:(2:(1:3)|4)(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1049082389 {
+label = "IF [B:0:0x0000] THEN: R(2:(1:3)|4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_2040903650 {
+label = "R(2:(1:3)|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1509512638 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r1.mInternalImageTint == null) goto L_0x0006\l}"];
+subgraph cluster_Region_876671108 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r1.mInternalImageTint = new android.support.p003v7.widget.TintInfo()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000d|r1.mInternalImageTint.mTintList = r2\lr1.mInternalImageTint.mHasTintList = true\l}"];
+}
+subgraph cluster_Region_924099339 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|r1.mInternalImageTint = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001a|applySupportImageTint()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.AppCompatImageHelper.setInternalImageTint((r1v0 'this' android.support.v7.widget.AppCompatImageHelper A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.res.ColorStateList A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+}
+

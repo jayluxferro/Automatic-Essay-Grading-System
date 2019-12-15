@@ -1,0 +1,47 @@
+digraph "CFG forio.fabric.sdk.android.services.network.HttpRequest.4.run()Lio\/fabric\/sdk\/android\/services\/network\/HttpRequest;" {
+subgraph cluster_Region_1776240395 {
+label = "R(2:0|(2:1|(2:(1:5)|(1:3))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.nio.CharBuffer java.nio.CharBuffer r0 = java.nio.CharBuffer.allocate(p018io.fabric.sdk.android.services.network.HttpRequest.this.bufferSize)\l}"];
+subgraph cluster_LoopRegion_1826006095 {
+label = "LOOP:0: (2:1|(2:(1:5)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_401163821 {
+label = "R(2:1|(2:(1:5)|(1:3)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:3:0x0013\l|int int r1 = r4.read(r0)\l}"];
+subgraph cluster_Region_62239535 {
+label = "R(2:(1:5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1513518914 {
+label = "IF [B:2:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|if (r1 == \-1) goto L_0x0020\l}"];
+subgraph cluster_Region_420057258 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|RETURN\l|return p018io.fabric.sdk.android.services.network.HttpRequest.this\l}"];
+}
+}
+subgraph cluster_Region_1822443148 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:3:0x0013\l|r0.rewind()\lr5.append(r0, 0, r1)\lr0.rewind()\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0020}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public io.fabric.sdk.android.services.network.HttpRequest io.fabric.sdk.android.services.network.HttpRequest.4.run((r4v0 'this' io.fabric.sdk.android.services.network.HttpRequest$4 A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.constraint.solver.LinearSystem.getMemoryUsed()I" {
+subgraph cluster_Region_1405806657 {
+label = "R(3:0|(2:(1:5)(0)|6)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_581025331 {
+label = "LOOP:0: (2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r0 \< r3.mNumRows) goto L_0x0006\l}"];
+subgraph cluster_Region_1462999848 {
+label = "R(2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_58818660 {
+label = "IF [B:4:0x000a] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r3.mRows[r0] != null) goto L_0x000c\l}"];
+subgraph cluster_Region_126740661 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|r1 += r3.mRows[r0].sizeInBytes()\l}"];
+}
+subgraph cluster_Region_64481512 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|LOOP_END\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:10:0x0015, B:9:0x0015] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:6:0x0015\l|r0++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0018|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lPHI: r0 r1 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:6:0x0015] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:6:0x0015] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:6:0x0015\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0015|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int android.support.constraint.solver.LinearSystem.getMemoryUsed((r3v0 'this' android.support.constraint.solver.LinearSystem A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

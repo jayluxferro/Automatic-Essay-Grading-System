@@ -1,0 +1,31 @@
+digraph "CFG fororg.mapsforge.map.android.rotation.SmoothCanvas.drawBitmap(Landroid\/graphics\/Bitmap;Landroid\/graphics\/Matrix;Landroid\/graphics\/Paint;)V" {
+subgraph cluster_Region_451813158 {
+label = "R(2:(1:1)(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1907011536 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: R(1:2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_301071825 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|android.graphics.Paint r4 = r1.smooth\l}"];
+}
+subgraph cluster_Region_1746560093 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r4.setFilterBitmap(true)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|PHI: r4 \l  PHI: (r4v1 android.graphics.Paint) = (r4v0 android.graphics.Paint), (r4v2 android.graphics.Paint) binds: [B:2:0x0005, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|r1.delegate.drawBitmap(r2, r3, r4)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.android.rotation.SmoothCanvas.drawBitmap((r1v0 'this' org.mapsforge.map.android.rotation.SmoothCanvas A[IMMUTABLE_TYPE, THIS]), (r2v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.graphics.Matrix A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.graphics.Paint A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

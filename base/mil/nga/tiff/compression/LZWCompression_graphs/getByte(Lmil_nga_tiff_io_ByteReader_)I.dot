@@ -1,0 +1,33 @@
+digraph "CFG formil.nga.tiff.compression.LZWCompression.getByte(Lmil\/nga\/tiff\/io\/ByteReader;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r2 = (int) java.lang.Math.floor(((double) r14.position) \/ 8.0d)\lint r0 = 8 \- (r14.position % 8)\lint r3 = r14.position + r14.byteLength\lint r4 = r2 + 1\lint r3 = r3 \- (r4 * 8)\lint r5 = r2 + 2\lint r6 = r5 * 8\lint r7 = r6 \- (r14.position + r14.byteLength)\lint r6 = r6 \- r14.position\lint r7 = java.lang.Math.max(0, r7)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0033|if (r2 \< r15.byteLength()) goto L_0x0041\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0035|logger.log(java.util.logging.Level.WARNING, \"End of data reached without an end of input code\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0040|RETURN\l|return 257\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0041|int r0 = (r15.readUnsignedByte(r2) & ((int) (java.lang.Math.pow(2.0d, (double) r0) \- 1.0d))) \<\< (r14.byteLength \- r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x005a|if (r4 \>= r15.byteLength()) goto L_0x006a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005c|int r0 = r0 + ((r15.readUnsignedByte(r4) \>\>\> r7) \<\< java.lang.Math.max(0, r14.byteLength \- r6))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006a|PHI: r0 \l  PHI: (r0v4 int) = (r0v3 int), (r0v6 int) binds: [B:5:0x005a, B:6:0x005c] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 \<= 8) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x006c}"];
+Node_9 [shape=record,label="{9\:\ 0x0070|if (r5 \>= r15.byteLength()) goto L_?\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0072|short r15 = r15.readUnsignedByte(r5)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0 + (r15 \>\>\> (((r2 + 3) * 8) \- (r14.position + r14.byteLength)))\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+MethodNode[shape=record,label="{private int mil.nga.tiff.compression.LZWCompression.getByte((r14v0 'this' mil.nga.tiff.compression.LZWCompression A[IMMUTABLE_TYPE, THIS]), (r15v0 mil.nga.tiff.io.ByteReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.v4.app.Fragment.performStop()V" {
+subgraph cluster_Region_1373807840 {
+label = "R(5:(1:2)|3|(1:5)|6|(1:(2:9|10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1655115539 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.mView != null) goto L_0x0004\l}"];
+subgraph cluster_Region_616388714 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.mViewLifecycleRegistry.handleLifecycleEvent(android.arch.lifecycle.Lifecycle.Event.ON_STOP)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000b|r3.mLifecycleRegistry.handleLifecycleEvent(android.arch.lifecycle.Lifecycle.Event.ON_STOP)\l}"];
+subgraph cluster_IfRegion_1987815661 {
+label = "IF [B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r3.mChildFragmentManager != null) goto L_0x0016\l}"];
+subgraph cluster_Region_846911334 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r3.mChildFragmentManager.dispatchStop()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001b|r3.mState = 2\lr3.mCalled = false\lonStop()\l}"];
+subgraph cluster_Region_1761581485 {
+label = "R(1:(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_651158224 {
+label = "IF [B:7:0x0026] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|if (r3.mCalled != true) goto L_0x0029\l}"];
+subgraph cluster_Region_232266276 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0029}"];
+Node_10 [shape=record,label="{10\:\ 0x0044|throw new android.support.p000v4.app.SuperNotCalledException(\"Fragment \" + r3 + \" did not call through to super.onStop()\")\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0028}"];
+MethodNode[shape=record,label="{void android.support.v4.app.Fragment.performStop((r3v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+}
+

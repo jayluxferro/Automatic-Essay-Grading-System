@@ -1,0 +1,17 @@
+digraph "CFG forcom.facebook.ads.internal.j.c.a(Ljava\/io\/InputStream;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.io.StringWriter) =  java.io.StringWriter \l0x0002: INVOKE  (r0 I:java.io.StringWriter) java.io.StringWriter.\<init\>():void type: DIRECT \l0x0005: NEW_INSTANCE  (r1 I:java.io.InputStreamReader) =  java.io.InputStreamReader \l0x0007: INVOKE  \l  (r1 I:java.io.InputStreamReader)\l  (r5 I:java.io.InputStream)\l java.io.InputStreamReader.\<init\>(java.io.InputStream):void type: DIRECT \l0x000a: CONST  (r2 I:?[int, float, short, byte, char]) = \l  (4096(0x1000, float:5.74E\-42) ?[int, float, short, byte, char])\l \l0x000c: NEW_ARRAY  (r2 I:char[]) = (r2 I:int A[IMMUTABLE_TYPE]) type: char[] \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|0x000e: INVOKE  (r3 I:int) = (r1 I:java.io.InputStreamReader), (r2 I:char[]) java.io.InputStreamReader.read(char[]):int type: VIRTUAL \l0x0012: CONST  (r4 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0013|0x0013: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x001a \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|0x0015: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0016: INVOKE  \l  (r0 I:java.io.StringWriter)\l  (r2 I:char[])\l  (r4 I:int)\l  (r3 I:int)\l java.io.StringWriter.write(char[], int, int):void type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|0x001a: INVOKE  (r2 I:java.lang.String) = (r0 I:java.io.StringWriter) java.io.StringWriter.toString():java.lang.String type: VIRTUAL \l0x001e: INVOKE  (r0 I:java.io.StringWriter) java.io.StringWriter.close():void type: VIRTUAL \l0x0021: INVOKE  (r1 I:java.io.InputStreamReader) java.io.InputStreamReader.close():void type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|0x0024: RETURN  (r2 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{public static java.lang.String com.facebook.ads.internal.j.c.a((r5 I:java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+}
+

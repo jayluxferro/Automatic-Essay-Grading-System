@@ -1,0 +1,76 @@
+digraph "CFG forcom.squareup.picasso.BitmapHunter.detach(Lcom\/squareup\/picasso\/Action;)V" {
+subgraph cluster_Region_619863900 {
+label = "R(3:(1:2)(1:4)|(1:10)|(1:(1:13))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_504771791 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.action == r4) goto L_0x0004\l}"];
+subgraph cluster_Region_2002989228 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.action = null\lr0 = true\l}"];
+}
+subgraph cluster_Region_1996357796 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|boolean r0 = r3.actions != null ? r3.actions.remove(r4) : false\l}"];
+}
+}
+subgraph cluster_IfRegion_632696449 {
+label = "IF [B:7:0x0015, B:9:0x001d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|ADDED_TO_REGION\lPHI: r0 \l  PHI: (r0v1 boolean) = (r0v10 boolean), (r0v12 boolean) binds: [B:5:0x000d, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L_0x0017\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|ADDED_TO_REGION\l|if (r4.getPriority() == r3.priority) goto L_0x001f\l}"];
+subgraph cluster_Region_1275250512 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|r3.priority = computeNewPriority()\l}"];
+}
+}
+subgraph cluster_Region_2050779443 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1428392695 {
+label = "IF [B:12:0x0029] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0029|if (r3.picasso.loggingEnabled == true) goto L_0x002b\l}"];
+subgraph cluster_Region_1098212596 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002b|com.squareup.picasso.Utils.log(\"Hunter\", \"removed\", r4.request.logId(), com.squareup.picasso.Utils.getLogIdsForHunter(r3, \"from \"))\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.BitmapHunter.detach((r3v0 'this' com.squareup.picasso.BitmapHunter A[IMMUTABLE_TYPE, THIS]), (r4v0 com.squareup.picasso.Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+}
+

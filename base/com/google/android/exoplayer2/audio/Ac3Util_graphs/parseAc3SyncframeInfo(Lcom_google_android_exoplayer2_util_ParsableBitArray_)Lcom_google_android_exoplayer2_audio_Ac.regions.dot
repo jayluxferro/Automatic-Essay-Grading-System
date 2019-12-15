@@ -1,0 +1,122 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Ac3Util.parseAc3SyncframeInfo(Lcom\/google\/android\/exoplayer2\/util\/ParsableBitArray;)Lcom\/google\/android\/exoplayer2\/audio\/Ac3Util$Ac3SyncFrameInfo;" {
+subgraph cluster_Region_333574108 {
+label = "R(6:0|1|3|(3:5|(1:7)(1:15)|8)(5:16|(1:20)|(1:23)|(1:26)|27)|9|13) | DECL_VAR: java.lang.String mimeType, int frameSize, int acmod, int sampleRate, int sampleCount, int audioBlocks\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r11 = r15.getPosition()\lr15.skipBits(40)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|boolean r12 = r15.readBits(5) == 16\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|PHI: r12 \l  PHI: (r12v1 'isEac3' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r15.setPosition(r11)\l}"];
+subgraph cluster_IfRegion_682109435 {
+label = "IF [B:4:0x0016] THEN: R(3:5|(1:7)(1:15)|8) ELSE: R(5:16|(1:20)|(1:23)|(1:26)|27)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (r12 == true) goto L_0x0018\l}"];
+subgraph cluster_Region_595584096 {
+label = "R(3:5|(1:7)(1:15)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|java.lang.String r1 = com.google.android.exoplayer2.util.MimeTypes.AUDIO_E_AC3\lr15.skipBits(21)\lint r4 = (r15.readBits(11) + 1) * 2\lint int r10 = r15.readBits(2)\l}"];
+subgraph cluster_IfRegion_1812124431 {
+label = "IF [B:6:0x002f] THEN: R(1:7) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002f|if (r10 == 3) goto L_0x0031\l}"];
+subgraph cluster_Region_1458729273 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|r3 = SAMPLE_RATE_BY_FSCOD2[r15.readBits(2)]\lr8 = 6\l}"];
+}
+subgraph cluster_Region_1065115868 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0058|r8 = BLOCKS_PER_SYNCFRAME_BY_NUMBLKSCOD[r15.readBits(2)]\lr3 = SAMPLE_RATE_BY_FSCOD[r10]\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x003b|PHI: r3 r8 \l  PHI: (r3v3 'sampleRate' int) = (r3v2 'sampleRate' int), (r3v4 'sampleRate' int) binds: [B:15:0x0058, B:7:0x0031] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'audioBlocks' int) = (r8v0 'audioBlocks' int), (r8v2 'audioBlocks' int) binds: [B:15:0x0058, B:7:0x0031] A[DONT_GENERATE, DONT_INLINE]\l|int r5 = r8 * 256\lint r7 = r15.readBits(3)\l}"];
+}
+subgraph cluster_Region_1264464522 {
+label = "R(5:16|(1:20)|(1:23)|(1:26)|27)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0066|java.lang.String r1 = com.google.android.exoplayer2.util.MimeTypes.AUDIO_AC3\lr15.skipBits(32)\lint int r10 = r15.readBits(2)\lint r4 = getAc3SyncframeSize(r10, r15.readBits(6))\lr15.skipBits(8)\lint r7 = r15.readBits(3)\l}"];
+subgraph cluster_IfRegion_328910166 {
+label = "IF [B:17:0x0087, B:19:0x008a] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0087|ADDED_TO_REGION\l|if ((r7 & 1) == 0) goto L_0x0090\l}"];
+Node_19 [shape=record,label="{19\:\ 0x008a|ADDED_TO_REGION\l|if (r7 == 1) goto L_0x0090\l}"];
+subgraph cluster_Region_791802638 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008c|r15.skipBits(2)\l}"];
+}
+}
+subgraph cluster_IfRegion_1521853374 {
+label = "IF [B:22:0x0092] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0092|if ((r7 & 4) != 0) goto L_0x0094\l}"];
+subgraph cluster_Region_1001215949 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0094|r15.skipBits(2)\l}"];
+}
+}
+subgraph cluster_IfRegion_2128119195 {
+label = "IF [B:25:0x0099] THEN: R(1:26) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0099|if (r7 == 2) goto L_0x009b\l}"];
+subgraph cluster_Region_1590796493 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x009b|r15.skipBits(2)\l}"];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x009f|r3 = SAMPLE_RATE_BY_FSCOD[r10]\lr5 = AC3_SYNCFRAME_AUDIO_SAMPLE_COUNT\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0042|PHI: r1 r3 r4 r5 r7 \l  PHI: (r1v1 'mimeType' java.lang.String) = (r1v0 'mimeType' java.lang.String), (r1v2 'mimeType' java.lang.String) binds: [B:27:0x009f, B:8:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'sampleRate' int) = (r3v0 'sampleRate' int), (r3v3 'sampleRate' int) binds: [B:27:0x009f, B:8:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'frameSize' int) = (r4v0 'frameSize' int), (r4v2 'frameSize' int) binds: [B:27:0x009f, B:8:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'sampleCount' int) = (r5v0 'sampleCount' int), (r5v2 'sampleCount' int) binds: [B:27:0x009f, B:8:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 'acmod' int) = (r7v0 'acmod' int), (r7v2 'acmod' int) binds: [B:27:0x009f, B:8:0x003b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0055|RETURN\l|return new com.google.android.exoplayer2.audio.Ac3Util.Ac3SyncFrameInfo(r1, CHANNEL_COUNT_BY_ACMOD[r7] + (r15.readBit() ? 1 : 0), r3, r4, r5)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x004a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004c}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004d|PHI: r0 \l  PHI: (r0v18 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0056}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0089}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0090}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0098}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x00a6}"];
+MethodNode[shape=record,label="{public static com.google.android.exoplayer2.audio.Ac3Util$Ac3SyncFrameInfo com.google.android.exoplayer2.audio.Ac3Util.parseAc3SyncframeInfo((r15v0 'data' com.google.android.exoplayer2.util.ParsableBitArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_16[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_15 -> Node_8;
+Node_8 -> Node_9;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_25 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_9;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_10 -> Node_11;
+Node_10 -> Node_28;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_3;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_28 -> Node_12;
+}
+

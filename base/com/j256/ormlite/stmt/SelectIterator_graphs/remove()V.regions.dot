@@ -1,0 +1,42 @@
+digraph "CFG forcom.j256.ormlite.stmt.SelectIterator.remove()V" {
+subgraph cluster_Region_1798127231 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1809862683 {
+label = "Try: R(1:1) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1818832571 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x0004 \}\lSplitter:B:0:0x0000\l|removeThrow()     \/\/ Catch:\{ SQLException \-\> 0x0004 \}\l}"];
+}
+subgraph cluster_Region_1412250353 {
+label = "R(3:3|4|5) | ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0005|closeQuietly()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002a|throw new java.lang.IllegalStateException(\"Could not delete \" + r4.dataClass + \" object \" + r4.last, r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1412250353 {
+label = "R(3:3|4|5) | ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|ExcHandler: SQLException (r0v0 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0005|closeQuietly()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002a|throw new java.lang.IllegalStateException(\"Could not delete \" + r4.dataClass + \" object \" + r4.last, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.stmt.SelectIterator.remove((r4v0 'this' com.j256.ormlite.stmt.SelectIterator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+}
+

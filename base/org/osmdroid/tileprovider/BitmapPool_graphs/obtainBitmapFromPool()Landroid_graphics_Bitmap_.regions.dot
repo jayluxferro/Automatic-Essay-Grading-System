@@ -1,0 +1,84 @@
+digraph "CFG fororg.osmdroid.tileprovider.BitmapPool.obtainBitmapFromPool()Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_1681259682 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_679783074 {
+label = "Synchronized:R(2:1|(1:(2:(1:7)|(2:8|(2:(1:14)|(2:10|12))))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_469795430 {
+label = "R(1:(2:(1:7)|(2:8|(2:(1:14)|(2:10|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_908402854 {
+label = "R(2:(1:7)|(2:8|(2:(1:14)|(2:10|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2109610540 {
+label = "IF [B:4:0x0009] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r3.mPool.isEmpty() == true) goto L_0x000b\l}"];
+subgraph cluster_Region_1893891715 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1733242294 {
+label = "R(2:8|(2:(1:14)|(2:10|12)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|android.graphics.Bitmap android.graphics.Bitmap r1 = r3.mPool.removeFirst()\l}"];
+subgraph cluster_Region_1760149835 {
+label = "R(2:(1:14)|(2:10|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1227339583 {
+label = "IF [B:9:0x001a] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|if (r1.isRecycled() != true) goto L_0x0022\l}"];
+subgraph cluster_Region_1010507188 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0023|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1921938873 {
+label = "R(2:10|12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|android.graphics.Bitmap android.graphics.Bitmap r1 = obtainBitmapFromPool()\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0021|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x000c: MONITOR_EXIT  \l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0020: MONITOR_EXIT  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0022|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0022: MONITOR_EXIT  \l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0024|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0025|REMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0026|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public android.graphics.Bitmap org.osmdroid.tileprovider.BitmapPool.obtainBitmapFromPool((r3v0 'this' org.osmdroid.tileprovider.BitmapPool A[IMMUTABLE_TYPE, THIS]))  | Annotation[RUNTIME, java.lang.Deprecated, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_2 -> Node_15;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+}
+

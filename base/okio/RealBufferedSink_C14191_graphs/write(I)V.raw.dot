@@ -1,0 +1,16 @@
+digraph "CFG forokio.RealBufferedSink.1.write(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okio.RealBufferedSink) = (r1 I:okio.RealBufferedSink$1) okio.RealBufferedSink.1.this$0 okio.RealBufferedSink \l0x0002: IGET  (r0 I:boolean) = (r0 I:okio.RealBufferedSink) okio.RealBufferedSink.closed boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0014 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IGET  (r0 I:okio.RealBufferedSink) = (r1 I:okio.RealBufferedSink$1) okio.RealBufferedSink.1.this$0 okio.RealBufferedSink \l0x0008: IGET  (r0 I:okio.Buffer) = (r0 I:okio.RealBufferedSink) okio.RealBufferedSink.buffer okio.Buffer \l0x000a: CAST  (r2 I:byte) = (byte) (r2 I:int) \l0x000b: INVOKE  (r0 I:okio.Buffer), (r2 I:int) okio.Buffer.writeByte(int):okio.Buffer type: VIRTUAL \l0x000e: IGET  (r2 I:okio.RealBufferedSink) = (r1 I:okio.RealBufferedSink$1) okio.RealBufferedSink.1.this$0 okio.RealBufferedSink \l0x0010: INVOKE  (r2 I:okio.RealBufferedSink) okio.RealBufferedSink.emitCompleteSegments():okio.BufferedSink type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|0x0014: NEW_INSTANCE  (r2 I:java.io.IOException) =  java.io.IOException \l0x0016: CONST_STR  (r0 I:java.lang.String) =  \"closed\" \l0x0018: INVOKE  (r2 I:java.io.IOException), (r0 I:java.lang.String) java.io.IOException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|0x001b: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okio.RealBufferedSink.1.write((r1 'this' I:okio.RealBufferedSink$1 A[IMMUTABLE_TYPE, THIS]), (r2 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

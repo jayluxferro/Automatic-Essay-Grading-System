@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.firebase.FirebaseApp.addBackgroundStateChangeListener(Lcom\/google\/firebase\/FirebaseApp$BackgroundStateChangeListener;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:com.google.firebase.FirebaseApp) com.google.firebase.FirebaseApp.checkNotDeleted():void type: DIRECT \l0x0003: IGET  (r0 I:java.util.concurrent.atomic.AtomicBoolean) = (r1 I:com.google.firebase.FirebaseApp) com.google.firebase.FirebaseApp.automaticResourceManagementEnabled java.util.concurrent.atomic.AtomicBoolean \l0x0005: INVOKE  (r0 I:boolean) = (r0 I:java.util.concurrent.atomic.AtomicBoolean) java.util.concurrent.atomic.AtomicBoolean.get():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0019 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: INVOKE  (r0 I:com.google.android.gms.common.api.internal.BackgroundDetector) =  com.google.android.gms.common.api.internal.BackgroundDetector.getInstance():com.google.android.gms.common.api.internal.BackgroundDetector type: STATIC \l0x000f: INVOKE  (r0 I:boolean) = \l  (r0 I:com.google.android.gms.common.api.internal.BackgroundDetector)\l com.google.android.gms.common.api.internal.BackgroundDetector.isInBackground():boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0019 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0016: INVOKE  \l  (r2 I:com.google.firebase.FirebaseApp$BackgroundStateChangeListener)\l  (r0 I:boolean)\l com.google.firebase.FirebaseApp.BackgroundStateChangeListener.onBackgroundStateChanged(boolean):void type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|0x0019: IGET  (r0 I:java.util.List\<com.google.firebase.FirebaseApp$BackgroundStateChangeListener\>) = (r1 I:com.google.firebase.FirebaseApp) com.google.firebase.FirebaseApp.backgroundStateChangeListeners java.util.List \l0x001b: INVOKE  (r0 I:java.util.List), (r2 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: RETURN   \l}"];
+MethodNode[shape=record,label="{public void com.google.firebase.FirebaseApp.addBackgroundStateChangeListener((r1 'this' I:com.google.firebase.FirebaseApp A[IMMUTABLE_TYPE, THIS]), (r2 I:com.google.firebase.FirebaseApp$BackgroundStateChangeListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.wav.WavHeaderReader.skipToData(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;Lcom\/google\/android\/exoplayer2\/extractor\/wav\/WavHeader;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.util.Assertions.checkNotNull(r9)\lcom.google.android.exoplayer2.util.Assertions.checkNotNull(r10)\lr9.resetPeekPosition()\lcom.google.android.exoplayer2.util.ParsableByteArray r3 = new com.google.android.exoplayer2.util.ParsableByteArray(8)\lcom.google.android.exoplayer2.extractor.wav.WavHeaderReader$ChunkHeader r2 = com.google.android.exoplayer2.extractor.wav.WavHeaderReader.ChunkHeader.peek(r9, r3)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0014|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'chunkHeader' com.google.android.exoplayer2.extractor.wav.WavHeaderReader$ChunkHeader) = (r2v0 'chunkHeader' com.google.android.exoplayer2.extractor.wav.WavHeaderReader$ChunkHeader), (r2v2 'chunkHeader' com.google.android.exoplayer2.extractor.wav.WavHeaderReader$ChunkHeader) binds: [B:0:0x0000, B:10:0x006c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:10:0x006c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001c|if (r2.f2449id == com.google.android.exoplayer2.util.Util.getIntegerCodeForString(\"data\")) goto L_0x0075\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001e|android.util.Log.w(TAG, new java.lang.StringBuilder().append(\"Ignoring unknown WAV chunk: \").append(r2.f2449id).toString())\llong r0 = 8 + r2.size\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0046|if (r2.f2449id != com.google.android.exoplayer2.util.Util.getIntegerCodeForString(\"RIFF\")) goto L_0x004a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0048|r0 = 12\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004a|PHI: r0 \l  PHI: (r0v1 'bytesToSkip' long) = (r0v0 'bytesToSkip' long), (r0v2 'bytesToSkip' long) binds: [B:4:0x0046, B:5:0x0048] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004f|if ((r0 \> 2147483647L ? 1 : (r0 == 2147483647L ? 0 : \-1)) \<= 0) goto L_0x006c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0051}"];
+Node_9 [shape=record,label="{9\:\ 0x006b|throw new com.google.android.exoplayer2.ParserException(new java.lang.StringBuilder().append(\"Chunk is too large (~2GB+) to skip; id: \").append(r2.f2449id).toString())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x006c|LOOP_END\lLOOP:0: B:1:0x0014\-\>B:10:0x006c\l|r9.skipFully((int) r0)\lcom.google.android.exoplayer2.extractor.wav.WavHeaderReader$ChunkHeader r2 = com.google.android.exoplayer2.extractor.wav.WavHeaderReader.ChunkHeader.peek(r9, r3)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0075|r9.skipFully(8)\lr10.setDataBounds(r9.getPosition(), r2.size)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0081|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0075|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0051|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void com.google.android.exoplayer2.extractor.wav.WavHeaderReader.skipToData((r9v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'wavHeader' com.google.android.exoplayer2.extractor.wav.WavHeader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_10;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_1;
+Node_11 -> Node_12;
+Node_13 -> Node_11;
+Node_14 -> Node_8;
+}
+

@@ -1,0 +1,15 @@
+digraph "CFG forretrofit2.ServiceMethod.parsePathParameters(Ljava\/lang\/String;)Ljava\/util\/Set;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: SGET  (r0 I:java.util.regex.Pattern) =  retrofit2.ServiceMethod.PARAM_URL_REGEX java.util.regex.Pattern \l0x0002: INVOKE  (r2 I:java.util.regex.Matcher) = \l  (r0 I:java.util.regex.Pattern)\l  (r2 I:java.lang.CharSequence)\l java.util.regex.Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher type: VIRTUAL \l0x0006: NEW_INSTANCE  (r0 I:java.util.LinkedHashSet) =  java.util.LinkedHashSet \l0x0008: INVOKE  (r0 I:java.util.LinkedHashSet) java.util.LinkedHashSet.\<init\>():void type: DIRECT \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|0x000b: INVOKE  (r1 I:boolean) = (r2 I:java.util.regex.Matcher) java.util.regex.Matcher.find():boolean type: VIRTUAL \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|0x000f: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x001a \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0012: INVOKE  (r1 I:java.lang.String) = (r2 I:java.util.regex.Matcher), (r1 I:int) java.util.regex.Matcher.group(int):java.lang.String type: VIRTUAL \l0x0016: INVOKE  (r0 I:java.util.Set), (r1 I:java.lang.Object) java.util.Set.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|0x001a: RETURN  (r0 I:java.util.Set\<java.lang.String\>) \l}"];
+MethodNode[shape=record,label="{static java.util.Set\<java.lang.String\> retrofit2.ServiceMethod.parsePathParameters((r2 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/Set\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+}
+

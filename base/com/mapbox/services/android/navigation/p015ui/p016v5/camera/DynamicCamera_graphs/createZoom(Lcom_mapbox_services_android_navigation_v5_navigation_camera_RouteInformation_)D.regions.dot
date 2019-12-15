@@ -1,0 +1,56 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.camera.DynamicCamera.createZoom(Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/camera\/RouteInformation;)D" {
+subgraph cluster_Region_1411847911 {
+label = "R(2:0|(2:(1:2)|(1:(2:(1:5)|(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.camera.CameraPosition com.mapbox.mapboxsdk.camera.CameraPosition r5 = createCameraPosition(r5.location(), r5.routeProgress())\l}"];
+subgraph cluster_Region_1228626035 {
+label = "R(2:(1:2)|(1:(2:(1:5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1262447600 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r5.zoom \> MAX_CAMERA_ZOOM) goto L_0x0014\l}"];
+subgraph cluster_Region_256115930 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|RETURN\l|return MAX_CAMERA_ZOOM\l}"];
+}
+}
+subgraph cluster_Region_1060482707 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_96991796 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1665955640 {
+label = "IF [B:4:0x001b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|if (r5.zoom \< MIN_CAMERA_ZOOM) goto L_0x001d\l}"];
+subgraph cluster_Region_372032063 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return MIN_CAMERA_ZOOM\l}"];
+}
+}
+subgraph cluster_Region_671511000 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|RETURN\l|return r5.zoom\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001e}"];
+MethodNode[shape=record,label="{private double com.mapbox.services.android.navigation.ui.v5.camera.DynamicCamera.createZoom((r4v0 'this' com.mapbox.services.android.navigation.ui.v5.camera.DynamicCamera A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.services.android.navigation.v5.navigation.camera.RouteInformation A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

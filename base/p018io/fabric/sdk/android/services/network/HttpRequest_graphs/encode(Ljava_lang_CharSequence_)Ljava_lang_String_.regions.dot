@@ -1,0 +1,116 @@
+digraph "CFG forio.fabric.sdk.android.services.network.HttpRequest.encode(Ljava\/lang\/CharSequence;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1429438870 {
+label = "R(1:(5:1|2|(1:4)|5|(2:7|(2:(1:20)|(2:11|18))))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1120542849 {
+label = "Try: R(5:1|2|(1:4)|5|(2:7|(2:(1:20)|(2:11|18)))) catches: R(2:15|17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_872285115 {
+label = "R(5:1|2|(1:4)|5|(2:7|(2:(1:20)|(2:11|18))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0086 \}\lSplitter:B:0:0x0000\l|java.net.URL java.net.URL r0 = new java.net.URL(r7.toString())     \/\/ Catch:\{ IOException \-\> 0x0086 \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|java.lang.String java.lang.String r7 = r0.getHost()\lint int r1 = r0.getPort()\l}"];
+subgraph cluster_IfRegion_1814695270 {
+label = "IF [B:3:0x0012] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r1 != \-1) goto L_0x0014\l}"];
+subgraph cluster_Region_1538054940 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|java.lang.String r7 = r7 + ':' + java.lang.Integer.toString(r1)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x002c|PHI: r7 \l  PHI: (r7v4 java.lang.String) = (r7v3 java.lang.String), (r7v14 java.lang.String) binds: [B:3:0x0012, B:4:0x0014] A[DONT_GENERATE, DONT_INLINE]\l}"];
+subgraph cluster_TryCatchRegion_1359357875 {
+label = "Try: R(2:7|(2:(1:20)|(2:11|18))) catches: R(3:12|13|14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1675561049 {
+label = "R(2:7|(2:(1:20)|(2:11|18)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ URISyntaxException \-\> 0x0075 \}\lSplitter:B:6:0x002d\l|java.lang.String java.lang.String r7 = new java.net.URI(r0.getProtocol(), r7, r0.getPath(), r0.getQuery(), (java.lang.String) null).toASCIIString()     \/\/ Catch:\{ URISyntaxException \-\> 0x0075 \}\lint int r0 = r7.indexOf(63)     \/\/ Catch:\{ URISyntaxException \-\> 0x0075 \}\l}"];
+subgraph cluster_Region_408715733 {
+label = "R(2:(1:20)|(2:11|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_881619195 {
+label = "IF [B:8:0x004a, B:10:0x0052] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004a|Catch:\{ URISyntaxException \-\> 0x0075 \}\l|if (r0 \<= 0) goto L_?     \/\/ Catch:\{ URISyntaxException \-\> 0x0075 \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0052|ADDED_TO_REGION\lCatch:\{ URISyntaxException \-\> 0x0075 \}\l|if ((r0 = r0 + 1) \>= r7.length()) goto L_?     \/\/ Catch:\{ URISyntaxException \-\> 0x0075 \}\l}"];
+subgraph cluster_Region_155531597 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return r7\l}"];
+}
+}
+subgraph cluster_Region_901272638 {
+label = "R(2:11|18)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0054|Catch:\{ URISyntaxException \-\> 0x0075 \}\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r7.substring(0, r0) + r7.substring(r0).replace(\"+\", \"%2B\")\l}"];
+}
+}
+}
+subgraph cluster_Region_789194883 {
+label = "R(3:12|13|14) | ExcHandler: URISyntaxException (r7v5 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0075|ExcHandler: URISyntaxException (r7v5 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002d\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0076|java.io.IOException java.io.IOException r0 = new java.io.IOException(\"Parsing URI failed\")\lr0.initCause(r7)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0085|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1370131577 {
+label = "R(2:15|17) | ExcHandler: IOException (r7v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0086|ExcHandler: IOException (r7v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_17 [shape=record,label="{17\:\ 0x008c|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r7)\l}"];
+}
+}
+}
+subgraph cluster_Region_1370131577 {
+label = "R(2:15|17) | ExcHandler: IOException (r7v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0086|ExcHandler: IOException (r7v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_17 [shape=record,label="{17\:\ 0x008c|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r7)\l}"];
+}
+subgraph cluster_Region_789194883 {
+label = "R(3:12|13|14) | ExcHandler: URISyntaxException (r7v5 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0075|ExcHandler: URISyntaxException (r7v5 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002d\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0076|java.io.IOException java.io.IOException r0 = new java.io.IOException(\"Parsing URI failed\")\lr0.initCause(r7)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0085|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d|SYNTHETIC\lSplitter:B:6:0x002d\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x004c|Catch:\{ URISyntaxException \-\> 0x0075 \}\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0087}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r7\l}"];
+MethodNode[shape=record,label="{public static java.lang.String io.fabric.sdk.android.services.network.HttpRequest.encode((r7v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[io.fabric.sdk.android.services.network.HttpRequest$HttpRequestException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_19;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_20;
+Node_11 -> Node_18;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_16;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_0 -> Node_15;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_9 -> Node_10;
+Node_16 -> Node_17;
+}
+

@@ -1,0 +1,96 @@
+digraph "CFG forandroid.support.media.ExifInterface.ByteOrderedDataInputStream.readUnsignedShort()I" {
+subgraph cluster_Region_986998789 {
+label = "R(2:0|(2:2|(1:15)(1:(1:7)(1:(2:(1:11)|(2:12|13)))))(1:17))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.mPosition += 2\l}"];
+subgraph cluster_IfRegion_246059810 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(1:15)(1:(1:7)(1:(2:(1:11)|(2:12|13))))) ELSE: R(1:17)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r4.mPosition \<= r4.mLength) goto L_0x000c\l}"];
+subgraph cluster_Region_1162579989 {
+label = "R(2:2|(1:15)(1:(1:7)(1:(2:(1:11)|(2:12|13)))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|int int r0 = r4.mDataInputStream.read()\lint int r1 = r4.mDataInputStream.read()\l}"];
+subgraph cluster_IfRegion_750300416 {
+label = "IF [B:3:0x001a] THEN: R(1:15) ELSE: R(1:(1:7)(1:(2:(1:11)|(2:12|13))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if ((r0 \| r1) \< 0) goto L_0x0049\l}"];
+subgraph cluster_Region_264989855 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004e|throw new java.io.EOFException()\l}"];
+}
+subgraph cluster_Region_721530714 {
+label = "R(1:(1:7)(1:(2:(1:11)|(2:12|13)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_839679615 {
+label = "IF [B:5:0x0020] THEN: R(1:7) ELSE: R(1:(2:(1:11)|(2:12|13))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r4.mByteOrder == LITTLE_ENDIAN) goto L_0x0022\l}"];
+subgraph cluster_Region_1042413372 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|RETURN\l|return (r1 \<\< 8) + r0\l}"];
+}
+subgraph cluster_Region_1751505055 {
+label = "R(1:(2:(1:11)|(2:12|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1017052824 {
+label = "R(2:(1:11)|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_449047854 {
+label = "IF [B:9:0x002a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|if (r4.mByteOrder == BIG_ENDIAN) goto L_0x002c\l}"];
+subgraph cluster_Region_1738725978 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|RETURN\l|return (r0 \<\< 8) + r1\l}"];
+}
+}
+subgraph cluster_Region_1273857935 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0030}"];
+Node_13 [shape=record,label="{13\:\ 0x0048|throw new java.io.IOException(\"Invalid byte order: \" + r4.mByteOrder)\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_227151693 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0054|throw new java.io.EOFException()\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0022}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0049}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x004f}"];
+MethodNode[shape=record,label="{public int android.support.media.ExifInterface.ByteOrderedDataInputStream.readUnsignedShort((r4v0 'this' android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_12 -> Node_13;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

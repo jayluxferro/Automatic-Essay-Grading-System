@@ -1,0 +1,118 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo.createPeriodSeekInfo(Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/Period;J)Lcom\/google\/android\/exoplayer2\/source\/dash\/DashMediaSource$PeriodSeekInfo;" {
+subgraph cluster_Region_2053109468 {
+label = "R(3:0|(2:3|(2:(1:21)|(3:6|(1:8)(1:(2:11|(1:13)(0))(0))|9)))|22)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r14 = r27.adaptationSets.size()\llong r6 = 0\llong r8 = Long.MAX_VALUE\lboolean r5 = false\lboolean r19 = false\lint r16 = 0\l}"];
+subgraph cluster_LoopRegion_2022062505 {
+label = "LOOP:0: (2:3|(2:(1:21)|(3:6|(1:8)(1:(2:11|(1:13)(0))(0))|9)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|if (r16 \< r14) goto L_0x0018\l}"];
+subgraph cluster_Region_213103251 {
+label = "R(2:3|(2:(1:21)|(3:6|(1:8)(1:(2:11|(1:13)(0))(0))|9)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|com.google.android.exoplayer2.source.dash.DashSegmentIndex com.google.android.exoplayer2.source.dash.DashSegmentIndex r17 = r27.adaptationSets.get(r16).representations.get(0).getIndex()\l}"];
+subgraph cluster_Region_481137886 {
+label = "R(2:(1:21)|(3:6|(1:8)(1:(2:11|(1:13)(0))(0))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1762443802 {
+label = "IF [B:4:0x0034] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0034|if (r17 == null) goto L_0x0036\l}"];
+subgraph cluster_Region_309796637 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo(true, 0, r28)\l}"];
+}
+}
+subgraph cluster_Region_880885324 {
+label = "R(3:6|(1:8)(1:(2:11|(1:13)(0))(0))|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0041|r5 \|= r17.isExplicit()\lint int r20 = r17.getSegmentCount(r28)\l}"];
+subgraph cluster_IfRegion_1422058025 {
+label = "IF [B:7:0x004e] THEN: R(1:8) ELSE: R(1:(2:11|(1:13)(0))(0))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004e|if (r20 == 0) goto L_0x0050\l}"];
+subgraph cluster_Region_2028989427 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0050|r19 = true\lr6 = 0\lr8 = 0\l}"];
+}
+subgraph cluster_Region_666110830 {
+label = "R(1:(2:11|(1:13)(0))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_184836211 {
+label = "IF [B:10:0x0059] THEN: R(2:11|(1:13)(0)) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0059|if (r19 == false) goto L_0x005b\l}"];
+subgraph cluster_Region_2137528925 {
+label = "R(2:11|(1:13)(0))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005b|int int r15 = r17.getFirstSegmentNum()\llong r6 = java.lang.Math.max(r6, r17.getTimeUs(r15))\l}"];
+subgraph cluster_IfRegion_2087520058 {
+label = "IF [B:12:0x006c] THEN: R(1:13) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x006c|if (r20 != \-1) goto L_0x006e\l}"];
+subgraph cluster_Region_2105744164 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006e|int int r18 = (r15 + r20) \- 1\llong r8 = java.lang.Math.min(r8, r17.getTimeUs(r18) + r17.getDurationUs(r18, r28))\l}"];
+}
+subgraph cluster_Region_713104035 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1526358089 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0056|LOOP_END\lPHI: r6 r8 r19 \l  PHI: (r6v4 'availableStartTimeUs' long) = (r6v1 'availableStartTimeUs' long), (r6v3 'availableStartTimeUs' long), (r6v3 'availableStartTimeUs' long), (r6v5 'availableStartTimeUs' long) binds: [B:18:0x0056, B:19:0x0056, B:20:0x0056, B:17:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v4 'availableEndTimeUs' long) = (r8v1 'availableEndTimeUs' long), (r8v1 'availableEndTimeUs' long), (r8v3 'availableEndTimeUs' long), (r8v5 'availableEndTimeUs' long) binds: [B:18:0x0056, B:19:0x0056, B:20:0x0056, B:17:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r19v2 'seenEmptyIndex' boolean) = (r19v1 'seenEmptyIndex' boolean), (r19v1 'seenEmptyIndex' boolean), (r19v1 'seenEmptyIndex' boolean), (r19v3 'seenEmptyIndex' boolean) binds: [B:18:0x0056, B:19:0x0056, B:20:0x0056, B:17:0x0056] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:9:0x0056\l|r16++\l}"];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo(r5, r6, r8)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0014|LOOP_START\lPHI: r5 r6 r8 r16 r19 \l  PHI: (r5v1 'isIndexExplicit' boolean) = (r5v0 'isIndexExplicit' boolean), (r5v3 'isIndexExplicit' boolean) binds: [B:0:0x0000, B:9:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'availableStartTimeUs' long) = (r6v0 'availableStartTimeUs' long), (r6v4 'availableStartTimeUs' long) binds: [B:0:0x0000, B:9:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'availableEndTimeUs' long) = (r8v0 'availableEndTimeUs' long), (r8v4 'availableEndTimeUs' long) binds: [B:0:0x0000, B:9:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r16v1 'i' int) = (r16v0 'i' int), (r16v2 'i' int) binds: [B:0:0x0000, B:9:0x0056] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r19v1 'seenEmptyIndex' boolean) = (r19v0 'seenEmptyIndex' boolean), (r19v2 'seenEmptyIndex' boolean) binds: [B:0:0x0000, B:9:0x0056] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:9:0x0056\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0036}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0087}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0036|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0087|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0056|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0056|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0056|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0056|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static com.google.android.exoplayer2.source.dash.DashMediaSource$PeriodSeekInfo com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo.createPeriodSeekInfo((r27v0 'period' com.google.android.exoplayer2.source.dash.manifest.Period A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r28v0 'durationUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_16[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_15;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_17;
+Node_10 -> Node_11;
+Node_10 -> Node_18[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_19[style=dashed];
+Node_13 -> Node_20;
+Node_9 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_21;
+Node_14 -> Node_22;
+Node_15 -> Node_5;
+Node_16 -> Node_14;
+Node_17 -> Node_9;
+Node_18 -> Node_9;
+Node_19 -> Node_9;
+Node_20 -> Node_9;
+}
+

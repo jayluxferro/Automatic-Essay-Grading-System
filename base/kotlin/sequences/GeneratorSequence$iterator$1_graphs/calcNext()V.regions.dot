@@ -1,0 +1,57 @@
+digraph "CFG forkotlin.sequences.GeneratorSequence$iterator$1.calcNext()V" {
+subgraph cluster_Region_711941320 {
+label = "R(3:(1:2)(3:3|(1:5)|6)|7|11) | DECL_VAR: T null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_484293462 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.nextState == \-2) goto L_0x0005\l}"];
+subgraph cluster_Region_443345459 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|java.lang.Object r0 = r2.this$0.getInitialValue.invoke()\l}"];
+}
+subgraph cluster_Region_389404321 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|kotlin.jvm.functions.Function1 kotlin.jvm.functions.Function1 r0 = r2.this$0.getNextValue\lT T r1 = r2.nextItem\l}"];
+subgraph cluster_IfRegion_771463046 {
+label = "IF [B:4:0x0018] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r1 == null) goto L_0x001a\l}"];
+subgraph cluster_Region_383763077 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|kotlin.jvm.internal.Intrinsics.throwNpe()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001d|java.lang.Object r0 = r0.invoke(r1)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0021|PHI: r0 \l  PHI: (r0v1 T) = (r0v8 T), (r0v11 T) binds: [B:6:0x001d, B:2:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|r2.nextItem = r0\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a|PHI: r0 \l  PHI: (r0v3 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2.nextState = r2.nextItem == null ? 0 : 1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0029}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c}"];
+MethodNode[shape=record,label="{private final void kotlin.sequences.GeneratorSequence$iterator$1.calcNext((r2v0 'this' kotlin.sequences.GeneratorSequence$iterator$1 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_8 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+}
+

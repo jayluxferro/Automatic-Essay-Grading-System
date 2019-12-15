@@ -1,0 +1,50 @@
+digraph "CFG forcom.crashlytics.android.core.SessionProtobufHelper.writeSessionEvent(Lcom\/crashlytics\/android\/core\/CodedOutputStream;JLjava\/lang\/String;Lcom\/crashlytics\/android\/core\/TrimmedThrowableData;Ljava\/lang\/Thread;[Ljava\/lang\/StackTraceElement;[Ljava\/lang\/Thread;Ljava\/util\/List;Ljava\/util\/Map;Lcom\/crashlytics\/android\/core\/LogFileManager;Landroid\/app\/ActivityManager$RunningAppProcessInfo;ILjava\/lang\/String;Ljava\/lang\/String;Ljava\/lang\/Float;IZJJ)V" {
+subgraph cluster_Region_290946658 {
+label = "R(6:0|(1:2)(1:4)|3|5|(1:7)|8) | DECL_VAR: com.crashlytics.android.core.ByteString null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.crashlytics.android.core.CodedOutputStream r12 = r35\ljava.lang.String r0 = r49\lcom.crashlytics.android.core.ByteString com.crashlytics.android.core.ByteString r7 = com.crashlytics.android.core.ByteString.copyFromUtf8(r48)\l}"];
+subgraph cluster_IfRegion_452806780 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_0x000a\l}"];
+subgraph cluster_Region_227726707 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r0 = null\l}"];
+}
+subgraph cluster_Region_1772231772 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|com.crashlytics.android.core.ByteString r0 = com.crashlytics.android.core.ByteString.copyFromUtf8(r0.replace(\"\-\", \"\"))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000b|PHI: r0 \l  PHI: (r0v3 com.crashlytics.android.core.ByteString) = (r0v2 com.crashlytics.android.core.ByteString), (r0v10 com.crashlytics.android.core.ByteString) binds: [B:4:0x000d, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|com.crashlytics.android.core.ByteString r8 = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|com.crashlytics.android.core.ByteString com.crashlytics.android.core.ByteString r11 = r45.getByteStringForLog()\l}"];
+subgraph cluster_IfRegion_664542925 {
+label = "IF [B:6:0x001e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (r11 == null) goto L_0x0020\l}"];
+subgraph cluster_Region_1495589907 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"No log data to include with this event.\")\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002b|r45.clearLog()\lr12.writeTag(10, 2)\lr12.writeRawVarint32(getSessionEventSize(r36, r38, r39, r40, r41, r42, r43, 8, r44, r46, r47, r7, r8, r50, r51, r52, r53, r55, r11))\lr12.writeUInt64(1, r36)\lr12.writeBytes(2, com.crashlytics.android.core.ByteString.copyFromUtf8(r38))\lwriteSessionEventApp(r35, r39, r40, r41, r42, r43, 8, r7, r8, r44, r46, r47)\lwriteSessionEventDevice(r35, r50, r51, r52, r47, r53, r55)\lwriteSessionEventLog(r12, r11)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x009a}"];
+MethodNode[shape=record,label="{public static void com.crashlytics.android.core.SessionProtobufHelper.writeSessionEvent((r35v0 com.crashlytics.android.core.CodedOutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r36v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r38v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r39v0 com.crashlytics.android.core.TrimmedThrowableData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r40v0 java.lang.Thread A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r41v0 java.lang.StackTraceElement[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r42v0 java.lang.Thread[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r43v0 java.util.List\<java.lang.StackTraceElement[]\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r44v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r45v0 com.crashlytics.android.core.LogFileManager A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r46v0 android.app.ActivityManager$RunningAppProcessInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r47v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r48v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r49v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r50v0 java.lang.Float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r51v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r52v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r53v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r55v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.Exception]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/crashlytics\/android\/core\/CodedOutputStream;, J, Ljava\/lang\/String;, Lcom\/crashlytics\/android\/core\/TrimmedThrowableData;, Ljava\/lang\/Thread;, [, Ljava\/lang\/StackTraceElement;, [, Ljava\/lang\/Thread;, Ljava\/util\/List\<, [, Ljava\/lang\/StackTraceElement;, \>;, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;, Lcom\/crashlytics\/android\/core\/LogFileManager;, Landroid\/app\/ActivityManager$RunningAppProcessInfo;, I, Ljava\/lang\/String;, Ljava\/lang\/String;, Ljava\/lang\/Float;, IZJJ)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_3;
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

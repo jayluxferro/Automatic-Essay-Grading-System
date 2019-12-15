@@ -1,0 +1,64 @@
+digraph "CFG forandroid.support.design.bottomappbar.BottomAppBar.getFabTranslationY(Z)F" {
+subgraph cluster_Region_423175582 {
+label = "R(2:0|(2:(1:2)|(5:3|(1:5)|6|(1:8)|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.design.widget.FloatingActionButton android.support.design.widget.FloatingActionButton r0 = findDependentFab()\l}"];
+subgraph cluster_Region_18997029 {
+label = "R(2:(1:2)|(5:3|(1:5)|6|(1:8)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1824703740 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 == null) goto L_0x0007\l}"];
+subgraph cluster_Region_1806314575 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_515168119 {
+label = "R(5:3|(1:5)|6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|android.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\lr0.getContentRect(r2)\lfloat float r3 = (float) r2.height()\l}"];
+subgraph cluster_IfRegion_757919687 {
+label = "IF [B:4:0x0017] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r3 == 0.0f) goto L_0x0019\l}"];
+subgraph cluster_Region_2104045601 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|float r3 = (float) r0.getMeasuredHeight()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001e|PHI: r3 \l  PHI: (r3v2 float) = (r3v1 float), (r3v4 float) binds: [B:4:0x0017, B:5:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|float float r2 = (float) (r0.getHeight() \- r2.height())\lfloat float r4 = (\-getCradleVerticalOffset()) + (r3 \/ 2.0f) + ((float) (r0.getHeight() \- r2.bottom))\lfloat float r0 = r2 \- ((float) r0.getPaddingBottom())\lfloat float r1 = (float) (\-getMeasuredHeight())\l}"];
+subgraph cluster_IfRegion_1953274571 {
+label = "IF [B:7:0x0047] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|if (r7 == true) goto L_0x0049\l}"];
+subgraph cluster_Region_1471364026 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0049|r0 = r4\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x004b|RETURN\l|return r1 + r0\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x004a|PHI: r0 \l  PHI: (r0v4 float) = (r0v3 float), (r0v5 float) binds: [B:7:0x0047, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private float android.support.design.bottomappbar.BottomAppBar.getFabTranslationY((r6v0 'this' android.support.design.bottomappbar.BottomAppBar A[IMMUTABLE_TYPE, THIS]), (r7v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

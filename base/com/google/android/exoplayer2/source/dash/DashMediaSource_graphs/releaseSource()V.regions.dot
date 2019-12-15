@@ -1,0 +1,42 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.releaseSource()V" {
+subgraph cluster_Region_1212964016 {
+label = "R(5:0|(1:2)|3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.dataSource = null\lr4.loaderErrorThrower = null\l}"];
+subgraph cluster_IfRegion_1772403192 {
+label = "IF [B:1:0x0009] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.loader != null) goto L_0x000b\l}"];
+subgraph cluster_Region_515910641 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|r4.loader.release()\lr4.loader = null\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0012|r4.manifestLoadStartTimestamp = 0\lr4.manifestLoadEndTimestamp = 0\lr4.manifest = null\l}"];
+subgraph cluster_IfRegion_584557497 {
+label = "IF [B:4:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r4.handler != null) goto L_0x001c\l}"];
+subgraph cluster_Region_148165263 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|r4.handler.removeCallbacksAndMessages((java.lang.Object) null)\lr4.handler = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0023|r4.elapsedRealtimeOffsetMs = 0\lr4.periodsById.clear()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.dash.DashMediaSource.releaseSource((r4v0 'this' com.google.android.exoplayer2.source.dash.DashMediaSource A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

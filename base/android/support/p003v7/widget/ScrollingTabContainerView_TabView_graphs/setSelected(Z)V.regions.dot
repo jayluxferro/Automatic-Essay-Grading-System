@@ -1,0 +1,43 @@
+digraph "CFG forandroid.support.v7.widget.ScrollingTabContainerView.TabView.setSelected(Z)V" {
+subgraph cluster_Region_1232669659 {
+label = "R(3:1|4|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|boolean r0 = isSelected() != r2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|PHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|super.setSelected(r2)\l}"];
+subgraph cluster_Region_1167742980 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_266262448 {
+label = "IF [B:5:0x000c, B:6:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 != false) goto L_0x000e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|ADDED_TO_REGION\l|if (r2 != false) goto L_0x0010\l}"];
+subgraph cluster_Region_1500034777 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|sendAccessibilityEvent(4)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.ScrollingTabContainerView.TabView.setSelected((r1v0 'this' android.support.v7.widget.ScrollingTabContainerView$TabView A[IMMUTABLE_TYPE, THIS]), (r2v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

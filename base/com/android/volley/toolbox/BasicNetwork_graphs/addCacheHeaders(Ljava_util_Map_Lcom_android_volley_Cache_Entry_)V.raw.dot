@@ -1,0 +1,23 @@
+digraph "CFG forcom.android.volley.toolbox.BasicNetwork.addCacheHeaders(Ljava\/util\/Map;Lcom\/android\/volley\/Cache$Entry;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r8 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('entry' com.android.volley.Cache$Entry)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:2:0x0003 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: RETURN   \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|0x0003: IGET  (r1 I:java.lang.String) = \l  (r8 I:com.android.volley.Cache$Entry A[D('entry' com.android.volley.Cache$Entry)])\l com.android.volley.Cache.Entry.etag java.lang.String \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000e \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|0x0007: CONST_STR  (r1 I:java.lang.String) =  \"If\-None\-Match\" \l0x0009: IGET  (r2 I:java.lang.String) = \l  (r8 I:com.android.volley.Cache$Entry A[D('entry' com.android.volley.Cache$Entry)])\l com.android.volley.Cache.Entry.etag java.lang.String \l0x000b: INVOKE  \l  (r7 I:java.util.Map A[D('headers' java.util.Map\<java.lang.String, java.lang.String\>)])\l  (r1 I:java.lang.Object)\l  (r2 I:java.lang.Object)\l java.util.Map.put(java.lang.Object, java.lang.Object):java.lang.Object type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|0x000e: IGET  (r2 I:long) = \l  (r8 I:com.android.volley.Cache$Entry A[D('entry' com.android.volley.Cache$Entry)])\l com.android.volley.Cache.Entry.serverDate long \l0x0010: CONST  (r4 I:?[long, double]) = (0 ?[long, double]) \l0x0012: CMP_L  (r1 I:int) = (r2 I:long), (r4 I:long) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|0x0014: IF  (r1 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:1:0x0002 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|0x0016: NEW_INSTANCE  (r0 I:java.util.Date) =  java.util.Date \l0x0018: IGET  (r2 I:long) = \l  (r8 I:com.android.volley.Cache$Entry A[D('entry' com.android.volley.Cache$Entry)])\l com.android.volley.Cache.Entry.serverDate long \l0x001a: INVOKE  (r0 I:java.util.Date), (r2 I:long) java.util.Date.\<init\>(long):void type: DIRECT \l0x001d: CONST_STR  (r1 I:java.lang.String) =  \"If\-Modified\-Since\" \l0x001f: INVOKE  (r2 I:java.lang.String) = (r0 I:java.util.Date A[D('refTime' java.util.Date)]) org.apache.http.impl.cookie.DateUtils.formatDate(java.util.Date):java.lang.String type: STATIC \l0x0023: INVOKE  \l  (r7 I:java.util.Map A[D('headers' java.util.Map\<java.lang.String, java.lang.String\>)])\l  (r1 I:java.lang.Object)\l  (r2 I:java.lang.Object)\l java.util.Map.put(java.lang.Object, java.lang.Object):java.lang.Object type: INTERFACE \l}"];
+MethodNode[shape=record,label="{private void com.android.volley.toolbox.BasicNetwork.addCacheHeaders((r6 'this' I:com.android.volley.toolbox.BasicNetwork A[IMMUTABLE_TYPE, THIS]), (r7 I:java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:com.android.volley.Cache$Entry A[D('entry' com.android.volley.Cache$Entry), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x001d\-0x0026: r0 'refTime' java.util.Date\l  0x0000\-0x0026: r7 'headers' java.util.Map\<java.lang.String, java.lang.String\>\l  ?\-0x0026: r8 'entry' com.android.volley.Cache$Entry\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map, \<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;, Lcom\/android\/volley\/Cache$Entry;, )V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_7 -> Node_1;
+}
+

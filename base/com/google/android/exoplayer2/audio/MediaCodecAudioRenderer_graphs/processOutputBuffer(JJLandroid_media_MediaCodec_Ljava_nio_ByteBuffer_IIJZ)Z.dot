@@ -1,0 +1,43 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.MediaCodecAudioRenderer.processOutputBuffer(JJLandroid\/media\/MediaCodec;Ljava\/nio\/ByteBuffer;IIJZ)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5.passthroughEnabled == false) goto L_0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|if ((r13 & 2) == 0) goto L_0x000e\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|r10.releaseOutputBuffer(r12, false)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r16 == false) goto L_0x0021\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0010|r10.releaseOutputBuffer(r12, false)\lcom.google.android.exoplayer2.decoder.DecoderCounters r2 = r5.decoderCounters\lr2.skippedOutputBufferCount = r2.skippedOutputBufferCount + 1\lr5.audioTrack.handleDiscontinuity()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|SYNTHETIC\lSplitter:B:7:0x0021\l}"];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\lSplitter:B:7:0x0021\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\l|if (r5.audioTrack.handleBuffer(r11, r14) == false) goto L_0x0040     \/\/ Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0029|Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\l|r10.releaseOutputBuffer(r12, false)     \/\/ Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\lcom.google.android.exoplayer2.decoder.DecoderCounters r2 = r5.decoderCounters     \/\/ Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\lr2.renderedOutputBufferCount = r2.renderedOutputBufferCount + 1     \/\/ Catch:\{ InitializationException \| WriteException \-\> 0x0036 \}\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0036|ExcHandler: InitializationException \| WriteException (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:7:0x0021\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0037}"];
+Node_13 [shape=record,label="{13\:\ 0x003f|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0040}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.audio.MediaCodecAudioRenderer.processOutputBuffer((r5v0 'this' com.google.android.exoplayer2.audio.MediaCodecAudioRenderer A[IMMUTABLE_TYPE, THIS]), (r6v0 'positionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'elapsedRealtimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'buffer' java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'bufferIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'bufferFlags' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'bufferPresentationTimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'shouldSkip' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_15;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_16;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_18;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_17;
+}
+

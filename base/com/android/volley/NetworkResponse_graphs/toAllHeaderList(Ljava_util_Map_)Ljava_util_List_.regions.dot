@@ -1,0 +1,73 @@
+digraph "CFG forcom.android.volley.NetworkResponse.toAllHeaderList(Ljava\/util\/Map;)Ljava\/util\/List;" {
+subgraph cluster_Region_1051830809 {
+label = "R(1:(2:(1:1)|(1:(2:(1:5)|(3:6|(1:9)|10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1492817302 {
+label = "R(2:(1:1)|(1:(2:(1:5)|(3:6|(1:9)|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1266908266 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1014442130 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_254131303 {
+label = "R(1:(2:(1:5)|(3:6|(1:9)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_67096112 {
+label = "R(2:(1:5)|(3:6|(1:9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1397723657 {
+label = "IF [B:3:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r4.isEmpty() == true) goto L_0x000a\l}"];
+subgraph cluster_Region_1450775370 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_771029714 {
+label = "R(3:6|(1:9)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r4.size())\ljava.util.Iterator r4 = r4.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1956469606 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|if (r4.hasNext() != false) goto L_0x0026\l}"];
+subgraph cluster_Region_1353950578 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026|LOOP_END\lLOOP:0: B:7:0x0020\-\>B:9:0x0026\l|java.util.Map$Entry r1 = r4.next()\lr0.add(new com.android.volley.Header((java.lang.String) r1.getKey(), (java.lang.String) r1.getValue()))\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020|LOOP_START\lLOOP:0: B:7:0x0020\-\>B:9:0x0026\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0041|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.List\<com.android.volley.Header\> com.android.volley.NetworkResponse.toAllHeaderList((r4v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;), Ljava\/util\/List\<, Lcom\/android\/volley\/Header;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_11 -> Node_10;
+}
+

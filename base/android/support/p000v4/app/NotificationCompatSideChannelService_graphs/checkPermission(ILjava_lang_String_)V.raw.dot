@@ -1,0 +1,21 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompatSideChannelService.checkPermission(ILjava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:android.content.pm.PackageManager) = \l  (r4 I:android.support.v4.app.NotificationCompatSideChannelService)\l android.support.v4.app.NotificationCompatSideChannelService.getPackageManager():android.content.pm.PackageManager type: VIRTUAL \l0x0004: INVOKE  (r0 I:java.lang.String[]) = (r0 I:android.content.pm.PackageManager), (r5 I:int) android.content.pm.PackageManager.getPackagesForUid(int):java.lang.String[] type: VIRTUAL \l0x0008: ARRAY_LENGTH  (r1 I:int) = (r0 I:?[]) \l0x0009: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r2 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:6:0x0018 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: AGET  (r3 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x000e: INVOKE  (r3 I:boolean) = (r3 I:java.lang.String), (r6 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|0x0012: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0015 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|0x0014: RETURN   \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0018|0x0018: NEW_INSTANCE  (r0 I:java.lang.SecurityException) =  java.lang.SecurityException \l0x001a: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001c: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x001f: CONST_STR  (r2 I:java.lang.String) =  \"NotificationSideChannelService: Uid \" \l0x0021: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0024: INVOKE  (r1 I:java.lang.StringBuilder), (r5 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0027: CONST_STR  (r5 I:java.lang.String) =  \" is not authorized for package \" \l0x0029: INVOKE  (r1 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x002c: INVOKE  (r1 I:java.lang.StringBuilder), (r6 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x002f: INVOKE  (r5 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0033: INVOKE  (r0 I:java.lang.SecurityException), (r5 I:java.lang.String) java.lang.SecurityException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0036|0x0036: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{void android.support.v4.app.NotificationCompatSideChannelService.checkPermission((r4 'this' I:android.support.v4.app.NotificationCompatSideChannelService A[IMMUTABLE_TYPE, THIS]), (r5 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+}
+

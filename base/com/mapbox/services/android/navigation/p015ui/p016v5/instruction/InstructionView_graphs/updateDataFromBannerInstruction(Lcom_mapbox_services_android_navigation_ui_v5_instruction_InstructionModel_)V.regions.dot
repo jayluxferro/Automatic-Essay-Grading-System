@@ -1,0 +1,66 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.instruction.InstructionView.updateDataFromBannerInstruction(Lcom\/mapbox\/services\/android\/navigation\/ui\/v5\/instruction\/InstructionModel;)V" {
+subgraph cluster_Region_1895805912 {
+label = "R(3:0|(1:2)|(2:(3:(1:7)|8|11)|(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|updateManeuverView(r3)\l}"];
+subgraph cluster_IfRegion_1615888946 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r3.getPrimaryBannerText() != null) goto L_0x0009\l}"];
+subgraph cluster_Region_1254517582 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|createInstructionLoader(r2.upcomingPrimaryText, r3.getPrimaryBannerText()).loadInstruction()\l}"];
+}
+}
+subgraph cluster_Region_249925277 {
+label = "R(2:(3:(1:7)|8|11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_59346410 {
+label = "IF [B:4:0x001c] THEN: R(3:(1:7)|8|11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r3.getSecondaryBannerText() != null) goto L_0x001e\l}"];
+subgraph cluster_Region_1730989755 {
+label = "R(3:(1:7)|8|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_508118283 {
+label = "IF [B:6:0x0024] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|if (r2.upcomingSecondaryText.getVisibility() == 8) goto L_0x0026\l}"];
+subgraph cluster_Region_1014669625 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|r2.upcomingSecondaryText.setVisibility(0)\lr2.upcomingPrimaryText.setMaxLines(1)\ladjustBannerTextVerticalBias(0.65f)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0038|createInstructionLoader(r2.upcomingSecondaryText, r3.getSecondaryBannerText()).loadInstruction()\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1934859649 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0046|r2.upcomingPrimaryText.setMaxLines(2)\lr2.upcomingSecondaryText.setVisibility(8)\ladjustBannerTextVerticalBias(0.5f)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001e}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.services.android.navigation.ui.v5.instruction.InstructionView.updateDataFromBannerInstruction((r2v0 'this' com.mapbox.services.android.navigation.ui.v5.instruction.InstructionView A[IMMUTABLE_TYPE, THIS]), (r3v0 com.mapbox.services.android.navigation.ui.v5.instruction.InstructionModel A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

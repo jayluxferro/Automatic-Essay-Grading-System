@@ -1,0 +1,36 @@
+digraph "CFG forokio.Base64.encode([B[B)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] r0 = new byte[(((r8.length + 2) \/ 3) * 4)]\lint r1 = r8.length \- (r8.length % 3)\lr2 = 0\lr3 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v3 int) = (r2v2 int), (r2v9 int) binds: [B:0:0x0000, B:2:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v5 int) binds: [B:0:0x0000, B:2:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0010\-\>B:2:0x0012\l|if (r2 \>= r1) goto L_0x0055\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|LOOP_END\lLOOP:0: B:1:0x0010\-\>B:2:0x0012\l|int r4 = r3 + 1\lr0[r3] = r9[(r8[r2] & 255) \>\> 2]\lint r3 = r4 + 1\lint r6 = r2 + 1\lr0[r4] = r9[((r8[r2] & 3) \<\< 4) \| ((r8[r6] & 255) \>\> 4)]\lint r4 = r3 + 1\lint r6 = r2 + 2\lr0[r3] = r9[((r8[r6] & 15) \<\< 2) \| ((r8[r6] & 255) \>\> 6)]\lint r3 = r4 + 1\lr0[r4] = r9[r8[r6] & 63]\lint r2 = r2 + 3\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0055}"];
+Node_4 [shape=record,label="{4\:\ 0x005a|switch((r8.length % 3)) \{\l    case 1: goto L_0x008e;\l    case 2: goto L_0x005e;\l    default: goto L_0x005d;\l\}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x005e|int r2 = r3 + 1\lr0[r3] = r9[(r8[r1] & 255) \>\> 2]\lint r3 = r2 + 1\lint r1 = r1 + 1\lr0[r2] = r9[((r8[r1] & 3) \<\< 4) \| ((r8[r1] & 255) \>\> 4)]\lr0[r3] = r9[(r8[r1] & 15) \<\< 2]\lr0[r3 + 1] = 61\l}"];
+Node_6 [shape=record,label="{6\:\ 0x008e|int r2 = r3 + 1\lr0[r3] = r9[(r8[r1] & 255) \>\> 2]\lint r3 = r2 + 1\lr0[r2] = r9[(r8[r1] & 3) \<\< 4]\lr0[r3] = 61\lr0[r3 + 1] = 61\l}"];
+Node_7 [shape=record,label="{7\:\ 0x00ac|SYNTHETIC\lSplitter:B:7:0x00ac\l}"];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ UnsupportedEncodingException \-\> 0x00b4 \}\lSplitter:B:7:0x00ac\l}"];
+Node_9 [shape=record,label="{9\:\ 0x00b3|RETURN\l|return new java.lang.String(r0, \"US\-ASCII\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x00b4|ExcHandler: UnsupportedEncodingException (r8v1 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\lSplitter:B:7:0x00ac\l|java.io.UnsupportedEncodingException r8 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x00b5}"];
+Node_12 [shape=record,label="{12\:\ 0x00ba|throw new java.lang.AssertionError(r8)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0055|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.lang.String okio.Base64.encode((r8v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_4 -> Node_7;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_3;
+}
+

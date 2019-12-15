@@ -1,0 +1,131 @@
+digraph "CFG forandroid.support.media.ExifInterface.handleThumbnailFromStrips(Landroid\/support\/media\/ExifInterface$ByteOrderedDataInputStream;Ljava\/util\/HashMap;)V" {
+subgraph cluster_Region_84961759 {
+label = "R(2:0|(2:3|(1:5)(1:(1:8)(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20)))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r0 = (android.support.media.ExifInterface.ExifAttribute) r12.get(TAG_STRIP_OFFSETS)\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r12 = (android.support.media.ExifInterface.ExifAttribute) r12.get(TAG_STRIP_BYTE_COUNTS)\l}"];
+subgraph cluster_IfRegion_605697135 {
+label = "IF [B:1:0x0010, B:2:0x0012] THEN: R(2:3|(1:5)(1:(1:8)(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r0 != null) goto L_0x0012\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|ADDED_TO_REGION\l|if (r12 != null) goto L_0x0014\l}"];
+subgraph cluster_Region_1596320793 {
+label = "R(2:3|(1:5)(1:(1:8)(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|long[] long[] r0 = convertToLongArray(r0.getValue(r10.mExifByteOrder))\llong[] long[] r12 = convertToLongArray(r12.getValue(r10.mExifByteOrder))\l}"];
+subgraph cluster_IfRegion_161094782 {
+label = "IF [B:4:0x0028] THEN: R(1:5) ELSE: R(1:(1:8)(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0028|if (r0 == null) goto L_0x002a\l}"];
+subgraph cluster_Region_1056064603 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002a|android.util.Log.w(TAG, \"stripOffsets should not be null.\")\l}"];
+}
+subgraph cluster_Region_624304699 {
+label = "R(1:(1:8)(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_171657380 {
+label = "IF [B:7:0x0032] THEN: R(1:8) ELSE: R(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0032|if (r12 == null) goto L_0x0034\l}"];
+subgraph cluster_Region_1811635749 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0034|android.util.Log.w(TAG, \"stripByteCounts should not be null.\")\l}"];
+}
+subgraph cluster_Region_1255169739 {
+label = "R(5:10|(1:12)|13|(3:16|(1:18)(0)|19)|20)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|long r5 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1402723441 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0042|LOOP_START\lPHI: r1 r5 \l  PHI: (r1v5 int) = (r1v4 int), (r1v8 int) binds: [B:10:0x003c, B:12:0x0044] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 long) = (r5v0 long), (r5v5 long) binds: [B:10:0x003c, B:12:0x0044] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:11:0x0042\-\>B:12:0x0044\l|if (r1 \< r12.length) goto L_0x0044\l}"];
+subgraph cluster_Region_1105435055 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0044|LOOP_END\lLOOP:0: B:11:0x0042\-\>B:12:0x0044\l|r5 += r7\lr1++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x004a|byte[] byte[] r1 = new byte[((int) r5)]\lint r2 = 0\lint r3 = 0\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_264425987 {
+label = "LOOP:1: (3:16|(1:18)(0)|19)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0051|if (r2 \< r0.length) goto L_0x0053\l}"];
+subgraph cluster_Region_2047747800 {
+label = "R(3:16|(1:18)(0)|19)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0053|int int r7 = (int) r12[r2]\lint int r6 = ((int) r0[r2]) \- r3\l}"];
+subgraph cluster_IfRegion_290297695 {
+label = "IF [B:17:0x005a] THEN: R(1:18) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x005a|if (r6 \< 0) goto L_0x005c\l}"];
+subgraph cluster_Region_750778257 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x005c|android.util.Log.d(TAG, \"Invalid strip offset value\")\l}"];
+}
+subgraph cluster_Region_4439745 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0063|LOOP_END\lLOOP:1: B:14:0x0050\-\>B:19:0x0063\l|r11.seek((long) r6)\lint int r3 = r3 + r6\lbyte[] byte[] r6 = new byte[r7]\lr11.read(r6)\lint r3 = r3 + r7\ljava.lang.System.arraycopy(r6, 0, r1, r5, r6.length)\lr5 += r6.length\lr2++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0077|r10.mHasThumbnail = true\lr10.mThumbnailBytes = r1\lr10.mThumbnailLength = r1.length\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_342909704 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0031}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0050|LOOP_START\lPHI: r2 r3 r5 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:13:0x004a, B:19:0x0063] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 int) = (r3v1 int), (r3v4 int) binds: [B:13:0x004a, B:19:0x0063] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v3 int) = (r5v2 int), (r5v4 int) binds: [B:13:0x004a, B:19:0x0063] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:14:0x0050\-\>B:19:0x0063\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004a|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0077|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0063|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0063|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.media.ExifInterface.handleThumbnailFromStrips((r10v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r11v0 android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 java.util.HashMap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_26[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_27[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_21[style=dashed];
+Node_12 -> Node_11;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_24[style=dashed];
+Node_18 -> Node_23;
+Node_19 -> Node_14;
+Node_20 -> Node_25;
+Node_14 -> Node_15;
+Node_21 -> Node_13;
+Node_22 -> Node_20;
+Node_23 -> Node_19;
+Node_24 -> Node_19;
+}
+

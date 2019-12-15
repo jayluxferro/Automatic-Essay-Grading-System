@@ -1,0 +1,61 @@
+digraph "CFG forcom.google.android.exoplayer2.mediacodec.MediaCodecRenderer.processOutputFormat()V" {
+subgraph cluster_Region_1113558142 {
+label = "R(2:0|(2:(2:6|11)|(2:(1:9)|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.media.MediaFormat android.media.MediaFormat r0 = r4.codec.getOutputFormat()\l}"];
+subgraph cluster_Region_1757390395 {
+label = "R(2:(2:6|11)|(2:(1:9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1527016298 {
+label = "IF [B:1:0x000b, B:3:0x0013, B:5:0x001b] THEN: R(2:6|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r4.codecNeedsAdaptationWorkaround != false) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|ADDED_TO_REGION\l|if (r0.getInteger(\"width\") == 32) goto L_0x0015\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|ADDED_TO_REGION\l|if (r0.getInteger(\"height\") == 32) goto L_0x001d\l}"];
+subgraph cluster_Region_4797615 {
+label = "R(2:6|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001d|r4.shouldSkipAdaptationWorkaroundOutputBuffer = true\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_780549499 {
+label = "R(2:(1:9)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_44992531 {
+label = "IF [B:8:0x0022] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|if (r4.codecNeedsMonoChannelCountWorkaround == true) goto L_0x0024\l}"];
+subgraph cluster_Region_2079188659 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0024|r0.setInteger(\"channel\-count\", 1)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0029|onOutputFormatChanged(r4.codec, r0)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.mediacodec.MediaCodecRenderer.processOutputFormat((r4v0 'this' com.google.android.exoplayer2.mediacodec.MediaCodecRenderer A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_11;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_12;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,222 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.dataSetChanged()V" {
+subgraph cluster_Region_305263455 {
+label = "R(6:0|6|(3:9|(2:(4:13|(1:15)|16|(1:18))(1:(2:(1:24)|25)(0))|19)(0)|26)|(1:28)|29|(1:(3:31|(3:33|(1:35)(0)|36)|37)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r10.mAdapter.getCount()\lr10.mExpectedAdapterCount = r0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|PHI: r1 \l  PHI: (r1v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|boolean r5 = r10.mItems.size() \< (r10.mOffscreenPageLimit * 2) + 1 && r10.mItems.size() \< r0\lint r6 = r10.mCurItem\lint r1 = 0\lboolean r2 = false\l}"];
+subgraph cluster_LoopRegion_1569671580 {
+label = "LOOP:0: (3:9|(2:(4:13|(1:15)|16|(1:18))(1:(2:(1:24)|25)(0))|19)(0)|26)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|if (r1 \< r10.mItems.size()) goto L_0x0030\l}"];
+subgraph cluster_Region_1969426338 {
+label = "R(3:9|(2:(4:13|(1:15)|16|(1:18))(1:(2:(1:24)|25)(0))|19)(0)|26)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|android.support.v4.view.ViewPager$ItemInfo android.support.p000v4.view.ViewPager.ItemInfo r7 = r10.mItems.get(r1)\lint int r8 = r10.mAdapter.getItemPosition(r7.object)\l}"];
+subgraph cluster_IfRegion_641563670 {
+label = "IF [B:10:0x0041] THEN: R(2:(4:13|(1:15)|16|(1:18))(1:(2:(1:24)|25)(0))|19) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|if (r8 != \-1) goto L_0x0044\l}"];
+subgraph cluster_Region_854189177 {
+label = "R(2:(4:13|(1:15)|16|(1:18))(1:(2:(1:24)|25)(0))|19)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_657497662 {
+label = "IF [B:12:0x0045] THEN: R(4:13|(1:15)|16|(1:18)) ELSE: R(1:(2:(1:24)|25)(0))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0045|if (r8 == \-2) goto L_0x0047\l}"];
+subgraph cluster_Region_381794436 {
+label = "R(4:13|(1:15)|16|(1:18))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0047|r10.mItems.remove(r1)\lr1\-\-\l}"];
+subgraph cluster_IfRegion_524340795 {
+label = "IF [B:14:0x004e] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004e|if (r2 == false) goto L_0x0050\l}"];
+subgraph cluster_Region_1915998656 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0050|r10.mAdapter.startUpdate((android.view.ViewGroup) r10)\lr2 = true\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0056|PHI: r2 \l  PHI: (r2v11 boolean) = (r2v5 boolean), (r2v13 boolean) binds: [B:14:0x004e, B:15:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|r10.mAdapter.destroyItem((android.view.ViewGroup) r10, r7.position, r7.object)\l}"];
+subgraph cluster_IfRegion_1383487926 {
+label = "IF [B:17:0x0063] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0063|if (r10.mCurItem == r7.position) goto L_0x0065\l}"];
+subgraph cluster_Region_2129882843 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0065|r6 = java.lang.Math.max(0, java.lang.Math.min(r10.mCurItem, r0 \- 1))\l}"];
+}
+}
+}
+subgraph cluster_Region_40459910 {
+label = "R(1:(2:(1:24)|25)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1192809109 {
+label = "IF [B:21:0x0076] THEN: R(2:(1:24)|25) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0076|if (r7.position != r8) goto L_0x0078\l}"];
+subgraph cluster_Region_1189492373 {
+label = "R(2:(1:24)|25)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_183512037 {
+label = "IF [B:23:0x007c] THEN: R(1:24) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x007c|if (r7.position == r10.mCurItem) goto L_0x007e\l}"];
+subgraph cluster_Region_1840567846 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x007e|r6 = r8\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x007f|PHI: r6 \l  PHI: (r6v3 int) = (r6v1 int), (r6v4 int) binds: [B:23:0x007c, B:24:0x007e] A[DONT_GENERATE, DONT_INLINE]\l|r7.position = r8\l}"];
+}
+subgraph cluster_Region_1323343417 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0072|PHI: r1 r2 r6 \l  PHI: (r1v11 int) = (r1v4 int), (r1v12 int), (r1v12 int) binds: [B:25:0x007f, B:17:0x0063, B:18:0x0065] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v10 boolean) = (r2v5 boolean), (r2v11 boolean), (r2v11 boolean) binds: [B:25:0x007f, B:17:0x0063, B:18:0x0065] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v5 int) = (r6v3 int), (r6v1 int), (r6v7 int) binds: [B:25:0x007f, B:17:0x0063, B:18:0x0065] A[DONT_GENERATE, DONT_INLINE]\l|r5 = true\l}"];
+}
+subgraph cluster_Region_747238646 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0082|LOOP_END\lPHI: r1 r2 r5 r6 \l  PHI: (r1v9 int) = (r1v4 int), (r1v4 int), (r1v11 int) binds: [B:41:0x0082, B:40:0x0082, B:39:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v9 boolean) = (r2v5 boolean), (r2v5 boolean), (r2v10 boolean) binds: [B:41:0x0082, B:40:0x0082, B:39:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v4 boolean) = (r5v1 boolean), (r5v1 boolean), (r5v6 boolean) binds: [B:41:0x0082, B:40:0x0082, B:39:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v2 int) = (r6v1 int), (r6v1 int), (r6v5 int) binds: [B:41:0x0082, B:40:0x0082, B:39:0x0082] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0028\-\>B:26:0x0082\l|r1++\l}"];
+}
+}
+subgraph cluster_IfRegion_81674447 {
+label = "IF [B:27:0x0084] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0084|if (r2 == true) goto L_0x0086\l}"];
+subgraph cluster_Region_1019842721 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0086|r10.mAdapter.finishUpdate((android.view.ViewGroup) r10)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x008b|java.util.Collections.sort(r10.mItems, COMPARATOR)\l}"];
+subgraph cluster_Region_1956406480 {
+label = "R(1:(3:31|(3:33|(1:35)(0)|36)|37))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1879206002 {
+label = "IF [B:30:0x0092] THEN: R(3:31|(3:33|(1:35)(0)|36)|37) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0092|if (r5 == true) goto L_0x0094\l}"];
+subgraph cluster_Region_139786493 {
+label = "R(3:31|(3:33|(1:35)(0)|36)|37)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0094|int int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_599403105 {
+label = "LOOP:1: (3:33|(1:35)(0)|36)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0099|LOOP_START\lPHI: r1 \l  PHI: (r1v7 int) = (r1v6 int), (r1v8 int) binds: [B:31:0x0094, B:36:0x00ac] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:32:0x0099\-\>B:36:0x00ac\l|if (r1 \< r0) goto L_0x009b\l}"];
+subgraph cluster_Region_1332433415 {
+label = "R(3:33|(1:35)(0)|36)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x009b|android.support.v4.view.ViewPager$LayoutParams android.support.p000v4.view.ViewPager.LayoutParams r2 = (android.support.p000v4.view.ViewPager.LayoutParams) getChildAt(r1).getLayoutParams()\l}"];
+subgraph cluster_IfRegion_1455647943 {
+label = "IF [B:34:0x00a7] THEN: R(1:35) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x00a7|if (r2.isDecor == false) goto L_0x00a9\l}"];
+subgraph cluster_Region_552437480 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x00a9|r2.widthFactor = 0.0f\l}"];
+}
+subgraph cluster_Region_1044856108 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x00ac|LOOP_END\lLOOP:1: B:32:0x0099\-\>B:36:0x00ac\l|r1++\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x00af|setCurrentItemInternal(r6, false, true)\lrequestLayout()\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0015}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0017}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001d|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0021}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0028|LOOP_START\lPHI: r1 r2 r5 r6 \l  PHI: (r1v4 int) = (r1v3 int), (r1v10 int) binds: [B:6:0x0022, B:26:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v5 boolean) = (r2v4 boolean), (r2v9 boolean) binds: [B:6:0x0022, B:26:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 boolean) = (r5v0 boolean), (r5v4 boolean) binds: [B:6:0x0022, B:26:0x0082] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:6:0x0022, B:26:0x0082] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0028\-\>B:26:0x0082\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0044}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0074}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0078}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0084|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0082|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0082|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0082|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x00af|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x00ac|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x00ac|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.view.ViewPager.dataSetChanged((r10v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_38[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_41[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_20[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_21 -> Node_40[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_19;
+Node_19 -> Node_39;
+Node_26 -> Node_7;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_46[style=dashed];
+Node_31 -> Node_32;
+Node_32 -> Node_33;
+Node_32 -> Node_42[style=dashed];
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_44[style=dashed];
+Node_35 -> Node_43;
+Node_36 -> Node_32;
+Node_37 -> Node_45;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_38 -> Node_27;
+Node_39 -> Node_26;
+Node_40 -> Node_26;
+Node_41 -> Node_26;
+Node_42 -> Node_37;
+Node_43 -> Node_36;
+Node_44 -> Node_36;
+}
+

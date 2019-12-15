@@ -1,0 +1,86 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.ViewHolder.setIsRecyclable(Z)V" {
+subgraph cluster_Region_1958022410 {
+label = "R(2:4|(1:6)(1:(1:10)(1:(1:14)(0))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|PHI: r1 \l  PHI: (r1v0 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2.mIsRecyclableCount = r3 ? r2.mIsRecyclableCount \- 1 : r2.mIsRecyclableCount + 1\l}"];
+subgraph cluster_IfRegion_1934363610 {
+label = "IF [B:5:0x000e] THEN: R(1:6) ELSE: R(1:(1:10)(1:(1:14)(0)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r2.mIsRecyclableCount \< 0) goto L_0x0010\l}"];
+subgraph cluster_Region_996507296 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|r2.mIsRecyclableCount = 0\landroid.util.Log.e(\"View\", \"isRecyclable decremented below 0: unmatched pair of setIsRecyable() calls for \" + r2)\l}"];
+}
+subgraph cluster_Region_126922958 {
+label = "R(1:(1:10)(1:(1:14)(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1536237675 {
+label = "IF [B:7:0x002a, B:9:0x002e] THEN: R(1:10) ELSE: R(1:(1:14)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|if (r3 != true) goto L_0x002c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002e|ADDED_TO_REGION\l|if (r2.mIsRecyclableCount == 1) goto L_0x0030\l}"];
+subgraph cluster_Region_1209066008 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0030|r2.mFlags \|= 16\l}"];
+}
+subgraph cluster_Region_1485837764 {
+label = "R(1:(1:14)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1518655704 {
+label = "IF [B:11:0x0037, B:13:0x003b] THEN: R(1:14) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0037|if (r3 != false) goto L_0x0039\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003b|ADDED_TO_REGION\l|if (r2.mIsRecyclableCount == 0) goto L_0x003d\l}"];
+subgraph cluster_Region_147073435 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003d|r2.mFlags &= \-17\l}"];
+}
+subgraph cluster_Region_1200294585 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002c}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0039}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void android.support.v7.widget.RecyclerView.ViewHolder.setIsRecyclable((r2v0 'this' android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_17;
+Node_11 -> Node_12;
+Node_11 -> Node_18[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+}
+

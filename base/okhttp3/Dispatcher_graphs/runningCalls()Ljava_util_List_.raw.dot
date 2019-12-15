@@ -1,0 +1,29 @@
+digraph "CFG forokhttp3.Dispatcher.runningCalls()Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: MONITOR_ENTER  (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0001\l|0x0001: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList A[Catch:\{ all \-\> 0x002b \}, TRY_ENTER]\l0x0003: INVOKE  (r0 I:java.util.ArrayList) java.util.ArrayList.\<init\>():void type: DIRECT A[Catch:\{ all \-\> 0x002b \}]\l0x0006: IGET  (r1 I:java.util.Deque\<okhttp3.RealCall\>) = (r3 I:okhttp3.Dispatcher) okhttp3.Dispatcher.runningSyncCalls java.util.Deque A[Catch:\{ all \-\> 0x002b \}]\l0x0008: INVOKE  (r0 I:java.util.List), (r1 I:java.util.Collection) java.util.List.addAll(java.util.Collection):boolean type: INTERFACE A[Catch:\{ all \-\> 0x002b \}]\l0x000b: IGET  (r1 I:java.util.Deque\<okhttp3.RealCall$AsyncCall\>) = (r3 I:okhttp3.Dispatcher) okhttp3.Dispatcher.runningAsyncCalls java.util.Deque A[Catch:\{ all \-\> 0x002b \}]\l0x000d: INVOKE  (r1 I:java.util.Iterator) = (r1 I:java.util.Deque) java.util.Deque.iterator():java.util.Iterator type: INTERFACE A[Catch:\{ all \-\> 0x002b \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE A[Catch:\{ all \-\> 0x002b \}]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0025 A[Catch:\{ all \-\> 0x002b \}]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|0x0017: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE A[Catch:\{ all \-\> 0x002b \}]\l0x001b: CHECK_CAST  (r2 I:okhttp3.RealCall$AsyncCall) = (okhttp3.RealCall$AsyncCall) (r2 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x002b \}]\l0x001d: INVOKE  (r2 I:okhttp3.RealCall) = (r2 I:okhttp3.RealCall$AsyncCall) okhttp3.RealCall.AsyncCall.get():okhttp3.RealCall type: VIRTUAL A[Catch:\{ all \-\> 0x002b \}]\l0x0021: INVOKE  (r0 I:java.util.List), (r2 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE A[Catch:\{ all \-\> 0x002b \}]\l0x0024: GOTO  \-\> 0x0011 A[Catch:\{ all \-\> 0x002b \}]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|0x0025: INVOKE  (r0 I:java.util.List) = (r0 I:java.util.List) java.util.Collections.unmodifiableList(java.util.List):java.util.List type: STATIC A[Catch:\{ all \-\> 0x002b \}]\l0x0028: NOP   A[TRY_LEAVE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|0x0029: MONITOR_EXIT  (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|0x002a: RETURN  (r0 I:java.util.List\<okhttp3.Call\>) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x002b|ExcHandler: all null\lSplitter:B:1:0x0001\l|0x002b: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_10 [shape=record,label="{10\:\ 0x002c|0x002c: MONITOR_EXIT  (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x002d|0x002d: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public synchronized java.util.List\<okhttp3.Call\> okhttp3.Dispatcher.runningCalls((r3 'this' I:okhttp3.Dispatcher A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Lokhttp3\/Call;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forokhttp3.internal.platform.AndroidPlatform.logCloseableLeak(Ljava\/lang\/String;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1021121238 {
+label = "R(1:(1:(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1171641676 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2141738256 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r1.closeGuard.warnIfOpen(r3) == false) goto L_0x0008\l}"];
+subgraph cluster_Region_368690838 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|log(5, r2, (java.lang.Throwable) null)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.platform.AndroidPlatform.logCloseableLeak((r1v0 'this' okhttp3.internal.platform.AndroidPlatform A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

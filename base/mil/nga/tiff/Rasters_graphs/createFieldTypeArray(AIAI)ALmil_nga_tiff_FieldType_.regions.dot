@@ -1,0 +1,53 @@
+digraph "CFG formil.nga.tiff.Rasters.createFieldTypeArray([I[I)[Lmil\/nga\/tiff\/FieldType;" {
+subgraph cluster_Region_638629192 {
+label = "R(1:(2:(3:2|(1:5)|6)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1784506307 {
+label = "R(2:(3:2|(1:5)|6)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1393002052 {
+label = "IF [B:1:0x0002] THEN: R(3:2|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.length == r5.length) goto L_0x0004\l}"];
+subgraph cluster_Region_690619032 {
+label = "R(3:2|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|mil.nga.tiff.FieldType[] mil.nga.tiff.FieldType[] r0 = new mil.nga.tiff.FieldType[r4.length]\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_725755176 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r1 \< r4.length) goto L_0x000b\l}"];
+subgraph cluster_Region_1916603305 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:5:0x000b\l|r0[r1] = mil.nga.tiff.FieldType.getFieldType(r5[r1], r4[r1])\lr1++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0018|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1490765134 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019}"];
+Node_8 [shape=record,label="{8\:\ 0x0037|throw new mil.nga.tiff.util.TiffException(\"Equal number of bits per samples and sample formats expected. Bits Per Samples: \" + r4 + \", Sample Formats: \" + r5)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|LOOP_START\lPHI: r1 \l  PHI: (r1v3 int) = (r1v2 int), (r1v4 int) binds: [B:2:0x0004, B:5:0x000b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0008\-\>B:5:0x000b\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static mil.nga.tiff.FieldType[] mil.nga.tiff.Rasters.createFieldTypeArray((r4v0 int[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_3;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_9 -> Node_6;
+}
+

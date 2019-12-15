@@ -1,0 +1,56 @@
+digraph "CFG forokio.ByteString.decodeBase64(Ljava\/lang\/String;)Lokio\/ByteString;" {
+subgraph cluster_Region_87306674 {
+label = "R(1:(2:(2:1|(2:(1:7)|(1:4)))|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1435423322 {
+label = "R(2:(2:1|(2:(1:7)|(1:4)))|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1218094375 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(2:(1:7)|(1:4))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_838771351 {
+label = "R(2:1|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|byte[] byte[] r1 = okio.Base64.decode(r1)\l}"];
+subgraph cluster_Region_617909677 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1491886575 {
+label = "IF [B:2:0x0006] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r1 != null) goto L_0x0008\l}"];
+subgraph cluster_Region_593764677 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return new okio.ByteString(r1)\l}"];
+}
+}
+subgraph cluster_Region_4817188 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_594972533 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|throw new java.lang.IllegalArgumentException(\"base64 == null\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+MethodNode[shape=record,label="{public static okio.ByteString okio.ByteString.decodeBase64((r1v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6;
+}
+

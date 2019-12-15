@@ -1,0 +1,34 @@
+digraph "CFG forcom.squareup.picasso.Request.Builder.setResourceId(I)Lcom\/squareup\/picasso\/Request$Builder;" {
+subgraph cluster_Region_259264582 {
+label = "R(1:(2:(2:1|2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1823179683 {
+label = "R(2:(2:1|2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1848700976 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != 0) goto L_0x0002\l}"];
+subgraph cluster_Region_1363387482 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r1.resourceId = r2\lr1.uri = null\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_2124052500 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|throw new java.lang.IllegalArgumentException(\"Image resource ID may not be 0.\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{public com.squareup.picasso.Request$Builder com.squareup.picasso.Request.Builder.setResourceId((r1v0 'this' com.squareup.picasso.Request$Builder A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.DrawableRes, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

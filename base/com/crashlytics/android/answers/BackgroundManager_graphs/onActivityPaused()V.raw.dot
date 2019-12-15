@@ -1,0 +1,28 @@
+digraph "CFG forcom.crashlytics.android.answers.BackgroundManager.onActivityPaused()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r7 I:com.crashlytics.android.answers.BackgroundManager) com.crashlytics.android.answers.BackgroundManager.flushOnBackground boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x002d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:boolean) = (r7 I:com.crashlytics.android.answers.BackgroundManager) com.crashlytics.android.answers.BackgroundManager.inBackground boolean \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x002d \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|0x0008: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0009: IPUT  \l  (r0 I:boolean)\l  (r7 I:com.crashlytics.android.answers.BackgroundManager)\l com.crashlytics.android.answers.BackgroundManager.inBackground boolean \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|SYNTHETIC\lSplitter:B:5:0x000b\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Splitter:B:5:0x000b\l|0x000b: IGET  (r0 I:java.util.concurrent.atomic.AtomicReference\<java.util.concurrent.ScheduledFuture\<?\>\>) = (r7 I:com.crashlytics.android.answers.BackgroundManager) com.crashlytics.android.answers.BackgroundManager.backgroundFutureRef java.util.concurrent.atomic.AtomicReference A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}, TRY_ENTER]\l0x000d: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x000e: IGET  (r2 I:java.util.concurrent.ScheduledExecutorService) = (r7 I:com.crashlytics.android.answers.BackgroundManager) com.crashlytics.android.answers.BackgroundManager.executorService java.util.concurrent.ScheduledExecutorService A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x0010: NEW_INSTANCE  (r3 I:com.crashlytics.android.answers.BackgroundManager$1) =  com.crashlytics.android.answers.BackgroundManager$1 A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x0012: INVOKE  \l  (r3 I:com.crashlytics.android.answers.BackgroundManager$1)\l  (r7 I:com.crashlytics.android.answers.BackgroundManager)\l com.crashlytics.android.answers.BackgroundManager.1.\<init\>(com.crashlytics.android.answers.BackgroundManager):void type: DIRECT A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x0015: CONST  (r4 I:?[long, double]) = (5000(0x1388, double:2.4703E\-320) ?[long, double]) A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x0017: SGET  (r6 I:java.util.concurrent.TimeUnit) =  java.util.concurrent.TimeUnit.MILLISECONDS java.util.concurrent.TimeUnit A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x0019: INVOKE  (r2 I:java.util.concurrent.ScheduledFuture) = \l  (r2 I:java.util.concurrent.ScheduledExecutorService)\l  (r3 I:java.lang.Runnable)\l  (r4 I:long)\l  (r6 I:java.util.concurrent.TimeUnit)\l java.util.concurrent.ScheduledExecutorService.schedule(java.lang.Runnable, long, java.util.concurrent.TimeUnit):java.util.concurrent.ScheduledFuture type: INTERFACE A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}]\l0x001d: INVOKE  \l  (r0 I:java.util.concurrent.atomic.AtomicReference)\l  (r1 I:java.lang.Object)\l  (r2 I:java.lang.Object)\l java.util.concurrent.atomic.AtomicReference.compareAndSet(java.lang.Object, java.lang.Object):boolean type: VIRTUAL A[Catch:\{ RejectedExecutionException \-\> 0x0021 \}, TRY_LEAVE]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|ExcHandler: RejectedExecutionException null\lSplitter:B:5:0x000b\l|0x0021: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|0x0022: INVOKE  (r1 I:io.fabric.sdk.android.Logger) =  io.fabric.sdk.android.Fabric.getLogger():io.fabric.sdk.android.Logger type: STATIC \l0x0026: CONST_STR  (r2 I:java.lang.String) =  \"Answers\" \l0x0028: CONST_STR  (r3 I:java.lang.String) =  \"Failed to schedule background detector\" \l0x002a: INVOKE  \l  (r1 I:io.fabric.sdk.android.Logger)\l  (r2 I:java.lang.String)\l  (r3 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l io.fabric.sdk.android.Logger.d(java.lang.String, java.lang.String, java.lang.Throwable):void type: INTERFACE \l}"];
+Node_10 [shape=record,label="{10\:\ 0x002d|0x002d: RETURN   \l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.BackgroundManager.onActivityPaused((r7 'this' I:com.crashlytics.android.answers.BackgroundManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8;
+Node_6 -> Node_8;
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

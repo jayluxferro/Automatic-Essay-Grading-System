@@ -1,0 +1,58 @@
+digraph "CFG forkotlin.collections.MapsKt__MapsKt.mapCapacity(I)I" {
+subgraph cluster_Region_469424874 {
+label = "R(1:(2:(1:3)|(1:(2:(1:7)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_503240307 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_838309958 {
+label = "IF [B:1:0x0001] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r1 \< 3) goto L_0x0003\l}"];
+subgraph cluster_Region_1896809749 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|RETURN\l|return r1 + 1\l}"];
+}
+}
+subgraph cluster_Region_1022340180 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1472837876 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1525759971 {
+label = "IF [B:5:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|if (r1 \< INT_MAX_POWER_OF_TWO) goto L_0x000a\l}"];
+subgraph cluster_Region_1407168005 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|RETURN\l|return r1 + (r1 \/ 3)\l}"];
+}
+}
+subgraph cluster_Region_311637286 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000e|RETURN\l|return Integer.MAX_VALUE\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000a}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.MapsKt__MapsKt.mapCapacity((r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, kotlin.PublishedApi, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

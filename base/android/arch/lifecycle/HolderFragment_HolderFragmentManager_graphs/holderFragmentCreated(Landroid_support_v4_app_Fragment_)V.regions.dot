@@ -1,0 +1,36 @@
+digraph "CFG forandroid.arch.lifecycle.HolderFragment.HolderFragmentManager.holderFragmentCreated(Landroid\/support\/v4\/app\/Fragment;)V" {
+subgraph cluster_Region_1957849695 {
+label = "R(2:0|(2:(2:2|5)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v4.app.Fragment android.support.p000v4.app.Fragment r0 = r2.getParentFragment()\l}"];
+subgraph cluster_Region_1340921090 {
+label = "R(2:(2:2|5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_286283131 {
+label = "IF [B:1:0x0004] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_175169772 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1.mNotCommittedFragmentHolders.remove(r0)\lr0.getFragmentManager().unregisterFragmentLifecycleCallbacks(r1.mParentDestroyedCallback)\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_924198582 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|r1.mNotCommittedActivityHolders.remove(r2.getActivity())\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void android.arch.lifecycle.HolderFragment.HolderFragmentManager.holderFragmentCreated((r1v0 'this' android.arch.lifecycle.HolderFragment$HolderFragmentManager A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.v4.app.Fragment A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

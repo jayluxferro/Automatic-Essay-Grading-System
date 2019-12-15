@@ -1,0 +1,29 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.OfflineDownload.CheckAndUnzipAll()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0001: INVOKE  (r0 I:java.io.File) = \l  (r5 I:com.ghanapostgps.ghanapost.OfflineDownload)\l  (r0 I:java.lang.String)\l com.ghanapostgps.ghanapost.OfflineDownload.getExternalFilesDir(java.lang.String):java.io.File type: VIRTUAL \l0x0005: INVOKE  (r1 I:boolean) = (r0 I:java.io.File) java.io.File.exists():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0036 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: INVOKE  (r0 I:java.io.File[]) = (r0 I:java.io.File) java.io.File.listFiles():java.io.File[] type: VIRTUAL \l0x000f: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: ARRAY_LENGTH  (r2 I:int) = (r0 I:?[]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|0x0011: IF  (r1 I:?[int, byte, short, char]) \>= (r2 I:?[int, byte, short, char])  \-\> B:9:0x0036 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|0x0013: AGET  (r2 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r1 I:?[int, short, byte, char]) \l0x0015: INVOKE  (r3 I:java.lang.String) = (r2 I:java.io.File) java.io.File.getAbsolutePath():java.lang.String type: VIRTUAL \l0x0019: CONST_STR  (r4 I:java.lang.String) =  \"vok\" \l0x001b: INVOKE  (r4 I:boolean) = (r3 I:java.lang.String), (r4 I:java.lang.String) java.lang.String.endsWith(java.lang.String):boolean type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|0x001f: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0033 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|0x0021: INVOKE  (r4 I:android.content.Context) = (r5 I:com.ghanapostgps.ghanapost.OfflineDownload) com.ghanapostgps.ghanapost.OfflineDownload.getBaseContext():android.content.Context type: VIRTUAL \l0x0025: INVOKE  (r4 I:java.io.File) = (r4 I:android.content.Context) android.content.Context.getFilesDir():java.io.File type: VIRTUAL \l0x0029: INVOKE  (r4 I:java.lang.String) = (r4 I:java.io.File) java.io.File.getAbsolutePath():java.lang.String type: VIRTUAL \l0x002d: INVOKE  (r3 I:java.lang.String), (r4 I:java.lang.String) com.ghanapostgps.ghanapost.util.ZipUnzip.unzip(java.lang.String, java.lang.String):void type: STATIC \l0x0030: INVOKE  (r2 I:java.io.File) java.io.File.delete():boolean type: VIRTUAL \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|0x0033: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0036|0x0036: INVOKE  (r5 I:com.ghanapostgps.ghanapost.OfflineDownload) com.ghanapostgps.ghanapost.OfflineDownload.RefreshListView():void type: DIRECT \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0039|0x0039: RETURN   \l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.OfflineDownload.CheckAndUnzipAll((r5 'this' I:com.ghanapostgps.ghanapost.OfflineDownload A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_3;
+Node_9 -> Node_10;
+}
+

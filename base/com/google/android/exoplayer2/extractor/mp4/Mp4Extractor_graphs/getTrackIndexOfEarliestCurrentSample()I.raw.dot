@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.Mp4Extractor.getTrackIndexOfEarliestCurrentSample()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r2 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l0x0001: CONST  (r0 I:?[long, double]) = \l  (9223372036854775807(0x7fffffffffffffff, double:NaN) ?[long, double])\l \l0x0006: CONST  (r5 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IGET  (r8 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track[]) = \l  (r9 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor)\l com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.tracks com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track[] \l0x0009: ARRAY_LENGTH  (r8 I:int) = (r8 I:?[]) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: IF  (r5 I:?[int, byte, short, char] A[D('trackIndex' int)]) \>= (r8 I:?[int, byte, short, char])  \-\> B:9:0x0028 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: IGET  (r8 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track[]) = \l  (r9 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor)\l com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.tracks com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track[] \l0x000e: AGET  (r4 I:?[OBJECT, ARRAY]) = \l  (r8 I:?[OBJECT, ARRAY][])\l  (r5 I:?[int, short, byte, char] A[D('trackIndex' int)])\l \l0x0010: IGET  (r3 I:int) = \l  (r4 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track A[D('track' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track)])\l com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.Mp4Track.sampleIndex int \l0x0012: IGET  (r8 I:com.google.android.exoplayer2.extractor.mp4.TrackSampleTable) = \l  (r4 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track A[D('track' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track)])\l com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.Mp4Track.sampleTable com.google.android.exoplayer2.extractor.mp4.TrackSampleTable \l0x0014: IGET  (r8 I:int) = \l  (r8 I:com.google.android.exoplayer2.extractor.mp4.TrackSampleTable)\l com.google.android.exoplayer2.extractor.mp4.TrackSampleTable.sampleCount int \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('sampleIndex' int)]) != (r8 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|0x0018: ARITH  (r5 I:int A[D('trackIndex' int)]) = (r5 I:int A[D('trackIndex' int)]) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|0x001b: IGET  (r8 I:com.google.android.exoplayer2.extractor.mp4.TrackSampleTable) = \l  (r4 I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track A[D('track' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track)])\l com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.Mp4Track.sampleTable com.google.android.exoplayer2.extractor.mp4.TrackSampleTable \l0x001d: IGET  (r8 I:long[]) = \l  (r8 I:com.google.android.exoplayer2.extractor.mp4.TrackSampleTable)\l com.google.android.exoplayer2.extractor.mp4.TrackSampleTable.offsets long[] \l0x001f: AGET  (r6 I:?[long, double]) = \l  (r8 I:?[long, double][])\l  (r3 I:?[int, short, byte, char] A[D('sampleIndex' int)])\l \l0x0021: CMP_L  (r8 I:int) = \l  (r6 I:long A[D('trackSampleOffset' long)])\l  (r0 I:long A[D('earliestSampleOffset' long)])\l \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: IF  (r8 I:?[int, byte, short, char]) \>= (0 ?[int, byte, short, char])  \-\> B:5:0x0018 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|0x0025: MOVE  (r0 I:?[long, double] A[D('earliestSampleOffset' long)]) = (r6 I:?[long, double] A[D('trackSampleOffset' long)]) \l0x0026: MOVE  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('earliestSampleTrackIndex' int)]) = \l  (r5 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('trackIndex' int)])\l \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|0x0028: RETURN  (r2 I:int A[D('earliestSampleTrackIndex' int)]) \l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.getTrackIndexOfEarliestCurrentSample((r9 'this' I:com.google.android.exoplayer2.extractor.mp4.Mp4Extractor A[IMMUTABLE_TYPE, THIS]))  | Debug Info:\l  0x0012\-0x0028: r3 'sampleIndex' int\l  0x0010\-0x0028: r4 'track' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track\l  0x0021\-0x0028: r6 'trackSampleOffset' long\l  0x0006\-0x0028: r0 'earliestSampleOffset' long\l  0x0001\-0x0028: r2 'earliestSampleTrackIndex' int\l  0x0007\-0x0028: r5 'trackIndex' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_5;
+Node_7 -> Node_8[style=dashed];
+Node_8 -> Node_5;
+}
+

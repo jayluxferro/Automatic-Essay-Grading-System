@@ -1,0 +1,41 @@
+digraph "CFG forio.fabric.sdk.android.services.events.EventsFilesManager.deleteOldestInRollOverIfOverMax()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List r0 = r9.eventStorage.getAllFilesInRollOverDirectory()\lint r1 = getMaxFilesToKeep()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r0.size() \> r1) goto L_0x0011\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|int r2 = r0.size() \- r1\landroid.content.Context r3 = r9.context\ljava.util.Locale r4 = java.util.Locale.US\ljava.lang.Object[] r6 = new java.lang.Object[]\{java.lang.Integer.valueOf(r0.size()), java.lang.Integer.valueOf(r1), java.lang.Integer.valueOf(r2)\}\lp018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r3, java.lang.String.format(r4, \"Found %d files in  roll over directory, this is greater than %d, deleting %d oldest files\", r6))\ljava.util.TreeSet r1 = new java.util.TreeSet(new p018io.fabric.sdk.android.services.events.EventsFilesManager.C13141(r9))\ljava.util.Iterator r0 = r0.iterator()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x004d|LOOP_START\lLOOP:0: B:4:0x004d\-\>B:6:0x0053\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0051|if (r0.hasNext() == false) goto L_0x006a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0053|LOOP_END\lLOOP:0: B:4:0x004d\-\>B:6:0x0053\l|java.io.File r3 = r0.next()\lr1.add(new p018io.fabric.sdk.android.services.events.EventsFilesManager.FileWithTimestamp(r3, parseCreationTimestampFromFileName(r3.getName())))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006a|java.util.ArrayList r0 = new java.util.ArrayList()\ljava.util.Iterator r1 = r1.iterator()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0073|LOOP_START\lLOOP:1: B:8:0x0073\-\>B:11:0x0088\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0077|if (r1.hasNext() == false) goto L_0x008a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0079|r0.add(((p018io.fabric.sdk.android.services.events.EventsFilesManager.FileWithTimestamp) r1.next()).file)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0088|LOOP_END\lLOOP:1: B:8:0x0073\-\>B:11:0x0088\l|if (r0.size() != r2) goto L_0x0073\l}"];
+Node_12 [shape=record,label="{12\:\ 0x008a|r9.eventStorage.deleteFilesInRollOverDirectory(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x008f|RETURN\l|return\l}"];
+Node_14 [shape=record,label="{14\:\ 0x006a|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x008a|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x008a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void io.fabric.sdk.android.services.events.EventsFilesManager.deleteOldestInRollOverIfOverMax((r9v0 'this' io.fabric.sdk.android.services.events.EventsFilesManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_15;
+Node_10 -> Node_11;
+Node_11 -> Node_8;
+Node_11 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_14 -> Node_7;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+}
+

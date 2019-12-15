@@ -1,0 +1,43 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.OfflineDownload.onDestroy()V" {
+subgraph cluster_Region_373810183 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onDestroy()\l}"];
+subgraph cluster_TryCatchRegion_934652181 {
+label = "Try: R(1:2) catches: R(2:3|4)";
+node [shape=record,color=blue];
+subgraph cluster_Region_165676723 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x0009 \}\lSplitter:B:1:0x0003\l|unregisterReceiver(r1.onDownloadComplete)     \/\/ Catch:\{ Exception \-\> 0x0009 \}\l}"];
+}
+subgraph cluster_Region_227579391 {
+label = "R(2:3|4) | ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0003\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|r0.printStackTrace()\l}"];
+}
+}
+}
+subgraph cluster_Region_227579391 {
+label = "R(2:3|4) | ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0003\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|r0.printStackTrace()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0003|SYNTHETIC\lSplitter:B:1:0x0003\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.OfflineDownload.onDestroy((r1v0 'this' com.ghanapostgps.ghanapost.OfflineDownload A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+}
+

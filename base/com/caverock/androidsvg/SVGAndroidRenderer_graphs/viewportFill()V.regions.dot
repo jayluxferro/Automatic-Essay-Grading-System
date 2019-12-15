@@ -1,0 +1,66 @@
+digraph "CFG forcom.caverock.androidsvg.SVGAndroidRenderer.viewportFill()V" {
+subgraph cluster_Region_49454893 {
+label = "R(3:(1:2)(1:(1:5)(1:11))|(1:8)|9) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1524124353 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: R(1:(1:5)(1:11))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if ((r2.state.style.viewportFill instanceof com.caverock.androidsvg.SVG.Colour) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_2068306897 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|int r0 = ((com.caverock.androidsvg.SVG.Colour) r2.state.style.viewportFill).colour\l}"];
+}
+subgraph cluster_Region_410876767 {
+label = "R(1:(1:5)(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_276059518 {
+label = "IF [B:4:0x001d] THEN: R(1:5) ELSE: R(1:11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|if ((r2.state.style.viewportFill instanceof com.caverock.androidsvg.SVG.CurrentColor) == true) goto L_0x001f\l}"];
+subgraph cluster_Region_542910645 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|int r0 = r2.state.style.color.colour\l}"];
+}
+subgraph cluster_Region_107592618 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0043|RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_520054756 {
+label = "IF [B:7:0x002d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|if (r2.state.style.viewportFillOpacity != null) goto L_0x002f\l}"];
+subgraph cluster_Region_687522017 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002f|int r0 = colourWithOpacity(r0, r2.state.style.viewportFillOpacity.floatValue())\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x003d|PHI: r0 \l  PHI: (r0v5 int) = (r0v4 int), (r0v6 int) binds: [B:7:0x002d, B:8:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|r2.canvas.drawColor(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0027|PHI: r0 \l  PHI: (r0v4 int) = (r0v14 int), (r0v19 int) binds: [B:5:0x001f, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0042}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGAndroidRenderer.viewportFill((r2v0 'this' com.caverock.androidsvg.SVGAndroidRenderer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

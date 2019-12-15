@@ -1,0 +1,127 @@
+digraph "CFG forandroid.support.v7.widget.ViewStubCompat.inflate()Landroid\/view\/View;" {
+subgraph cluster_Region_395847679 {
+label = "R(2:0|(1:24)(1:(9:6|(1:8)(1:9)|10|(1:12)|13|(1:15)(1:16)|17|(1:19)|20)(1:22))) | DECL_VAR: android.view.LayoutInflater null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.ViewParent android.view.ViewParent r0 = getParent()\l}"];
+subgraph cluster_IfRegion_1446416168 {
+label = "IF [B:1:0x0004, B:3:0x0008] THEN: R(1:24) ELSE: R(1:(9:6|(1:8)(1:9)|10|(1:12)|13|(1:15)(1:16)|17|(1:19)|20)(1:22))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 == null) goto L_0x005d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if ((r0 instanceof android.view.ViewGroup) == false) goto L_0x005d\l}"];
+subgraph cluster_Region_526588100 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0064|throw new java.lang.IllegalStateException(\"ViewStub must have a non\-null ViewGroup viewParent\")\l}"];
+}
+subgraph cluster_Region_448704545 {
+label = "R(1:(9:6|(1:8)(1:9)|10|(1:12)|13|(1:15)(1:16)|17|(1:19)|20)(1:22)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_21257211 {
+label = "IF [B:5:0x000c] THEN: R(9:6|(1:8)(1:9)|10|(1:12)|13|(1:15)(1:16)|17|(1:19)|20) ELSE: R(1:22) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r4.mLayoutResource != 0) goto L_0x000e\l}"];
+subgraph cluster_Region_208345410 {
+label = "R(9:6|(1:8)(1:9)|10|(1:12)|13|(1:15)(1:16)|17|(1:19)|20)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|android.view.ViewGroup android.view.ViewGroup r0 = (android.view.ViewGroup) r0\l}"];
+subgraph cluster_IfRegion_1080374802 {
+label = "IF [B:7:0x0012] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (r4.mInflater != null) goto L_0x0014\l}"];
+subgraph cluster_Region_1200766328 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|android.view.LayoutInflater r1 = r4.mInflater\l}"];
+}
+subgraph cluster_Region_333940559 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0017|android.view.LayoutInflater r1 = android.view.LayoutInflater.from(getContext())\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001f|PHI: r1 \l  PHI: (r1v5 android.view.LayoutInflater) = (r1v8 android.view.LayoutInflater), (r1v9 android.view.LayoutInflater) binds: [B:9:0x0017, B:8:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|android.view.View android.view.View r1 = r1.inflate(r4.mLayoutResource, r0, false)\l}"];
+subgraph cluster_IfRegion_1204270050 {
+label = "IF [B:11:0x0029] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0029|if (r4.mInflatedId != \-1) goto L_0x002b\l}"];
+subgraph cluster_Region_998236441 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002b|r1.setId(r4.mInflatedId)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0030|int int r2 = r0.indexOfChild(r4)\lr0.removeViewInLayout(r4)\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r3 = getLayoutParams()\l}"];
+subgraph cluster_IfRegion_891994125 {
+label = "IF [B:14:0x003b] THEN: R(1:15) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|if (r3 != null) goto L_0x003d\l}"];
+subgraph cluster_Region_666596694 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003d|r0.addView(r1, r2, r3)\l}"];
+}
+subgraph cluster_Region_1900677505 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0041|r0.addView(r1, r2)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0044|r4.mInflatedViewRef = new java.lang.ref.WeakReference\<\>(r1)\l}"];
+subgraph cluster_IfRegion_680995971 {
+label = "IF [B:18:0x004d] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004d|if (r4.mInflateListener != null) goto L_0x004f\l}"];
+subgraph cluster_Region_442036726 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004f|r4.mInflateListener.onInflate(r4, r1)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0054|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_196026857 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005c|throw new java.lang.IllegalArgumentException(\"ViewStub must have a valid layoutResource\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0055}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x005d}"];
+MethodNode[shape=record,label="{public android.view.View android.support.v7.widget.ViewStubCompat.inflate((r4v0 'this' android.support.v7.widget.ViewStubCompat A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_23;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_23;
+Node_5 -> Node_6;
+Node_5 -> Node_21[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+}
+

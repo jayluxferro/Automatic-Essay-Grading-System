@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.dropOutputBuffer(Landroid\/media\/MediaCodec;I)V" {
+subgraph cluster_Region_612540093 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.util.TraceUtil.beginSection(\"dropVideoBuffer\")\lr4.releaseOutputBuffer(r5, false)\lcom.google.android.exoplayer2.util.TraceUtil.endSection()\lr3.decoderCounters.droppedOutputBufferCount++\lr3.droppedFrames++\lr3.consecutiveDroppedFrameCount++\lr3.decoderCounters.maxConsecutiveDroppedOutputBufferCount = java.lang.Math.max(r3.consecutiveDroppedFrameCount, r3.decoderCounters.maxConsecutiveDroppedOutputBufferCount)\l}"];
+subgraph cluster_Region_1015308891 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_672921837 {
+label = "IF [B:1:0x0032] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0032|if (r3.droppedFrames == r3.maxDroppedFramesToNotify) goto L_0x0034\l}"];
+subgraph cluster_Region_1519714067 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0034|maybeNotifyDroppedFrames()\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.video.MediaCodecVideoRenderer.dropOutputBuffer((r3v0 'this' com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS]), (r4v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'bufferIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

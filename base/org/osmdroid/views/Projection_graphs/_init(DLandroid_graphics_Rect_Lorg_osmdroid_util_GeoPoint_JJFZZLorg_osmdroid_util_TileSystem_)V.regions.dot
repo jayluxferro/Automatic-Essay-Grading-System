@@ -1,0 +1,35 @@
+digraph "CFG fororg.osmdroid.views.Projection.\<init\>(DLandroid\/graphics\/Rect;Lorg\/osmdroid\/util\/GeoPoint;JJFZZLorg\/osmdroid\/util\/TileSystem;)V" {
+subgraph cluster_Region_932091472 {
+label = "R(3:0|(1:2)(1:4)|5) | DECL_VAR: org.osmdroid.util.GeoPoint null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r10\lr0.mProjectedMapSize = org.osmdroid.util.TileSystem.MapSize(30.0d)\lr0.mRotateAndScaleMatrix = new android.graphics.Matrix()\lr0.mUnrotateAndScaleMatrix = new android.graphics.Matrix()\lr0.mRotateScalePoints = new float[2]\lr0.mBoundingBoxProjection = new org.osmdroid.util.BoundingBox()\lr0.mScreenRectProjection = new android.graphics.Rect()\lr0.mCurrentCenter = new org.osmdroid.util.GeoPoint(0.0d, 0.0d)\lr0.mZoomLevelProjection = r11\lr0.horizontalWrapEnabled = r20\lr0.verticalWrapEnabled = r21\lr0.mTileSystem = r22\lr0.mMercatorMapSize = org.osmdroid.util.TileSystem.MapSize(r0.mZoomLevelProjection)\lr0.mTileSize = org.osmdroid.util.TileSystem.getTileSize(r0.mZoomLevelProjection)\lr0.mIntrinsicScreenRectProjection = r13\l}"];
+subgraph cluster_IfRegion_1113913239 {
+label = "IF [B:1:0x0058] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0058|if (r14 != null) goto L_0x005a\l}"];
+subgraph cluster_Region_155850587 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x005a|r3 = r14\l}"];
+}
+subgraph cluster_Region_1054783019 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x005d|r3 = new org.osmdroid.util.GeoPoint(0.0d, 0.0d)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0064|r0.mScrollX = r15\lr0.mScrollY = r17\lr0.mOffsetX = (((long) getScreenCenterX()) \- r0.mScrollX) \- r0.mTileSystem.getMercatorXFromLongitude(r3.getLongitude(), r0.mMercatorMapSize, r0.horizontalWrapEnabled)\lr0.mOffsetY = (((long) getScreenCenterY()) \- r0.mScrollY) \- r0.mTileSystem.getMercatorYFromLatitude(r3.getLatitude(), r0.mMercatorMapSize, r0.verticalWrapEnabled)\lr0.mOrientation = r19\lr0.mRotateAndScaleMatrix.preRotate(r0.mOrientation, (float) getScreenCenterX(), (float) getScreenCenterY())\lr0.mRotateAndScaleMatrix.invert(r0.mUnrotateAndScaleMatrix)\lrefresh()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x005b|PHI: r3 \l  PHI: (r3v1 org.osmdroid.util.GeoPoint) = (r3v0 org.osmdroid.util.GeoPoint), (r3v6 org.osmdroid.util.GeoPoint) binds: [B:4:0x005d, B:2:0x005a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x00c5}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.Projection.\<init\>((r10v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS]), (r11v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 org.osmdroid.util.GeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 org.osmdroid.util.TileSystem A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_3 -> Node_5;
+}
+

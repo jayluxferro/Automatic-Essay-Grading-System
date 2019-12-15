@@ -1,0 +1,27 @@
+digraph "CFG forandroid.arch.lifecycle.ViewModelProviders.of(Landroid\/support\/v4\/app\/FragmentActivity;Landroid\/arch\/lifecycle\/ViewModelProvider$Factory;)Landroid\/arch\/lifecycle\/ViewModelProvider;" {
+subgraph cluster_Region_1756595818 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.app.Application android.app.Application r0 = checkApplication(r1)\l}"];
+subgraph cluster_IfRegion_1125687713 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2 == null) goto L_0x0006\l}"];
+subgraph cluster_Region_1623443021 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.arch.lifecycle.ViewModelProvider$AndroidViewModelFactory r2 = android.arch.lifecycle.ViewModelProvider.AndroidViewModelFactory.getInstance(r0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0013|RETURN\l|return new android.arch.lifecycle.ViewModelProvider(android.arch.lifecycle.ViewModelStores.m5of(r1), r2)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|PHI: r2 \l  PHI: (r2v1 android.arch.lifecycle.ViewModelProvider$Factory) = (r2v0 android.arch.lifecycle.ViewModelProvider$Factory), (r2v2 android.arch.lifecycle.ViewModelProvider$Factory) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static android.arch.lifecycle.ViewModelProvider android.arch.lifecycle.ViewModelProviders.of((r1v0 android.support.v4.app.FragmentActivity A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 android.arch.lifecycle.ViewModelProvider$Factory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[BUILD, android.support.annotation.MainThread, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forretrofit2.Retrofit.stringConverter(Ljava\/lang\/reflect\/Type;[Ljava\/lang\/annotation\/Annotation;)Lretrofit2\/Converter;" {
+subgraph cluster_Region_1863502349 {
+label = "R(3:0|(2:2|(2:(1:4)|(1:5)))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|retrofit2.Utils.checkNotNull(r4, \"type == null\")\lretrofit2.Utils.checkNotNull(r5, \"annotations == null\")\lint int r0 = r3.converterFactories.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1075244200 {
+label = "LOOP:0: (2:2|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0011\-\>B:5:0x0022\l|if (r1 \< r0) goto L_0x0013\l}"];
+subgraph cluster_Region_242839364 {
+label = "R(2:2|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|retrofit2.Converter retrofit2.Converter\<?, java.lang.String\> r2 = r3.converterFactories.get(r1).stringConverter(r4, r5, r3)\l}"];
+subgraph cluster_Region_527669988 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2009239076 {
+label = "IF [B:3:0x001f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001f|if (r2 != null) goto L_0x0021\l}"];
+subgraph cluster_Region_4607960 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_97958420 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|LOOP_END\lLOOP:0: B:1:0x0011\-\>B:5:0x0022\l|r1++\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0027|RETURN\l|return retrofit2.BuiltInConverters.ToStringConverter.INSTANCE\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public retrofit2.Converter\<T, java.lang.String\> retrofit2.Retrofit.stringConverter((r3v0 'this' retrofit2.Retrofit A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.annotation.Annotation[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/lang\/reflect\/Type;, [, Ljava\/lang\/annotation\/Annotation;, ), Lretrofit2\/Converter\<, TT;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_9;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_6;
+Node_9 -> Node_4;
+}
+

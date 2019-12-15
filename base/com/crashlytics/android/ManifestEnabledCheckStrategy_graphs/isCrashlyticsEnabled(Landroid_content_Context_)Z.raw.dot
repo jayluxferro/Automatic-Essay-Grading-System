@@ -1,0 +1,26 @@
+digraph "CFG forcom.crashlytics.android.ManifestEnabledCheckStrategy.isCrashlyticsEnabled(Landroid\/content\/Context;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0001\l|0x0001: INVOKE  (r1 I:java.lang.String) = (r4 I:android.content.Context) android.content.Context.getPackageName():java.lang.String type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001e \}, TRY_ENTER]\l0x0005: INVOKE  (r4 I:android.content.pm.PackageManager) = (r4 I:android.content.Context) android.content.Context.getPackageManager():android.content.pm.PackageManager type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l0x0009: CONST  (r2 I:?[int, float, short, byte, char]) = \l  (128(0x80, float:1.794E\-43) ?[int, float, short, byte, char])\l A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l0x000b: INVOKE  (r4 I:android.content.pm.ApplicationInfo) = \l  (r4 I:android.content.pm.PackageManager)\l  (r1 I:java.lang.String)\l  (r2 I:int)\l android.content.pm.PackageManager.getApplicationInfo(java.lang.String, int):android.content.pm.ApplicationInfo type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l0x000f: IGET  (r4 I:android.os.Bundle) = (r4 I:android.content.pm.ApplicationInfo) android.content.pm.ApplicationInfo.metaData android.os.Bundle A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x001d A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: CONST_STR  (r1 I:java.lang.String) =  \"firebase_crashlytics_collection_enabled\" A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l0x0015: INVOKE  (r4 I:boolean) = \l  (r4 I:android.os.Bundle)\l  (r1 I:java.lang.String)\l  (r0 I:boolean)\l android.os.Bundle.getBoolean(java.lang.String, boolean):boolean type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001e \}]\l0x0018: NOP   A[TRY_LEAVE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|0x0019: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001c \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c|0x001c: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|0x001d: RETURN  (r0 I:boolean) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001e|0x001e: RETURN  (r0 I:boolean) \l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lExcHandler: NameNotFoundException null\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{public boolean com.crashlytics.android.ManifestEnabledCheckStrategy.isCrashlyticsEnabled((r3 'this' I:com.crashlytics.android.ManifestEnabledCheckStrategy A[IMMUTABLE_TYPE, THIS]), (r4 I:android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_7;
+Node_5 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_9;
+}
+

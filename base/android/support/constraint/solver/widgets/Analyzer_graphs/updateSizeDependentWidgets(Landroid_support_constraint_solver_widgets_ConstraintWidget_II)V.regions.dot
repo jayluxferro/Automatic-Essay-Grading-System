@@ -1,0 +1,69 @@
+digraph "CFG forandroid.support.constraint.solver.widgets.Analyzer.updateSizeDependentWidgets(Landroid\/support\/constraint\/solver\/widgets\/ConstraintWidget;II)V" {
+subgraph cluster_Region_1117850273 {
+label = "R(2:0|(1:7)(1:(1:15)(1:13)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r7 * 2\landroid.support.constraint.solver.widgets.ConstraintAnchor r1 = r6.mListAnchors[r0]\landroid.support.constraint.solver.widgets.ConstraintAnchor r2 = r6.mListAnchors[r0 + 1]\l}"];
+subgraph cluster_IfRegion_352651154 {
+label = "IF [B:6:0x0018] THEN: R(1:7) ELSE: R(1:(1:15)(1:13))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|PHI: r3 \l  PHI: (r3v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (((r1.mTarget == null \|\| r2.mTarget == null) ? false : true) == true) goto L_0x001a\l}"];
+subgraph cluster_Region_1728640583 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|android.support.constraint.solver.widgets.Optimizer.setOptimizedWidget(r6, r7, getParentBiasOffset(r6, r7) + r1.getMargin())\l}"];
+}
+subgraph cluster_Region_1992199659 {
+label = "R(1:(1:15)(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_593416050 {
+label = "IF [B:10:0x002c, B:12:0x0034] THEN: R(1:15) ELSE: R(1:13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|if (r6.mDimensionRatio == 0.0f) goto L_0x0062\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0034|ADDED_TO_REGION\l|if (r6.getDimensionBehaviour(r7) != android.support.constraint.solver.widgets.ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) goto L_0x0062\l}"];
+subgraph cluster_Region_758520837 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0062|int int r8 = r8 \- r6.getRelativePositioning(r7)\lint int r0 = r8 \- r6.getLength(r7)\lr6.setFrame(r0, r8, r7)\landroid.support.constraint.solver.widgets.Optimizer.setOptimizedWidget(r6, r7, r0)\l}"];
+}
+subgraph cluster_Region_228858258 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0036|int int r8 = resolveDimensionRatio(r6)\lint int r0 = (int) r6.mListAnchors[r0].getResolutionNode().resolvedOffset\lr2.getResolutionNode().resolvedTarget = r1.getResolutionNode()\lr2.getResolutionNode().resolvedOffset = (float) r8\lr2.getResolutionNode().state = 1\lr6.setFrame(r0, r0 + r8, r7)\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000f}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0011}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0013|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0061}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0073}"];
+MethodNode[shape=record,label="{private static void android.support.constraint.solver.widgets.Analyzer.updateSizeDependentWidgets((r6v0 android.support.constraint.solver.widgets.ConstraintWidget A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_15 -> Node_16;
+Node_13 -> Node_14;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

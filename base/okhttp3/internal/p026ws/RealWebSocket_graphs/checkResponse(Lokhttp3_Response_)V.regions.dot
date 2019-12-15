@@ -1,0 +1,106 @@
+digraph "CFG forokhttp3.internal.ws.RealWebSocket.checkResponse(Lokhttp3\/Response;)V" {
+subgraph cluster_Region_1465794572 {
+label = "R(1:(2:(2:2|(2:(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))|(2:13|14)))|(2:15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1276420654 {
+label = "R(2:(2:2|(2:(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))|(2:13|14)))|(2:15|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1091653329 {
+label = "IF [B:1:0x0006] THEN: R(2:2|(2:(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))|(2:13|14))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r5.code() == 101) goto L_0x0008\l}"];
+subgraph cluster_Region_1864013908 {
+label = "R(2:2|(2:(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))|(2:13|14)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|java.lang.String java.lang.String r0 = r5.header(\"Connection\")\l}"];
+subgraph cluster_Region_609652050 {
+label = "R(2:(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_305886941 {
+label = "IF [B:3:0x0014] THEN: R(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (\"Upgrade\".equalsIgnoreCase(r0) == true) goto L_0x0016\l}"];
+subgraph cluster_Region_1373547771 {
+label = "R(2:4|(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|java.lang.String java.lang.String r0 = r5.header(\"Upgrade\")\l}"];
+subgraph cluster_Region_28174324 {
+label = "R(2:(2:6|(2:(2:9|10)|(1:8)))|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1782400684 {
+label = "IF [B:5:0x0022] THEN: R(2:6|(2:(2:9|10)|(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (\"websocket\".equalsIgnoreCase(r0) == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1529676892 {
+label = "R(2:6|(2:(2:9|10)|(1:8)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|java.lang.String java.lang.String r5 = r5.header(\"Sec\-WebSocket\-Accept\")\ljava.lang.String java.lang.String r0 = okio.ByteString.encodeUtf8(r4.key + \"258EAFA5\-E914\-47DA\-95CA\-C5AB0DC85B11\").sha1().base64()\l}"];
+subgraph cluster_Region_1749102653 {
+label = "R(2:(2:9|10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2133906102 {
+label = "IF [B:7:0x004d] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004d|if (r0.equals(r5) != true) goto L_0x0050\l}"];
+subgraph cluster_Region_2142827482 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0050}"];
+Node_10 [shape=record,label="{10\:\ 0x0073|throw new java.net.ProtocolException(\"Expected 'Sec\-WebSocket\-Accept' header value '\" + r0 + \"' but was '\" + r5 + \"'\")\l}"];
+}
+}
+subgraph cluster_Region_594381858 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004f|RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_595155112 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0074}"];
+Node_12 [shape=record,label="{12\:\ 0x008f|throw new java.net.ProtocolException(\"Expected 'Upgrade' header value 'websocket' but was '\" + r0 + \"'\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_617323775 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0090}"];
+Node_14 [shape=record,label="{14\:\ 0x00ab|throw new java.net.ProtocolException(\"Expected 'Connection' header value 'Upgrade' but was '\" + r0 + \"'\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_859945216 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00ac}"];
+Node_16 [shape=record,label="{16\:\ 0x00d7|throw new java.net.ProtocolException(\"Expected HTTP 101 response but was '\" + r5.code() + \" \" + r5.message() + \"'\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.ws.RealWebSocket.checkResponse((r4v0 'this' okhttp3.internal.ws.RealWebSocket A[IMMUTABLE_TYPE, THIS]), (r5v0 okhttp3.Response A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.net.ProtocolException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_15[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_0 -> Node_1;
+}
+

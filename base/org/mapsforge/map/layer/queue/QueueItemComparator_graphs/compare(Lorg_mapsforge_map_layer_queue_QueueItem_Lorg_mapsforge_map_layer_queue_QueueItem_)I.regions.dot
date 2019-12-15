@@ -1,0 +1,38 @@
+digraph "CFG fororg.mapsforge.map.layer.queue.QueueItemComparator.compare(Lorg\/mapsforge\/map\/layer\/queue\/QueueItem;Lorg\/mapsforge\/map\/layer\/queue\/QueueItem;)I" {
+subgraph cluster_Region_1649976152 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1412708212 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_393809632 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r5.getPriority() \< r6.getPriority()) goto L_0x000c\l}"];
+subgraph cluster_Region_195027211 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_746242371 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|RETURN\l|return r5.getPriority() \> r6.getPriority() ? 1 : 0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001c}"];
+MethodNode[shape=record,label="{public int org.mapsforge.map.layer.queue.QueueItemComparator.compare((r4v0 'this' org.mapsforge.map.layer.queue.QueueItemComparator A[IMMUTABLE_TYPE, THIS]), (r5v0 org.mapsforge.map.layer.queue.QueueItem\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.mapsforge.map.layer.queue.QueueItem\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/mapsforge\/map\/layer\/queue\/QueueItem\<, *\>;, Lorg\/mapsforge\/map\/layer\/queue\/QueueItem\<, *\>;)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

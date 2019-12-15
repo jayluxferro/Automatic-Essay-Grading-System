@@ -1,0 +1,42 @@
+digraph "CFG forcom.google.android.exoplayer2.source.CompositeSequenceableLoader.continueLoading(J)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'madeProgress' boolean) = (r1v0 'madeProgress' boolean), (r1v2 'madeProgress' boolean) binds: [B:0:0x0000, B:11:0x0026] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:11:0x0026\l|r2 = false\llong r4 = getNextLoadPositionUs()\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|if ((r4 \> Long.MIN_VALUE ? 1 : (r4 == Long.MIN_VALUE ? 0 : \-1)) != 0) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\lPHI: r1 \l  PHI: (r1v3 'madeProgress' boolean) = (r1v1 'madeProgress' boolean), (r1v2 'madeProgress' boolean) binds: [B:13:0x000c, B:12:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|return r1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|com.google.android.exoplayer2.source.SequenceableLoader[] r6 = r11.loaders\lint r7 = r6.length\lr3 = 0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v1 'madeProgressThisIteration' boolean) = (r2v0 'madeProgressThisIteration' boolean), (r2v2 'madeProgressThisIteration' boolean) binds: [B:4:0x000d, B:9:0x0022] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:4:0x000d, B:9:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x0011\-\>B:9:0x0022\l|if (r3 \>= r7) goto L_0x0025\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|r0 = r6[r3]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001b|if ((r0.getNextLoadPositionUs() \> r4 ? 1 : (r0.getNextLoadPositionUs() == r4 ? 0 : \-1)) != 0) goto L_0x0022\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|r2 = r2 \| r0.continueLoading(r12)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|LOOP_END\lPHI: r2 \l  PHI: (r2v2 'madeProgressThisIteration' boolean) = (r2v1 'madeProgressThisIteration' boolean), (r2v3 'madeProgressThisIteration' boolean) binds: [B:16:0x0022, B:15:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x0011\-\>B:9:0x0022\l|int r3 = r3 + 1\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|r1 = r1 \| r2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:11:0x0026\l|if (r2 != false) goto L_0x0001\l}"];
+Node_12 [shape=record,label="{12\:\ 0x000c|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x000c|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0025|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0022|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean com.google.android.exoplayer2.source.CompositeSequenceableLoader.continueLoading((r11v0 'this' com.google.android.exoplayer2.source.CompositeSequenceableLoader A[IMMUTABLE_TYPE, THIS]), (r12v0 'positionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_4;
+Node_2 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_16;
+Node_8 -> Node_15;
+Node_9 -> Node_5;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+Node_11 -> Node_12[style=dashed];
+Node_12 -> Node_3;
+Node_13 -> Node_3;
+Node_14 -> Node_10;
+Node_15 -> Node_9;
+Node_16 -> Node_9;
+}
+

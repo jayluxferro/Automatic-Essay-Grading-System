@@ -1,0 +1,13 @@
+digraph "CFG formil.nga.geopackage.core.contents.ContentsDao.deleteCascade(Lmil\/nga\/geopackage\/core\/contents\/Contents;Z)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = \l  (r3 I:mil.nga.geopackage.core.contents.ContentsDao)\l  (r4 I:mil.nga.geopackage.core.contents.Contents)\l mil.nga.geopackage.core.contents.ContentsDao.deleteCascade(mil.nga.geopackage.core.contents.Contents):int type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0024 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IGET  (r5 I:mil.nga.geopackage.db.GeoPackageCoreConnection) = (r3 I:mil.nga.geopackage.core.contents.ContentsDao) mil.nga.geopackage.core.contents.ContentsDao.db mil.nga.geopackage.db.GeoPackageCoreConnection \l0x0008: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x000a: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x000d: CONST_STR  (r2 I:java.lang.String) =  \"DROP TABLE IF EXISTS \" \l0x000f: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0012: INVOKE  (r4 I:java.lang.String) = (r4 I:mil.nga.geopackage.core.contents.Contents) mil.nga.geopackage.core.contents.Contents.getTableName():java.lang.String type: VIRTUAL \l0x0016: INVOKE  (r4 I:java.lang.String) = (r4 I:java.lang.String) mil.nga.geopackage.db.CoreSQLUtils.quoteWrap(java.lang.String):java.lang.String type: STATIC \l0x001a: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001d: INVOKE  (r4 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0021: INVOKE  \l  (r5 I:mil.nga.geopackage.db.GeoPackageCoreConnection)\l  (r4 I:java.lang.String)\l mil.nga.geopackage.db.GeoPackageCoreConnection.execSQL(java.lang.String):void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0024|0x0024: RETURN  (r0 I:int) \l}"];
+MethodNode[shape=record,label="{public int mil.nga.geopackage.core.contents.ContentsDao.deleteCascade((r3 'this' I:mil.nga.geopackage.core.contents.ContentsDao A[IMMUTABLE_TYPE, THIS]), (r4 I:mil.nga.geopackage.core.contents.Contents A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+}
+

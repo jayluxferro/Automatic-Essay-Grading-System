@@ -1,0 +1,34 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.longRangeContains(Lkotlin\/ranges\/ClosedRange;D)Z" {
+subgraph cluster_Region_1408878414 {
+label = "R(2:0|(2:(1:4)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\ljava.lang.Long java.lang.Long r2 = kotlin.ranges.RangesKt.toLongExactOrNull(r2)\l}"];
+subgraph cluster_Region_20379610 {
+label = "R(2:(1:4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696442061 {
+label = "IF [B:1:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r2 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_859930351 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r1.contains(r2)\l}"];
+}
+}
+subgraph cluster_Region_820735565 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.ranges.RangesKt___RangesKt.longRangeContains((r1v0 kotlin.ranges.ClosedRange\<java.lang.Long\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lkotlin\/ranges\/ClosedRange\<, Ljava\/lang\/Long;, \>;D)Z]\}], Annotation[BUILD, kotlin.jvm.JvmName, \{name=longRangeContains\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+}
+

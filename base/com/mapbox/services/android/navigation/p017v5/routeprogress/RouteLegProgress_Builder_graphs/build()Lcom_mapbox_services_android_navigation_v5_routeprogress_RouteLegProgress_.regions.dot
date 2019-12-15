@@ -1,0 +1,42 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress.Builder.build()Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteLegProgress;" {
+subgraph cluster_Region_104054239 {
+label = "R(5:1|4|(1:6)(1:7)|8|9) | DECL_VAR: com.mapbox.api.directions.v5.models.LegStep null\l";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|boolean r0 = stepIndex() == routeLeg().steps().size() \- 1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|PHI: r0 \l  PHI: (r0v4 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = stepIndex() + 1\l}"];
+subgraph cluster_IfRegion_1641047643 {
+label = "IF [B:5:0x001c] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|if (r0 == true) goto L_0x001e\l}"];
+subgraph cluster_Region_2134861171 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|r0 = null\l}"];
+}
+subgraph cluster_Region_1681618709 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|com.mapbox.api.directions.v5.models.LegStep r0 = routeLeg().steps().get(r2)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002e|PHI: r0 \l  PHI: (r0v5 com.mapbox.api.directions.v5.models.LegStep) = (r0v17 com.mapbox.api.directions.v5.models.LegStep), (r0v18 com.mapbox.api.directions.v5.models.LegStep) binds: [B:7:0x0020, B:6:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|currentStepProgress(com.mapbox.services.android.navigation.p017v5.routeprogress.RouteStepProgress.builder().step(routeLeg().steps().get(stepIndex())).nextStep(r0).distanceRemaining(stepDistanceRemaining()).intersections(intersections()).currentIntersection(currentIntersection()).upcomingIntersection(upcomingIntersection()).intersectionDistancesAlongStep(intersectionDistancesAlongStep()).build())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x007f|RETURN\l|return autoBuild()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016}"];
+MethodNode[shape=record,label="{public com.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress com.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress.Builder.build((r3v0 'this' com.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress$Builder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

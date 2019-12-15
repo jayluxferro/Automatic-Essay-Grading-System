@@ -1,0 +1,15 @@
+digraph "CFG forokio.GzipSink.updateCrc(Lokio\/Buffer;J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r5 I:okio.Segment) = (r5 I:okio.Buffer) okio.Buffer.head okio.Segment \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: CONST  (r0 I:?[long, double]) = (0 ?[long, double]) \l0x0004: CMP_L  (r0 I:int) = (r6 I:long), (r0 I:long) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:4:0x0021 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IGET  (r0 I:int) = (r5 I:okio.Segment) okio.Segment.limit int \l0x000a: IGET  (r1 I:int) = (r5 I:okio.Segment) okio.Segment.pos int \l0x000c: ARITH  (r0 I:int) = (r0 I:int) \- (r1 I:int) \l0x000d: CAST  (r0 I:long) = (long) (r0 I:int) \l0x000e: INVOKE  (r0 I:long) = (r6 I:long), (r0 I:long) java.lang.Math.min(long, long):long type: STATIC \l0x0012: CAST  (r0 I:int) = (int) (r0 I:long) \l0x0013: IGET  (r1 I:java.util.zip.CRC32) = (r4 I:okio.GzipSink) okio.GzipSink.crc java.util.zip.CRC32 \l0x0015: IGET  (r2 I:byte[]) = (r5 I:okio.Segment) okio.Segment.data byte[] \l0x0017: IGET  (r3 I:int) = (r5 I:okio.Segment) okio.Segment.pos int \l0x0019: INVOKE  \l  (r1 I:java.util.zip.CRC32)\l  (r2 I:byte[])\l  (r3 I:int)\l  (r0 I:int)\l java.util.zip.CRC32.update(byte[], int, int):void type: VIRTUAL \l0x001c: CAST  (r0 I:long) = (long) (r0 I:int) \l0x001d: ARITH  (r6 I:long) = (r6 I:long) \- (r0 I:long) \l0x001e: IGET  (r5 I:okio.Segment) = (r5 I:okio.Segment) okio.Segment.next okio.Segment \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: RETURN   \l}"];
+MethodNode[shape=record,label="{private void okio.GzipSink.updateCrc((r4 'this' I:okio.GzipSink A[IMMUTABLE_TYPE, THIS]), (r5 I:okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.mapboxsdk.annotations.IconFactory.fromResource(I)Lcom\/mapbox\/mapboxsdk\/annotations\/Icon;" {
+subgraph cluster_Region_637049280 {
+label = "R(2:0|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = android.support.p000v4.content.ContextCompat.getDrawable(r1.context, r2)\l}"];
+subgraph cluster_Region_1640854246 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1113007940 {
+label = "IF [B:1:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if ((r2 instanceof android.graphics.drawable.BitmapDrawable) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_564777211 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|RETURN\l|return fromBitmap(((android.graphics.drawable.BitmapDrawable) r2).getBitmap())\l}"];
+}
+}
+subgraph cluster_Region_862073629 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|throw new java.lang.IllegalArgumentException(\"Failed to decode image. The resource provided must be a Bitmap.\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+MethodNode[shape=record,label="{public com.mapbox.mapboxsdk.annotations.Icon com.mapbox.mapboxsdk.annotations.IconFactory.fromResource((r1v0 'this' com.mapbox.mapboxsdk.annotations.IconFactory A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.DrawableRes, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

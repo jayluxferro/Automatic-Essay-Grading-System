@@ -1,0 +1,33 @@
+digraph "CFG forandroid.support.v7.app.TwilightManager.isNight()Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.app.TwilightManager$TwilightState r0 = r2.mTwilightState\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (isStateValid() == false) goto L_0x000b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r0.isNight\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|android.location.Location r1 = getLastKnownLocation()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r1 == null) goto L_0x0017\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|updateState(r1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\l|return r0.isNight\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|android.util.Log.i(TAG, \"Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise\/sunset values.\")\lint r0 = java.util.Calendar.getInstance().get(11)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|if (r0 \< 6) goto L_0x0032\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002b}"];
+Node_11 [shape=record,label="{11\:\ 0x002d|if (r0 \< 22) goto L_0x0030\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0030|SYNTHETIC\lRETURN\l|return false\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0032|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+MethodNode[shape=record,label="{boolean android.support.v7.app.TwilightManager.isNight((r2v0 'this' android.support.v7.app.TwilightManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+}
+

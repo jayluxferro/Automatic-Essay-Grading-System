@@ -1,0 +1,85 @@
+digraph "CFG forandroid.support.v7.widget.TooltipCompatHandler.show(Z)V" {
+subgraph cluster_Region_260233680 {
+label = "R(1:(1:(5:3|(1:5)|6|(1:8)(1:(1:11)(1:12))|13))) | DECL_VAR: long null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1224950342 {
+label = "R(1:(5:3|(1:5)|6|(1:8)(1:(1:11)(1:12))|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1365282379 {
+label = "IF [B:1:0x0006] THEN: R(5:3|(1:5)|6|(1:8)(1:(1:11)(1:12))|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (android.support.p000v4.view.ViewCompat.isAttachedToWindow(r7.mAnchor) != false) goto L_0x0009\l}"];
+subgraph cluster_Region_1964328181 {
+label = "R(5:3|(1:5)|6|(1:8)(1:(1:11)(1:12))|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|setPendingHandler((android.support.p003v7.widget.TooltipCompatHandler) null)\l}"];
+subgraph cluster_IfRegion_1816158174 {
+label = "IF [B:4:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|if (sActiveHandler != null) goto L_0x0011\l}"];
+subgraph cluster_Region_1057108322 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|sActiveHandler.hide()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0016|sActiveHandler = r7\lr7.mFromTouch = r8\lr7.mPopup = new android.support.p003v7.widget.TooltipPopup(r7.mAnchor.getContext())\lr7.mPopup.show(r7.mAnchor, r7.mAnchorX, r7.mAnchorY, r7.mFromTouch, r7.mTooltipText)\lr7.mAnchor.addOnAttachStateChangeListener(r7)\l}"];
+subgraph cluster_IfRegion_1782968863 {
+label = "IF [B:7:0x003d] THEN: R(1:8) ELSE: R(1:(1:11)(1:12))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003d|if (r7.mFromTouch == true) goto L_0x003f\l}"];
+subgraph cluster_Region_436712875 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|r0 = LONG_CLICK_HIDE_TIMEOUT_MS\l}"];
+}
+subgraph cluster_Region_900211022 {
+label = "R(1:(1:11)(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1534600842 {
+label = "IF [B:10:0x004a] THEN: R(1:11) ELSE: R(1:12) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004a|if ((android.support.p000v4.view.ViewCompat.getWindowSystemUiVisibility(r7.mAnchor) & 1) == 1) goto L_0x004c\l}"];
+subgraph cluster_Region_538655276 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004c|long r0 = HOVER_HIDE_TIMEOUT_SHORT_MS \- ((long) android.view.ViewConfiguration.getLongPressTimeout())\l}"];
+}
+subgraph cluster_Region_96671799 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0055|long r0 = HOVER_HIDE_TIMEOUT_MS \- ((long) android.view.ViewConfiguration.getLongPressTimeout())\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x005d|PHI: r0 \l  PHI: (r0v6 long) = (r0v9 long), (r0v11 long), (r0v12 long) binds: [B:12:0x0055, B:11:0x004c, B:8:0x003f] A[DONT_GENERATE, DONT_INLINE]\l|r7.mAnchor.removeCallbacks(r7.mHideRunnable)\lr7.mAnchor.postDelayed(r7.mHideRunnable, r0)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0042}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x006b}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.TooltipCompatHandler.show((r7v0 'this' android.support.v7.widget.TooltipCompatHandler A[IMMUTABLE_TYPE, THIS]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_13;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+}
+

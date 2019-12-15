@@ -1,0 +1,42 @@
+digraph "CFG formil.nga.tiff.Rasters.getBitsPerSample()Ljava\/util\/List;" {
+subgraph cluster_Region_289701442 {
+label = "R(3:0|(3:2|(1:4)|5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List\<java.lang.Integer\> java.util.List\<java.lang.Integer\> r0 = r5.bitsPerSample\l}"];
+subgraph cluster_IfRegion_1927628024 {
+label = "IF [B:1:0x0002] THEN: R(3:2|(1:4)|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1854679581 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|java.util.ArrayList r0 = new java.util.ArrayList\<\>(r5.fieldTypes.length)\lint int r2 = r5.fieldTypes.length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1080985411 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:2:0x0004, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0010\-\>B:4:0x0012\l|if (r3 \< r2) goto L_0x0012\l}"];
+subgraph cluster_Region_864597061 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:0: B:3:0x0010\-\>B:4:0x0012\l|r0.add(java.lang.Integer.valueOf(r4.getBits()))\lr3++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0022|r5.bitsPerSample = r0\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0024|RETURN\lPHI: r0 \l  PHI: (r0v1 java.util.List\<java.lang.Integer\>) = (r0v0 java.util.List\<java.lang.Integer\>), (r0v2 java.util.List\<java.lang.Integer\>) binds: [B:1:0x0002, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<java.lang.Integer\> mil.nga.tiff.Rasters.getBitsPerSample((r5v0 'this' mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Ljava\/lang\/Integer;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_5;
+}
+

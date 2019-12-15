@@ -1,0 +1,23 @@
+digraph "CFG forkotlin.collections.RingBuffer.\<init\>(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.capacity = r2\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r1.capacity \< 0) goto L_0x000b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|r2 = true\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|r2 = false\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|PHI: r2 \l  PHI: (r2v2 boolean) = (r2v8 boolean), (r2v9 boolean) binds: [B:3:0x000b, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == false) goto L_0x0015\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|r1.buffer = new java.lang.Object[r1.capacity]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0015|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"ring buffer capacity should not be negative but it is \")\lr2.append(r1.capacity)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|throw new java.lang.IllegalArgumentException(r2.toString().toString())\l}"];
+MethodNode[shape=record,label="{public void kotlin.collections.RingBuffer.\<init\>((r1v0 'this' kotlin.collections.RingBuffer A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.text.cea.Cea708Decoder.handleSetWindowAttributes()V" {
+subgraph cluster_Region_151312673 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r2 = com.google.android.exoplayer2.text.cea.Cea708Decoder.CueBuilder.getArgbColorFromCeaColor(r17.serviceBlockPacket.readBits(2), r17.serviceBlockPacket.readBits(2), r17.serviceBlockPacket.readBits(2), r17.serviceBlockPacket.readBits(2))\lint int r5 = r17.serviceBlockPacket.readBits(2)\lint int r3 = com.google.android.exoplayer2.text.cea.Cea708Decoder.CueBuilder.getArgbColorFromCeaColor(r17.serviceBlockPacket.readBits(2), r17.serviceBlockPacket.readBits(2), r17.serviceBlockPacket.readBits(2))\l}"];
+subgraph cluster_IfRegion_1704423674 {
+label = "IF [B:1:0x0070] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0070|if (r17.serviceBlockPacket.readBit() == true) goto L_0x0072\l}"];
+subgraph cluster_Region_265435382 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0072|r5 \|= 4\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0074|PHI: r5 \l  PHI: (r5v1 'borderType' int) = (r5v0 'borderType' int), (r5v2 'borderType' int) binds: [B:1:0x0070, B:2:0x0072] A[DONT_GENERATE, DONT_INLINE]\l|boolean boolean r4 = r17.serviceBlockPacket.readBit()\lint int r6 = r17.serviceBlockPacket.readBits(2)\lint int r7 = r17.serviceBlockPacket.readBits(2)\lint int r8 = r17.serviceBlockPacket.readBits(2)\lr17.serviceBlockPacket.skipBits(8)\lr17.currentCueBuilder.setWindowAttributes(r2, r3, r4, r5, r6, r7, r8)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x00b2}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.text.cea.Cea708Decoder.handleSetWindowAttributes((r17v0 'this' com.google.android.exoplayer2.text.cea.Cea708Decoder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forandroid.support.v4.widget.DrawerLayout.getTransformedMotionEvent(Landroid\/view\/MotionEvent;Landroid\/view\/View;)Landroid\/view\/MotionEvent;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r3 I:android.support.v4.widget.DrawerLayout) android.support.v4.widget.DrawerLayout.getScrollX():int type: VIRTUAL \l0x0004: INVOKE  (r1 I:int) = (r5 I:android.view.View) android.view.View.getLeft():int type: VIRTUAL \l0x0008: ARITH  (r0 I:int) = (r0 I:int) \- (r1 I:int) \l0x0009: CAST  (r0 I:float) = (float) (r0 I:int) \l0x000a: INVOKE  (r1 I:int) = (r3 I:android.support.v4.widget.DrawerLayout) android.support.v4.widget.DrawerLayout.getScrollY():int type: VIRTUAL \l0x000e: INVOKE  (r2 I:int) = (r5 I:android.view.View) android.view.View.getTop():int type: VIRTUAL \l0x0012: ARITH  (r1 I:int) = (r1 I:int) \- (r2 I:int) \l0x0013: CAST  (r1 I:float) = (float) (r1 I:int) \l0x0014: INVOKE  (r4 I:android.view.MotionEvent) = (r4 I:android.view.MotionEvent) android.view.MotionEvent.obtain(android.view.MotionEvent):android.view.MotionEvent type: STATIC \l0x0018: INVOKE  (r4 I:android.view.MotionEvent), (r0 I:float), (r1 I:float) android.view.MotionEvent.offsetLocation(float, float):void type: VIRTUAL \l0x001b: INVOKE  (r5 I:android.graphics.Matrix) = (r5 I:android.view.View) android.view.View.getMatrix():android.graphics.Matrix type: VIRTUAL \l0x001f: INVOKE  (r0 I:boolean) = (r5 I:android.graphics.Matrix) android.graphics.Matrix.isIdentity():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0023|0x0023: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x003a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0025|0x0025: IGET  (r0 I:android.graphics.Matrix) = (r3 I:android.support.v4.widget.DrawerLayout) android.support.v4.widget.DrawerLayout.mChildInvertedMatrix android.graphics.Matrix \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0027|0x0027: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0030 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0029|0x0029: NEW_INSTANCE  (r0 I:android.graphics.Matrix) =  android.graphics.Matrix \l0x002b: INVOKE  (r0 I:android.graphics.Matrix) android.graphics.Matrix.\<init\>():void type: DIRECT \l0x002e: IPUT  \l  (r0 I:android.graphics.Matrix)\l  (r3 I:android.support.v4.widget.DrawerLayout)\l android.support.v4.widget.DrawerLayout.mChildInvertedMatrix android.graphics.Matrix \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0030|0x0030: IGET  (r0 I:android.graphics.Matrix) = (r3 I:android.support.v4.widget.DrawerLayout) android.support.v4.widget.DrawerLayout.mChildInvertedMatrix android.graphics.Matrix \l0x0032: INVOKE  \l  (r5 I:android.graphics.Matrix)\l  (r0 I:android.graphics.Matrix)\l android.graphics.Matrix.invert(android.graphics.Matrix):boolean type: VIRTUAL \l0x0035: IGET  (r5 I:android.graphics.Matrix) = (r3 I:android.support.v4.widget.DrawerLayout) android.support.v4.widget.DrawerLayout.mChildInvertedMatrix android.graphics.Matrix \l0x0037: INVOKE  \l  (r4 I:android.view.MotionEvent)\l  (r5 I:android.graphics.Matrix)\l android.view.MotionEvent.transform(android.graphics.Matrix):void type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x003a|0x003a: RETURN  (r4 I:android.view.MotionEvent) \l}"];
+MethodNode[shape=record,label="{private android.view.MotionEvent android.support.v4.widget.DrawerLayout.getTransformedMotionEvent((r3 'this' I:android.support.v4.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r4 I:android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

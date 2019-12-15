@@ -1,0 +1,53 @@
+digraph "CFG forandroid.support.design.widget.TabLayout.createTabView(Landroid\/support\/design\/widget\/TabLayout$Tab;)Landroid\/support\/design\/widget\/TabLayout$TabView;" {
+subgraph cluster_Region_1190574733 {
+label = "R(5:1|(1:5)|6|(1:8)(1:9)|10)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|android.support.design.widget.TabLayout.TabView r0 = r2.tabViewPool != null ? r2.tabViewPool.acquire() : null\l}"];
+subgraph cluster_IfRegion_620750916 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|PHI: r0 \l  PHI: (r0v1 android.support.design.widget.TabLayout$TabView) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L_0x0010\l}"];
+subgraph cluster_Region_177437562 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|android.support.design.widget.TabLayout$TabView r0 = new android.support.design.widget.TabLayout.TabView(getContext())\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0019|PHI: r0 \l  PHI: (r0v2 android.support.design.widget.TabLayout$TabView) = (r0v1 android.support.design.widget.TabLayout$TabView), (r0v3 android.support.design.widget.TabLayout$TabView) binds: [B:4:0x000e, B:5:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|r0.setTab(r3)\lr0.setFocusable(true)\lr0.setMinimumWidth(getTabMinWidth())\l}"];
+subgraph cluster_IfRegion_1225779415 {
+label = "IF [B:7:0x002f] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|if (android.text.TextUtils.isEmpty(r3.contentDesc) == true) goto L_0x0031\l}"];
+subgraph cluster_Region_282045409 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|r0.setContentDescription(r3.text)\l}"];
+}
+subgraph cluster_Region_1662933415 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0039|r0.setContentDescription(r3.contentDesc)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0040|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+MethodNode[shape=record,label="{private android.support.design.widget.TabLayout$TabView android.support.design.widget.TabLayout.createTabView((r2v0 'this' android.support.design.widget.TabLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.design.widget.TabLayout$Tab A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

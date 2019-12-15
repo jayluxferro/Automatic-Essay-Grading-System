@@ -1,0 +1,376 @@
+digraph "CFG forokhttp3.internal.connection.RealConnection.connectTls(Lokhttp3\/internal\/connection\/ConnectionSpecSelector;)V" {
+subgraph cluster_Region_254727906 {
+label = "R(2:0|(2:2|(4:4|(1:6)|7|(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21))))) | DECL_VAR: ? null, okhttp3.Protocol null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.Address okhttp3.Address r0 = r7.route.address()\ljava.lang.String r2 = null\l}"];
+subgraph cluster_TryCatchRegion_2044451521 {
+label = "Try: R(2:2|(4:4|(1:6)|7|(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21)))) catches: R(2:27|(2:(1:32)|(1:33)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_580069298 {
+label = "R(2:2|(4:4|(1:6)|7|(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ AssertionError \-\> 0x010a \}\lSplitter:B:1:0x000b\l|javax.net.ssl.SSLSocket javax.net.ssl.SSLSocket r1 = (javax.net.ssl.SSLSocket) r0.sslSocketFactory().createSocket(r7.rawSocket, r0.url().host(), r0.url().port(), true)     \/\/ Catch:\{ AssertionError \-\> 0x010a \}\l}"];
+subgraph cluster_TryCatchRegion_433406189 {
+label = "Try: R(4:4|(1:6)|7|(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21))) catches: R(3:23|24|(1:(0)(0))), R(4:22|(0)|36|37)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2129138729 {
+label = "R(4:4|(1:6)|7|(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lSplitter:B:3:0x0024\l|okhttp3.ConnectionSpec okhttp3.ConnectionSpec r8 = r8.configureSecureSocket(r1)     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_IfRegion_1338122213 {
+label = "IF [B:5:0x002c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|if (r8.supportsTlsExtensions() == true) goto L_0x002e     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_429017577 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|okhttp3.internal.platform.Platform.get().configureTlsExtensions(r1, r0.url().host(), r0.protocols())     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0041|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|r1.startHandshake()     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\ljavax.net.ssl.SSLSession javax.net.ssl.SSLSession r3 = r1.getSession()     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lokhttp3.Handshake okhttp3.Handshake r4 = okhttp3.Handshake.get(r3)     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_17555836 {
+label = "R(2:(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))|(2:20|21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2111074827 {
+label = "IF [B:8:0x005c] THEN: R(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39))) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005c|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|if (r0.hostnameVerifier().verify(r0.url().host(), r3) == true) goto L_0x005e     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_78914197 {
+label = "R(6:9|(1:11)|12|(1:14)(1:15)|16|(2:(2:18|38)|(1:39)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x005e|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|r0.certificatePinner().check(r0.url().host(), r4.peerCertificates())     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_IfRegion_1907688296 {
+label = "IF [B:10:0x0075] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0075|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|if (r8.supportsTlsExtensions() == true) goto L_0x0077     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_1785563301 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0077|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|java.lang.String r2 = okhttp3.internal.platform.Platform.get().getSelectedProtocol(r1)     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x007f|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lPHI: r2 \l  PHI: (r2v5 java.lang.String) = (r2v0 java.lang.String), (r2v6 java.lang.String) binds: [B:10:0x0075, B:11:0x0077] A[DONT_GENERATE, DONT_INLINE]\l|r7.socket = r1     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lr7.source = okio.Okio.buffer(okio.Okio.source(r7.socket))     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lr7.sink = okio.Okio.buffer(okio.Okio.sink(r7.socket))     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lr7.handshake = r4     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_IfRegion_2032616471 {
+label = "IF [B:13:0x009b] THEN: R(1:14) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x009b|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|if (r2 != null) goto L_0x009d     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_1918573577 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x009d|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|okhttp3.Protocol r8 = okhttp3.Protocol.get(r2)     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+}
+subgraph cluster_Region_725858649 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00a2|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|okhttp3.Protocol r8 = okhttp3.Protocol.HTTP_1_1     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x00a4|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lPHI: r8 \l  PHI: (r8v20 okhttp3.Protocol) = (r8v22 okhttp3.Protocol), (r8v23 okhttp3.Protocol) binds: [B:15:0x00a2, B:14:0x009d] A[DONT_GENERATE, DONT_INLINE]\l|r7.protocol = r8     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+subgraph cluster_Region_28845728 {
+label = "R(2:(2:18|38)|(1:39))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1034739743 {
+label = "IF [B:17:0x00a6] THEN: R(2:18|38) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x00a6|if (r1 != 0) goto L_0x00a8\l}"];
+subgraph cluster_Region_398264567 {
+label = "R(2:18|38)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00a8|okhttp3.internal.platform.Platform.get().afterHandshake(r1)\l}"];
+Node_38 [shape=record,label="{38\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_638773636 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1067526918 {
+label = "R(2:20|21)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\lSplitter:B:19:0x00b0\l|java.security.cert.X509Certificate java.security.cert.X509Certificate r8 = (java.security.cert.X509Certificate) r4.peerCertificates().get(0)     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0101|Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l|throw new javax.net.ssl.SSLPeerUnverifiedException(\"Hostname \" + r0.url().host() + \" not verified:n    certificate: \" + okhttp3.CertificatePinner.pin(r8) + \"n    DN: \" + r8.getSubjectDN().getName() + \"n    subjectAltNames: \" + okhttp3.internal.tls.OkHostnameVerifier.allSubjectAltNames(r8))     \/\/ Catch:\{ AssertionError \-\> 0x0104, all \-\> 0x0102 \}\l}"];
+}
+}
+}
+subgraph cluster_Region_888664090 {
+label = "R(3:23|24|(1:(0)(0))) | ExcHandler: AssertionError (e java.lang.AssertionError)\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0104|ExcHandler: AssertionError (e java.lang.AssertionError)\lSplitter:B:3:0x0024\l|java.lang.AssertionError r8 = e\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0105|r2 = r1\l}"];
+subgraph cluster_TryCatchRegion_359864195 {
+label = "Try: R(1:(0)(0)) catches: R(5:25|26|(1:35)|36|37)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1269630032 {
+label = "R(1:(0)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_190883491 {
+label = "IF [B:30:0x010f] THEN: R(0) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x010f|Catch:\{ all \-\> 0x0107 \}\l|if (okhttp3.internal.Util.isAndroidGetsocknameError(r8) == false) goto L_0x0117     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+subgraph cluster_Region_982462594 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_927852383 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1340649463 {
+label = "R(5:25|26|(1:35)|36|37) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0107|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:28:0x010b\l|java.lang.Throwable r8 = th\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0108|r1 = r2\l}"];
+subgraph cluster_IfRegion_350354018 {
+label = "IF [B:34:0x0118] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0118|PHI: r1 r8 \l  PHI: (r1v1 ?) = (r1v2 ?), (r1v5 ?) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'th' java.lang.Throwable) = (r8v3 'th' java.lang.Throwable), (r8v6 'th' java.lang.Throwable) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L_0x011a\l}"];
+subgraph cluster_Region_448398307 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x011a|okhttp3.internal.platform.Platform.get().afterHandshake(r1)\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0121|okhttp3.internal.Util.closeQuietly((java.net.Socket) r1)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0124|throw r8\l}"];
+}
+}
+}
+subgraph cluster_Region_1953864263 {
+label = "R(4:22|(0)|36|37) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0102|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:3:0x0024\l|java.lang.Throwable r8 = th\lr1 = r1\l}"];
+subgraph cluster_IfRegion_1500658454 {
+label = "IF [B:34:0x0118] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0118|PHI: r1 r8 \l  PHI: (r1v1 ?) = (r1v2 ?), (r1v5 ?) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'th' java.lang.Throwable) = (r8v3 'th' java.lang.Throwable), (r8v6 'th' java.lang.Throwable) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L_0x011a\l}"];
+subgraph cluster_Region_31283320 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0121|okhttp3.internal.Util.closeQuietly((java.net.Socket) r1)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0124|throw r8\l}"];
+}
+}
+}
+subgraph cluster_Region_443846859 {
+label = "R(2:27|(2:(1:32)|(1:33))) | ExcHandler: AssertionError (e java.lang.AssertionError)\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x010a|ExcHandler: AssertionError (e java.lang.AssertionError)\lSplitter:B:1:0x000b\l|java.lang.AssertionError r8 = e\l}"];
+subgraph cluster_Region_1352347005 {
+label = "R(2:(1:32)|(1:33))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_418973427 {
+label = "IF [B:30:0x010f] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x010f|Catch:\{ all \-\> 0x0107 \}\l|if (okhttp3.internal.Util.isAndroidGetsocknameError(r8) == false) goto L_0x0117     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+subgraph cluster_Region_1938592524 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0116|Catch:\{ all \-\> 0x0107 \}\l|throw new java.io.IOException(r8)     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+}
+}
+subgraph cluster_Region_1304475518 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0117|Catch:\{ all \-\> 0x0107 \}\l|throw r8     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_443846859 {
+label = "R(2:27|(2:(1:32)|(1:33))) | ExcHandler: AssertionError (e java.lang.AssertionError)\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x010a|ExcHandler: AssertionError (e java.lang.AssertionError)\lSplitter:B:1:0x000b\l|java.lang.AssertionError r8 = e\l}"];
+subgraph cluster_Region_1352347005 {
+label = "R(2:(1:32)|(1:33))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_418973427 {
+label = "IF [B:30:0x010f] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x010f|Catch:\{ all \-\> 0x0107 \}\l|if (okhttp3.internal.Util.isAndroidGetsocknameError(r8) == false) goto L_0x0117     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+subgraph cluster_Region_1938592524 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0116|Catch:\{ all \-\> 0x0107 \}\l|throw new java.io.IOException(r8)     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+}
+}
+subgraph cluster_Region_1304475518 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0117|Catch:\{ all \-\> 0x0107 \}\l|throw r8     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+}
+}
+}
+subgraph cluster_Region_1340649463 {
+label = "R(5:25|26|(1:35)|36|37) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0107|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:28:0x010b\l|java.lang.Throwable r8 = th\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0108|r1 = r2\l}"];
+subgraph cluster_IfRegion_350354018 {
+label = "IF [B:34:0x0118] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0118|PHI: r1 r8 \l  PHI: (r1v1 ?) = (r1v2 ?), (r1v5 ?) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'th' java.lang.Throwable) = (r8v3 'th' java.lang.Throwable), (r8v6 'th' java.lang.Throwable) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L_0x011a\l}"];
+subgraph cluster_Region_448398307 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x011a|okhttp3.internal.platform.Platform.get().afterHandshake(r1)\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0121|okhttp3.internal.Util.closeQuietly((java.net.Socket) r1)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0124|throw r8\l}"];
+}
+subgraph cluster_Region_888664090 {
+label = "R(3:23|24|(1:(0)(0))) | ExcHandler: AssertionError (e java.lang.AssertionError)\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0104|ExcHandler: AssertionError (e java.lang.AssertionError)\lSplitter:B:3:0x0024\l|java.lang.AssertionError r8 = e\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0105|r2 = r1\l}"];
+subgraph cluster_TryCatchRegion_359864195 {
+label = "Try: R(1:(0)(0)) catches: R(5:25|26|(1:35)|36|37)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1269630032 {
+label = "R(1:(0)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_190883491 {
+label = "IF [B:30:0x010f] THEN: R(0) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x010f|Catch:\{ all \-\> 0x0107 \}\l|if (okhttp3.internal.Util.isAndroidGetsocknameError(r8) == false) goto L_0x0117     \/\/ Catch:\{ all \-\> 0x0107 \}\l}"];
+subgraph cluster_Region_982462594 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_927852383 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1340649463 {
+label = "R(5:25|26|(1:35)|36|37) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0107|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:28:0x010b\l|java.lang.Throwable r8 = th\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0108|r1 = r2\l}"];
+subgraph cluster_IfRegion_350354018 {
+label = "IF [B:34:0x0118] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0118|PHI: r1 r8 \l  PHI: (r1v1 ?) = (r1v2 ?), (r1v5 ?) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'th' java.lang.Throwable) = (r8v3 'th' java.lang.Throwable), (r8v6 'th' java.lang.Throwable) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L_0x011a\l}"];
+subgraph cluster_Region_448398307 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x011a|okhttp3.internal.platform.Platform.get().afterHandshake(r1)\l}"];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0121|okhttp3.internal.Util.closeQuietly((java.net.Socket) r1)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0124|throw r8\l}"];
+}
+}
+}
+subgraph cluster_Region_1953864263 {
+label = "R(4:22|(0)|36|37) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0102|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:3:0x0024\l|java.lang.Throwable r8 = th\lr1 = r1\l}"];
+subgraph cluster_IfRegion_1500658454 {
+label = "IF [B:34:0x0118] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0118|PHI: r1 r8 \l  PHI: (r1v1 ?) = (r1v2 ?), (r1v5 ?) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'th' java.lang.Throwable) = (r8v3 'th' java.lang.Throwable), (r8v6 'th' java.lang.Throwable) binds: [B:26:0x0108, B:22:0x0102] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != 0) goto L_0x011a\l}"];
+subgraph cluster_Region_31283320 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0121|okhttp3.internal.Util.closeQuietly((java.net.Socket) r1)\l}"];
+Node_37 [shape=record,label="{37\:\ 0x0124|throw r8\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|SYNTHETIC\lSplitter:B:1:0x000b\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0024|SYNTHETIC\lSplitter:B:3:0x0024\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x00b0|SYNTHETIC\lSplitter:B:19:0x00b0\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x010b|SYNTHETIC\lPHI: r2 r8 \l  PHI: (r2v1 java.lang.String) = (r2v0 java.lang.String), (r2v2 java.lang.String) binds: [B:27:0x010a, B:24:0x0105] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v2 'e' java.lang.AssertionError) = (r8v4 'e' java.lang.AssertionError), (r8v5 'e' java.lang.AssertionError) binds: [B:27:0x010a, B:24:0x0105] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:28:0x010b\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|Catch:\{ all \-\> 0x0107 \}\lSplitter:B:28:0x010b\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0111|Catch:\{ all \-\> 0x0107 \}\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.connection.RealConnection.connectTls((r7v0 'this' okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, THIS]), (r8v0 okhttp3.internal.connection.ConnectionSpecSelector A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v0, resolved type: java.lang.String\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v1, resolved type: java.lang.String\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r1v4, resolved type: javax.net.ssl.SSLSocket\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v2, resolved type: java.lang.String\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v5, resolved type: java.lang.String\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v6, resolved type: java.lang.String\}\lJADX WARNING: type inference failed for: r1v1, types: [java.net.Socket, javax.net.ssl.SSLSocket]\lJADX WARNING: type inference failed for: r1v2\lJADX WARNING: type inference failed for: r1v5\lMulti\-variable type inference failed\lRemoved duplicated region for block: B:33:0x0117 A[Catch:\{ all \-\> 0x0107 \}]\lRemoved duplicated region for block: B:31:0x0111 A[Catch:\{ all \-\> 0x0107 \}]\lRemoved duplicated region for block: B:35:0x011a \lUnknown variable types count: 1\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_27;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_19[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_39[style=dashed];
+Node_18 -> Node_38;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_24 -> Node_28;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_33;
+Node_25 -> Node_26;
+Node_26 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_22 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_36 -> Node_37;
+Node_27 -> Node_28;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_33;
+Node_27 -> Node_28;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_33;
+Node_25 -> Node_26;
+Node_26 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_23 -> Node_24;
+Node_24 -> Node_28;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_33;
+Node_25 -> Node_26;
+Node_26 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_22 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_36 -> Node_37;
+Node_1 -> Node_2;
+Node_1 -> Node_27;
+Node_3 -> Node_4;
+Node_3 -> Node_23;
+Node_3 -> Node_22;
+Node_19 -> Node_20;
+Node_19 -> Node_23;
+Node_19 -> Node_22;
+Node_28 -> Node_29;
+Node_28 -> Node_25;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+}
+

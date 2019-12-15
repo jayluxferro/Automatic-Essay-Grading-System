@@ -1,0 +1,60 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.dropLastWhile(Ljava\/util\/List;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/List;" {
+subgraph cluster_Region_1968838021 {
+label = "R(3:0|(2:2|(1:(1:8)))|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r2, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"predicate\")\l}"];
+subgraph cluster_IfRegion_620616447 {
+label = "IF [B:1:0x000e] THEN: R(2:2|(1:(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r2.isEmpty() == false) goto L_0x0010\l}"];
+subgraph cluster_Region_952668687 {
+label = "R(2:2|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|java.util.ListIterator java.util.ListIterator\<? extends T\> r0 = r2.listIterator(r2.size())\l}"];
+subgraph cluster_LoopRegion_521745289 {
+label = "LOOP:0: (1:(1:8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r0.hasPrevious() != false) goto L_0x001e\l}"];
+subgraph cluster_Region_1798171643 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_331090202 {
+label = "IF [B:6:0x002c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|LOOP_END\lLOOP:0: B:3:0x0018\-\>B:6:0x002c\l|if (r3.invoke(r0.previous()).booleanValue() == false) goto L_0x002e\l}"];
+subgraph cluster_Region_642858058 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|RETURN\l|return kotlin.collections.CollectionsKt.take(r2, r0.nextIndex() + 1)\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x003f|RETURN\l|return kotlin.collections.CollectionsKt.emptyList()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018|LOOP_START\lLOOP:0: B:3:0x0018\-\>B:6:0x002c\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<T\> kotlin.collections.CollectionsKt___CollectionsKt.dropLastWhile((r2v0 java.util.List\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/util\/List\<, +TT;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;, Ljava\/lang\/Boolean;, \>;), Ljava\/util\/List\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_6 -> Node_3[style=dashed];
+Node_6 -> Node_11;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_7;
+Node_12 -> Node_9;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.average([F)D" {
+subgraph cluster_Region_336838125 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"$receiver\")\lint r1 = 0\ldouble r2 = 0.0d\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1122464012 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r1 r2 r4 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 double) = (r2v0 double), (r2v2 double) binds: [B:0:0x0000, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|if (r1 \< r7.length) goto L_0x000c\l}"];
+subgraph cluster_Region_2130559719 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|r2 += (double) r5\lr4++\lr1++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0015|RETURN\l|return r4 == 0 ? kotlin.jvm.internal.DoubleCompanionObject.INSTANCE.getNaN() : r2 \/ ((double) r4)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0017}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.collections.ArraysKt___ArraysKt.average((r7v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_7;
+Node_6 -> Node_3;
+}
+

@@ -1,0 +1,51 @@
+digraph "CFG forandroid.support.design.widget.IndicatorViewController.hideError()V" {
+subgraph cluster_Region_1209611586 {
+label = "R(3:0|(1:(1:7)(1:6))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.errorText = null\lcancelCaptionAnimator()\l}"];
+subgraph cluster_IfRegion_2124129876 {
+label = "IF [B:1:0x0009] THEN: R(1:(1:7)(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.captionDisplayed == 1) goto L_0x000b\l}"];
+subgraph cluster_Region_1285815256 {
+label = "R(1:(1:7)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1192065947 {
+label = "IF [B:3:0x000d, B:5:0x0015] THEN: R(1:7) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r4.helperTextEnabled == false) goto L_0x001b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (android.text.TextUtils.isEmpty(r4.helperText) == true) goto L_0x001b\l}"];
+subgraph cluster_Region_1178596637 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|r4.captionToShow = 0\l}"];
+}
+subgraph cluster_Region_1697993352 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|r4.captionToShow = 2\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001e|updateCaptionViewsVisibility(r4.captionDisplayed, r4.captionToShow, shouldAnimateCaptionView(r4.errorView, (java.lang.CharSequence) null))\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002b}"];
+MethodNode[shape=record,label="{void android.support.design.widget.IndicatorViewController.hideError((r4v0 'this' android.support.design.widget.IndicatorViewController A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,86 @@
+digraph "CFG forokhttp3.internal.cache.DiskLruCache.processJournal()V" {
+subgraph cluster_Region_1642463332 {
+label = "R(2:0|(2:3|(1:(1:7))(3:8|(1:11)|12)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.fileSystem.delete(r8.journalFileTmp)\ljava.util.Iterator java.util.Iterator\<okhttp3.internal.cache.DiskLruCache.Entry\> r0 = r8.lruEntries.values().iterator()\l}"];
+subgraph cluster_LoopRegion_874112503 {
+label = "LOOP:0: (2:3|(1:(1:7))(3:8|(1:11)|12))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|if (r0.hasNext() != false) goto L_0x0017\l}"];
+subgraph cluster_Region_307816853 {
+label = "R(2:3|(1:(1:7))(3:8|(1:11)|12))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|okhttp3.internal.cache.DiskLruCache$Entry okhttp3.internal.cache.DiskLruCache.Entry r1 = r0.next()\lint r3 = 0\l}"];
+subgraph cluster_IfRegion_548783267 {
+label = "IF [B:4:0x0020] THEN: R(1:(1:7)) ELSE: R(3:8|(1:11)|12)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020|if (r1.currentEditor == null) goto L_0x0022\l}"];
+subgraph cluster_Region_39510536 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_2032266891 {
+label = "LOOP:1: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|if (r3 \< r8.valueCount) goto L_0x0026\l}"];
+subgraph cluster_Region_1534638879 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|LOOP_END\lLOOP:1: B:5:0x0022\-\>B:7:0x0026\l|r8.size += r1.lengths[r3]\lr3++\l}"];
+}
+}
+}
+subgraph cluster_Region_1904283607 {
+label = "R(3:8|(1:11)|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|r1.currentEditor = null\l}"];
+subgraph cluster_LoopRegion_2009050115 {
+label = "LOOP:2: (1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|if (r3 \< r8.valueCount) goto L_0x0039\l}"];
+subgraph cluster_Region_238675364 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0039|LOOP_END\lLOOP:2: B:9:0x0035\-\>B:11:0x0039\l|r8.fileSystem.delete(r1.cleanFiles[r3])\lr8.fileSystem.delete(r1.dirtyFiles[r3])\lr3++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004e|r0.remove()\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0011|LOOP_START\lLOOP:0: B:1:0x0011\-\>B:14:0x0011\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022|LOOP_START\lPHI: r3 \l  PHI: (r3v3 int) = (r3v0 int), (r3v4 int) binds: [B:4:0x0020, B:7:0x0026] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x0022\-\>B:7:0x0026\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0035|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:8:0x0032, B:11:0x0039] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:9:0x0035\-\>B:11:0x0039\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0052}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0011|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x0011\-\>B:14:0x0011\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0052|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0011|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0011|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.cache.DiskLruCache.processJournal((r8v0 'this' okhttp3.internal.cache.DiskLruCache A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_15[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_16[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_18[style=dashed];
+Node_11 -> Node_9;
+Node_12 -> Node_17;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_14 -> Node_1;
+Node_15 -> Node_13;
+Node_16 -> Node_14;
+Node_17 -> Node_14;
+Node_18 -> Node_12;
+}
+

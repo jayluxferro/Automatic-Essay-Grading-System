@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.v4.app.JobIntentService.ensureProcessorRunningLocked(Z)V" {
+subgraph cluster_Region_2583024 {
+label = "R(1:(1:(3:2|(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1070173819 {
+label = "R(1:(3:2|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_924153730 {
+label = "IF [B:1:0x0002] THEN: R(3:2|(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mCurProcessor == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1660936084 {
+label = "R(3:2|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mCurProcessor = new android.support.p000v4.app.JobIntentService.CommandProcessor()\l}"];
+subgraph cluster_IfRegion_1496077010 {
+label = "IF [B:3:0x000d, B:4:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if (r2.mCompatWorkEnqueuer != null) goto L_0x000f\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|ADDED_TO_REGION\l|if (r3 == true) goto L_0x0011\l}"];
+subgraph cluster_Region_719693274 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|r2.mCompatWorkEnqueuer.serviceProcessingStarted()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0016|r2.mCurProcessor.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR, new java.lang.Void[0])\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.app.JobIntentService.ensureProcessorRunningLocked((r2v0 'this' android.support.v4.app.JobIntentService A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+}
+

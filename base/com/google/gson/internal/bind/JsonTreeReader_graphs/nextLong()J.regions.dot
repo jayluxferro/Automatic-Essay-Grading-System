@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.gson.internal.bind.JsonTreeReader.nextLong()J" {
+subgraph cluster_Region_1986873731 {
+label = "R(2:0|(2:(3:6|(1:8)|9)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.stream.JsonToken com.google.gson.stream.JsonToken r0 = peek()\l}"];
+subgraph cluster_Region_261188914 {
+label = "R(2:(3:6|(1:8)|9)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1526659178 {
+label = "IF [B:1:0x0006, B:3:0x000a] THEN: R(3:6|(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 == com.google.gson.stream.JsonToken.NUMBER) goto L_0x0035\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r0 == com.google.gson.stream.JsonToken.STRING) goto L_0x0035\l}"];
+subgraph cluster_Region_1043158118 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|long long r0 = ((com.google.gson.JsonPrimitive) peekStack()).getAsLong()\lpopStack()\l}"];
+subgraph cluster_IfRegion_1693447265 {
+label = "IF [B:7:0x0044] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0044|if (r5.stackSize \> 0) goto L_0x0046\l}"];
+subgraph cluster_Region_579871601 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0046|int[] int[] r2 = r5.pathIndices\lint int r3 = r5.stackSize \- 1\lr2[r3] = r2[r3] + 1\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0052|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1897208086 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|throw new java.lang.IllegalStateException(\"Expected \" + com.google.gson.stream.JsonToken.NUMBER + \" but was \" + r0 + locationString())\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+MethodNode[shape=record,label="{public long com.google.gson.internal.bind.JsonTreeReader.nextLong((r5v0 'this' com.google.gson.internal.bind.JsonTreeReader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

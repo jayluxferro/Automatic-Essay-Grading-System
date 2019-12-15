@@ -1,0 +1,116 @@
+digraph "CFG forar.com.hjg.pngj.pixels.PixelsWriterMultiple.setBandFromNewRown()V" {
+subgraph cluster_Region_850048807 {
+label = "R(5:0|1|(1:8)|(1:10)(1:11)|(1:(5:13|(1:15)|16|(1:22)|23)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|boolean r0 = r4.currentRow == 0 \|\| r4.currentRow \> r4.lastRowInThisBand\l}"];
+subgraph cluster_IfRegion_1418912799 {
+label = "IF [B:7:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|if (r4.currentRow == 0) goto L_0x0014\l}"];
+subgraph cluster_Region_655191892 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|r4.bandNum = \-1\l}"];
+}
+}
+subgraph cluster_IfRegion_1123931853 {
+label = "IF [B:9:0x0017] THEN: R(1:10) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0017|if (r0 == true) goto L_0x0019\l}"];
+subgraph cluster_Region_1270173559 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0019|r4.bandNum++\lr4.rowInBand = 0\l}"];
+}
+subgraph cluster_Region_1008918026 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0021|r4.rowInBand++\l}"];
+}
+}
+subgraph cluster_Region_2136172429 {
+label = "R(1:(5:13|(1:15)|16|(1:22)|23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_629756474 {
+label = "IF [B:12:0x0026] THEN: R(5:13|(1:15)|16|(1:22)|23) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0026|if (r0 == true) goto L_0x0028\l}"];
+subgraph cluster_Region_154395724 {
+label = "R(5:13|(1:15)|16|(1:22)|23)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0028|r4.firstRowInThisBand = r4.currentRow\lr4.lastRowInThisBand = (r4.firstRowInThisBand + r4.rowsPerBand) \- 1\l}"];
+subgraph cluster_IfRegion_862507260 {
+label = "IF [B:14:0x0040] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0040|if (((r4.firstRowInThisBand + (r4.rowsPerBand * 2)) \- 1) \>= r4.imgInfo.rows) goto L_0x0042\l}"];
+subgraph cluster_Region_1388834577 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0042|r4.lastRowInThisBand = r4.imgInfo.rows \- 1\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0049|r4.rowsPerBandCurrent = (r4.lastRowInThisBand + 1) \- r4.firstRowInThisBand\l}"];
+subgraph cluster_IfRegion_2025830861 {
+label = "IF [B:17:0x0054, B:19:0x005a, B:21:0x0062] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0054|ADDED_TO_REGION\l|if (r4.rowsPerBandCurrent \> 3) goto L_0x0056\l}"];
+Node_19 [shape=record,label="{19\:\ 0x005a|ADDED_TO_REGION\l|if (r4.rowsPerBandCurrent \>= 10) goto L_0x0065\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0062|ADDED_TO_REGION\l|if (r4.imgInfo.bytesPerRow \>= 64) goto L_0x0065\l}"];
+subgraph cluster_Region_1294701009 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0065|r1 = true\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0066|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean), (r1v0 boolean) binds: [B:17:0x0054, B:22:0x0065, B:21:0x0062] A[DONT_GENERATE, DONT_INLINE]\l|r4.tryAdaptive = r1\lrebuildFiltersBank()\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010|PHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0056}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x005c}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void ar.com.hjg.pngj.pixels.PixelsWriterMultiple.setBandFromNewRown((r4v0 'this' ar.com.hjg.pngj.pixels.PixelsWriterMultiple A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_25[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_22;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

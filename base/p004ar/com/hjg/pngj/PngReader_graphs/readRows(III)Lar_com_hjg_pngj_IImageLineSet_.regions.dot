@@ -1,0 +1,172 @@
+digraph "CFG forar.com.hjg.pngj.PngReader.readRows(III)Lar\/com\/hjg\/pngj\/IImageLineSet;" {
+subgraph cluster_Region_96067840 {
+label = "R(3:(1:2)|(1:4)|(1:33)(1:(4:13|(2:15|(4:(1:20)|21|(1:25)|26))(1:27)|28|29)(1:31)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_168622142 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r6.chunkseq.firstChunksNotYetRead() == true) goto L_0x0008\l}"];
+subgraph cluster_Region_127901585 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|readFirstChunks()\l}"];
+}
+}
+subgraph cluster_IfRegion_1544630159 {
+label = "IF [B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r7 \< 0) goto L_0x000d\l}"];
+subgraph cluster_Region_384460012 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|int r7 = (r6.imgInfo.rows \- r8) \/ r9\l}"];
+}
+}
+subgraph cluster_IfRegion_2068493063 {
+label = "IF [B:6:0x0014, B:7:0x0016, B:8:0x0018, B:10:0x0021] THEN: R(1:33) ELSE: R(1:(4:13|(2:15|(4:(1:20)|21|(1:25)|26))(1:27)|28|29)(1:31))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|if (r9 \< 1) goto L_0x00b4\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|ADDED_TO_REGION\l|if (r8 \< 0) goto L_0x00b4\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|ADDED_TO_REGION\l|if (r7 == 0) goto L_0x00b4\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0021|ADDED_TO_REGION\l|if (((r7 * r9) + r8) \> r6.imgInfo.rows) goto L_0x00b4\l}"];
+subgraph cluster_Region_13818088 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x00bb|throw new p004ar.com.hjg.pngj.PngjInputException(\"bad args\")\l}"];
+}
+subgraph cluster_Region_1441456682 {
+label = "R(1:(4:13|(2:15|(4:(1:20)|21|(1:25)|26))(1:27)|28|29)(1:31)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_283255167 {
+label = "IF [B:12:0x0025] THEN: R(4:13|(2:15|(4:(1:20)|21|(1:25)|26))(1:27)|28|29) ELSE: R(1:31) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0025|if (r6.rowNum \< 0) goto L_0x0027\l}"];
+subgraph cluster_Region_1050569455 {
+label = "R(4:13|(2:15|(4:(1:20)|21|(1:25)|26))(1:27)|28|29)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0027|r6.imlinesSet = createLineSet(false, r7, r8, r9)\l}"];
+subgraph cluster_IfRegion_673046604 {
+label = "IF [B:14:0x0030] THEN: R(2:15|(4:(1:20)|21|(1:25)|26)) ELSE: R(1:27)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0030|if (r6.interlaced == false) goto L_0x0032\l}"];
+subgraph cluster_Region_811789845 {
+label = "R(2:15|(4:(1:20)|21|(1:25)|26))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0032|int r2 = \-1\l}"];
+subgraph cluster_LoopRegion_1917536656 {
+label = "LOOP:0: (4:(1:20)|21|(1:25)|26)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0035|if (r2 \< (r7 \- 1)) goto L_0x0037\l}"];
+subgraph cluster_Region_2075538381 {
+label = "R(4:(1:20)|21|(1:25)|26)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_719633623 {
+label = "LOOP:1: (1:20)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0041|if (r6.chunkseq.getIdatSet().isRowReady() == false) goto L_0x0043\l}"];
+subgraph cluster_Region_730634541 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0043|LOOP_END\lLOOP:1: B:18:0x0037\-\>B:20:0x0043\l|r6.streamFeeder.feed(r6.chunkseq)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x004b|r6.rowNum++\lr6.chunkseq.getIdatSet().updateCrcs(r6.idatCrca, r6.idatCrcb)\lint r2 = (r6.rowNum \- r8) \/ r9\l}"];
+subgraph cluster_IfRegion_920871662 {
+label = "IF [B:22:0x006a, B:24:0x0071] THEN: R(1:25) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x006a|ADDED_TO_REGION\l|if (r6.rowNum \>= r8) goto L_0x006c\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0071|ADDED_TO_REGION\l|if (((r9 * r2) + r8) == r6.rowNum) goto L_0x0073\l}"];
+subgraph cluster_Region_299245665 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0073|ar.com.hjg.pngj.IImageLine p004ar.com.hjg.pngj.IImageLine r3 = r6.imlinesSet.getImageLine(r6.rowNum)\lr3.readFromPngRaw(r6.chunkseq.getIdatSet().getUnfilteredRow(), r6.imgInfo.bytesPerRow + 1, 0, 1)\lr3.endReadFromPngRaw()\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0090|LOOP_END\lLOOP:0: B:16:0x0033\-\>B:26:0x0090\l|r6.chunkseq.getIdatSet().advanceToNextRow()\l}"];
+}
+}
+}
+subgraph cluster_Region_1720207265 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x009a|loadAllInterlaced(r7, r8, r9)\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x009d|r6.chunkseq.getIdatSet().done()\lend()\l}"];
+Node_29 [shape=record,label="{29\:\ 0x00ab|RETURN\l|return r6.imlinesSet\l}"];
+}
+subgraph cluster_Region_567329980 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x00b3|throw new p004ar.com.hjg.pngj.PngjInputException(\"readRows cannot be mixed with readRow\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013|PHI: r7 \l  PHI: (r7v1 int) = (r7v0 int), (r7v10 int) binds: [B:3:0x000b, B:4:0x000d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0023}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0033|LOOP_START\lPHI: r2 \l  PHI: (r2v5 int) = (r2v4 int), (r2v15 int) binds: [B:15:0x0032, B:26:0x0090] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:16:0x0033\-\>B:26:0x0090\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0037|LOOP_START\lLOOP:1: B:18:0x0037\-\>B:20:0x0043\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x006c}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00ac}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x00b4}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x009d|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0090|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0090|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0090|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x004b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public ar.com.hjg.pngj.IImageLineSet\<? extends ar.com.hjg.pngj.IImageLine\> ar.com.hjg.pngj.PngReader.readRows((r6v0 'this' ar.com.hjg.pngj.PngReader A[IMMUTABLE_TYPE, THIS]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(III), Lar\/com\/hjg\/pngj\/IImageLineSet\<, +, Lar\/com\/hjg\/pngj\/IImageLine;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_32;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_32;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_32;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_32;
+Node_12 -> Node_13;
+Node_12 -> Node_30[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_27[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_34[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_38[style=dashed];
+Node_20 -> Node_18;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_36[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_37[style=dashed];
+Node_25 -> Node_35;
+Node_26 -> Node_16;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_34 -> Node_28;
+Node_35 -> Node_26;
+Node_36 -> Node_26;
+Node_37 -> Node_26;
+Node_38 -> Node_21;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.VorbisUtil.readVorbisIdentificationHeader(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Lcom\/google\/android\/exoplayer2\/extractor\/ogg\/VorbisUtil$VorbisIdHeader;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|verifyVorbisHeaderCapturePattern(1, r20, false)\llong r3 = r20.readLittleEndianUnsignedInt()\lint r5 = r20.readUnsignedByte()\llong r6 = r20.readLittleEndianUnsignedInt()\lint r8 = r20.readLittleEndianInt()\lint r9 = r20.readLittleEndianInt()\lint r10 = r20.readLittleEndianInt()\lint r15 = r20.readUnsignedByte()\lint r11 = (int) java.lang.Math.pow(2.0d, (double) (r15 & 15))\lint r12 = (int) java.lang.Math.pow(2.0d, (double) ((r15 & com.google.android.exoplayer2.extractor.p046ts.PsExtractor.VIDEO_STREAM_MASK) \>\> 4))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x004a|if ((r20.readUnsignedByte() & 1) \<= 0) goto L_0x0061\l}"];
+Node_2 [shape=record,label="{2\:\ 0x004c|r13 = true\l}"];
+Node_3 [shape=record,label="{3\:\ 0x004d|PHI: r13 \l  PHI: (r13v1 'framingFlag' boolean) = (r13v0 'framingFlag' boolean), (r13v2 'framingFlag' boolean) binds: [B:5:0x0061, B:2:0x004c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0060|RETURN\l|return new com.google.android.exoplayer2.extractor.ogg.VorbisUtil.VorbisIdHeader(r3, r5, r6, r8, r9, r10, r11, r12, r13, java.util.Arrays.copyOf(r20.data, r20.limit()))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0061|r13 = false\l}"];
+MethodNode[shape=record,label="{public static com.google.android.exoplayer2.extractor.ogg.VorbisUtil$VorbisIdHeader com.google.android.exoplayer2.extractor.ogg.VorbisUtil.readVorbisIdentificationHeader((r20v0 'headerData' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

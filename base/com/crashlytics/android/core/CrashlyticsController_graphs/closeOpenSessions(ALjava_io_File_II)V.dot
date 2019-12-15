@@ -1,0 +1,17 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.closeOpenSessions([Ljava\/io\/File;II)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Closing open sessions.\")\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|LOOP_START\lPHI: r8 \l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:0:0x0000, B:3:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000b\-\>B:3:0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r8 \>= r7.length) goto L_0x0034\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|LOOP_END\lLOOP:0: B:1:0x000b\-\>B:3:0x000e\l|r0 = r7[r8]\ljava.lang.String r1 = getSessionIdFromSessionFile(r0)\lio.fabric.sdk.android.Logger r2 = p018io.fabric.sdk.android.Fabric.getLogger()\ljava.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"Closing session: \")\lr4.append(r1)\lr2.mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, r4.toString())\lwriteSessionPartsToSessionFile(r0, r1, r9)\lint r8 = r8 + 1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0034|RETURN\l|return\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.closeOpenSessions((r6v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r7v0 java.io.File[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_1;
+Node_5 -> Node_4;
+}
+

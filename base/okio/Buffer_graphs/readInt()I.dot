@@ -1,0 +1,31 @@
+digraph "CFG forokio.Buffer.readInt()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r8.size \> 4 ? 1 : (r8.size == 4 ? 0 : \-1)) \< 0) goto L_0x006c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|okio.Segment r0 = r8.head\lint r1 = r0.pos\lint r4 = r0.limit\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|if ((r4 \- r1) \>= 4) goto L_0x0035\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|RETURN\l|return ((((readByte() & 255) \<\< 24) \| ((readByte() & 255) \<\< 16)) \| ((readByte() & 255) \<\< 8)) \| (readByte() & 255)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0035|byte[] r5 = r0.data\lint r6 = r1 + 1\lint r7 = r6 + 1\lr1 = ((r5[r1] & 255) \<\< 24) \| ((r5[r6] & 255) \<\< 16)\lint r6 = r7 + 1\lr1 = r1 \| ((r5[r7] & 255) \<\< 8)\lint r7 = r6 + 1\lr1 = r1 \| (r5[r6] & 255)\lr8.size = r8.size \- 4\l}"];
+Node_7 [shape=record,label="{7\:\ 0x005d|if (r7 != r4) goto L_0x0069\l}"];
+Node_8 [shape=record,label="{8\:\ 0x005f|r8.head = r0.pop()\lokio.SegmentPool.recycle(r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0069|r0.pos = r7\l}"];
+Node_10 [shape=record,label="{10\:\ 0x006b|RETURN\l|return r1\l}"];
+Node_11 [shape=record,label="{11\:\ 0x006c|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"size \< 4: \")\lr1.append(r8.size)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0084|throw new java.lang.IllegalStateException(r1.toString())\l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.readInt((r8v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

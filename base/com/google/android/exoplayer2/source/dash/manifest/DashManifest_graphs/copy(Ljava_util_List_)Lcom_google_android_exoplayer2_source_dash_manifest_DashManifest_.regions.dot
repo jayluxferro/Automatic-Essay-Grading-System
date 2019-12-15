@@ -1,0 +1,84 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifest.copy(Ljava\/util\/List;)Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifest;" {
+subgraph cluster_Region_278595803 {
+label = "R(3:0|(2:(2:5|(1:7)(0))(1:9)|8)|14)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.LinkedList java.util.LinkedList r0 = new java.util.LinkedList(r29)\ljava.util.Collections.sort(r0)\lr0.add(new com.google.android.exoplayer2.source.dash.manifest.RepresentationKey(\-1, \-1, \-1))\ljava.util.ArrayList java.util.ArrayList\<com.google.android.exoplayer2.source.dash.manifest.Period\> r18 = new java.util.ArrayList\<\>()\llong r26 = 0\lint r24 = 0\l}"];
+subgraph cluster_LoopRegion_1534850966 {
+label = "LOOP:0: (2:(2:5|(1:7)(0))(1:9)|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0028|if (r24 \< getPeriodCount()) goto L_0x002a\l}"];
+subgraph cluster_Region_1613474432 {
+label = "R(2:(2:5|(1:7)(0))(1:9)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_327486932 {
+label = "IF [B:4:0x0034] THEN: R(2:5|(1:7)(0)) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0034|if (((com.google.android.exoplayer2.source.dash.manifest.RepresentationKey) r0.peek()).periodIndex != r24) goto L_0x0036\l}"];
+subgraph cluster_Region_838775677 {
+label = "R(2:5|(1:7)(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0036|long long r22 = getPeriodDurationMs(r24)\l}"];
+subgraph cluster_IfRegion_1429435594 {
+label = "IF [B:6:0x0045] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|if (r22 != com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0047\l}"];
+subgraph cluster_Region_326039792 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|r26 += r22\l}"];
+}
+subgraph cluster_Region_815479191 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_197876201 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004c|com.google.android.exoplayer2.source.dash.manifest.Period com.google.android.exoplayer2.source.dash.manifest.Period r21 = getPeriod(r24)\lr18.add(new com.google.android.exoplayer2.source.dash.manifest.Period(r21.f2462id, r21.startMs \- r26, copyAdaptationSets(r21.adaptationSets, r0)))\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0049|LOOP_END\lPHI: r26 \l  PHI: (r26v2 'shiftMs' long) = (r26v1 'shiftMs' long), (r26v1 'shiftMs' long), (r26v3 'shiftMs' long) binds: [B:19:0x0049, B:18:0x0049, B:17:0x0049] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0022\-\>B:8:0x0049\l|r24++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x00b1|RETURN\l|return new com.google.android.exoplayer2.source.dash.manifest.DashManifest(r28.availabilityStartTime, r28.duration != com.google.android.exoplayer2.C1260C.TIME_UNSET ? r28.duration \- r26 : com.google.android.exoplayer2.C1260C.TIME_UNSET, r28.minBufferTime, r28.dynamic, r28.minUpdatePeriod, r28.timeShiftBufferDepth, r28.suggestedPresentationDelay, r28.utcTiming, r28.location, r18)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0022|LOOP_START\lPHI: r24 r26 \l  PHI: (r24v1 'periodIndex' int) = (r24v0 'periodIndex' int), (r24v2 'periodIndex' int) binds: [B:0:0x0000, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r26v1 'shiftMs' long) = (r26v0 'shiftMs' long), (r26v2 'shiftMs' long) binds: [B:0:0x0000, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0022\-\>B:8:0x0049\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x002a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0075}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0080}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0082}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0088|PHI: r5 \l  PHI: (r5v1 'newDuration' long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x00b2}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0075|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0049|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0049|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0049|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final com.google.android.exoplayer2.source.dash.manifest.DashManifest com.google.android.exoplayer2.source.dash.manifest.DashManifest.copy((r28v0 'this' com.google.android.exoplayer2.source.dash.manifest.DashManifest A[IMMUTABLE_TYPE, THIS]), (r29v0 'representationKeys' java.util.List\<com.google.android.exoplayer2.source.dash.manifest.RepresentationKey\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/RepresentationKey;, \>;), Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifest;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_16[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_7 -> Node_17;
+Node_9 -> Node_19;
+Node_8 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_15;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_13;
+Node_16 -> Node_10;
+Node_17 -> Node_8;
+Node_18 -> Node_8;
+Node_19 -> Node_8;
+}
+

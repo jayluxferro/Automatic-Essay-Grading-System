@@ -1,0 +1,41 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsCore.verifyPinning(Ljava\/net\/URL;)Z" {
+subgraph cluster_Region_1307322922 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_243423397 {
+label = "Try: R(1:2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_341255583 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return internalVerifyPinning(r4)\l}"];
+}
+subgraph cluster_Region_992537513 {
+label = "R(3:3|4|5) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Could not verify SSL pinning\", r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_992537513 {
+label = "R(3:3|4|5) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Could not verify SSL pinning\", r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ Exception \-\> 0x0005 \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public boolean com.crashlytics.android.core.CrashlyticsCore.verifyPinning((r3v0 'this' com.crashlytics.android.core.CrashlyticsCore A[IMMUTABLE_TYPE, THIS]), (r4v0 java.net.URL A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

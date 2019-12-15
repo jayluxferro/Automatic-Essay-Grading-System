@@ -1,0 +1,75 @@
+digraph "CFG fororg.mapsforge.map.reader.header.RequiredFields.readWayTags(Lorg\/mapsforge\/map\/reader\/ReadBuffer;Lorg\/mapsforge\/map\/reader\/header\/MapFileInfoBuilder;)V" {
+subgraph cluster_Region_883768509 {
+label = "R(2:0|(2:(4:2|(2:4|(1:6)(2:7|8))|9|10)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r5.readShort()\l}"];
+subgraph cluster_Region_30300352 {
+label = "R(2:(4:2|(2:4|(1:6)(2:7|8))|9|10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_793140261 {
+label = "IF [B:1:0x0004] THEN: R(4:2|(2:4|(1:6)(2:7|8))|9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \>= 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1109213819 {
+label = "R(4:2|(2:4|(1:6)(2:7|8))|9|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|org.mapsforge.core.model.Tag[] org.mapsforge.core.model.Tag[] r1 = new org.mapsforge.core.model.Tag[r0]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_328212267 {
+label = "LOOP:0: (2:4|(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0006, B:6:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0009\-\>B:6:0x0011\l|if (r2 \< r0) goto L_0x000b\l}"];
+subgraph cluster_Region_1751381032 {
+label = "R(2:4|(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|java.lang.String java.lang.String r3 = r5.readUTF8EncodedString()\l}"];
+subgraph cluster_IfRegion_177075205 {
+label = "IF [B:5:0x000f] THEN: R(1:6) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r3 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_1405049777 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|LOOP_END\lLOOP:0: B:3:0x0009\-\>B:6:0x0011\l|r1[r2] = new org.mapsforge.core.model.Tag(r3)\lr2++\l}"];
+}
+subgraph cluster_Region_2065286439 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b}"];
+Node_8 [shape=record,label="{8\:\ 0x0031|throw new org.mapsforge.map.reader.header.MapFileException(\"way tag must not be null: \" + r2)\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0032|r6.wayTags = r1\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0034|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1317376304 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0035}"];
+Node_12 [shape=record,label="{12\:\ 0x004b|throw new org.mapsforge.map.reader.header.MapFileException(\"invalid number of way tags: \" + r0)\l}"];
+}
+}
+}
+Node_13 [shape=record,color=red,label="{13\:\ 0x0032|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static void org.mapsforge.map.reader.header.RequiredFields.readWayTags((r5v0 org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.mapsforge.map.reader.header.MapFileInfoBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_14[style=dashed];
+Node_6 -> Node_3;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_9;
+Node_14 -> Node_7;
+}
+

@@ -1,0 +1,54 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.setPageSize()V" {
+subgraph cluster_Region_232982654 {
+label = "R(1:(1:(2:4|(1:(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_147356281 {
+label = "R(1:(2:4|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_745579578 {
+label = "IF [B:1:0x0006, B:3:0x000a] THEN: R(2:4|(1:(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r6.mConfiguration.isInMemoryDb() != true) goto L_0x0008\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r6.mIsReadOnlyConnection != true) goto L_0x000c\l}"];
+subgraph cluster_Region_816515726 {
+label = "R(2:4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|long long r0 = (long) org.spatialite.database.SQLiteGlobal.getDefaultPageSize()\l}"];
+subgraph cluster_Region_221347429 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_377002695 {
+label = "IF [B:5:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (executeForLong(\"PRAGMA page_size\", (java.lang.Object[]) null, (android.support.p000v4.p002os.CancellationSignal) null) != r0) goto L_0x001c\l}"];
+subgraph cluster_Region_339770441 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|execute(\"PRAGMA page_size=\" + r0, (java.lang.Object[]) null, (android.support.p000v4.p002os.CancellationSignal) null)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.setPageSize((r6v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

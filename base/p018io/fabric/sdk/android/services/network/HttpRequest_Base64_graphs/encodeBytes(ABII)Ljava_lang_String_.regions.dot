@@ -1,0 +1,40 @@
+digraph "CFG forio.fabric.sdk.android.services.network.HttpRequest.Base64.encodeBytes([BII)Ljava\/lang\/String;" {
+subgraph cluster_Region_1471666010 {
+label = "R(2:0|(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = encodeBytesToBytes(r0, r1, r2)\l}"];
+subgraph cluster_TryCatchRegion_412975876 {
+label = "Try: R(1:3) catches: R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1177981227 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return new java.lang.String(r0, PREFERRED_ENCODING)\l}"];
+}
+subgraph cluster_Region_1769785370 {
+label = "R(1:6) | ExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return new java.lang.String(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1769785370 {
+label = "R(1:6) | ExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return new java.lang.String(r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|SYNTHETIC\lSplitter:B:1:0x0004\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ UnsupportedEncodingException \-\> 0x000c \}\lSplitter:B:1:0x0004\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\lSplitter:B:1:0x0004\l}"];
+MethodNode[shape=record,label="{public static java.lang.String io.fabric.sdk.android.services.network.HttpRequest.Base64.encodeBytes((r0v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_4;
+}
+

@@ -1,0 +1,115 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.onOutputFormatChanged(Landroid\/media\/MediaCodec;Landroid\/media\/MediaFormat;)V" {
+subgraph cluster_Region_1541806694 {
+label = "R(7:1|(1:10)(1:24)|11|(1:13)(1:25)|14|(1:26)(1:(1:20))|21) | DECL_VAR: int null, int null\l";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|boolean r0 = r6.containsKey(KEY_CROP_RIGHT) && r6.containsKey(KEY_CROP_LEFT) && r6.containsKey(KEY_CROP_BOTTOM) && r6.containsKey(KEY_CROP_TOP)\l}"];
+subgraph cluster_IfRegion_2011956479 {
+label = "IF [B:9:0x0021] THEN: R(1:10) ELSE: R(1:24)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|PHI: r0 \l  PHI: (r0v1 'hasCrop' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L_0x0023\l}"];
+subgraph cluster_Region_1808402886 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|int r2 = (r6.getInteger(KEY_CROP_RIGHT) \- r6.getInteger(KEY_CROP_LEFT)) + 1\l}"];
+}
+subgraph cluster_Region_9701016 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0074|int r2 = r6.getInteger(\"width\")\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0032|PHI: r2 \l  PHI: (r2v4 int) = (r2v3 int), (r2v24 int) binds: [B:24:0x0074, B:10:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|r4.currentWidth = r2\l}"];
+subgraph cluster_IfRegion_1826244103 {
+label = "IF [B:12:0x0034] THEN: R(1:13) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0034|if (r0 == true) goto L_0x0036\l}"];
+subgraph cluster_Region_1111668823 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0036|int r2 = (r6.getInteger(KEY_CROP_BOTTOM) \- r6.getInteger(KEY_CROP_TOP)) + 1\l}"];
+}
+subgraph cluster_Region_2090214332 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x007b|int r2 = r6.getInteger(\"height\")\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0045|PHI: r2 \l  PHI: (r2v7 int) = (r2v6 int), (r2v20 int) binds: [B:25:0x007b, B:13:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|r4.currentHeight = r2\lr4.currentPixelWidthHeightRatio = r4.pendingPixelWidthHeightRatio\l}"];
+subgraph cluster_IfRegion_51663365 {
+label = "IF [B:15:0x004f] THEN: R(1:26) ELSE: R(1:(1:20))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004f|if (com.google.android.exoplayer2.util.Util.SDK_INT \< 21) goto L_0x0082\l}"];
+subgraph cluster_Region_1360580575 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0082|r4.currentUnappliedRotationDegrees = r4.pendingRotationDegrees\l}"];
+}
+subgraph cluster_Region_1192759799 {
+label = "R(1:(1:20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1089580444 {
+label = "IF [B:17:0x0055, B:19:0x005b] THEN: R(1:20) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0055|ADDED_TO_REGION\l|if (r4.pendingRotationDegrees == 90) goto L_0x005d\l}"];
+Node_19 [shape=record,label="{19\:\ 0x005b|ADDED_TO_REGION\l|if (r4.pendingRotationDegrees == 270) goto L_0x005d\l}"];
+subgraph cluster_Region_1656936001 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005d|int int r1 = r4.currentWidth\lr4.currentWidth = r4.currentHeight\lr4.currentHeight = r1\lr4.currentPixelWidthHeightRatio = 1.0f \/ r4.currentPixelWidthHeightRatio\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x006c|setVideoScalingMode(r5, r4.scalingMode)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016|REMOVE\lADDED_TO_REGION\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e|REMOVE\lADDED_TO_REGION\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0051}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0057}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0071}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0072}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.video.MediaCodecVideoRenderer.onOutputFormatChanged((r4v0 'this' com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS]), (r5v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'outputFormat' android.media.MediaFormat A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_23;
+Node_9 -> Node_10;
+Node_9 -> Node_24[style=dashed];
+Node_10 -> Node_11;
+Node_24 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_25[style=dashed];
+Node_13 -> Node_14;
+Node_25 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_26;
+Node_26 -> Node_21;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_23;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_23;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_23;
+Node_8 -> Node_9;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_9;
+}
+

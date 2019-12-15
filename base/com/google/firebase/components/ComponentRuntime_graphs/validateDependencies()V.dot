@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.firebase.components.ComponentRuntime.validateDependencies()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = r6.components.keySet().iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:16:0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0.hasNext() == false) goto L_0x0056\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|com.google.firebase.components.Component r1 = r0.next()\ljava.util.Iterator r2 = r1.getDependencies().iterator()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|LOOP_START\lLOOP:1: B:4:0x001e\-\>B:15:0x001e\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (r2.hasNext() == false) goto L_0x000a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|com.google.firebase.components.Dependency r3 = r2.next()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002e|if (r3.isRequired() == false) goto L_0x001e\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|if (r6.lazyInstanceMap.containsKey(r3.getInterface()) == false) goto L_0x003d\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|java.lang.Object[] r2 = new java.lang.Object[]\{r1, r3.getInterface()\}\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0055|throw new com.google.firebase.components.MissingDependencyException(java.lang.String.format(\"Unsatisfied dependency for component %s: %s\", r2))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0056|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003d|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0056|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001e|LOOP_END\lSYNTHETIC\lLOOP:1: B:4:0x001e\-\>B:15:0x001e\l}"];
+Node_16 [shape=record,label="{16\:\ 0x000a|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x000a\-\>B:16:0x000a\l}"];
+Node_17 [shape=record,label="{17\:\ 0x001e|SYNTHETIC\l}"];
+Node_18 [shape=record,label="{18\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.firebase.components.ComponentRuntime.validateDependencies((r6v0 'this' com.google.firebase.components.ComponentRuntime A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_14;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_16;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_17;
+Node_8 -> Node_9;
+Node_9 -> Node_13;
+Node_9 -> Node_18[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_10;
+Node_14 -> Node_12;
+Node_15 -> Node_4;
+Node_16 -> Node_1;
+Node_17 -> Node_15;
+Node_18 -> Node_15;
+}
+

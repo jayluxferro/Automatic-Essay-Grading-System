@@ -1,0 +1,80 @@
+digraph "CFG forandroid.support.v4.graphics.drawable.WrappedDrawableApi14.updateTint([I)Z" {
+subgraph cluster_Region_2040288834 {
+label = "R(1:(2:(1:2)|(3:3|(1:14)(2:6|(2:12|13))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_19130777 {
+label = "R(2:(1:2)|(3:3|(1:14)(2:6|(2:12|13))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2080213795 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (isCompatTintEnabled() == false) goto L_0x0007\l}"];
+subgraph cluster_Region_444099858 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_926496564 {
+label = "R(3:3|(1:14)(2:6|(2:12|13))|15)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|android.content.res.ColorStateList android.content.res.ColorStateList r0 = r4.mState.mTint\landroid.graphics.PorterDuff$Mode android.graphics.PorterDuff.Mode r2 = r4.mState.mTintMode\l}"];
+subgraph cluster_IfRegion_1253873166 {
+label = "IF [B:4:0x0010, B:5:0x0012] THEN: R(1:14) ELSE: R(2:6|(2:12|13))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r0 == null) goto L_0x0033\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|ADDED_TO_REGION\l|if (r2 == null) goto L_0x0033\l}"];
+subgraph cluster_Region_21825113 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0033|r4.mColorFilterSet = false\lclearColorFilter()\l}"];
+}
+subgraph cluster_Region_1825823023 {
+label = "R(2:6|(2:12|13))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|int int r5 = r0.getColorForState(r5, r0.getDefaultColor())\l}"];
+subgraph cluster_IfRegion_1786512693 {
+label = "IF [B:7:0x001e, B:9:0x0022, B:11:0x0026] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|ADDED_TO_REGION\l|if (r4.mColorFilterSet != false) goto L_0x0020\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|ADDED_TO_REGION\l|if (r5 == r4.mCurrentColor) goto L_0x0024\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|ADDED_TO_REGION\l|if (r2 == r4.mCurrentMode) goto L_0x0038\l}"];
+subgraph cluster_Region_344068057 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0028|setColorFilter(r5, r2)\lr4.mCurrentColor = r5\lr4.mCurrentMode = r2\lr4.mColorFilterSet = true\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0032|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0038|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024}"];
+MethodNode[shape=record,label="{private boolean android.support.v4.graphics.drawable.WrappedDrawableApi14.updateTint((r4v0 'this' android.support.v4.graphics.drawable.WrappedDrawableApi14 A[IMMUTABLE_TYPE, THIS]), (r5v0 int[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_14;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_14 -> Node_15;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

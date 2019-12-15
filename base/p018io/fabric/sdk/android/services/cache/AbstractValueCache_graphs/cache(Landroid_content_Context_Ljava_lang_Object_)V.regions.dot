@@ -1,0 +1,34 @@
+digraph "CFG forio.fabric.sdk.android.services.cache.AbstractValueCache.cache(Landroid\/content\/Context;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_775131929 {
+label = "R(1:(2:(2:1|2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_973509716 {
+label = "R(2:(2:1|2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_882415860 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1707699261 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|cacheValue(r1, r2)\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1473286342 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|throw new java.lang.NullPointerException()\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{private void io.fabric.sdk.android.services.cache.AbstractValueCache.cache((r0v0 'this' io.fabric.sdk.android.services.cache.AbstractValueCache A[IMMUTABLE_TYPE, THIS]), (r1v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/content\/Context;, TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

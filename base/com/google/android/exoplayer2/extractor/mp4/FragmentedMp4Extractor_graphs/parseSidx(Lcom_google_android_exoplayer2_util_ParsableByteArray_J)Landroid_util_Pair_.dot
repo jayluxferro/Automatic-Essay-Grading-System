@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseSidx(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;J)Landroid\/util\/Pair;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r35.setPosition(8)\lint r33 = com.google.android.exoplayer2.extractor.mp4.Atom.parseFullAtomVersion(r35.readInt())\lr35.skipBytes(4)\llong r8 = r35.readUnsignedInt()\lr22 = r36\l}"];
+Node_1 [shape=record,label="{1\:\ 0x001b|if (r33 != 0) goto L_0x006d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001d|long r4 = r35.readUnsignedInt()\llong r22 = r22 + r35.readUnsignedInt()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0027|PHI: r4 r22 \l  PHI: (r4v1 'earliestPresentationTime' long) = (r4v0 'earliestPresentationTime' long), (r4v2 'earliestPresentationTime' long) binds: [B:10:0x006d, B:2:0x001d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r22v2 'offset' long) = (r22v1 'offset' long), (r22v5 'offset' long) binds: [B:10:0x006d, B:2:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|long r18 = com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r4, com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND, r8)\lr35.skipBytes(2)\lint r25 = r35.readUnsignedShort()\lr28 = new int[r25]\lr24 = new long[r25]\lr16 = new long[r25]\lr29 = new long[r25]\lr10 = r4\lr30 = r18\lr21 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0055|LOOP_START\lPHI: r10 r21 r22 r30 \l  PHI: (r10v1 'time' long) = (r10v0 'time' long), (r10v2 'time' long) binds: [B:3:0x0027, B:11:0x0078] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r21v1 'i' int) = (r21v0 'i' int), (r21v2 'i' int) binds: [B:3:0x0027, B:11:0x0078] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r22v3 'offset' long) = (r22v2 'offset' long), (r22v4 'offset' long) binds: [B:3:0x0027, B:11:0x0078] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r30v1 'timeUs' long) = (r30v0 'timeUs' long), (r30v2 'timeUs' long) binds: [B:3:0x0027, B:11:0x0078] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0055\-\>B:11:0x0078\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0059|if (r21 \>= r25) goto L_0x00a5\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005b|int r17 = r35.readInt()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0063|if ((Integer.MIN_VALUE & r17) == 0) goto L_0x0078\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0065}"];
+Node_9 [shape=record,label="{9\:\ 0x006c|throw new com.google.android.exoplayer2.ParserException(\"Unhandled indirect reference\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x006d|long r4 = r35.readUnsignedLongToLong()\llong r22 = r22 + r35.readUnsignedLongToLong()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0078|LOOP_END\lLOOP:0: B:4:0x0055\-\>B:11:0x0078\l|long r26 = r35.readUnsignedInt()\lr28[r21] = Integer.MAX_VALUE & r17\lr24[r21] = r22\lr29[r21] = r30\llong r10 = r10 + r26\llong r30 = com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r10, com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND, r8)\lr16[r21] = r30 \- r29[r21]\lr35.skipBytes(4)\llong r22 = r22 + ((long) r28[r21])\lint r21 = r21 + 1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x00a5}"];
+Node_13 [shape=record,label="{13\:\ 0x00ba|RETURN\l|return android.util.Pair.create(java.lang.Long.valueOf(r18), new com.google.android.exoplayer2.extractor.ChunkIndex(r28, r24, r16, r29))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0065|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00a5|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static android.util.Pair\<java.lang.Long, com.google.android.exoplayer2.extractor.ChunkIndex\> com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseSidx((r35v0 'atom' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r36v0 'inputPosition' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;, J), Landroid\/util\/Pair, \<, Ljava\/lang\/Long;, Lcom\/google\/android\/exoplayer2\/extractor\/ChunkIndex;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_15;
+Node_6 -> Node_7;
+Node_7 -> Node_11;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_3;
+Node_11 -> Node_4;
+Node_12 -> Node_13;
+Node_14 -> Node_8;
+Node_15 -> Node_12;
+}
+

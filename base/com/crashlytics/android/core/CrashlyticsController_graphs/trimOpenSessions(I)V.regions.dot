@@ -1,0 +1,29 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.trimOpenSessions(I)V" {
+subgraph cluster_Region_925884789 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashSet java.util.HashSet r0 = new java.util.HashSet()\ljava.io.File[] java.io.File[] r1 = listSortedSessionBeginFiles()\lint int r5 = java.lang.Math.min(r5, r1.length)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_22699863 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|LOOP_START\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:0:0x0000, B:2:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000f\-\>B:2:0x0011\l|if (r2 \< r5) goto L_0x0011\l}"];
+subgraph cluster_Region_521211734 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|LOOP_END\lLOOP:0: B:1:0x000f\-\>B:2:0x0011\l|r0.add(getSessionIdFromSessionFile(r1[r2]))\lr2++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001d|r4.logFileManager.discardOldLogFiles(r0)\lretainSessions(listFilesMatching((java.io.FilenameFilter) new com.crashlytics.android.core.CrashlyticsController.AnySessionPartFileFilter()), r0)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002f}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.trimOpenSessions((r4v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

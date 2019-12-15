@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.gson.internal.bind.TreeTypeAdapter.write(Lcom\/google\/gson\/stream\/JsonWriter;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_2069349480 {
+label = "R(1:(1:2)(1:(1:5)(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_365297925 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:(1:5)(1:7))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.serializer == null) goto L_0x0004\l}"];
+subgraph cluster_Region_951278245 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|delegate().write(r4, r5)\l}"];
+}
+subgraph cluster_Region_1267800630 {
+label = "R(1:(1:5)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237036456 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r5 == null) goto L_0x000e\l}"];
+subgraph cluster_Region_726340928 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r4.nullValue()\l}"];
+}
+subgraph cluster_Region_160367870 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|com.google.gson.internal.Streams.write(r3.serializer.serialize(r5, r3.typeToken.getType(), r3.context), r4)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+MethodNode[shape=record,label="{public void com.google.gson.internal.bind.TreeTypeAdapter.write((r3v0 'this' com.google.gson.internal.bind.TreeTypeAdapter A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/stream\/JsonWriter;, TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+}
+

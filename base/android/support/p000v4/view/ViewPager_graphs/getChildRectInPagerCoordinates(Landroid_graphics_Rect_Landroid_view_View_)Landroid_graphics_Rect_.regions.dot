@@ -1,0 +1,69 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.getChildRectInPagerCoordinates(Landroid\/graphics\/Rect;Landroid\/view\/View;)Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_632286109 {
+label = "R(2:(1:1)|(2:(2:3|4)|(3:5|(1:9)|10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1015568263 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_695685487 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|android.graphics.Rect r3 = new android.graphics.Rect()\l}"];
+}
+}
+subgraph cluster_Region_1963809587 {
+label = "R(2:(2:3|4)|(3:5|(1:9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_790934796 {
+label = "IF [B:2:0x0007] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|PHI: r3 \l  PHI: (r3v1 android.graphics.Rect) = (r3v0 android.graphics.Rect), (r3v2 android.graphics.Rect) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1374612224 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|r3.set(0, 0, 0, 0)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1186761258 {
+label = "R(3:5|(1:9)|10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r3.left = r4.getLeft()\lr3.right = r4.getRight()\lr3.top = r4.getTop()\lr3.bottom = r4.getBottom()\landroid.view.ViewParent android.view.ViewParent r4 = r4.getParent()\l}"];
+subgraph cluster_LoopRegion_676143791 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|if ((r4 instanceof android.view.ViewGroup) != false) goto L_0x002e\l}"];
+subgraph cluster_Region_1494908394 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|LOOP_END\lLOOP:0: B:6:0x002a\-\>B:9:0x0030\l|android.view.ViewGroup android.view.ViewGroup r4 = (android.view.ViewGroup) r4\lr3.left += r4.getLeft()\lr3.right += r4.getRight()\lr3.top += r4.getTop()\lr3.bottom += r4.getBottom()\landroid.view.ViewParent r4 = r4.getParent()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x005b|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a|LOOP_START\lPHI: r4 \l  PHI: (r4v2 android.view.ViewParent) = (r4v1 android.view.ViewParent), (r4v4 android.view.ViewParent) binds: [B:5:0x000e, B:9:0x0030] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x002a\-\>B:9:0x0030\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002e|ADDED_TO_REGION\l|if (r4 != r2) goto L_0x0030\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x005b|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x005b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.graphics.Rect android.support.v4.view.ViewPager.getChildRectInPagerCoordinates((r2v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS]), (r3v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_10;
+}
+

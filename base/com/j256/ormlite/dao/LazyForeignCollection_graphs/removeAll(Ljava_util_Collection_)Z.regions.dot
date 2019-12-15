@@ -1,0 +1,85 @@
+digraph "CFG forcom.j256.ormlite.dao.LazyForeignCollection.removeAll(Ljava\/util\/Collection;)Z" {
+subgraph cluster_Region_579646590 {
+label = "R(3:0|(1:(1:(2:6|7)(0)))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.dao.CloseableIterator com.j256.ormlite.dao.CloseableIterator r0 = iterator()\lboolean r1 = false\l}"];
+subgraph cluster_LoopRegion_1801099703 {
+label = "LOOP:0: (1:(1:(2:6|7)(0)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|Catch:\{ all \-\> 0x001e \}\l|if (r0.hasNext() != false) goto L_0x000b     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+subgraph cluster_Region_916552482 {
+label = "R(1:(1:(2:6|7)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_277725119 {
+label = "Try: R(1:(2:6|7)(0)) finally: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_306385480 {
+label = "R(1:(2:6|7)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_126412692 {
+label = "IF [B:5:0x0013] THEN: R(2:6|7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|Catch:\{ all \-\> 0x001e \}\l|if (r4.contains(r0.next()) == true) goto L_0x0015     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+subgraph cluster_Region_1923702706 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|Catch:\{ all \-\> 0x001e \}\l|r0.remove()     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|r1 = true\l}"];
+}
+subgraph cluster_Region_1582984257 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_893463261 {
+label = "R(3:10|11|12) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001f|FINALLY_INSNS\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0022|throw r4\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001d|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_893463261 {
+label = "R(3:10|11|12) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001f|FINALLY_INSNS\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0022|throw r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005|LOOP_START\lSYNTHETIC\lPHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:0:0x0000, B:13:0x0005] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:1:0x0005\lLOOP:0: B:1:0x0005\-\>B:13:0x0005\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x001e \}\lSplitter:B:1:0x0005\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b|Catch:\{ all \-\> 0x001e \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a|DONT_GENERATE\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0005|LOOP_END\lSYNTHETIC\lPHI: r1 \l  PHI: (r1v2 boolean) = (r1v1 boolean), (r1v3 boolean) binds: [B:15:0x0005, B:16:0x0005] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0005\-\>B:13:0x0005\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001a|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0005|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0005|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.dao.LazyForeignCollection.removeAll((r3v0 'this' com.j256.ormlite.dao.LazyForeignCollection A[IMMUTABLE_TYPE, THIS]), (r4v0 java.util.Collection\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Collection\<, *\>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_16;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_13 -> Node_1;
+Node_14 -> Node_8;
+Node_15 -> Node_13;
+Node_16 -> Node_13;
+}
+

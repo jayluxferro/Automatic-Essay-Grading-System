@@ -1,0 +1,41 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.lastOrNull([Z)Ljava\/lang\/Boolean;" {
+subgraph cluster_Region_1208204710 {
+label = "R(2:0|(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r2, \"$receiver\")\l}"];
+subgraph cluster_Region_841559198 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1403049935 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r2.length == 0) == true) goto L_0x000e\l}"];
+subgraph cluster_Region_921960419 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1665698326 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.lang.Boolean.valueOf(r2[r2.length \- 1])\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+MethodNode[shape=record,label="{public static final java.lang.Boolean kotlin.collections.ArraysKt___ArraysKt.lastOrNull((r2v0 boolean[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

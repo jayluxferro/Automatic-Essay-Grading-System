@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v7.widget.GridLayoutManager.setStackFromEnd(Z)V" {
+subgraph cluster_Region_484271271 {
+label = "R(1:(2:(2:1|2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2012619101 {
+label = "R(2:(2:1|2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_490957859 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == false) goto L_0x0002\l}"];
+subgraph cluster_Region_1862374468 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|super.setStackFromEnd(false)\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_411970911 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|throw new java.lang.UnsupportedOperationException(\"GridLayoutManager does not support stack from end. Consider using reverse layout\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.GridLayoutManager.setStackFromEnd((r1v0 'this' android.support.v7.widget.GridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

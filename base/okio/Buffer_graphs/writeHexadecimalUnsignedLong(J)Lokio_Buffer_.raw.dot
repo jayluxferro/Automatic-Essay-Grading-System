@@ -1,0 +1,23 @@
+digraph "CFG forokio.Buffer.writeHexadecimalUnsignedLong(J)Lokio\/Buffer;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[long, double]) = (0 ?[long, double]) \l0x0002: CMP_L  (r0 I:int) = (r10 I:long), (r0 I:long) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: CONST  (r10 I:?[int, float, short, byte, char]) = (48 ?[int, float, short, byte, char]) \l0x0008: INVOKE  (r10 I:okio.Buffer) = (r9 I:okio.Buffer), (r10 I:int) okio.Buffer.writeByte(int):okio.Buffer type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: RETURN  (r10 I:okio.Buffer) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: INVOKE  (r0 I:long) = (r10 I:long) java.lang.Long.highestOneBit(long):long type: STATIC \l0x0011: INVOKE  (r0 I:int) = (r0 I:long) java.lang.Long.numberOfTrailingZeros(long):int type: STATIC \l0x0015: CONST  (r1 I:?[int, float, short, byte, char]) = (4 ?[int, float, short, byte, char]) \l0x0016: ARITH  (r0 I:int) = (r0 I:int) \/ (r1 I:int) \l0x0017: ARITH  (r0 I:int) = (r0 I:int) + (1 int) \l0x0019: INVOKE  (r2 I:okio.Segment) = (r9 I:okio.Buffer), (r0 I:int) okio.Buffer.writableSegment(int):okio.Segment type: VIRTUAL \l0x001d: IGET  (r3 I:byte[]) = (r2 I:okio.Segment) okio.Segment.data byte[] \l0x001f: IGET  (r4 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l0x0021: ARITH  (r4 I:int) = (r4 I:int) + (r0 I:int) \l0x0022: ARITH  (r4 I:int) = (r4 I:int) + (\-1 int) \l0x0024: IGET  (r5 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0026|0x0026: IF  (r4 I:?[int, byte, short, char]) \< (r5 I:?[int, byte, short, char])  \-\> B:7:0x0036 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|0x0028: SGET  (r6 I:byte[]) =  okio.Buffer.DIGITS byte[] \l0x002a: CONST  (r7 I:?[long, double]) = (15 ?[long, double]) \l0x002c: ARITH  (r7 I:long) = (r7 I:long) & (r10 I:long) \l0x002d: CAST  (r7 I:int) = (int) (r7 I:long) \l0x002e: AGET  (r6 I:byte A[IMMUTABLE_TYPE]) = \l  (r6 I:byte[] A[IMMUTABLE_TYPE])\l  (r7 I:?[int, short, byte, char])\l \l0x0030: APUT  \l  (r3 I:byte[] A[IMMUTABLE_TYPE])\l  (r4 I:?[int, short, byte, char])\l  (r6 I:byte A[IMMUTABLE_TYPE])\l \l0x0032: ARITH  (r10 I:long) = (r10 I:long) \>\>\> (r1 I:long) \l0x0033: ARITH  (r4 I:int) = (r4 I:int) + (\-1 int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0036|0x0036: IGET  (r10 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l0x0038: ARITH  (r10 I:int) = (r10 I:int) + (r0 I:int) \l0x0039: IPUT  (r10 I:int), (r2 I:okio.Segment) okio.Segment.limit int \l0x003b: IGET  (r10 I:long) = (r9 I:okio.Buffer) okio.Buffer.size long \l0x003d: CAST  (r0 I:long) = (long) (r0 I:int) \l0x003e: ARITH  (r10 I:long) = (r10 I:long) + (r0 I:long) \l0x003f: IPUT  (r10 I:long), (r9 I:okio.Buffer) okio.Buffer.size long \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0041|0x0041: RETURN  (r9 I:okio.Buffer) \l}"];
+MethodNode[shape=record,label="{public okio.Buffer okio.Buffer.writeHexadecimalUnsignedLong((r9 'this' I:okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r10 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+}
+

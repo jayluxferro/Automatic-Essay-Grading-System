@@ -1,0 +1,27 @@
+digraph "CFG fororg.osgeo.proj4j.proj.TransverseMercatorProjection.setUTMZone(I)V" {
+subgraph cluster_Region_1577185284 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.utmZone = r7\lr6.projectionLongitude = (((((double) (r7 \- 1)) + FC2) * 3.141592653589793d) \/ 30.0d) \- 3.141592653589793d\ldouble r0 = 0.0d\lr6.projectionLatitude = 0.0d\lr6.scaleFactor = 0.9996d\lr6.falseEasting = 500000.0d\l}"];
+subgraph cluster_IfRegion_445604544 {
+label = "IF [B:1:0x0029] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0029|if (r6.isSouth == true) goto L_0x002b\l}"];
+subgraph cluster_Region_1386185603 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002b|r0 = 1.0E7d\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0030|PHI: r0 \l  PHI: (r0v6 double) = (r0v5 double), (r0v7 double) binds: [B:1:0x0029, B:2:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|r6.falseNorthing = r0\linitialize()\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0035}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.proj.TransverseMercatorProjection.setUTMZone((r6v0 'this' org.osgeo.proj4j.proj.TransverseMercatorProjection A[IMMUTABLE_TYPE, THIS]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

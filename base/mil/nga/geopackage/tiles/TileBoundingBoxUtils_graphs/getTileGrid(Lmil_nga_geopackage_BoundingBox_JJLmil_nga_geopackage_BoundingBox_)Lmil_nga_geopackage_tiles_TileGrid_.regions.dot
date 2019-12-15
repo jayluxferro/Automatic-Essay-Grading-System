@@ -1,0 +1,110 @@
+digraph "CFG formil.nga.geopackage.tiles.TileBoundingBoxUtils.getTileGrid(Lmil\/nga\/geopackage\/BoundingBox;JJLmil\/nga\/geopackage\/BoundingBox;)Lmil\/nga\/geopackage\/tiles\/TileGrid;" {
+subgraph cluster_Region_1487646669 {
+label = "R(5:0|(2:(1:6)|(1:9))|10|(1:22)(3:(1:16)|18|21)|24) | DECL_VAR: long null, long null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.geopackage.BoundingBox r0 = r22\llong r1 = r23\llong r3 = r25\llong long r5 = getTileColumn(r0, r1, r27.getMinLongitude())\llong long r7 = getTileColumn(r0, r1, r27.getMaxLongitude())\llong r11 = 0\l}"];
+subgraph cluster_IfRegion_783505381 {
+label = "IF [B:1:0x001c, B:3:0x0020] THEN: R(2:(1:6)|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001c|ADDED_TO_REGION\l|if (r5 \< r1) goto L_0x001e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|ADDED_TO_REGION\l|if (r7 \>= 0) goto L_0x0022\l}"];
+subgraph cluster_Region_1358288254 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_453227534 {
+label = "IF [B:5:0x0024] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|if (r5 \< 0) goto L_0x0026\l}"];
+subgraph cluster_Region_863989353 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|r5 = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_461517157 {
+label = "IF [B:8:0x0029] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0029|if (r7 \>= r1) goto L_0x002b\l}"];
+subgraph cluster_Region_143919104 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b|long r7 = r1 \- 1\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002d|PHI: r5 r7 \l  PHI: (r5v2 long) = (r5v1 long), (r5v1 long), (r5v5 long), (r5v5 long) binds: [B:1:0x001c, B:3:0x0020, B:8:0x0029, B:9:0x002b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v2 long) = (r7v1 long), (r7v1 long), (r7v1 long), (r7v3 long) binds: [B:1:0x001c, B:3:0x0020, B:8:0x0029, B:9:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|long r14 = r5\llong r18 = r7\llong long r1 = getTileRow(r0, r3, r27.getMinLatitude())\llong long r5 = getTileRow(r0, r3, r27.getMaxLatitude())\l}"];
+subgraph cluster_IfRegion_230955800 {
+label = "IF [B:11:0x0042, B:13:0x0046] THEN: R(1:22) ELSE: R(3:(1:16)|18|21)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0042|if (r5 \>= r3) goto L_0x005c\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0046|ADDED_TO_REGION\l|if (r1 \< 0) goto L_0x005c\l}"];
+subgraph cluster_Region_1826454248 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005c|r20 = r1\lr16 = r5\l}"];
+}
+subgraph cluster_Region_964458810 {
+label = "R(3:(1:16)|18|21)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_605637948 {
+label = "IF [B:15:0x004a] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004a|if (r5 \>= 0) goto L_0x004d\l}"];
+subgraph cluster_Region_917659821 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004d|r11 = r5\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0050|r20 = r1 \>= r3 ? r3 \- 1 : r1\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0059|PHI: r20 \l  PHI: (r20v2 long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r16 = r11\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0066|RETURN\l|return new mil.nga.geopackage.tiles.TileGrid(r14, r16, r18, r20)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0022}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0027|PHI: r5 \l  PHI: (r5v5 long) = (r5v1 long), (r5v6 long) binds: [B:5:0x0024, B:6:0x0026] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0044}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0048}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004e|PHI: r11 \l  PHI: (r11v1 long) = (r11v0 long), (r11v2 long) binds: [B:15:0x004a, B:16:0x004d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0052}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0057}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0060|PHI: r16 r20 \l  PHI: (r16v0 long) = (r16v1 long), (r16v2 long) binds: [B:22:0x005c, B:21:0x0059] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r20v0 long) = (r20v1 long), (r20v2 long) binds: [B:22:0x005c, B:21:0x0059] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static mil.nga.geopackage.tiles.TileGrid mil.nga.geopackage.tiles.TileBoundingBoxUtils.getTileGrid((r22v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_22;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_22;
+Node_22 -> Node_23;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_20;
+Node_21 -> Node_23;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_19 -> Node_21;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+}
+

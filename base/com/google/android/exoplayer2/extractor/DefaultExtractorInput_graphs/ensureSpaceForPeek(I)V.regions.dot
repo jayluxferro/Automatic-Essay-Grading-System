@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultExtractorInput.ensureSpaceForPeek(I)V" {
+subgraph cluster_Region_534712626 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r5.peekBufferPosition + r6\l}"];
+subgraph cluster_Region_647425811 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1933207837 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r1 \> r5.peekBuffer.length) goto L_0x0009\l}"];
+subgraph cluster_Region_1719093450 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r5.peekBuffer = java.util.Arrays.copyOf(r5.peekBuffer, com.google.android.exoplayer2.util.Util.constrainValue(r5.peekBuffer.length * 2, 65536 + r1, 524288 + r1))\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.DefaultExtractorInput.ensureSpaceForPeek((r5v0 'this' com.google.android.exoplayer2.extractor.DefaultExtractorInput A[IMMUTABLE_TYPE, THIS]), (r6v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

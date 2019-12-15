@@ -1,0 +1,47 @@
+digraph "CFG forcom.crashlytics.android.core.MetaDataStore.writeUserData(Ljava\/lang\/String;Lcom\/crashlytics\/android\/core\/UserMetaData;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r5 I:java.io.File) = \l  (r4 I:com.crashlytics.android.core.MetaDataStore)\l  (r5 I:java.lang.String)\l com.crashlytics.android.core.MetaDataStore.getUserDataFileForSession(java.lang.String):java.io.File type: VIRTUAL \l0x0004: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|SYNTHETIC\lSplitter:B:1:0x0005\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0005\l|0x0005: INVOKE  (r6 I:java.lang.String) = (r6 I:com.crashlytics.android.core.UserMetaData) com.crashlytics.android.core.MetaDataStore.userDataToJson(com.crashlytics.android.core.UserMetaData):java.lang.String type: STATIC A[Catch:\{ Exception \-\> 0x002e \}, TRY_ENTER]\l0x0009: NEW_INSTANCE  (r1 I:java.io.BufferedWriter) =  java.io.BufferedWriter A[Catch:\{ Exception \-\> 0x002e \}]\l0x000b: NEW_INSTANCE  (r2 I:java.io.OutputStreamWriter) =  java.io.OutputStreamWriter A[Catch:\{ Exception \-\> 0x002e \}]\l0x000d: NEW_INSTANCE  (r3 I:java.io.FileOutputStream) =  java.io.FileOutputStream A[Catch:\{ Exception \-\> 0x002e \}]\l0x000f: INVOKE  (r3 I:java.io.FileOutputStream), (r5 I:java.io.File) java.io.FileOutputStream.\<init\>(java.io.File):void type: DIRECT A[Catch:\{ Exception \-\> 0x002e \}]\l0x0012: SGET  (r5 I:java.nio.charset.Charset) =  com.crashlytics.android.core.MetaDataStore.UTF_8 java.nio.charset.Charset A[Catch:\{ Exception \-\> 0x002e \}]\l0x0014: INVOKE  \l  (r2 I:java.io.OutputStreamWriter)\l  (r3 I:java.io.OutputStream)\l  (r5 I:java.nio.charset.Charset)\l java.io.OutputStreamWriter.\<init\>(java.io.OutputStream, java.nio.charset.Charset):void type: DIRECT A[Catch:\{ Exception \-\> 0x002e \}]\l0x0017: INVOKE  (r1 I:java.io.BufferedWriter), (r2 I:java.io.Writer) java.io.BufferedWriter.\<init\>(java.io.Writer):void type: DIRECT A[Catch:\{ Exception \-\> 0x002e \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|SYNTHETIC\lSplitter:B:3:0x001a\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Splitter:B:3:0x001a\l|0x001a: INVOKE  (r1 I:java.io.Writer), (r6 I:java.lang.String) java.io.Writer.write(java.lang.String):void type: VIRTUAL A[Catch:\{ Exception \-\> 0x0029, all \-\> 0x0026 \}, TRY_ENTER]\l0x001d: INVOKE  (r1 I:java.io.Writer) java.io.Writer.flush():void type: VIRTUAL A[Catch:\{ Exception \-\> 0x0029, all \-\> 0x0026 \}, TRY_LEAVE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|0x0020: CONST_STR  (r5 I:java.lang.String) =  \"Failed to close user metadata file.\" \l0x0022: INVOKE  (r1 I:java.io.Closeable), (r5 I:java.lang.String) io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(java.io.Closeable, java.lang.String):void type: STATIC \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|ExcHandler: all null\lSplitter:B:3:0x001a\l|0x0026: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|0x0027: MOVE  (r0 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|ExcHandler: Exception null\lSplitter:B:3:0x001a\l|0x0029: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x002a|0x002a: MOVE  (r0 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x002c|ExcHandler: all null\lSplitter:B:13:0x002f\l|0x002c: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_12 [shape=record,label="{12\:\ 0x002e|ExcHandler: Exception null\lSplitter:B:1:0x0005\l|0x002e: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_13 [shape=record,label="{13\:\ 0x002f|SYNTHETIC\lSplitter:B:13:0x002f\l}"];
+Node_14 [shape=record,label="{14\:\ ?|Splitter:B:13:0x002f\l|0x002f: INVOKE  (r6 I:io.fabric.sdk.android.Logger) =  io.fabric.sdk.android.Fabric.getLogger():io.fabric.sdk.android.Logger type: STATIC A[Catch:\{ all \-\> 0x002c \}, TRY_ENTER]\l0x0033: CONST_STR  (r1 I:java.lang.String) =  \"CrashlyticsCore\" A[Catch:\{ all \-\> 0x002c \}]\l0x0035: CONST_STR  (r2 I:java.lang.String) =  \"Error serializing user metadata.\" A[Catch:\{ all \-\> 0x002c \}]\l0x0037: INVOKE  \l  (r6 I:io.fabric.sdk.android.Logger)\l  (r1 I:java.lang.String)\l  (r2 I:java.lang.String)\l  (r5 I:java.lang.Throwable)\l io.fabric.sdk.android.Logger.e(java.lang.String, java.lang.String, java.lang.Throwable):void type: INTERFACE A[Catch:\{ all \-\> 0x002c \}, TRY_LEAVE]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003a|0x003a: CONST_STR  (r5 I:java.lang.String) =  \"Failed to close user metadata file.\" \l0x003c: INVOKE  (r0 I:java.io.Closeable), (r5 I:java.lang.String) io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(java.io.Closeable, java.lang.String):void type: STATIC \l}"];
+Node_16 [shape=record,label="{16\:\ 0x003f|0x003f: RETURN   \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0040|0x0040: CONST_STR  (r6 I:java.lang.String) =  \"Failed to close user metadata file.\" \l0x0042: INVOKE  (r0 I:java.io.Closeable), (r6 I:java.lang.String) io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(java.io.Closeable, java.lang.String):void type: STATIC \l}"];
+Node_18 [shape=record,label="{18\:\ 0x0045|0x0045: THROW  (r5 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.core.MetaDataStore.writeUserData((r4 'this' I:com.crashlytics.android.core.MetaDataStore A[IMMUTABLE_TYPE, THIS]), (r5 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:com.crashlytics.android.core.UserMetaData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12;
+Node_2 -> Node_3;
+Node_2 -> Node_12;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_4 -> Node_6;
+Node_5 -> Node_16;
+Node_6 -> Node_7;
+Node_7 -> Node_17;
+Node_8 -> Node_9;
+Node_9 -> Node_13;
+Node_10 -> Node_17;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_10;
+Node_14 -> Node_15;
+Node_14 -> Node_10;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forcom.crashlytics.android.answers.SessionAnalyticsManager.enable()V" {
+subgraph cluster_Region_743485949 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.eventsHandler.enable()\lr3.lifecycleManager.registerCallbacks(new com.crashlytics.android.answers.AnswersLifecycleCallbacks(r3, r3.backgroundManager))\lr3.backgroundManager.registerListener(r3)\l}"];
+subgraph cluster_Region_1009550552 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_383960347 {
+label = "IF [B:1:0x001a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001a|if (isFirstLaunch() == true) goto L_0x001c\l}"];
+subgraph cluster_Region_425872436 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001c|onInstall(r3.installedAt)\lr3.preferenceManager.setAnalyticsLaunched()\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.SessionAnalyticsManager.enable((r3v0 'this' com.crashlytics.android.answers.SessionAnalyticsManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

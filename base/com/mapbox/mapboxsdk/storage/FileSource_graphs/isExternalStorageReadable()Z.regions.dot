@@ -1,0 +1,40 @@
+digraph "CFG forcom.mapbox.mapboxsdk.storage.FileSource.isExternalStorageReadable()Z" {
+subgraph cluster_Region_233435512 {
+label = "R(2:0|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = android.os.Environment.getExternalStorageState()\l}"];
+subgraph cluster_Region_1609747229 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_352024901 {
+label = "IF [B:1:0x000a, B:3:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (\"mounted\".equals(r0) == true) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if (\"mounted_ro\".equals(r0) == true) goto L_?\l}"];
+subgraph cluster_Region_1571694237 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_61561663 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|com.mapbox.mapboxsdk.log.Logger.m86w(TAG, \"External storage was requested but it isn't readable. For API level \< 18 make sure you've requested READ_EXTERNAL_STORAGE or WRITE_EXTERNAL_STORAGE permissions in your app Manifest (defaulting to internal storage).\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return false\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{public static boolean com.mapbox.mapboxsdk.storage.FileSource.isExternalStorageReadable() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.mapboxsdk.style.layers.HillshadeLayer.getHillshadeHighlightColorAsInt()I" {
+subgraph cluster_Region_824940630 {
+label = "R(2:0|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|checkThread()\lcom.mapbox.mapboxsdk.style.layers.PropertyValue com.mapbox.mapboxsdk.style.layers.PropertyValue\<java.lang.String\> r0 = getHillshadeHighlightColor()\l}"];
+subgraph cluster_Region_1144088053 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_823543975 {
+label = "IF [B:1:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r0.isValue() == true) goto L_0x000d\l}"];
+subgraph cluster_Region_940677455 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|RETURN\l|return com.mapbox.mapboxsdk.utils.ColorUtils.rgbaToColor(r0.getValue())\l}"];
+}
+}
+subgraph cluster_Region_1982030824 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|throw new java.lang.RuntimeException(\"hillshade\-highlight\-color was set as a Function\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0018}"];
+MethodNode[shape=record,label="{public int com.mapbox.mapboxsdk.style.layers.HillshadeLayer.getHillshadeHighlightColorAsInt((r2v0 'this' com.mapbox.mapboxsdk.style.layers.HillshadeLayer A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.ColorInt, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

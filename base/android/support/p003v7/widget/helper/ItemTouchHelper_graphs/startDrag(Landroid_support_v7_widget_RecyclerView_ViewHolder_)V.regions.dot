@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.v7.widget.helper.ItemTouchHelper.startDrag(Landroid\/support\/v7\/widget\/RecyclerView$ViewHolder;)V" {
+subgraph cluster_Region_1251714292 {
+label = "R(1:(1:2)(1:(1:6)(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1020682505 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: R(1:(1:6)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r2.mCallback.hasDragFlag(r2.mRecyclerView, r3) == false) goto L_0x000a\l}"];
+subgraph cluster_Region_731830570 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.util.Log.e(TAG, \"Start drag has been called but dragging is not enabled\")\l}"];
+}
+subgraph cluster_Region_1617047584 {
+label = "R(1:(1:6)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2001310940 {
+label = "IF [B:5:0x001a] THEN: R(1:6) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (r3.itemView.getParent() != r2.mRecyclerView) goto L_0x001c\l}"];
+subgraph cluster_Region_2014866709 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|android.util.Log.e(TAG, \"Start drag has been called with a view holder which is not a child of the RecyclerView which is controlled by this ItemTouchHelper.\")\l}"];
+}
+subgraph cluster_Region_621980853 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|obtainVelocityTracker()\lr2.mDy = 0.0f\lr2.mDx = 0.0f\lselect(r3, 2)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0011}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.helper.ItemTouchHelper.startDrag((r2v0 'this' android.support.v7.widget.helper.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

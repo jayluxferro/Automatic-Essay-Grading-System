@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.5.attachViewToParent(Landroid\/view\/View;ILandroid\/view\/ViewGroup$LayoutParams;)V" {
+subgraph cluster_Region_1820172342 {
+label = "R(3:0|(1:(1:8)(1:7))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.widget.RecyclerView$ViewHolder android.support.p003v7.widget.RecyclerView.ViewHolder r0 = android.support.p003v7.widget.RecyclerView.getChildViewHolderInt(r5)\l}"];
+subgraph cluster_IfRegion_1645295477 {
+label = "IF [B:1:0x0004] THEN: R(1:(1:8)(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_129683156 {
+label = "R(1:(1:8)(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_871790207 {
+label = "IF [B:3:0x000a, B:5:0x0010] THEN: R(1:8) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r0.isTmpDetached() == true) goto L_0x0035\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r0.shouldIgnore() == true) goto L_0x0035\l}"];
+subgraph cluster_Region_101494331 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0035|r0.clearTmpDetachFlag()\l}"];
+}
+subgraph cluster_Region_133288668 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|throw new java.lang.IllegalArgumentException(\"Called attach on a child which is not detached: \" + r0 + android.support.p003v7.widget.RecyclerView.this.exceptionLabel())\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0038|android.support.p003v7.widget.RecyclerView.this.attachViewToParent(r5, r6, r7)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003d}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.RecyclerView.5.attachViewToParent((r4v0 'this' android.support.v7.widget.RecyclerView$5 A[IMMUTABLE_TYPE, THIS]), (r5v0 'child' android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'index' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'layoutParams' android.view.ViewGroup$LayoutParams A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

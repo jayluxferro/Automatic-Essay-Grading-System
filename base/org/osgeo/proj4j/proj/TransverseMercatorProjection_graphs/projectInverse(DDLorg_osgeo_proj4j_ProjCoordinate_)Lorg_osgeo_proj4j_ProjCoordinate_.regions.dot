@@ -1,0 +1,95 @@
+digraph "CFG fororg.osgeo.proj4j.proj.TransverseMercatorProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1434626028 {
+label = "R(3:0|(3:2|(1:4)|5)(2:6|(2:(1:10)|11)(3:12|(1:14)|15))|16)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r41\lorg.osgeo.proj4j.ProjCoordinate r5 = r46\ldouble r9 = 0.0d\l}"];
+subgraph cluster_IfRegion_1229370343 {
+label = "IF [B:1:0x000c] THEN: R(3:2|(1:4)|5) ELSE: R(2:6|(2:(1:10)|11)(3:12|(1:14)|15))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0.spherical == true) goto L_0x000e\l}"];
+subgraph cluster_Region_450949363 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|double double r1 = java.lang.Math.exp(r42 \/ r0.scaleFactor)\ldouble double r1 = (r1 \- (FC1 \/ r1)) * FC2\ldouble double r6 = java.lang.Math.cos(r0.projectionLatitude + (r44 \/ r0.scaleFactor))\lr5.f295y = org.osgeo.proj4j.util.ProjectionMath.asin(java.lang.Math.sqrt((FC1 \- (r6 * r6)) \/ ((r1 * r1) + FC1)))\l}"];
+subgraph cluster_IfRegion_416583235 {
+label = "IF [B:3:0x003a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003a|if (r44 \< 0.0d) goto L_0x003c\l}"];
+subgraph cluster_Region_1071335979 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003c|r5.f295y = \-r5.f295y\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0041|r5.f294x = java.lang.Math.atan2(r1, r6)\l}"];
+}
+subgraph cluster_Region_600512046 {
+label = "R(2:6|(2:(1:10)|11)(3:12|(1:14)|15))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0049|r5.f295y = org.osgeo.proj4j.util.ProjectionMath.inv_mlfn(r0.ml0 + (r44 \/ r0.scaleFactor), r0.f424es, r0.f438en)\ldouble r13 = 1.5707963267948966d\l}"];
+subgraph cluster_IfRegion_1890531487 {
+label = "IF [B:7:0x0065] THEN: R(2:(1:10)|11) ELSE: R(3:12|(1:14)|15)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0065|if (java.lang.Math.abs(r44) \>= 1.5707963267948966d) goto L_0x0067\l}"];
+subgraph cluster_Region_1664514172 {
+label = "R(2:(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1714039913 {
+label = "IF [B:9:0x0069] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0069|if (r44 \< 0.0d) goto L_0x006b\l}"];
+subgraph cluster_Region_1612899149 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x006b|r13 = \-1.5707963267948966d\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0070|PHI: r13 \l  PHI: (r13v10 double) = (r13v2 double), (r13v11 double) binds: [B:9:0x0069, B:10:0x006b] A[DONT_GENERATE, DONT_INLINE]\l|r5.f295y = r13\lr5.f294x = 0.0d\l}"];
+}
+subgraph cluster_Region_2118937473 {
+label = "R(3:12|(1:14)|15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0076|double double r3 = java.lang.Math.sin(r5.f295y)\ldouble double r6 = java.lang.Math.cos(r5.f295y)\l}"];
+subgraph cluster_IfRegion_814187181 {
+label = "IF [B:13:0x008d] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x008d|if (java.lang.Math.abs(r6) \> 1.0E\-10d) goto L_0x008f\l}"];
+subgraph cluster_Region_463727729 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x008f|double r9 = r3 \/ r6\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0091|PHI: r9 \l  PHI: (r9v1 double) = (r9v0 double), (r9v5 double) binds: [B:13:0x008d, B:14:0x008f] A[DONT_GENERATE, DONT_INLINE]\l|double double r13 = r0.esp * r6 * r6\ldouble double r11 = FC1 \- ((r0.f424es * r3) * r3)\ldouble double r1 = (r42 * java.lang.Math.sqrt(r11)) \/ r0.scaleFactor\ldouble double r11 = r11 * r9\ldouble double r9 = r9 * r9\ldouble double r3 = r1 * r1\lr5.f295y \-= (((r11 * r3) \/ (FC1 \- r0.f424es)) * FC2) * (FC1 \- ((FC4 * r3) * (((((3.0d \- (9.0d * r13)) * r9) + 5.0d) + ((FC1 \- (4.0d * r13)) * r13)) \- ((FC6 * r3) * ((((((90.0d \- (252.0d * r13)) + (45.0d * r9)) * r9) + 61.0d) + (46.0d * r13)) \- ((FC8 * r3) * ((((((1574.0d * r9) + 4095.0d) * r9) + 3633.0d) * r9) + 1385.0d)))))))\lr5.f294x = (r1 * (FC1 \- ((FC3 * r3) * ((((2.0d * r9) + FC1) + r13) \- ((FC5 * r3) * (((((((24.0d * r9) + 28.0d) + (8.0d * r13)) * r9) + 5.0d) + (r13 * 6.0d)) \- ((r3 * FC7) * ((r9 * ((((720.0d * r9) + 1320.0d) * r9) + 662.0d)) + 61.0d)))))))) \/ r6\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x01ac|RETURN\l|return r5\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0067}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.TransverseMercatorProjection.projectInverse((r41v0 'this' org.osgeo.proj4j.proj.TransverseMercatorProjection A[IMMUTABLE_TYPE, THIS]), (r42v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r44v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r46v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_16;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_16;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_8 -> Node_9;
+}
+

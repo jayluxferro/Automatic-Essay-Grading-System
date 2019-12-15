@@ -1,0 +1,61 @@
+digraph "CFG formil.nga.geopackage.extension.GeoPackageExtensions.delete(Lmil\/nga\/geopackage\/GeoPackageCore;Z)V" {
+subgraph cluster_Region_1927868422 {
+label = "R(2:0|(1:(1:(1:4))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.geopackage.extension.ExtensionsDao mil.nga.geopackage.extension.ExtensionsDao r4 = r3.getExtensionsDao()\l}"];
+subgraph cluster_TryCatchRegion_1711856865 {
+label = "Try: R(1:(1:(1:4))) catches: R(3:5|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1028991829 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1353696739 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_498997196 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|Catch:\{ SQLException \-\> 0x000e \}\l|if (r4.isTableExists() == true) goto L_0x000a     \/\/ Catch:\{ SQLException \-\> 0x000e \}\l}"];
+subgraph cluster_Region_1736692 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|Catch:\{ SQLException \-\> 0x000e \}\l|r4.deleteAll()     \/\/ Catch:\{ SQLException \-\> 0x000e \}\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1205615142 {
+label = "R(3:5|6|7) | ExcHandler: SQLException (r4v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|ExcHandler: SQLException (r4v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|throw new mil.nga.geopackage.GeoPackageException(\"Failed to delete all extensions. GeoPackage: \" + r3.getName(), r4)\l}"];
+}
+}
+}
+subgraph cluster_Region_1205615142 {
+label = "R(3:5|6|7) | ExcHandler: SQLException (r4v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|ExcHandler: SQLException (r4v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0004\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|throw new mil.nga.geopackage.GeoPackageException(\"Failed to delete all extensions. GeoPackage: \" + r3.getName(), r4)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|SYNTHETIC\lSplitter:B:1:0x0004\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x000e \}\lSplitter:B:1:0x0004\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void mil.nga.geopackage.extension.GeoPackageExtensions.delete((r3v0 mil.nga.geopackage.GeoPackageCore A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+}
+

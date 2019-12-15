@@ -1,0 +1,16 @@
+digraph "CFG forcom.crashlytics.android.answers.AnswersFilesManagerProvider.getAnalyticsFilesManager()Lcom\/crashlytics\/android\/answers\/SessionAnalyticsFilesManager;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (android.os.Looper.myLooper() == android.os.Looper.getMainLooper()) goto L_0x002d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|com.crashlytics.android.answers.SessionEventTransform r0 = new com.crashlytics.android.answers.SessionEventTransform()\lio.fabric.sdk.android.services.common.SystemCurrentTimeProvider r1 = new p018io.fabric.sdk.android.services.common.SystemCurrentTimeProvider()\ljava.io.File r2 = r7.fileStore.getFilesDir()\lio.fabric.sdk.android.services.events.GZIPQueueFileEventStorage r3 = new p018io.fabric.sdk.android.services.events.GZIPQueueFileEventStorage(r7.context, r2, SESSION_ANALYTICS_FILE_NAME, SESSION_ANALYTICS_TO_SEND_DIR)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002c|RETURN\l|return new com.crashlytics.android.answers.SessionAnalyticsFilesManager(r7.context, r0, r1, r3)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002d}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|throw new java.lang.IllegalStateException(\"AnswersFilesManagerProvider cannot be called on the main thread\")\l}"];
+MethodNode[shape=record,label="{public com.crashlytics.android.answers.SessionAnalyticsFilesManager com.crashlytics.android.answers.AnswersFilesManagerProvider.getAnalyticsFilesManager((r7v0 'this' com.crashlytics.android.answers.AnswersFilesManagerProvider A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

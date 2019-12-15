@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.design.chip.Chip.setChipDrawable(Landroid\/support\/design\/chip\/ChipDrawable;)V" {
+subgraph cluster_Region_38252668 {
+label = "R(1:(1:(2:2|(2:(2:4|8)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_175217552 {
+label = "R(1:(2:2|(2:(2:4|8)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_593923065 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(2:(2:4|8)|(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.chipDrawable != r4) goto L_0x0004\l}"];
+subgraph cluster_Region_860142497 {
+label = "R(2:2|(2:(2:4|8)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|unapplyChipDrawable(r3.chipDrawable)\lr3.chipDrawable = r4\lapplyChipDrawable(r3.chipDrawable)\l}"];
+subgraph cluster_Region_205466085 {
+label = "R(2:(2:4|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_169119465 {
+label = "IF [B:3:0x0012] THEN: R(2:4|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (android.support.design.ripple.RippleUtils.USE_FRAMEWORK_RIPPLE == true) goto L_0x0014\l}"];
+subgraph cluster_Region_498791697 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r3.ripple = new android.graphics.drawable.RippleDrawable(android.support.design.ripple.RippleUtils.convertToRippleDrawableColor(r3.chipDrawable.getRippleColor()), r3.chipDrawable, (android.graphics.drawable.Drawable) null)\lr3.chipDrawable.setUseCompatRipple(false)\landroid.support.p000v4.view.ViewCompat.setBackground(r3, r3.ripple)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_188075188 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|r3.chipDrawable.setUseCompatRipple(true)\landroid.support.p000v4.view.ViewCompat.setBackground(r3, r3.chipDrawable)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.chip.Chip.setChipDrawable((r3v0 'this' android.support.design.chip.Chip A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.design.chip.ChipDrawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

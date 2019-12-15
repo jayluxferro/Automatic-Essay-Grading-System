@@ -1,0 +1,65 @@
+digraph "CFG fororg.osgeo.proj4j.proj.SimpleConicProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_2014743132 {
+label = "R(5:0|(1:2)|3|(1:9)(1:(1:7)(1:8))|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = r6.rho_0 \- r9\lr11.f295y = r0\ldouble double r0 = org.osgeo.proj4j.util.ProjectionMath.distance(r7, r0)\l}"];
+subgraph cluster_IfRegion_1332084541 {
+label = "IF [B:1:0x000f] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r6.f434n \< 0.0d) goto L_0x0011\l}"];
+subgraph cluster_Region_1945506817 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|double r0 = \-r0\lr11.f294x = \-r7\lr11.f295y = \-r9\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0018|PHI: r0 \l  PHI: (r0v3 double) = (r0v2 double), (r0v6 double) binds: [B:1:0x000f, B:2:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r11.f294x = java.lang.Math.atan2(r7, r9) \/ r6.f434n\lint int r7 = r6.type\l}"];
+subgraph cluster_IfRegion_2085382569 {
+label = "IF [B:4:0x0024] THEN: R(1:9) ELSE: R(1:(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|if (r7 == 2) goto L_0x003f\l}"];
+subgraph cluster_Region_1813466133 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003f|r11.f295y = r6.sig \- java.lang.Math.atan(r0 \- r6.rho_c)\l}"];
+}
+subgraph cluster_Region_1324870114 {
+label = "R(1:(1:7)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_711849425 {
+label = "IF [B:6:0x0027] THEN: R(1:7) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0027|if (r7 != 4) goto L_0x0029\l}"];
+subgraph cluster_Region_1943082003 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0029|r11.f295y = r6.rho_c \- r0\l}"];
+}
+subgraph cluster_Region_1062806623 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002f|r11.f295y = java.lang.Math.atan(r6.f432c1 \- (r0 \/ r6.f433c2)) + r6.sig\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x004b|RETURN\l|return r11\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0026}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.SimpleConicProjection.projectInverse((r6v0 'this' org.osgeo.proj4j.proj.SimpleConicProjection A[IMMUTABLE_TYPE, THIS]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_10;
+Node_5 -> Node_6;
+}
+

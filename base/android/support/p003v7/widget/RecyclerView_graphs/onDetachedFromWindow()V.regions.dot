@@ -1,0 +1,66 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.onDetachedFromWindow()V" {
+subgraph cluster_Region_1185748665 {
+label = "R(6:0|(1:2)|3|(1:5)|6|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onDetachedFromWindow()\l}"];
+subgraph cluster_IfRegion_986172756 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r2.mItemAnimator != null) goto L_0x0007\l}"];
+subgraph cluster_Region_387870894 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r2.mItemAnimator.endAnimations()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000c|stopScroll()\lr2.mIsAttached = false\l}"];
+subgraph cluster_IfRegion_1597688707 {
+label = "IF [B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r2.mLayout != null) goto L_0x0016\l}"];
+subgraph cluster_Region_1896617475 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r2.mLayout.dispatchDetachedFromWindow(r2, r2.mRecycler)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001d|r2.mPendingAccessibilityImportanceChange.clear()\lremoveCallbacks(r2.mItemAnimatorRunner)\lr2.mViewInfoStore.onDetach()\l}"];
+subgraph cluster_Region_1973798939 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_291130625 {
+label = "IF [B:7:0x002e, B:9:0x0032] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|if (ALLOW_THREAD_GAP_WORK != false) goto L_0x0030\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|ADDED_TO_REGION\l|if (r2.mGapWorker != null) goto L_0x0034\l}"];
+subgraph cluster_Region_406186618 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|r2.mGapWorker.remove(r2)\lr2.mGapWorker = null\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0030}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void android.support.v7.widget.RecyclerView.onDetachedFromWindow((r2v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_8 -> Node_9;
+}
+

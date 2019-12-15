@@ -1,0 +1,27 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.db.SQLiteHandler.getLocation(I)Ljava\/util\/HashMap;" {
+subgraph cluster_Region_1002312494 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashMap java.util.HashMap\<java.lang.String, java.lang.String\> r0 = new java.util.HashMap\<\>()\landroid.database.sqlite.SQLiteDatabase android.database.sqlite.SQLiteDatabase r1 = getReadableDatabase()\landroid.database.Cursor android.database.Cursor r5 = r1.rawQuery(\"SELECT * FROM locationsWHERE id=\" + r5 + \" ORDER BY \" + \"id\" + \" ASC;\", new java.lang.String[]\{\"none\"\})\lr5.moveToFirst()\l}"];
+subgraph cluster_IfRegion_1401973346 {
+label = "IF [B:1:0x003a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x003a|if (r5.getCount() \> 0) goto L_0x003c\l}"];
+subgraph cluster_Region_2099266874 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x003c|r0.put(\"id\", r5.getString(r5.getColumnIndex(\"id\")))\lr0.put(\"title\", r5.getString(r5.getColumnIndex(\"title\")))\lr0.put(KEY_STREET, r5.getString(r5.getColumnIndex(KEY_STREET)))\lr0.put(\"address\", r5.getString(r5.getColumnIndex(\"address\")))\lr0.put(KEY_ADDRESS_CODE, r5.getString(r5.getColumnIndex(KEY_ADDRESS_CODE)))\lr0.put(KEY_LATITUDE, r5.getString(r5.getColumnIndex(KEY_LATITUDE)))\lr0.put(KEY_LONGITUDE, r5.getString(r5.getColumnIndex(KEY_LONGITUDE)))\lr0.put(\"district\", r5.getString(r5.getColumnIndex(\"district\")))\lr0.put(\"region\", r5.getString(r5.getColumnIndex(\"region\")))\lr0.put(\"postcode\", r5.getString(r5.getColumnIndex(\"postcode\")))\lr0.put(KEY_VERIFY, r5.getString(r5.getColumnIndex(KEY_VERIFY)))\lr0.put(\"country\", r5.getString(r5.getColumnIndex(\"country\")))\lr0.put(\"world_address\", r5.getString(r5.getColumnIndex(KEY_WORLD_ADDRESS)))\lr0.put(KEY_AREA, r5.getString(r5.getColumnIndex(KEY_AREA)))\lr0.put(KEY_ACCURACY, r5.getString(r5.getColumnIndex(KEY_ACCURACY)))\lr0.put(\"timestamp\", r5.getString(r5.getColumnIndex(\"timestamp\")))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x012c|r5.close()\lr1.close()\ltimber.log.Timber.m189d(\"Fetching ads from Sqlite: \" + r0.toString(), new java.lang.Object[0])\l}"];
+Node_4 [shape=record,label="{4\:\ 0x014d|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{public java.util.HashMap\<java.lang.String, java.lang.String\> com.ghanapostgps.ghanapost.db.SQLiteHandler.getLocation((r4v0 'this' com.ghanapostgps.ghanapost.db.SQLiteHandler A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I), Ljava\/util\/HashMap\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

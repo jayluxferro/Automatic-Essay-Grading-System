@@ -1,0 +1,100 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsCore.finishInitSynchronously()V" {
+subgraph cluster_Region_851479396 {
+label = "R(4:0|(1:3)|4|(1:6))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.crashlytics.android.core.CrashlyticsCore$1 com.crashlytics.android.core.CrashlyticsCore.C06421 r0 = new com.crashlytics.android.core.CrashlyticsCore.C06421()\ljava.util.Iterator r1 = getDependencies().iterator()\l}"];
+subgraph cluster_LoopRegion_440929525 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|if (r1.hasNext() != false) goto L_0x0013\l}"];
+subgraph cluster_Region_881340653 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|LOOP_END\lLOOP:0: B:1:0x000d\-\>B:3:0x0013\l|r0.addDependency(r2)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001d|java.util.concurrent.Future java.util.concurrent.Future r0 = getFabric().getExecutorService().submit(r0)\lp018io.fabric.sdk.android.Fabric.getLogger().mo22221d(TAG, \"Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.\")\l}"];
+subgraph cluster_TryCatchRegion_998967818 {
+label = "Try: R(1:6) catches: R(2:11|12), R(2:9|10), R(2:7|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1684074983 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ InterruptedException \-\> 0x0056, ExecutionException \-\> 0x0049, TimeoutException \-\> 0x003c \}\lSplitter:B:5:0x0036\l|r0.get(4, java.util.concurrent.TimeUnit.SECONDS)     \/\/ Catch:\{ InterruptedException \-\> 0x0056, ExecutionException \-\> 0x0049, TimeoutException \-\> 0x003c \}\l}"];
+}
+subgraph cluster_Region_214408737 {
+label = "R(2:11|12) | ExcHandler: InterruptedException (r0v2 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0056|ExcHandler: InterruptedException (r0v2 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0057|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics was interrupted during initialization.\", r0)\l}"];
+}
+subgraph cluster_Region_1316587685 {
+label = "R(2:9|10) | ExcHandler: ExecutionException (r0v3 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0049|ExcHandler: ExecutionException (r0v3 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004a|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Problem encountered during Crashlytics initialization.\", r0)\l}"];
+}
+subgraph cluster_Region_344721979 {
+label = "R(2:7|8) | ExcHandler: TimeoutException (r0v4 'e' java.util.concurrent.TimeoutException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003c|ExcHandler: TimeoutException (r0v4 'e' java.util.concurrent.TimeoutException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003d|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics timed out during initialization.\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_214408737 {
+label = "R(2:11|12) | ExcHandler: InterruptedException (r0v2 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0056|ExcHandler: InterruptedException (r0v2 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0057|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics was interrupted during initialization.\", r0)\l}"];
+}
+subgraph cluster_Region_1316587685 {
+label = "R(2:9|10) | ExcHandler: ExecutionException (r0v3 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0049|ExcHandler: ExecutionException (r0v3 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004a|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Problem encountered during Crashlytics initialization.\", r0)\l}"];
+}
+subgraph cluster_Region_344721979 {
+label = "R(2:7|8) | ExcHandler: TimeoutException (r0v4 'e' java.util.concurrent.TimeoutException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003c|ExcHandler: TimeoutException (r0v4 'e' java.util.concurrent.TimeoutException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003d|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics timed out during initialization.\", r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000d|LOOP_START\lLOOP:0: B:1:0x000d\-\>B:3:0x0013\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0036|SYNTHETIC\lSplitter:B:5:0x0036\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001d|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsCore.finishInitSynchronously((r4v0 'this' com.crashlytics.android.core.CrashlyticsCore A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_13[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_11;
+Node_6 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_17;
+Node_11 -> Node_12;
+Node_12 -> Node_14;
+Node_9 -> Node_10;
+Node_10 -> Node_16;
+Node_7 -> Node_8;
+Node_8 -> Node_15;
+Node_11 -> Node_12;
+Node_12 -> Node_14;
+Node_9 -> Node_10;
+Node_10 -> Node_16;
+Node_7 -> Node_8;
+Node_8 -> Node_15;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_5 -> Node_9;
+Node_5 -> Node_7;
+Node_13 -> Node_4;
+}
+

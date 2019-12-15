@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.graphics.ColorUtils.blendHSL([F[FF[F)V" {
+subgraph cluster_Region_871343764 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1088016924 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_269007838 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.length == 3) goto L_0x0004\l}"];
+subgraph cluster_Region_29808528 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|float float r0 = 1.0f \- r6\lr7[0] = circularInterpolate(r4[0], r5[0], r6)\lr7[1] = (r4[1] * r0) + (r5[1] * r6)\lr7[2] = (r4[2] * r0) + (r5[2] * r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1980585686 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"result must have a length of 3.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x002b}"];
+MethodNode[shape=record,label="{public static void android.support.v4.graphics.ColorUtils.blendHSL((r4v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.FloatRange, \{from=0.0, to=1.0\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

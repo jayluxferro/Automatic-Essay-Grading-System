@@ -1,0 +1,20 @@
+digraph "CFG fororg.osmdroid.views.overlay.LinearRing.addPoint(Lorg\/osmdroid\/util\/GeoPoint;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r3 I:org.osmdroid.views.overlay.LinearRing) org.osmdroid.views.overlay.LinearRing.mGeodesic boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0028 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:java.util.ArrayList\<org.osmdroid.util.GeoPoint\>) = (r3 I:org.osmdroid.views.overlay.LinearRing) org.osmdroid.views.overlay.LinearRing.mOriginalPoints java.util.ArrayList \l0x0006: INVOKE  (r0 I:int) = (r0 I:java.util.ArrayList) java.util.ArrayList.size():int type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:5:0x0028 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: IGET  (r0 I:java.util.ArrayList\<org.osmdroid.util.GeoPoint\>) = (r3 I:org.osmdroid.views.overlay.LinearRing) org.osmdroid.views.overlay.LinearRing.mOriginalPoints java.util.ArrayList \l0x000e: IGET  (r1 I:java.util.ArrayList\<org.osmdroid.util.GeoPoint\>) = (r3 I:org.osmdroid.views.overlay.LinearRing) org.osmdroid.views.overlay.LinearRing.mOriginalPoints java.util.ArrayList \l0x0010: INVOKE  (r1 I:int) = (r1 I:java.util.ArrayList) java.util.ArrayList.size():int type: VIRTUAL \l0x0014: ARITH  (r1 I:int) = (r1 I:int) + (\-1 int) \l0x0016: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.util.ArrayList), (r1 I:int) java.util.ArrayList.get(int):java.lang.Object type: VIRTUAL \l0x001a: CHECK_CAST  (r0 I:org.osmdroid.util.GeoPoint) = (org.osmdroid.util.GeoPoint) (r0 I:?[OBJECT, ARRAY]) \l0x001c: INVOKE  (r1 I:double) = \l  (r0 I:org.osmdroid.util.GeoPoint)\l  (r4 I:org.osmdroid.api.IGeoPoint)\l org.osmdroid.util.GeoPoint.distanceToAsDouble(org.osmdroid.api.IGeoPoint):double type: VIRTUAL \l0x0020: CAST  (r1 I:int) = (int) (r1 I:double) \l0x0021: CONST  (r2 I:?[int, float, short, byte, char]) = \l  (100000(0x186a0, float:1.4013E\-40) ?[int, float, short, byte, char])\l \l0x0024: ARITH  (r1 I:int) = (r1 I:int) \/ (r2 I:int) \l0x0025: INVOKE  \l  (r3 I:org.osmdroid.views.overlay.LinearRing)\l  (r0 I:org.osmdroid.util.GeoPoint)\l  (r4 I:org.osmdroid.util.GeoPoint)\l  (r1 I:int)\l org.osmdroid.views.overlay.LinearRing.addGreatCircle(org.osmdroid.util.GeoPoint, org.osmdroid.util.GeoPoint, int):void type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|0x0028: IGET  (r0 I:java.util.ArrayList\<org.osmdroid.util.GeoPoint\>) = (r3 I:org.osmdroid.views.overlay.LinearRing) org.osmdroid.views.overlay.LinearRing.mOriginalPoints java.util.ArrayList \l0x002a: INVOKE  (r0 I:java.util.ArrayList), (r4 I:java.lang.Object) java.util.ArrayList.add(java.lang.Object):boolean type: VIRTUAL \l0x002d: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x002e: IPUT  \l  (r4 I:boolean)\l  (r3 I:org.osmdroid.views.overlay.LinearRing)\l org.osmdroid.views.overlay.LinearRing.mProjectedPrecomputed boolean \l0x0030: IPUT  \l  (r4 I:boolean)\l  (r3 I:org.osmdroid.views.overlay.LinearRing)\l org.osmdroid.views.overlay.LinearRing.mDistancesPrecomputed boolean \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0032|0x0032: RETURN   \l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.LinearRing.addPoint((r3 'this' I:org.osmdroid.views.overlay.LinearRing A[IMMUTABLE_TYPE, THIS]), (r4 I:org.osmdroid.util.GeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

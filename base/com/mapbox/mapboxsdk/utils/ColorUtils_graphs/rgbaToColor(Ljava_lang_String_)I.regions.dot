@@ -1,0 +1,70 @@
+digraph "CFG forcom.mapbox.mapboxsdk.utils.ColorUtils.rgbaToColor(Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1271242108 {
+label = "R(2:0|(2:(1:5)|(1:(2:(1:11)|(1:13)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.regex.Matcher java.util.regex.Matcher r5 = java.util.regex.Pattern.compile(\"rgba?s*(s*(d+.?d*)s*,s*(d+.?d*)s*,s*(d+.?d*)s*,?s*(d+.?d*)?s*)\").matcher(r5)\l}"];
+subgraph cluster_Region_301389584 {
+label = "R(2:(1:5)|(1:(2:(1:11)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_777991946 {
+label = "IF [B:1:0x0011, B:3:0x0017] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (r5.matches() != false) goto L_0x0013\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|ADDED_TO_REGION\l|if (r5.groupCount() == 3) goto L_0x0019\l}"];
+subgraph cluster_Region_605884133 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|RETURN\l|return android.graphics.Color.rgb(normalizeColorComponent(r5.group(1)), normalizeColorComponent(r5.group(2)), normalizeColorComponent(r5.group(3)))\l}"];
+}
+}
+subgraph cluster_Region_698589319 {
+label = "R(1:(2:(1:11)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2011616265 {
+label = "R(2:(1:11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_600679953 {
+label = "IF [B:7:0x003a, B:9:0x0041] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|if (r5.matches() != false) goto L_0x003c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0041|ADDED_TO_REGION\l|if (r5.groupCount() == 4) goto L_0x0043\l}"];
+subgraph cluster_Region_1141174633 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0067|RETURN\l|return android.graphics.Color.argb(normalizeColorComponent(r5.group(4)), normalizeColorComponent(r5.group(1)), normalizeColorComponent(r5.group(2)), normalizeColorComponent(r5.group(3)))\l}"];
+}
+}
+subgraph cluster_Region_903998029 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006f|throw new com.mapbox.mapboxsdk.exceptions.ConversionException(\"Not a valid rgb\/rgba value\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0013}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0019}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0036}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x003c}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0043}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0068}"];
+MethodNode[shape=record,label="{public static int com.mapbox.mapboxsdk.utils.ColorUtils.rgbaToColor((r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.ColorInt, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+}
+

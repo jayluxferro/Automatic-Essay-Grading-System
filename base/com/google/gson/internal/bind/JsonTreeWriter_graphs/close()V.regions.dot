@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.gson.internal.bind.JsonTreeWriter.close()V" {
+subgraph cluster_Region_1972825227 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_885617298 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_602855512 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r2.stack.isEmpty() == true) goto L_0x0008\l}"];
+subgraph cluster_Region_964273686 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r2.stack.add(SENTINEL_CLOSED)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2068444934 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|throw new java.io.IOException(\"Incomplete document\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+MethodNode[shape=record,label="{public void com.google.gson.internal.bind.JsonTreeWriter.close((r2v0 'this' com.google.gson.internal.bind.JsonTreeWriter A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

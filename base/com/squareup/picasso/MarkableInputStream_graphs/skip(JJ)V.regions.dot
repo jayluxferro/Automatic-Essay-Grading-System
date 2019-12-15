@@ -1,0 +1,70 @@
+digraph "CFG forcom.squareup.picasso.MarkableInputStream.skip(JJ)V" {
+subgraph cluster_Region_148496082 {
+label = "R(1:(3:2|(1:(1:6)(1:13))(0)|7))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_867329913 {
+label = "LOOP:0: (3:2|(1:(1:6)(1:13))(0)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5 \< r7) goto L_0x0004\l}"];
+subgraph cluster_Region_2058432877 {
+label = "R(3:2|(1:(1:6)(1:13))(0)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|long long r0 = r4.f218in.skip(r7 \- r5)\l}"];
+subgraph cluster_IfRegion_2016377549 {
+label = "IF [B:3:0x0010] THEN: R(1:(1:6)(1:13)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r0 == 0) goto L_0x0012\l}"];
+subgraph cluster_Region_807781341 {
+label = "R(1:(1:6)(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1854989159 {
+label = "IF [B:5:0x0017] THEN: R(1:6) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|if (read() != \-1) goto L_0x001a\l}"];
+subgraph cluster_Region_1973903517 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|r0 = 1\l}"];
+}
+subgraph cluster_Region_687447849 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_139504864 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001c|LOOP_END\lPHI: r0 \l  PHI: (r0v3 long) = (r0v2 long), (r0v5 long) binds: [B:11:0x001c, B:10:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:0:0x0000\-\>B:7:0x001c\l|r5 += r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lPHI: r5 \l  PHI: (r5v1 long) = (r5v0 long), (r5v2 long) binds: [B:0:0x0000, B:7:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:0:0x0000\-\>B:7:0x001c\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001f|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void com.squareup.picasso.MarkableInputStream.skip((r4v0 'this' com.squareup.picasso.MarkableInputStream A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_12;
+Node_9 -> Node_13;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+}
+

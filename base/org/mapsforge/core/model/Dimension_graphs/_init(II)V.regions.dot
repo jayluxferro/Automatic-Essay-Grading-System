@@ -1,0 +1,50 @@
+digraph "CFG fororg.mapsforge.core.model.Dimension.\<init\>(II)V" {
+subgraph cluster_Region_153870363 {
+label = "R(1:(2:7|8)(1:(1:3)(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_444963793 {
+label = "IF [B:1:0x0003] THEN: R(2:7|8) ELSE: R(1:(1:3)(2:5|6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3 \< 0) goto L_0x0023\l}"];
+subgraph cluster_Region_1211123047 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023}"];
+Node_8 [shape=record,label="{8\:\ 0x0039|throw new java.lang.IllegalArgumentException(\"width must not be negative: \" + r3)\l}"];
+}
+subgraph cluster_Region_1068503217 {
+label = "R(1:(1:3)(2:5|6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1766659172 {
+label = "IF [B:2:0x0005] THEN: R(1:3) ELSE: R(2:5|6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|if (r4 \>= 0) goto L_0x0007\l}"];
+subgraph cluster_Region_1604342159 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|r2.width = r3\lr2.height = r4\l}"];
+}
+subgraph cluster_Region_368127073 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|throw new java.lang.IllegalArgumentException(\"height must not be negative: \" + r4)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public void org.mapsforge.core.model.Dimension.\<init\>((r2v0 'this' org.mapsforge.core.model.Dimension A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

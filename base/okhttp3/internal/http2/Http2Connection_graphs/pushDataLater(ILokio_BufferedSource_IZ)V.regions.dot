@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.http2.Http2Connection.pushDataLater(ILokio\/BufferedSource;IZ)V" {
+subgraph cluster_Region_780871187 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okio.Buffer final okio.Buffer r5 = new okio.Buffer()\llong long r0 = (long) r11\lr10.require(r0)\lr10.read(r5, r0)\l}"];
+subgraph cluster_Region_1707052515 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_475735761 {
+label = "IF [B:1:0x0012] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r5.size() == r0) goto L_0x0014\l}"];
+subgraph cluster_Region_679009707 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|final int r4 = r9\lfinal int r6 = r11\lfinal boolean r7 = r12\lpushExecutorExecute(new okhttp3.internal.http2.Http2Connection.C14005(\"OkHttp %s Push Data[%s]\", new java.lang.Object[]\{r8.hostname, java.lang.Integer.valueOf(r9)\}))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0032|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_408458602 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0033}"];
+Node_5 [shape=record,label="{5\:\ 0x0050|throw new java.io.IOException(r5.size() + \" != \" + r11)\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Http2Connection.pushDataLater((r8v0 'this' okhttp3.internal.http2.Http2Connection A[IMMUTABLE_TYPE, THIS]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 okio.BufferedSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

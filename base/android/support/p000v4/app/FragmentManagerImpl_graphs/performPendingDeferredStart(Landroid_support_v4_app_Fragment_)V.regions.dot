@@ -1,0 +1,58 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.performPendingDeferredStart(Landroid\/support\/v4\/app\/Fragment;)V" {
+subgraph cluster_Region_2097311081 {
+label = "R(1:(2:(1:8)|(1:(2:(2:4|5)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_337231126 {
+label = "R(2:(1:8)|(1:(2:(2:4|5)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713698068 {
+label = "IF [B:1:0x0002] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r8.mDeferStart != true) goto L_?\l}"];
+subgraph cluster_Region_1898606786 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_531440299 {
+label = "R(1:(2:(2:4|5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1183178053 {
+label = "R(2:(2:4|5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1034722314 {
+label = "IF [B:3:0x0006] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r7.mExecutingActions == true) goto L_0x0008\l}"];
+subgraph cluster_Region_530732829 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r7.mHavePendingDeferredStart = true\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1768719928 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|r8.mDeferStart = false\lmoveToState(r8, r7.mCurState, 0, 0, false)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.FragmentManagerImpl.performPendingDeferredStart((r7v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS]), (r8v0 android.support.v4.app.Fragment A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

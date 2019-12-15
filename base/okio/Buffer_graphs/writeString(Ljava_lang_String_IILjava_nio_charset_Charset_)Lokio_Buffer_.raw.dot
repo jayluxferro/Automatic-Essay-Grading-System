@@ -1,0 +1,48 @@
+digraph "CFG forokio.Buffer.writeString(Ljava\/lang\/String;IILjava\/nio\/charset\/Charset;)Lokio\/Buffer;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:20:0x008b \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r3 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:18:0x0074 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IF  (r4 I:?[int, byte, short, char]) \< (r3 I:?[int, byte, short, char])  \-\> B:16:0x0055 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: INVOKE  (r0 I:int) = (r2 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: IF  (r4 I:?[int, byte, short, char]) \> (r0 I:?[int, byte, short, char])  \-\> B:14:0x0032 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|0x000c: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:0x002a \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|0x000e: SGET  (r0 I:java.nio.charset.Charset) =  okio.Util.UTF_8 java.nio.charset.Charset \l0x0010: INVOKE  (r0 I:boolean) = (r5 I:java.nio.charset.Charset), (r0 I:java.lang.Object) java.nio.charset.Charset.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0014|0x0014: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x001b \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0016|0x0016: INVOKE  (r2 I:okio.Buffer) = \l  (r1 I:okio.Buffer)\l  (r2 I:java.lang.String)\l  (r3 I:int)\l  (r4 I:int)\l okio.Buffer.writeUtf8(java.lang.String, int, int):okio.Buffer type: VIRTUAL \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|0x001a: RETURN  (r2 I:okio.Buffer) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|0x001b: INVOKE  (r2 I:java.lang.String) = (r2 I:java.lang.String), (r3 I:int), (r4 I:int) java.lang.String.substring(int, int):java.lang.String type: VIRTUAL \l0x001f: INVOKE  (r2 I:byte[]) = (r2 I:java.lang.String), (r5 I:java.nio.charset.Charset) java.lang.String.getBytes(java.nio.charset.Charset):byte[] type: VIRTUAL \l0x0023: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0024: ARRAY_LENGTH  (r4 I:int) = (r2 I:?[]) \l0x0025: INVOKE  (r2 I:okio.Buffer) = (r1 I:okio.Buffer), (r2 I:byte[]), (r3 I:int), (r4 I:int) okio.Buffer.write(byte[], int, int):okio.Buffer type: VIRTUAL \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0029|0x0029: RETURN  (r2 I:okio.Buffer) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|0x002a: NEW_INSTANCE  (r2 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x002c: CONST_STR  (r3 I:java.lang.String) =  \"charset == null\" \l0x002e: INVOKE  \l  (r2 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0031|0x0031: THROW  (r2 I:java.lang.Throwable) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0032|0x0032: NEW_INSTANCE  (r3 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0034: NEW_INSTANCE  (r5 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0036: INVOKE  (r5 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0039: CONST_STR  (r0 I:java.lang.String) =  \"endIndex \> string.length: \" \l0x003b: INVOKE  (r5 I:java.lang.StringBuilder), (r0 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x003e: INVOKE  (r5 I:java.lang.StringBuilder), (r4 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0041: CONST_STR  (r4 I:java.lang.String) =  \" \> \" \l0x0043: INVOKE  (r5 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0046: INVOKE  (r2 I:int) = (r2 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l0x004a: INVOKE  (r5 I:java.lang.StringBuilder), (r2 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x004d: INVOKE  (r2 I:java.lang.String) = (r5 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0051: INVOKE  \l  (r3 I:java.lang.IllegalArgumentException)\l  (r2 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0054|0x0054: THROW  (r3 I:java.lang.Throwable) \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0055|0x0055: NEW_INSTANCE  (r2 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0057: NEW_INSTANCE  (r5 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0059: INVOKE  (r5 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x005c: CONST_STR  (r0 I:java.lang.String) =  \"endIndex \< beginIndex: \" \l0x005e: INVOKE  (r5 I:java.lang.StringBuilder), (r0 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0061: INVOKE  (r5 I:java.lang.StringBuilder), (r4 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0064: CONST_STR  (r4 I:java.lang.String) =  \" \< \" \l0x0066: INVOKE  (r5 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0069: INVOKE  (r5 I:java.lang.StringBuilder), (r3 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x006c: INVOKE  (r3 I:java.lang.String) = (r5 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0070: INVOKE  \l  (r2 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_17 [shape=record,label="{17\:\ 0x0073|0x0073: THROW  (r2 I:java.lang.Throwable) \l}"];
+Node_18 [shape=record,label="{18\:\ 0x0074|0x0074: NEW_INSTANCE  (r2 I:java.lang.IllegalAccessError) =  java.lang.IllegalAccessError \l0x0076: NEW_INSTANCE  (r4 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0078: INVOKE  (r4 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x007b: CONST_STR  (r5 I:java.lang.String) =  \"beginIndex \< 0: \" \l0x007d: INVOKE  (r4 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0080: INVOKE  (r4 I:java.lang.StringBuilder), (r3 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0083: INVOKE  (r3 I:java.lang.String) = (r4 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0087: INVOKE  \l  (r2 I:java.lang.IllegalAccessError)\l  (r3 I:java.lang.String)\l java.lang.IllegalAccessError.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_19 [shape=record,label="{19\:\ 0x008a|0x008a: THROW  (r2 I:java.lang.Throwable) \l}"];
+Node_20 [shape=record,label="{20\:\ 0x008b|0x008b: NEW_INSTANCE  (r2 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x008d: CONST_STR  (r3 I:java.lang.String) =  \"string == null\" \l0x008f: INVOKE  \l  (r2 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_21 [shape=record,label="{21\:\ 0x0092|0x0092: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public okio.Buffer okio.Buffer.writeString((r1 'this' I:okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r2 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.nio.charset.Charset A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_20;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_18;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_14;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

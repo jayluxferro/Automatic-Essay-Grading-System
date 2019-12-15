@@ -1,0 +1,50 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.ChunkedSink.write(Lokio\/Buffer;J)V" {
+subgraph cluster_Region_1677187432 {
+label = "R(1:(1:8)(1:(1:5)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1351820540 {
+label = "IF [B:1:0x0002] THEN: R(1:8) ELSE: R(1:(1:5)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.closed != false) goto L_0x002c\l}"];
+subgraph cluster_Region_475284454 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|throw new java.lang.IllegalStateException(\"closed\")\l}"];
+}
+subgraph cluster_Region_604922025 {
+label = "R(1:(1:5)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2037367257 {
+label = "IF [B:3:0x0008] THEN: R(1:5) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r4 != 0) goto L_0x000b\l}"];
+subgraph cluster_Region_806534860 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|okhttp3.internal.http1.Http1Codec.this.sink.writeHexadecimalUnsignedLong(r4)\lokhttp3.internal.http1.Http1Codec.this.sink.writeUtf8(\"rn\")\lokhttp3.internal.http1.Http1Codec.this.sink.write(r3, r4)\lokhttp3.internal.http1.Http1Codec.this.sink.writeUtf8(\"rn\")\l}"];
+}
+subgraph cluster_Region_250056795 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002c}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.http1.Http1Codec.ChunkedSink.write((r2v0 'this' okhttp3.internal.http1.Http1Codec$ChunkedSink A[IMMUTABLE_TYPE, THIS]), (r3v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

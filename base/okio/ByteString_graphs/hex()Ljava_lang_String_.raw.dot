@@ -1,0 +1,15 @@
+digraph "CFG forokio.ByteString.hex()Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:byte[]) = (r9 I:okio.ByteString) okio.ByteString.data byte[] \l0x0002: ARRAY_LENGTH  (r0 I:int) = (r0 I:?[]) \l0x0003: ARITH  (r0 I:int) = (r0 I:int) * (2 int) \l0x0005: NEW_ARRAY  (r0 I:char[]) = (r0 I:int A[IMMUTABLE_TYPE]) type: char[] \l0x0007: IGET  (r1 I:byte[]) = (r9 I:okio.ByteString) okio.ByteString.data byte[] \l0x0009: ARRAY_LENGTH  (r2 I:int) = (r1 I:?[]) \l0x000a: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000b: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r3 I:?[int, byte, short, char]) \>= (r2 I:?[int, byte, short, char])  \-\> B:3:0x0029 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: AGET  (r5 I:byte A[IMMUTABLE_TYPE]) = \l  (r1 I:byte[] A[IMMUTABLE_TYPE])\l  (r3 I:?[int, short, byte, char])\l \l0x0010: ARITH  (r6 I:int) = (r4 I:int) + (1 int) \l0x0012: SGET  (r7 I:char[]) =  okio.ByteString.HEX_DIGITS char[] \l0x0014: ARITH  (r8 I:int) = (r5 I:int) \>\> (4 int) \l0x0016: ARITH  (r8 I:?[int, boolean, short, byte, char]) = (r8 I:?[int, boolean, short, byte, char]) & (15 ?[int, float, short, byte, char]) \l0x0018: AGET  (r7 I:char A[IMMUTABLE_TYPE]) = \l  (r7 I:char[] A[IMMUTABLE_TYPE])\l  (r8 I:?[int, short, byte, char])\l \l0x001a: APUT  \l  (r0 I:char[] A[IMMUTABLE_TYPE])\l  (r4 I:?[int, short, byte, char])\l  (r7 I:char A[IMMUTABLE_TYPE])\l \l0x001c: ARITH  (r4 I:int) = (r6 I:int) + (1 int) \l0x001e: SGET  (r7 I:char[]) =  okio.ByteString.HEX_DIGITS char[] \l0x0020: ARITH  (r5 I:?[int, boolean, short, byte, char]) = (r5 I:?[int, boolean, short, byte, char]) & (15 ?[int, float, short, byte, char]) \l0x0022: AGET  (r5 I:char A[IMMUTABLE_TYPE]) = \l  (r7 I:char[] A[IMMUTABLE_TYPE])\l  (r5 I:?[int, short, byte, char])\l \l0x0024: APUT  \l  (r0 I:char[] A[IMMUTABLE_TYPE])\l  (r6 I:?[int, short, byte, char])\l  (r5 I:char A[IMMUTABLE_TYPE])\l \l0x0026: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0029|0x0029: NEW_INSTANCE  (r1 I:java.lang.String) =  java.lang.String \l0x002b: INVOKE  (r1 I:java.lang.String), (r0 I:char[]) java.lang.String.\<init\>(char[]):void type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x002e|0x002e: RETURN  (r1 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{public java.lang.String okio.ByteString.hex((r9 'this' I:okio.ByteString A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,68 @@
+digraph "CFG forcom.crashlytics.android.answers.Answers.logLevelStart(Lcom\/crashlytics\/android\/answers\/LevelStartEvent;)V" {
+subgraph cluster_Region_451793460 {
+label = "R(1:(1:9)(1:(1:3)(1:(1:7)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1777926810 {
+label = "IF [B:0:0x0000] THEN: R(1:9) ELSE: R(1:(1:3)(1:(1:7)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x0016\l}"];
+subgraph cluster_Region_90215346 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001d|throw new java.lang.NullPointerException(\"event must not be null\")\l}"];
+}
+subgraph cluster_Region_614849236 {
+label = "R(1:(1:3)(1:(1:7)(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1353564166 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: R(1:(1:7)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r1.firebaseEnabled == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1902241115 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|logFirebaseModeEnabledWarning(\"logLevelStart\")\l}"];
+}
+subgraph cluster_Region_1880950214 {
+label = "R(1:(1:7)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2061763179 {
+label = "IF [B:6:0x000e] THEN: R(1:7) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if (r1.analyticsManager != null) goto L_0x0010\l}"];
+subgraph cluster_Region_1157054657 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|r1.analyticsManager.onPredefined(r2)\l}"];
+}
+subgraph cluster_Region_977419833 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.Answers.logLevelStart((r1v0 'this' com.crashlytics.android.answers.Answers A[IMMUTABLE_TYPE, THIS]), (r2v0 com.crashlytics.android.answers.LevelStartEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_10;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

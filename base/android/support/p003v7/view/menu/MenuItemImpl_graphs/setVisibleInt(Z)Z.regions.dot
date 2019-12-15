@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v7.view.menu.MenuItemImpl.setVisibleInt(Z)Z" {
+subgraph cluster_Region_1408029905 {
+label = "R(3:0|4|(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r3.mFlags\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|PHI: r4 \l  PHI: (r4v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.mFlags = (r4 ? 0 : 8) \| (r3.mFlags & \-9)\l}"];
+subgraph cluster_Region_162637694 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1849746554 {
+label = "IF [B:5:0x0012] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|if (r0 != r3.mFlags) goto L_0x0014\l}"];
+subgraph cluster_Region_687638283 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1112570225 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+MethodNode[shape=record,label="{boolean android.support.v7.view.menu.MenuItemImpl.setVisibleInt((r3v0 'this' android.support.v7.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

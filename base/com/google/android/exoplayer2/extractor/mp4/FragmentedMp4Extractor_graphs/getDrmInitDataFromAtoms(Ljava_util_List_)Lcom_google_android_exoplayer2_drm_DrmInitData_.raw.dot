@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.getDrmInitDataFromAtoms(Ljava\/util\/List;)Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0001: INVOKE  (r2 I:int) = \l  (r8 I:java.util.List A[D('leafChildren' java.util.List\<com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\>)])\l java.util.List.size():int type: INTERFACE \l0x0005: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r1 I:?[int, byte, short, char] A[D('i' int)]) \>= (r2 I:?[int, byte, short, char] A[D('leafChildrenSize' int)])  \-\> B:11:0x003a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: INVOKE  (r0 I:java.lang.Object) = \l  (r8 I:java.util.List A[D('leafChildren' java.util.List\<com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\>)])\l  (r1 I:int A[D('i' int)])\l java.util.List.get(int):java.lang.Object type: INTERFACE \l0x000c: CHECK_CAST  (r0 I:com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom) = (com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom) (r0 I:?[OBJECT, ARRAY]) \l0x000e: IGET  (r6 I:int) = \l  (r0 I:com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom A[D('child' com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom)])\l com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom.type int \l0x0010: SGET  (r7 I:int) =  com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_pssh int \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|0x0012: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r7 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x002c \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|0x0014: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|0x0016: NEW_INSTANCE  (r4 I:java.util.ArrayList A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)]) =  java.util.ArrayList \l0x0018: INVOKE  \l  (r4 I:java.util.ArrayList A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)])\l java.util.ArrayList.\<init\>():void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|0x001b: IGET  (r6 I:com.google.android.exoplayer2.util.ParsableByteArray) = \l  (r0 I:com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom A[D('child' com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom)])\l com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom.data com.google.android.exoplayer2.util.ParsableByteArray \l0x001d: IGET  (r3 I:byte[]) = (r6 I:com.google.android.exoplayer2.util.ParsableByteArray) com.google.android.exoplayer2.util.ParsableByteArray.data byte[] \l0x001f: INVOKE  (r5 I:java.util.UUID) = (r3 I:byte[] A[D('psshData' byte[])]) com.google.android.exoplayer2.extractor.mp4.PsshAtomUtil.parseUuid(byte[]):java.util.UUID type: STATIC \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('uuid' java.util.UUID)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x002f \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|0x0025: CONST_STR  (r6 I:java.lang.String) =  \"FragmentedMp4Extractor\" \l0x0027: CONST_STR  (r7 I:java.lang.String) =  \"Skipped pssh atom (failed to extract uuid)\" \l0x0029: INVOKE  (r6 I:java.lang.String), (r7 I:java.lang.String) android.util.Log.w(java.lang.String, java.lang.String):int type: STATIC \l}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|0x002c: ARITH  (r1 I:int A[D('i' int)]) = (r1 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x002f|0x002f: NEW_INSTANCE  (r6 I:com.google.android.exoplayer2.drm.DrmInitData$SchemeData) =  com.google.android.exoplayer2.drm.DrmInitData$SchemeData \l0x0031: CONST_STR  (r7 I:java.lang.String) =  \"video\/mp4\" \l0x0033: INVOKE  \l  (r6 I:com.google.android.exoplayer2.drm.DrmInitData$SchemeData)\l  (r5 I:java.util.UUID A[D('uuid' java.util.UUID)])\l  (r7 I:java.lang.String)\l  (r3 I:byte[] A[D('psshData' byte[])])\l com.google.android.exoplayer2.drm.DrmInitData.SchemeData.\<init\>(java.util.UUID, java.lang.String, byte[]):void type: DIRECT \l0x0036: INVOKE  \l  (r4 I:java.util.ArrayList A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)])\l  (r6 I:java.lang.Object)\l java.util.ArrayList.add(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_11 [shape=record,label="{11\:\ 0x003a|0x003a: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x003e \l}"];
+Node_12 [shape=record,label="{12\:\ 0x003c|0x003c: CONST  (r6 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_13 [shape=record,label="{13\:\ 0x003d|0x003d: RETURN  (r6 I:com.google.android.exoplayer2.drm.DrmInitData) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x003e|0x003e: NEW_INSTANCE  (r6 I:com.google.android.exoplayer2.drm.DrmInitData) =  com.google.android.exoplayer2.drm.DrmInitData \l0x0040: INVOKE  \l  (r6 I:com.google.android.exoplayer2.drm.DrmInitData)\l  (r4 I:java.util.List A[D('schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>)])\l com.google.android.exoplayer2.drm.DrmInitData.\<init\>(java.util.List):void type: DIRECT \l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.drm.DrmInitData com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.getDrmInitDataFromAtoms((r8 I:java.util.List\<com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0001\-0x0018: r4 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>\l  0x001f\-0x002c: r3 'psshData' byte[]\l  0x0023\-0x002c: r5 'uuid' java.util.UUID\l  0x000e\-0x003a: r0 'child' com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\l  0x002f\-0x003a: r3 'psshData' byte[]\l  0x002f\-0x003a: r5 'uuid' java.util.UUID\l  0x0006\-0x0043: r1 'i' int\l  0x0005\-0x0043: r2 'leafChildrenSize' int\l  0x001b\-0x0043: r4 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>\l  0x0000\-0x0043: r8 'leafChildren' java.util.List\<com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\>\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$LeafAtom;, \>;), Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_1;
+Node_10 -> Node_9;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_14 -> Node_13;
+}
+

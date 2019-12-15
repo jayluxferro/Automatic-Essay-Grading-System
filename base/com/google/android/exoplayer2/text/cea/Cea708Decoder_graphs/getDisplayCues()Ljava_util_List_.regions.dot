@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.exoplayer2.text.cea.Cea708Decoder.getDisplayCues()Ljava\/util\/List;" {
+subgraph cluster_Region_1661733441 {
+label = "R(4:0|(2:(1:7)|8)|9|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.List\<com.google.android.exoplayer2.text.cea.Cea708Cue\> r0 = new java.util.ArrayList\<\>()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_910623932 {
+label = "LOOP:0: (2:(1:7)|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r1 \< 8) goto L_0x000a\l}"];
+subgraph cluster_Region_2018594810 {
+label = "R(2:(1:7)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2072779955 {
+label = "IF [B:4:0x0012, B:6:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|ADDED_TO_REGION\l|if (r3.cueBuilders[r1].isEmpty() == false) goto L_0x0014\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|ADDED_TO_REGION\l|if (r3.cueBuilders[r1].isVisible() == true) goto L_0x001e\l}"];
+subgraph cluster_Region_1380513990 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|r0.add(r3.cueBuilders[r1].build())\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0029|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:8:0x0029\l|r1++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002c|java.util.Collections.sort(r0)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0033|RETURN\l|return java.util.Collections.unmodifiableList(r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:0:0x0000, B:8:0x0029] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:8:0x0029\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0029|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.util.List\<com.google.android.exoplayer2.text.Cue\> com.google.android.exoplayer2.text.cea.Cea708Decoder.getDisplayCues((r3v0 'this' com.google.android.exoplayer2.text.cea.Cea708Decoder A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/text\/Cue;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_7 -> Node_12;
+Node_8 -> Node_1;
+Node_9 -> Node_10;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_11 -> Node_9;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+Node_14 -> Node_8;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroid.arch.lifecycle.LiveData.observeForever(Landroid\/arch\/lifecycle\/Observer;)V" {
+subgraph cluster_Region_829287763 {
+label = "R(2:0|(1:5)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.arch.lifecycle.LiveData$AlwaysActiveObserver android.arch.lifecycle.LiveData.AlwaysActiveObserver r0 = new android.arch.lifecycle.LiveData.AlwaysActiveObserver(r3)\landroid.arch.lifecycle.LiveData$ObserverWrapper android.arch.lifecycle.LiveData.ObserverWrapper r3 = r2.mObservers.putIfAbsent(r3, r0)\l}"];
+subgraph cluster_IfRegion_505615619 {
+label = "IF [B:1:0x000d, B:3:0x0011] THEN: R(1:5) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r3 != null) goto L_0x000f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|ADDED_TO_REGION\l|if ((r3 instanceof android.arch.lifecycle.LiveData.LifecycleBoundObserver) != false) goto L_0x0014\l}"];
+subgraph cluster_Region_52970773 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|throw new java.lang.IllegalArgumentException(\"Cannot add the same observer with different lifecycles\")\l}"];
+}
+subgraph cluster_Region_1443161770 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_265994102 {
+label = "IF [B:6:0x001c] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|if (r3 == null) goto L_0x001f\l}"];
+subgraph cluster_Region_858205840 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r0.activeStateChanged(true)\l}"];
+}
+subgraph cluster_Region_1721101939 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0023}"];
+MethodNode[shape=record,label="{public void android.arch.lifecycle.LiveData.observeForever((r2v0 'this' android.arch.lifecycle.LiveData A[IMMUTABLE_TYPE, THIS]), (r3v0 android.arch.lifecycle.Observer\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.MainThread, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/arch\/lifecycle\/Observer\<, TT;\>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

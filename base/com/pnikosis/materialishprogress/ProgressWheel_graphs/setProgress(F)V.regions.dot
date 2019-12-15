@@ -1,0 +1,94 @@
+digraph "CFG forcom.pnikosis.materialishprogress.ProgressWheel.setProgress(F)V" {
+subgraph cluster_Region_1868752442 {
+label = "R(3:(1:2)|(1:5)(1:(1:10))|(1:(2:(1:13)|14)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_790698202 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r4.isSpinning == true) goto L_0x0009\l}"];
+subgraph cluster_Region_2003519711 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r4.mProgress = 0.0f\lr4.isSpinning = false\l}"];
+}
+}
+subgraph cluster_IfRegion_1682390011 {
+label = "IF [B:4:0x0010] THEN: R(1:5) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r5 \> 1.0f) goto L_0x0012\l}"];
+subgraph cluster_Region_476856959 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|r5 \-= 1.0f\l}"];
+}
+subgraph cluster_Region_1001160416 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_372045050 {
+label = "IF [B:9:0x001c] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|if (r5 \< 0.0f) goto L_0x001e\l}"];
+subgraph cluster_Region_1265208615 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|r5 = 0.0f\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_904417679 {
+label = "R(1:(2:(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1835758252 {
+label = "IF [B:7:0x0017] THEN: R(2:(1:13)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|if (r5 != r4.mTargetProgress) goto L_0x0020\l}"];
+subgraph cluster_Region_479314143 {
+label = "R(2:(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_454452959 {
+label = "IF [B:12:0x0026] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0026|if (r4.mProgress == r4.mTargetProgress) goto L_0x0028\l}"];
+subgraph cluster_Region_1812277275 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0028|r4.lastTimeAnimated = android.os.SystemClock.uptimeMillis()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x002e|r4.mTargetProgress = java.lang.Math.min(r5 * 360.0f, 360.0f)\linvalidate()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013|PHI: r5 \l  PHI: (r5v2 'progress' float) = (r5v0 'progress' float), (r5v1 'progress' float), (r5v3 'progress' float) binds: [B:9:0x001c, B:10:0x001e, B:5:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.pnikosis.materialishprogress.ProgressWheel.setProgress((r4v0 'this' com.pnikosis.materialishprogress.ProgressWheel A[IMMUTABLE_TYPE, THIS]), (r5v0 'progress' float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_9 -> Node_6[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_6;
+Node_7 -> Node_11;
+Node_7 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_16;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+}
+

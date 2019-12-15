@@ -1,0 +1,26 @@
+digraph "CFG forokio.HashingSink.\<init\>(Lokio\/Sink;Lokio\/ByteString;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:okio.ForwardingSink), (r2 I:okio.Sink) okio.ForwardingSink.\<init\>(okio.Sink):void type: DIRECT \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|SYNTHETIC\lSplitter:B:1:0x0003\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0003\l|0x0003: INVOKE  (r2 I:javax.crypto.Mac) = (r4 I:java.lang.String) javax.crypto.Mac.getInstance(java.lang.String):javax.crypto.Mac type: STATIC A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}, TRY_ENTER]\l0x0007: IPUT  (r2 I:javax.crypto.Mac), (r1 I:okio.HashingSink) okio.HashingSink.mac javax.crypto.Mac A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x0009: IGET  (r2 I:javax.crypto.Mac) = (r1 I:okio.HashingSink) okio.HashingSink.mac javax.crypto.Mac A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x000b: NEW_INSTANCE  (r0 I:javax.crypto.spec.SecretKeySpec) =  javax.crypto.spec.SecretKeySpec A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x000d: INVOKE  (r3 I:byte[]) = (r3 I:okio.ByteString) okio.ByteString.toByteArray():byte[] type: VIRTUAL A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x0011: INVOKE  \l  (r0 I:javax.crypto.spec.SecretKeySpec)\l  (r3 I:byte[])\l  (r4 I:java.lang.String)\l javax.crypto.spec.SecretKeySpec.\<init\>(byte[], java.lang.String):void type: DIRECT A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x0014: INVOKE  (r2 I:javax.crypto.Mac), (r0 I:java.security.Key) javax.crypto.Mac.init(java.security.Key):void type: VIRTUAL A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x0017: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}]\l0x0018: IPUT  (r2 I:java.security.MessageDigest), (r1 I:okio.HashingSink) okio.HashingSink.messageDigest java.security.MessageDigest A[Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|0x001a: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001b|ExcHandler: InvalidKeyException null\lSplitter:B:1:0x0003\l|0x001b: MOVE_EXCEPTION  (r2 I:?[OBJECT]) =  \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|0x001c: NEW_INSTANCE  (r3 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x001e: INVOKE  \l  (r3 I:java.lang.IllegalArgumentException)\l  (r2 I:java.lang.Throwable)\l java.lang.IllegalArgumentException.\<init\>(java.lang.Throwable):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0021|0x0021: THROW  (r3 I:java.lang.Throwable) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022|0x0022: NEW_INSTANCE  (r2 I:java.lang.AssertionError) =  java.lang.AssertionError \l0x0024: INVOKE  (r2 I:java.lang.AssertionError) java.lang.AssertionError.\<init\>():void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lExcHandler: NoSuchAlgorithmException null\lSplitter:B:1:0x0003\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|0x0027: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private void okio.HashingSink.\<init\>((r1 'this' I:okio.HashingSink A[IMMUTABLE_TYPE, THIS]), (r2 I:okio.Sink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:okio.ByteString A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_9;
+Node_8 -> Node_7;
+}
+

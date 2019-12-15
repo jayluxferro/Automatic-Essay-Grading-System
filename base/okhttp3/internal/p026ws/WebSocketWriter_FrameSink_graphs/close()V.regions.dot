@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.ws.WebSocketWriter.FrameSink.close()V" {
+subgraph cluster_Region_647002706 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_176158776 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_839400193 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.closed == false) goto L_0x0004\l}"];
+subgraph cluster_Region_897716186 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|okhttp3.internal.p026ws.WebSocketWriter.this.writeMessageFrame(r7.formatOpcode, okhttp3.internal.p026ws.WebSocketWriter.this.buffer.size(), r7.isFirstFrame, true)\lr7.closed = true\lokhttp3.internal.p026ws.WebSocketWriter.this.activeWriter = false\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001e|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_275100114 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|throw new java.io.IOException(\"closed\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.ws.WebSocketWriter.FrameSink.close((r7v0 'this' okhttp3.internal.ws.WebSocketWriter$FrameSink A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

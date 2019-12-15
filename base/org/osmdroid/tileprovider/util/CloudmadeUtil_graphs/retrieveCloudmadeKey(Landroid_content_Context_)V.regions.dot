@@ -1,0 +1,58 @@
+digraph "CFG fororg.osmdroid.tileprovider.util.CloudmadeUtil.retrieveCloudmadeKey(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1975808930 {
+label = "R(2:0|(2:(2:2|(2:(2:4|8)|(1:7)))|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mAndroidId = android.provider.Settings.Secure.getString(r2.getContentResolver(), \"android_id\")\lmKey = org.osmdroid.tileprovider.util.ManifestUtil.retrieveKey(r2, CLOUDMADE_KEY)\landroid.content.SharedPreferences android.content.SharedPreferences r2 = android.preference.PreferenceManager.getDefaultSharedPreferences(r2)\lmPreferenceEditor = r2.edit()\l}"];
+subgraph cluster_Region_661272011 {
+label = "R(2:(2:2|(2:(2:4|8)|(1:7)))|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_14474294 {
+label = "IF [B:1:0x002c] THEN: R(2:2|(2:(2:4|8)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002c|if (r2.getString(CLOUDMADE_ID, \"\").equals(mAndroidId) == true) goto L_0x002e\l}"];
+subgraph cluster_Region_1397480521 {
+label = "R(2:2|(2:(2:4|8)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002e|mToken = r2.getString(CLOUDMADE_TOKEN, \"\")\l}"];
+subgraph cluster_Region_1850157280 {
+label = "R(2:(2:4|8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1075223102 {
+label = "IF [B:3:0x003e] THEN: R(2:4|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003e|if (mToken.length() \> 0) goto L_0x0040\l}"];
+subgraph cluster_Region_1645624106 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0040|mPreferenceEditor = null\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_337940174 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1140040834 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0044|mPreferenceEditor.putString(CLOUDMADE_ID, mAndroidId)\lmPreferenceEditor.commit()\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void org.osmdroid.tileprovider.util.CloudmadeUtil.retrieveCloudmadeKey((r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+}
+

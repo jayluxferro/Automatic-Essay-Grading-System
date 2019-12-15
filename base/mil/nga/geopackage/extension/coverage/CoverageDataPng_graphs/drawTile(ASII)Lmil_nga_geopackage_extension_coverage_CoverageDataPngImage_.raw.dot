@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageDataPng.drawTile([SII)Lmil\/nga\/geopackage\/extension\/coverage\/CoverageDataPngImage;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:mil.nga.geopackage.extension.coverage.CoverageDataPngImage) = \l  (r8 I:mil.nga.geopackage.extension.coverage.CoverageDataPng)\l  (r10 I:int)\l  (r11 I:int)\l mil.nga.geopackage.extension.coverage.CoverageDataPng.createImage(int, int):mil.nga.geopackage.extension.coverage.CoverageDataPngImage type: VIRTUAL \l0x0004: INVOKE  (r1 I:ar.com.hjg.pngj.PngWriter) = \l  (r0 I:mil.nga.geopackage.extension.coverage.CoverageDataPngImage)\l mil.nga.geopackage.extension.coverage.CoverageDataPngImage.getWriter():ar.com.hjg.pngj.PngWriter type: VIRTUAL \l0x0008: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0009: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r3 I:?[int, byte, short, char]) \>= (r11 I:?[int, byte, short, char])  \-\> B:6:0x002d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: NEW_INSTANCE  (r4 I:ar.com.hjg.pngj.ImageLineInt) =  ar.com.hjg.pngj.ImageLineInt \l0x000e: IGET  (r5 I:ar.com.hjg.pngj.ImageInfo) = (r1 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.imgInfo ar.com.hjg.pngj.ImageInfo \l0x0010: NEW_ARRAY  (r6 I:int[]) = (r10 I:int A[IMMUTABLE_TYPE]) type: int[] \l0x0012: INVOKE  \l  (r4 I:ar.com.hjg.pngj.ImageLineInt)\l  (r5 I:ar.com.hjg.pngj.ImageInfo)\l  (r6 I:int[])\l ar.com.hjg.pngj.ImageLineInt.\<init\>(ar.com.hjg.pngj.ImageInfo, int[]):void type: DIRECT \l0x0015: INVOKE  (r5 I:int[]) = (r4 I:ar.com.hjg.pngj.ImageLineInt) ar.com.hjg.pngj.ImageLineInt.getScanline():int[] type: VIRTUAL \l0x0019: CONST  (r6 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|0x001a: IF  (r6 I:?[int, byte, short, char]) \>= (r10 I:?[int, byte, short, char])  \-\> B:5:0x0027 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c|0x001c: ARITH  (r7 I:int) = (r3 I:int) * (r10 I:int) \l0x001e: ARITH  (r7 I:int) = (r7 I:int) + (r6 I:int) \l0x001f: AGET  (r7 I:short A[IMMUTABLE_TYPE]) = \l  (r9 I:short[] A[IMMUTABLE_TYPE])\l  (r7 I:?[int, short, byte, char])\l \l0x0021: INVOKE  \l  (r8 I:mil.nga.geopackage.extension.coverage.CoverageDataPng)\l  (r5 I:int[])\l  (r6 I:int)\l  (r7 I:short)\l mil.nga.geopackage.extension.coverage.CoverageDataPng.setPixelValue(int[], int, short):void type: VIRTUAL \l0x0024: ARITH  (r6 I:int) = (r6 I:int) + (1 int) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0027|0x0027: INVOKE  \l  (r1 I:ar.com.hjg.pngj.PngWriter)\l  (r4 I:ar.com.hjg.pngj.IImageLine)\l ar.com.hjg.pngj.PngWriter.writeRow(ar.com.hjg.pngj.IImageLine):void type: VIRTUAL \l0x002a: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002d|0x002d: INVOKE  (r1 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.end():void type: VIRTUAL \l0x0030: INVOKE  \l  (r0 I:mil.nga.geopackage.extension.coverage.CoverageDataPngImage)\l mil.nga.geopackage.extension.coverage.CoverageDataPngImage.flushStream():void type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0033|0x0033: RETURN  \l  (r0 I:mil.nga.geopackage.extension.coverage.CoverageDataPngImage)\l \l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.extension.coverage.CoverageDataPngImage mil.nga.geopackage.extension.coverage.CoverageDataPng.drawTile((r8 'this' I:mil.nga.geopackage.extension.coverage.CoverageDataPng A[IMMUTABLE_TYPE, THIS]), (r9 I:short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+}
+

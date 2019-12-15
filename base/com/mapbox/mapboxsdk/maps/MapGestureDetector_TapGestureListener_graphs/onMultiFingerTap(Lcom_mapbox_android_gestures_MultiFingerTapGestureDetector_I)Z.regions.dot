@@ -1,0 +1,60 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.MapGestureDetector.TapGestureListener.onMultiFingerTap(Lcom\/mapbox\/android\/gestures\/MultiFingerTapGestureDetector;I)Z" {
+subgraph cluster_Region_1946604650 {
+label = "R(1:(2:(1:10)|(4:4|(1:6)(1:7)|8|9))) | DECL_VAR: android.graphics.PointF null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_593447956 {
+label = "R(2:(1:10)|(4:4|(1:6)(1:7)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1032074431 {
+label = "IF [B:1:0x000b, B:3:0x000e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (com.mapbox.mapboxsdk.maps.MapGestureDetector.this.uiSettings.isZoomGesturesEnabled() == false) goto L_0x0048\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if (r6 != 2) goto L_0x0048\l}"];
+subgraph cluster_Region_1816031697 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0048|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_777604536 {
+label = "R(4:4|(1:6)(1:7)|8|9)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|com.mapbox.mapboxsdk.maps.MapGestureDetector.this.transform.cancelTransitions()\lcom.mapbox.mapboxsdk.maps.MapGestureDetector.this.cameraChangeDispatcher.onCameraMoveStarted(1)\lcom.mapbox.mapboxsdk.maps.MapGestureDetector.this.sendTelemetryEvent(com.mapbox.mapboxsdk.constants.TelemetryConstants.TWO_FINGER_TAP, r5.getFocalPoint())\l}"];
+subgraph cluster_IfRegion_2000657291 {
+label = "IF [B:5:0x0035] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (com.mapbox.mapboxsdk.maps.MapGestureDetector.this.focalPoint != null) goto L_0x0037\l}"];
+subgraph cluster_Region_1905622771 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|android.graphics.PointF r5 = com.mapbox.mapboxsdk.maps.MapGestureDetector.this.focalPoint\l}"];
+}
+subgraph cluster_Region_417099862 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003e|android.graphics.PointF r5 = r5.getFocalPoint()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0042|PHI: r5 \l  PHI: (r5v1 android.graphics.PointF) = (r5v2 android.graphics.PointF), (r5v4 android.graphics.PointF) binds: [B:7:0x003e, B:6:0x0037] A[DONT_GENERATE, DONT_INLINE]\l|com.mapbox.mapboxsdk.maps.MapGestureDetector.this.zoomOutAnimated(r5, false)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0047|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+MethodNode[shape=record,label="{public boolean com.mapbox.mapboxsdk.maps.MapGestureDetector.TapGestureListener.onMultiFingerTap((r4v0 'this' com.mapbox.mapboxsdk.maps.MapGestureDetector$TapGestureListener A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.android.gestures.MultiFingerTapGestureDetector A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

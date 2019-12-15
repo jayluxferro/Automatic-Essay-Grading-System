@@ -1,0 +1,72 @@
+digraph "CFG forcom.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.updateOrientation()V" {
+subgraph cluster_Region_1827027207 {
+label = "R(4:(1:2)(1:3)|4|5|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1382673779 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.rotationVectorValue != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1199500653 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.hardware.SensorManager.getRotationMatrixFromVector(r5.rotationMatrix, r5.rotationVectorValue)\l}"];
+}
+subgraph cluster_Region_787843119 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|android.hardware.SensorManager.getRotationMatrix(r5.rotationMatrix, (float[]) null, r5.gravityValues, r5.magneticValues)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0016|int int r0 = r5.windowManager.getDefaultDisplay().getRotation()\lint r1 = org.kxml2.wap.Wbxml.STR_T\lint r2 = org.kxml2.wap.Wbxml.EXT_T_1\l}"];
+subgraph cluster_SwitchRegion_646416513 {
+label = "Switch: 3, default: R(2:6|1)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|switch(r0) \{\l    case 1: goto L_0x0033;\l    case 2: goto L_0x002e;\l    case 3: goto L_0x002c;\l    default: goto L_0x0029;\l\}\l}"];
+subgraph cluster_Region_1532394805 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|r1 = 3\l}"];
+Node_InsnContainer_2051856419 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1905330040 {
+label = "R(2:8|1)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|r1 = org.kxml2.wap.Wbxml.EXT_T_1\lr2 = org.kxml2.wap.Wbxml.STR_T\l}"];
+Node_InsnContainer_1741922412 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_909865153 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|r2 = 1\l}"];
+Node_InsnContainer_1475751038 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_744629836 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|r1 = 1\lr2 = 3\l}"];
+Node_InsnContainer_1430286943 [shape=record,label="{|break\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0034|PHI: r1 r2 \l  PHI: (r1v1 int) = (r1v3 int), (r1v4 int), (r1v0 int), (r1v5 int) binds: [B:9:0x0033, B:8:0x002e, B:7:0x002c, B:6:0x0029] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int), (r2v3 int), (r2v4 int) binds: [B:9:0x0033, B:8:0x002e, B:7:0x002c, B:6:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|float[] float[] r0 = new float[9]\landroid.hardware.SensorManager.remapCoordinateSystem(r5.rotationMatrix, r1, r2, r0)\lfloat[] float[] r1 = new float[3]\landroid.hardware.SensorManager.getOrientation(r0, r1)\lnotifyCompassChangeListeners((float) java.lang.Math.toDegrees((double) r1[0]))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004e}"];
+MethodNode[shape=record,label="{private void com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.updateOrientation((r5v0 'this' com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_5 -> Node_8;
+Node_5 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_10;
+Node_7 -> Node_10;
+Node_6 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+}
+

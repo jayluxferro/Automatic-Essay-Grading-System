@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.NavigationView.initialize(Lcom\/mapbox\/services\/android\/navigation\/ui\/v5\/OnNavigationReadyCallback;)V" {
+subgraph cluster_Region_1717676442 {
+label = "R(2:0|(1:2)(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.onNavigationReadyCallback = r2\l}"];
+subgraph cluster_IfRegion_2029339513 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1.isMapInitialized == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1446557609 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1.mapView.getMapAsync(r1)\l}"];
+}
+subgraph cluster_Region_1917808226 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|r2.onNavigationReady(r1.navigationViewModel.isRunning())\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.services.android.navigation.ui.v5.NavigationView.initialize((r1v0 'this' com.mapbox.services.android.navigation.ui.v5.NavigationView A[IMMUTABLE_TYPE, THIS]), (r2v0 com.mapbox.services.android.navigation.ui.v5.OnNavigationReadyCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,65 @@
+digraph "CFG forokhttp3.internal.http2.Http2Reader.ContinuationSource.readContinuationHeader()V" {
+subgraph cluster_Region_368562950 {
+label = "R(4:0|(1:2)|3|(2:10|11)(1:(1:9)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r7.streamId\lint int r1 = okhttp3.internal.http2.Http2Reader.readMedium(r7.source)\lr7.left = r1\lr7.length = r1\lbyte byte r1 = (byte) (r7.source.readByte() & 255)\lr7.flags = (byte) (r7.source.readByte() & 255)\l}"];
+subgraph cluster_IfRegion_1343072812 {
+label = "IF [B:1:0x0029] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0029|if (okhttp3.internal.http2.Http2Reader.logger.isLoggable(java.util.logging.Level.FINE) == true) goto L_0x002b\l}"];
+subgraph cluster_Region_1780868574 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002b|okhttp3.internal.http2.Http2Reader.logger.fine(okhttp3.internal.http2.Http2.frameLog(true, r7.streamId, r7.length, r1, r7.flags))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x003a|r7.streamId = r7.source.readInt() & Integer.MAX_VALUE\l}"];
+subgraph cluster_IfRegion_541639364 {
+label = "IF [B:4:0x0049] THEN: R(2:10|11) ELSE: R(1:(1:9)(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0049|if (r1 != 9) goto L_0x0059\l}"];
+subgraph cluster_Region_185354792 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0059}"];
+Node_11 [shape=record,label="{11\:\ 0x0067|throw okhttp3.internal.http2.Http2.ioException(\"%s != TYPE_CONTINUATION\", java.lang.Byte.valueOf(r1))\l}"];
+}
+subgraph cluster_Region_1824130169 {
+label = "R(1:(1:9)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2115745171 {
+label = "IF [B:6:0x004d] THEN: R(1:9) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x004d|if (r7.streamId != r0) goto L_0x0050\l}"];
+subgraph cluster_Region_830797682 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0058|throw okhttp3.internal.http2.Http2.ioException(\"TYPE_CONTINUATION streamId changed\", new java.lang.Object[0])\l}"];
+}
+subgraph cluster_Region_2116828673 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x004b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x004f}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0050}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http2.Http2Reader.ContinuationSource.readContinuationHeader((r7v0 'this' okhttp3.internal.http2.Http2Reader$ContinuationSource A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_10 -> Node_11;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

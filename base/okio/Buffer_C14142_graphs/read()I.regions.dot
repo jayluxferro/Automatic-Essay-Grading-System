@@ -1,0 +1,34 @@
+digraph "CFG forokio.Buffer.2.read()I" {
+subgraph cluster_Region_2064214436 {
+label = "R(1:(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_569865315 {
+label = "R(2:(1:3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1281150491 {
+label = "IF [B:1:0x0008] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (okio.Buffer.this.size \> 0) goto L_0x000a\l}"];
+subgraph cluster_Region_1421447329 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|RETURN\l|return okio.Buffer.this.readByte() & 255\l}"];
+}
+}
+subgraph cluster_Region_1682806747 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|RETURN\l|return \-1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+MethodNode[shape=record,label="{public int okio.Buffer.2.read((r4v0 'this' okio.Buffer$2 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

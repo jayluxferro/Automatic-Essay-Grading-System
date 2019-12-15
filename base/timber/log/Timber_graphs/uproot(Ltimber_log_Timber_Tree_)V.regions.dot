@@ -1,0 +1,54 @@
+digraph "CFG fortimber.log.Timber.uproot(Ltimber\/log\/Timber$Tree;)V" {
+subgraph cluster_Region_1620425144 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_693350626 {
+label = "Synchronized:R(2:1|(1:(1:5)(2:8|9)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_61121200 {
+label = "R(1:(1:5)(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_395313747 {
+label = "IF [B:4:0x0009] THEN: R(1:5) ELSE: R(2:8|9)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (FOREST.remove(r4) == true) goto L_0x000b\l}"];
+subgraph cluster_Region_1518674272 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|forestAsArray = (timber.log.Timber.Tree[]) FOREST.toArray(new timber.log.Timber.Tree[FOREST.size()])\l}"];
+}
+subgraph cluster_Region_1860525682 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f}"];
+Node_9 [shape=record,label="{9\:\ 0x0035|throw new java.lang.IllegalArgumentException(\"Cannot uproot tree which is not planted: \" + r4)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001d: MONITOR_EXIT  \l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0036|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0037|REMOVE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0038|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public static void timber.log.Timber.uproot((r4v0 timber.log.Timber$Tree A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

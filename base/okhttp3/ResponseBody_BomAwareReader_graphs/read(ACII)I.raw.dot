@@ -1,0 +1,23 @@
+digraph "CFG forokhttp3.ResponseBody.BomAwareReader.read([CII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r3 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.closed boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0023 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:java.io.Reader) = (r3 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.delegate java.io.Reader \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x001e \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|0x0008: IGET  (r0 I:okio.BufferedSource) = (r3 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.source okio.BufferedSource \l0x000a: IGET  (r1 I:java.nio.charset.Charset) = (r3 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.charset java.nio.charset.Charset \l0x000c: INVOKE  (r0 I:java.nio.charset.Charset) = (r0 I:okio.BufferedSource), (r1 I:java.nio.charset.Charset) okhttp3.internal.Util.bomAwareCharset(okio.BufferedSource, java.nio.charset.Charset):java.nio.charset.Charset type: STATIC \l0x0010: NEW_INSTANCE  (r1 I:java.io.InputStreamReader) =  java.io.InputStreamReader \l0x0012: IGET  (r2 I:okio.BufferedSource) = (r3 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.source okio.BufferedSource \l0x0014: INVOKE  (r2 I:java.io.InputStream) = (r2 I:okio.BufferedSource) okio.BufferedSource.inputStream():java.io.InputStream type: INTERFACE \l0x0018: INVOKE  \l  (r1 I:java.io.InputStreamReader)\l  (r2 I:java.io.InputStream)\l  (r0 I:java.nio.charset.Charset)\l java.io.InputStreamReader.\<init\>(java.io.InputStream, java.nio.charset.Charset):void type: DIRECT \l0x001b: IPUT  \l  (r1 I:java.io.Reader)\l  (r3 I:okhttp3.ResponseBody$BomAwareReader)\l okhttp3.ResponseBody.BomAwareReader.delegate java.io.Reader \l0x001d: MOVE  (r0 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|0x001e: INVOKE  (r4 I:int) = \l  (r0 I:java.io.Reader)\l  (r4 I:char[])\l  (r5 I:int)\l  (r6 I:int)\l java.io.Reader.read(char[], int, int):int type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|0x0022: RETURN  (r4 I:int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: NEW_INSTANCE  (r4 I:java.io.IOException) =  java.io.IOException \l0x0025: CONST_STR  (r5 I:java.lang.String) =  \"Stream closed\" \l0x0027: INVOKE  (r4 I:java.io.IOException), (r5 I:java.lang.String) java.io.IOException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|0x002a: THROW  (r4 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public int okhttp3.ResponseBody.BomAwareReader.read((r3 'this' I:okhttp3.ResponseBody$BomAwareReader A[IMMUTABLE_TYPE, THIS]), (r4 I:char[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG forandroid.support.media.ExifInterface.getRafAttributes(Landroid\/support\/media\/ExifInterface$ByteOrderedDataInputStream;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7.skipBytes(84)\lbyte[] r1 = new byte[4]\lbyte[] r2 = new byte[4]\lr7.read(r1)\lr7.skipBytes(4)\lr7.read(r2)\lint r0 = java.nio.ByteBuffer.wrap(r1).getInt()\lint r1 = java.nio.ByteBuffer.wrap(r2).getInt()\lgetJpegAttributes(r7, r0, 5)\lr7.seek((long) r1)\lr7.setByteOrder(java.nio.ByteOrder.BIG_ENDIAN)\lint r0 = r7.readInt()\lr2 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0036|LOOP_START\lPHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v8 int) binds: [B:0:0x0000, B:6:0x006d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0036\-\>B:6:0x006d\l|if (r2 \>= r0) goto L_0x0073\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0038|int r3 = r7.readUnsignedShort()\lint r4 = r7.readUnsignedShort()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0044|if (r3 != TAG_RAF_IMAGE_SIZE.number) goto L_0x006d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0046|short r0 = r7.readShort()\lshort r7 = r7.readShort()\landroid.support.media.ExifInterface$ExifAttribute r0 = android.support.media.ExifInterface.ExifAttribute.createUShort((int) r0, r6.mExifByteOrder)\landroid.support.media.ExifInterface$ExifAttribute r7 = android.support.media.ExifInterface.ExifAttribute.createUShort((int) r7, r6.mExifByteOrder)\lr6.mAttributes[0].put(TAG_IMAGE_LENGTH, r0)\lr6.mAttributes[0].put(TAG_IMAGE_WIDTH, r7)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x006c|RETURN\l|return\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006d|LOOP_END\lLOOP:0: B:1:0x0036\-\>B:6:0x006d\l|r7.skipBytes(r4)\lint r2 = r2 + 1\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0073|RETURN\l|return\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0046|SYNTHETIC\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0073|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.media.ExifInterface.getRafAttributes((r6v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r7v0 android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_6;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_1;
+Node_8 -> Node_4;
+Node_9 -> Node_7;
+}
+

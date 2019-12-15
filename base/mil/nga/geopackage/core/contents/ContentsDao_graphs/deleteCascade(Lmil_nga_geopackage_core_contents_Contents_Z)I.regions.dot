@@ -1,0 +1,25 @@
+digraph "CFG formil.nga.geopackage.core.contents.ContentsDao.deleteCascade(Lmil\/nga\/geopackage\/core\/contents\/Contents;Z)I" {
+subgraph cluster_Region_1183992563 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = deleteCascade(r4)\l}"];
+subgraph cluster_IfRegion_1808883223 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5 == true) goto L_0x0006\l}"];
+subgraph cluster_Region_692735916 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|mil.nga.geopackage.db.GeoPackageCoreConnection mil.nga.geopackage.p021db.GeoPackageCoreConnection r5 = r3.f228db\lr5.execSQL(\"DROP TABLE IF EXISTS \" + mil.nga.geopackage.p021db.CoreSQLUtils.quoteWrap(r4.getTableName()))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0024|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{public int mil.nga.geopackage.core.contents.ContentsDao.deleteCascade((r3v0 'this' mil.nga.geopackage.core.contents.ContentsDao A[IMMUTABLE_TYPE, THIS]), (r4v0 mil.nga.geopackage.core.contents.Contents A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+}
+

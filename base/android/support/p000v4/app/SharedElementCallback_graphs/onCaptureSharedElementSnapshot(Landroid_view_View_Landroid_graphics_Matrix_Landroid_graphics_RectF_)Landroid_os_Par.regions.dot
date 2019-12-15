@@ -1,0 +1,103 @@
+digraph "CFG forandroid.support.v4.app.SharedElementCallback.onCaptureSharedElementSnapshot(Landroid\/view\/View;Landroid\/graphics\/Matrix;Landroid\/graphics\/RectF;)Landroid\/os\/Parcelable;" {
+subgraph cluster_Region_1670718999 {
+label = "R(3:(2:2|(3:7|(1:9)|10))|11|(2:(1:20)|(4:14|(1:16)|17|18))) | DECL_VAR: android.graphics.Bitmap null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1001757917 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(3:7|(1:9)|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r6 instanceof android.widget.ImageView) == true) goto L_0x0004\l}"];
+subgraph cluster_Region_604640048 {
+label = "R(2:2|(3:7|(1:9)|10))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.widget.ImageView android.widget.ImageView r0 = (android.widget.ImageView) r6\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r1 = r0.getDrawable()\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = r0.getBackground()\l}"];
+subgraph cluster_IfRegion_475814962 {
+label = "IF [B:3:0x000f, B:4:0x0011, B:6:0x0017] THEN: R(3:7|(1:9)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r1 == null) goto L_0x0049\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|ADDED_TO_REGION\l|if (r2 != null) goto L_0x0049\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0017|ADDED_TO_REGION\l|if ((r1 = createDrawableBitmap(r1)) == null) goto L_0x0049\l}"];
+subgraph cluster_Region_1860512824 {
+label = "R(3:7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|android.os.Bundle android.os.Bundle r6 = new android.os.Bundle()\lr6.putParcelable(BUNDLE_SNAPSHOT_BITMAP, r1)\lr6.putString(BUNDLE_SNAPSHOT_IMAGE_SCALETYPE, r0.getScaleType().toString())\l}"];
+subgraph cluster_IfRegion_16109063 {
+label = "IF [B:8:0x0036] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0036|if (r0.getScaleType() == android.widget.ImageView.ScaleType.MATRIX) goto L_0x0038\l}"];
+subgraph cluster_Region_1757102470 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0038|float[] float[] r8 = new float[9]\lr0.getImageMatrix().getValues(r8)\lr6.putFloatArray(BUNDLE_SNAPSHOT_IMAGE_MATRIX, r8)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0048|RETURN\l|return r6\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0049|int int r0 = java.lang.Math.round(r8.width())\lint int r1 = java.lang.Math.round(r8.height())\l}"];
+subgraph cluster_Region_277746954 {
+label = "R(2:(1:20)|(4:14|(1:16)|17|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1659994610 {
+label = "IF [B:12:0x005a, B:13:0x005c] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005a|if (r0 \<= 0) goto L_?\l}"];
+Node_13 [shape=record,label="{13\:\ 0x005c|ADDED_TO_REGION\l|if (r1 \<= 0) goto L_?\l}"];
+subgraph cluster_Region_1133755769 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_342853926 {
+label = "R(4:14|(1:16)|17|18)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005e|float float r2 = java.lang.Math.min(1.0f, 1048576.0f \/ ((float) (r0 * r1)))\lint int r0 = (int) (((float) r0) * r2)\lint int r1 = (int) (((float) r1) * r2)\l}"];
+subgraph cluster_IfRegion_422954851 {
+label = "IF [B:15:0x0074] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0074|if (r5.mTempMatrix == null) goto L_0x0076\l}"];
+subgraph cluster_Region_242344940 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0076|r5.mTempMatrix = new android.graphics.Matrix()\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x007d|r5.mTempMatrix.set(r7)\lr5.mTempMatrix.postTranslate(\-r8.left, \-r8.top)\lr5.mTempMatrix.postScale(r2, r2)\landroid.graphics.Bitmap android.graphics.Bitmap r2 = android.graphics.Bitmap.createBitmap(r0, r1, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas android.graphics.Canvas r7 = new android.graphics.Canvas(r2)\lr7.concat(r5.mTempMatrix)\lr6.draw(r7)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public android.os.Parcelable android.support.v4.app.SharedElementCallback.onCaptureSharedElementSnapshot((r5v0 'this' android.support.v4.app.SharedElementCallback A[IMMUTABLE_TYPE, THIS]), (r6v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 android.graphics.Matrix A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 android.graphics.RectF A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_19;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_20;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,151 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseTraf(Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$ContainerAtom;Landroid\/util\/SparseArray;I[B)V" {
+subgraph cluster_Region_87258491 {
+label = "R(2:0|(1:(12:2|(1:6)|7|(1:9)|10|(1:12)|13|(1:15)|16|(1:19)|20|(3:22|(1:24)(0)|25))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor$TrackBundle com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.TrackBundle r17 = parseTfhd(r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_tfhd).data, r22, r23)\l}"];
+subgraph cluster_Region_1297204412 {
+label = "R(1:(12:2|(1:6)|7|(1:9)|10|(1:12)|13|(1:15)|16|(1:19)|20|(3:22|(1:24)(0)|25)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_188303070 {
+label = "IF [B:1:0x001a] THEN: R(12:2|(1:6)|7|(1:9)|10|(1:12)|13|(1:15)|16|(1:19)|20|(3:22|(1:24)(0)|25)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001a|if (r17 != null) goto L_0x001d\l}"];
+subgraph cluster_Region_1241481221 {
+label = "R(12:2|(1:6)|7|(1:9)|10|(1:12)|13|(1:15)|16|(1:19)|20|(3:22|(1:24)(0)|25))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|com.google.android.exoplayer2.extractor.mp4.TrackFragment com.google.android.exoplayer2.extractor.mp4.TrackFragment r5 = r17.fragment\llong long r6 = r5.nextFragmentDecodeTime\lr17.reset()\l}"];
+subgraph cluster_IfRegion_494544551 {
+label = "IF [B:3:0x0030, B:5:0x0034] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0030|ADDED_TO_REGION\l|if (r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_tfdt) != null) goto L_0x0032\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|ADDED_TO_REGION\l|if ((r23 & 2) == 0) goto L_0x0036\l}"];
+subgraph cluster_Region_519943230 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0036|long r6 = parseTfdt(r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_tfdt).data)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x004a|PHI: r6 \l  PHI: (r6v1 'decodeTime' long) = (r6v0 'decodeTime' long), (r6v0 'decodeTime' long), (r6v2 'decodeTime' long) binds: [B:3:0x0030, B:5:0x0034, B:6:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|parseTruns(r21, r17, r6, r23)\lcom.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r11 = r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_saiz)\l}"];
+subgraph cluster_IfRegion_1140716584 {
+label = "IF [B:8:0x005d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005d|if (r11 != null) goto L_0x005f\l}"];
+subgraph cluster_Region_1529067945 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x005f|parseSaiz(r17.track.sampleDescriptionEncryptionBoxes[r5.header.sampleDescriptionIndex], r11.data, r5)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0082|com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r10 = r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_saio)\l}"];
+subgraph cluster_IfRegion_2045352825 {
+label = "IF [B:11:0x008c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x008c|if (r10 != null) goto L_0x008e\l}"];
+subgraph cluster_Region_1168475931 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x008e|parseSaio(r10.data, r5)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0097|com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r13 = r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_senc)\l}"];
+subgraph cluster_IfRegion_1159227759 {
+label = "IF [B:14:0x00a1] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x00a1|if (r13 != null) goto L_0x00a3\l}"];
+subgraph cluster_Region_82523847 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00a3|parseSenc(r13.data, r5)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x00ac|com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r12 = r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_sbgp)\lcom.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r14 = r21.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_sgpd)\l}"];
+subgraph cluster_IfRegion_909601206 {
+label = "IF [B:17:0x00c0, B:18:0x00c2] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x00c0|ADDED_TO_REGION\l|if (r12 == null) goto L_0x00d3\l}"];
+Node_18 [shape=record,label="{18\:\ 0x00c2|ADDED_TO_REGION\l|if (r14 == null) goto L_0x00d3\l}"];
+subgraph cluster_Region_832659959 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00c4|parseSgpd(r12.data, r14.data, r5)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x00d3|int int r9 = r21.leafChildren.size()\lint r8 = 0\l}"];
+subgraph cluster_LoopRegion_440899564 {
+label = "LOOP:0: (3:22|(1:24)(0)|25)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00de|LOOP_START\lPHI: r8 \l  PHI: (r8v1 'i' int) = (r8v0 'i' int), (r8v2 'i' int) binds: [B:20:0x00d3, B:25:0x0105] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:21:0x00de\-\>B:25:0x0105\l|if (r8 \< r9) goto L_0x00e0\l}"];
+subgraph cluster_Region_792782222 {
+label = "R(3:22|(1:24)(0)|25)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00e0|com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom com.google.android.exoplayer2.extractor.mp4.Atom.LeafAtom r4 = r21.leafChildren.get(r8)\l}"];
+subgraph cluster_IfRegion_689287704 {
+label = "IF [B:23:0x00f8] THEN: R(1:24) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00f8|if (r4.type == com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_uuid) goto L_0x00fa\l}"];
+subgraph cluster_Region_1997105307 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00fa|parseUuid(r4.data, r5, r24)\l}"];
+}
+subgraph cluster_Region_686353912 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0105|LOOP_END\lLOOP:0: B:21:0x00de\-\>B:25:0x0105\l|r8++\l}"];
+}
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0032}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x001c|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0105|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0105|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.parseTraf((r21v0 'traf' com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'trackBundleArray' android.util.SparseArray\<com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor$TrackBundle\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'flags' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'extendedTypeScratch' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$ContainerAtom;, Landroid\/util\/SparseArray, \<, Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/FragmentedMp4Extractor$TrackBundle;, \>;I[B)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_29[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_26[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_24 -> Node_27;
+Node_25 -> Node_21;
+Node_4 -> Node_5;
+Node_26 -> Node_30;
+Node_27 -> Node_25;
+Node_28 -> Node_25;
+}
+

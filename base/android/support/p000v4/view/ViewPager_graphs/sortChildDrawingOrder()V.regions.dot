@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.sortChildDrawingOrder()V" {
+subgraph cluster_Region_1762519126 {
+label = "R(1:(1:(4:(1:4)(1:5)|6|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1774432014 {
+label = "R(1:(4:(1:4)(1:5)|6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_660839180 {
+label = "IF [B:1:0x0002] THEN: R(4:(1:4)(1:5)|6|(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mDrawingOrder != 0) goto L_0x0004\l}"];
+subgraph cluster_Region_824682432 {
+label = "R(4:(1:4)(1:5)|6|(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1802717857 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r4.mDrawingOrderedChildren == null) goto L_0x0008\l}"];
+subgraph cluster_Region_1840922817 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r4.mDrawingOrderedChildren = new java.util.ArrayList\<\>()\l}"];
+}
+subgraph cluster_Region_427108775 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|r4.mDrawingOrderedChildren.clear()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|int int r0 = getChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1668991927 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v3 int) binds: [B:6:0x0015, B:8:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x001a\-\>B:8:0x001c\l|if (r1 \< r0) goto L_0x001c\l}"];
+subgraph cluster_Region_1328267060 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|LOOP_END\lLOOP:0: B:7:0x001a\-\>B:8:0x001c\l|r4.mDrawingOrderedChildren.add(getChildAt(r1))\lr1++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0028|java.util.Collections.sort(r4.mDrawingOrderedChildren, sPositionComparator)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0028|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v4.view.ViewPager.sortChildDrawingOrder((r4v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_10 -> Node_9;
+}
+

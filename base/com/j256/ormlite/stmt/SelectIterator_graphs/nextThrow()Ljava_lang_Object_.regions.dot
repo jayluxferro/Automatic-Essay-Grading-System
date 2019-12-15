@@ -1,0 +1,82 @@
+digraph "CFG forcom.j256.ormlite.stmt.SelectIterator.nextThrow()Ljava\/lang\/Object;" {
+subgraph cluster_Region_450698110 {
+label = "R(1:(2:(1:2)|(3:(2:(1:7)(1:8)|(2:10|11))|12|13))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1174899277 {
+label = "R(2:(1:2)|(3:(2:(1:7)(1:8)|(2:10|11))|12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2053719699 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.closed == true) goto L_0x0005\l}"];
+subgraph cluster_Region_300884176 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1662771064 {
+label = "R(3:(2:(1:7)(1:8)|(2:10|11))|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_422864052 {
+label = "IF [B:4:0x0009] THEN: R(2:(1:7)(1:8)|(2:10|11)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r3.alreadyMoved == false) goto L_0x000b\l}"];
+subgraph cluster_Region_702145759 {
+label = "R(2:(1:7)(1:8)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1104722068 {
+label = "IF [B:6:0x000d] THEN: R(1:7) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|if (r3.first == true) goto L_0x000f\l}"];
+subgraph cluster_Region_1221804683 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|r3.first = false\lboolean r0 = r3.results.first()\l}"];
+}
+subgraph cluster_Region_1594294046 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|boolean r0 = r3.results.next()\l}"];
+}
+}
+subgraph cluster_IfRegion_2089111496 {
+label = "IF [B:9:0x001e] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|PHI: r0 \l  PHI: (r0v4 boolean) = (r0v6 boolean), (r0v8 boolean) binds: [B:8:0x0018, B:7:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == false) goto L_0x0020\l}"];
+subgraph cluster_Region_1177453864 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|r3.first = false\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0022|RETURN\l|return null\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0023|r3.first = false\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0029|RETURN\l|return getCurrent()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.stmt.SelectIterator.nextThrow((r3v0 'this' com.j256.ormlite.stmt.SelectIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

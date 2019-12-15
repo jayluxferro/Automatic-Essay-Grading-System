@@ -1,0 +1,30 @@
+digraph "CFG forcom.crashlytics.android.answers.BackgroundManager.onActivityResumed()V" {
+subgraph cluster_Region_1051415976 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.inBackground = false\ljava.util.concurrent.ScheduledFuture java.util.concurrent.ScheduledFuture r1 = r3.backgroundFutureRef.getAndSet((java.lang.Object) null)\l}"];
+subgraph cluster_Region_1381794402 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_928222268 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r1 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_2071915221 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r1.cancel(false)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.BackgroundManager.onActivityResumed((r3v0 'this' com.crashlytics.android.answers.BackgroundManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

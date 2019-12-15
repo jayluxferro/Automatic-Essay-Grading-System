@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.saveOldPositions()V" {
+subgraph cluster_Region_1663453091 {
+label = "R(2:0|(3:2|(1:4)(0)|5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r4.mChildHelper.getUnfilteredChildCount()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1072429433 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:5:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:5:0x001c\l|if (r1 \< r0) goto L_0x0009\l}"];
+subgraph cluster_Region_1737273332 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|android.support.v7.widget.RecyclerView$ViewHolder android.support.p003v7.widget.RecyclerView.ViewHolder r2 = getChildViewHolderInt(r4.mChildHelper.getUnfilteredChildAt(r1))\l}"];
+subgraph cluster_IfRegion_2115129493 {
+label = "IF [B:3:0x0017] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|if (r2.shouldIgnore() == false) goto L_0x0019\l}"];
+subgraph cluster_Region_802687915 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|r2.saveOldPosition()\l}"];
+}
+subgraph cluster_Region_1103095484 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001c|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:5:0x001c\l|r1++\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001f|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.RecyclerView.saveOldPositions((r4v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+Node_9 -> Node_5;
+}
+

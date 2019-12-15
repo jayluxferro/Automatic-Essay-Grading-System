@@ -1,0 +1,85 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.SqlTileWriter.getWhereClause(ILandroid\/graphics\/Rect;)Ljava\/lang\/StringBuilder;" {
+subgraph cluster_Region_1147250663 {
+label = "R(4:0|(4:2|(1:4)(2:5|9)|10|(1:12)(2:13|17))|18|19)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r3 = (long) ((1 \<\< (r14 + 1)) \- 1)\llong long r11 = (long) r14\llong long r7 = getIndex(0, 0, r11)\llong long r0 = getIndex(r3, r3, r11)\ljava.lang.String java.lang.String r2 = extractXFromKeyInSQL(r14)\ljava.lang.String java.lang.String r14 = extractYFromKeyInSQL(r14)\ljava.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder()\lr3.append('(')\lr3.append(org.osmdroid.tileprovider.modules.DatabaseFileArchive.COLUMN_KEY)\lr3.append(\" between \")\lr3.append(r7)\lr3.append(\" and \")\lr3.append(r0)\l}"];
+subgraph cluster_IfRegion_904073525 {
+label = "IF [B:1:0x003f] THEN: R(4:2|(1:4)(2:5|9)|10|(1:12)(2:13|17)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x003f|if (r15 != null) goto L_0x0041\l}"];
+subgraph cluster_Region_73877370 {
+label = "R(4:2|(1:4)(2:5|9)|10|(1:12)(2:13|17))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0041|r3.append(\" and \")\l}"];
+subgraph cluster_IfRegion_1625430856 {
+label = "IF [B:3:0x004a] THEN: R(1:4) ELSE: R(2:5|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x004a|if (r15.left == r15.right) goto L_0x004c\l}"];
+subgraph cluster_Region_1246704345 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x004c|r3.append(r2)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.EQUAL_TO_OPERATION)\lr3.append(r15.left)\l}"];
+}
+subgraph cluster_Region_229035946 {
+label = "R(2:5|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x005a|r3.append(\"(\")\lr3.append(r2)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.GREATER_THAN_EQUAL_TO_OPERATION)\lr3.append(r15.left)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0077|PHI: r0 \l  PHI: (r0v19 java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.append(r15.left \< r15.right ? \" and \" : \" or \")\lr3.append(r2)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.LESS_THAN_EQUAL_TO_OPERATION)\lr3.append(r15.right)\lr3.append(\")\")\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x008c|r3.append(\" and \")\l}"];
+subgraph cluster_IfRegion_541343960 {
+label = "IF [B:11:0x0095] THEN: R(1:12) ELSE: R(2:13|17)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0095|if (r15.top == r15.bottom) goto L_0x0097\l}"];
+subgraph cluster_Region_2115677187 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0097|r3.append(r14)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.EQUAL_TO_OPERATION)\lr3.append(r15.top)\l}"];
+}
+subgraph cluster_Region_923624120 {
+label = "R(2:13|17)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00a5|r3.append(\"(\")\lr3.append(r14)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.GREATER_THAN_EQUAL_TO_OPERATION)\lr3.append(r15.top)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x00c2|PHI: r0 \l  PHI: (r0v12 java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.append(r15.top \< r15.bottom ? \" and \" : \" or \")\lr3.append(r14)\lr3.append(com.j256.ormlite.stmt.query.SimpleComparison.LESS_THAN_EQUAL_TO_OPERATION)\lr3.append(r15.bottom)\lr3.append(\")\")\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x00d7|r3.append(')')\l}"];
+Node_19 [shape=record,label="{19\:\ 0x00dc|RETURN\l|return r3\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0070}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0072}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0075}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x00bb}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x00bd}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x00c0}"];
+MethodNode[shape=record,label="{protected java.lang.StringBuilder org.osmdroid.tileprovider.modules.SqlTileWriter.getWhereClause((r13v0 'this' org.osmdroid.tileprovider.modules.SqlTileWriter A[IMMUTABLE_TYPE, THIS]), (r14v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_18;
+Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

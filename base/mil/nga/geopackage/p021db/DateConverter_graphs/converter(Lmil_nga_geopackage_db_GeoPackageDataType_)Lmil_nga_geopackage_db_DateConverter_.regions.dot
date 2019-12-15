@@ -1,0 +1,40 @@
+digraph "CFG formil.nga.geopackage.db.DateConverter.converter(Lmil\/nga\/geopackage\/db\/GeoPackageDataType;)Lmil\/nga\/geopackage\/db\/DateConverter;" {
+subgraph cluster_Region_1492756519 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1406556389 {
+label = "Switch: 2, default: R(2:2|3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|switch(r3) \{\l    case mil.nga.geopackage.db.GeoPackageDataType.DATE :mil.nga.geopackage.db.GeoPackageDataType: goto L_0x0027;\l    case mil.nga.geopackage.db.GeoPackageDataType.DATETIME :mil.nga.geopackage.db.GeoPackageDataType: goto L_0x0022;\l    default: goto L_0x000b;\l\}\l}"];
+subgraph cluster_Region_20183272 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return dateConverter()\l}"];
+}
+subgraph cluster_Region_1809411037 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return dateTimeConverter()\l}"];
+}
+subgraph cluster_Region_2121555473 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b}"];
+Node_3 [shape=record,label="{3\:\ 0x0021|throw new mil.nga.geopackage.GeoPackageException(\"Not a date data type: \" + r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0022}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0027}"];
+MethodNode[shape=record,label="{public static mil.nga.geopackage.db.DateConverter mil.nga.geopackage.db.DateConverter.converter((r3v0 mil.nga.geopackage.db.GeoPackageDataType A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+}
+

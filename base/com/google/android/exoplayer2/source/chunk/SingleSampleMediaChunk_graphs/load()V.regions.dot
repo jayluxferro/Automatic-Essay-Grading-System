@@ -1,0 +1,79 @@
+digraph "CFG forcom.google.android.exoplayer2.source.chunk.SingleSampleMediaChunk.load()V" {
+subgraph cluster_Region_1095282646 {
+label = "R(2:0|(6:2|(1:4)|5|(1:8)|9|10))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_TryCatchRegion_2016560450 {
+label = "Try: R(6:2|(1:4)|5|(1:8)|9|10) catches: R(3:12|13|14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_748902424 {
+label = "R(6:2|(1:4)|5|(1:8)|9|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x0080 \}\lSplitter:B:1:0x000e\l|long long r6 = r18.dataSource.open(com.google.android.exoplayer2.util.Util.getRemainderDataSpec(r18.dataSpec, r18.bytesLoaded))     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+subgraph cluster_IfRegion_1784711131 {
+label = "IF [B:3:0x0018] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|Catch:\{ all \-\> 0x0080 \}\l|if (r6 != \-1) goto L_0x001a     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+subgraph cluster_Region_632869712 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|Catch:\{ all \-\> 0x0080 \}\l|r6 += (long) r18.bytesLoaded     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0020|Catch:\{ all \-\> 0x0080 \}\lPHI: r6 \l  PHI: (r6v1 'length' long) = (r6v0 'length' long), (r6v2 'length' long) binds: [B:3:0x0018, B:4:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.extractor.DefaultExtractorInput com.google.android.exoplayer2.extractor.ExtractorInput r2 = new com.google.android.exoplayer2.extractor.DefaultExtractorInput(r18.dataSource, (long) r18.bytesLoaded, r6)     \/\/ Catch:\{ all \-\> 0x0080 \}\lcom.google.android.exoplayer2.source.chunk.BaseMediaChunkOutput com.google.android.exoplayer2.source.chunk.BaseMediaChunkOutput r16 = getOutput()     \/\/ Catch:\{ all \-\> 0x0080 \}\lr16.setSampleOffsetUs(0)     \/\/ Catch:\{ all \-\> 0x0080 \}\lcom.google.android.exoplayer2.extractor.TrackOutput com.google.android.exoplayer2.extractor.TrackOutput r9 = r16.track(0, r18.trackType)     \/\/ Catch:\{ all \-\> 0x0080 \}\lr9.format(r18.sampleFormat)     \/\/ Catch:\{ all \-\> 0x0080 \}\lint r17 = 0     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+subgraph cluster_LoopRegion_226170688 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0050|Catch:\{ all \-\> 0x0080 \}\l|if (r17 != \-1) goto L_0x0052     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+subgraph cluster_Region_1001323887 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0052|LOOP_END\lCatch:\{ all \-\> 0x0080 \}\lLOOP:0: B:6:0x004d\-\>B:8:0x0052\l|r18.bytesLoaded += r17\lint r17 = r9.sampleData(r2, Integer.MAX_VALUE, true)     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0065|Catch:\{ all \-\> 0x0080 \}\l|r9.sampleMetadata(r18.startTimeUs, 1, r18.bytesLoaded, 0, (byte[]) null)     \/\/ Catch:\{ all \-\> 0x0080 \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0073|com.google.android.exoplayer2.util.Util.closeQuietly(r18.dataSource)\lr18.loadCompleted = true\l}"];
+}
+subgraph cluster_Region_1126633902 {
+label = "R(3:12|13|14) | ExcHandler: all (r3v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0080|ExcHandler: all (r3v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x000e\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0081|com.google.android.exoplayer2.util.Util.closeQuietly(r18.dataSource)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0088|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_1126633902 {
+label = "R(3:12|13|14) | ExcHandler: all (r3v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0080|ExcHandler: all (r3v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x000e\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0081|com.google.android.exoplayer2.util.Util.closeQuietly(r18.dataSource)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0088|throw r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|SYNTHETIC\lSplitter:B:1:0x000e\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x004d|LOOP_START\lCatch:\{ all \-\> 0x0080 \}\lPHI: r17 \l  PHI: (r17v1 'result' int) = (r17v0 'result' int), (r17v2 'result' int) binds: [B:5:0x0020, B:8:0x0052] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x004d\-\>B:8:0x0052\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x007f}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0065|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.chunk.SingleSampleMediaChunk.load((r18v0 'this' com.google.android.exoplayer2.source.chunk.SingleSampleMediaChunk A[IMMUTABLE_TYPE, THIS]))  | JADX INFO: finally extract failed\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_1 -> Node_2;
+Node_1 -> Node_12;
+Node_6 -> Node_7;
+Node_15 -> Node_9;
+}
+

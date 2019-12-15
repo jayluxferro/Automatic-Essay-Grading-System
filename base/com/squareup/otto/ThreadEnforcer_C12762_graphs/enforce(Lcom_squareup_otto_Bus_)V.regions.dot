@@ -1,0 +1,30 @@
+digraph "CFG forcom.squareup.otto.ThreadEnforcer.2.enforce(Lcom\/squareup\/otto\/Bus;)V" {
+subgraph cluster_Region_1908155503 {
+label = "R(1:(1:(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_722913593 {
+label = "R(1:(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1988634161 {
+label = "IF [B:1:0x0008] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (android.os.Looper.myLooper() != android.os.Looper.getMainLooper()) goto L_0x000b\l}"];
+subgraph cluster_Region_1306965216 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b}"];
+Node_4 [shape=record,label="{4\:\ 0x002d|throw new java.lang.IllegalStateException(\"Event bus \" + r4 + \" accessed from non\-main thread \" + android.os.Looper.myLooper())\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void com.squareup.otto.ThreadEnforcer.2.enforce((r3v0 'this' com.squareup.otto.ThreadEnforcer$2 A[IMMUTABLE_TYPE, THIS]), (r4v0 com.squareup.otto.Bus A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

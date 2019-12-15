@@ -1,0 +1,72 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.tref(Lorg\/xml\/sax\/Attributes;)V" {
+subgraph cluster_Region_34808081 {
+label = "R(2:0|(1:11)(1:(2:4|(1:6)(1:7))(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|debug(\"\<tref\>\", new java.lang.Object[0])\l}"];
+subgraph cluster_IfRegion_1012115326 {
+label = "IF [B:1:0x000a] THEN: R(1:11) ELSE: R(1:(2:4|(1:6)(1:7))(1:9))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.currentElement == null) goto L_0x0052\l}"];
+subgraph cluster_Region_861918888 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0059|throw new com.caverock.androidsvg.SVGParseException(\"Invalid document. Root element must be \<svg\>\")\l}"];
+}
+subgraph cluster_Region_1242758974 {
+label = "R(1:(2:4|(1:6)(1:7))(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1368540356 {
+label = "IF [B:3:0x0010] THEN: R(2:4|(1:6)(1:7)) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if ((r2.currentElement instanceof com.caverock.androidsvg.SVG.TextContainer) == true) goto L_0x0012\l}"];
+subgraph cluster_Region_1398167212 {
+label = "R(2:4|(1:6)(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|com.caverock.androidsvg.SVG$TRef com.caverock.androidsvg.SVG.TRef r0 = new com.caverock.androidsvg.SVG.TRef()\lr0.document = r2.svgDocument\lr0.parent = r2.currentElement\lparseAttributesCore(r0, r3)\lparseAttributesStyle(r0, r3)\lparseAttributesConditional(r0, r3)\lparseAttributesTRef(r0, r3)\lr2.currentElement.addChild(r0)\l}"];
+subgraph cluster_IfRegion_2052606693 {
+label = "IF [B:5:0x0034] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|if ((r0.parent instanceof com.caverock.androidsvg.SVG.TextRoot) == true) goto L_0x0036\l}"];
+subgraph cluster_Region_2114085252 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0036|r0.setTextRoot((com.caverock.androidsvg.SVG.TextRoot) r0.parent)\l}"];
+}
+subgraph cluster_Region_800262519 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003e|r0.setTextRoot(((com.caverock.androidsvg.SVG.TextChild) r0.parent).getTextRoot())\l}"];
+}
+}
+}
+subgraph cluster_Region_1893425631 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0051|throw new com.caverock.androidsvg.SVGParseException(\"Invalid document. \<tref\> elements are only valid inside \<text\> or \<tspan\> elements.\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x004a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0052}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGParser.tref((r2v0 'this' com.caverock.androidsvg.SVGParser A[IMMUTABLE_TYPE, THIS]), (r3v0 org.xml.sax.Attributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.SVGParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_7 -> Node_12;
+Node_2 -> Node_3;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

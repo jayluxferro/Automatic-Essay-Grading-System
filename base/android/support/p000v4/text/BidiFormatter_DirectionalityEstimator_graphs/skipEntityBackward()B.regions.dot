@@ -1,0 +1,64 @@
+digraph "CFG forandroid.support.v4.text.BidiFormatter.DirectionalityEstimator.skipEntityBackward()B" {
+subgraph cluster_Region_1268011585 {
+label = "R(4:0|(2:3|(1:(1:10))(1:5))|8|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r4.charIndex\l}"];
+subgraph cluster_LoopRegion_1026371203 {
+label = "LOOP:0: (2:3|(1:(1:10))(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r4.charIndex \> 0) goto L_0x0008\l}"];
+subgraph cluster_Region_2007606783 {
+label = "R(2:3|(1:(1:10))(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|java.lang.CharSequence java.lang.CharSequence r1 = r4.text\lint int r3 = r4.charIndex \- 1\lr4.charIndex = r3\lr4.lastChar = r1.charAt(r3)\l}"];
+subgraph cluster_IfRegion_974915901 {
+label = "IF [B:4:0x001a] THEN: R(1:(1:10)) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r4.lastChar != '&') goto L_0x001f\l}"];
+subgraph cluster_Region_876141572 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1040462160 {
+label = "IF [B:7:0x0021] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:7:0x0021\l|if (r4.lastChar == ';') goto L_0x0023\l}"];
+subgraph cluster_Region_1778997541 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|SYNTHETIC\lEDGE_INSN: B:10:0x0023\-\>B:8:0x0023 ?: BREAK  \l|break\l}"];
+}
+}
+}
+subgraph cluster_Region_805757112 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|RETURN\l|return 12\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0023|EDGE_INSN: B:10:0x0023\-\>B:8:0x0023 ?: BREAK  \l|r4.charIndex = r0\lr4.lastChar = ';'\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|RETURN\l|return 13\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lLOOP:0: B:1:0x0002\-\>B:7:0x0021\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0023|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private byte android.support.v4.text.BidiFormatter.DirectionalityEstimator.skipEntityBackward((r4v0 'this' android.support.v4.text.BidiFormatter$DirectionalityEstimator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_4 -> Node_12[style=dashed];
+Node_7 -> Node_1[style=dashed];
+Node_7 -> Node_10;
+Node_10 -> Node_8;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+Node_11 -> Node_8;
+Node_12 -> Node_5;
+}
+

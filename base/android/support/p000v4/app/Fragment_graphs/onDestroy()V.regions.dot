@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.v4.app.Fragment.onDestroy()V" {
+subgraph cluster_Region_804003710 {
+label = "R(3:0|(1:4)|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r0 = true\lr2.mCalled = true\landroid.support.v4.app.FragmentActivity android.support.p000v4.app.FragmentActivity r1 = getActivity()\l}"];
+subgraph cluster_IfRegion_1796795988 {
+label = "IF [B:1:0x0007, B:3:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|ADDED_TO_REGION\l|if (r1 == null) goto L_0x0010\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if (r1.isChangingConfigurations() == false) goto L_0x0010\l}"];
+subgraph cluster_Region_1032706160 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r0 = false\l}"];
+}
+}
+subgraph cluster_Region_613692706 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_565257166 {
+label = "IF [B:6:0x0013, B:7:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|if (r2.mViewModelStore != null) goto L_0x0015\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0015|ADDED_TO_REGION\l|if (r0 != true) goto L_0x0017\l}"];
+subgraph cluster_Region_576840815 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|r2.mViewModelStore.clear()\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v3 boolean), (r0v0 boolean) binds: [B:4:0x0010, B:3:0x000d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.Fragment.onDestroy((r2v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.CallSuper, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,25 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.setWalModeFromConfiguration()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration) = (r2 I:org.spatialite.database.SQLiteConnection) org.spatialite.database.SQLiteConnection.mConfiguration org.spatialite.database.SQLiteDatabaseConfiguration \l0x0002: INVOKE  (r0 I:boolean) = (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration) org.spatialite.database.SQLiteDatabaseConfiguration.isInMemoryDb():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0030 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: IGET  (r0 I:boolean) = (r2 I:org.spatialite.database.SQLiteConnection) org.spatialite.database.SQLiteConnection.mIsReadOnlyConnection boolean \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0030 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: IGET  (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration) = (r2 I:org.spatialite.database.SQLiteConnection) org.spatialite.database.SQLiteConnection.mConfiguration org.spatialite.database.SQLiteDatabaseConfiguration \l0x000e: IGET  (r0 I:int) = (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration) org.spatialite.database.SQLiteDatabaseConfiguration.openFlags int \l0x0010: CONST  (r1 I:?[int, float, short, byte, char]) = \l  (536870912(0x20000000, float:1.0842022E\-19) ?[int, float, short, byte, char])\l \l0x0012: ARITH  (r0 I:?[int, boolean, short, byte, char]) = (r0 I:?[int, boolean, short, byte, char]) & (r1 I:?[int, boolean, short, byte, char]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|0x0013: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0022 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|0x0015: CONST_STR  (r0 I:java.lang.String) =  \"WAL\" \l0x0017: INVOKE  \l  (r2 I:org.spatialite.database.SQLiteConnection)\l  (r0 I:java.lang.String)\l org.spatialite.database.SQLiteConnection.setJournalMode(java.lang.String):void type: DIRECT \l0x001a: INVOKE  (r0 I:java.lang.String) =  org.spatialite.database.SQLiteGlobal.getWALSyncMode():java.lang.String type: STATIC \l0x001e: INVOKE  \l  (r2 I:org.spatialite.database.SQLiteConnection)\l  (r0 I:java.lang.String)\l org.spatialite.database.SQLiteConnection.setSyncMode(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022|0x0022: INVOKE  (r0 I:java.lang.String) =  org.spatialite.database.SQLiteGlobal.getDefaultJournalMode():java.lang.String type: STATIC \l0x0026: INVOKE  \l  (r2 I:org.spatialite.database.SQLiteConnection)\l  (r0 I:java.lang.String)\l org.spatialite.database.SQLiteConnection.setJournalMode(java.lang.String):void type: DIRECT \l0x0029: INVOKE  (r0 I:java.lang.String) =  org.spatialite.database.SQLiteGlobal.getDefaultSyncMode():java.lang.String type: STATIC \l0x002d: INVOKE  \l  (r2 I:org.spatialite.database.SQLiteConnection)\l  (r0 I:java.lang.String)\l org.spatialite.database.SQLiteConnection.setSyncMode(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030|0x0030: RETURN   \l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.setWalModeFromConfiguration((r2 'this' I:org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readSerializable()Ljava\/io\/Serializable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String r0 = readString()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0008\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return null\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|SYNTHETIC\lSplitter:B:4:0x0011\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ IOException \-\> 0x003a, ClassNotFoundException \-\> 0x001d \}\lSplitter:B:4:0x0011\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return (java.io.Serializable) new androidx.versionedparcelable.VersionedParcel.C05451(r5, new java.io.ByteArrayInputStream(readByteArray())).readObject()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|ExcHandler: ClassNotFoundException (r1v2 'e' java.lang.ClassNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0011\l|java.lang.ClassNotFoundException r1 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|java.lang.StringBuilder r3 = new java.lang.StringBuilder()\lr3.append(\"VersionedParcelable encountered ClassNotFoundException reading a Serializable object (name = \")\lr3.append(r0)\lr3.append(\")\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|throw new java.lang.RuntimeException(r3.toString(), r1)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|ExcHandler: IOException (r1v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0011\l|java.io.IOException r1 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|java.lang.StringBuilder r3 = new java.lang.StringBuilder()\lr3.append(\"VersionedParcelable encountered IOException reading a Serializable object (name = \")\lr3.append(r0)\lr3.append(\")\")\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0056|throw new java.lang.RuntimeException(r3.toString(), r1)\l}"];
+MethodNode[shape=record,label="{protected java.io.Serializable androidx.versionedparcelable.VersionedParcel.readSerializable((r5v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

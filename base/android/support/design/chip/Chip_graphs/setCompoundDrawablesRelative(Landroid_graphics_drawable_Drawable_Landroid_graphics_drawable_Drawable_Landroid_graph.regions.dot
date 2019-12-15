@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.design.chip.Chip.setCompoundDrawablesRelative(Landroid\/graphics\/drawable\/Drawable;Landroid\/graphics\/drawable\/Drawable;Landroid\/graphics\/drawable\/Drawable;Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_132425754 {
+label = "R(1:(1:7)(1:(1:2)(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_40127359 {
+label = "IF [B:0:0x0000] THEN: R(1:7) ELSE: R(1:(1:2)(1:5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != null) goto L_0x0010\l}"];
+subgraph cluster_Region_788086020 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|throw new java.lang.UnsupportedOperationException(\"Please set start drawable using R.attr#chipIcon.\")\l}"];
+}
+subgraph cluster_Region_1120188112 {
+label = "R(1:(1:2)(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1623356138 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3 == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1088287294 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|super.setCompoundDrawablesRelative(r1, r2, r3, r4)\l}"];
+}
+subgraph cluster_Region_665581116 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|throw new java.lang.UnsupportedOperationException(\"Please set end drawable using R.attr#closeIcon.\")\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+MethodNode[shape=record,label="{public void android.support.design.chip.Chip.setCompoundDrawablesRelative((r0v0 'this' android.support.design.chip.Chip A[IMMUTABLE_TYPE, THIS]), (r1v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_6;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

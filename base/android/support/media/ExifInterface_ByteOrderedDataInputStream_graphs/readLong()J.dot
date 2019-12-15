@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.media.ExifInterface.ByteOrderedDataInputStream.readLong()J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r19\lr0.mPosition = r0.mPosition + 8\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0.mPosition \> r0.mLength) goto L_0x00bb\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|int r1 = r0.mDataInputStream.read()\lint r3 = r0.mDataInputStream.read()\lint r4 = r0.mDataInputStream.read()\lint r5 = r0.mDataInputStream.read()\lint r6 = r0.mDataInputStream.read()\lint r7 = r0.mDataInputStream.read()\lint r8 = r0.mDataInputStream.read()\lint r9 = r0.mDataInputStream.read()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0047|if ((((((((r1 \| r3) \| r4) \| r5) \| r6) \| r7) \| r8) \| r9) \< 0) goto L_0x00b5\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0049}"];
+Node_5 [shape=record,label="{5\:\ 0x0059|if (r0.mByteOrder != LITTLE_ENDIAN) goto L_0x007a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005b}"];
+Node_7 [shape=record,label="{7\:\ 0x0079|RETURN\l|return (((((((((long) r9) \<\< 56) + (((long) r8) \<\< 48)) + (((long) r7) \<\< 40)) + (((long) r6) \<\< 32)) + (((long) r5) \<\< 24)) + (((long) r4) \<\< 16)) + (((long) r3) \<\< 8)) + ((long) r1)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x007a|r2 = r3\l}"];
+Node_9 [shape=record,label="{9\:\ 0x007f|if (r0.mByteOrder != BIG_ENDIAN) goto L_0x009c\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0081}"];
+Node_11 [shape=record,label="{11\:\ 0x009b|RETURN\l|return (((((((((long) r1) \<\< 56) + (((long) r2) \<\< 48)) + (((long) r4) \<\< 40)) + (((long) r5) \<\< 32)) + (((long) r6) \<\< 24)) + (((long) r7) \<\< 16)) + (((long) r8) \<\< 8)) + ((long) r9)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x009c|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Invalid byte order: \")\lr2.append(r0.mByteOrder)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x00b4|throw new java.io.IOException(r2.toString())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00b5}"];
+Node_15 [shape=record,label="{15\:\ 0x00ba|throw new java.io.EOFException()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x00bb}"];
+Node_17 [shape=record,label="{17\:\ 0x00c0|throw new java.io.EOFException()\l}"];
+MethodNode[shape=record,label="{public long android.support.media.ExifInterface.ByteOrderedDataInputStream.readLong((r19v0 'this' android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

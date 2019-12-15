@@ -1,0 +1,50 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.instruction.InstructionView.updateTurnLanes(Lcom\/mapbox\/services\/android\/navigation\/ui\/v5\/instruction\/InstructionModel;)V" {
+subgraph cluster_Region_1444453449 {
+label = "R(2:0|(1:5)(1:(1:4)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<com.mapbox.api.directions.p008v5.models.IntersectionLanes\> r0 = r5.getStepResources().getTurnLanes()\ljava.lang.String java.lang.String r1 = r5.getManeuverModifier()\l}"];
+subgraph cluster_IfRegion_1268636663 {
+label = "IF [B:1:0x0020] THEN: R(1:5) ELSE: R(1:(1:4)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0020|if (shouldShowTurnLanes(r0, r1, r5.getProgress().currentLegProgress().currentStepProgress().durationRemaining()) != true) goto L_0x0035\l}"];
+subgraph cluster_Region_1614933970 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|hideTurnLanes()\l}"];
+}
+subgraph cluster_Region_1228112759 {
+label = "R(1:(1:4)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_835196992 {
+label = "IF [B:3:0x002a] THEN: R(1:4) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002a|if (r4.turnLaneLayout.getVisibility() == 8) goto L_0x002c\l}"];
+subgraph cluster_Region_1843432668 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002c|r4.turnLaneAdapter.addTurnLanes(r0, r1)\lshowTurnLanes()\l}"];
+}
+subgraph cluster_Region_1241675189 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0022}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.ui.v5.instruction.InstructionView.updateTurnLanes((r4v0 'this' com.mapbox.services.android.navigation.ui.v5.instruction.InstructionView A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.services.android.navigation.ui.v5.instruction.InstructionModel A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_8;
+Node_2 -> Node_3;
+}
+

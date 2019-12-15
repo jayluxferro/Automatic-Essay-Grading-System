@@ -1,0 +1,19 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker.skipToPageOfGranule(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;JJ)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.pageHeader.populate(r5, false)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r8 \l  PHI: (r8v1 'currentGranule' long) = (r8v0 'currentGranule' long), (r8v2 'currentGranule' long) binds: [B:0:0x0000, B:3:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:3:0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|if ((r4.pageHeader.granulePosition \> r6 ? 1 : (r4.pageHeader.granulePosition == r6 ? 0 : \-1)) \>= 0) goto L_0x0024\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:3:0x000e\l|r5.skipFully(r4.pageHeader.headerSize + r4.pageHeader.bodySize)\llong r8 = r4.pageHeader.granulePosition\lr4.pageHeader.populate(r5, false)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0024|r5.resetPeekPosition()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0027|RETURN\l|return r8\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{long com.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker.skipToPageOfGranule((r4v0 'this' com.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker A[IMMUTABLE_TYPE, THIS]), (r5v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'targetGranule' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'currentGranule' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

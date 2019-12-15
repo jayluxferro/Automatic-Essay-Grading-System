@@ -1,0 +1,40 @@
+digraph "CFG fororg.osgeo.proj4j.proj.SineTangentSeriesProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1539880350 {
+label = "R(5:0|1|4|(1:6)(1:7)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r7 = r7 \/ r4.C_y\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|double r7 = r4.tan_mode ? java.lang.Math.atan(r7) : org.osgeo.proj4j.util.ProjectionMath.asin(r7)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|PHI: r7 \l  PHI: (r7v2 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r9.f295y = r7\ldouble double r7 = java.lang.Math.cos(r7)\lr9.f295y \/= r4.C_p\lr9.f294x = r5 \/ (r4.C_x * java.lang.Math.cos(r9.f295y))\l}"];
+subgraph cluster_IfRegion_800943924 {
+label = "IF [B:5:0x002c] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|if (r4.tan_mode == true) goto L_0x002e\l}"];
+subgraph cluster_Region_1459857672 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|r9.f294x \/= r7 * r7\l}"];
+}
+subgraph cluster_Region_913734039 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|r9.f294x *= r7\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x003c|RETURN\l|return r9\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.SineTangentSeriesProjection.projectInverse((r4v0 'this' org.osgeo.proj4j.proj.SineTangentSeriesProjection A[IMMUTABLE_TYPE, THIS]), (r5v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

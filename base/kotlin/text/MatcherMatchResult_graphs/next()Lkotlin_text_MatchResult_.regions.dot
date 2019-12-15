@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.text.MatcherMatchResult.next()Lkotlin\/text\/MatchResult;" {
+subgraph cluster_Region_1769794208 {
+label = "R(2:4|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|PHI: r1 \l  PHI: (r1v2 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = r3.matchResult.end() + (r3.matchResult.end() == r3.matchResult.start() ? 1 : 0)\l}"];
+subgraph cluster_Region_274907572 {
+label = "R(2:(1:8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_891961989 {
+label = "IF [B:5:0x001e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|if (r0 \<= r3.input.length()) goto L_0x0020\l}"];
+subgraph cluster_Region_207813107 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.text.RegexKt.access$findNext(r3.matcher, r0, r3.input)\l}"];
+}
+}
+subgraph cluster_Region_56822424 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0029|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0012}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020}"];
+MethodNode[shape=record,label="{public kotlin.text.MatchResult kotlin.text.MatcherMatchResult.next((r3v0 'this' kotlin.text.MatcherMatchResult A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_8;
+}
+

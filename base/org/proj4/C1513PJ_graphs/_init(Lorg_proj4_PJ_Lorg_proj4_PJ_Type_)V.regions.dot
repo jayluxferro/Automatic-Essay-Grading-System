@@ -1,0 +1,70 @@
+digraph "CFG fororg.proj4.PJ.\<init\>(Lorg\/proj4\/PJ;Lorg\/proj4\/PJ$Type;)V" {
+subgraph cluster_Region_1811130776 {
+label = "R(1:(1:12)(1:(2:4|(1:(1:8)))(2:9|10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_541180608 {
+label = "IF [B:1:0x0003] THEN: R(1:12) ELSE: R(1:(2:4|(1:(1:8)))(2:9|10))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r5 == null) goto L_0x003e\l}"];
+subgraph cluster_Region_932800086 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0045|throw new java.lang.NullPointerException(\"The CRS must be non\-null.\")\l}"];
+}
+subgraph cluster_Region_101343311 {
+label = "R(1:(2:4|(1:(1:8)))(2:9|10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1891874431 {
+label = "IF [B:3:0x0007] THEN: R(2:4|(1:(1:8))) ELSE: R(2:9|10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r6 == org.proj4.C1513PJ.Type.GEOGRAPHIC) goto L_0x0009\l}"];
+subgraph cluster_Region_1589259621 {
+label = "R(2:4|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|r4.ptr = allocateGeoPJ(r5)\l}"];
+subgraph cluster_Region_585980722 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2008047416 {
+label = "IF [B:5:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|if (r4.ptr == 0) goto L_0x0018\l}"];
+subgraph cluster_Region_447578111 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|throw new java.lang.IllegalArgumentException(r5.getLastError())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_368294090 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|throw new java.lang.IllegalArgumentException(\"Can not derive the \" + r6 + \" type.\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003e}"];
+MethodNode[shape=record,label="{public void org.proj4.PJ.\<init\>((r4v0 'this' org.proj4.PJ A[IMMUTABLE_TYPE, THIS]), (r5v0 org.proj4.PJ A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.proj4.PJ$Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.IllegalArgumentException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+}
+

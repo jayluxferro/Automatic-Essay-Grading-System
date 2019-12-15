@@ -1,0 +1,43 @@
+digraph "CFG forokhttp3.MediaType.charset(Ljava\/nio\/charset\/Charset;)Ljava\/nio\/charset\/Charset;" {
+subgraph cluster_Region_1261488899 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1678636679 {
+label = "Try: R(1:2) catches: R(1:5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_890144817 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0002|RETURN\lCatch:\{ IllegalArgumentException \-\> 0x000c \}\l|return r1.charset != null ? java.nio.charset.Charset.forName(r1.charset) : r2\l}"];
+}
+subgraph cluster_Region_32379455 {
+label = "R(1:5) | ExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return r2\l}"];
+}
+}
+}
+subgraph cluster_Region_32379455 {
+label = "R(1:5) | ExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return r2\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IllegalArgumentException \-\> 0x000c \}\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004|Catch:\{ IllegalArgumentException \-\> 0x000c \}\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\lSplitter:B:0:0x0000\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.nio.charset.Charset okhttp3.MediaType.charset((r1v0 'this' okhttp3.MediaType A[IMMUTABLE_TYPE, THIS]), (r2v0 java.nio.charset.Charset A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\lAnnotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_0 -> Node_1;
+Node_0 -> Node_6;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_7;
+Node_6 -> Node_5;
+}
+

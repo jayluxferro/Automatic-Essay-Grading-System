@@ -1,0 +1,30 @@
+digraph "CFG forcom.mapbox.mapboxsdk.net.ConnectivityReceiver.deactivate()V" {
+subgraph cluster_Region_171155618 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.activationCounter\-\-\l}"];
+subgraph cluster_Region_20887882 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1769563998 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r2.activationCounter == 0) goto L_0x000a\l}"];
+subgraph cluster_Region_314188444 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r2.context.unregisterReceiver(INSTANCE)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.net.ConnectivityReceiver.deactivate((r2v0 'this' com.mapbox.mapboxsdk.net.ConnectivityReceiver A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.UiThread, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

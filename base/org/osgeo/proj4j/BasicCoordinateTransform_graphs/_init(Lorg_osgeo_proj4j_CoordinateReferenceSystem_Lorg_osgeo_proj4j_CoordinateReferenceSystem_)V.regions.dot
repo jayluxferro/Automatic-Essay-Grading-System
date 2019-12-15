@@ -1,0 +1,136 @@
+digraph "CFG fororg.osgeo.proj4j.BasicCoordinateTransform.\<init\>(Lorg\/osgeo\/proj4j\/CoordinateReferenceSystem;Lorg\/osgeo\/proj4j\/CoordinateReferenceSystem;)V" {
+subgraph cluster_Region_2074520997 {
+label = "R(6:0|6|12|(1:18)|19|(1:(3:(1:23)|(1:28)|(1:(1:31)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = false\lr4.doDatumTransform = false\lr4.transformViaGeocentric = false\lr4.srcCRS = r5\lr4.tgtCRS = r6\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|PHI: r2 \l  PHI: (r2v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.doInverseProjection = (r5 == null \|\| r5 == org.osgeo.proj4j.CoordinateReferenceSystem.CS_GEO) ? false : true\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002e|PHI: r2 \l  PHI: (r2v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.doForwardProjection = (r6 == null \|\| r6 == org.osgeo.proj4j.CoordinateReferenceSystem.CS_GEO) ? false : true\l}"];
+subgraph cluster_IfRegion_701230332 {
+label = "IF [B:13:0x0032, B:15:0x0036, B:17:0x0040] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0032|ADDED_TO_REGION\l|if (r4.doInverseProjection == true) goto L_0x0034\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0036|ADDED_TO_REGION\l|if (r4.doForwardProjection == true) goto L_0x0038\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0040|ADDED_TO_REGION\l|if (r5.getDatum() != r6.getDatum()) goto L_0x0042\l}"];
+subgraph cluster_Region_1393943693 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0042|r1 = true\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0043|PHI: r1 \l  PHI: (r1v2 boolean) = (r1v1 boolean), (r1v1 boolean), (r1v1 boolean), (r1v11 boolean) binds: [B:13:0x0032, B:15:0x0036, B:17:0x0040, B:18:0x0042] A[DONT_GENERATE, DONT_INLINE]\l|r4.doDatumTransform = r1\l}"];
+subgraph cluster_Region_1347642897 {
+label = "R(1:(3:(1:23)|(1:28)|(1:(1:31))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1399042536 {
+label = "IF [B:20:0x0047] THEN: R(3:(1:23)|(1:28)|(1:(1:31))) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0047|if (r4.doDatumTransform == true) goto L_0x0049\l}"];
+subgraph cluster_Region_886588538 {
+label = "R(3:(1:23)|(1:28)|(1:(1:31)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1107489297 {
+label = "IF [B:22:0x005d] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005d|if (r5.getDatum().getEllipsoid().isEqual(r6.getDatum().getEllipsoid()) == false) goto L_0x005f\l}"];
+subgraph cluster_Region_162162606 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x005f|r4.transformViaGeocentric = true\l}"];
+}
+}
+subgraph cluster_IfRegion_1191738242 {
+label = "IF [B:25:0x0069, B:27:0x0073] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0069|ADDED_TO_REGION\l|if (r5.getDatum().hasTransformToWGS84() == true) goto L_0x0075\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0073|ADDED_TO_REGION\l|if (r6.getDatum().hasTransformToWGS84() == true) goto L_0x0075\l}"];
+subgraph cluster_Region_830807181 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0075|r4.transformViaGeocentric = true\l}"];
+}
+}
+subgraph cluster_Region_1690497750 {
+label = "R(1:(1:31))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1041198839 {
+label = "IF [B:30:0x0079] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0079|if (r4.transformViaGeocentric == true) goto L_0x007b\l}"];
+subgraph cluster_Region_987743967 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x007b|r4.srcGeoConv = new org.osgeo.proj4j.datum.GeocentricConverter(r5.getDatum().getEllipsoid())\lr4.tgtGeoConv = new org.osgeo.proj4j.datum.GeocentricConverter(r6.getDatum().getEllipsoid())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001a}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x001c}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001e|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0020}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029|REMOVE\lADDED_TO_REGION\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002d}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0034}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0038}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0049}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0061}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x006b}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0077}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.BasicCoordinateTransform.\<init\>((r4v0 'this' org.osgeo.proj4j.BasicCoordinateTransform A[IMMUTABLE_TYPE, THIS]), (r5v0 org.osgeo.proj4j.CoordinateReferenceSystem A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.osgeo.proj4j.CoordinateReferenceSystem A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_33[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_28;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_30 -> Node_34[style=dashed];
+Node_31 -> Node_32;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_29 -> Node_30;
+}
+

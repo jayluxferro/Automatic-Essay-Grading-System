@@ -1,0 +1,30 @@
+digraph "CFG forcom.android.volley.toolbox.DiskBasedCache.removeEntry(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_2048618081 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.android.volley.toolbox.DiskBasedCache$CacheHeader com.android.volley.toolbox.DiskBasedCache.CacheHeader r5 = r4.mEntries.remove(r5)\l}"];
+subgraph cluster_Region_192443796 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_443289538 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r5 != null) goto L_0x000a\l}"];
+subgraph cluster_Region_241214788 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r4.mTotalSize \-= r5.size\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.android.volley.toolbox.DiskBasedCache.removeEntry((r4v0 'this' com.android.volley.toolbox.DiskBasedCache A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

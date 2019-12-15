@@ -1,0 +1,102 @@
+digraph "CFG forokhttp3.OkHttpClient.Builder.protocols(Ljava\/util\/List;)Lokhttp3\/OkHttpClient$Builder;" {
+subgraph cluster_Region_861488138 {
+label = "R(2:0|(2:4|5)(1:(2:10|11)(1:(2:20|21)(1:(2:16|17)(1:19)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r4)\l}"];
+subgraph cluster_IfRegion_1988962460 {
+label = "IF [B:1:0x000b, B:3:0x0013] THEN: R(2:4|5) ELSE: R(1:(2:10|11)(1:(2:20|21)(1:(2:16|17)(1:19))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r0.contains(okhttp3.Protocol.H2_PRIOR_KNOWLEDGE) != true) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|ADDED_TO_REGION\l|if (r0.contains(okhttp3.Protocol.HTTP_1_1) != true) goto L_0x0016\l}"];
+subgraph cluster_Region_1655224411 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016}"];
+Node_5 [shape=record,label="{5\:\ 0x002c|throw new java.lang.IllegalArgumentException(\"protocols must contain h2_prior_knowledge or http\/1.1: \" + r0)\l}"];
+}
+subgraph cluster_Region_387934611 {
+label = "R(1:(2:10|11)(1:(2:20|21)(1:(2:16|17)(1:19)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1182970804 {
+label = "IF [B:7:0x0033, B:9:0x003a] THEN: R(2:10|11) ELSE: R(1:(2:20|21)(1:(2:16|17)(1:19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0033|if (r0.contains(okhttp3.Protocol.H2_PRIOR_KNOWLEDGE) != false) goto L_0x0035\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|ADDED_TO_REGION\l|if (r0.size() \> 1) goto L_0x003d\l}"];
+subgraph cluster_Region_1065539194 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d}"];
+Node_11 [shape=record,label="{11\:\ 0x0053|throw new java.lang.IllegalArgumentException(\"protocols containing h2_prior_knowledge cannot use other protocols: \" + r0)\l}"];
+}
+subgraph cluster_Region_409499025 {
+label = "R(1:(2:20|21)(1:(2:16|17)(1:19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_542429406 {
+label = "IF [B:13:0x005a] THEN: R(2:20|21) ELSE: R(1:(2:16|17)(1:19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x005a|if (r0.contains(okhttp3.Protocol.HTTP_1_0) != false) goto L_0x0077\l}"];
+subgraph cluster_Region_127524591 {
+label = "R(2:20|21)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0077}"];
+Node_21 [shape=record,label="{21\:\ 0x008d|throw new java.lang.IllegalArgumentException(\"protocols must not contain http\/1.0: \" + r0)\l}"];
+}
+subgraph cluster_Region_75775810 {
+label = "R(1:(2:16|17)(1:19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1423295163 {
+label = "IF [B:15:0x0061] THEN: R(2:16|17) ELSE: R(1:19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0061|if (r0.contains((java.lang.Object) null) == false) goto L_0x0063\l}"];
+subgraph cluster_Region_2110648157 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0063|r0.remove(okhttp3.Protocol.SPDY_3)\lr3.protocols = java.util.Collections.unmodifiableList(r0)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x006e|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_451425587 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0076|throw new java.lang.IllegalArgumentException(\"protocols must not contain null\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0035}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0054}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x005c}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x006f}"];
+MethodNode[shape=record,label="{public okhttp3.OkHttpClient$Builder okhttp3.OkHttpClient.Builder.protocols((r3v0 'this' okhttp3.OkHttpClient$Builder A[IMMUTABLE_TYPE, THIS]), (r4v0 java.util.List\<okhttp3.Protocol\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lokhttp3\/Protocol;, \>;), Lokhttp3\/OkHttpClient$Builder;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_20;
+Node_20 -> Node_21;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

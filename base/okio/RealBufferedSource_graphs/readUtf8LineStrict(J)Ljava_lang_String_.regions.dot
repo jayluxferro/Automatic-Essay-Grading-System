@@ -1,0 +1,113 @@
+digraph "CFG forokio.RealBufferedSource.readUtf8LineStrict(J)Ljava\/lang\/String;" {
+subgraph cluster_Region_1439392175 {
+label = "R(1:(2:(3:3|6|(2:(1:9)|(1:(2:(1:21)|(2:22|23)))))|(2:24|25)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_940627610 {
+label = "R(2:(3:3|6|(2:(1:9)|(1:(2:(1:21)|(2:22|23)))))|(2:24|25))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_488197208 {
+label = "IF [B:1:0x0004] THEN: R(3:3|6|(2:(1:9)|(1:(2:(1:21)|(2:22|23))))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r13 \>= 0) goto L_0x0006\l}"];
+subgraph cluster_Region_786192962 {
+label = "R(3:3|6|(2:(1:9)|(1:(2:(1:21)|(2:22|23)))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|long r4 = r13 == kotlin.jvm.internal.LongCompanionObject.MAX_VALUE ? Long.MAX_VALUE : r13 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|PHI: r4 \l  PHI: (r4v1 long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|long long r6 = indexOf((byte) 10, 0, r4)\l}"];
+subgraph cluster_Region_2017682883 {
+label = "R(2:(1:9)|(1:(2:(1:21)|(2:22|23))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1674838435 {
+label = "IF [B:7:0x0024] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|if (r6 != \-1) goto L_0x0026\l}"];
+subgraph cluster_Region_798382545 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002c|RETURN\l|return r12.buffer.readUtf8Line(r6)\l}"];
+}
+}
+subgraph cluster_Region_1980474749 {
+label = "R(1:(2:(1:21)|(2:22|23)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1209076000 {
+label = "R(2:(1:21)|(2:22|23))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1969969523 {
+label = "IF [B:11:0x002f, B:13:0x0035, B:15:0x0041, B:17:0x0048, B:19:0x0052] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|if (r4 \< kotlin.jvm.internal.LongCompanionObject.MAX_VALUE) goto L_0x0031\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0035|ADDED_TO_REGION\l|if (request(r4) != false) goto L_0x0037\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0041|ADDED_TO_REGION\l|if (r12.buffer.getByte(r4 \- 1) == 13) goto L_0x0043\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0048|ADDED_TO_REGION\l|if (request(1 + r4) != false) goto L_0x004a\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0052|ADDED_TO_REGION\l|if (r12.buffer.getByte(r4) == 10) goto L_0x0054\l}"];
+subgraph cluster_Region_702874056 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x005a|RETURN\l|return r12.buffer.readUtf8Line(r4)\l}"];
+}
+}
+subgraph cluster_Region_1650065 {
+label = "R(2:22|23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005b|okio.Buffer okio.Buffer r6 = new okio.Buffer()\lr12.buffer.copyTo(r6, 0, java.lang.Math.min(32, r12.buffer.size()))\l}"];
+Node_23 [shape=record,label="{23\:\ 0x00a9|throw new java.io.EOFException(\"n not found: limit=\" + java.lang.Math.min(r12.buffer.size(), r13) + \" content=\" + r6.readByteString().hex() + kotlin.text.Typography.ellipsis)\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_532539382 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00aa}"];
+Node_25 [shape=record,label="{25\:\ 0x00c0|throw new java.lang.IllegalArgumentException(\"limit \< 0: \" + r13)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0031}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0037}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0043}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004a}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0054}"];
+MethodNode[shape=record,label="{public java.lang.String okio.RealBufferedSource.readUtf8LineStrict((r12v0 'this' okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r13v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_24[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_22[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_22[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_22[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+}
+

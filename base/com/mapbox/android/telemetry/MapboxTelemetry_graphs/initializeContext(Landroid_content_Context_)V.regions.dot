@@ -1,0 +1,61 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.initializeContext(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1091234474 {
+label = "R(1:(2:(1:8)|(1:(2:(1:7)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_468689524 {
+label = "R(2:(1:8)|(1:(2:(1:7)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1676085687 {
+label = "IF [B:1:0x0002] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (applicationContext != null) goto L_?\l}"];
+subgraph cluster_Region_1168661324 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1398912745 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_897274611 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1846169434 {
+label = "IF [B:2:0x0004, B:4:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r2 == null) goto L_0x0013\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|ADDED_TO_REGION\l|if (r2.getApplicationContext() == null) goto L_0x0013\l}"];
+subgraph cluster_Region_1769937900 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|throw new java.lang.IllegalArgumentException(NON_NULL_APPLICATION_CONTEXT_REQUIRED)\l}"];
+}
+}
+subgraph cluster_Region_930557652 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|applicationContext = r2.getApplicationContext()\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.android.telemetry.MapboxTelemetry.initializeContext((r1v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_9;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

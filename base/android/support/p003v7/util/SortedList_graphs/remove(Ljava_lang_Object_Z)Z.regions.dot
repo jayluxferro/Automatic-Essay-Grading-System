@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v7.util.SortedList.remove(Ljava\/lang\/Object;Z)Z" {
+subgraph cluster_Region_1421856540 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r7 = findIndexOf(r7, r6.mData, 0, r6.mSize, 2)\l}"];
+subgraph cluster_Region_1828313040 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_179354828 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r7 == \-1) goto L_0x000f\l}"];
+subgraph cluster_Region_755122837 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_71993166 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|removeItemAtIndex(r7, r8)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{private boolean android.support.v7.util.SortedList.remove((r6v0 'this' android.support.v7.util.SortedList A[IMMUTABLE_TYPE, THIS]), (r7v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;Z)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

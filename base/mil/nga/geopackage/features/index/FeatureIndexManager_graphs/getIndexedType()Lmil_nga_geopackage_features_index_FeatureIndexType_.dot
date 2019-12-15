@@ -1,0 +1,30 @@
+digraph "CFG formil.nga.geopackage.features.index.FeatureIndexManager.getIndexedType()Lmil\/nga\/geopackage\/features\/index\/FeatureIndexType;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = r3.indexLocationQueryOrder.iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lLOOP:0: B:1:0x0006\-\>B:4:0x0016\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r0.hasNext() == false) goto L_0x0019\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|mil.nga.geopackage.features.index.FeatureIndexType r1 = r0.next()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:4:0x0016\l|if (isIndexed(r1) == false) goto L_0x0006\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|r1 = null\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|PHI: r1 \l  PHI: (r1v2 mil.nga.geopackage.features.index.FeatureIndexType) = (r1v1 mil.nga.geopackage.features.index.FeatureIndexType), (r1v6 mil.nga.geopackage.features.index.FeatureIndexType) binds: [B:5:0x0019, B:10:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == null) goto L_0x001d\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c|RETURN\l|return r1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Features are not indexed. GeoPackage: \")\lr1.append(r3.featureTableIndex.getGeoPackage().getName())\lr1.append(\", Table: \")\lr1.append(r3.featureTableIndex.getTableName())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004b|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001a|SYNTHETIC\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0019|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private mil.nga.geopackage.features.index.FeatureIndexType mil.nga.geopackage.features.index.FeatureIndexManager.getIndexedType((r3v0 'this' mil.nga.geopackage.features.index.FeatureIndexManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_6;
+Node_11 -> Node_5;
+}
+

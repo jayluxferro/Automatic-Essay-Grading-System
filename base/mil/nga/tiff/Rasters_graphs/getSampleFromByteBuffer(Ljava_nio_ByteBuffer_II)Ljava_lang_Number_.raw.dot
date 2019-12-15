@@ -1,0 +1,19 @@
+digraph "CFG formil.nga.tiff.Rasters.getSampleFromByteBuffer(Ljava\/nio\/ByteBuffer;II)Ljava\/lang\/Number;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r4 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:5:0x0014 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: INVOKE  (r0 I:int) = (r3 I:java.nio.ByteBuffer) java.nio.ByteBuffer.capacity():int type: VIRTUAL \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IF  (r4 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:5:0x0014 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: INVOKE  (r3 I:java.nio.ByteBuffer), (r4 I:int) java.nio.ByteBuffer.position(int):java.nio.Buffer type: VIRTUAL \l0x000b: IGET  (r4 I:mil.nga.tiff.FieldType[]) = (r2 I:mil.nga.tiff.Rasters) mil.nga.tiff.Rasters.fieldTypes mil.nga.tiff.FieldType[] \l0x000d: AGET  (r4 I:?[OBJECT, ARRAY]) = (r4 I:?[OBJECT, ARRAY][]), (r5 I:?[int, short, byte, char]) \l0x000f: INVOKE  (r3 I:java.lang.Number) = \l  (r2 I:mil.nga.tiff.Rasters)\l  (r3 I:java.nio.ByteBuffer)\l  (r4 I:mil.nga.tiff.FieldType)\l mil.nga.tiff.Rasters.readSample(java.nio.ByteBuffer, mil.nga.tiff.FieldType):java.lang.Number type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: RETURN  (r3 I:java.lang.Number) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: NEW_INSTANCE  (r5 I:java.lang.IndexOutOfBoundsException) =  java.lang.IndexOutOfBoundsException \l0x0016: NEW_INSTANCE  (r0 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0018: INVOKE  (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x001b: CONST_STR  (r1 I:java.lang.String) =  \"Requested index: \" \l0x001d: INVOKE  (r0 I:java.lang.StringBuilder), (r1 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0020: INVOKE  (r0 I:java.lang.StringBuilder), (r4 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0023: CONST_STR  (r4 I:java.lang.String) =  \", but size of buffer is: \" \l0x0025: INVOKE  (r0 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0028: INVOKE  (r3 I:int) = (r3 I:java.nio.ByteBuffer) java.nio.ByteBuffer.capacity():int type: VIRTUAL \l0x002c: INVOKE  (r0 I:java.lang.StringBuilder), (r3 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x002f: INVOKE  (r3 I:java.lang.String) = (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0033: INVOKE  \l  (r5 I:java.lang.IndexOutOfBoundsException)\l  (r3 I:java.lang.String)\l java.lang.IndexOutOfBoundsException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0036|0x0036: THROW  (r5 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private java.lang.Number mil.nga.tiff.Rasters.getSampleFromByteBuffer((r2 'this' I:mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]), (r3 I:java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

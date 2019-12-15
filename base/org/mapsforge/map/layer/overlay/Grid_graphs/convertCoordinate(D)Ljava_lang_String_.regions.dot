@@ -1,0 +1,27 @@
+digraph "CFG fororg.mapsforge.map.layer.overlay.Grid.convertCoordinate(D)Ljava\/lang\/String;" {
+subgraph cluster_Region_568468985 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\l}"];
+subgraph cluster_IfRegion_81713332 {
+label = "IF [B:1:0x0009] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r7 \< 0.0d) goto L_0x000b\l}"];
+subgraph cluster_Region_1212979189 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|r0.append('\-')\ldouble r7 = \-r7\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0011|PHI: r7 \l  PHI: (r7v1 double) = (r7v0 double), (r7v9 double) binds: [B:1:0x0009, B:2:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|java.text.DecimalFormat java.text.DecimalFormat r1 = new java.text.DecimalFormat(\"00\")\lint int r2 = (int) java.lang.Math.floor(r7)\lr0.append(r1.format((long) r2))\lr0.append(176)\ldouble double r7 = (r7 \- ((double) r2)) * 60.0d\lint int r4 = (int) java.lang.Math.floor(r7)\lr0.append(r1.format((long) r4))\lr0.append(kotlin.text.Typography.prime)\lr0.append(r1.format((r7 \- ((double) r4)) * 60.0d))\lr0.append(kotlin.text.Typography.doublePrime)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0056|RETURN\l|return r0.toString()\l}"];
+}
+MethodNode[shape=record,label="{private static java.lang.String org.mapsforge.map.layer.overlay.Grid.convertCoordinate((r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

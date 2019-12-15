@@ -1,0 +1,50 @@
+digraph "CFG forcom.caverock.androidsvg.SVG.getDocumentPreserveAspectRatio()Lcom\/caverock\/androidsvg\/PreserveAspectRatio;" {
+subgraph cluster_Region_1778836847 {
+label = "R(1:(1:8)(1:(1:4)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1017226882 {
+label = "IF [B:1:0x0002] THEN: R(1:8) ELSE: R(1:(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.rootElement == null) goto L_0x0011\l}"];
+subgraph cluster_Region_140151943 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|throw new java.lang.IllegalArgumentException(\"SVG document is empty\")\l}"];
+}
+subgraph cluster_Region_1773496758 {
+label = "R(1:(1:4)(1:6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_885380210 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: R(1:6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r2.rootElement.preserveAspectRatio == null) goto L_0x000a\l}"];
+subgraph cluster_Region_90304990 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_1493400385 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|RETURN\l|return r2.rootElement.preserveAspectRatio\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011}"];
+MethodNode[shape=record,label="{public com.caverock.androidsvg.PreserveAspectRatio com.caverock.androidsvg.SVG.getDocumentPreserveAspectRatio((r2v0 'this' com.caverock.androidsvg.SVG A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

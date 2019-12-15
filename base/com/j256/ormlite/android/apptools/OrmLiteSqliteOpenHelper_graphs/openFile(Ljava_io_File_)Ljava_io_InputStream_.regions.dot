@@ -1,0 +1,62 @@
+digraph "CFG forcom.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper.openFile(Ljava\/io\/File;)Ljava\/io\/InputStream;" {
+subgraph cluster_Region_1029563632 {
+label = "R(1:(2:(1:1)|(1:(1:4))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1857391764 {
+label = "R(2:(1:1)|(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_815982513 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1071281106 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1844607677 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_794925755 {
+label = "Try: R(1:4) catches: R(3:5|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_148471689 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|RETURN\l|return new java.io.FileInputStream(r4)\l}"];
+}
+subgraph cluster_Region_1693567395 {
+label = "R(3:5|6|7) | ExcHandler: FileNotFoundException (r0v0 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|ExcHandler: FileNotFoundException (r0v0 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0004\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|throw new java.lang.IllegalArgumentException(\"Could not open config file \" + r4, r0)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1693567395 {
+label = "R(3:5|6|7) | ExcHandler: FileNotFoundException (r0v0 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|ExcHandler: FileNotFoundException (r0v0 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0004\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|throw new java.lang.IllegalArgumentException(\"Could not open config file \" + r4, r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|SYNTHETIC\lSplitter:B:2:0x0004\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|Catch:\{ FileNotFoundException \-\> 0x000a \}\lSplitter:B:2:0x0004\l}"];
+MethodNode[shape=record,label="{private static java.io.InputStream com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper.openFile((r4v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+}
+

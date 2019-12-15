@@ -1,0 +1,36 @@
+digraph "CFG forio.fabric.sdk.android.services.concurrency.PriorityAsyncTask.addDependency(Lio\/fabric\/sdk\/android\/services\/concurrency\/Task;)V" {
+subgraph cluster_Region_765919659 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1268416005 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2000032264 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (getStatus() == p018io.fabric.sdk.android.services.concurrency.AsyncTask.Status.PENDING) goto L_0x0008\l}"];
+subgraph cluster_Region_447998321 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|((p018io.fabric.sdk.android.services.concurrency.Dependency) ((p018io.fabric.sdk.android.services.concurrency.PriorityProvider) getDelegate())).addDependency(r3)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_260835797 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|throw new java.lang.IllegalStateException(\"Must not add Dependency after task is running\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0014}"];
+MethodNode[shape=record,label="{public void io.fabric.sdk.android.services.concurrency.PriorityAsyncTask.addDependency((r2v0 'this' io.fabric.sdk.android.services.concurrency.PriorityAsyncTask A[IMMUTABLE_TYPE, THIS]), (r3v0 io.fabric.sdk.android.services.concurrency.Task A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

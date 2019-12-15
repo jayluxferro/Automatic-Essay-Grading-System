@@ -1,0 +1,25 @@
+digraph "CFG fororg.osmdroid.views.Projection.getPixelsFromProjected(Lorg\/osmdroid\/util\/PointL;DLandroid\/graphics\/Point;)Landroid\/graphics\/Point;" {
+subgraph cluster_Region_340523973 {
+label = "R(3:(1:1)|2|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_644907429 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r11 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_280744621 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|android.graphics.Point r11 = new android.graphics.Point()\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0008|PHI: r11 \l  PHI: (r11v1 android.graphics.Point) = (r11v0 android.graphics.Point), (r11v2 android.graphics.Point) binds: [B:0:0x0000, B:1:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|org.osmdroid.util.PointL org.osmdroid.util.PointL r6 = new org.osmdroid.util.PointL()\lgetLongPixelsFromProjected(r8, r9, true, r6)\lr11.x = org.osmdroid.util.TileSystem.truncateToInt(r6.f444x)\lr11.y = org.osmdroid.util.TileSystem.truncateToInt(r6.f445y)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0025|RETURN\l|return r11\l}"];
+}
+MethodNode[shape=record,label="{public android.graphics.Point org.osmdroid.views.Projection.getPixelsFromProjected((r7v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS]), (r8v0 org.osmdroid.util.PointL A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 android.graphics.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, java.lang.Deprecated, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+}
+

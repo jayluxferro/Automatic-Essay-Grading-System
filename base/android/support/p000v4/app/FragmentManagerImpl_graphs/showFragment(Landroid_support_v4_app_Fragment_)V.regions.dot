@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.showFragment(Landroid\/support\/v4\/app\/Fragment;)V" {
+subgraph cluster_Region_2019385660 {
+label = "R(2:(1:2)|(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_508060004 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (DEBUG == true) goto L_0x0004\l}"];
+subgraph cluster_Region_366255480 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.util.Log.v(TAG, \"show: \" + r4)\l}"];
+}
+}
+subgraph cluster_Region_2044161014 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1787863409 {
+label = "IF [B:4:0x001c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r4.mHidden == true) goto L_0x001e\l}"];
+subgraph cluster_Region_932101638 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|r4.mHidden = false\lr4.mHiddenChanged = !r4.mHiddenChanged\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001a}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.FragmentManagerImpl.showFragment((r3v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.v4.app.Fragment A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

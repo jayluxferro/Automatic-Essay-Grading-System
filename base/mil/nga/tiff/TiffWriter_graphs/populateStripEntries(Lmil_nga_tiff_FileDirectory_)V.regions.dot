@@ -1,0 +1,27 @@
+digraph "CFG formil.nga.tiff.TiffWriter.populateStripEntries(Lmil\/nga\/tiff\/FileDirectory;)V" {
+subgraph cluster_Region_1095075447 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r4.getRowsPerStrip().intValue()\lint int r1 = ((r4.getImageHeight().intValue() + r0) \- 1) \/ r0\l}"];
+subgraph cluster_IfRegion_1776699428 {
+label = "IF [B:1:0x001d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001d|if (r4.getPlanarConfiguration().intValue() == 2) goto L_0x001f\l}"];
+subgraph cluster_Region_1853853397 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001f|r1 *= r4.getSamplesPerPixel()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0025|PHI: r1 \l  PHI: (r1v5 int) = (r1v4 int), (r1v7 int) binds: [B:1:0x001d, B:2:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|r4.setStripOffsetsAsLongs(new java.util.ArrayList(java.util.Collections.nCopies(r1, 0L)))\lr4.setStripByteCounts((java.util.List\<java.lang.Integer\>) new java.util.ArrayList(java.util.Collections.nCopies(r1, 0)))\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0048}"];
+MethodNode[shape=record,label="{private static void mil.nga.tiff.TiffWriter.populateStripEntries((r4v0 mil.nga.tiff.FileDirectory A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

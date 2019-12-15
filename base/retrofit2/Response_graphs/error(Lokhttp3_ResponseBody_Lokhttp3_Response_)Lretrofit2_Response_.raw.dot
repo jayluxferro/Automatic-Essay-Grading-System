@@ -1,0 +1,16 @@
+digraph "CFG forretrofit2.Response.error(Lokhttp3\/ResponseBody;Lokhttp3\/Response;)Lretrofit2\/Response;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"body == null\" \l0x0002: INVOKE  (r2 I:java.lang.Object), (r0 I:java.lang.String) retrofit2.Utils.checkNotNull(java.lang.Object, java.lang.String):java.lang.Object type: STATIC \l0x0005: CONST_STR  (r0 I:java.lang.String) =  \"rawResponse == null\" \l0x0007: INVOKE  (r3 I:java.lang.Object), (r0 I:java.lang.String) retrofit2.Utils.checkNotNull(java.lang.Object, java.lang.String):java.lang.Object type: STATIC \l0x000a: INVOKE  (r0 I:boolean) = (r3 I:okhttp3.Response) okhttp3.Response.isSuccessful():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|0x000e: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0017 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|0x0010: NEW_INSTANCE  (r0 I:retrofit2.Response) =  retrofit2.Response \l0x0012: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0013: INVOKE  \l  (r0 I:retrofit2.Response)\l  (r3 I:okhttp3.Response)\l  (r1 I:java.lang.Object)\l  (r2 I:okhttp3.ResponseBody)\l retrofit2.Response.\<init\>(okhttp3.Response, java.lang.Object, okhttp3.ResponseBody):void type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|0x0016: RETURN  (r0 I:retrofit2.Response\<T\>) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|0x0017: NEW_INSTANCE  (r2 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0019: CONST_STR  (r3 I:java.lang.String) =  \"rawResponse should not be successful response\" \l0x001b: INVOKE  \l  (r2 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|0x001e: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static retrofit2.Response\<T\> retrofit2.Response.error((r2 I:okhttp3.ResponseBody A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:okhttp3.Response A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Lokhttp3\/ResponseBody;, Lokhttp3\/Response;, ), Lretrofit2\/Response\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

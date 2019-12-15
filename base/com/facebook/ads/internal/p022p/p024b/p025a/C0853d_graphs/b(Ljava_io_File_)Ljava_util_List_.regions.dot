@@ -1,0 +1,34 @@
+digraph "CFG forcom.facebook.ads.internal.p.b.a.d.b(Ljava\/io\/File;)Ljava\/util\/List;" {
+subgraph cluster_Region_1774808645 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.LinkedList java.util.LinkedList r0 = new java.util.LinkedList()\ljava.io.File[] java.io.File[] r1 = r3.listFiles()\l}"];
+subgraph cluster_Region_521820511 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1800719740 {
+label = "IF [B:1:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r1 == null) goto L_?\l}"];
+subgraph cluster_Region_471774057 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_924722690 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|java.util.List java.util.List\<java.io.File\> r0 = java.util.Arrays.asList(r1)\ljava.util.Collections.sort(r0, new com.facebook.ads.internal.p022p.p024b.p025a.C0853d.C0855a())\l}"];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{static java.util.List\<java.io.File\> com.facebook.ads.internal.p.b.a.d.b((r3v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/io\/File;, ), Ljava\/util\/List, \<, Ljava\/io\/File;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

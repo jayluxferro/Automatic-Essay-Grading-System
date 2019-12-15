@@ -1,0 +1,19 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidDatabaseConnection.isAutoCommit()Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: IGET  (r0 I:android.database.sqlite.SQLiteDatabase) = (r4 I:com.j256.ormlite.android.AndroidDatabaseConnection) com.j256.ormlite.android.AndroidDatabaseConnection.db android.database.sqlite.SQLiteDatabase A[Catch:\{ SQLException \-\> 0x0014 \}, TRY_ENTER]\l0x0002: INVOKE  (r0 I:boolean) = (r0 I:android.database.sqlite.SQLiteDatabase) android.database.sqlite.SQLiteDatabase.inTransaction():boolean type: VIRTUAL A[Catch:\{ SQLException \-\> 0x0014 \}]\l0x0006: SGET  (r1 I:com.j256.ormlite.logger.Logger) =  com.j256.ormlite.android.AndroidDatabaseConnection.logger com.j256.ormlite.logger.Logger A[Catch:\{ SQLException \-\> 0x0014 \}]\l0x0008: CONST_STR  (r2 I:java.lang.String) =  \"\{\}: in transaction is \{\}\" A[Catch:\{ SQLException \-\> 0x0014 \}]\l0x000a: INVOKE  (r3 I:java.lang.Boolean) = (r0 I:boolean) java.lang.Boolean.valueOf(boolean):java.lang.Boolean type: STATIC A[Catch:\{ SQLException \-\> 0x0014 \}]\l0x000e: INVOKE  \l  (r1 I:com.j256.ormlite.logger.Logger)\l  (r2 I:java.lang.String)\l  (r4 I:java.lang.Object)\l  (r3 I:java.lang.Object)\l com.j256.ormlite.logger.Logger.trace(java.lang.String, java.lang.Object, java.lang.Object):void type: VIRTUAL A[Catch:\{ SQLException \-\> 0x0014 \}, TRY_LEAVE]\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: ARITH  (r0 I:?[int, boolean, short, byte, char]) = (r0 I:?[int, boolean, short, byte, char]) ^ (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: RETURN  (r0 I:boolean) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|ExcHandler: SQLException null\lSplitter:B:0:0x0000\l|0x0014: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: CONST_STR  (r1 I:java.lang.String) =  \"problems getting auto\-commit from database\" \l0x0017: INVOKE  (r0 I:java.sql.SQLException) = (r1 I:java.lang.String), (r0 I:java.lang.Throwable) com.j256.ormlite.misc.SqlExceptionUtil.create(java.lang.String, java.lang.Throwable):java.sql.SQLException type: STATIC \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|0x001b: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.android.AndroidDatabaseConnection.isAutoCommit((r4 'this' I:com.j256.ormlite.android.AndroidDatabaseConnection A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

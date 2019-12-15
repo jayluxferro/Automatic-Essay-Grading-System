@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.design.widget.FloatingActionButtonImpl.isOrWillBeHidden()Z" {
+subgraph cluster_Region_1721075090 {
+label = "R(1:(1:(2:(1:4)|(1:8)))(1:(1:7)(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1233038838 {
+label = "IF [B:1:0x0008] THEN: R(1:(2:(1:4)|(1:8))) ELSE: R(1:(1:7)(1:9))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r4.view.getVisibility() == 0) goto L_0x000a\l}"];
+subgraph cluster_Region_639072541 {
+label = "R(1:(2:(1:4)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_76468503 {
+label = "R(2:(1:4)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1325231361 {
+label = "IF [B:3:0x000c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r4.animState == 1) goto L_0x000e\l}"];
+subgraph cluster_Region_1917872181 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1863465203 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_501635695 {
+label = "R(1:(1:7)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_953596343 {
+label = "IF [B:6:0x0013] THEN: R(1:7) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|if (r4.animState != 2) goto L_0x0015\l}"];
+subgraph cluster_Region_1236692824 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_933040957 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+MethodNode[shape=record,label="{boolean android.support.design.widget.FloatingActionButtonImpl.isOrWillBeHidden((r4v0 'this' android.support.design.widget.FloatingActionButtonImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG forcom.google.android.exoplayer2.text.dvb.DvbParser.parsePageComposition(Lcom\/google\/android\/exoplayer2\/util\/ParsableBitArray;I)Lcom\/google\/android\/exoplayer2\/text\/dvb\/DvbParser$PageComposition;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r6 = r12.readBits(8)\lint r7 = r12.readBits(4)\lint r5 = r12.readBits(2)\lr12.skipBits(2)\lint r4 = r13 + \-2\landroid.util.SparseArray r3 = new android.util.SparseArray\<\>()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x001c|LOOP_START\lPHI: r4 \l  PHI: (r4v1 'remainingLength' int) = (r4v0 'remainingLength' int), (r4v2 'remainingLength' int) binds: [B:0:0x0000, B:2:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001c\-\>B:2:0x001e\l|if (r4 \<= 0) goto L_0x0038\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001e|LOOP_END\lLOOP:0: B:1:0x001c\-\>B:2:0x001e\l|int r1 = r12.readBits(8)\lr12.skipBits(8)\lint r4 = r4 + \-6\lr3.put(r1, new com.google.android.exoplayer2.text.dvb.DvbParser.PageRegion(r12.readBits(16), r12.readBits(16)))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0038}"];
+Node_4 [shape=record,label="{4\:\ 0x003d|RETURN\l|return new com.google.android.exoplayer2.text.dvb.DvbParser.PageComposition(r6, r7, r5, r3)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0038|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.text.dvb.DvbParser$PageComposition com.google.android.exoplayer2.text.dvb.DvbParser.parsePageComposition((r12v0 'data' com.google.android.exoplayer2.util.ParsableBitArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

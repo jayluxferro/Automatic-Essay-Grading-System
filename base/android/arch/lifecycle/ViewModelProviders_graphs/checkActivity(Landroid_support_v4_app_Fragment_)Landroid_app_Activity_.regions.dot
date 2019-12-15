@@ -1,0 +1,34 @@
+digraph "CFG forandroid.arch.lifecycle.ViewModelProviders.checkActivity(Landroid\/support\/v4\/app\/Fragment;)Landroid\/app\/Activity;" {
+subgraph cluster_Region_632511320 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v4.app.FragmentActivity android.support.p000v4.app.FragmentActivity r1 = r1.getActivity()\l}"];
+subgraph cluster_Region_132614026 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1733142485 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1179917483 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_2045298837 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|throw new java.lang.IllegalStateException(\"Can't create ViewModelProvider for detached fragment\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+MethodNode[shape=record,label="{private static android.app.Activity android.arch.lifecycle.ViewModelProviders.checkActivity((r1v0 android.support.v4.app.Fragment A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

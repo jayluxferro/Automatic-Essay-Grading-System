@@ -1,0 +1,42 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder.updateRepresentation(JLcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/Representation;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.source.dash.DashSegmentIndex r8 = r19.representation.getIndex()\lcom.google.android.exoplayer2.source.dash.DashSegmentIndex r4 = r22.getIndex()\lr19.periodDurationUs = r20\lr19.representation = r22\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0018|if (r8 != null) goto L_0x001b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001b|r19.segmentIndex = r4\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0023|if (r8.isExplicit() == false) goto L_?\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0025|int r12 = r8.getSegmentCount(r19.periodDurationUs)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002d|if (r12 == 0) goto L_?\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002f|int r9 = (r8.getFirstSegmentNum() + r12) + \-1\llong r10 = r8.getTimeUs(r9) + r8.getDurationUs(r9, r19.periodDurationUs)\lint r5 = r4.getFirstSegmentNum()\llong r6 = r4.getTimeUs(r5)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0052|if ((r10 \> r6 ? 1 : (r10 == r6 ? 0 : \-1)) != 0) goto L_0x0061\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0054|r19.segmentNumShift = r19.segmentNumShift + ((r9 + 1) \- r5)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0061}"];
+Node_10 [shape=record,label="{10\:\ 0x0063|if ((r10 \> r6 ? 1 : (r10 == r6 ? 0 : \-1)) \>= 0) goto L_0x006b\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0065}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|throw new com.google.android.exoplayer2.source.BehindLiveWindowException()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x006b|r19.segmentNumShift = r19.segmentNumShift + (r8.getSegmentNum(r6, r19.periodDurationUs) \- r5)\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder.updateRepresentation((r19v0 'this' com.google.android.exoplayer2.source.dash.DefaultDashChunkSource$RepresentationHolder A[IMMUTABLE_TYPE, THIS]), (r20v0 'newPeriodDurationUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'newRepresentation' com.google.android.exoplayer2.source.dash.manifest.Representation A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.source.BehindLiveWindowException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_15;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_16;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_17;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_13 -> Node_18;
+}
+

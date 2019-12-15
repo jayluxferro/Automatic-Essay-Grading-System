@@ -1,0 +1,14 @@
+digraph "CFG fororg.spatialite.AbstractWindowedCursor.checkPosition()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r2 I:org.spatialite.AbstractCursor) org.spatialite.AbstractCursor.checkPosition():void type: SUPER \l0x0003: IGET  (r0 I:org.spatialite.CursorWindow) = (r2 I:org.spatialite.AbstractWindowedCursor) org.spatialite.AbstractWindowedCursor.mWindow org.spatialite.CursorWindow \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0008 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: RETURN   \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: NEW_INSTANCE  (r0 I:android.database.StaleDataException) =  android.database.StaleDataException \l0x000a: CONST_STR  (r1 I:java.lang.String) =  \"Attempting to access a closed CursorWindow.Most probable cause: cursor is deactivated prior to calling this method.\" \l0x000c: INVOKE  \l  (r0 I:android.database.StaleDataException)\l  (r1 I:java.lang.String)\l android.database.StaleDataException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{protected void org.spatialite.AbstractWindowedCursor.checkPosition((r2 'this' I:org.spatialite.AbstractWindowedCursor A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,81 @@
+digraph "CFG forokhttp3.internal.http2.Http2Stream.receiveHeaders(Ljava\/util\/List;)V" {
+subgraph cluster_Region_1277769790 {
+label = "R(2:0|(1:(1:9))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_879462288 {
+label = "Synchronized:R(2:0|(3:1|3|(1:5)(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1289593624 {
+label = "R(3:1|3|(1:5)(1:6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|r0 = true\l}"];
+Node_3 [shape=record,label="{3\:\ ?|r3.hasResponseHeaders = true\l}"];
+subgraph cluster_IfRegion_1533027572 {
+label = "IF [B:4:0x0006] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|if (r3.responseHeaders == null) goto L_0x0008\l}"];
+subgraph cluster_Region_769653835 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|r3.responseHeaders = r4\lboolean r0 = isOpen()\lnotifyAll()\l}"];
+}
+subgraph cluster_Region_1260887771 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|java.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()     \/\/ Catch:\{  \}\lr1.addAll(r3.responseHeaders)\lr1.add((java.lang.Object) null)\lr1.addAll(r4)\lr3.responseHeaders = r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_80978227 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_721345406 {
+label = "IF [B:8:0x0026] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|if (r0 == false) goto L_0x0028\l}"];
+subgraph cluster_Region_20873567 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|r3.connection.removeStream(r3.f261id)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0002|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025|DONT_GENERATE\lPHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v3 boolean) binds: [B:6:0x0012, B:5:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x0025: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0030|LOOP_START\lREMOVE\lLOOP:0: B:10:0x0030\-\>B:14:0x0030\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0031|SYNTHETIC\lREMOVE\lSplitter:B:11:0x0031\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|REMOVE\lSplitter:B:11:0x0031\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0032|REMOVE\l|throw r4\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:10:0x0030\-\>B:14:0x0030\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0032|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0030|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Http2Stream.receiveHeaders((r3v0 'this' okhttp3.internal.http2.Http2Stream A[IMMUTABLE_TYPE, THIS]), (r4v0 java.util.List\<okhttp3.internal.http2.Header\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lokhttp3\/internal\/http2\/Header;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_18[style=dashed];
+Node_9 -> Node_17;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_12 -> Node_15;
+Node_12 -> Node_16;
+Node_14 -> Node_10;
+Node_15 -> Node_13;
+Node_16 -> Node_14;
+}
+

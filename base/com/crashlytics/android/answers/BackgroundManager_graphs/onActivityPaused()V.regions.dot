@@ -1,0 +1,67 @@
+digraph "CFG forcom.crashlytics.android.answers.BackgroundManager.onActivityPaused()V" {
+subgraph cluster_Region_1598270434 {
+label = "R(1:(2:4|(1:6))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1491644605 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(2:4|(1:6)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.flushOnBackground != false) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r7.inBackground != true) goto L_0x0008\l}"];
+subgraph cluster_Region_1427497489 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r7.inBackground = true\l}"];
+subgraph cluster_TryCatchRegion_888076747 {
+label = "Try: R(1:6) catches: R(2:7|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1982879759 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ RejectedExecutionException \-\> 0x0021 \}\lSplitter:B:5:0x000b\l|r7.backgroundFutureRef.compareAndSet((java.lang.Object) null, r7.executorService.schedule(new com.crashlytics.android.answers.BackgroundManager.C05951(), 5000, java.util.concurrent.TimeUnit.MILLISECONDS))     \/\/ Catch:\{ RejectedExecutionException \-\> 0x0021 \}\l}"];
+}
+subgraph cluster_Region_1807774508 {
+label = "R(2:7|8) | ExcHandler: RejectedExecutionException (r0v3 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|ExcHandler: RejectedExecutionException (r0v3 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\lSplitter:B:5:0x000b\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0022|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.answers.Answers.TAG, \"Failed to schedule background detector\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_289345839 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1807774508 {
+label = "R(2:7|8) | ExcHandler: RejectedExecutionException (r0v3 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|ExcHandler: RejectedExecutionException (r0v3 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\lSplitter:B:5:0x000b\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0022|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.answers.Answers.TAG, \"Failed to schedule background detector\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b|SYNTHETIC\lSplitter:B:5:0x000b\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.answers.BackgroundManager.onActivityPaused((r7v0 'this' com.crashlytics.android.answers.BackgroundManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+}
+

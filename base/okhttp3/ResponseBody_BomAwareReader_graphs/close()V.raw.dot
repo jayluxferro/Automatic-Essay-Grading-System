@@ -1,0 +1,15 @@
+digraph "CFG forokhttp3.ResponseBody.BomAwareReader.close()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0001: IPUT  (r0 I:boolean), (r1 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.closed boolean \l0x0003: IGET  (r0 I:java.io.Reader) = (r1 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.delegate java.io.Reader \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: IGET  (r0 I:java.io.Reader) = (r1 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.delegate java.io.Reader \l0x0009: INVOKE  (r0 I:java.io.Reader) java.io.Reader.close():void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: IGET  (r0 I:okio.BufferedSource) = (r1 I:okhttp3.ResponseBody$BomAwareReader) okhttp3.ResponseBody.BomAwareReader.source okio.BufferedSource \l0x000f: INVOKE  (r0 I:okio.BufferedSource) okio.BufferedSource.close():void type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: RETURN   \l}"];
+MethodNode[shape=record,label="{public void okhttp3.ResponseBody.BomAwareReader.close((r1 'this' I:okhttp3.ResponseBody$BomAwareReader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,18 @@
+digraph "CFG forio.fabric.sdk.android.services.events.QueueFileEventStorage.getBatchOfFilesToSend(I)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList \l0x0002: INVOKE  (r0 I:java.util.ArrayList) java.util.ArrayList.\<init\>():void type: DIRECT \l0x0005: IGET  (r1 I:java.io.File) = \l  (r5 I:io.fabric.sdk.android.services.events.QueueFileEventStorage)\l io.fabric.sdk.android.services.events.QueueFileEventStorage.targetDirectory java.io.File \l0x0007: INVOKE  (r1 I:java.io.File[]) = (r1 I:java.io.File) java.io.File.listFiles():java.io.File[] type: VIRTUAL \l0x000b: ARRAY_LENGTH  (r2 I:int) = (r1 I:?[]) \l0x000c: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: IF  (r3 I:?[int, byte, short, char]) \>= (r2 I:?[int, byte, short, char])  \-\> B:6:0x001e \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|0x000f: AGET  (r4 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY][]), (r3 I:?[int, short, byte, char]) \l0x0011: INVOKE  (r0 I:java.util.List), (r4 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l0x0014: INVOKE  (r4 I:int) = (r0 I:java.util.List) java.util.List.size():int type: INTERFACE \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: IF  (r4 I:?[int, byte, short, char]) \< (r6 I:?[int, byte, short, char])  \-\> B:5:0x001b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|0x001b: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: RETURN  (r0 I:java.util.List\<java.io.File\>) \l}"];
+MethodNode[shape=record,label="{public java.util.List\<java.io.File\> io.fabric.sdk.android.services.events.QueueFileEventStorage.getBatchOfFilesToSend((r5 'this' I:io.fabric.sdk.android.services.events.QueueFileEventStorage A[IMMUTABLE_TYPE, THIS]), (r6 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I), Ljava\/util\/List\<, Ljava\/io\/File;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+}
+

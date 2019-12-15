@@ -1,0 +1,46 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.startsWith(Ljava\/lang\/CharSequence;Ljava\/lang\/CharSequence;IZ)Z" {
+subgraph cluster_Region_1293042948 {
+label = "R(2:0|(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r8, \"prefix\")\l}"];
+subgraph cluster_Region_99487176 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_267418528 {
+label = "IF [B:1:0x000a, B:3:0x000e, B:5:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r10 != true) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if ((r7 instanceof java.lang.String) != false) goto L_0x0010\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|ADDED_TO_REGION\l|if ((r8 instanceof java.lang.String) != false) goto L_0x0014\l}"];
+subgraph cluster_Region_13586479 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|RETURN\l|return kotlin.text.StringsKt.startsWith$default((java.lang.String) r7, (java.lang.String) r8, r9, false, 4, (java.lang.Object) null)\l}"];
+}
+}
+subgraph cluster_Region_1596591959 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023}"];
+Node_9 [shape=record,label="{9\:\ 0x0030|RETURN\l|return kotlin.text.StringsKt.regionMatchesImpl(r7, r9, r8, 0, r8.length(), r10)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.text.StringsKt__StringsKt.startsWith((r7v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], , \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

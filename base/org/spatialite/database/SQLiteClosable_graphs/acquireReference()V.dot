@@ -1,0 +1,28 @@
+digraph "CFG fororg.spatialite.database.SQLiteClosable.acquireReference()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|monitor\-enter(r3)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,label="{2\:\ ?}"];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r3.mReferenceCount \<= 0) goto L_0x000d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0005|r3.mReferenceCount = r3.mReferenceCount + 1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|monitor\-exit(r3)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000c|RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000d|java.lang.StringBuilder r1 = new java.lang.StringBuilder()     \/\/ Catch:\{  \}\lr1.append(\"attempt to re\-open an already\-closed object: \")\lr1.append(r3)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|throw new java.lang.IllegalStateException(r1.toString())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|REMOVE\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|REMOVE\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public void org.spatialite.database.SQLiteClosable.acquireReference((r3v0 'this' org.spatialite.database.SQLiteClosable A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v4.media.app.NotificationCompat.MediaStyle.generateBigContentView()Landroid\/widget\/RemoteViews;" {
+subgraph cluster_Region_654829694 {
+label = "R(4:0|(2:2|(1:4))|(1:7)(1:8)|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = java.lang.Math.min(r6.mBuilder.mActions.size(), 5)\landroid.widget.RemoteViews android.widget.RemoteViews r1 = applyStandardTemplate(false, getBigContentViewLayoutResource(r0), false)\lr1.removeAllViews(android.support.mediacompat.C0170R.C0172id.media_actions)\l}"];
+subgraph cluster_IfRegion_174600074 {
+label = "IF [B:1:0x001b] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001b|if (r0 \> 0) goto L_0x001d\l}"];
+subgraph cluster_Region_1357466969 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_1961350501 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|LOOP_START\lPHI: r3 \l  PHI: (r3v6 int) = (r3v5 int), (r3v7 int) binds: [B:2:0x001d, B:4:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x001e\-\>B:4:0x0020\l|if (r3 \< r0) goto L_0x0020\l}"];
+subgraph cluster_Region_1231866628 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020|LOOP_END\lLOOP:0: B:3:0x001e\-\>B:4:0x0020\l|r1.addView(android.support.mediacompat.C0170R.C0172id.media_actions, generateMediaActionButton(r6.mBuilder.mActions.get(r3)))\lr3++\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_902041117 {
+label = "IF [B:6:0x0038] THEN: R(1:7) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0038|if (r6.mShowCancelButton == true) goto L_0x003a\l}"];
+subgraph cluster_Region_1370525263 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|r1.setViewVisibility(android.support.mediacompat.C0170R.C0172id.cancel_action, 0)\lr1.setInt(android.support.mediacompat.C0170R.C0172id.cancel_action, \"setAlpha\", r6.mBuilder.mContext.getResources().getInteger(android.support.mediacompat.C0170R.integer.cancel_button_image_alpha))\lr1.setOnClickPendingIntent(android.support.mediacompat.C0170R.C0172id.cancel_action, r6.mCancelButtonIntent)\l}"];
+}
+subgraph cluster_Region_443543436 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005c|r1.setViewVisibility(android.support.mediacompat.C0170R.C0172id.cancel_action, 8)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0063|RETURN\l|return r1\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0036}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{android.widget.RemoteViews android.support.v4.media.app.NotificationCompat.MediaStyle.generateBigContentView((r6v0 'this' android.support.v4.media.app.NotificationCompat$MediaStyle A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_5 -> Node_6;
+Node_10 -> Node_5;
+}
+

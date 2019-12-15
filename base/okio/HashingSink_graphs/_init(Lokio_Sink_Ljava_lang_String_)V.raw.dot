@@ -1,0 +1,19 @@
+digraph "CFG forokio.HashingSink.\<init\>(Lokio\/Sink;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:okio.ForwardingSink), (r1 I:okio.Sink) okio.ForwardingSink.\<init\>(okio.Sink):void type: DIRECT \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|SYNTHETIC\lSplitter:B:1:0x0003\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0003\l|0x0003: INVOKE  (r1 I:java.security.MessageDigest) = (r2 I:java.lang.String) java.security.MessageDigest.getInstance(java.lang.String):java.security.MessageDigest type: STATIC A[Catch:\{ NoSuchAlgorithmException \-\> 0x000d \}, TRY_ENTER]\l0x0007: IPUT  (r1 I:java.security.MessageDigest), (r0 I:okio.HashingSink) okio.HashingSink.messageDigest java.security.MessageDigest A[Catch:\{ NoSuchAlgorithmException \-\> 0x000d \}]\l0x0009: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l A[Catch:\{ NoSuchAlgorithmException \-\> 0x000d \}]\l0x000a: IPUT  (r1 I:javax.crypto.Mac), (r0 I:okio.HashingSink) okio.HashingSink.mac javax.crypto.Mac A[Catch:\{ NoSuchAlgorithmException \-\> 0x000d \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: NEW_INSTANCE  (r1 I:java.lang.AssertionError) =  java.lang.AssertionError \l0x000f: INVOKE  (r1 I:java.lang.AssertionError) java.lang.AssertionError.\<init\>():void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lExcHandler: NoSuchAlgorithmException null\lSplitter:B:1:0x0003\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private void okio.HashingSink.\<init\>((r0 'this' I:okio.HashingSink A[IMMUTABLE_TYPE, THIS]), (r1 I:okio.Sink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_4;
+}
+

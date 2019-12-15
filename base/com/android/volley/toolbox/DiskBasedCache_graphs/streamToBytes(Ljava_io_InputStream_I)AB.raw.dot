@@ -1,0 +1,24 @@
+digraph "CFG forcom.android.volley.toolbox.DiskBasedCache.streamToBytes(Ljava\/io\/InputStream;I)[B" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_ARRAY  (r0 I:byte[]) = (r7 I:int A[D('length' int), IMMUTABLE_TYPE]) type: byte[] \l0x0002: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r2 I:?[int, byte, short, char] A[D('pos' int)]) \>= (r7 I:?[int, byte, short, char] A[D('length' int)])  \-\> B:5:0x0010 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: ARITH  (r3 I:int) = (r7 I:int A[D('length' int)]) \- (r2 I:int A[D('pos' int)]) \l0x0007: INVOKE  (r1 I:int) = \l  (r6 I:java.io.InputStream A[D('in' java.io.InputStream)])\l  (r0 I:byte[] A[D('bytes' byte[])])\l  (r2 I:int A[D('pos' int)])\l  (r3 I:int)\l java.io.InputStream.read(byte[], int, int):int type: VIRTUAL \l0x000b: CONST  (r3 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('count' int)]) == (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0010 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|0x000e: ARITH  (r2 I:int A[D('pos' int)]) = (r2 I:int A[D('pos' int)]) + (r1 I:int A[D('count' int)]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('pos' int)]) == (r7 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('length' int)])  \-\> B:8:0x003b \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: NEW_INSTANCE  (r3 I:java.io.IOException) =  java.io.IOException \l0x0014: NEW_INSTANCE  (r4 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0016: INVOKE  (r4 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0019: CONST_STR  (r5 I:java.lang.String) =  \"Expected \" \l0x001b: INVOKE  (r4 I:java.lang.StringBuilder) = (r4 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001f: INVOKE  (r4 I:java.lang.StringBuilder) = \l  (r4 I:java.lang.StringBuilder)\l  (r7 I:int A[D('length' int)])\l java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0023: CONST_STR  (r5 I:java.lang.String) =  \" bytes, read \" \l0x0025: INVOKE  (r4 I:java.lang.StringBuilder) = (r4 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0029: INVOKE  (r4 I:java.lang.StringBuilder) = (r4 I:java.lang.StringBuilder), (r2 I:int A[D('pos' int)]) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x002d: CONST_STR  (r5 I:java.lang.String) =  \" bytes\" \l0x002f: INVOKE  (r4 I:java.lang.StringBuilder) = (r4 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0033: INVOKE  (r4 I:java.lang.String) = (r4 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0037: INVOKE  (r3 I:java.io.IOException), (r4 I:java.lang.String) java.io.IOException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x003a|0x003a: THROW  (r3 I:java.lang.Throwable) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|0x003b: RETURN  (r0 I:byte[] A[D('bytes' byte[])]) \l}"];
+MethodNode[shape=record,label="{private static byte[] com.android.volley.toolbox.DiskBasedCache.streamToBytes((r6 I:java.io.InputStream A[D('in' java.io.InputStream), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7 I:int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x000b\-0x0010: r1 'count' int\l  0x0002\-0x003b: r0 'bytes' byte[]\l  0x0003\-0x003b: r2 'pos' int\l  ?\-0x003b: r6 'in' java.io.InputStream\l  ?\-0x003b: r7 'length' int\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+}
+

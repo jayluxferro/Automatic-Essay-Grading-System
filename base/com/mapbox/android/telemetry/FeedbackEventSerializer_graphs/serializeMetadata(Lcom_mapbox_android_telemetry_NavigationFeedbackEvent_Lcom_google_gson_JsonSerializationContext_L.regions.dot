@@ -1,0 +1,29 @@
+digraph "CFG forcom.mapbox.android.telemetry.FeedbackEventSerializer.serializeMetadata(Lcom\/mapbox\/android\/telemetry\/NavigationFeedbackEvent;Lcom\/google\/gson\/JsonSerializationContext;Lcom\/google\/gson\/JsonObject;)V" {
+subgraph cluster_Region_980003147 {
+label = "R(2:0|(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r2 = r3.serialize(r2.getMetadata()).getAsJsonObject().entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1537696816 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|if (r2.hasNext() != false) goto L_0x001a\l}"];
+subgraph cluster_Region_1835700404 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|LOOP_END\lLOOP:0: B:1:0x0014\-\>B:3:0x001a\l|java.util.Map$Entry r3 = r2.next()\lr4.add((java.lang.String) r3.getKey(), (com.google.gson.JsonElement) r3.getValue())\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0014|LOOP_START\lLOOP:0: B:1:0x0014\-\>B:3:0x001a\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0030}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0030|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.android.telemetry.FeedbackEventSerializer.serializeMetadata((r1v0 'this' com.mapbox.android.telemetry.FeedbackEventSerializer A[IMMUTABLE_TYPE, THIS]), (r2v0 com.mapbox.android.telemetry.NavigationFeedbackEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.google.gson.JsonSerializationContext A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.google.gson.JsonObject A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

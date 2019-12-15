@@ -1,0 +1,60 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.FixedLengthSink.write(Lokio\/Buffer;J)V" {
+subgraph cluster_Region_1131767630 {
+label = "R(1:(2:(2:2|(2:(2:4|5)|(2:6|7)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1175501830 {
+label = "R(2:(2:2|(2:(2:4|5)|(2:6|7)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1072890332 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(2:(2:4|5)|(2:6|7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.closed == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1978223887 {
+label = "R(2:2|(2:(2:4|5)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|okhttp3.internal.Util.checkOffsetAndCount(r8.size(), 0, r9)\l}"];
+subgraph cluster_Region_491654123 {
+label = "R(2:(2:4|5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1585280200 {
+label = "IF [B:3:0x0012] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r9 \<= r7.bytesRemaining) goto L_0x0014\l}"];
+subgraph cluster_Region_2041017146 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|okhttp3.internal.http1.Http1Codec.this.sink.write(r8, r9)\lr7.bytesRemaining \-= r9\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1184487476 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021}"];
+Node_7 [shape=record,label="{7\:\ 0x0041|throw new java.net.ProtocolException(\"expected \" + r7.bytesRemaining + \" bytes but received \" + r9)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_736465503 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0049|throw new java.lang.IllegalStateException(\"closed\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0042}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.http1.Http1Codec.FixedLengthSink.write((r7v0 'this' okhttp3.internal.http1.Http1Codec$FixedLengthSink A[IMMUTABLE_TYPE, THIS]), (r8v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_8 -> Node_9;
+}
+

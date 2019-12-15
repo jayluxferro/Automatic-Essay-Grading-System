@@ -1,0 +1,30 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.fragments.AddressBookFragment.loadSavedAddress()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.addressList = r8.DBUtil.getLocations()\ljava.util.ArrayList r3 = new java.util.ArrayList()\ljava.util.Iterator r0 = r8.addressList.iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0013|LOOP_START\lLOOP:0: B:1:0x0013\-\>B:6:0x005a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0017|if (r0.hasNext() == false) goto L_0x0072\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0019|java.util.HashMap r1 = r0.next()\ljava.util.HashMap r2 = new java.util.HashMap()\ljava.lang.String r4 = ((java.lang.String) r1.get(\"title\")).trim()\ljava.lang.String r5 = ((java.lang.String) r1.get(\"street\")).trim()\ljava.lang.String r6 = com.ghanapostgps.ghanapost.util.Utils.formatAddress((java.lang.String) r1.get(\"address_code\"))\ljava.lang.String r1 = (java.lang.String) r1.get(\"verified\")\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0056|if (r1.equals(\"true\") == false) goto L_0x005a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0058|java.lang.String r1 = \"Verified\"\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005a|LOOP_END\lPHI: r1 \l  PHI: (r1v10 java.lang.String) = (r1v9 java.lang.String), (r1v11 java.lang.String) binds: [B:11:0x005a, B:10:0x005a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0013\-\>B:6:0x005a\l|r2.put(\"listview_title\", r4)\lr2.put(\"listview_subtitle\", r6)\lr2.put(\"listview_discription\", r5)\lr2.put(\"listview_item_notification\", r1)\lr3.add(r2)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0072|int[] r6 = new int[]\{com.ghanapostgps.ghanapost.C0708R.C0710id.listview_item_title, com.ghanapostgps.ghanapost.C0708R.C0710id.listview_item_subtitle, com.ghanapostgps.ghanapost.C0708R.C0710id.listview_item_short_description\}\landroid.support.v4.app.FragmentActivity r2 = getActivity()\landroid.widget.SimpleAdapter r1 = new android.widget.SimpleAdapter(r2, r3, com.ghanapostgps.ghanapost.C0708R.layout.address_book_list, new java.lang.String[]\{\"listview_title\", \"listview_subtitle\", \"listview_discription\"\}, r6)\lr8.addressListView.setAdapter(r1)\lr8.addressListView.setOnItemClickListener(new com.ghanapostgps.ghanapost.fragments.AddressBookFragment.C07421(r8))\lr8.addressListView.setOnItemLongClickListener(new com.ghanapostgps.ghanapost.fragments.AddressBookFragment.C07432(r8))\l}"];
+Node_8 [shape=record,label="{8\:\ 0x00a8|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0072|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x005a|SYNTHETIC\l}"];
+Node_11 [shape=record,label="{11\:\ 0x005a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.fragments.AddressBookFragment.loadSavedAddress((r8v0 'this' com.ghanapostgps.ghanapost.fragments.AddressBookFragment A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_10;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_9 -> Node_7;
+Node_10 -> Node_6;
+Node_11 -> Node_6;
+}
+

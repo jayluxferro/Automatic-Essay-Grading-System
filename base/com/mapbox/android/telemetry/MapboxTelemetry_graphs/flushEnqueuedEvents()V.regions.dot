@@ -1,0 +1,37 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.flushEnqueuedEvents()V" {
+subgraph cluster_Region_105989343 {
+label = "R(2:0|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<com.mapbox.android.telemetry.Event\> r0 = r2.queue.flush()\l}"];
+subgraph cluster_Region_1672706166 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_923774891 {
+label = "IF [B:4:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|PHI: r1 \l  PHI: (r1v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0.size() \> 0) == true) goto L_0x0011\l}"];
+subgraph cluster_Region_1411817442 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|sendEventsIfPossible(r0)\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.android.telemetry.MapboxTelemetry.flushEnqueuedEvents((r2v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

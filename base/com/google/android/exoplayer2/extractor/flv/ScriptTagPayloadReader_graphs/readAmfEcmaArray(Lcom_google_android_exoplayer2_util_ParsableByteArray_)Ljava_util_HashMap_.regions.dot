@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfEcmaArray(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Ljava\/util\/HashMap;" {
+subgraph cluster_Region_710090515 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r6.readUnsignedIntToInt()\ljava.util.HashMap java.util.HashMap\<java.lang.String, java.lang.Object\> r0 = new java.util.HashMap\<\>(r1)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1679307656 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:0:0x0000, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|if (r2 \< r1) goto L_0x000c\l}"];
+subgraph cluster_Region_1191022145 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|r0.put(readAmfString(r6), readAmfData(r6, readAmfType(r6)))\lr2++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.HashMap\<java.lang.String, java.lang.Object\> com.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfEcmaArray((r6v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;, ), Ljava\/util\/HashMap, \<, Ljava\/lang\/String;, Ljava\/lang\/Object;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

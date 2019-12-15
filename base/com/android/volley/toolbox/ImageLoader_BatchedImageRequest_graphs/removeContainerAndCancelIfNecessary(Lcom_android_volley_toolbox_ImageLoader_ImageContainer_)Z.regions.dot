@@ -1,0 +1,34 @@
+digraph "CFG forcom.android.volley.toolbox.ImageLoader.BatchedImageRequest.removeContainerAndCancelIfNecessary(Lcom\/android\/volley\/toolbox\/ImageLoader$ImageContainer;)Z" {
+subgraph cluster_Region_1738660951 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.mContainers.remove(r2)\l}"];
+subgraph cluster_Region_623651389 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1988371023 {
+label = "IF [B:1:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r1.mContainers.size() != 0) goto L_0x0014\l}"];
+subgraph cluster_Region_947606240 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1372676828 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|r1.mRequest.cancel()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|RETURN\l|return true\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public boolean com.android.volley.toolbox.ImageLoader.BatchedImageRequest.removeContainerAndCancelIfNecessary((r1v0 'this' com.android.volley.toolbox.ImageLoader$BatchedImageRequest A[IMMUTABLE_TYPE, THIS]), (r2v0 com.android.volley.toolbox.ImageLoader$ImageContainer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,75 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.DecoratedCustomViewStyle.makeHeadsUpContentView(Landroid\/support\/v4\/app\/NotificationBuilderWithBuilderAccessor;)Landroid\/widget\/RemoteViews;" {
+subgraph cluster_Region_268459223 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)(1:6)|(2:(1:8)|(1:10))))) | DECL_VAR: android.widget.RemoteViews null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_216703877 {
+label = "R(2:(1:2)|(3:3|(1:5)(1:6)|(2:(1:8)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1357891740 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L_0x0007\l}"];
+subgraph cluster_Region_1839565702 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1026741829 {
+label = "R(3:3|(1:5)(1:6)|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|android.widget.RemoteViews android.widget.RemoteViews r3 = r2.mBuilder.getHeadsUpContentView()\l}"];
+subgraph cluster_IfRegion_581918208 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r3 != null) goto L_0x0010\l}"];
+subgraph cluster_Region_2129420093 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|r1 = r3\l}"];
+}
+subgraph cluster_Region_814529783 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|android.widget.RemoteViews r1 = r2.mBuilder.getContentView()\l}"];
+}
+}
+subgraph cluster_Region_2136048641 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_455590184 {
+label = "IF [B:7:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|PHI: r1 \l  PHI: (r1v1 android.widget.RemoteViews) = (r1v3 android.widget.RemoteViews), (r1v4 android.widget.RemoteViews) binds: [B:6:0x0012, B:5:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == null) goto L_0x001a\l}"];
+subgraph cluster_Region_654243557 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_142307726 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|RETURN\l|return createRemoteViews(r1, true)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001b}"];
+MethodNode[shape=record,label="{public android.widget.RemoteViews android.support.v4.app.NotificationCompat.DecoratedCustomViewStyle.makeHeadsUpContentView((r2v0 'this' android.support.v4.app.NotificationCompat$DecoratedCustomViewStyle A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v4.app.NotificationBuilderWithBuilderAccessor A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RestrictTo, \{value=[android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP android.support.annotation.RestrictTo$Scope]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+}
+

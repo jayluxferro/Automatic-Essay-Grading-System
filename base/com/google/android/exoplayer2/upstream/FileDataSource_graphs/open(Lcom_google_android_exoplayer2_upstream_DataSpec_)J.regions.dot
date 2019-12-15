@@ -1,0 +1,91 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.FileDataSource.open(Lcom\/google\/android\/exoplayer2\/upstream\/DataSpec;)J" {
+subgraph cluster_Region_472805737 {
+label = "R(1:(3:1|4|(2:(1:7)|(3:13|(1:15)|17))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1933359799 {
+label = "Try: R(3:1|4|(2:(1:7)|(3:13|(1:15)|17))) catches: R(2:8|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1104198693 {
+label = "R(3:1|4|(2:(1:7)|(3:13|(1:15)|17)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x003b \}\lSplitter:B:0:0x0000\l|r6.uri = r7.uri     \/\/ Catch:\{ IOException \-\> 0x003b \}\lr6.file = new java.io.RandomAccessFile(r7.uri.getPath(), \"r\")     \/\/ Catch:\{ IOException \-\> 0x003b \}\lr6.file.seek(r7.position)     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002b|Catch:\{ IOException \-\> 0x003b \}\lPHI: r2 \l  PHI: (r2v5 long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6.bytesRemaining = r7.length == \-1 ? r6.file.length() \- r7.position : r7.length     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+subgraph cluster_Region_1658824403 {
+label = "R(2:(1:7)|(3:13|(1:15)|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_227882712 {
+label = "IF [B:5:0x0033] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0033|Catch:\{ IOException \-\> 0x003b \}\l|if (r6.bytesRemaining \< 0) goto L_0x0035     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+subgraph cluster_Region_459984095 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|Catch:\{ IOException \-\> 0x003b \}\l|throw new java.io.EOFException()     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+}
+}
+subgraph cluster_Region_1604286979 {
+label = "R(3:13|(1:15)|17)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0045|r6.opened = true\l}"];
+subgraph cluster_IfRegion_1089054237 {
+label = "IF [B:14:0x004a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004a|if (r6.listener != null) goto L_0x004c\l}"];
+subgraph cluster_Region_1693346606 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004c|r6.listener.onTransferStart(r6, r7)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0053|RETURN\l|return r6.bytesRemaining\l}"];
+}
+}
+}
+subgraph cluster_Region_690966360 {
+label = "R(2:8|10) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|throw new com.google.android.exoplayer2.upstream.FileDataSource.FileDataSourceException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_690966360 {
+label = "R(2:8|10) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|throw new com.google.android.exoplayer2.upstream.FileDataSource.FileDataSourceException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0020|Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0022|Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0035|Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003c}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0042|SYNTHETIC\lSplitter:B:11:0x0042\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|Catch:\{ IOException \-\> 0x003b \}\lSplitter:B:11:0x0042\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0051}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.upstream.FileDataSource.open((r6v0 'this' com.google.android.exoplayer2.upstream.FileDataSource A[IMMUTABLE_TYPE, THIS]), (r7v0 'dataSpec' com.google.android.exoplayer2.upstream.DataSpec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.upstream.FileDataSource$FileDataSourceException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_8 -> Node_9;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_0 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_11;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_12 -> Node_4;
+Node_16 -> Node_17;
+}
+

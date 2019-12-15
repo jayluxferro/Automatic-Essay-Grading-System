@@ -1,0 +1,90 @@
+digraph "CFG forandroid.support.media.ExifInterface.setLatLong(DD)V" {
+subgraph cluster_Region_1915050037 {
+label = "R(1:(2:24|25)(1:(2:22|23)(2:16|20)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_205111907 {
+label = "IF [B:1:0x0007, B:3:0x0010, B:5:0x0016] THEN: R(2:24|25) ELSE: R(1:(2:22|23)(2:16|20))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5 \< \-90.0d) goto L_0x0085\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r5 \> 90.0d) goto L_0x0085\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|ADDED_TO_REGION\l|if (java.lang.Double.isNaN(r5) == true) goto L_0x0085\l}"];
+subgraph cluster_Region_611203285 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0085}"];
+Node_25 [shape=record,label="{25\:\ 0x00a0|throw new java.lang.IllegalArgumentException(\"Latitude value \" + r5 + \" is not valid.\")\l}"];
+}
+subgraph cluster_Region_1032227667 {
+label = "R(1:(2:22|23)(2:16|20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1698334758 {
+label = "IF [B:7:0x001f, B:9:0x0028, B:11:0x002e] THEN: R(2:22|23) ELSE: R(2:16|20) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|if (r7 \< \-180.0d) goto L_0x0069\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|ADDED_TO_REGION\l|if (r7 \> 180.0d) goto L_0x0069\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002e|ADDED_TO_REGION\l|if (java.lang.Double.isNaN(r7) == true) goto L_0x0069\l}"];
+subgraph cluster_Region_659711032 {
+label = "R(2:22|23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0069}"];
+Node_23 [shape=record,label="{23\:\ 0x0084|throw new java.lang.IllegalArgumentException(\"Longitude value \" + r7 + \" is not valid.\")\l}"];
+}
+subgraph cluster_Region_1924090007 {
+label = "R(2:16|20)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x003d|PHI: r3 \l  PHI: (r3v1 java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setAttribute(TAG_GPS_LATITUDE_REF, r5 \>= 0.0d ? \"N\" : LATITUDE_SOUTH)\lsetAttribute(TAG_GPS_LATITUDE, convertDecimalDegree(java.lang.Math.abs(r5)))\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0058|PHI: r6 \l  PHI: (r6v3 java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|setAttribute(TAG_GPS_LONGITUDE_REF, r7 \>= 0.0d ? LONGITUDE_EAST : LONGITUDE_WEST)\lsetAttribute(TAG_GPS_LONGITUDE, convertDecimalDegree(java.lang.Math.abs(r7)))\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0021}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002a}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0036}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0038}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003b}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0051}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0053}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0056}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0068}"];
+MethodNode[shape=record,label="{public void android.support.media.ExifInterface.setLatLong((r4v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r5v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_24;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_24;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_24;
+Node_24 -> Node_25;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_22;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_22;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_22;
+Node_22 -> Node_23;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+}
+

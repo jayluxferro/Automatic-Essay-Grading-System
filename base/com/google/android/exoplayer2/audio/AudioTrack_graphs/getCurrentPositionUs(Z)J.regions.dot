@@ -1,0 +1,102 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.AudioTrack.getCurrentPositionUs(Z)J" {
+subgraph cluster_Region_864392567 {
+label = "R(1:(2:(1:2)|(4:(1:5)|6|(1:8)(2:(1:12)(1:15)|(1:14))|16))) | DECL_VAR: long positionUs\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1569046624 {
+label = "R(2:(1:2)|(4:(1:5)|6|(1:8)(2:(1:12)(1:15)|(1:14))|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1091924361 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (hasCurrentPositionUs() == false) goto L_0x0008\l}"];
+subgraph cluster_Region_836275113 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|SYNTHETIC\lRETURN\lORIG_RETURN\l|return Long.MIN_VALUE\l}"];
+}
+}
+subgraph cluster_Region_1047750846 {
+label = "R(4:(1:5)|6|(1:8)(2:(1:12)(1:15)|(1:14))|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_778669768 {
+label = "IF [B:4:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r14.audioTrack.getPlayState() == 3) goto L_0x0014\l}"];
+subgraph cluster_Region_1570561445 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|maybeSampleSyncParams()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0017|long long r8 = java.lang.System.nanoTime() \/ 1000\l}"];
+subgraph cluster_IfRegion_938436262 {
+label = "IF [B:7:0x001f] THEN: R(1:8) ELSE: R(2:(1:12)(1:15)|(1:14))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|if (r14.audioTimestampSet == true) goto L_0x0021\l}"];
+subgraph cluster_Region_1803443693 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|long r6 = framesToDurationUs(r14.audioTrackUtil.getTimestampFramePosition() + durationUsToFrames(r8 \- (r14.audioTrackUtil.getTimestampNanoTime() \/ 1000)))\l}"];
+}
+subgraph cluster_Region_1117726257 {
+label = "R(2:(1:12)(1:15)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_543354724 {
+label = "IF [B:11:0x0044] THEN: R(1:12) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0044|if (r14.playheadOffsetCount == 0) goto L_0x0046\l}"];
+subgraph cluster_Region_354194914 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0046|long r6 = r14.audioTrackUtil.getPositionUs()\l}"];
+}
+subgraph cluster_Region_776876145 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0052|long r6 = r8 + r14.smoothedPlayheadOffsetUs\l}"];
+}
+}
+subgraph cluster_IfRegion_455634744 {
+label = "IF [B:13:0x004c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x004c|PHI: r6 \l  PHI: (r6v1 'positionUs' long) = (r6v0 'positionUs' long), (r6v3 'positionUs' long) binds: [B:15:0x0052, B:12:0x0046] A[DONT_GENERATE, DONT_INLINE]\l|if (r15 == false) goto L_0x004e\l}"];
+subgraph cluster_Region_806305221 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004e|r6 \-= r14.latencyUs\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return r14.startMediaTimeUs + applySpeedup(r6)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003a|PHI: r6 \l  PHI: (r6v4 'positionUs' long) = (r6v1 'positionUs' long), (r6v2 'positionUs' long), (r6v5 'positionUs' long) binds: [B:13:0x004c, B:14:0x004e, B:8:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0042}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.audio.AudioTrack.getCurrentPositionUs((r14v0 'this' com.google.android.exoplayer2.audio.AudioTrack A[IMMUTABLE_TYPE, THIS]), (r15v0 'sourceEnded' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_15 -> Node_13;
+Node_13 -> Node_9[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_9;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_9 -> Node_16;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,66 @@
+digraph "CFG forandroid.support.design.widget.IndicatorViewController.addIndicator(Landroid\/widget\/TextView;I)V" {
+subgraph cluster_Region_1483240550 {
+label = "R(3:(2:4|(1:6))|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1339660416 {
+label = "IF [B:1:0x0003, B:3:0x0007] THEN: R(2:4|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|ADDED_TO_REGION\l|if (r6.indicatorArea == null) goto L_0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r6.captionArea == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1930944423 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|r6.indicatorArea = new android.widget.LinearLayout(r6.context)\lr6.indicatorArea.setOrientation(0)\lr6.textInputView.addView(r6.indicatorArea, \-1, \-2)\lr6.captionArea = new android.widget.FrameLayout(r6.context)\lr6.indicatorArea.addView(r6.captionArea, \-1, new android.widget.FrameLayout.LayoutParams(\-2, \-2))\lr6.indicatorArea.addView(new android.support.p000v4.widget.Space(r6.context), new android.widget.LinearLayout.LayoutParams(0, 0, 1.0f))\l}"];
+subgraph cluster_IfRegion_231746418 {
+label = "IF [B:5:0x004e] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x004e|if (r6.textInputView.getEditText() != null) goto L_0x0050\l}"];
+subgraph cluster_Region_377529834 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0050|adjustIndicatorPadding()\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_362689058 {
+label = "IF [B:8:0x0057] THEN: R(1:9) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0057|if (isCaptionView(r8) == true) goto L_0x0059\l}"];
+subgraph cluster_Region_1488530897 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0059|r6.captionArea.setVisibility(0)\lr6.captionArea.addView(r7)\lr6.captionViewsAdded++\l}"];
+}
+subgraph cluster_Region_1421743631 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x006a|r6.indicatorArea.addView(r7, r8)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x006f|r6.indicatorArea.setVisibility(0)\lr6.indicatorsAdded++\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0053}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x007a}"];
+MethodNode[shape=record,label="{void android.support.design.widget.IndicatorViewController.addIndicator((r6v0 'this' android.support.design.widget.IndicatorViewController A[IMMUTABLE_TYPE, THIS]), (r7v0 android.widget.TextView A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

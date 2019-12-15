@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.v4.app.FragmentActivity.onPause()V" {
+subgraph cluster_Region_1594672059 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onPause()\lr2.mResumed = false\l}"];
+subgraph cluster_IfRegion_2005604443 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r2.mHandler.hasMessages(2) == true) goto L_0x000f\l}"];
+subgraph cluster_Region_175594146 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|r2.mHandler.removeMessages(2)\lonResumeFragments()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0017|r2.mFragments.dispatchPause()\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+MethodNode[shape=record,label="{protected void android.support.v4.app.FragmentActivity.onPause((r2v0 'this' android.support.v4.app.FragmentActivity A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

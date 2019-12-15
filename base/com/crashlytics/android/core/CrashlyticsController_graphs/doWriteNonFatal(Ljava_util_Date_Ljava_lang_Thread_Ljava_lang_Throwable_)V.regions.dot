@@ -1,0 +1,312 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.doWriteNonFatal(Ljava\/util\/Date;Ljava\/lang\/Thread;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_996998095 {
+label = "R(2:0|(2:(2:2|3)|(4:4|(2:6|(2:8|(2:11|12)))|25|(1:27)))) | DECL_VAR: com.crashlytics.android.core.ClsFileOutputStream null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = getCurrentSessionId()\lcom.crashlytics.android.core.CodedOutputStream r1 = null\l}"];
+subgraph cluster_Region_1153526939 {
+label = "R(2:(2:2|3)|(4:4|(2:6|(2:8|(2:11|12)))|25|(1:27)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1019685180 {
+label = "IF [B:1:0x0005] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 == null) goto L_0x0007\l}"];
+subgraph cluster_Region_2070133848 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Tried to write a non\-fatal exception while no session was open.\", (java.lang.Throwable) null)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1034662432 {
+label = "R(4:4|(2:6|(2:8|(2:11|12)))|25|(1:27))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|recordLoggedExceptionAnswersEvent(r0, r15.getClass().getName())\l}"];
+subgraph cluster_TryCatchRegion_2063172623 {
+label = "Try: R(2:6|(2:8|(2:11|12))) catches: R(6:20|21|23|24|25|27), R(4:18|19|31|32)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1798044144 {
+label = "R(2:6|(2:8|(2:11|12)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ Exception \-\> 0x008b, all \-\> 0x0088 \}\lSplitter:B:5:0x001e\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Crashlytics is logging non\-fatal exception \"\" + r15 + \"\" from thread \" + r14.getName())     \/\/ Catch:\{ Exception \-\> 0x008b, all \-\> 0x0088 \}\lcom.crashlytics.android.core.ClsFileOutputStream r3 = new com.crashlytics.android.core.ClsFileOutputStream(getFilesDir(), r0 + SESSION_NON_FATAL_TAG + p018io.fabric.sdk.android.services.common.CommonUtils.padWithZerosToMaxIntWidth(r12.eventCounter.getAndIncrement()))     \/\/ Catch:\{ Exception \-\> 0x008b, all \-\> 0x0088 \}\l}"];
+subgraph cluster_TryCatchRegion_1440434917 {
+label = "Try: R(2:8|(2:11|12)) catches: R(5:17|23|24|25|27)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1157805515 {
+label = "R(2:8|(2:11|12))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ Exception \-\> 0x0086 \}\lSplitter:B:7:0x006b\l|com.crashlytics.android.core.CodedOutputStream com.crashlytics.android.core.CodedOutputStream r2 = com.crashlytics.android.core.CodedOutputStream.newInstance((java.io.OutputStream) r3)     \/\/ Catch:\{ Exception \-\> 0x0086 \}\l}"];
+subgraph cluster_TryCatchRegion_439435633 {
+label = "Try: R(2:11|12) catches: R(3:15|16|(4:23|24|25|27)), R(4:13|14|31|32)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1027621729 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|Catch:\{ Exception \-\> 0x0083, all \-\> 0x0080 \}\lSplitter:B:10:0x0077\l|writeSessionEvent(r2, r13, r14, r15, EVENT_TYPE_LOGGED, false)     \/\/ Catch:\{ Exception \-\> 0x0083, all \-\> 0x0080 \}\l}"];
+Node_12 [shape=record,label="{12\:\ 0x007a|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r2, \"Failed to flush to non\-fatal file.\")\l}"];
+}
+subgraph cluster_Region_2134276056 {
+label = "R(3:15|16|(4:23|24|25|27)) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0083|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:10:0x0077\l|java.lang.Exception r13 = e\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0084|r1 = r2\l}"];
+subgraph cluster_TryCatchRegion_2094444307 {
+label = "Try: R(4:23|24|25|27) catches: R(3:30|31|32)";
+node [shape=record,color=blue];
+subgraph cluster_Region_927323609 {
+label = "R(4:23|24|25|27)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_1261307264 {
+label = "R(3:30|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00b5|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:22:0x008d\l|java.lang.Throwable r13 = th\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+}
+}
+subgraph cluster_Region_957887566 {
+label = "R(4:13|14|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0080|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:10:0x0077\l|java.lang.Throwable r13 = th\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0081|r1 = r2\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+}
+}
+subgraph cluster_Region_844010692 {
+label = "R(5:17|23|24|25|27) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0086|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:7:0x006b\l|java.lang.Exception r13 = e\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+}
+}
+subgraph cluster_Region_1385433631 {
+label = "R(6:20|21|23|24|25|27) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008b|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:5:0x001e\l|java.lang.Exception r13 = e\l}"];
+Node_21 [shape=record,label="{21\:\ 0x008c|r3 = null\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_164006812 {
+label = "R(4:18|19|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0088|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x001e\l|java.lang.Throwable r13 = th\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0089|r3 = null\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+subgraph cluster_TryCatchRegion_1245287802 {
+label = "Try: R(1:27) catches: R(2:28|29)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1724161476 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_1169842874 {
+label = "R(2:28|29) | ExcHandler: Exception (r13v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00a8|ExcHandler: Exception (r13v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:26:0x00a4\l}"];
+Node_29 [shape=record,label="{29\:\ 0x00a9|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred when trimming non\-fatal files.\", r13)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1385433631 {
+label = "R(6:20|21|23|24|25|27) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x008b|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:5:0x001e\l|java.lang.Exception r13 = e\l}"];
+Node_21 [shape=record,label="{21\:\ 0x008c|r3 = null\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_164006812 {
+label = "R(4:18|19|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0088|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x001e\l|java.lang.Throwable r13 = th\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0089|r3 = null\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+subgraph cluster_Region_844010692 {
+label = "R(5:17|23|24|25|27) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0086|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:7:0x006b\l|java.lang.Exception r13 = e\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_1261307264 {
+label = "R(3:30|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00b5|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:22:0x008d\l|java.lang.Throwable r13 = th\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+subgraph cluster_Region_2134276056 {
+label = "R(3:15|16|(4:23|24|25|27)) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0083|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:10:0x0077\l|java.lang.Exception r13 = e\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0084|r1 = r2\l}"];
+subgraph cluster_TryCatchRegion_2094444307 {
+label = "Try: R(4:23|24|25|27) catches: R(3:30|31|32)";
+node [shape=record,color=blue];
+subgraph cluster_Region_927323609 {
+label = "R(4:23|24|25|27)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x00b5 \}\lSplitter:B:22:0x008d\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred in the non\-fatal exception logger\", r13)     \/\/ Catch:\{ all \-\> 0x00b5 \}\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0098|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\l}"];
+Node_25 [shape=record,label="{25\:\ 0x009d|PHI: r3 \l  PHI: (r3v1 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:24:0x0098, B:12:0x007a] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_27 [shape=record,label="{27\:\ ?|Catch:\{ Exception \-\> 0x00a8 \}\lSplitter:B:26:0x00a4\l|trimSessionEventFiles(r0, 64)     \/\/ Catch:\{ Exception \-\> 0x00a8 \}\l}"];
+}
+subgraph cluster_Region_1261307264 {
+label = "R(3:30|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00b5|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:22:0x008d\l|java.lang.Throwable r13 = th\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+}
+}
+subgraph cluster_Region_957887566 {
+label = "R(4:13|14|31|32) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0080|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:10:0x0077\l|java.lang.Throwable r13 = th\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0081|r1 = r2\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00b6|PHI: r1 r3 r13 \l  PHI: (r1v1 com.crashlytics.android.core.CodedOutputStream) = (r1v2 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v4 com.crashlytics.android.core.CodedOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 com.crashlytics.android.core.ClsFileOutputStream) = (r3v2 com.crashlytics.android.core.ClsFileOutputStream), (r3v4 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 'th' java.lang.Throwable) = (r13v6 'th' java.lang.Throwable), (r13v9 'th' java.lang.Throwable), (r13v12 'th' java.lang.Throwable) binds: [B:30:0x00b5, B:19:0x0089, B:14:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.flushOrLog(r1, \"Failed to flush to non\-fatal file.\")\lp018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r3, \"Failed to close non\-fatal file output stream.\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00c0|throw r13\l}"];
+}
+subgraph cluster_Region_1169842874 {
+label = "R(2:28|29) | ExcHandler: Exception (r13v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00a8|ExcHandler: Exception (r13v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:26:0x00a4\l}"];
+Node_29 [shape=record,label="{29\:\ 0x00a9|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"An error occurred when trimming non\-fatal files.\", r13)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001e|SYNTHETIC\lSplitter:B:5:0x001e\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x006b|SYNTHETIC\lSplitter:B:7:0x006b\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x006f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0077|SYNTHETIC\lSplitter:B:10:0x0077\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x008d|SYNTHETIC\lPHI: r1 r3 r13 \l  PHI: (r1v2 com.crashlytics.android.core.CodedOutputStream) = (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v0 com.crashlytics.android.core.CodedOutputStream), (r1v3 com.crashlytics.android.core.CodedOutputStream) binds: [B:21:0x008c, B:17:0x0086, B:16:0x0084] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 com.crashlytics.android.core.ClsFileOutputStream) = (r3v3 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream), (r3v7 com.crashlytics.android.core.ClsFileOutputStream) binds: [B:21:0x008c, B:17:0x0086, B:16:0x0084] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v5 'e' java.lang.Exception) = (r13v8 'e' java.lang.Exception), (r13v10 'e' java.lang.Exception), (r13v11 'e' java.lang.Exception) binds: [B:21:0x008c, B:17:0x0086, B:16:0x0084] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:22:0x008d\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x00a4|SYNTHETIC\lSplitter:B:26:0x00a4\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.core.CrashlyticsController.doWriteNonFatal((r12v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r13v0 java.util.Date A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 java.lang.Thread A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 java.lang.Throwable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_20;
+Node_6 -> Node_18;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_11 -> Node_15;
+Node_11 -> Node_13;
+Node_12 -> Node_25;
+Node_15 -> Node_16;
+Node_16 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_13 -> Node_14;
+Node_14 -> Node_31;
+Node_31 -> Node_32;
+Node_17 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_18 -> Node_19;
+Node_19 -> Node_31;
+Node_31 -> Node_32;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_28 -> Node_29;
+Node_29 -> Node_33;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_18 -> Node_19;
+Node_19 -> Node_31;
+Node_31 -> Node_32;
+Node_17 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_15 -> Node_16;
+Node_16 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_30;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_27 -> Node_34;
+Node_30 -> Node_31;
+Node_31 -> Node_32;
+Node_13 -> Node_14;
+Node_14 -> Node_31;
+Node_31 -> Node_32;
+Node_28 -> Node_29;
+Node_29 -> Node_33;
+Node_5 -> Node_6;
+Node_5 -> Node_20;
+Node_5 -> Node_18;
+Node_7 -> Node_8;
+Node_7 -> Node_17;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_15;
+Node_10 -> Node_13;
+Node_22 -> Node_23;
+Node_22 -> Node_30;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+}
+

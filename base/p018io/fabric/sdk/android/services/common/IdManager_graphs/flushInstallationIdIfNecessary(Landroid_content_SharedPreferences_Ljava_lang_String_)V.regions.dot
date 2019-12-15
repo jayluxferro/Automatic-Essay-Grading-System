@@ -1,0 +1,102 @@
+digraph "CFG forio.fabric.sdk.android.services.common.IdManager.flushInstallationIdIfNecessary(Landroid\/content\/SharedPreferences;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_505191425 {
+label = "R(2:0|(1:(1:(3:8|(1:10)(1:(1:13))|14))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.installationIdLock.lock()\l}"];
+subgraph cluster_TryCatchRegion_1385136910 {
+label = "Try: R(1:(1:(3:8|(1:10)(1:(1:13))|14))) finally: R(3:16|17|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1867192408 {
+label = "R(1:(1:(3:8|(1:10)(1:(1:13))|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1107842922 {
+label = "R(1:(3:8|(1:10)(1:(1:13))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_948840382 {
+label = "IF [B:3:0x0009] THEN: R(3:8|(1:10)(1:(1:13))|14) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (android.text.TextUtils.isEmpty(r4) != true) goto L_0x0011\l}"];
+subgraph cluster_Region_506063771 {
+label = "R(3:8|(1:10)(1:(1:13))|14)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ all \-\> 0x004b \}\lSplitter:B:7:0x0014\l|java.lang.String java.lang.String r0 = r3.getString(PREFKEY_ADVERTISING_ID, (java.lang.String) null)     \/\/ Catch:\{ all \-\> 0x004b \}\l}"];
+subgraph cluster_IfRegion_1213769472 {
+label = "IF [B:9:0x001c] THEN: R(1:10) ELSE: R(1:(1:13))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|Catch:\{ all \-\> 0x004b \}\l|if (android.text.TextUtils.isEmpty(r0) == true) goto L_0x001e     \/\/ Catch:\{ all \-\> 0x004b \}\l}"];
+subgraph cluster_Region_372724818 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|Catch:\{ all \-\> 0x004b \}\l|r3.edit().putString(PREFKEY_ADVERTISING_ID, r4).commit()     \/\/ Catch:\{ all \-\> 0x004b \}\l}"];
+}
+subgraph cluster_Region_554243860 {
+label = "R(1:(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1061977839 {
+label = "IF [B:12:0x0030] THEN: R(1:13) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0030|Catch:\{ all \-\> 0x004b \}\l|if (r0.equals(r4) == false) goto L_0x0032     \/\/ Catch:\{ all \-\> 0x004b \}\l}"];
+subgraph cluster_Region_557492056 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0032|Catch:\{ all \-\> 0x004b \}\l|r3.edit().remove(PREFKEY_INSTALLATION_UUID).putString(PREFKEY_ADVERTISING_ID, r4).commit()     \/\/ Catch:\{ all \-\> 0x004b \}\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0045|r2.installationIdLock.unlock()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1749079830 {
+label = "R(3:16|17|18) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004b|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_17 [shape=record,label="{17\:\ 0x004c|FINALLY_INSNS\l|r2.installationIdLock.unlock()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0051|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_1749079830 {
+label = "R(3:16|17|18) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004b|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_17 [shape=record,label="{17\:\ 0x004c|FINALLY_INSNS\l|r2.installationIdLock.unlock()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0051|throw r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005|SYNTHETIC\lSplitter:B:1:0x0005\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x004b \}\lSplitter:B:1:0x0005\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b|DONT_GENERATE\l|java.util.concurrent.locks.ReentrantLock r3 = r2.installationIdLock\lr3.unlock()\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0014|SYNTHETIC\lSplitter:B:7:0x0014\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c|Catch:\{ all \-\> 0x004b \}\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004a}"];
+MethodNode[shape=record,label="{private void io.fabric.sdk.android.services.common.IdManager.flushInstallationIdIfNecessary((r2v0 'this' io.fabric.sdk.android.services.common.IdManager A[IMMUTABLE_TYPE, THIS]), (r3v0 android.content.SharedPreferences A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.SuppressLint, \{value=[CommitPrefEdits]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_1 -> Node_2;
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_16;
+Node_11 -> Node_12;
+}
+

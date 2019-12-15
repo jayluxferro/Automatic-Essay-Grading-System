@@ -1,0 +1,31 @@
+digraph "CFG fororg.mapsforge.map.reader.header.RequiredFields.readWayTags(Lorg\/mapsforge\/map\/reader\/ReadBuffer;Lorg\/mapsforge\/map\/reader\/header\/MapFileInfoBuilder;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r5 I:org.mapsforge.map.reader.ReadBuffer) org.mapsforge.map.reader.ReadBuffer.readShort():int type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:11:0x0035 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: NEW_ARRAY  (r1 I:org.mapsforge.core.model.Tag[]) = (r0 I:int A[IMMUTABLE_TYPE]) type: org.mapsforge.core.model.Tag[] \l0x0008: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IF  (r2 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:9:0x0032 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: INVOKE  (r3 I:java.lang.String) = (r5 I:org.mapsforge.map.reader.ReadBuffer) org.mapsforge.map.reader.ReadBuffer.readUTF8EncodedString():java.lang.String type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|0x000f: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001b \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|0x0011: NEW_INSTANCE  (r4 I:org.mapsforge.core.model.Tag) =  org.mapsforge.core.model.Tag \l0x0013: INVOKE  \l  (r4 I:org.mapsforge.core.model.Tag)\l  (r3 I:java.lang.String)\l org.mapsforge.core.model.Tag.\<init\>(java.lang.String):void type: DIRECT \l0x0016: APUT  \l  (r1 I:?[OBJECT, ARRAY][])\l  (r2 I:?[int, short, byte, char])\l  (r4 I:?[OBJECT, ARRAY])\l \l0x0018: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001b|0x001b: NEW_INSTANCE  (r5 I:org.mapsforge.map.reader.header.MapFileException) =  org.mapsforge.map.reader.header.MapFileException \l0x001d: NEW_INSTANCE  (r6 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001f: INVOKE  (r6 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0022: CONST_STR  (r0 I:java.lang.String) =  \"way tag must not be null: \" \l0x0024: INVOKE  (r6 I:java.lang.StringBuilder), (r0 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0027: INVOKE  (r6 I:java.lang.StringBuilder), (r2 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x002a: INVOKE  (r6 I:java.lang.String) = (r6 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x002e: INVOKE  \l  (r5 I:org.mapsforge.map.reader.header.MapFileException)\l  (r6 I:java.lang.String)\l org.mapsforge.map.reader.header.MapFileException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0031|0x0031: THROW  (r5 I:java.lang.Throwable) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|0x0032: IPUT  \l  (r1 I:org.mapsforge.core.model.Tag[])\l  (r6 I:org.mapsforge.map.reader.header.MapFileInfoBuilder)\l org.mapsforge.map.reader.header.MapFileInfoBuilder.wayTags org.mapsforge.core.model.Tag[] \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0034|0x0034: RETURN   \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0035|0x0035: NEW_INSTANCE  (r5 I:org.mapsforge.map.reader.header.MapFileException) =  org.mapsforge.map.reader.header.MapFileException \l0x0037: NEW_INSTANCE  (r6 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0039: INVOKE  (r6 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x003c: CONST_STR  (r1 I:java.lang.String) =  \"invalid number of way tags: \" \l0x003e: INVOKE  (r6 I:java.lang.StringBuilder), (r1 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0041: INVOKE  (r6 I:java.lang.StringBuilder), (r0 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0044: INVOKE  (r6 I:java.lang.String) = (r6 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0048: INVOKE  \l  (r5 I:org.mapsforge.map.reader.header.MapFileException)\l  (r6 I:java.lang.String)\l org.mapsforge.map.reader.header.MapFileException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_12 [shape=record,label="{12\:\ 0x004b|0x004b: THROW  (r5 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{static void org.mapsforge.map.reader.header.RequiredFields.readWayTags((r5 I:org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:org.mapsforge.map.reader.header.MapFileInfoBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_3;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

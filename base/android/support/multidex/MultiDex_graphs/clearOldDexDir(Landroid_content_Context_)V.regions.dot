@@ -1,0 +1,116 @@
+digraph "CFG forandroid.support.multidex.MultiDex.clearOldDexDir(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_457068482 {
+label = "R(2:0|(2:2|(2:(2:4|19)|(3:5|(3:7|(1:9)(1:11)|10)|(1:14)(1:15))))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File java.io.File r0 = new java.io.File(r10.getFilesDir(), \"secondary\-dexes\")\l}"];
+subgraph cluster_IfRegion_211816957 {
+label = "IF [B:1:0x000f] THEN: R(2:2|(2:(2:4|19)|(3:5|(3:7|(1:9)(1:11)|10)|(1:14)(1:15)))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r0.isDirectory() == true) goto L_0x0011\l}"];
+subgraph cluster_Region_1398764000 {
+label = "R(2:2|(2:(2:4|19)|(3:5|(3:7|(1:9)(1:11)|10)|(1:14)(1:15))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|android.util.Log.i(TAG, \"Clearing old secondary dex dir (\" + r0.getPath() + \").\")\ljava.io.File[] java.io.File[] r1 = r0.listFiles()\l}"];
+subgraph cluster_Region_423279626 {
+label = "R(2:(2:4|19)|(3:5|(3:7|(1:9)(1:11)|10)|(1:14)(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1334220429 {
+label = "IF [B:3:0x0037] THEN: R(2:4|19) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0037|if (r1 == null) goto L_0x0039\l}"];
+subgraph cluster_Region_1211123677 {
+label = "R(2:4|19)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0039|android.util.Log.w(TAG, \"Failed to list secondary dex dir content (\" + r0.getPath() + \").\")\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_620686682 {
+label = "R(3:5|(3:7|(1:9)(1:11)|10)|(1:14)(1:15))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x005c|int int r4 = r1.length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_2126745577 {
+label = "LOOP:0: (3:7|(1:9)(1:11)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x005e|LOOP_START\lPHI: r3 \l  PHI: (r3v4 int) = (r3v3 int), (r3v8 int) binds: [B:5:0x005c, B:10:0x00ae] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x005e\-\>B:10:0x00ae\l|if (r3 \< r4) goto L_0x0060\l}"];
+subgraph cluster_Region_1571214255 {
+label = "R(3:7|(1:9)(1:11)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0060|r2 = r1[r3]\landroid.util.Log.i(TAG, \"Trying to delete old file \" + r2.getPath() + \" of size \" + r2.length())\l}"];
+subgraph cluster_IfRegion_529337326 {
+label = "IF [B:8:0x0090] THEN: R(1:9) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0090|if (r2.delete() == false) goto L_0x0092\l}"];
+subgraph cluster_Region_732266308 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0092|android.util.Log.w(TAG, \"Failed to delete old file \" + r2.getPath())\l}"];
+}
+subgraph cluster_Region_1739807958 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x00b1|android.util.Log.i(TAG, \"Deleted old file \" + r2.getPath())\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x00ae|LOOP_END\lLOOP:0: B:6:0x005e\-\>B:10:0x00ae\l|r3++\l}"];
+}
+}
+subgraph cluster_IfRegion_563695942 {
+label = "IF [B:13:0x00d2] THEN: R(1:14) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00d2|if (r0.delete() == false) goto L_0x00d4\l}"];
+subgraph cluster_Region_767202161 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x00d4|android.util.Log.w(TAG, \"Failed to delete secondary dex dir \" + r0.getPath())\l}"];
+}
+subgraph cluster_Region_88221527 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00f2|android.util.Log.i(TAG, \"Deleted old secondary dex dir \" + r0.getPath())\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_99429134 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_12 [shape=record,color=red,label="{12\:\ 0x00ce}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x00ce|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x00ae|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x00ae|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void android.support.multidex.MultiDex.clearOldDexDir((r10v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.Exception]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_20[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_19;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_16[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_17;
+Node_11 -> Node_18;
+Node_10 -> Node_6;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_21;
+Node_15 -> Node_22;
+Node_12 -> Node_13;
+Node_16 -> Node_12;
+Node_17 -> Node_10;
+Node_18 -> Node_10;
+}
+

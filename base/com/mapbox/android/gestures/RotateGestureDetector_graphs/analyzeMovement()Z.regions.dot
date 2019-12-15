@@ -1,0 +1,69 @@
+digraph "CFG forcom.mapbox.android.gestures.RotateGestureDetector.analyzeMovement()Z" {
+subgraph cluster_Region_1790297900 {
+label = "R(2:0|(2:(1:5)|(1:(2:(1:13)|(2:10|11)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.analyzeMovement()\lr3.deltaSinceLast = getRotationDegreesSinceLast()\lr3.deltaSinceStart += r3.deltaSinceLast\l}"];
+subgraph cluster_Region_1500089349 {
+label = "R(2:(1:5)|(1:(2:(1:13)|(2:10|11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1259605971 {
+label = "IF [B:1:0x0014, B:3:0x001b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|if (isInProgress() != false) goto L_0x0016\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|ADDED_TO_REGION\l|if (r3.deltaSinceLast != 0.0f) goto L_0x001d\l}"];
+subgraph cluster_Region_922634257 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|RETURN\l|return ((com.mapbox.android.gestures.RotateGestureDetector.OnRotateGestureListener) r3.listener).onRotate(r3, r3.deltaSinceLast, r3.deltaSinceStart)\l}"];
+}
+}
+subgraph cluster_Region_1916167493 {
+label = "R(1:(2:(1:13)|(2:10|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1739245218 {
+label = "R(2:(1:13)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_204154643 {
+label = "IF [B:7:0x002f, B:9:0x0039] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|if (canExecute(2) == false) goto L_?\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|ADDED_TO_REGION\l|if (((com.mapbox.android.gestures.RotateGestureDetector.OnRotateGestureListener) r3.listener).onRotateBegin(r3) == false) goto L_?\l}"];
+subgraph cluster_Region_1213290567 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_160174149 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003b|gestureStarted()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003f|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0016}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0031}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{protected boolean com.mapbox.android.gestures.RotateGestureDetector.analyzeMovement((r3v0 'this' com.mapbox.android.gestures.RotateGestureDetector A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_12;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

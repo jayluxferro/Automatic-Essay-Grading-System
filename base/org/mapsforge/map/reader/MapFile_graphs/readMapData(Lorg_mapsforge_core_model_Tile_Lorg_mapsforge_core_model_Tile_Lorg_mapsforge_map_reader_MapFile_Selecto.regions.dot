@@ -1,0 +1,87 @@
+digraph "CFG fororg.mapsforge.map.reader.MapFile.readMapData(Lorg\/mapsforge\/core\/model\/Tile;Lorg\/mapsforge\/core\/model\/Tile;Lorg\/mapsforge\/map\/reader\/MapFile$Selector;)Lorg\/mapsforge\/map\/datastore\/MapReadResult;" {
+subgraph cluster_Region_2014609188 {
+label = "R(2:(1:4)|(2:7|(2:(2:9|10)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1174358831 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (r5.tileX \> r6.tileX) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r5.tileY \> r6.tileY) goto L_0x000c\l}"];
+subgraph cluster_Region_2009790259 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|java.lang.IllegalArgumentException new java.lang.IllegalArgumentException(\"upperLeft tile must be above and left of lowerRight tile\")\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_338684560 {
+label = "Try: R(2:7|(2:(2:9|10)|(2:11|12))) catches: R(3:13|14|15)";
+node [shape=record,color=blue];
+subgraph cluster_Region_760693943 {
+label = "R(2:7|(2:(2:9|10)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ IOException \-\> 0x0055 \}\lSplitter:B:6:0x0014\l|org.mapsforge.map.reader.QueryParameters org.mapsforge.map.reader.QueryParameters r1 = new org.mapsforge.map.reader.QueryParameters()     \/\/ Catch:\{ IOException \-\> 0x0055 \}\lr1.queryZoomLevel = r4.mapFileHeader.getQueryZoomLevel(r5.zoomLevel)     \/\/ Catch:\{ IOException \-\> 0x0055 \}\lorg.mapsforge.map.reader.header.SubFileParameter org.mapsforge.map.reader.header.SubFileParameter r2 = r4.mapFileHeader.getSubFileParameter(r1.queryZoomLevel)     \/\/ Catch:\{ IOException \-\> 0x0055 \}\l}"];
+subgraph cluster_Region_696039519 {
+label = "R(2:(2:9|10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1613723005 {
+label = "IF [B:8:0x002b] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|Catch:\{ IOException \-\> 0x0055 \}\l|if (r2 == null) goto L_0x002d     \/\/ Catch:\{ IOException \-\> 0x0055 \}\l}"];
+subgraph cluster_Region_1616875025 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002d|Catch:\{ IOException \-\> 0x0055 \}\l|java.util.logging.Logger java.util.logging.Logger r5 = LOGGER     \/\/ Catch:\{ IOException \-\> 0x0055 \}\lr5.warning(\"no sub\-file for zoom level: \" + r1.queryZoomLevel)     \/\/ Catch:\{ IOException \-\> 0x0055 \}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0045|RETURN\lCatch:\{ IOException \-\> 0x0055 \}\l|return null     \/\/ Catch:\{ IOException \-\> 0x0055 \}\l}"];
+}
+}
+subgraph cluster_Region_1090442789 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0046|Catch:\{ IOException \-\> 0x0055 \}\l|r1.calculateBaseTiles(r5, r6, r2)     \/\/ Catch:\{ IOException \-\> 0x0055 \}\lr1.calculateBlocks(r2)     \/\/ Catch:\{ IOException \-\> 0x0055 \}\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0054|RETURN\l|return processBlocks(r1, r2, org.mapsforge.core.model.Tile.getBoundingBox(r5, r6), r7)\l}"];
+}
+}
+}
+subgraph cluster_Region_1925844747 {
+label = "R(3:13|14|15) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0055|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0014\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0056|LOGGER.log(java.util.logging.Level.SEVERE, r5.getMessage(), r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0061|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_1925844747 {
+label = "R(3:13|14|15) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0055|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0014\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0056|LOGGER.log(java.util.logging.Level.SEVERE, r5.getMessage(), r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0061|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014|SYNTHETIC\lSplitter:B:6:0x0014\l}"];
+MethodNode[shape=record,label="{private org.mapsforge.map.datastore.MapReadResult org.mapsforge.map.reader.MapFile.readMapData((r4v0 'this' org.mapsforge.map.reader.MapFile A[IMMUTABLE_TYPE, THIS]), (r5v0 org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 org.mapsforge.map.reader.MapFile$Selector A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_13;
+}
+

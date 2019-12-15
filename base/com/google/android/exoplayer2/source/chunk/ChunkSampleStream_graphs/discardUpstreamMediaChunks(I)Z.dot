@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.android.exoplayer2.source.chunk.ChunkSampleStream.discardUpstreamMediaChunks(I)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r8.mediaChunks.size() \> r9) goto L_0x000b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|r2 = 0\llong r4 = r8.mediaChunks.getLast().endTimeUs\lr7 = null\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|LOOP_START\lPHI: r2 r7 \l  PHI: (r2v1 'startTimeUs' long) = (r2v0 'startTimeUs' long), (r2v2 'startTimeUs' long) binds: [B:3:0x000b, B:6:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 'removed' com.google.android.exoplayer2.source.chunk.BaseMediaChunk) = (r7v0 'removed' com.google.android.exoplayer2.source.chunk.BaseMediaChunk), (r7v3 'removed' com.google.android.exoplayer2.source.chunk.BaseMediaChunk) binds: [B:3:0x000b, B:6:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0018\-\>B:6:0x0020\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|if (r8.mediaChunks.size() \<= r9) goto L_0x002d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|LOOP_END\lLOOP:0: B:4:0x0018\-\>B:6:0x0020\l|com.google.android.exoplayer2.source.chunk.BaseMediaChunk r7 = r8.mediaChunks.removeLast()\llong r2 = r7.startTimeUs\lr8.loadingFinished = false\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|r8.primarySampleQueue.discardUpstreamSamples(r7.getFirstSampleIndex(0))\lr6 = 0\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0037|LOOP_START\lPHI: r6 \l  PHI: (r6v1 'i' int) = (r6v0 'i' int), (r6v2 'i' int) binds: [B:7:0x002d, B:10:0x003c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x0037\-\>B:10:0x003c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|if (r6 \>= r8.embeddedSampleQueues.length) goto L_0x004c\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003c|LOOP_END\lLOOP:1: B:8:0x0037\-\>B:10:0x003c\l|r8.embeddedSampleQueues[r6].discardUpstreamSamples(r7.getFirstSampleIndex(r6 + 1))\lint r6 = r6 + 1\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004c|r8.eventDispatcher.upstreamDiscarded(r8.primaryTrackType, r2, r4)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002d|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x004c|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.source.chunk.ChunkSampleStream.discardUpstreamMediaChunks((r8v0 'this' com.google.android.exoplayer2.source.chunk.ChunkSampleStream A[IMMUTABLE_TYPE, THIS]), (r9v0 'queueLength' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_14;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_10 -> Node_8;
+Node_11 -> Node_15;
+Node_12 -> Node_7;
+Node_13 -> Node_11;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.isUserAgentValid(Ljava\/lang\/String;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:boolean) = (r3 I:java.lang.String) com.mapbox.android.telemetry.TelemetryUtils.isEmpty(java.lang.String):boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0022 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: SGET  (r0 I:java.util.List\<java.lang.String\>) =  com.mapbox.android.telemetry.MapboxTelemetry.VALID_USER_AGENTS java.util.List \l0x0008: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|0x0010: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0022 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|0x0012: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0016: CHECK_CAST  (r1 I:java.lang.String) = (java.lang.String) (r1 I:?[OBJECT, ARRAY]) \l0x0018: INVOKE  (r1 I:boolean) = (r3 I:java.lang.String), (r1 I:java.lang.String) java.lang.String.startsWith(java.lang.String):boolean type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|0x001c: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x000c \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001e|0x001e: IPUT  \l  (r3 I:java.lang.String)\l  (r2 I:com.mapbox.android.telemetry.MapboxTelemetry)\l com.mapbox.android.telemetry.MapboxTelemetry.userAgent java.lang.String \l0x0020: CONST  (r3 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|0x0021: RETURN  (r3 I:boolean) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|0x0022: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0023|0x0023: RETURN  (r3 I:boolean) \l}"];
+MethodNode[shape=record,label="{private boolean com.mapbox.android.telemetry.MapboxTelemetry.isUserAgentValid((r2 'this' I:com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]), (r3 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_3;
+Node_6 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

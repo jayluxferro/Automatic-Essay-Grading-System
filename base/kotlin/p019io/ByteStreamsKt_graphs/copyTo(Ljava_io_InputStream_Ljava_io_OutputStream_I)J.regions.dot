@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.io.ByteStreamsKt.copyTo(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;I)J" {
+subgraph cluster_Region_384144874 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r6, \"out\")\lbyte[] byte[] r7 = new byte[r7]\lint int r0 = r5.read(r7)\llong r1 = 0\l}"];
+subgraph cluster_LoopRegion_1802243317 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|LOOP_START\lPHI: r0 r1 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:2:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 long) = (r1v0 long), (r1v2 long) binds: [B:0:0x0000, B:2:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0012\-\>B:2:0x0014\l|if (r0 \>= 0) goto L_0x0014\l}"];
+subgraph cluster_Region_1229905141 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|LOOP_END\lLOOP:0: B:1:0x0012\-\>B:2:0x0014\l|r6.write(r7, 0, r0)\lr1 += (long) r0\lint r0 = r5.read(r7)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001f|RETURN\l|return r1\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final long kotlin.io.ByteStreamsKt.copyTo((r5v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

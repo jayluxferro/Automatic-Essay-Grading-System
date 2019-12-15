@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.id3.Id3Decoder.decodePrivFrame(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;I)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/PrivFrame;" {
+subgraph cluster_Region_1448422093 {
+label = "R(3:0|(1:2)(1:5)|4) | DECL_VAR: byte[] privateData\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[r8]\lr7.readBytes(r0, 0, r8)\lint int r2 = indexOfZeroByte(r0, 0)\ljava.lang.String java.lang.String r1 = new java.lang.String(r0, 0, r2, \"ISO\-8859\-1\")\lint int r4 = r2 + 1\l}"];
+subgraph cluster_IfRegion_1215089831 {
+label = "IF [B:1:0x0014] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|if (r4 \< r0.length) goto L_0x0016\l}"];
+subgraph cluster_Region_837318569 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|byte[] r3 = java.util.Arrays.copyOfRange(r0, r4, r0.length)\l}"];
+}
+subgraph cluster_Region_405143652 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|byte[] r3 = new byte[0]\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0020|RETURN\l|return new com.google.android.exoplayer2.metadata.id3.PrivFrame(r1, r3)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x001b|PHI: r3 \l  PHI: (r3v1 'privateData' byte[]) = (r3v0 'privateData' byte[]), (r3v2 'privateData' byte[]) binds: [B:5:0x0021, B:2:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.PrivFrame com.google.android.exoplayer2.metadata.id3.Id3Decoder.decodePrivFrame((r7v0 'id3Data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'frameSize' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.UnsupportedEncodingException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_3;
+Node_3 -> Node_4;
+}
+

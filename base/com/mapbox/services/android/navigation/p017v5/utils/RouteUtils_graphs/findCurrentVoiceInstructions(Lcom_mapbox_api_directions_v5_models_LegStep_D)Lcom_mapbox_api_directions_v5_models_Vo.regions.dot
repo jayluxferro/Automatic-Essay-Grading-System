@@ -1,0 +1,67 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.utils.RouteUtils.findCurrentVoiceInstructions(Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;D)Lcom\/mapbox\/api\/directions\/v5\/models\/VoiceInstructions;" {
+subgraph cluster_Region_1929489228 {
+label = "R(1:(2:(1:10)|(3:2|(2:5|(1:7))|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2005500883 {
+label = "R(2:(1:10)|(3:2|(2:5|(1:7))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_662937277 {
+label = "IF [B:1:0x0004] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isValidVoiceInstructions(r5) != true) goto L_0x0033\l}"];
+subgraph cluster_Region_2138896676 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0033|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1846820324 {
+label = "R(3:2|(2:5|(1:7))|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.util.List java.util.List\<com.mapbox.api.directions.p008v5.models.VoiceInstructions\> r5 = sortVoiceInstructions(r5.voiceInstructions())\ljava.util.Iterator r0 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_31028812 {
+label = "LOOP:0: (2:5|(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (r0.hasNext() != false) goto L_0x0018\l}"];
+subgraph cluster_Region_989199039 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|com.mapbox.api.directions.v5.models.VoiceInstructions r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_28896554 {
+label = "IF [B:6:0x0028] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|LOOP_END\lLOOP:0: B:3:0x0012\-\>B:6:0x0028\l|if (r1.distanceAlongGeometry().doubleValue() \>= r6) goto L_0x002a\l}"];
+subgraph cluster_Region_420844000 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0032|RETURN\l|return r5.get(0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012|LOOP_START\lLOOP:0: B:3:0x0012\-\>B:6:0x0028\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.mapbox.api.directions.v5.models.VoiceInstructions com.mapbox.services.android.navigation.v5.utils.RouteUtils.findCurrentVoiceInstructions((r4v0 'this' com.mapbox.services.android.navigation.v5.utils.RouteUtils A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.api.directions.v5.models.LegStep A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_3[style=dashed];
+Node_6 -> Node_12;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_11 -> Node_8;
+Node_12 -> Node_7;
+}
+

@@ -1,0 +1,50 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.camera.SimpleCamera.bearing(Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/camera\/RouteInformation;)D" {
+subgraph cluster_Region_2077851681 {
+label = "R(1:(2:2|3)(1:(1:7)(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1962657328 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: R(1:(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.route() != null) goto L_0x0006\l}"];
+subgraph cluster_Region_2024007392 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|setupLineStringAndBearing(r3.route())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|RETURN\l|return r2.initialBearing\l}"];
+}
+subgraph cluster_Region_561723992 {
+label = "R(1:(1:7)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_378830558 {
+label = "IF [B:5:0x0014] THEN: R(1:7) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r3.location() != null) goto L_0x0016\l}"];
+subgraph cluster_Region_1014292602 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|RETURN\l|return (double) r3.location().getBearing()\l}"];
+}
+subgraph cluster_Region_1527219698 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|RETURN\l|return 0.0d\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+MethodNode[shape=record,label="{public double com.mapbox.services.android.navigation.v5.navigation.camera.SimpleCamera.bearing((r2v0 'this' com.mapbox.services.android.navigation.v5.navigation.camera.SimpleCamera A[IMMUTABLE_TYPE, THIS]), (r3v0 com.mapbox.services.android.navigation.v5.navigation.camera.RouteInformation A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG forar.com.hjg.pngj.pixels.FiltersPerformance.computeAbsFromHistogram()D" {
+subgraph cluster_Region_1161942342 {
+label = "R(5:0|(2:1|(2:(1:9)|(1:3)))|4|(1:6)|8) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 1\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1066870905 {
+label = "LOOP:0: (2:1|(2:(1:9)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_689432566 {
+label = "R(2:1|(2:(1:9)|(1:3)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lPHI: r1 r2 \l  PHI: (r1v2 int) = (r1v1 int), (r1v6 int) binds: [B:0:0x0000, B:3:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v7 int) binds: [B:0:0x0000, B:3:0x0008] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:3:0x0008\l|r3 = 128\l}"];
+subgraph cluster_Region_371018418 {
+label = "R(2:(1:9)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_931781943 {
+label = "IF [B:2:0x0006] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r1 \>= 128) goto L_0x0012\l}"];
+subgraph cluster_Region_46040522 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0012|SYNTHETIC\lEDGE_INSN: B:9:0x0012\-\>B:4:0x0012 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1681713520 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:3:0x0008\l|r2 += r5.histog[r1] * r1\lr1++\l}"];
+}
+}
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0012|EDGE_INSN: B:9:0x0012\-\>B:4:0x0012 ?: BREAK  \l|int r1 = 128\l}"];
+subgraph cluster_LoopRegion_711191757 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lPHI: r1 r2 r3 \l  PHI: (r1v4 int) = (r1v3 int), (r1v5 int) binds: [B:4:0x0012, B:6:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 int) = (r2v1 int), (r2v6 int) binds: [B:4:0x0012, B:6:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:4:0x0012, B:6:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x0014\-\>B:6:0x0016\l|if (r3 \> 0) goto L_0x0016\l}"];
+subgraph cluster_Region_1656222979 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|LOOP_END\lLOOP:1: B:5:0x0014\-\>B:6:0x0016\l|r2 += r5.histog[r1] * r3\lr1++\lr3\-\-\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0028|RETURN\l|return ((double) r2) \/ ((double) r5.iminfo.bytesPerRow)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0021|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public double ar.com.hjg.pngj.pixels.FiltersPerformance.computeAbsFromHistogram((r5v0 'this' ar.com.hjg.pngj.pixels.FiltersPerformance A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_9 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_7;
+}
+

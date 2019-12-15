@@ -1,0 +1,50 @@
+digraph "CFG forcom.mapbox.geojson.Polygon.isLinearRing(Lcom\/mapbox\/geojson\/LineString;)Z" {
+subgraph cluster_Region_827317239 {
+label = "R(1:(1:8)(1:(1:4)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1868853978 {
+label = "IF [B:1:0x0009] THEN: R(1:8) ELSE: R(1:(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r3.coordinates().size() \< 4) goto L_0x0037\l}"];
+subgraph cluster_Region_329660227 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003e|throw new com.mapbox.geojson.exception.GeoJsonException(\"LinearRings need to be made up of 4 or more coordinates.\")\l}"];
+}
+subgraph cluster_Region_1798774928 {
+label = "R(1:(1:4)(1:6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_610852450 {
+label = "IF [B:3:0x002c] THEN: R(1:4) ELSE: R(1:6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002c|if (((com.mapbox.geojson.Point) r3.coordinates().get(0)).equals(r3.coordinates().get(r3.coordinates().size() \- 1)) == true) goto L_0x002e\l}"];
+subgraph cluster_Region_1750506135 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1248371953 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0036|throw new com.mapbox.geojson.exception.GeoJsonException(\"LinearRings require first and last coordinate to be identical.\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0037}"];
+MethodNode[shape=record,label="{private static boolean com.mapbox.geojson.Polygon.isLinearRing((r3v0 com.mapbox.geojson.LineString A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,22 @@
+digraph "CFG forcom.google.android.gms.common.internal.ConnectionErrorMessages.getAppName(Landroid\/content\/Context;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.lang.String) = (r2 I:android.content.Context) android.content.Context.getPackageName():java.lang.String type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|SYNTHETIC\lSplitter:B:1:0x0004\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0004\l|0x0004: INVOKE  (r1 I:com.google.android.gms.common.wrappers.PackageManagerWrapper) = (r2 I:android.content.Context) com.google.android.gms.common.wrappers.Wrappers.packageManager(android.content.Context):com.google.android.gms.common.wrappers.PackageManagerWrapper type: STATIC A[Catch:\{ NameNotFoundException \| NullPointerException \-\> 0x0011 \}, TRY_ENTER]\l0x0008: INVOKE  (r1 I:java.lang.CharSequence) = \l  (r1 I:com.google.android.gms.common.wrappers.PackageManagerWrapper)\l  (r0 I:java.lang.String)\l com.google.android.gms.common.wrappers.PackageManagerWrapper.getApplicationLabel(java.lang.String):java.lang.CharSequence type: VIRTUAL A[Catch:\{ NameNotFoundException \| NullPointerException \-\> 0x0011 \}]\l0x000c: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.CharSequence) java.lang.CharSequence.toString():java.lang.String type: INTERFACE A[Catch:\{ NameNotFoundException \| NullPointerException \-\> 0x0011 \}]\l0x000f: NOP   A[TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: RETURN  (r1 I:java.lang.String) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|0x0012: INVOKE  (r2 I:android.content.pm.ApplicationInfo) = (r2 I:android.content.Context) android.content.Context.getApplicationInfo():android.content.pm.ApplicationInfo type: VIRTUAL \l0x0016: IGET  (r2 I:java.lang.String) = (r2 I:android.content.pm.ApplicationInfo) android.content.pm.ApplicationInfo.name java.lang.String \l0x0018: INVOKE  (r1 I:boolean) = (r2 I:java.lang.CharSequence) android.text.TextUtils.isEmpty(java.lang.CharSequence):boolean type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lExcHandler: NameNotFoundException \| NullPointerException null\lSplitter:B:1:0x0004\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|0x001c: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x001f \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001e|0x001e: RETURN  (r0 I:java.lang.String) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|0x001f: RETURN  (r2 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{public static java.lang.String com.google.android.gms.common.internal.ConnectionErrorMessages.getAppName((r2 I:android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_4;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+}
+

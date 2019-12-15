@@ -1,0 +1,36 @@
+digraph "CFG fororg.kxml2.kdom.Document.getRootElement()Lorg\/kxml2\/kdom\/Element;" {
+subgraph cluster_Region_743927637 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1801283031 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1131198398 {
+label = "IF [B:1:0x0003] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.rootIndex != \-1) goto L_0x0005\l}"];
+subgraph cluster_Region_481402004 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|RETURN\l|return (org.kxml2.kdom.Element) getChild(r2.rootIndex)\l}"];
+}
+}
+subgraph cluster_Region_185300368 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|throw new java.lang.RuntimeException(\"Document has no root element!\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+MethodNode[shape=record,label="{public org.kxml2.kdom.Element org.kxml2.kdom.Document.getRootElement((r2v0 'this' org.kxml2.kdom.Document A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

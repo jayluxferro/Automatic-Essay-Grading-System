@@ -1,0 +1,71 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.DecoratedCustomViewStyle.createRemoteViews(Landroid\/widget\/RemoteViews;Z)Landroid\/widget\/RemoteViews;" {
+subgraph cluster_Region_52291954 {
+label = "R(5:0|(1:9)(2:6|(1:8))|(1:11)|12|13) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\lint r2 = 0\landroid.widget.RemoteViews android.widget.RemoteViews r0 = applyStandardTemplate(true, android.support.compat.C0031R.layout.notification_template_custom_big, false)\lr0.removeAllViews(android.support.compat.C0031R.C0033id.actions)\l}"];
+subgraph cluster_IfRegion_1447470022 {
+label = "IF [B:1:0x000d, B:3:0x0013, B:5:0x0022] THEN: R(1:9) ELSE: R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r8 == false) goto L_0x003d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|ADDED_TO_REGION\l|if (r6.mBuilder.mActions == null) goto L_0x003d\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|ADDED_TO_REGION\l|if ((r8 = java.lang.Math.min(r6.mBuilder.mActions.size(), 3)) \<= 0) goto L_0x003d\l}"];
+subgraph cluster_Region_1275846602 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|r1 = false\l}"];
+}
+subgraph cluster_Region_1483012999 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_475556937 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|LOOP_START\lPHI: r3 \l  PHI: (r3v3 int) = (r3v2 int), (r3v4 int) binds: [B:6:0x0024, B:8:0x0027] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0025\-\>B:8:0x0027\l|if (r3 \< r8) goto L_0x0027\l}"];
+subgraph cluster_Region_1241745538 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|LOOP_END\lLOOP:0: B:7:0x0025\-\>B:8:0x0027\l|r0.addView(android.support.compat.C0031R.C0033id.actions, generateActionButton(r6.mBuilder.mActions.get(r3)))\lr3++\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_240731190 {
+label = "IF [B:10:0x003e] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003e|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v2 boolean), (r1v0 boolean) binds: [B:9:0x003d, B:14:0x003e] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == false) goto L_0x0041\l}"];
+subgraph cluster_Region_641311566 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0041|r2 = 8\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0043|PHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:10:0x003e, B:11:0x0041] A[DONT_GENERATE, DONT_INLINE]\l|r0.setViewVisibility(android.support.compat.C0031R.C0033id.actions, r2)\lr0.setViewVisibility(android.support.compat.C0031R.C0033id.action_divider, r2)\lbuildIntoRemoteViews(r0, r7)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0050|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.widget.RemoteViews android.support.v4.app.NotificationCompat.DecoratedCustomViewStyle.createRemoteViews((r6v0 'this' android.support.v4.app.NotificationCompat$DecoratedCustomViewStyle A[IMMUTABLE_TYPE, THIS]), (r7v0 android.widget.RemoteViews A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_7;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_14 -> Node_10;
+}
+

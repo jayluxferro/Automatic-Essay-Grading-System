@@ -1,0 +1,78 @@
+digraph "CFG forandroid.support.v7.app.ActionBarDrawerToggleHoneycomb.setActionBarDescription(Landroid\/support\/v7\/app\/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;Landroid\/app\/Activity;I)Landroid\/support\/v7\/app\/ActionBarDrawerToggleHoneycomb$SetIndicatorInfo;" {
+subgraph cluster_Region_679981723 {
+label = "R(3:(1:1)|(1:(2:5|(1:7)))|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_881559392 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_942164698 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo r3 = new android.support.p003v7.app.ActionBarDrawerToggleHoneycomb.SetIndicatorInfo(r4)\l}"];
+}
+}
+subgraph cluster_IfRegion_417777054 {
+label = "IF [B:3:0x0009] THEN: R(1:(2:5|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r3.setHomeAsUpIndicator != null) goto L_0x000b\l}"];
+subgraph cluster_Region_232828787 {
+label = "R(1:(2:5|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1706592552 {
+label = "Try: R(2:5|(1:7)) catches: R(2:8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1056133209 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ Exception \-\> 0x002c \}\lSplitter:B:4:0x000b\l|android.app.ActionBar android.app.ActionBar r4 = r4.getActionBar()     \/\/ Catch:\{ Exception \-\> 0x002c \}\lr3.setHomeActionContentDescription.invoke(r4, new java.lang.Object[]\{java.lang.Integer.valueOf(r5)\})     \/\/ Catch:\{ Exception \-\> 0x002c \}\l}"];
+subgraph cluster_IfRegion_524050911 {
+label = "IF [B:6:0x0022] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|Catch:\{ Exception \-\> 0x002c \}\l|if (android.os.Build.VERSION.SDK_INT \<= 19) goto L_0x0024     \/\/ Catch:\{ Exception \-\> 0x002c \}\l}"];
+subgraph cluster_Region_1844302774 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|Catch:\{ Exception \-\> 0x002c \}\l|r4.setSubtitle(r4.getSubtitle())     \/\/ Catch:\{ Exception \-\> 0x002c \}\l}"];
+}
+}
+}
+subgraph cluster_Region_827886995 {
+label = "R(2:8|9) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:4:0x000b\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002d|android.util.Log.w(TAG, \"Couldn't set content description via JB\-MR2 API\", r4)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0034|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_827886995 {
+label = "R(2:8|9) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:4:0x000b\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002d|android.util.Log.w(TAG, \"Couldn't set content description via JB\-MR2 API\", r4)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007|PHI: r3 \l  PHI: (r3v1 android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo) = (r3v0 android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo), (r3v2 android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b|SYNTHETIC\lSplitter:B:4:0x000b\l}"];
+MethodNode[shape=record,label="{public static android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo android.support.v7.app.ActionBarDrawerToggleHoneycomb.setActionBarDescription((r3v0 android.support.v7.app.ActionBarDrawerToggleHoneycomb$SetIndicatorInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.app.Activity A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+}
+

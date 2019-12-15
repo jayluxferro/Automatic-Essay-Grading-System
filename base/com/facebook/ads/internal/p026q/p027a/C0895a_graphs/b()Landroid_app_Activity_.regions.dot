@@ -1,0 +1,71 @@
+digraph "CFG forcom.facebook.ads.internal.q.a.a.b()Landroid\/app\/Activity;" {
+subgraph cluster_Region_382475765 {
+label = "R(2:0|(2:(1:12)|(3:3|(2:6|(2:8|13))|14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Class java.lang.Class\<?\> r0 = java.lang.Class.forName(\"android.app.ActivityThread\")\ljava.lang.Object java.lang.Object r2 = r0.getMethod(\"currentActivityThread\", new java.lang.Class[0]).invoke((java.lang.Object) null, new java.lang.Object[0])\ljava.lang.reflect.Field java.lang.reflect.Field r0 = r0.getDeclaredField(\"mActivities\")\lr0.setAccessible(true)\ljava.util.Map java.util.Map r0 = (java.util.Map) r0.get(r2)\l}"];
+subgraph cluster_Region_1344557028 {
+label = "R(2:(1:12)|(3:3|(2:6|(2:8|13))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_710591333 {
+label = "IF [B:1:0x0026] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0026|if (r0 == null) goto L_0x0028\l}"];
+subgraph cluster_Region_734377875 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_257070005 {
+label = "R(3:3|(2:6|(2:8|13))|14)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002a|java.util.Iterator r0 = r0.values().iterator()\l}"];
+subgraph cluster_LoopRegion_1802354610 {
+label = "LOOP:0: (2:6|(2:8|13))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0036|if (r0.hasNext() != false) goto L_0x0038\l}"];
+subgraph cluster_Region_669213633 {
+label = "R(2:6|(2:8|13))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0038|java.lang.Object r2 = r0.next()\ljava.lang.Class java.lang.Class\<?\> r3 = r2.getClass()\ljava.lang.reflect.Field java.lang.reflect.Field r4 = r3.getDeclaredField(\"paused\")\lr4.setAccessible(true)\l}"];
+subgraph cluster_IfRegion_755712469 {
+label = "IF [B:7:0x004d] THEN: R(2:8|13) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004d|LOOP_END\lLOOP:0: B:4:0x0032\-\>B:7:0x004d\l|if (r4.getBoolean(r2) == false) goto L_0x004f\l}"];
+subgraph cluster_Region_1362555261 {
+label = "R(2:8|13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004f|java.lang.reflect.Field java.lang.reflect.Field r0 = r3.getDeclaredField(\"activity\")\lr0.setAccessible(true)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return (android.app.Activity) r0.get(r2)\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0028}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0032|LOOP_START\lLOOP:0: B:4:0x0032\-\>B:7:0x004d\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x005f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x005f|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static android.app.Activity com.facebook.ads.internal.q.a.a.b() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_4[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_13;
+Node_2 -> Node_12;
+Node_4 -> Node_5;
+Node_9 -> Node_14;
+Node_10 -> Node_9;
+Node_11 -> Node_8;
+}
+

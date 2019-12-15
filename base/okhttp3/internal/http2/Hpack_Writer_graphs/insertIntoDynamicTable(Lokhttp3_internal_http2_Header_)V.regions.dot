@@ -1,0 +1,51 @@
+digraph "CFG forokhttp3.internal.http2.Hpack.Writer.insertIntoDynamicTable(Lokhttp3\/internal\/http2\/Header;)V" {
+subgraph cluster_Region_379718073 {
+label = "R(2:0|(2:(2:2|3)|(3:4|(1:6)|7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r7.hpackSize\l}"];
+subgraph cluster_Region_178164315 {
+label = "R(2:(2:2|3)|(3:4|(1:6)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1661189005 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \> r6.maxDynamicTableByteCount) goto L_0x0006\l}"];
+subgraph cluster_Region_157885091 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|clearDynamicTable()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1613616469 {
+label = "R(3:4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|evictToRecoverBytes((r6.dynamicTableByteCount + r0) \- r6.maxDynamicTableByteCount)\l}"];
+subgraph cluster_IfRegion_185605490 {
+label = "IF [B:5:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if ((r6.headerCount + 1) \> r6.dynamicTable.length) goto L_0x001c\l}"];
+subgraph cluster_Region_189016573 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|okhttp3.internal.http2.Header[] okhttp3.internal.http2.Header[] r1 = new okhttp3.internal.http2.Header[(r6.dynamicTable.length * 2)]\ljava.lang.System.arraycopy(r6.dynamicTable, 0, r1, r6.dynamicTable.length, r6.dynamicTable.length)\lr6.nextHeaderIndex = r6.dynamicTable.length \- 1\lr6.dynamicTable = r1\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0038|int int r1 = r6.nextHeaderIndex\lr6.nextHeaderIndex = r1 \- 1\lr6.dynamicTable[r1] = r7\lr6.headerCount++\lr6.dynamicTableByteCount += r0\l}"];
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x004d}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http2.Hpack.Writer.insertIntoDynamicTable((r6v0 'this' okhttp3.internal.http2.Hpack$Writer A[IMMUTABLE_TYPE, THIS]), (r7v0 okhttp3.internal.http2.Header A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

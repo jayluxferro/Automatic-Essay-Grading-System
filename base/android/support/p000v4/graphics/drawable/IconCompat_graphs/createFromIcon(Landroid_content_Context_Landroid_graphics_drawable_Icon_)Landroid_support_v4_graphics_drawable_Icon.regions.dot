@@ -1,0 +1,79 @@
+digraph "CFG forandroid.support.v4.graphics.drawable.IconCompat.createFromIcon(Landroid\/content\/Context;Landroid\/graphics\/drawable\/Icon;)Landroid\/support\/v4\/graphics\/drawable\/IconCompat;" {
+subgraph cluster_Region_239737334 {
+label = "R(2:0|(2:8|(1:11))(1:(1:7)(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.p000v4.util.Preconditions.checkNotNull(r3)\lint int r0 = getType(r3)\l}"];
+subgraph cluster_IfRegion_402744685 {
+label = "IF [B:1:0x0008] THEN: R(2:8|(1:11)) ELSE: R(1:(1:7)(2:4|5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == 2) goto L_0x001f\l}"];
+subgraph cluster_Region_1080096814 {
+label = "R(2:8|(1:11))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|java.lang.String java.lang.String r0 = getResPackage(r3)\l}"];
+subgraph cluster_TryCatchRegion_157142950 {
+label = "Try: R(1:11) catches: R(1:14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_507235453 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|RETURN\l|return createWithResource(getResources(r2, r0), r0, getResId(r3))\l}"];
+}
+subgraph cluster_Region_1151434842 {
+label = "R(1:14) | ExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0037|throw new java.lang.IllegalArgumentException(\"Icon resource cannot be found\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1363385685 {
+label = "R(1:(1:7)(2:4|5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1886501240 {
+label = "IF [B:3:0x000b] THEN: R(1:7) ELSE: R(2:4|5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r0 == 4) goto L_0x0016\l}"];
+subgraph cluster_Region_644904185 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|RETURN\l|return createWithContentUri(getUri(r3))\l}"];
+}
+subgraph cluster_Region_218294490 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|android.support.v4.graphics.drawable.IconCompat android.support.p000v4.graphics.drawable.IconCompat r2 = new android.support.p000v4.graphics.drawable.IconCompat(\-1)\lr2.mObj1 = r3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1151434842 {
+label = "R(1:14) | ExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0037|throw new java.lang.IllegalArgumentException(\"Icon resource cannot be found\")\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0023|SYNTHETIC\lSplitter:B:9:0x0023\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|Catch:\{ NotFoundException \-\> 0x0030 \}\lSplitter:B:9:0x0023\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\lSplitter:B:9:0x0023\l}"];
+MethodNode[shape=record,label="{public static android.support.v4.graphics.drawable.IconCompat android.support.v4.graphics.drawable.IconCompat.createFromIcon((r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.graphics.drawable.Icon A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.RequiresApi, \{value=23\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_8 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_12 -> Node_14;
+Node_13 -> Node_12;
+}
+

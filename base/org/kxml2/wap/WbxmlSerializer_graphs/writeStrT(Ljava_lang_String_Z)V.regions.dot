@@ -1,0 +1,90 @@
+digraph "CFG fororg.kxml2.wap.WbxmlSerializer.writeStrT(Ljava\/lang\/String;Z)V" {
+subgraph cluster_Region_1048459264 {
+label = "R(2:0|(2:(2:2|16)|(7:3|(1:7)(1:6)|8|(1:10)|11|(1:13)|14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Integer java.lang.Integer r0 = (java.lang.Integer) r6.stringTable.get(r7)\l}"];
+subgraph cluster_Region_1416545506 {
+label = "R(2:(2:2|16)|(7:3|(1:7)(1:6)|8|(1:10)|11|(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_951150546 {
+label = "IF [B:1:0x0008] THEN: R(2:2|16) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 != null) goto L_0x000a\l}"];
+subgraph cluster_Region_183093290 {
+label = "R(2:2|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|writeInt(r6.buf, r0.intValue())\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1427592832 {
+label = "R(7:3|(1:7)(1:6)|8|(1:10)|11|(1:13)|14)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|int int r0 = r6.stringTableBuf.size()\l}"];
+subgraph cluster_IfRegion_948060130 {
+label = "IF [B:4:0x0024, B:5:0x0026] THEN: R(1:7) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|if (r7.charAt(0) \< '0') goto L_0x003f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0026|ADDED_TO_REGION\l|if (r8 == false) goto L_0x003f\l}"];
+subgraph cluster_Region_451332634 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003f|writeInt(r6.buf, r0)\l}"];
+}
+subgraph cluster_Region_693805411 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|java.lang.StringBuffer java.lang.StringBuffer r8 = new java.lang.StringBuffer()\lr8.append(' ')\lr8.append(r7)\ljava.lang.String r7 = r8.toString()\lwriteInt(r6.buf, r0 + 1)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0044|PHI: r7 \l  PHI: (r7v1 java.lang.String) = (r7v0 java.lang.String), (r7v3 java.lang.String) binds: [B:7:0x003f, B:6:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|r6.stringTable.put(r7, new java.lang.Integer(r0))\l}"];
+subgraph cluster_IfRegion_444015601 {
+label = "IF [B:9:0x0053] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0053|if (r7.charAt(0) == ' ') goto L_0x0055\l}"];
+subgraph cluster_Region_1840678138 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0055|r6.stringTable.put(r7.substring(1), new java.lang.Integer(r0 + 1))\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0065|int int r8 = r7.lastIndexOf(32)\l}"];
+subgraph cluster_IfRegion_778096853 {
+label = "IF [B:12:0x0069] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0069|if (r8 \> 1) goto L_0x006b\l}"];
+subgraph cluster_Region_41577626 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006b|int int r0 = r0 + r8\lr6.stringTable.put(r7.substring(r8), new java.lang.Integer(r0))\lr6.stringTable.put(r7.substring(r8 + 1), new java.lang.Integer(r0 + 1))\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x008a|writeStrI(r6.stringTableBuf, r7)\lr6.stringTableBuf.flush()\l}"];
+}
+}
+}
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private final void org.kxml2.wap.WbxmlSerializer.writeStrT((r6v0 'this' org.kxml2.wap.WbxmlSerializer A[IMMUTABLE_TYPE, THIS]), (r7v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

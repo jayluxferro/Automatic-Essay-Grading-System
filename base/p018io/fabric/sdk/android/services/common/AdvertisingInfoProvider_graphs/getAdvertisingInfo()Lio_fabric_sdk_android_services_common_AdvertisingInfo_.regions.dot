@@ -1,0 +1,36 @@
+digraph "CFG forio.fabric.sdk.android.services.common.AdvertisingInfoProvider.getAdvertisingInfo()Lio\/fabric\/sdk\/android\/services\/common\/AdvertisingInfo;" {
+subgraph cluster_Region_582156738 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|io.fabric.sdk.android.services.common.AdvertisingInfo p018io.fabric.sdk.android.services.common.AdvertisingInfo r0 = getInfoFromPreferences()\l}"];
+subgraph cluster_Region_201431524 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1202434706 {
+label = "IF [B:1:0x0008] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (isInfoValid(r0) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_2004426931 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Using AdvertisingInfo from Preference Store\")\lrefreshInfoIfNeededAsync(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1735641265 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|io.fabric.sdk.android.services.common.AdvertisingInfo p018io.fabric.sdk.android.services.common.AdvertisingInfo r0 = getAdvertisingInfoFromStrategies()\lstoreInfoToPreferences(r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|RETURN\l|return r0\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public io.fabric.sdk.android.services.common.AdvertisingInfo io.fabric.sdk.android.services.common.AdvertisingInfoProvider.getAdvertisingInfo((r4v0 'this' io.fabric.sdk.android.services.common.AdvertisingInfoProvider A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

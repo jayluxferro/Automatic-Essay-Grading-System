@@ -1,0 +1,19 @@
+digraph "CFG forokio.RealBufferedSource.readFully(Lokio\/Buffer;J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: INVOKE  (r1 I:okio.RealBufferedSource), (r3 I:long) okio.RealBufferedSource.require(long):void type: VIRTUAL A[Catch:\{ EOFException \-\> 0x0009 \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|0x0003: IGET  (r0 I:okio.Buffer) = (r1 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x0005: INVOKE  (r0 I:okio.Buffer), (r2 I:okio.Buffer), (r3 I:long) okio.Buffer.readFully(okio.Buffer, long):void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|ExcHandler: EOFException null\lSplitter:B:0:0x0000\l|0x0009: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|0x000a: IGET  (r4 I:okio.Buffer) = (r1 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x000c: INVOKE  (r2 I:okio.Buffer), (r4 I:okio.Source) okio.Buffer.writeAll(okio.Source):long type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|0x000f: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okio.RealBufferedSource.readFully((r1 'this' I:okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r2 I:okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

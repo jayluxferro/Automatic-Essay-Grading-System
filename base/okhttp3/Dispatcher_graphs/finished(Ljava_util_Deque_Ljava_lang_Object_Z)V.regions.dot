@@ -1,0 +1,90 @@
+digraph "CFG forokhttp3.Dispatcher.finished(Ljava\/util\/Deque;Ljava\/lang\/Object;Z)V" {
+subgraph cluster_Region_2112369227 {
+label = "R(2:0|(1:(1:10))) | DECL_VAR: int null, java.lang.Runnable null\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_415135173 {
+label = "Synchronized:R(2:0|(1:(2:(1:5)|6)(1:13)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_206973834 {
+label = "R(1:(2:(1:5)|6)(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1548910523 {
+label = "IF [B:3:0x0005] THEN: R(2:(1:5)|6) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r1.remove(r2) == true) goto L_0x0007\l}"];
+subgraph cluster_Region_145506277 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1620337680 {
+label = "IF [B:4:0x0007] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (r3 == true) goto L_0x0009\l}"];
+subgraph cluster_Region_200226202 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|promoteCalls()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000c|int r1 = runningCallsCount()\ljava.lang.Runnable r2 = r0.idleCallback\l}"];
+}
+subgraph cluster_Region_911758614 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0022|throw new java.lang.AssertionError(\"Call wasn't in\-flight!\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2033736641 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1832007121 {
+label = "IF [B:8:0x0013, B:9:0x0015] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|if (r1 == 0) goto L_0x0015\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0015|ADDED_TO_REGION\l|if (r2 != null) goto L_0x0017\l}"];
+subgraph cluster_Region_1150262719 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|r2.run()\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0012: MONITOR_EXIT  \l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001b|SYNTHETIC\lSplitter:B:11:0x001b\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|Splitter:B:11:0x001b\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0023|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0024|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0025|REMOVE\l|throw r1\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void okhttp3.Dispatcher.finished((r0v0 'this' okhttp3.Dispatcher A[IMMUTABLE_TYPE, THIS]), (r1v0 java.util.Deque\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/util\/Deque\<, TT;\>;TT;Z)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_18[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_19[style=dashed];
+Node_10 -> Node_17;
+Node_1 -> Node_2;
+Node_1 -> Node_14;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

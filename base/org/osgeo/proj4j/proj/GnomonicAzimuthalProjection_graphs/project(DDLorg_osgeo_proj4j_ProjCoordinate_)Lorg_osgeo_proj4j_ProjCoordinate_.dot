@@ -1,0 +1,46 @@
+digraph "CFG fororg.osgeo.proj4j.proj.GnomonicAzimuthalProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r0 = java.lang.Math.sin(r11)\ldouble r11 = java.lang.Math.cos(r11)\ldouble r2 = java.lang.Math.cos(r9)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|switch(r8.mode) \{\l    case 1: goto L_0x0029;\l    case 2: goto L_0x0025;\l    case 3: goto L_0x0020;\l    case 4: goto L_0x0012;\l    default: goto L_0x0011;\l\}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|r13.f295y = (r8.sinphi0 * r0) + ((r8.cosphi0 * r11) * r2)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|r13.f295y = r11 * r2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0025|r13.f295y = \-r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|r13.f295y = r0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b}"];
+Node_7 [shape=record,label="{7\:\ 0x0038|if ((java.lang.Math.abs(r13.f295y) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(r13.f295y) == 1.0E\-10d ? 0 : \-1)) \<= 0) goto L_0x0074\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003a|double r4 = 1.0d \/ r13.f295y\lr13.f295y = r4\lr13.f294x = (r4 * r11) * java.lang.Math.sin(r9)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004d|switch(r8.mode) \{\l    case 1: goto L_0x006a;\l    case 2: goto L_0x006b;\l    case 3: goto L_0x0063;\l    case 4: goto L_0x0051;\l    default: goto L_0x0050;\l\}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0051|r13.f295y = r13.f295y * ((r8.cosphi0 * r0) \- ((r8.sinphi0 * r11) * r2))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0063|r13.f295y = r13.f295y * r0\l}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|double r2 = \-r2\l}"];
+Node_13 [shape=record,label="{13\:\ 0x006b|PHI: r2 \l  PHI: (r2v1 double) = (r2v0 double), (r2v2 double) binds: [B:9:0x004d, B:12:0x006a] A[DONT_GENERATE, DONT_INLINE]\l|r13.f295y = r13.f295y * (r11 * r2)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0073|RETURN\l|return r13\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0074}"];
+Node_16 [shape=record,label="{16\:\ 0x0079|throw new org.osgeo.proj4j.ProjectionException()\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.GnomonicAzimuthalProjection.project((r8v0 'this' org.osgeo.proj4j.proj.GnomonicAzimuthalProjection A[IMMUTABLE_TYPE, THIS]), (r9v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_1 -> Node_4;
+Node_1 -> Node_5;
+Node_1 -> Node_6;
+Node_2 -> Node_6;
+Node_3 -> Node_6;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_15;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_9 -> Node_12;
+Node_9 -> Node_13;
+Node_9 -> Node_14;
+Node_10 -> Node_14;
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

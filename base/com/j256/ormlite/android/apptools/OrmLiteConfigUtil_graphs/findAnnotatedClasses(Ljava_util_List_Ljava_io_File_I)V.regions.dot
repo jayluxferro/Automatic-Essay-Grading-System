@@ -1,0 +1,224 @@
+digraph "CFG forcom.j256.ormlite.android.apptools.OrmLiteConfigUtil.findAnnotatedClasses(Ljava\/util\/List;Ljava\/io\/File;I)V" {
+subgraph cluster_Region_1989793397 {
+label = "R(2:0|(3:2|(1:(1:6)(0))(1:(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))(0))|29))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r10.listFiles().length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1725997670 {
+label = "LOOP:0: (3:2|(1:(1:6)(0))(1:(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))(0))|29)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:29:0x00ed] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:29:0x00ed\l|if (r2 \< r0) goto L_0x0009\l}"];
+subgraph cluster_Region_1415745449 {
+label = "R(3:2|(1:(1:6)(0))(1:(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))(0))|29)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r3 = r10[r2]\l}"];
+subgraph cluster_IfRegion_350487041 {
+label = "IF [B:3:0x000f] THEN: R(1:(1:6)(0)) ELSE: R(1:(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (r3.isDirectory() == true) goto L_0x0011\l}"];
+subgraph cluster_Region_1124759885 {
+label = "R(1:(1:6)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_680521029 {
+label = "IF [B:5:0x0013] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r11 \< maxFindSourceLevel) goto L_0x0015\l}"];
+subgraph cluster_Region_1268750752 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|findAnnotatedClasses(r9, r3, r11 + 1)\l}"];
+}
+subgraph cluster_Region_2145349336 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1863295103 {
+label = "R(1:(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_943562014 {
+label = "IF [B:8:0x0026] THEN: R(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24))))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|if (r3.getName().endsWith(\".java\") == true) goto L_0x002a\l}"];
+subgraph cluster_Region_2134978199 {
+label = "R(2:9|(1:11)(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|java.lang.String java.lang.String r4 = getPackageOfClass(r3)\l}"];
+subgraph cluster_IfRegion_178651971 {
+label = "IF [B:10:0x002e] THEN: R(1:11) ELSE: R(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24))))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002e|if (r4 == null) goto L_0x0030\l}"];
+subgraph cluster_Region_265834784 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0030|java.lang.System.err.println(\"Could not find package name for: \" + r3)\l}"];
+}
+subgraph cluster_Region_1928038436 {
+label = "R(2:12|(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24))))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0048|java.lang.String java.lang.String r5 = r3.getName()\l}"];
+subgraph cluster_TryCatchRegion_192235437 {
+label = "Try: R(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24))) catches: R(2:27|28)";
+node [shape=record,color=blue];
+subgraph cluster_Region_850679324 {
+label = "R(3:14|(1:17)|(2:19|(3:21|(1:23)(0)|24)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|Catch:\{ Throwable \-\> 0x00c0 \}\lSplitter:B:13:0x006f\l|java.lang.Class java.lang.Class\<?\> r4 = java.lang.Class.forName(r4 + mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER + r5.substring(0, r5.length() \- \".java\".length()))     \/\/ Catch:\{ Throwable \-\> 0x00c0 \}\l}"];
+subgraph cluster_IfRegion_78128504 {
+label = "IF [B:16:0x0077] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0077|if (classHasAnnotations(r4) == true) goto L_0x0079\l}"];
+subgraph cluster_Region_1043235509 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0079|r9.add(r4)\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_434832100 {
+label = "Try: R(2:19|(3:21|(1:23)(0)|24)) catches: R(2:25|26)";
+node [shape=record,color=blue];
+subgraph cluster_Region_783955930 {
+label = "R(2:19|(3:21|(1:23)(0)|24))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|Catch:\{ Throwable \-\> 0x0092 \}\lSplitter:B:18:0x007c\l|int int r5 = r4.getDeclaredClasses().length     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\lint r6 = 0     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\l}"];
+subgraph cluster_LoopRegion_1307228586 {
+label = "LOOP:1: (3:21|(1:23)(0)|24)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0082|LOOP_START\lCatch:\{ Throwable \-\> 0x0092 \}\lPHI: r6 \l  PHI: (r6v8 int) = (r6v7 int), (r6v9 int) binds: [B:19:?, B:24:0x008f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:20:0x0082\-\>B:24:0x008f\l|if (r6 \< r5) goto L_0x0084     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\l}"];
+subgraph cluster_Region_1173902875 {
+label = "R(3:21|(1:23)(0)|24)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0084|Catch:\{ Throwable \-\> 0x0092 \}\l|r7 = r3[r6]     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\l}"];
+subgraph cluster_IfRegion_16162918 {
+label = "IF [B:22:0x008a] THEN: R(1:23) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x008a|Catch:\{ Throwable \-\> 0x0092 \}\l|if (classHasAnnotations(r7) == true) goto L_0x008c     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\l}"];
+subgraph cluster_Region_564123642 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x008c|Catch:\{ Throwable \-\> 0x0092 \}\l|r9.add(r7)     \/\/ Catch:\{ Throwable \-\> 0x0092 \}\l}"];
+}
+subgraph cluster_Region_1612848399 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x008f|LOOP_END\lLOOP:1: B:20:0x0082\-\>B:24:0x008f\l|r6++\l}"];
+}
+}
+}
+subgraph cluster_Region_4071553 {
+label = "R(2:25|26) | ExcHandler: Throwable (r3v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0092|ExcHandler: Throwable (r3v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:18:0x007c\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0093|java.lang.System.err.println(\"Could not load inner classes for: \" + r4)\ljava.lang.System.err.println(\"     \" + r3)\l}"];
+}
+}
+}
+subgraph cluster_Region_2023608136 {
+label = "R(2:27|28) | ExcHandler: Throwable (r4v6 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00c0|ExcHandler: Throwable (r4v6 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:13:0x006f\l}"];
+Node_28 [shape=record,label="{28\:\ 0x00c1|java.lang.System.err.println(\"Could not load class file for: \" + r3)\ljava.lang.System.err.println(\"     \" + r4)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1297982893 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x00ed|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:29:0x00ed\l|r2++\l}"];
+}
+}
+}
+subgraph cluster_Region_2023608136 {
+label = "R(2:27|28) | ExcHandler: Throwable (r4v6 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00c0|ExcHandler: Throwable (r4v6 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:13:0x006f\l}"];
+Node_28 [shape=record,label="{28\:\ 0x00c1|java.lang.System.err.println(\"Could not load class file for: \" + r3)\ljava.lang.System.err.println(\"     \" + r4)\l}"];
+}
+subgraph cluster_Region_4071553 {
+label = "R(2:25|26) | ExcHandler: Throwable (r3v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0092|ExcHandler: Throwable (r3v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:18:0x007c\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0093|java.lang.System.err.println(\"Could not load inner classes for: \" + r4)\ljava.lang.System.err.println(\"     \" + r3)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x006f|SYNTHETIC\lSplitter:B:13:0x006f\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0073}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x007c|SYNTHETIC\lSplitter:B:18:0x007c\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00f1}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x00f1|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x00ed|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x00ed|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x00ed|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x00ed|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x00ed|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x00ed|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x00ed|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x008f|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x008f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.j256.ormlite.android.apptools.OrmLiteConfigUtil.findAnnotatedClasses((r9v0 java.util.List\<java.lang.Class\<?\>\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException, java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Ljava\/lang\/Class\<, *\>;\>;, Ljava\/io\/File;, I)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_31[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_33[style=dashed];
+Node_6 -> Node_34;
+Node_8 -> Node_9;
+Node_8 -> Node_38[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_35;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_36[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_40[style=dashed];
+Node_23 -> Node_39;
+Node_24 -> Node_20;
+Node_25 -> Node_26;
+Node_26 -> Node_37;
+Node_27 -> Node_28;
+Node_28 -> Node_32;
+Node_29 -> Node_1;
+Node_27 -> Node_28;
+Node_28 -> Node_32;
+Node_25 -> Node_26;
+Node_26 -> Node_37;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_13 -> Node_14;
+Node_13 -> Node_27;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_18 -> Node_25;
+Node_31 -> Node_30;
+Node_32 -> Node_29;
+Node_33 -> Node_29;
+Node_34 -> Node_29;
+Node_35 -> Node_29;
+Node_36 -> Node_29;
+Node_37 -> Node_29;
+Node_38 -> Node_29;
+Node_39 -> Node_24;
+Node_40 -> Node_24;
+}
+

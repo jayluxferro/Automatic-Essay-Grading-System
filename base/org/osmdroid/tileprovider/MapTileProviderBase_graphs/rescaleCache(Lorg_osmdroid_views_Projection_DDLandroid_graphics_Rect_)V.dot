@@ -1,0 +1,36 @@
+digraph "CFG fororg.osmdroid.tileprovider.MapTileProviderBase.rescaleCache(Lorg\/osmdroid\/views\/Projection;DDLandroid\/graphics\/Rect;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r25\lr1 = r26\lr2 = r27\lr5 = r29\lr4 = r31\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (org.osmdroid.util.TileSystem.getInputTileZoomLevel(r27) != org.osmdroid.util.TileSystem.getInputTileZoomLevel(r29)) goto L_0x0015\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0014|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|long r8 = java.lang.System.currentTimeMillis()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (org.osmdroid.config.Configuration.getInstance().isDebugTileProviders() == false) goto L_0x0041\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|java.lang.StringBuilder r10 = new java.lang.StringBuilder()\lr10.append(\"rescale tile cache from \")\lr10.append(r5)\lr10.append(\" to \")\lr10.append(r2)\landroid.util.Log.i(org.osmdroid.api.IMapView.LOGTAG, r10.toString())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0041|org.osmdroid.util.PointL r7 = r1.toMercatorPixels(r4.left, r4.top, (org.osmdroid.util.PointL) null)\lorg.osmdroid.util.PointL r1 = r1.toMercatorPixels(r4.right, r4.bottom, (org.osmdroid.util.PointL) null)\llong r13 = r7.f444x\llong r10 = r1.f444x\lr23 = r8\lorg.osmdroid.util.RectL r12 = new org.osmdroid.util.RectL(r13, r7.f445y, r10, r1.f445y)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006c|if ((r2 \> r5 ? 1 : (r2 == r5 ? 0 : \-1)) \<= 0) goto L_0x0075\l}"];
+Node_8 [shape=record,label="{8\:\ 0x006e|org.osmdroid.tileprovider.MapTileProviderBase$ZoomInTileLooper r1 = new org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper(r0, (org.osmdroid.tileprovider.MapTileProviderBase.C14631) null)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0075|org.osmdroid.tileprovider.MapTileProviderBase$ZoomOutTileLooper r1 = new org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper(r0, (org.osmdroid.tileprovider.MapTileProviderBase.C14631) null)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007b|PHI: r1 \l  PHI: (r1v3 org.osmdroid.tileprovider.MapTileProviderBase$ScaleTileLooper) = (r1v8 org.osmdroid.tileprovider.MapTileProviderBase$ScaleTileLooper), (r1v9 org.osmdroid.tileprovider.MapTileProviderBase$ScaleTileLooper) binds: [B:9:0x0075, B:8:0x006e] A[DONT_GENERATE, DONT_INLINE]\l|r2 = r27\lr5 = r29\lr1.loop(r2, r12, r5, getTileSource().getTileSizePixels())\llong r1 = java.lang.System.currentTimeMillis()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0096|if (org.osmdroid.config.Configuration.getInstance().isDebugTileProviders() == false) goto L_?\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0098|java.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"Finished rescale in \")\lr4.append(r1 \- r23)\lr4.append(\"ms\")\landroid.util.Log.i(org.osmdroid.api.IMapView.LOGTAG, r4.toString())\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.tileprovider.MapTileProviderBase.rescaleCache((r25v0 'this' org.osmdroid.tileprovider.MapTileProviderBase A[IMMUTABLE_TYPE, THIS]), (r26v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+}
+

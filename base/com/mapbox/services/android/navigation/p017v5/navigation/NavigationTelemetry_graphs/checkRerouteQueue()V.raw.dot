@@ -1,0 +1,20 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.checkRerouteQueue()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:java.util.List\<com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent\>) = \l  (r3 I:com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry)\l com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.queuedRerouteEvents java.util.List \l0x0002: INVOKE  (r0 I:java.util.ListIterator) = (r0 I:java.util.List) java.util.List.listIterator():java.util.ListIterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0023 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0010: CHECK_CAST  (r1 I:com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent) = (com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent) (r1 I:?[OBJECT, ARRAY]) \l0x0012: INVOKE  (r2 I:com.mapbox.services.android.navigation.v5.navigation.metrics.SessionState) = \l  (r1 I:com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent)\l com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent.getSessionState():com.mapbox.services.android.navigation.v5.navigation.metrics.SessionState type: VIRTUAL \l0x0016: INVOKE  (r2 I:boolean) = \l  (r3 I:com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry)\l  (r2 I:com.mapbox.services.android.navigation.v5.navigation.metrics.SessionState)\l com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.shouldSendEvent(com.mapbox.services.android.navigation.v5.navigation.metrics.SessionState):boolean type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|0x001a: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x0006 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|0x001c: INVOKE  \l  (r3 I:com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry)\l  (r1 I:com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent)\l com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.sendRerouteEvent(com.mapbox.services.android.navigation.v5.navigation.metrics.RerouteEvent):void type: DIRECT \l0x001f: INVOKE  (r0 I:java.util.Iterator) java.util.Iterator.remove():void type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|0x0023: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry.checkRerouteQueue((r3 'this' I:com.mapbox.services.android.navigation.v5.navigation.NavigationTelemetry A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_4 -> Node_5[style=dashed];
+Node_5 -> Node_1;
+}
+

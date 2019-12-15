@@ -1,0 +1,86 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CachedRegionTracker.getRegionEndTimeMs(J)I" {
+subgraph cluster_Region_1907022785 {
+label = "R(3:0|1|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r4 = \-1\l}"];
+subgraph cluster_SynchronizedRegion_2015267493 {
+label = "Synchronized:R(2:1|(2:3|(2:12|(1:16)(2:17|18))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001}"];
+subgraph cluster_Region_51353377 {
+label = "R(2:3|(2:12|(1:16)(2:17|18)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|r11.lookupRegion.startOffset = r12\lcom.google.android.exoplayer2.upstream.cache.CachedRegionTracker$Region com.google.android.exoplayer2.upstream.cache.CachedRegionTracker.Region r0 = r11.regions.floor(r11.lookupRegion)\l}"];
+subgraph cluster_IfRegion_610017362 {
+label = "IF [B:4:0x0010, B:6:0x0016, B:8:0x001a] THEN: R(2:12|(1:16)(2:17|18)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|ADDED_TO_REGION\l|if (r0 == null) goto L_0x001c\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|ADDED_TO_REGION\l|if (r12 \> r0.endOffset) goto L_0x001c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|ADDED_TO_REGION\l|if (r0.endOffsetIndex == \-1) goto L_0x001c\l}"];
+subgraph cluster_Region_551397214 {
+label = "R(2:12|(1:16)(2:17|18))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|Splitter:B:11:0x001e\l|int int r1 = r0.endOffsetIndex\l}"];
+subgraph cluster_IfRegion_2125780635 {
+label = "IF [B:13:0x0026, B:15:0x003a] THEN: R(1:16) ELSE: R(2:17|18)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|if (r1 == (r11.chunkIndex.length \- 1)) goto L_0x0028\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003a|ADDED_TO_REGION\l|if (r0.endOffset == (r11.chunkIndex.offsets[r1] + ((long) r11.chunkIndex.sizes[r1]))) goto L_0x003c\l}"];
+subgraph cluster_Region_1126408860 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x003c|r4 = \-2\l}"];
+}
+subgraph cluster_Region_754261521 {
+label = "R(2:17|18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003e}"];
+Node_18 [shape=record,label="{18\:\ 0x0061|int r4 = (int) ((r11.chunkIndex.timesUs[r1] + ((r11.chunkIndex.durationsUs[r1] * (r0.endOffset \- r11.chunkIndex.offsets[r1])) \/ ((long) r11.chunkIndex.sizes[r1]))) \/ 1000)\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x001d|RETURN\l|return r4\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0002|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|DONT_GENERATE\lPHI: r4 \l  PHI: (r4v2 int) = (r4v0 int), (r4v0 int), (r4v0 int), (r4v15 int), (r4v18 int) binds: [B:4:0x0010, B:6:0x0016, B:8:0x001a, B:18:0x0061, B:16:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x001c: MONITOR_EXIT  \l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e|SYNTHETIC\lSplitter:B:11:0x001e\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0028}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0063|REMOVE\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0064|REMOVE\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0065|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public synchronized int com.google.android.exoplayer2.upstream.cache.CachedRegionTracker.getRegionEndTimeMs((r11v0 'this' com.google.android.exoplayer2.upstream.cache.CachedRegionTracker A[IMMUTABLE_TYPE, THIS]), (r12v0 'byteOffset' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_9;
+Node_17 -> Node_18;
+Node_18 -> Node_9;
+Node_2 -> Node_3;
+Node_2 -> Node_19;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_19;
+Node_14 -> Node_15;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+}
+

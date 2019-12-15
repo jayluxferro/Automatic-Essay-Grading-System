@@ -1,0 +1,87 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.MapView.onTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_459194253 {
+label = "R(1:(2:(1:15)|(2:(1:8)|(2:(1:17)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1520805322 {
+label = "R(2:(1:15)|(2:(1:8)|(2:(1:17)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2079672875 {
+label = "IF [B:1:0x0004, B:3:0x000a, B:5:0x0010] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isMapInitialized() == false) goto L_0x0030\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (isZoomButtonControllerInitialized() == false) goto L_0x0030\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (isGestureDetectorInitialized() == false) goto L_0x0030\l}"];
+subgraph cluster_Region_354128624 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0034|RETURN\l|return super.onTouchEvent(r3)\l}"];
+}
+}
+subgraph cluster_Region_2077750537 {
+label = "R(2:(1:8)|(2:(1:17)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_204182604 {
+label = "IF [B:7:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|if (r3.getAction() == 0) goto L_0x001a\l}"];
+subgraph cluster_Region_1566454768 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|r2.mapZoomButtonController.setVisible(true)\l}"];
+}
+}
+subgraph cluster_Region_345745081 {
+label = "R(2:(1:17)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1352689310 {
+label = "IF [B:10:0x0025, B:12:0x002b] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|if (r2.mapGestureDetector.onTouchEvent(r3) == true) goto L_?\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002b|ADDED_TO_REGION\l|if (super.onTouchEvent(r3) == true) goto L_?\l}"];
+subgraph cluster_Region_16322866 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_747926382 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002e|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{public boolean com.mapbox.mapboxsdk.maps.MapView.onTouchEvent((r2v0 'this' com.mapbox.mapboxsdk.maps.MapView A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_14;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+}
+

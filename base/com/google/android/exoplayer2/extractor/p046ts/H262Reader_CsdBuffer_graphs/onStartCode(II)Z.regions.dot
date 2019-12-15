@@ -1,0 +1,71 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.H262Reader.CsdBuffer.onStartCode(II)Z" {
+subgraph cluster_Region_1005885648 {
+label = "R(2:(1:(1:6)(2:8|13))(1:(1:11))|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1367099176 {
+label = "IF [B:1:0x0004] THEN: R(1:(1:6)(2:8|13)) ELSE: R(1:(1:11))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.isFilling == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1469554671 {
+label = "R(1:(1:6)(2:8|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1034033461 {
+label = "IF [B:3:0x0008, B:5:0x000c] THEN: R(1:6) ELSE: R(2:8|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.sequenceExtensionPosition == 0) goto L_0x000a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|ADDED_TO_REGION\l|if (r4 == com.google.android.exoplayer2.extractor.p046ts.H262Reader.START_EXTENSION) goto L_0x000e\l}"];
+subgraph cluster_Region_579806281 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|r3.sequenceExtensionPosition = r3.length\l}"];
+}
+subgraph cluster_Region_293171767 {
+label = "R(2:8|13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|r3.length \-= r5\lr3.isFilling = false\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_2054881040 {
+label = "R(1:(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1471949531 {
+label = "IF [B:10:0x001e] THEN: R(1:11) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|if (r4 == com.google.android.exoplayer2.extractor.p046ts.H262Reader.START_SEQUENCE_HEADER) goto L_0x0020\l}"];
+subgraph cluster_Region_214626569 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0020|r3.isFilling = true\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c}"];
+MethodNode[shape=record,label="{public boolean com.google.android.exoplayer2.extractor.ts.H262Reader.CsdBuffer.onStartCode((r3v0 'this' com.google.android.exoplayer2.extractor.ts.H262Reader$CsdBuffer A[IMMUTABLE_TYPE, THIS]), (r4v0 'startCodeValue' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'bytesAlreadyPassed' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_13;
+Node_10 -> Node_7[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_12;
+Node_9 -> Node_10;
+}
+

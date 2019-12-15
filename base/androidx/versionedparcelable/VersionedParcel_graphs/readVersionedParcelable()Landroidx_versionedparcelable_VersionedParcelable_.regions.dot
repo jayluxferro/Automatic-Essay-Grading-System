@@ -1,0 +1,34 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readVersionedParcelable()Landroidx\/versionedparcelable\/VersionedParcelable;" {
+subgraph cluster_Region_629079642 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = readString()\l}"];
+subgraph cluster_Region_875057091 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1095015491 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 == null) goto L_0x0006\l}"];
+subgraph cluster_Region_503259624 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1819683149 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|RETURN\l|return readFromParcel(r0, createSubParcel())\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{protected T androidx.versionedparcelable.VersionedParcel.readVersionedParcelable((r2v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T::, Landroidx\/versionedparcelable\/VersionedParcelable;, \>()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

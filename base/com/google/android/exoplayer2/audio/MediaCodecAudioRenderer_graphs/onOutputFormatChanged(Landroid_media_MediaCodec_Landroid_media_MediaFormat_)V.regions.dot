@@ -1,0 +1,125 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.MediaCodecAudioRenderer.onOutputFormatChanged(Landroid\/media\/MediaCodec;Landroid\/media\/MediaFormat;)V" {
+subgraph cluster_Region_133762507 {
+label = "R(7:0|(1:2)|3|(1:6)(1:17)|7|(1:18)(2:12|(1:15))|(1:20)) | DECL_VAR: android.media.MediaFormat format, int[] channelMap\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r10 = false\l}"];
+subgraph cluster_IfRegion_175085544 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r11.passthroughMediaFormat != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1394917882 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r10 = true\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0007|PHI: r10 \l  PHI: (r10v1 'passthrough' boolean) = (r10v0 'passthrough' boolean), (r10v2 'passthrough' boolean) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String r1 = r10 ? r11.passthroughMediaFormat.getString(\"mime\") : com.google.android.exoplayer2.util.MimeTypes.AUDIO_RAW\l}"];
+subgraph cluster_IfRegion_1679106396 {
+label = "IF [B:5:0x0011] THEN: R(1:6) ELSE: R(1:17)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|PHI: r1 \l  PHI: (r1v1 'mimeType' java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r10 == true) goto L_0x0013\l}"];
+subgraph cluster_Region_1491461346 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|android.media.MediaFormat r8 = r11.passthroughMediaFormat\l}"];
+}
+subgraph cluster_Region_758897582 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003c|r8 = r13\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0015|PHI: r8 \l  PHI: (r8v1 'format' android.media.MediaFormat) = (r8v0 'format' android.media.MediaFormat), (r8v2 'format' android.media.MediaFormat) binds: [B:17:0x003c, B:6:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = r8.getInteger(\"channel\-count\")\lint int r3 = r8.getInteger(\"sample\-rate\")\l}"];
+subgraph cluster_IfRegion_364323171 {
+label = "IF [B:8:0x0023, B:9:0x0025, B:11:0x0029] THEN: R(1:18) ELSE: R(2:12|(1:15))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|if (r11.codecNeedsDiscardChannelsWorkaround == false) goto L_0x003e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|ADDED_TO_REGION\l|if (r2 != 6) goto L_0x003e\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0029|ADDED_TO_REGION\l|if (r11.channelCount \>= 6) goto L_0x003e\l}"];
+subgraph cluster_Region_1862639180 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x003e|r6 = null\l}"];
+}
+subgraph cluster_Region_470867625 {
+label = "R(2:12|(1:15))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002b|int[] r6 = new int[r11.channelCount]\lint r9 = 0\l}"];
+subgraph cluster_LoopRegion_1797651261 {
+label = "LOOP:0: (1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0032|if (r9 \< r11.channelCount) goto L_0x0034\l}"];
+subgraph cluster_Region_1203073795 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0034|LOOP_END\lLOOP:0: B:13:0x0030\-\>B:15:0x0034\l|r6[r9] = r9\lr9++\l}"];
+}
+}
+}
+}
+subgraph cluster_TryCatchRegion_410370564 {
+label = "Try: R(1:20) catches: R(2:22|24)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1650656636 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|Catch:\{ ConfigurationException \-\> 0x0048 \}\lSplitter:B:19:0x003f\l|r11.audioTrack.configure(r1, r2, r3, r11.pcmEncoding, 0, r6)     \/\/ Catch:\{ ConfigurationException \-\> 0x0048 \}\l}"];
+}
+subgraph cluster_Region_1915621029 {
+label = "R(2:22|24) | ExcHandler: ConfigurationException (r7v0 'e' com.google.android.exoplayer2.audio.AudioTrack$ConfigurationException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0048|ExcHandler: ConfigurationException (r7v0 'e' com.google.android.exoplayer2.audio.AudioTrack$ConfigurationException A[CUSTOM_DECLARE])\lSplitter:B:19:0x003f\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0051|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r7, getIndex())\l}"];
+}
+}
+}
+subgraph cluster_Region_1915621029 {
+label = "R(2:22|24) | ExcHandler: ConfigurationException (r7v0 'e' com.google.android.exoplayer2.audio.AudioTrack$ConfigurationException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0048|ExcHandler: ConfigurationException (r7v0 'e' com.google.android.exoplayer2.audio.AudioTrack$ConfigurationException A[CUSTOM_DECLARE])\lSplitter:B:19:0x003f\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0051|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r7, getIndex())\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0027}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0030|LOOP_START\lPHI: r9 \l  PHI: (r9v1 'i' int) = (r9v0 'i' int), (r9v2 'i' int) binds: [B:12:0x002b, B:15:0x0034] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:13:0x0030\-\>B:15:0x0034\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0039}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x003f|SYNTHETIC\lPHI: r6 \l  PHI: (r6v0 'channelMap' int[]) = (r6v1 'channelMap' int[]), (r6v2 'channelMap' int[]) binds: [B:18:0x003e, B:14:0x0032] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:19:0x003f\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0047}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0049}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.audio.MediaCodecAudioRenderer.onOutputFormatChanged((r11v0 'this' com.google.android.exoplayer2.audio.MediaCodecAudioRenderer A[IMMUTABLE_TYPE, THIS]), (r12v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'outputFormat' android.media.MediaFormat A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_16;
+Node_5 -> Node_6;
+Node_5 -> Node_17[style=dashed];
+Node_6 -> Node_7;
+Node_17 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_18;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_18;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_18;
+Node_18 -> Node_19;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_15 -> Node_13;
+Node_20 -> Node_21;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_23;
+Node_4 -> Node_5;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_16 -> Node_5;
+Node_19 -> Node_20;
+Node_19 -> Node_22;
+Node_23 -> Node_24;
+}
+

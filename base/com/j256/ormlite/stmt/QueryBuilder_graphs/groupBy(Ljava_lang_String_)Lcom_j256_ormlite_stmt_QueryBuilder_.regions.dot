@@ -1,0 +1,36 @@
+digraph "CFG forcom.j256.ormlite.stmt.QueryBuilder.groupBy(Ljava\/lang\/String;)Lcom\/j256\/ormlite\/stmt\/QueryBuilder;" {
+subgraph cluster_Region_882525827 {
+label = "R(1:(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1015794898 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_681422090 {
+label = "IF [B:1:0x0008] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (verifyColumnName(r4).isForeignCollection() == false) goto L_0x000a\l}"];
+subgraph cluster_Region_358068656 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|addGroupBy(com.j256.ormlite.stmt.query.ColumnNameOrRawSql.withColumnName(r4))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1939817415 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"Can't groupBy foreign colletion field: \" + r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.j256.ormlite.stmt.QueryBuilder\<T, ID\> com.j256.ormlite.stmt.QueryBuilder.groupBy((r3v0 'this' com.j256.ormlite.stmt.QueryBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Lcom\/j256\/ormlite\/stmt\/QueryBuilder\<, TT;TID;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

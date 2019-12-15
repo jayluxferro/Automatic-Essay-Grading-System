@@ -1,0 +1,27 @@
+digraph "CFG forcom.crashlytics.android.core.SessionProtobufHelper.getEventAppCustomAttributeSize(Ljava\/lang\/String;Ljava\/lang\/String;)I" {
+subgraph cluster_Region_125272149 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = com.crashlytics.android.core.CodedOutputStream.computeBytesSize(1, com.crashlytics.android.core.ByteString.copyFromUtf8(r1))\l}"];
+subgraph cluster_IfRegion_1509408440 {
+label = "IF [B:1:0x0009] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r2 == null) goto L_0x000b\l}"];
+subgraph cluster_Region_1652807837 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|java.lang.String r2 = \"\"\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0017|RETURN\l|return r1 + com.crashlytics.android.core.CodedOutputStream.computeBytesSize(2, com.crashlytics.android.core.ByteString.copyFromUtf8(r2))\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|PHI: r2 \l  PHI: (r2v1 java.lang.String) = (r2v0 java.lang.String), (r2v4 java.lang.String) binds: [B:1:0x0009, B:2:0x000b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static int com.crashlytics.android.core.SessionProtobufHelper.getEventAppCustomAttributeSize((r1v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,140 @@
+digraph "CFG forokio.RealBufferedSink.close()V" {
+subgraph cluster_Region_1051231489 {
+label = "R(1:(1:(5:3|(1:(1:7))|(1:10)|14|(1:(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1282675750 {
+label = "R(1:(5:3|(1:(1:7))|(1:10)|14|(1:(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237226742 {
+label = "IF [B:1:0x0002] THEN: R(5:3|(1:(1:7))|(1:10)|14|(1:(1:16))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.closed != true) goto L_0x0005\l}"];
+subgraph cluster_Region_676412278 {
+label = "R(5:3|(1:(1:7))|(1:10)|14|(1:(1:16)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|java.lang.Throwable r0 = null\l}"];
+subgraph cluster_TryCatchRegion_7630282 {
+label = "Try: R(1:(1:7)) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2047762504 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_372739595 {
+label = "IF [B:6:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|Catch:\{ Throwable \-\> 0x001c \}\l|if (r5.buffer.size \> 0) goto L_0x0010     \/\/ Catch:\{ Throwable \-\> 0x001c \}\l}"];
+subgraph cluster_Region_106136129 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|Catch:\{ Throwable \-\> 0x001c \}\l|r5.sink.write(r5.buffer, r5.buffer.size)     \/\/ Catch:\{ Throwable \-\> 0x001c \}\l}"];
+}
+}
+}
+subgraph cluster_Region_401564709 {
+label = "R(1:8) | ExcHandler: Throwable (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|ExcHandler: Throwable (th java.lang.Throwable)\lSplitter:B:4:0x0006\l|java.lang.Throwable r0 = th\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_636134780 {
+label = "Try: R(1:10) catches: R(2:11|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_Region_745512361 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ Throwable \-\> 0x0023 \}\lSplitter:B:9:0x001d\l|r5.sink.close()     \/\/ Catch:\{ Throwable \-\> 0x0023 \}\l}"];
+}
+subgraph cluster_Region_109185529 {
+label = "R(2:11|(1:13)) | ExcHandler: Throwable (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0023|ExcHandler: Throwable (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:9:0x001d\l}"];
+subgraph cluster_IfRegion_730326733 {
+label = "IF [B:12:0x0024] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0024|if (r0 == null) goto L_0x0026\l}"];
+subgraph cluster_Region_1443699284 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|r0 = r1\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0027|PHI: r0 \l  PHI: (r0v3 'th' java.lang.Throwable) = (r0v2 'th' java.lang.Throwable), (r0v4 'th' java.lang.Throwable), (r0v2 'th' java.lang.Throwable) binds: [B:12:0x0024, B:13:0x0026, B:10:?] A[DONT_GENERATE, DONT_INLINE]\l|r5.closed = true\l}"];
+subgraph cluster_Region_475648738 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_179102272 {
+label = "IF [B:15:0x002a] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002a|if (r0 != null) goto L_0x002c\l}"];
+subgraph cluster_Region_885888763 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x002c|okio.Util.sneakyRethrow(r0)\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_401564709 {
+label = "R(1:8) | ExcHandler: Throwable (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|ExcHandler: Throwable (th java.lang.Throwable)\lSplitter:B:4:0x0006\l|java.lang.Throwable r0 = th\l}"];
+}
+subgraph cluster_Region_109185529 {
+label = "R(2:11|(1:13)) | ExcHandler: Throwable (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0023|ExcHandler: Throwable (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:9:0x001d\l}"];
+subgraph cluster_IfRegion_730326733 {
+label = "IF [B:12:0x0024] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0024|if (r0 == null) goto L_0x0026\l}"];
+subgraph cluster_Region_1443699284 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|r0 = r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006|SYNTHETIC\lSplitter:B:4:0x0006\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ Throwable \-\> 0x001c \}\lSplitter:B:4:0x0006\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d|SYNTHETIC\lPHI: r0 \l  PHI: (r0v2 'th' java.lang.Throwable) = (r0v5 'th' java.lang.Throwable), (r0v1 'th' java.lang.Throwable), (r0v1 'th' java.lang.Throwable) binds: [B:8:0x001c, B:6:0x000e, B:7:0x0010] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:9:0x001d\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okio.RealBufferedSink.close((r5v0 'this' okio.RealBufferedSink A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+}
+

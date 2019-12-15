@@ -1,0 +1,24 @@
+digraph "CFG fororg.mapsforge.map.reader.header.OptionalFields.readMapStartPosition(Lorg\/mapsforge\/map\/reader\/ReadBuffer;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r4 I:org.mapsforge.map.reader.header.OptionalFields) org.mapsforge.map.reader.header.OptionalFields.hasStartPosition boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0027 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: INVOKE  (r0 I:int) = (r5 I:org.mapsforge.map.reader.ReadBuffer) org.mapsforge.map.reader.ReadBuffer.readInt():int type: VIRTUAL \l0x0008: INVOKE  (r0 I:double) = (r0 I:int) org.mapsforge.core.util.LatLongUtils.microdegreesToDegrees(int):double type: STATIC \l0x000c: INVOKE  (r5 I:int) = (r5 I:org.mapsforge.map.reader.ReadBuffer) org.mapsforge.map.reader.ReadBuffer.readInt():int type: VIRTUAL \l0x0010: INVOKE  (r2 I:double) = (r5 I:int) org.mapsforge.core.util.LatLongUtils.microdegreesToDegrees(int):double type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|SYNTHETIC\lSplitter:B:3:0x0014\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Splitter:B:3:0x0014\l|0x0014: NEW_INSTANCE  (r5 I:org.mapsforge.core.model.LatLong) =  org.mapsforge.core.model.LatLong A[Catch:\{ IllegalArgumentException \-\> 0x001c \}, TRY_ENTER]\l0x0016: INVOKE  \l  (r5 I:org.mapsforge.core.model.LatLong)\l  (r0 I:double)\l  (r2 I:double)\l org.mapsforge.core.model.LatLong.\<init\>(double, double):void type: DIRECT A[Catch:\{ IllegalArgumentException \-\> 0x001c \}]\l0x0019: IPUT  \l  (r5 I:org.mapsforge.core.model.LatLong)\l  (r4 I:org.mapsforge.map.reader.header.OptionalFields)\l org.mapsforge.map.reader.header.OptionalFields.startPosition org.mapsforge.core.model.LatLong A[Catch:\{ IllegalArgumentException \-\> 0x001c \}, TRY_LEAVE]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|ExcHandler: IllegalArgumentException null\lSplitter:B:3:0x0014\l|0x001c: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|0x001d: NEW_INSTANCE  (r0 I:org.mapsforge.map.reader.header.MapFileException) =  org.mapsforge.map.reader.header.MapFileException \l0x001f: INVOKE  (r5 I:java.lang.String) = (r5 I:java.lang.IllegalArgumentException) java.lang.IllegalArgumentException.getMessage():java.lang.String type: VIRTUAL \l0x0023: INVOKE  \l  (r0 I:org.mapsforge.map.reader.header.MapFileException)\l  (r5 I:java.lang.String)\l org.mapsforge.map.reader.header.MapFileException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|0x0026: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|0x0027: RETURN   \l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.reader.header.OptionalFields.readMapStartPosition((r4 'this' I:org.mapsforge.map.reader.header.OptionalFields A[IMMUTABLE_TYPE, THIS]), (r5 I:org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_4 -> Node_6;
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,54 @@
+digraph "CFG fororg.osmdroid.views.overlay.Marker.showInfoWindow()V" {
+subgraph cluster_Region_807989690 {
+label = "R(2:0|(1:(2:3|(2:(2:5|6)|(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r21\l}"];
+subgraph cluster_Region_1375090754 {
+label = "R(1:(2:3|(2:(2:5|6)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_859883118 {
+label = "IF [B:1:0x0004] THEN: R(2:3|(2:(2:5|6)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0.mInfoWindow != null) goto L_0x0007\l}"];
+subgraph cluster_Region_1287878975 {
+label = "R(2:3|(2:(2:5|6)|(1:7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|int int r1 = r0.mIcon.getIntrinsicWidth()\lint int r2 = r0.mIcon.getIntrinsicHeight()\lint int r1 = (int) (((float) r1) * (r0.mIWAnchorU \- r0.mAnchorU))\lint int r2 = (int) (((float) r2) * (r0.mIWAnchorV \- r0.mAnchorV))\l}"];
+subgraph cluster_Region_147875333 {
+label = "R(2:(2:5|6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2139288452 {
+label = "IF [B:4:0x002a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a|if (r0.mBearing == 0.0f) goto L_0x002c\l}"];
+subgraph cluster_Region_576909117 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|r0.mInfoWindow.open(r0, r0.mPosition, r1, r2)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0033|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_614915531 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|double double r3 = (((double) (\-r0.mBearing)) * 3.141592653589793d) \/ 180.0d\ldouble double r17 = java.lang.Math.cos(r3)\ldouble double r3 = java.lang.Math.sin(r3)\llong long r13 = (long) r1\llong r5 = r13\llong r7 = (long) r2\llong r19 = r13\ldouble r13 = r17\lint int r15 = (int) org.osmdroid.util.RectL.getRotatedX(r5, r7, 0, 0, r13, r3)\lr0.mInfoWindow.open(r0, r0.mPosition, r15, (int) org.osmdroid.util.RectL.getRotatedY(r19, r7, 0, 0, r13, r3))\l}"];
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x006f}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.Marker.showInfoWindow((r21v0 'this' org.osmdroid.views.overlay.Marker A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

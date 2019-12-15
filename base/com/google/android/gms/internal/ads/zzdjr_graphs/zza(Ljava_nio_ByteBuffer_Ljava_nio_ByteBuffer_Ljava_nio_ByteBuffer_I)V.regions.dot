@@ -1,0 +1,64 @@
+digraph "CFG forcom.google.android.gms.internal.ads.zzdjr.zza(Ljava\/nio\/ByteBuffer;Ljava\/nio\/ByteBuffer;Ljava\/nio\/ByteBuffer;I)V" {
+subgraph cluster_Region_1488597978 {
+label = "R(1:(2:(1:8)|(2:9|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_831453615 {
+label = "R(2:(1:8)|(2:9|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1447717698 {
+label = "IF [B:0:0x0000, B:2:0x0006, B:4:0x000c, B:6:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 \< 0) goto L_0x0014\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r4.remaining() \< r6) goto L_0x0014\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r5.remaining() \< r6) goto L_0x0014\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|ADDED_TO_REGION\l|if (r3.remaining() \< r6) goto L_0x0014\l}"];
+subgraph cluster_Region_62177057 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|throw new java.lang.IllegalArgumentException(\"That combination of buffers, offsets and length to xor result in out\-of\-bond accesses.\")\l}"];
+}
+}
+subgraph cluster_Region_2114431756 {
+label = "R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1688377686 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|LOOP_START\lPHI: r0 \l  PHI: (r0v5 int) = (r0v4 int), (r0v6 int) binds: [B:9:0x001c, B:11:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:10:0x001d\-\>B:11:0x001f\l|if (r0 \< r6) goto L_0x001f\l}"];
+subgraph cluster_Region_1160861913 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001f|LOOP_END\lLOOP:0: B:10:0x001d\-\>B:11:0x001f\l|r3.put((byte) (r4.get() ^ r5.get()))\lr0++\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0014}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002f}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final void com.google.android.gms.internal.ads.zzdjr.zza((r3v0 java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_10;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_13 -> Node_12;
+}
+

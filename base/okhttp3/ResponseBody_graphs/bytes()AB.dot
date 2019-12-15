@@ -1,0 +1,39 @@
+digraph "CFG forokhttp3.ResponseBody.bytes()[B" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long r0 = contentLength()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|if ((r0 \> 2147483647L ? 1 : (r0 == 2147483647L ? 0 : \-1)) \> 0) goto L_0x004e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|okio.BufferedSource r2 = source()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|SYNTHETIC\lSplitter:B:3:0x000f\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ all \-\> 0x0049 \}\lSplitter:B:3:0x000f\l|byte[] r3 = r2.readByteArray()     \/\/ Catch:\{ all \-\> 0x0049 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r2)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|if ((r0 \> \-1 ? 1 : (r0 == \-1 ? 0 : \-1)) == 0) goto L_0x0048\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|if ((r0 \> ((long) r3.length) ? 1 : (r0 == ((long) r3.length) ? 0 : \-1)) != 0) goto L_0x0023\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|java.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"Content\-Length (\")\lr4.append(r0)\lr4.append(\") and stream length (\")\lr4.append(r3.length)\lr4.append(\") disagree\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0047|throw new java.io.IOException(r4.toString())\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0048|RETURN\l|return r3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0049|ExcHandler: all (r0v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:3:0x000f\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_13 [shape=record,label="{13\:\ 0x004a|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r2)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x004d|throw r0\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004e|java.lang.StringBuilder r3 = new java.lang.StringBuilder()\lr3.append(\"Cannot buffer entire body for content length: \")\lr3.append(r0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0064|throw new java.io.IOException(r3.toString())\l}"];
+MethodNode[shape=record,label="{public final byte[] okhttp3.ResponseBody.bytes((r6v0 'this' okhttp3.ResponseBody A[IMMUTABLE_TYPE, THIS]))  | JADX INFO: finally extract failed\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

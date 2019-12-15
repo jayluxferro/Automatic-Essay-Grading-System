@@ -1,0 +1,24 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.AtomParsers.parseMdhd(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Landroid\/util\/Pair;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7 = 8\lr8.setPosition(8)\lint r3 = com.google.android.exoplayer2.extractor.mp4.Atom.parseFullAtomVersion(r8.readInt())\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r3 != 0) goto L_0x0058\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|r6 = 8\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|PHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v9 int) binds: [B:8:0x0058, B:2:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|r8.skipBytes(r6)\llong r4 = r8.readUnsignedInt()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r3 != 0) goto L_0x001a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|r7 = 4\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|PHI: r7 \l  PHI: (r7v1 int) = (r7v0 int), (r7v14 int) binds: [B:4:0x0017, B:5:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r8.skipBytes(r7)\lint r2 = r8.readUnsignedShort()\ljava.lang.String r1 = new java.lang.StringBuilder().append(\"\").append((char) (((r2 \>\> 10) & 31) + 96)).append((char) (((r2 \>\> 5) & 31) + 96)).append((char) ((r2 & 31) + 96)).toString()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0057|RETURN\l|return android.util.Pair.create(java.lang.Long.valueOf(r4), r1)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0058|r6 = 16\l}"];
+MethodNode[shape=record,label="{private static android.util.Pair\<java.lang.Long, java.lang.String\> com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseMdhd((r8v0 'mdhd' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;, ), Landroid\/util\/Pair, \<, Ljava\/lang\/Long;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_3;
+}
+

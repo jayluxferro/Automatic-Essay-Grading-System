@@ -1,0 +1,66 @@
+digraph "CFG forcom.mapbox.api.optimization.v1.models.$AutoValue_OptimizationWaypoint.Builder.build()Lcom\/mapbox\/api\/optimization\/v1\/models\/OptimizationWaypoint;" {
+subgraph cluster_Region_1973756692 {
+label = "R(4:0|(1:2)|(1:5)|(2:(1:9)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = \"\"\l}"];
+subgraph cluster_IfRegion_105712012 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5.waypointIndex == null) goto L_0x0006\l}"];
+subgraph cluster_Region_503923492 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.lang.String r0 = r0 + \" waypointIndex\"\l}"];
+}
+}
+subgraph cluster_IfRegion_1172265957 {
+label = "IF [B:4:0x0019] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|if (r5.tripsIndex == null) goto L_0x001b\l}"];
+subgraph cluster_Region_1020569962 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|java.lang.String r0 = r0 + \" tripsIndex\"\l}"];
+}
+}
+subgraph cluster_Region_151834069 {
+label = "R(2:(1:9)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1706771450 {
+label = "IF [B:7:0x0030] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|if (r0.isEmpty() == true) goto L_0x0032\l}"];
+subgraph cluster_Region_1009062699 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0047|RETURN\l|return new com.mapbox.api.optimization.p012v1.models.AutoValue_OptimizationWaypoint(r5.waypointIndex.intValue(), r5.tripsIndex.intValue(), r5.name, r5.rawLocation)\l}"];
+}
+}
+subgraph cluster_Region_970613210 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0048}"];
+Node_11 [shape=record,label="{11\:\ 0x005e|throw new java.lang.IllegalStateException(\"Missing required properties:\" + r0)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017|PHI: r0 \l  PHI: (r0v1 java.lang.String) = (r0v0 java.lang.String), (r0v8 java.lang.String) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002c|PHI: r0 \l  PHI: (r0v2 java.lang.String) = (r0v1 java.lang.String), (r0v6 java.lang.String) binds: [B:4:0x0019, B:5:0x001b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0032}"];
+MethodNode[shape=record,label="{public com.mapbox.api.optimization.v1.models.OptimizationWaypoint com.mapbox.api.optimization.v1.models.$AutoValue_OptimizationWaypoint.Builder.build((r5v0 'this' com.mapbox.api.optimization.v1.models.$AutoValue_OptimizationWaypoint$Builder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_10 -> Node_11;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

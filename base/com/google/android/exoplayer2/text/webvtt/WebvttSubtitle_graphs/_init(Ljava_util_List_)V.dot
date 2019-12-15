@@ -1,0 +1,19 @@
+digraph "CFG forcom.google.android.exoplayer2.text.webvtt.WebvttSubtitle.\<init\>(Ljava\/util\/List;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.cues = r9\lr8.numCues = r9.size()\lr8.cueTimesUs = new long[(r8.numCues * 2)]\lr2 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0014|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'cueIndex' int) = (r2v0 'cueIndex' int), (r2v2 'cueIndex' int) binds: [B:0:0x0000, B:3:0x0018] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:3:0x0018\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0016|if (r2 \>= r8.numCues) goto L_0x0031\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|LOOP_END\lLOOP:0: B:1:0x0014\-\>B:3:0x0018\l|com.google.android.exoplayer2.text.webvtt.WebvttCue r1 = r9.get(r2)\lint r0 = r2 * 2\lr8.cueTimesUs[r0] = r1.startTime\lr8.cueTimesUs[r0 + 1] = r1.endTime\lint r2 = r2 + 1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0031|r8.sortedCueTimesUs = java.util.Arrays.copyOf(r8.cueTimesUs, r8.cueTimesUs.length)\ljava.util.Arrays.sort(r8.sortedCueTimesUs)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0041|RETURN\l|return\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.text.webvtt.WebvttSubtitle.\<init\>((r8v0 'this' com.google.android.exoplayer2.text.webvtt.WebvttSubtitle A[IMMUTABLE_TYPE, THIS]), (r9v0 'cues' java.util.List\<com.google.android.exoplayer2.text.webvtt.WebvttCue\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/text\/webvtt\/WebvttCue;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

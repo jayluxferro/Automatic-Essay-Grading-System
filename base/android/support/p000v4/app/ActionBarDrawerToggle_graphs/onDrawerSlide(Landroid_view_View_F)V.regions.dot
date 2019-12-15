@@ -1,0 +1,33 @@
+digraph "CFG forandroid.support.v4.app.ActionBarDrawerToggle.onDrawerSlide(Landroid\/view\/View;F)V" {
+subgraph cluster_Region_2091171422 {
+label = "R(3:0|(1:2)(1:3)|4) | DECL_VAR: float null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r4 = r3.mSlider.getPosition()\l}"];
+subgraph cluster_IfRegion_187845063 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r5 \> 0.5f) goto L_0x000e\l}"];
+subgraph cluster_Region_1045417786 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|float r4 = java.lang.Math.max(r4, java.lang.Math.max(0.0f, r5 \- 0.5f) * 2.0f)\l}"];
+}
+subgraph cluster_Region_2116795653 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|float r4 = java.lang.Math.min(r4, r5 * 2.0f)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0021|PHI: r4 \l  PHI: (r4v3 float) = (r4v4 float), (r4v5 float) binds: [B:3:0x001b, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|r3.mSlider.setPosition(r4)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0026}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.ActionBarDrawerToggle.onDrawerSlide((r3v0 'this' android.support.v4.app.ActionBarDrawerToggle A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.Cache.2.next()Ljava\/lang\/String;" {
+subgraph cluster_Region_41610019 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_141825220 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_50345477 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (hasNext() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_2026973492 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.lang.String java.lang.String r0 = r2.nextUrl\lr2.nextUrl = null\lr2.canRemove = true\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1259362417 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+MethodNode[shape=record,label="{public java.lang.String okhttp3.Cache.2.next((r2v0 'this' okhttp3.Cache$2 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

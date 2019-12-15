@@ -1,0 +1,29 @@
+digraph "CFG forcom.crashlytics.android.core.DefaultCreateReportSpiCall.applyHeadersTo(Lio\/fabric\/sdk\/android\/services\/network\/HttpRequest;Lcom\/crashlytics\/android\/core\/CreateReportRequest;)Lio\/fabric\/sdk\/android\/services\/network\/HttpRequest;" {
+subgraph cluster_Region_237682400 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|io.fabric.sdk.android.services.network.HttpRequest p018io.fabric.sdk.android.services.network.HttpRequest r3 = r3.header(p018io.fabric.sdk.android.services.common.AbstractSpiCall.HEADER_API_KEY, r4.apiKey).header(p018io.fabric.sdk.android.services.common.AbstractSpiCall.HEADER_CLIENT_TYPE, p018io.fabric.sdk.android.services.common.AbstractSpiCall.ANDROID_CLIENT_TYPE).header(p018io.fabric.sdk.android.services.common.AbstractSpiCall.HEADER_CLIENT_VERSION, r2.kit.getVersion())\ljava.util.Iterator r4 = r4.report.getCustomHeaders().entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1098425740 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002e|if (r4.hasNext() != false) goto L_0x0030\l}"];
+subgraph cluster_Region_124592662 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0030|LOOP_END\lLOOP:0: B:1:0x002a\-\>B:3:0x0030\l|io.fabric.sdk.android.services.network.HttpRequest r3 = r3.header(r0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x003b|RETURN\l|return r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x002a|LOOP_START\lPHI: r3 \l  PHI: (r3v4 io.fabric.sdk.android.services.network.HttpRequest) = (r3v3 io.fabric.sdk.android.services.network.HttpRequest), (r3v5 io.fabric.sdk.android.services.network.HttpRequest) binds: [B:0:0x0000, B:3:0x0030] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x002a\-\>B:3:0x0030\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x003b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private io.fabric.sdk.android.services.network.HttpRequest com.crashlytics.android.core.DefaultCreateReportSpiCall.applyHeadersTo((r2v0 'this' com.crashlytics.android.core.DefaultCreateReportSpiCall A[IMMUTABLE_TYPE, THIS]), (r3v0 io.fabric.sdk.android.services.network.HttpRequest A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.crashlytics.android.core.CreateReportRequest A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationEventDispatcher.addOffRouteListener(Lcom\/mapbox\/services\/android\/navigation\/v5\/offroute\/OffRouteListener;)V" {
+subgraph cluster_Region_1029362094 {
+label = "R(1:(1:2)(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_783705759 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r1.offRouteListeners.contains(r2) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_832302516 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|timber.log.Timber.m201w(\"The specified OffRouteListener has already been added to the stack.\", new java.lang.Object[0])\l}"];
+}
+subgraph cluster_Region_1101676329 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|r1.offRouteListeners.add(r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016}"];
+MethodNode[shape=record,label="{void com.mapbox.services.android.navigation.v5.navigation.NavigationEventDispatcher.addOffRouteListener((r1v0 'this' com.mapbox.services.android.navigation.v5.navigation.NavigationEventDispatcher A[IMMUTABLE_TYPE, THIS]), (r2v0 com.mapbox.services.android.navigation.v5.offroute.OffRouteListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

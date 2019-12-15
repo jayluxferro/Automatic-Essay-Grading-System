@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.media.ExifInterface.getRawAttributes(Landroid\/support\/media\/ExifInterface$ByteOrderedDataInputStream;)V" {
+subgraph cluster_Region_1473719058 {
+label = "R(2:0|(1:(2:4|(1:(1:6))))) | DECL_VAR: android.support.media.ExifInterface$ExifAttribute null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|parseTiffHeaders(r5, r5.available())\lreadImageFileDirectory(r5, 0)\lupdateImageSizeValues(r5, 0)\lupdateImageSizeValues(r5, 5)\lupdateImageSizeValues(r5, 4)\lvalidateImages(r5)\l}"];
+subgraph cluster_Region_1429578626 {
+label = "R(1:(2:4|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_63363717 {
+label = "IF [B:1:0x001d, B:3:0x002c] THEN: R(2:4|(1:(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001d|if (r4.mMimeType == 8) goto L_0x001f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002c|ADDED_TO_REGION\l|if ((r5 = r4.mAttributes[1].get(TAG_MAKER_NOTE)) != null) goto L_0x002e\l}"];
+subgraph cluster_Region_1366647763 {
+label = "R(2:4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|android.support.media.ExifInterface$ByteOrderedDataInputStream android.support.media.ExifInterface.ByteOrderedDataInputStream r1 = new android.support.media.ExifInterface.ByteOrderedDataInputStream(r5.bytes)\lr1.setByteOrder(r4.mExifByteOrder)\lr1.seek(6)\lreadImageFileDirectory(r1, 9)\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r5 = r4.mAttributes[9].get(TAG_COLOR_SPACE)\l}"];
+subgraph cluster_Region_1883113195 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_961106885 {
+label = "IF [B:5:0x0050] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0050|if (r5 != null) goto L_0x0052\l}"];
+subgraph cluster_Region_736575794 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0052|r4.mAttributes[1].put(TAG_COLOR_SPACE, r5)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001f}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.media.ExifInterface.getRawAttributes((r4v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r5v0 android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+}
+

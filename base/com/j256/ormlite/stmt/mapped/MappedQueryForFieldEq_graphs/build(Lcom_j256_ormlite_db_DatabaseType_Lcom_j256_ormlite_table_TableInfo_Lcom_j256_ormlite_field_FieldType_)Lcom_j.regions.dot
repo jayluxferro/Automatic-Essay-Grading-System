@@ -1,0 +1,39 @@
+digraph "CFG forcom.j256.ormlite.stmt.mapped.MappedQueryForFieldEq.build(Lcom\/j256\/ormlite\/db\/DatabaseType;Lcom\/j256\/ormlite\/table\/TableInfo;Lcom\/j256\/ormlite\/field\/FieldType;)Lcom\/j256\/ormlite\/stmt\/mapped\/MappedQueryForFieldEq;" {
+subgraph cluster_Region_1301246782 {
+label = "R(1:(2:(2:3|4)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_406691598 {
+label = "R(2:(2:3|4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_90042159 {
+label = "IF [B:0:0x0000, B:2:0x0006] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 == null) goto L_0x0002\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if ((r8 = r7.getIdField()) == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1102155332 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009}"];
+Node_4 [shape=record,label="{4\:\ 0x0028|throw new java.sql.SQLException(\"Cannot query\-for\-id with \" + r7.getDataClass() + \" because it doesn't have an id field\")\l}"];
+}
+}
+subgraph cluster_Region_2005996495 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|PHI: r8 \l  PHI: (r8v1 com.j256.ormlite.field.FieldType) = (r8v0 com.j256.ormlite.field.FieldType), (r8v2 com.j256.ormlite.field.FieldType) binds: [B:0:0x0000, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0040|RETURN\l|return new com.j256.ormlite.stmt.mapped.MappedQueryForFieldEq(r7, buildStatement(r6, r7, r8), new com.j256.ormlite.field.FieldType[]\{r8\}, r7.getFieldTypes(), \"query\-for\-id\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+MethodNode[shape=record,label="{public static com.j256.ormlite.stmt.mapped.MappedQueryForFieldEq\<T, ID\> com.j256.ormlite.stmt.mapped.MappedQueryForFieldEq.build((r6v0 com.j256.ormlite.db.DatabaseType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 com.j256.ormlite.table.TableInfo\<T, ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 com.j256.ormlite.field.FieldType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, ID:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/db\/DatabaseType;, Lcom\/j256\/ormlite\/table\/TableInfo\<, TT;TID;\>;, Lcom\/j256\/ormlite\/field\/FieldType;, ), Lcom\/j256\/ormlite\/stmt\/mapped\/MappedQueryForFieldEq\<, TT;TID;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_1 -> Node_2;
+}
+

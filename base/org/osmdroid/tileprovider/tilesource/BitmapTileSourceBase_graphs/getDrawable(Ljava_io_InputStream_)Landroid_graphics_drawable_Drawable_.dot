@@ -1,0 +1,29 @@
+digraph "CFG fororg.osmdroid.tileprovider.tilesource.BitmapTileSourceBase.getDrawable(Ljava\/io\/InputStream;)Landroid\/graphics\/drawable\/Drawable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\lSplitter:B:1:0x0001\l|android.graphics.BitmapFactory$Options r1 = new android.graphics.BitmapFactory.Options()     \/\/ Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\lorg.osmdroid.tileprovider.BitmapPool.getInstance().applyReusableOptions(r1, r5.mTileSizePixels, r5.mTileSizePixels)     \/\/ Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\landroid.graphics.Bitmap r6 = android.graphics.BitmapFactory.decodeStream(r6, (android.graphics.Rect) null, r1)     \/\/ Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\l|if (r6 == null) goto L_0x0038     \/\/ Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|Catch:\{ OutOfMemoryError \-\> 0x0039, Exception \-\> 0x001d \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|RETURN\l|return new org.osmdroid.tileprovider.ReusableBitmapDrawable(r6)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001d|ExcHandler: Exception (r6v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l|java.lang.Exception r6 = move\-exception\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001e|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"#547 Error loading bitmap\")\lr2.append(pathBase())\landroid.util.Log.w(org.osmdroid.api.IMapView.LOGTAG, r2.toString(), r6)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0038|RETURN\l|return null\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|ExcHandler: OutOfMemoryError (r6v1 'e' java.lang.OutOfMemoryError A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l|java.lang.OutOfMemoryError r6 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|android.util.Log.e(org.osmdroid.api.IMapView.LOGTAG, \"OutOfMemoryError loading bitmap\")\ljava.lang.System.gc()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0049|throw new org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase.LowMemoryException((java.lang.Throwable) r6)\l}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase.getDrawable((r5v0 'this' org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase A[IMMUTABLE_TYPE, THIS]), (r6v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase$LowMemoryException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

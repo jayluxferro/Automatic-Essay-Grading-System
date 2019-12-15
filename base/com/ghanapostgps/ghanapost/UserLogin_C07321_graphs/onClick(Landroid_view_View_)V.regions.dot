@@ -1,0 +1,52 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.UserLogin.1.onClick(Landroid\/view\/View;)V" {
+subgraph cluster_Region_643418767 {
+label = "R(2:0|(1:2)(1:(1:6)(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String final java.lang.String r3 = com.ghanapostgps.ghanapost.UserLogin.this.firstNameTxt.getText().toString()\ljava.lang.String final java.lang.String r4 = com.ghanapostgps.ghanapost.UserLogin.this.lastNameTxt.getText().toString()\ljava.lang.String final java.lang.String r5 = com.ghanapostgps.ghanapost.AppSharedPreferences.get((android.content.Context) com.ghanapostgps.ghanapost.UserLogin.this, \"\", com.ghanapostgps.ghanapost.util.Const.UserTelephone)\lkotlin.text.Regex kotlin.text.Regex r9 = new kotlin.text.Regex(\"[A\-Za\-z\-'s\-]+\")\l}"];
+subgraph cluster_IfRegion_1999392849 {
+label = "IF [B:1:0x0030] THEN: R(1:2) ELSE: R(1:(1:6)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0030|if (r9.matches(r3) == false) goto L_0x0032\l}"];
+subgraph cluster_Region_1125899902 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0032|com.ghanapostgps.ghanapost.util.Utils.ShowMsgBox(com.ghanapostgps.ghanapost.UserLogin.this, com.ghanapostgps.ghanapost.UserLogin.this.getString(com.ghanapostgps.ghanapost.C0708R.string.invalid_characters_not_allowed), com.ghanapostgps.ghanapost.UserLogin.this.getString(com.ghanapostgps.ghanapost.C0708R.string.please_enter_first_name))\l}"];
+}
+subgraph cluster_Region_1938993075 {
+label = "R(1:(1:6)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1687291011 {
+label = "IF [B:5:0x004b] THEN: R(1:6) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x004b|if (r9.matches(r4) == false) goto L_0x004d\l}"];
+subgraph cluster_Region_402158270 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x004d|com.ghanapostgps.ghanapost.util.Utils.ShowMsgBox(com.ghanapostgps.ghanapost.UserLogin.this, com.ghanapostgps.ghanapost.UserLogin.this.getString(com.ghanapostgps.ghanapost.C0708R.string.invalid_characters_not_allowed), com.ghanapostgps.ghanapost.UserLogin.this.getString(com.ghanapostgps.ghanapost.C0708R.string.please_enter_last_name))\l}"];
+}
+subgraph cluster_Region_925130319 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0062|android.app.ProgressDialog final android.app.ProgressDialog r2 = new android.app.ProgressDialog(com.ghanapostgps.ghanapost.UserLogin.this)\lr2.setMessage(com.ghanapostgps.ghanapost.UserLogin.this.getString(com.ghanapostgps.ghanapost.C0708R.string.pleasee_wait_creating_count))\lr2.show()\ljava.lang.String java.lang.String r9 = com.ghanapostgps.ghanapost.util.Utils.getDeviceID(com.ghanapostgps.ghanapost.UserLogin.this)\ljava.util.HashMap java.util.HashMap r6 = new java.util.HashMap()\lr6.put(\"FirstName\", r3)\lr6.put(\"LastName\", r4)\lr6.put(\"MobileNumber\", r5)\lr6.put(\"Msisdn\", r5)\lr6.put(\"IMSI\", r9)\lr6.put(\"IMEI\", r9)\lr6.put(\"DeviceID\", r9)\lr6.put(\"Action\", \"AddCustomer\")\lcom.ghanapostgps.ghanapost.UserLogin.this.apiReq.postEncrypted(r6, new com.ghanapostgps.ghanapost.UserLogin.C07321.C07331())\lcom.ghanapostgps.ghanapost.util.AsaaseLog.write(com.ghanapostgps.ghanapost.UserLogin.this.getApplicationContext(), com.ghanapostgps.ghanapost.util.Const.BtnRegisterNameContinue)\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0046}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0047}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0061}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x00c6}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.UserLogin.1.onClick((r8v0 'this' com.ghanapostgps.ghanapost.UserLogin$1 A[IMMUTABLE_TYPE, THIS]), (r9v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_4 -> Node_5;
+}
+

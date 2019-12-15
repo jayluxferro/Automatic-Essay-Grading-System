@@ -1,0 +1,70 @@
+digraph "CFG forcom.mapbox.mapboxsdk.style.layers.PropertyValue.getColorInt()Ljava\/lang\/Integer;" {
+subgraph cluster_Region_450504907 {
+label = "R(1:(2:(2:10|11)|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1704754132 {
+label = "R(2:(2:10|11)|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_690902880 {
+label = "IF [B:1:0x0007, B:3:0x000d] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (isValue() == false) goto L_0x003a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if ((r8.value instanceof java.lang.String) == false) goto L_0x003a\l}"];
+subgraph cluster_Region_117121147 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003a|com.mapbox.mapboxsdk.log.Logger.m80e(TAG, java.lang.String.format(\"%s is not a String value and can not be converted to a color it\", new java.lang.Object[]\{r8.name\}))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004b|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1303174175 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1273515173 {
+label = "Try: R(1:6) catches: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_270960623 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return java.lang.Integer.valueOf(com.mapbox.mapboxsdk.utils.ColorUtils.rgbaToColor((java.lang.String) r8.value))\l}"];
+}
+subgraph cluster_Region_1333888360 {
+label = "R(3:7|8|9) | ExcHandler: ConversionException (r0v4 'e' com.mapbox.mapboxsdk.exceptions.ConversionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|ExcHandler: ConversionException (r0v4 'e' com.mapbox.mapboxsdk.exceptions.ConversionException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|com.mapbox.mapboxsdk.log.Logger.m80e(TAG, java.lang.String.format(\"%s could not be converted to a Color int: %s\", new java.lang.Object[]\{r8.name, r0.getMessage()\}))\lcom.mapbox.mapboxsdk.MapStrictMode.strictModeViolation((java.lang.Exception) r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1333888360 {
+label = "R(3:7|8|9) | ExcHandler: ConversionException (r0v4 'e' com.mapbox.mapboxsdk.exceptions.ConversionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|ExcHandler: ConversionException (r0v4 'e' com.mapbox.mapboxsdk.exceptions.ConversionException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|com.mapbox.mapboxsdk.log.Logger.m80e(TAG, java.lang.String.format(\"%s could not be converted to a Color int: %s\", new java.lang.Object[]\{r8.name, r0.getMessage()\}))\lcom.mapbox.mapboxsdk.MapStrictMode.strictModeViolation((java.lang.Exception) r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010|SYNTHETIC\lSplitter:B:4:0x0010\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ ConversionException \-\> 0x001d \}\lSplitter:B:4:0x0010\l}"];
+MethodNode[shape=record,label="{public java.lang.Integer com.mapbox.mapboxsdk.style.layers.PropertyValue.getColorInt((r8v0 'this' com.mapbox.mapboxsdk.style.layers.PropertyValue A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.ColorInt, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_10 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+}
+

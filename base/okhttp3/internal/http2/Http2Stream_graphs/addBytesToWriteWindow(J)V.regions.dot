@@ -1,0 +1,30 @@
+digraph "CFG forokhttp3.internal.http2.Http2Stream.addBytesToWriteWindow(J)V" {
+subgraph cluster_Region_221442761 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.bytesLeftInWriteWindow += r3\l}"];
+subgraph cluster_Region_434324581 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_37518113 {
+label = "IF [B:1:0x0009] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r3 \> 0) goto L_0x000b\l}"];
+subgraph cluster_Region_40507997 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|notifyAll()\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Http2Stream.addBytesToWriteWindow((r2v0 'this' okhttp3.internal.http2.Http2Stream A[IMMUTABLE_TYPE, THIS]), (r3v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

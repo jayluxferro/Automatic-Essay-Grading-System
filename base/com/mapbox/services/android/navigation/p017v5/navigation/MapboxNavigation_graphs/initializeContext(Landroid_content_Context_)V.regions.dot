@@ -1,0 +1,39 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.MapboxNavigation.initializeContext(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_1035053367 {
+label = "R(1:(2:(1:6)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1576238722 {
+label = "R(2:(1:6)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_41801470 {
+label = "IF [B:0:0x0000, B:2:0x0006] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x000f\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r2.getApplicationContext() == null) goto L_0x000f\l}"];
+subgraph cluster_Region_1513296175 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|throw new java.lang.IllegalArgumentException(\"Non\-null application context required.\")\l}"];
+}
+}
+subgraph cluster_Region_1786508111 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|r1.applicationContext = r2.getApplicationContext()\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.navigation.MapboxNavigation.initializeContext((r1v0 'this' com.mapbox.services.android.navigation.v5.navigation.MapboxNavigation A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+}
+

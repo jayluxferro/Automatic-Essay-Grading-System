@@ -1,0 +1,67 @@
+digraph "CFG forcom.android.volley.toolbox.HurlStack.convertHeaders(Ljava\/util\/Map;)Ljava\/util\/List;" {
+subgraph cluster_Region_1827718660 {
+label = "R(3:0|(2:3|(2:5|(1:8))(0))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r6.size())\ljava.util.Iterator r6 = r6.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1367197427 {
+label = "LOOP:0: (2:3|(2:5|(1:8))(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|if (r6.hasNext() != false) goto L_0x0017\l}"];
+subgraph cluster_Region_369631396 {
+label = "R(2:3|(2:5|(1:8))(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|java.util.Map$Entry r1 = r6.next()\l}"];
+subgraph cluster_IfRegion_1543067621 {
+label = "IF [B:4:0x0021] THEN: R(2:5|(1:8)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (r1.getKey() != null) goto L_0x0023\l}"];
+subgraph cluster_Region_1139410817 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|java.util.Iterator r2 = ((java.util.List) r1.getValue()).iterator()\l}"];
+subgraph cluster_LoopRegion_2090802001 {
+label = "LOOP:1: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|if (r2.hasNext() != false) goto L_0x0033\l}"];
+subgraph cluster_Region_278127220 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|LOOP_END\lLOOP:1: B:6:0x002d\-\>B:8:0x0033\l|r0.add(new com.android.volley.Header((java.lang.String) r1.getKey(), r3))\l}"];
+}
+}
+}
+subgraph cluster_Region_734337382 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0048|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0011|LOOP_START\lLOOP:0: B:1:0x0011\-\>B:10:0x0011\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d|LOOP_START\lLOOP:1: B:6:0x002d\-\>B:8:0x0033\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0011|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x0011\-\>B:10:0x0011\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0048|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0011|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0011|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static java.util.List\<com.android.volley.Header\> com.android.volley.toolbox.HurlStack.convertHeaders((r6v0 java.util.Map\<java.lang.String, java.util.List\<java.lang.String\>\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/util\/List\<, Ljava\/lang\/String;, \>;\>;), Ljava\/util\/List\<, Lcom\/android\/volley\/Header;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_6;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+Node_10 -> Node_1;
+Node_11 -> Node_9;
+Node_12 -> Node_10;
+Node_13 -> Node_10;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.SphericalUtil.interpolate(Lorg\/osmdroid\/api\/IGeoPoint;Lorg\/osmdroid\/api\/IGeoPoint;D)Lorg\/osmdroid\/api\/IGeoPoint;" {
+subgraph cluster_Region_383801999 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r2 = java.lang.Math.toRadians(r20.getLatitude())\ldouble double r4 = java.lang.Math.toRadians(r20.getLongitude())\ldouble double r6 = java.lang.Math.toRadians(r21.getLatitude())\ldouble double r8 = java.lang.Math.toRadians(r21.getLongitude())\ldouble double r10 = java.lang.Math.cos(r2)\ldouble double r12 = java.lang.Math.cos(r6)\ldouble double r14 = computeAngleBetween(r20, r21)\ldouble double r16 = java.lang.Math.sin(r14)\l}"];
+subgraph cluster_Region_1644663528 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1709965512 {
+label = "IF [B:1:0x0037] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0037|if (r16 \< 1.0E\-6d) goto L_0x0039\l}"];
+subgraph cluster_Region_1721829333 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0039|RETURN\l|return r20\l}"];
+}
+}
+subgraph cluster_Region_194388665 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003a|double double r18 = java.lang.Math.sin((1.0d \- r22) * r14) \/ r16\ldouble double r0 = java.lang.Math.sin(r22 * r14) \/ r16\ldouble double r10 = r10 * r18\ldouble double r12 = r12 * r0\ldouble double r14 = (java.lang.Math.cos(r4) * r10) + (java.lang.Math.cos(r8) * r12)\ldouble double r10 = (r10 * java.lang.Math.sin(r4)) + (r12 * java.lang.Math.sin(r8))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0099|RETURN\l|return new org.osmdroid.util.GeoPoint(java.lang.Math.toDegrees(java.lang.Math.atan2((r18 * java.lang.Math.sin(r2)) + (r0 * java.lang.Math.sin(r6)), java.lang.Math.sqrt((r14 * r14) + (r10 * r10)))), java.lang.Math.toDegrees(java.lang.Math.atan2(r10, r14)))\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public static org.osmdroid.api.IGeoPoint org.osmdroid.gpkg.overlay.features.SphericalUtil.interpolate((r20v0 org.osmdroid.api.IGeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 org.osmdroid.api.IGeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

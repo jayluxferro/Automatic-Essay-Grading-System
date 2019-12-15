@@ -1,0 +1,64 @@
+digraph "CFG forio.fabric.sdk.android.services.common.QueueFile.initialize(Ljava\/io\/File;)V" {
+subgraph cluster_Region_762519066 {
+label = "R(2:0|(3:2|3|(1:(1:7))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File java.io.File r0 = new java.io.File(r4.getPath() + \".tmp\")\ljava.io.RandomAccessFile java.io.RandomAccessFile r1 = open(r0)\l}"];
+subgraph cluster_TryCatchRegion_359940697 {
+label = "Try: R(3:2|3|(1:(1:7))) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_51142307 {
+label = "R(3:2|3|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x004a \}\lSplitter:B:1:0x0020\l|r1.setLength(android.support.p000v4.media.session.PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM)     \/\/ Catch:\{ all \-\> 0x004a \}\lr1.seek(0)     \/\/ Catch:\{ all \-\> 0x004a \}\lbyte[] byte[] r2 = new byte[16]     \/\/ Catch:\{ all \-\> 0x004a \}\lwriteInts(r2, 4096, 0, 0, 0)     \/\/ Catch:\{ all \-\> 0x004a \}\lr1.write(r2)     \/\/ Catch:\{ all \-\> 0x004a \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0038|r1.close()\l}"];
+subgraph cluster_Region_1401804091 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_475039574 {
+label = "IF [B:4:0x003f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003f|if (r0.renameTo(r4) != true) goto L_0x0042\l}"];
+subgraph cluster_Region_444101589 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0049|throw new java.io.IOException(\"Rename failed!\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_44577252 {
+label = "R(3:8|9|10) | ExcHandler: all (r4v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004a|ExcHandler: all (r4v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0020\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004b|r1.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004e|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_44577252 {
+label = "R(3:8|9|10) | ExcHandler: all (r4v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004a|ExcHandler: all (r4v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0020\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004b|r1.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004e|throw r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0020|SYNTHETIC\lSplitter:B:1:0x0020\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0041}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0042}"];
+MethodNode[shape=record,label="{private static void io.fabric.sdk.android.services.common.QueueFile.initialize((r4v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | JADX INFO: finally extract failed\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CachedContent.getSpan(J)Lcom\/google\/android\/exoplayer2\/upstream\/cache\/SimpleCacheSpan;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r2 = com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.createLookup(r9.key, r10)\lcom.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r1 = r9.cachedSpans.floor(r2)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r1 == null) goto L_0x001a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|if (((r1.position + r1.length) \> r10 ? 1 : ((r1.position + r1.length) == r10 ? 0 : \-1)) \<= 0) goto L_0x001a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r0 = r9.cachedSpans.ceiling(r2)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (r0 != null) goto L_0x002c\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r3 = com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.createOpenHole(r9.key, r10)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|PHI: r3 \l  PHI: (r3v5 'floorSpan' com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan) = (r3v4 'floorSpan' com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan), (r3v7 'floorSpan' com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan) binds: [B:8:0x002c, B:6:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002c|com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan r3 = com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.createClosedHole(r9.key, r10, r0.position \- r10)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r1\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return r3\l}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan com.google.android.exoplayer2.upstream.cache.CachedContent.getSpan((r9v0 'this' com.google.android.exoplayer2.upstream.cache.CachedContent A[IMMUTABLE_TYPE, THIS]), (r10v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_7 -> Node_10;
+Node_8 -> Node_7;
+}
+

@@ -1,0 +1,84 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.AtomParsers.Stz2SampleSizeBox.readNextSampleSize()I" {
+subgraph cluster_Region_737478087 {
+label = "R(1:(2:(1:10)|(1:(2:(1:11)|(2:6|(2:(1:13)|(2:8|12)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2080125361 {
+label = "R(2:(1:10)|(1:(2:(1:11)|(2:6|(2:(1:13)|(2:8|12))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_980158359 {
+label = "IF [B:1:0x0004] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2.fieldSize == 8) goto L_0x0006\l}"];
+subgraph cluster_Region_989335016 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r2.data.readUnsignedByte()\l}"];
+}
+}
+subgraph cluster_Region_958458957 {
+label = "R(1:(2:(1:11)|(2:6|(2:(1:13)|(2:8|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_592126817 {
+label = "R(2:(1:11)|(2:6|(2:(1:13)|(2:8|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2042742816 {
+label = "IF [B:4:0x0011] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r2.fieldSize == 16) goto L_0x0013\l}"];
+subgraph cluster_Region_61607357 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return r2.data.readUnsignedShort()\l}"];
+}
+}
+subgraph cluster_Region_638286135 {
+label = "R(2:6|(2:(1:13)|(2:8|12)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|int int r0 = r2.sampleIndex\lr2.sampleIndex = r0 + 1\l}"];
+subgraph cluster_Region_1037093633 {
+label = "R(2:(1:13)|(2:8|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_593519510 {
+label = "IF [B:7:0x0022] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|if ((r0 % 2) != 0) goto L_0x0033\l}"];
+subgraph cluster_Region_1207613425 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r2.currentByte & 15\l}"];
+}
+}
+subgraph cluster_Region_814610406 {
+label = "R(2:8|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|r2.currentByte = r2.data.readUnsignedByte()\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return (r2.currentByte & com.google.android.exoplayer2.extractor.p046ts.PsExtractor.VIDEO_STREAM_MASK) \>\> 4\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0033}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.extractor.mp4.AtomParsers.Stz2SampleSizeBox.readNextSampleSize((r2v0 'this' com.google.android.exoplayer2.extractor.mp4.AtomParsers$Stz2SampleSizeBox A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_10;
+Node_3 -> Node_4;
+Node_5 -> Node_11;
+Node_9 -> Node_13;
+}
+

@@ -1,0 +1,53 @@
+digraph "CFG forandroid.support.media.ExifInterface.getRafAttributes(Landroid\/support\/media\/ExifInterface$ByteOrderedDataInputStream;)V" {
+subgraph cluster_Region_1674442172 {
+label = "R(2:0|(2:2|(2:(2:4|5)|(1:6))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7.skipBytes(84)\lbyte[] byte[] r1 = new byte[4]\lbyte[] byte[] r2 = new byte[4]\lr7.read(r1)\lr7.skipBytes(4)\lr7.read(r2)\lint int r0 = java.nio.ByteBuffer.wrap(r1).getInt()\lint int r1 = java.nio.ByteBuffer.wrap(r2).getInt()\lgetJpegAttributes(r7, r0, 5)\lr7.seek((long) r1)\lr7.setByteOrder(java.nio.ByteOrder.BIG_ENDIAN)\lint int r0 = r7.readInt()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_792056462 {
+label = "LOOP:0: (2:2|(2:(2:4|5)|(1:6)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0036|LOOP_START\lPHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v8 int) binds: [B:0:0x0000, B:6:0x006d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0036\-\>B:6:0x006d\l|if (r2 \< r0) goto L_0x0038\l}"];
+subgraph cluster_Region_75719917 {
+label = "R(2:2|(2:(2:4|5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0038|int int r3 = r7.readUnsignedShort()\lint int r4 = r7.readUnsignedShort()\l}"];
+subgraph cluster_Region_2112999249 {
+label = "R(2:(2:4|5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_149881300 {
+label = "IF [B:3:0x0044] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0044|if (r3 == TAG_RAF_IMAGE_SIZE.number) goto L_0x0046\l}"];
+subgraph cluster_Region_156177381 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0046|short short r0 = r7.readShort()\lshort short r7 = r7.readShort()\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r0 = android.support.media.ExifInterface.ExifAttribute.createUShort((int) r0, r6.mExifByteOrder)\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r7 = android.support.media.ExifInterface.ExifAttribute.createUShort((int) r7, r6.mExifByteOrder)\lr6.mAttributes[0].put(TAG_IMAGE_LENGTH, r0)\lr6.mAttributes[0].put(TAG_IMAGE_WIDTH, r7)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x006c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_942314010 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x006d|LOOP_END\lLOOP:0: B:1:0x0036\-\>B:6:0x006d\l|r7.skipBytes(r4)\lr2++\l}"];
+}
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0073}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0046|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0073|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.media.ExifInterface.getRafAttributes((r6v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r7v0 android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_6[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_6 -> Node_1;
+Node_8 -> Node_4;
+Node_9 -> Node_7;
+}
+

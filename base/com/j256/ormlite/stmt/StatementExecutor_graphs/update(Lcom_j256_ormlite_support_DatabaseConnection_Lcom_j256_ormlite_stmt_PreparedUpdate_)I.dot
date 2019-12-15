@@ -1,0 +1,30 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.update(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Lcom\/j256\/ormlite\/stmt\/PreparedUpdate;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.support.CompiledStatement r2 = r3.compile(r2, com.j256.ormlite.stmt.StatementBuilder.StatementType.UPDATE)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x0027 \}\lSplitter:B:1:0x0006\l|int r3 = r2.runUpdate()     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|Catch:\{ all \-\> 0x0027 \}\l|if (r1.dao == null) goto L_0x0021     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|Catch:\{ all \-\> 0x0027 \}\l|if (r1.localIsInBatchMode.get().booleanValue() != false) goto L_0x0021     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|Catch:\{ all \-\> 0x0027 \}\l|r1.dao.notifyChanges()     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|DONT_GENERATE\l|java.lang.String r0 = \"compiled statement\"\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r2, r0)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|return r3\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|ExcHandler:  FINALLY\lSplitter:B:1:0x0006\l|java.lang.Throwable r3 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|FINALLY_INSNS\l|java.lang.String r0 = \"compiled statement\"\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r2, r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x002d|throw r3\l}"];
+MethodNode[shape=record,label="{public int com.j256.ormlite.stmt.StatementExecutor.update((r1v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r2v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.j256.ormlite.stmt.PreparedUpdate\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, Lcom\/j256\/ormlite\/stmt\/PreparedUpdate\<, TT;\>;)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

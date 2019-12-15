@@ -1,0 +1,50 @@
+digraph "CFG forar.com.hjg.pngj.pixels.DeflaterEstimatorLz4.commonBytes([BIII)I" {
+subgraph cluster_Region_1689292607 {
+label = "R(3:0|(2:2|(2:(1:7)|(1:4)))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_834951227 {
+label = "LOOP:0: (2:2|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 r4 r5 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:4:0x000d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v3 int) binds: [B:0:0x0000, B:4:0x000d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v3 int) binds: [B:0:0x0000, B:4:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:4:0x000d\l|if (r5 \< r6) goto L_0x0003\l}"];
+subgraph cluster_Region_1587160481 {
+label = "R(2:2|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int int r1 = r4 + 1\lint int r2 = r5 + 1\l}"];
+subgraph cluster_Region_2066196977 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1165838740 {
+label = "IF [B:3:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r3[r4] != r3[r5]) goto L_0x0012\l}"];
+subgraph cluster_Region_202241218 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|SYNTHETIC\lEDGE_INSN: B:7:0x0012\-\>B:5:0x0012 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_23264663 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:4:0x000d\l|r0++\lr4 = r1\lr5 = r2\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0012|RETURN\lEDGE_INSN: B:7:0x0012\-\>B:5:0x0012 ?: BREAK  \l|return r0\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static int ar.com.hjg.pngj.pixels.DeflaterEstimatorLz4.commonBytes((r3v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_7 -> Node_5;
+Node_4 -> Node_1;
+Node_6 -> Node_5;
+}
+

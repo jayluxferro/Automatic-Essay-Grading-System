@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mkv.VarintReader.readUnsignedVarint(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;ZZI)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5.state != 0) goto L_0x002c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r6.readFully(r5.scratch, 0, 1, r7) != false) goto L_0x0011\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|r5.length = parseUnsignedVarintLength(r5.scratch[0] & 255)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|if (r5.length != \-1) goto L_0x002a\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|throw new java.lang.IllegalStateException(\"No valid varint length mask found\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002a|r5.state = 1\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002c}"];
+Node_11 [shape=record,label="{11\:\ 0x002e|if (r5.length \<= r9) goto L_0x0035\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0030|r5.state = 0\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0035}"];
+Node_14 [shape=record,label="{14\:\ 0x0037|if (r5.length == 1) goto L_0x0042\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0039|r6.readFully(r5.scratch, 1, r5.length + \-1)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0042|r5.state = 0\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return \-2\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return assembleVarint(r5.scratch, r5.length, r8)\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.mkv.VarintReader.readUnsignedVarint((r5v0 'this' com.google.android.exoplayer2.extractor.mkv.VarintReader A[IMMUTABLE_TYPE, THIS]), (r6v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'allowEndOfInput' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'removeLengthMask' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'maximumAllowedLength' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_18;
+}
+

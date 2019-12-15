@@ -1,0 +1,166 @@
+digraph "CFG formil.nga.geopackage.property.GeoPackageProperties.initializeConfigurationProperties()Ljava\/util\/Properties;" {
+subgraph cluster_Region_1976668310 {
+label = "R(3:0|(1:(2:3|(1:5)))(1:19)|20)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Properties java.util.Properties r0 = new java.util.Properties()\ljava.io.InputStream java.io.InputStream r1 = mil.nga.geopackage.property.GeoPackageProperties.class.getResourceAsStream(\"\/geopackage.properties\")\l}"];
+subgraph cluster_IfRegion_1932969550 {
+label = "IF [B:1:0x000d] THEN: R(1:(2:3|(1:5))) ELSE: R(1:19)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r1 != null) goto L_0x000f\l}"];
+subgraph cluster_Region_1059716360 {
+label = "R(1:(2:3|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1879145050 {
+label = "Try: R(2:3|(1:5)) catches: R(3:9|11|13), R(3:8|(1:15)|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_736008963 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\lSplitter:B:2:0x000f\l|r0.load(r1)     \/\/ Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\l}"];
+subgraph cluster_TryCatchRegion_889879031 {
+label = "Try: R(1:5) catches: R(2:6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_548962382 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ IOException \-\> 0x0016 \}\lSplitter:B:4:0x0012\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0016 \}\l}"];
+}
+subgraph cluster_Region_1146629960 {
+label = "R(2:6|7) | ExcHandler: IOException (r1v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|ExcHandler: IOException (r1v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0012\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|log.log(java.util.logging.Level.WARNING, \"Failed to close properties file: geopackage.properties\", r1)\l}"];
+}
+}
+}
+subgraph cluster_Region_1502929391 {
+label = "R(3:9|11|13) | ExcHandler: Exception (r2v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|ExcHandler: Exception (r2v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:2:0x000f\l}"];
+Node_11 [shape=record,label="{11\:\ ?|Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\lSplitter:B:10:0x0024\l|log.log(java.util.logging.Level.SEVERE, \"Failed to load properties file: geopackage.properties\", r2)     \/\/ Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\l}"];
+Node_13 [shape=record,label="{13\:\ ?|Catch:\{ IOException \-\> 0x0016 \}\lSplitter:B:12:0x002d\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0016 \}\l}"];
+}
+subgraph cluster_Region_879319926 {
+label = "R(3:8|(1:15)|18) | ExcHandler: all (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|ExcHandler: all (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:10:0x0024\l}"];
+subgraph cluster_TryCatchRegion_1338061835 {
+label = "Try: R(1:15) catches: R(2:16|17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_105742173 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ IOException \-\> 0x0035 \}\lSplitter:B:14:0x0031\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0035 \}\l}"];
+}
+subgraph cluster_Region_694299077 {
+label = "R(2:16|17) | ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0035|ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:14:0x0031\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0036|log.log(java.util.logging.Level.WARNING, \"Failed to close properties file: geopackage.properties\", r1)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x003f|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_751137230 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0040|log.log(java.util.logging.Level.SEVERE, \"Failed to load properties, file not found: geopackage.properties\")\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0049|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1502929391 {
+label = "R(3:9|11|13) | ExcHandler: Exception (r2v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|ExcHandler: Exception (r2v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:2:0x000f\l}"];
+Node_11 [shape=record,label="{11\:\ ?|Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\lSplitter:B:10:0x0024\l|log.log(java.util.logging.Level.SEVERE, \"Failed to load properties file: geopackage.properties\", r2)     \/\/ Catch:\{ Exception \-\> 0x0023, all \-\> 0x0021 \}\l}"];
+Node_13 [shape=record,label="{13\:\ ?|Catch:\{ IOException \-\> 0x0016 \}\lSplitter:B:12:0x002d\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0016 \}\l}"];
+}
+subgraph cluster_Region_879319926 {
+label = "R(3:8|(1:15)|18) | ExcHandler: all (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|ExcHandler: all (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:10:0x0024\l}"];
+subgraph cluster_TryCatchRegion_1338061835 {
+label = "Try: R(1:15) catches: R(2:16|17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_105742173 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ IOException \-\> 0x0035 \}\lSplitter:B:14:0x0031\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0035 \}\l}"];
+}
+subgraph cluster_Region_694299077 {
+label = "R(2:16|17) | ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0035|ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:14:0x0031\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0036|log.log(java.util.logging.Level.WARNING, \"Failed to close properties file: geopackage.properties\", r1)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x003f|throw r0\l}"];
+}
+subgraph cluster_Region_1146629960 {
+label = "R(2:6|7) | ExcHandler: IOException (r1v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|ExcHandler: IOException (r1v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0012\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|log.log(java.util.logging.Level.WARNING, \"Failed to close properties file: geopackage.properties\", r1)\l}"];
+}
+subgraph cluster_Region_694299077 {
+label = "R(2:16|17) | ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0035|ExcHandler: IOException (r1v3 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:14:0x0031\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0036|log.log(java.util.logging.Level.WARNING, \"Failed to close properties file: geopackage.properties\", r1)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f|SYNTHETIC\lSplitter:B:2:0x000f\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012|SYNTHETIC\lSplitter:B:4:0x0012\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024|SYNTHETIC\lSplitter:B:10:0x0024\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002d|SYNTHETIC\lSplitter:B:12:0x002d\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0031|SYNTHETIC\lSplitter:B:14:0x0031\l}"];
+MethodNode[shape=record,label="{private static java.util.Properties mil.nga.geopackage.property.GeoPackageProperties.initializeConfigurationProperties() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_19[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9;
+Node_5 -> Node_6;
+Node_5 -> Node_20;
+Node_6 -> Node_7;
+Node_7 -> Node_20;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_8;
+Node_13 -> Node_6;
+Node_13 -> Node_20;
+Node_8 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_8;
+Node_13 -> Node_6;
+Node_13 -> Node_20;
+Node_8 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_6 -> Node_7;
+Node_7 -> Node_20;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_2 -> Node_3;
+Node_2 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_10 -> Node_11;
+Node_10 -> Node_8;
+Node_12 -> Node_13;
+Node_12 -> Node_6;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+}
+

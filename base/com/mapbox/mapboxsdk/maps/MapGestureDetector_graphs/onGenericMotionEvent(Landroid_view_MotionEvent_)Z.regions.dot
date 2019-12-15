@@ -1,0 +1,46 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.MapGestureDetector.onGenericMotionEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_366639822 {
+label = "R(1:(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_474201912 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1929014972 {
+label = "IF [B:1:0x0007, B:3:0x000f, B:6:0x0018] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if ((r6.getSource() & 2) != 2) goto L_0x003b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r6.getActionMasked() != 8) goto L_0x0011\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0018|ADDED_TO_REGION\l|if (r5.uiSettings.isZoomGesturesEnabled() == false) goto L_0x001a\l}"];
+subgraph cluster_Region_1686577020 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_583865640 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|r5.transform.cancelTransitions()\lr5.transform.zoomBy((double) r6.getAxisValue(9), new android.graphics.PointF(r6.getX(), r6.getY()))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003b|RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{boolean com.mapbox.mapboxsdk.maps.MapGestureDetector.onGenericMotionEvent((r5v0 'this' com.mapbox.mapboxsdk.maps.MapGestureDetector A[IMMUTABLE_TYPE, THIS]), (r6v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

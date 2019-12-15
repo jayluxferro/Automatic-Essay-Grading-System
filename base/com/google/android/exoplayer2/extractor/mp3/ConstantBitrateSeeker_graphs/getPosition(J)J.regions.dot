@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp3.ConstantBitrateSeeker.getPosition(J)J" {
+subgraph cluster_Region_1807945416 {
+label = "R(1:(2:(1:3)|(2:2|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_188399384 {
+label = "R(2:(1:3)|(2:2|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1417424272 {
+label = "IF [B:1:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r7.durationUs == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_?\l}"];
+subgraph cluster_Region_836782292 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_835492414 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|long long r8 = com.google.android.exoplayer2.util.Util.constrainValue(r8, 0, r7.durationUs)\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return ((((long) r7.bitrate) * r8) \/ 8000000) + r7.firstFramePosition\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.mp3.ConstantBitrateSeeker.getPosition((r7v0 'this' com.google.android.exoplayer2.extractor.mp3.ConstantBitrateSeeker A[IMMUTABLE_TYPE, THIS]), (r8v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_0 -> Node_1;
+}
+

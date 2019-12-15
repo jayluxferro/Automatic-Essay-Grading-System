@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.util.CodecSpecificDataUtil.findNalStartCode([BI)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r2 I:int) = (r4 I:?[] A[D('data' byte[])]) \l0x0001: SGET  (r3 I:byte[]) =  com.google.android.exoplayer2.util.CodecSpecificDataUtil.NAL_START_CODE byte[] \l0x0003: ARRAY_LENGTH  (r3 I:int) = (r3 I:?[]) \l0x0004: ARITH  (r0 I:int) = (r2 I:int) \- (r3 I:int) \l0x0006: MOVE  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r5 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('index' int)])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IF  (r1 I:?[int, byte, short, char] A[D('i' int)]) \> (r0 I:?[int, byte, short, char] A[D('endIndex' int)])  \-\> B:6:0x0013 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|0x0009: INVOKE  (r2 I:boolean) = (r4 I:byte[] A[D('data' byte[])]), (r1 I:int A[D('i' int)]) com.google.android.exoplayer2.util.CodecSpecificDataUtil.isNalStartCode(byte[], int):boolean type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0010 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: RETURN  (r1 I:int A[D('i' int)]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: ARITH  (r1 I:int A[D('i' int)]) = (r1 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|0x0013: CONST  (r1 I:?[int, float, short, byte, char] A[D('i' int)]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+MethodNode[shape=record,label="{private static int com.google.android.exoplayer2.util.CodecSpecificDataUtil.findNalStartCode((r4 I:byte[] A[D('data' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[D('index' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0007\-0x000f: r1 'i' int\l  0x0006\-0x0014: r0 'endIndex' int\l  0x0010\-0x0014: r1 'i' int\l  ?\-0x0014: r4 'data' byte[]\l  ?\-0x0014: r5 'index' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_4;
+}
+

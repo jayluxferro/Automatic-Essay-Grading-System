@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v7.widget.LinearLayoutManager.fixLayoutEndGap(ILandroid\/support\/v7\/widget\/RecyclerView$Recycler;Landroid\/support\/v7\/widget\/RecyclerView$State;Z)I" {
+subgraph cluster_Region_1629491006 {
+label = "R(2:0|(2:(1:9)|(2:2|(2:(1:8)|(2:6|7))))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r1.mOrientationHelper.getEndAfterPadding() \- r2\l}"];
+subgraph cluster_Region_1648361491 {
+label = "R(2:(1:9)|(2:2|(2:(1:8)|(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1638876674 {
+label = "IF [B:1:0x0007] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r0 \<= 0) goto L_0x0023\l}"];
+subgraph cluster_Region_1896625041 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_111187095 {
+label = "R(2:2|(2:(1:8)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|int int r3 = \-scrollBy(\-r0, r3, r4)\lint int r2 = r2 + r3\l}"];
+subgraph cluster_Region_869522992 {
+label = "R(2:(1:8)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_239594487 {
+label = "IF [B:3:0x0010, B:5:0x0019] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r5 == false) goto L_0x0022\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|ADDED_TO_REGION\l|if ((r4 = r1.mOrientationHelper.getEndAfterPadding() \- r2) \<= 0) goto L_0x0022\l}"];
+subgraph cluster_Region_1954252869 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_356720651 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|r1.mOrientationHelper.offsetChildren(r4)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|RETURN\l|return r4 + r3\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+MethodNode[shape=record,label="{private int android.support.v7.widget.LinearLayoutManager.fixLayoutEndGap((r1v0 'this' android.support.v7.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.support.v7.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.support.v7.widget.RecyclerView$State A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_4 -> Node_5;
+}
+

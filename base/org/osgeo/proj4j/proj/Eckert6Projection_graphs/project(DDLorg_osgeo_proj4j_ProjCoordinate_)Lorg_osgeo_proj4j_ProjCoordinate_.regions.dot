@@ -1,0 +1,76 @@
+digraph "CFG fororg.osgeo.proj4j.proj.Eckert6Projection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_142188858 {
+label = "R(3:0|(2:3|(2:(1:11)|(1:5)))|(2:(2:7|8)|(1:10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = java.lang.Math.sin(r12) * f354n\lint r2 = 8\l}"];
+subgraph cluster_LoopRegion_1043529913 {
+label = "LOOP:0: (2:3|(2:(1:11)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r2 \> 0) goto L_0x0011\l}"];
+subgraph cluster_Region_1866836456 {
+label = "R(2:3|(2:(1:11)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|double double r5 = ((java.lang.Math.sin(r12) + r12) \- r0) \/ (java.lang.Math.cos(r12) + 1.0d)\lr12 \-= r5\l}"];
+subgraph cluster_Region_556416837 {
+label = "R(2:(1:11)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_961473109 {
+label = "IF [B:4:0x0029] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0029|if (java.lang.Math.abs(r5) \< LOOP_TOL) goto L_0x002f\l}"];
+subgraph cluster_Region_572331505 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|SYNTHETIC\lEDGE_INSN: B:11:0x002f\-\>B:6:0x002f ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_70832123 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|LOOP_END\lLOOP:0: B:1:0x000d\-\>B:5:0x002c\l|r2\-\-\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2062166472 {
+label = "R(2:(2:7|8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2063996468 {
+label = "IF [B:6:0x002f] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002f|EDGE_INSN: B:11:0x002f\-\>B:6:0x002f ?: BREAK  \lPHI: r12 \l  PHI: (r12v2 double) = (r12v1 double), (r12v3 double) binds: [B:12:0x002f, B:11:0x002f] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != 0) goto L_0x0031\l}"];
+subgraph cluster_Region_1579754117 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|r14.f294x = C_x * r10 * (java.lang.Math.cos(r12) + 1.0d)\lr14.f295y = C_y * r12\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0044|RETURN\l|return r14\l}"];
+}
+}
+subgraph cluster_Region_780791314 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004c|throw new org.osgeo.proj4j.ProjectionException(\"F_ERROR\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000d|LOOP_START\lPHI: r2 r12 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:0:0x0000, B:5:0x002c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v1 double) = (r12v0 double), (r12v3 double) binds: [B:0:0x0000, B:5:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:5:0x002c\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0045}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.Eckert6Projection.project((r9v0 'this' org.osgeo.proj4j.proj.Eckert6Projection A[IMMUTABLE_TYPE, THIS]), (r10v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_11 -> Node_6;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_1 -> Node_2;
+Node_9 -> Node_10;
+Node_12 -> Node_6;
+}
+

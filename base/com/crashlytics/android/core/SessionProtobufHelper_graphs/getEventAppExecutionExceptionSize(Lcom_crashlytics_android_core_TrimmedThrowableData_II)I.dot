@@ -1,0 +1,43 @@
+digraph "CFG forcom.crashlytics.android.core.SessionProtobufHelper.getEventAppExecutionExceptionSize(Lcom\/crashlytics\/android\/core\/TrimmedThrowableData;II)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2 = 0\lint r0 = com.crashlytics.android.core.CodedOutputStream.computeBytesSize(1, com.crashlytics.android.core.ByteString.copyFromUtf8(r9.className)) + 0\ljava.lang.String r3 = r9.localizedMessage\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r3 == null) goto L_0x001b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|int r0 = r0 + com.crashlytics.android.core.CodedOutputStream.computeBytesSize(3, com.crashlytics.android.core.ByteString.copyFromUtf8(r3))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|PHI: r0 \l  PHI: (r0v4 int) = (r0v3 int), (r0v8 int) binds: [B:1:0x000f, B:2:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.StackTraceElement[] r3 = r9.stacktrace\lint r4 = r3.length\lr5 = r0\lr0 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020|LOOP_START\lPHI: r0 r5 \l  PHI: (r0v6 int) = (r0v5 int), (r0v7 int) binds: [B:3:0x001b, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v4 int) binds: [B:3:0x001b, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0020\-\>B:5:0x0022\l|if (r0 \>= r4) goto L_0x0037\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|LOOP_END\lLOOP:0: B:4:0x0020\-\>B:5:0x0022\l|int r6 = getFrameSize(r3[r0], true)\lint r5 = r5 + ((com.crashlytics.android.core.CodedOutputStream.computeTagSize(4) + com.crashlytics.android.core.CodedOutputStream.computeRawVarint32Size(r6)) + r6)\lint r0 = r0 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037|com.crashlytics.android.core.TrimmedThrowableData r9 = r9.cause\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|if (r9 == null) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|if (r10 \>= r11) goto L_0x004f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003d|int r9 = getEventAppExecutionExceptionSize(r9, r10 + 1, r11)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004f|LOOP_START\lPHI: r2 r9 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:8:0x003b, B:11:0x0051] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v2 com.crashlytics.android.core.TrimmedThrowableData) = (r9v1 com.crashlytics.android.core.TrimmedThrowableData), (r9v5 com.crashlytics.android.core.TrimmedThrowableData) binds: [B:8:0x003b, B:11:0x0051] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:10:0x004f\-\>B:11:0x0051\l|if (r9 == null) goto L_0x0056\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0051|LOOP_END\lLOOP:1: B:10:0x004f\-\>B:11:0x0051\l|com.crashlytics.android.core.TrimmedThrowableData r9 = r9.cause\lint r2 = r2 + 1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0056}"];
+Node_13 [shape=record,label="{13\:\ 0x0037|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0056|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r5 + com.crashlytics.android.core.CodedOutputStream.computeUInt32Size(7, r2)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return r5 + ((com.crashlytics.android.core.CodedOutputStream.computeTagSize(6) + com.crashlytics.android.core.CodedOutputStream.computeRawVarint32Size(r9)) + r9)\l}"];
+MethodNode[shape=record,label="{private static int com.crashlytics.android.core.SessionProtobufHelper.getEventAppExecutionExceptionSize((r9v0 com.crashlytics.android.core.TrimmedThrowableData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_13;
+Node_5 -> Node_4;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_16;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_17;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_11 -> Node_10;
+Node_12 -> Node_15;
+Node_13 -> Node_6;
+Node_14 -> Node_12;
+}
+

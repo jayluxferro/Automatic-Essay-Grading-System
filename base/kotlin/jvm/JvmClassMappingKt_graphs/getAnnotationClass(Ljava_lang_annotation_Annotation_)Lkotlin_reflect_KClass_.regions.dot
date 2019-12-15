@@ -1,0 +1,34 @@
+digraph "CFG forkotlin.jvm.JvmClassMappingKt.getAnnotationClass(Ljava\/lang\/annotation\/Annotation;)Lkotlin\/reflect\/KClass;" {
+subgraph cluster_Region_2113928447 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\ljava.lang.Class java.lang.Class\<? extends java.lang.annotation.Annotation\> r1 = r1.annotationType()\lkotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r1, \"(this as java.lang.annot…otation).annotationType()\")\lkotlin.reflect.KClass kotlin.reflect.KClass\<? extends T\> r1 = getKotlinClass(r1)\l}"];
+subgraph cluster_Region_830010342 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_983280299 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r1 != null) goto L_0x0014\l}"];
+subgraph cluster_Region_1987174722 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_260691068 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|throw new kotlin.TypeCastException(\"null cannot be cast to non\-null type kotlin.reflect.KClass\<out T\>\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015}"];
+MethodNode[shape=record,label="{public static final kotlin.reflect.KClass\<? extends T\> kotlin.jvm.JvmClassMappingKt.getAnnotationClass((r1v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T::, Ljava\/lang\/annotation\/Annotation;, \>(TT;), Lkotlin\/reflect\/KClass\<, +TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

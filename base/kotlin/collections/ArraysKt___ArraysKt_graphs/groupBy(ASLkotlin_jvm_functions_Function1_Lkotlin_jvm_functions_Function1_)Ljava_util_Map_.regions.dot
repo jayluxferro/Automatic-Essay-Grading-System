@@ -1,0 +1,50 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.groupBy([SLkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_871595186 {
+label = "R(3:0|(3:2|(1:4)(0)|5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r6, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r8, \"valueTransform\")\ljava.util.Map java.util.Map\<K, java.util.List\<V\>\> r0 = new java.util.LinkedHashMap\<\>()\lint int r1 = r6.length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_634417652 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0018|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x0032] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0018\-\>B:5:0x0032\l|if (r2 \< r1) goto L_0x001a\l}"];
+subgraph cluster_Region_1380438549 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001a|short r3 = r6[r2]\ljava.lang.Object java.lang.Object r4 = r7.invoke(java.lang.Short.valueOf(r3))\ljava.lang.Object java.util.List\<V\> r5 = r0.get(r4)\l}"];
+subgraph cluster_IfRegion_1907408343 {
+label = "IF [B:3:0x0028] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0028|if (r5 == null) goto L_0x002a\l}"];
+subgraph cluster_Region_406950247 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a|java.util.ArrayList r5 = new java.util.ArrayList\<\>()\lr0.put(r4, r5)\l}"];
+}
+subgraph cluster_Region_1597654732 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0032|LOOP_END\lPHI: r5 \l  PHI: (r5v1 java.util.List\<V\>) = (r5v0 java.util.List\<V\>), (r5v3 java.util.List\<V\>) binds: [B:9:0x0032, B:8:0x0032] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0018\-\>B:5:0x0032\l|r5.add(r8.invoke(java.lang.Short.valueOf(r3)))\lr2++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0042|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0042|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0032|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0032|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, java.util.List\<V\>\> kotlin.collections.ArraysKt___ArraysKt.groupBy((r6v0 short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 kotlin.jvm.functions.Function1\<? super java.lang.Short, ? extends K\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 kotlin.jvm.functions.Function1\<? super java.lang.Short, ? extends V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, \>([S, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Short;, +TK;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Short;, +TV;\>;), Ljava\/util\/Map\<, TK;, Ljava\/util\/List\<, TV;\>;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+Node_9 -> Node_5;
+}
+

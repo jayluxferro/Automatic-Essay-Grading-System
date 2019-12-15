@@ -1,0 +1,17 @@
+digraph "CFG forokio.AsyncTimeout.exit(Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:boolean) = (r1 I:okio.AsyncTimeout) okio.AsyncTimeout.exit():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x000f \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0009 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|0x0009: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000a: INVOKE  (r2 I:java.io.IOException) = (r1 I:okio.AsyncTimeout), (r2 I:java.io.IOException) okio.AsyncTimeout.newTimeoutException(java.io.IOException):java.io.IOException type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|0x000e: THROW  (r2 I:java.lang.Throwable) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|0x000f: RETURN   \l}"];
+MethodNode[shape=record,label="{final void okio.AsyncTimeout.exit((r1 'this' I:okio.AsyncTimeout A[IMMUTABLE_TYPE, THIS]), (r2 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_4;
+Node_2 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+}
+

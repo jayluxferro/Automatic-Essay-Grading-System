@@ -1,0 +1,40 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck.canSendReports()Z" {
+subgraph cluster_Region_1216315662 {
+label = "R(2:0|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.app.Activity android.app.Activity r0 = r4.kit.getFabric().getCurrentActivity()\l}"];
+subgraph cluster_Region_1380104213 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1389448604 {
+label = "IF [B:1:0x000a, B:3:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r0.isFinishing() == true) goto L_?\l}"];
+subgraph cluster_Region_2138024540 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2014098130 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|com.crashlytics.android.core.CrashPromptDialog final com.crashlytics.android.core.CrashPromptDialog r1 = com.crashlytics.android.core.CrashPromptDialog.create(r0, r4.promptData, new com.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck.C06401())\lr0.runOnUiThread(new com.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck.C06412())\lp018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Waiting for user opt\-in.\")\lr1.await()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0038|RETURN\l|return r1.getOptIn()\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{public boolean com.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck.canSendReports((r4v0 'this' com.crashlytics.android.core.CrashlyticsController$PrivacyDialogCheck A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

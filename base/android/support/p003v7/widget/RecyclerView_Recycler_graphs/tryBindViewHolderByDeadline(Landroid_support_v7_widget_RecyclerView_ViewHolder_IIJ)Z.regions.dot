@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.Recycler.tryBindViewHolderByDeadline(Landroid\/support\/v7\/widget\/RecyclerView$ViewHolder;IIJ)Z" {
+subgraph cluster_Region_1726217625 {
+label = "R(2:0|(2:(1:4)|(2:5|(2:(1:9)|(2:7|8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r10.mOwnerRecyclerView = android.support.p003v7.widget.RecyclerView.this\lint int r2 = r10.getItemViewType()\llong long r7 = android.support.p003v7.widget.RecyclerView.this.getNanoTime()\l}"];
+subgraph cluster_Region_1279817898 {
+label = "R(2:(1:4)|(2:5|(2:(1:9)|(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_717550966 {
+label = "IF [B:1:0x0015, B:3:0x001f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r13 != Long.MAX_VALUE) goto L_0x0017\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001f|ADDED_TO_REGION\l|if (r9.mRecyclerPool.willBindInTime(r2, r7, r13) != true) goto L_0x0021\l}"];
+subgraph cluster_Region_840846623 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1716828113 {
+label = "R(2:5|(2:(1:9)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|android.support.p003v7.widget.RecyclerView.this.mAdapter.bindViewHolder(r10, r11)\lr9.mRecyclerPool.factorInBindTime(r10.getItemViewType(), android.support.p003v7.widget.RecyclerView.this.getNanoTime() \- r7)\lattachAccessibilityDelegateOnBind(r10)\l}"];
+subgraph cluster_Region_1561038808 {
+label = "R(2:(1:9)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_884033920 {
+label = "IF [B:6:0x0045] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|if (android.support.p003v7.widget.RecyclerView.this.mState.isPreLayout() != true) goto L_?\l}"];
+subgraph cluster_Region_993262228 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2072325720 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|r10.mPreLayoutPosition = r12\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0017}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.widget.RecyclerView.Recycler.tryBindViewHolderByDeadline((r9v0 'this' android.support.v7.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r10v0 android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], , , \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+}
+

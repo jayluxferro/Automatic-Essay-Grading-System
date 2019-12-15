@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v4.widget.NestedScrollView.ensureGlows()V" {
+subgraph cluster_Region_1507623111 {
+label = "R(1:(1:5)(1:(1:4)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_125736065 {
+label = "IF [B:1:0x0005] THEN: R(1:5) ELSE: R(1:(1:4)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (getOverScrollMode() == 2) goto L_0x001e\l}"];
+subgraph cluster_Region_1404379912 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|r2.mEdgeGlowTop = null\lr2.mEdgeGlowBottom = null\l}"];
+}
+subgraph cluster_Region_11723460 {
+label = "R(1:(1:4)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1037406381 {
+label = "IF [B:3:0x0009] THEN: R(1:4) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r2.mEdgeGlowTop == null) goto L_0x000b\l}"];
+subgraph cluster_Region_1946121741 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|android.content.Context android.content.Context r0 = getContext()\lr2.mEdgeGlowTop = new android.widget.EdgeEffect(r0)\lr2.mEdgeGlowBottom = new android.widget.EdgeEffect(r0)\l}"];
+}
+subgraph cluster_Region_1316802826 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v4.widget.NestedScrollView.ensureGlows((r2v0 'this' android.support.v4.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

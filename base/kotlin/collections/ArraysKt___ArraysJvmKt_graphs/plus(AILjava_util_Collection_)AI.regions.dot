@@ -1,0 +1,31 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysJvmKt.plus([ILjava\/util\/Collection;)[I" {
+subgraph cluster_Region_1276329267 {
+label = "R(4:0|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"elements\")\lint int r0 = r3.length\lint[] int[] r3 = java.util.Arrays.copyOf(r3, r4.size() + r0)\ljava.util.Iterator r4 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_70861483 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001c|if (r4.hasNext() != false) goto L_0x001e\l}"];
+subgraph cluster_Region_179201548 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|LOOP_END\lLOOP:0: B:1:0x0018\-\>B:3:0x001e\l|r3[r0] = r1.intValue()\lr0++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002e|kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r3, \"result\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0033|RETURN\l|return r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0018|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:3:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0018\-\>B:3:0x001e\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int[] kotlin.collections.ArraysKt___ArraysJvmKt.plus((r3v0 int[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.util.Collection\<java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([I, Ljava\/util\/Collection\<, Ljava\/lang\/Integer;, \>;)[I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

@@ -1,0 +1,13 @@
+digraph "CFG fororg.mapsforge.map.layer.debug.TileCoordinatesLayer.draw(Lorg\/mapsforge\/core\/model\/BoundingBox;BLorg\/mapsforge\/core\/graphics\/Canvas;Lorg\/mapsforge\/core\/model\/Point;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:org.mapsforge.map.model.DisplayModel) = (r1 I:org.mapsforge.map.layer.debug.TileCoordinatesLayer) org.mapsforge.map.layer.debug.TileCoordinatesLayer.displayModel org.mapsforge.map.model.DisplayModel \l0x0002: INVOKE  (r0 I:int) = (r0 I:org.mapsforge.map.model.DisplayModel) org.mapsforge.map.model.DisplayModel.getTileSize():int type: VIRTUAL \l0x0006: INVOKE  (r2 I:java.util.List) = \l  (r2 I:org.mapsforge.core.model.BoundingBox)\l  (r3 I:byte)\l  (r5 I:org.mapsforge.core.model.Point)\l  (r0 I:int)\l org.mapsforge.map.util.LayerUtil.getTilePositions(org.mapsforge.core.model.BoundingBox, byte, org.mapsforge.core.model.Point, int):java.util.List type: STATIC \l0x000a: INVOKE  (r3 I:int) = (r2 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x000e: ARITH  (r3 I:int) = (r3 I:int) + (\-1 int) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|0x0010: IF  (r3 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:3:0x001e \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|0x0012: INVOKE  (r5 I:java.lang.Object) = (r2 I:java.util.List), (r3 I:int) java.util.List.get(int):java.lang.Object type: INTERFACE \l0x0016: CHECK_CAST  (r5 I:org.mapsforge.map.layer.TilePosition) = (org.mapsforge.map.layer.TilePosition) (r5 I:?[OBJECT, ARRAY]) \l0x0018: INVOKE  \l  (r1 I:org.mapsforge.map.layer.debug.TileCoordinatesLayer)\l  (r5 I:org.mapsforge.map.layer.TilePosition)\l  (r4 I:org.mapsforge.core.graphics.Canvas)\l org.mapsforge.map.layer.debug.TileCoordinatesLayer.drawTileCoordinates(org.mapsforge.map.layer.TilePosition, org.mapsforge.core.graphics.Canvas):void type: DIRECT \l0x001b: ARITH  (r3 I:int) = (r3 I:int) + (\-1 int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001e|0x001e: RETURN   \l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.layer.debug.TileCoordinatesLayer.draw((r1 'this' I:org.mapsforge.map.layer.debug.TileCoordinatesLayer A[IMMUTABLE_TYPE, THIS]), (r2 I:org.mapsforge.core.model.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:org.mapsforge.core.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:org.mapsforge.core.model.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_1;
+}
+

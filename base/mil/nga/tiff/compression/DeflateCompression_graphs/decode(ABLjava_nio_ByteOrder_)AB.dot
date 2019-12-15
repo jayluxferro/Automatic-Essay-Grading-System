@@ -1,0 +1,33 @@
+digraph "CFG formil.nga.tiff.compression.DeflateCompression.decode([BLjava\/nio\/ByteOrder;)[B" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\lSplitter:B:0:0x0000\l|java.util.zip.Inflater r5 = new java.util.zip.Inflater()     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\lr5.setInput(r4)     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\ljava.io.ByteArrayOutputStream r0 = new java.io.ByteArrayOutputStream(r4.length)     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\lbyte[] r4 = new byte[1024]     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|LOOP_START\lCatch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\lLOOP:0: B:2:0x0012\-\>B:4:0x0018\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l|if (r5.finished() != false) goto L_0x0021     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|LOOP_END\lCatch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\lLOOP:0: B:2:0x0012\-\>B:4:0x0018\l|r0.write(r4, 0, r5.inflate(r4))     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l|r0.close()     \/\/ Catch:\{ IOException \-\> 0x0032, DataFormatException \-\> 0x0029 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|RETURN\l|return r0.toByteArray()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|ExcHandler: DataFormatException (r4v2 'e' java.util.zip.DataFormatException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.util.zip.DataFormatException r4 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a}"];
+Node_9 [shape=record,label="{9\:\ 0x0031|throw new mil.nga.tiff.util.TiffException(\"Data format error while decoding stream\", r4)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0032|ExcHandler: IOException (r4v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.io.IOException r4 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0033}"];
+Node_12 [shape=record,label="{12\:\ 0x003a|throw new mil.nga.tiff.util.TiffException(\"Failed close decoded byte stream\", r4)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0021|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public byte[] mil.nga.tiff.compression.DeflateCompression.decode((r3v0 'this' mil.nga.tiff.compression.DeflateCompression A[IMMUTABLE_TYPE, THIS]), (r4v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.nio.ByteOrder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_10;
+Node_0 -> Node_7;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_5;
+}
+

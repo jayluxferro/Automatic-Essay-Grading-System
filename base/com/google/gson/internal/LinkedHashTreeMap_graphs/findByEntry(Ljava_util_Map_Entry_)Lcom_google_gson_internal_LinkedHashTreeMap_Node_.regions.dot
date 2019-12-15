@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.gson.internal.LinkedHashTreeMap.findByEntry(Ljava\/util\/Map$Entry;)Lcom\/google\/gson\/internal\/LinkedHashTreeMap$Node;" {
+subgraph cluster_Region_1286125096 {
+label = "R(2:0|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.internal.LinkedHashTreeMap$Node com.google.gson.internal.LinkedHashTreeMap.Node\<K, V\> r0 = findByObject(r3.getKey())\l}"];
+subgraph cluster_Region_44124033 {
+label = "R(2:(1:8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_185416357 {
+label = "IF [B:6:0x0019] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|PHI: r3 \l  PHI: (r3v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r0 != null && equal(r0.value, r3.getValue())) == true) goto L_?\l}"];
+subgraph cluster_Region_1142069557 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_443302712 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+MethodNode[shape=record,label="{com.google.gson.internal.LinkedHashTreeMap$Node\<K, V\> com.google.gson.internal.LinkedHashTreeMap.findByEntry((r2v0 'this' com.google.gson.internal.LinkedHashTreeMap A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.Map$Entry\<?, ?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map$Entry\<, **\>;), Lcom\/google\/gson\/internal\/LinkedHashTreeMap$Node\<, TK;TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

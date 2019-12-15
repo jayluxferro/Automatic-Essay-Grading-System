@@ -1,0 +1,54 @@
+digraph "CFG forokhttp3.internal.http2.Http2Connection.ReaderRunnable.rstStream(ILokhttp3\/internal\/http2\/ErrorCode;)V" {
+subgraph cluster_Region_1558761553 {
+label = "R(1:(2:(2:2|3)|(2:4|(1:(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_36408386 {
+label = "R(2:(2:2|3)|(2:4|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_671952717 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (okhttp3.internal.http2.Http2Connection.this.pushedStream(r2) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_179888147 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|okhttp3.internal.http2.Http2Connection.this.pushResetLater(r2, r3)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1971213427 {
+label = "R(2:4|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|okhttp3.internal.http2.Http2Stream okhttp3.internal.http2.Http2Stream r2 = okhttp3.internal.http2.Http2Connection.this.removeStream(r2)\l}"];
+subgraph cluster_Region_273204045 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1599776108 {
+label = "IF [B:5:0x0014] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r2 != null) goto L_0x0016\l}"];
+subgraph cluster_Region_1654425098 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r2.receiveRstStream(r3)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.http2.Http2Connection.ReaderRunnable.rstStream((r1v0 'this' okhttp3.internal.http2.Http2Connection$ReaderRunnable A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 okhttp3.internal.http2.ErrorCode A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+}
+

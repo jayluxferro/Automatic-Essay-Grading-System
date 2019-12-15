@@ -1,0 +1,21 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.requireNoNulls(Ljava\/lang\/Iterable;)Ljava\/lang\/Iterable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"$receiver\" \l0x0002: INVOKE  (r3 I:java.lang.Object), (r0 I:java.lang.String) kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(java.lang.Object, java.lang.String):void type: STATIC \l0x0005: INVOKE  (r0 I:java.util.Iterator) = (r3 I:java.lang.Iterable) java.lang.Iterable.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|0x000d: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0034 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|0x000f: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0016 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: NEW_INSTANCE  (r0 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0018: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001a: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x001d: CONST_STR  (r2 I:java.lang.String) =  \"null element found in \" \l0x001f: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0022: INVOKE  (r1 I:java.lang.StringBuilder), (r3 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x0025: CONST  (r3 I:?[int, float, short, byte, char]) = (46 ?[int, float, short, byte, char]) \l0x0027: INVOKE  (r1 I:java.lang.StringBuilder), (r3 I:char) java.lang.StringBuilder.append(char):java.lang.StringBuilder type: VIRTUAL \l0x002a: INVOKE  (r3 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x002e: INVOKE  \l  (r0 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l0x0031: CHECK_CAST  (r0 I:java.lang.Throwable) = (java.lang.Throwable) (r0 I:?[OBJECT, ARRAY]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0033|0x0033: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0034|0x0034: RETURN  (r3 I:java.lang.Iterable\<T\>) \l}"];
+MethodNode[shape=record,label="{public static final java.lang.Iterable\<T\> kotlin.collections.CollectionsKt___CollectionsKt.requireNoNulls((r3 I:java.lang.Iterable\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/lang\/Iterable\<, +TT;\>;), Ljava\/lang\/Iterable\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_4 -> Node_1[style=dashed];
+Node_6 -> Node_7;
+}
+

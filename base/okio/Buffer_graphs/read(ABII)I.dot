@@ -1,0 +1,19 @@
+digraph "CFG forokio.Buffer.read([BII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okio.Util.checkOffsetAndCount((long) r8.length, (long) r9, (long) r10)\lokio.Segment r0 = r7.head\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r0 != null) goto L_0x000d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|RETURN\l|return \-1\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|int r10 = java.lang.Math.min(r10, r0.limit \- r0.pos)\ljava.lang.System.arraycopy(r0.data, r0.pos, r8, r9, r10)\lr0.pos = r0.pos + r10\lr7.size = r7.size \- ((long) r10)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002c|if (r0.pos != r0.limit) goto L_0x0037\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002e|r7.head = r0.pop()\lokio.SegmentPool.recycle(r0)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037|RETURN\l|return r10\l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.read((r7v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r8v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

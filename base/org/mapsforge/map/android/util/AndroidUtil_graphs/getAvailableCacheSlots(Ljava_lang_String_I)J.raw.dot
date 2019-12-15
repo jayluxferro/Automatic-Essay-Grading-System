@@ -1,0 +1,16 @@
+digraph "CFG fororg.mapsforge.map.android.util.AndroidUtil.getAvailableCacheSlots(Ljava\/lang\/String;I)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:android.os.StatFs) =  android.os.StatFs \l0x0002: INVOKE  (r0 I:android.os.StatFs), (r2 I:java.lang.String) android.os.StatFs.\<init\>(java.lang.String):void type: DIRECT \l0x0005: SGET  (r2 I:int) =  android.os.Build.VERSION.SDK_INT int \l0x0007: CONST  (r1 I:?[int, float, short, byte, char]) = (18 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: IF  (r2 I:?[int, byte, short, char]) \< (r1 I:?[int, byte, short, char])  \-\> B:4:0x0012 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: INVOKE  (r0 I:long) = (r0 I:android.os.StatFs) android.os.StatFs.getAvailableBytes():long type: VIRTUAL \l0x000f: CAST  (r2 I:long) = (long) (r3 I:int) \l0x0010: ARITH  (r0 I:long) = (r0 I:long) \/ (r2 I:long) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: RETURN  (r0 I:long) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: INVOKE  (r2 I:int) = (r0 I:android.os.StatFs) android.os.StatFs.getBlockSize():int type: VIRTUAL \l0x0016: ARITH  (r3 I:int) = (r3 I:int) \/ (r2 I:int) \l0x0017: CONST  (r2 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0018: INVOKE  (r2 I:int) = (r3 I:int), (r2 I:int) java.lang.Math.max(int, int):int type: STATIC \l0x001c: INVOKE  (r3 I:int) = (r0 I:android.os.StatFs) android.os.StatFs.getAvailableBlocks():int type: VIRTUAL \l0x0020: ARITH  (r3 I:int) = (r3 I:int) \/ (r2 I:int) \l0x0021: CAST  (r2 I:long) = (long) (r3 I:int) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|0x0022: RETURN  (r2 I:long) \l}"];
+MethodNode[shape=record,label="{public static long org.mapsforge.map.android.util.AndroidUtil.getAvailableCacheSlots((r2 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=18\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

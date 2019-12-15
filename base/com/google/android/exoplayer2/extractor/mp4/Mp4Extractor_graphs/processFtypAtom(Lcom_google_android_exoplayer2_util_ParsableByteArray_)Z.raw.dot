@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.Mp4Extractor.processFtypAtom(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0001: CONST  (r2 I:?[int, float, short, byte, char]) = (8 ?[int, float, short, byte, char]) \l0x0003: INVOKE  \l  (r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray)])\l  (r2 I:int)\l com.google.android.exoplayer2.util.ParsableByteArray.setPosition(int):void type: VIRTUAL \l0x0006: INVOKE  (r0 I:int) = \l  (r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray)])\l com.google.android.exoplayer2.util.ParsableByteArray.readInt():int type: VIRTUAL \l0x000a: SGET  (r2 I:int) =  com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.BRAND_QUICKTIME int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('majorBrand' int)]) != (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x000f \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: RETURN  (r1 I:boolean) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|0x000f: CONST  (r2 I:?[int, float, short, byte, char]) = (4 ?[int, float, short, byte, char]) \l0x0010: INVOKE  \l  (r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray)])\l  (r2 I:int)\l com.google.android.exoplayer2.util.ParsableByteArray.skipBytes(int):void type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: INVOKE  (r2 I:int) = \l  (r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray)])\l com.google.android.exoplayer2.util.ParsableByteArray.bytesLeft():int type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|0x0017: IF  (r2 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:9:0x0022 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: INVOKE  (r2 I:int) = \l  (r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray)])\l com.google.android.exoplayer2.util.ParsableByteArray.readInt():int type: VIRTUAL \l0x001d: SGET  (r3 I:int) =  com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.BRAND_QUICKTIME int \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001f|0x001f: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0013 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|0x0022: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+MethodNode[shape=record,label="{private static boolean com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.processFtypAtom((r4 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('atomData' com.google.android.exoplayer2.util.ParsableByteArray), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x000a\-0x0023: r0 'majorBrand' int\l  ?\-0x0023: r4 'atomData' com.google.android.exoplayer2.util.ParsableByteArray\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_4;
+Node_7 -> Node_2[style=dashed];
+Node_9 -> Node_2;
+}
+

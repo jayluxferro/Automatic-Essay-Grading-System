@@ -1,0 +1,20 @@
+digraph "CFG forcom.android.volley.toolbox.HurlStack.entityFromConnection(Ljava\/net\/HttpURLConnection;)Lorg\/apache\/http\/HttpEntity;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.apache.http.entity.BasicHttpEntity r0 = new org.apache.http.entity.BasicHttpEntity()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|SYNTHETIC\lSplitter:B:1:0x0005\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x0023 \}\lSplitter:B:1:0x0005\l|java.io.InputStream r1 = r6.getInputStream()     \/\/ Catch:\{ IOException \-\> 0x0023 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|PHI: r1 \l  PHI: (r1v1 'inputStream' java.io.InputStream) = (r1v0 'inputStream' java.io.InputStream), (r1v2 'inputStream' java.io.InputStream) binds: [B:6:0x0024, B:2:?] A[DONT_GENERATE, DONT_INLINE]\l|r0.setContent(r1)\lr0.setContentLength((long) r6.getContentLength())\lr0.setContentEncoding(r6.getContentEncoding())\lr0.setContentType(r6.getContentType())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0022|RETURN\l|return r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|ExcHandler: IOException (e java.io.IOException)\lSplitter:B:1:0x0005\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|java.io.InputStream r1 = r6.getErrorStream()\l}"];
+MethodNode[shape=record,label="{private static org.apache.http.HttpEntity com.android.volley.toolbox.HurlStack.entityFromConnection((r6v0 'connection' java.net.HttpURLConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_3;
+}
+

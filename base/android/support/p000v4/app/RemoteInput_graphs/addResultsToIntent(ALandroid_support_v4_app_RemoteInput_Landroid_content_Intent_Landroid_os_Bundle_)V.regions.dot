@@ -1,0 +1,199 @@
+digraph "CFG forandroid.support.v4.app.RemoteInput.addResultsToIntent([Landroid\/support\/v4\/app\/RemoteInput;Landroid\/content\/Intent;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_162318304 {
+label = "R(1:(2:(2:2|37)|(2:3|(4:5|(1:7)|8|(3:10|(1:12)(0)|13))(1:(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)(1:29)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1186972276 {
+label = "R(2:(2:2|37)|(2:3|(4:5|(1:7)|8|(3:10|(1:12)(0)|13))(1:(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)(1:29))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1195140474 {
+label = "IF [B:1:0x0004] THEN: R(2:2|37) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L_0x0006\l}"];
+subgraph cluster_Region_766164712 {
+label = "R(2:2|37)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.app.RemoteInput.addResultsToIntent(fromCompat(r7), r8, r9)\l}"];
+Node_37 [shape=record,label="{37\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_389761221 {
+label = "R(2:3|(4:5|(1:7)|8|(3:10|(1:12)(0)|13))(1:(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)(1:29)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|int r2 = 0\l}"];
+subgraph cluster_IfRegion_1121386362 {
+label = "IF [B:4:0x0014] THEN: R(4:5|(1:7)|8|(3:10|(1:12)(0)|13)) ELSE: R(1:(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)(1:29))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (android.os.Build.VERSION.SDK_INT \>= 20) goto L_0x0016\l}"];
+subgraph cluster_Region_1115472499 {
+label = "R(4:5|(1:7)|8|(3:10|(1:12)(0)|13))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|android.os.Bundle android.os.Bundle r0 = getResultsFromIntent(r8)\l}"];
+subgraph cluster_IfRegion_108538755 {
+label = "IF [B:6:0x001a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|if (r0 != null) goto L_0x001d\l}"];
+subgraph cluster_Region_1666089330 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|r0.putAll(r9)\lr9 = r0\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0021|PHI: r9 \l  PHI: (r9v1 android.os.Bundle) = (r9v0 android.os.Bundle), (r9v2 android.os.Bundle) binds: [B:6:0x001a, B:7:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = r7.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_2051160374 {
+label = "LOOP:0: (3:10|(1:12)(0)|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|LOOP_START\lPHI: r1 \l  PHI: (r1v8 int) = (r1v7 int), (r1v9 int) binds: [B:8:0x0021, B:13:0x0040] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0023\-\>B:13:0x0040\l|if (r1 \< r0) goto L_0x0025\l}"];
+subgraph cluster_Region_1505383706 {
+label = "R(3:10|(1:12)(0)|13)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|r3 = r7[r1]\ljava.util.Map java.util.Map\<java.lang.String, android.net.Uri\> r4 = getDataResultsFromIntent(r8, r3.getResultKey())\landroid.app.RemoteInput.addResultsToIntent(fromCompat(new android.support.p000v4.app.RemoteInput[]\{r3\}), r8, r9)\l}"];
+subgraph cluster_IfRegion_2112973572 {
+label = "IF [B:11:0x003b] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003b|if (r4 != null) goto L_0x003d\l}"];
+subgraph cluster_Region_982676234 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003d|addDataResultToIntent(r3, r8, r4)\l}"];
+}
+subgraph cluster_Region_1584501937 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0040|LOOP_END\lLOOP:0: B:9:0x0023\-\>B:13:0x0040\l|r1++\l}"];
+}
+}
+}
+subgraph cluster_Region_651443305 {
+label = "R(1:(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)(1:29)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1393306342 {
+label = "IF [B:15:0x0047] THEN: R(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28) ELSE: R(1:29) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0047|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0049\l}"];
+subgraph cluster_Region_628863662 {
+label = "R(7:16|(1:18)|19|(1:21)|22|(3:24|(1:26)(0)|27)|28)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0049|android.content.Intent android.content.Intent r0 = getClipDataIntentFromIntent(r8)\l}"];
+subgraph cluster_IfRegion_726264146 {
+label = "IF [B:17:0x004d] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004d|if (r0 == null) goto L_0x004f\l}"];
+subgraph cluster_Region_1719265336 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004f|android.content.Intent r0 = new android.content.Intent()\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0054|PHI: r0 \l  PHI: (r0v4 android.content.Intent) = (r0v3 android.content.Intent), (r0v5 android.content.Intent) binds: [B:17:0x004d, B:18:0x004f] A[DONT_GENERATE, DONT_INLINE]\l|android.os.Bundle android.os.Bundle r1 = r0.getBundleExtra(EXTRA_RESULTS_DATA)\l}"];
+subgraph cluster_IfRegion_38322446 {
+label = "IF [B:20:0x005a] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005a|if (r1 == null) goto L_0x005c\l}"];
+subgraph cluster_Region_2053042729 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x005c|android.os.Bundle r1 = new android.os.Bundle()\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0061|PHI: r1 \l  PHI: (r1v5 android.os.Bundle) = (r1v4 android.os.Bundle), (r1v6 android.os.Bundle) binds: [B:20:0x005a, B:21:0x005c] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r7.length\l}"];
+subgraph cluster_LoopRegion_954999352 {
+label = "LOOP:1: (3:24|(1:26)(0)|27)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0062|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:22:0x0061, B:27:0x007b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:23:0x0062\-\>B:27:0x007b\l|if (r2 \< r3) goto L_0x0064\l}"];
+subgraph cluster_Region_1971624026 {
+label = "R(3:24|(1:26)(0)|27)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0064|r4 = r7[r2]\ljava.lang.Object java.lang.Object r5 = r9.get(r4.getResultKey())\l}"];
+subgraph cluster_IfRegion_1337896471 {
+label = "IF [B:25:0x0070] THEN: R(1:26) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0070|if ((r5 instanceof java.lang.CharSequence) == true) goto L_0x0072\l}"];
+subgraph cluster_Region_727306583 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0072|r1.putCharSequence(r4.getResultKey(), (java.lang.CharSequence) r5)\l}"];
+}
+subgraph cluster_Region_1793781128 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x007b|LOOP_END\lLOOP:1: B:23:0x0062\-\>B:27:0x007b\l|r2++\l}"];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x007e|r0.putExtra(EXTRA_RESULTS_DATA, r1)\lr8.setClipData(android.content.ClipData.newIntent(RESULTS_CLIP_LABEL, r0))\l}"];
+}
+subgraph cluster_Region_1843049416 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x008d|android.util.Log.w(TAG, \"RemoteInput is only supported from API Level 16\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0043}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0094|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0040|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0040|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x007e|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x007b|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x007b|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void android.support.v4.app.RemoteInput.addResultsToIntent((r7v0 android.support.v4.app.RemoteInput[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_37;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_30[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_32[style=dashed];
+Node_12 -> Node_31;
+Node_13 -> Node_9;
+Node_15 -> Node_16;
+Node_15 -> Node_29[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_33[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_35[style=dashed];
+Node_26 -> Node_34;
+Node_27 -> Node_23;
+Node_28 -> Node_38;
+Node_29 -> Node_36;
+Node_0 -> Node_1;
+Node_14 -> Node_15;
+Node_30 -> Node_39;
+Node_31 -> Node_13;
+Node_32 -> Node_13;
+Node_33 -> Node_28;
+Node_34 -> Node_27;
+Node_35 -> Node_27;
+}
+

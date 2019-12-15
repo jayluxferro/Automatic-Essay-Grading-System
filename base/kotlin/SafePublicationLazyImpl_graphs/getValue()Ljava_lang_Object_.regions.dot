@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.SafePublicationLazyImpl.getValue()Ljava\/lang\/Object;" {
+subgraph cluster_Region_957929152 {
+label = "R(2:0|(2:(1:2)|(3:3|(2:5|(2:7|8))|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Object T r0 = r3._value\l}"];
+subgraph cluster_Region_1318495512 {
+label = "R(2:(1:2)|(3:3|(2:5|(2:7|8))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1997165968 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != kotlin.UNINITIALIZED_VALUE.INSTANCE) goto L_0x0006\l}"];
+subgraph cluster_Region_750213758 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2029197789 {
+label = "R(3:3|(2:5|(2:7|8))|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|kotlin.jvm.functions.Function0\<? extends T\> kotlin.jvm.functions.Function0\<? extends T\> r0 = r3.initializer\l}"];
+subgraph cluster_IfRegion_128085717 {
+label = "IF [B:4:0x0009] THEN: R(2:5|(2:7|8)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r0 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_580980068 {
+label = "R(2:5|(2:7|8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|java.lang.Object T r0 = r0.invoke()\l}"];
+subgraph cluster_IfRegion_886294500 {
+label = "IF [B:6:0x0017] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|if (valueUpdater.compareAndSet(r3, kotlin.UNINITIALIZED_VALUE.INSTANCE, r0) == true) goto L_0x0019\l}"];
+subgraph cluster_Region_1410207058 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|r3.initializer = null\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0021|RETURN\l|return r3._value\l}"];
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f}"];
+MethodNode[shape=record,label="{public T kotlin.SafePublicationLazyImpl.getValue((r3v0 'this' kotlin.SafePublicationLazyImpl A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

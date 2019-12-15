@@ -1,0 +1,36 @@
+digraph "CFG fororg.kxml2.wap.WbxmlParser.getAttributeValue(I)Ljava\/lang\/String;" {
+subgraph cluster_Region_392806925 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1613718657 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1331543827 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2 \< r1.attributeCount) goto L_0x0004\l}"];
+subgraph cluster_Region_769654875 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return r1.attributes[(r2 \<\< 2) + 3]\l}"];
+}
+}
+subgraph cluster_Region_1950402112 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|throw new java.lang.IndexOutOfBoundsException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+MethodNode[shape=record,label="{public java.lang.String org.kxml2.wap.WbxmlParser.getAttributeValue((r1v0 'this' org.kxml2.wap.WbxmlParser A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

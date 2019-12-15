@@ -1,0 +1,105 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.ChunkedSource.readChunkSize()V" {
+subgraph cluster_Region_1591595489 {
+label = "R(2:(1:2)|(2:4|(2:14|15)(1:(1:12)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2065489960 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r5.bytesRemainingInChunk != \-1) goto L_0x0008\l}"];
+subgraph cluster_Region_1229701720 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|okhttp3.internal.http1.Http1Codec.this.source.readUtf8LineStrict()\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_1306813173 {
+label = "Try: R(2:4|(2:14|15)(1:(1:12)(0))) catches: R(2:16|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1605538796 {
+label = "R(2:4|(2:14|15)(1:(1:12)(0)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ NumberFormatException \-\> 0x007e \}\lSplitter:B:3:0x000f\l|r5.bytesRemainingInChunk = okhttp3.internal.http1.Http1Codec.this.source.readHexadecimalUnsignedLong()     \/\/ Catch:\{ NumberFormatException \-\> 0x007e \}\ljava.lang.String java.lang.String r0 = okhttp3.internal.http1.Http1Codec.this.source.readUtf8LineStrict().trim()     \/\/ Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+subgraph cluster_IfRegion_449677660 {
+label = "IF [B:5:0x002b, B:7:0x0031, B:9:0x0039] THEN: R(2:14|15) ELSE: R(1:(1:12)(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002b|Catch:\{ NumberFormatException \-\> 0x007e \}\l|if (r5.bytesRemainingInChunk \< 0) goto L_0x005d     \/\/ Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0031|ADDED_TO_REGION\lCatch:\{ NumberFormatException \-\> 0x007e \}\l|if (r0.isEmpty() == false) goto L_0x0033     \/\/ Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|ADDED_TO_REGION\l|if (r0.startsWith(\";\") == false) goto L_0x005d\l}"];
+subgraph cluster_Region_436823035 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+Node_15 [shape=record,label="{15\:\ 0x007d|Catch:\{ NumberFormatException \-\> 0x007e \}\l|throw new java.net.ProtocolException(\"expected chunk size and optional extensions but was \"\" + r5.bytesRemainingInChunk + r0 + org.osgeo.proj4j.units.AngleFormat.STR_SEC_SYMBOL)     \/\/ Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+}
+subgraph cluster_Region_2097606769 {
+label = "R(1:(1:12)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1636254297 {
+label = "IF [B:11:0x003f] THEN: R(1:12) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|if (r5.bytesRemainingInChunk == 0) goto L_0x0041\l}"];
+subgraph cluster_Region_1992885555 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0041|r5.hasMoreChunks = false\lokhttp3.internal.http.HttpHeaders.receiveHeaders(okhttp3.internal.http1.Http1Codec.this.client.cookieJar(), r5.url, okhttp3.internal.http1.Http1Codec.this.readHeaders())\lendOfInput(true, (java.io.IOException) null)\l}"];
+}
+subgraph cluster_Region_416555733 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1377557702 {
+label = "R(2:16|18) | ExcHandler: NumberFormatException (r0v2 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x007e|ExcHandler: NumberFormatException (r0v2 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\lSplitter:B:3:0x000f\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0088|throw new java.net.ProtocolException(r0.getMessage())\l}"];
+}
+}
+}
+subgraph cluster_Region_1377557702 {
+label = "R(2:16|18) | ExcHandler: NumberFormatException (r0v2 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x007e|ExcHandler: NumberFormatException (r0v2 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\lSplitter:B:3:0x000f\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0088|throw new java.net.ProtocolException(r0.getMessage())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|SYNTHETIC\lSplitter:B:3:0x000f\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d|Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0033|Catch:\{ NumberFormatException \-\> 0x007e \}\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003b}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x005d|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x007f}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http1.Http1Codec.ChunkedSource.readChunkSize((r5v0 'this' okhttp3.internal.http1.Http1Codec$ChunkedSource A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_13;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_14 -> Node_15;
+Node_11 -> Node_12;
+Node_11 -> Node_20[style=dashed];
+Node_12 -> Node_19;
+Node_16 -> Node_17;
+Node_16 -> Node_17;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_16;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_13 -> Node_16;
+Node_17 -> Node_18;
+}
+

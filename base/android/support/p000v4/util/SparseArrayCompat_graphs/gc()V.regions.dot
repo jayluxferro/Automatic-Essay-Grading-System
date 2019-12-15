@@ -1,0 +1,65 @@
+digraph "CFG forandroid.support.v4.util.SparseArrayCompat.gc()V" {
+subgraph cluster_Region_1935341423 {
+label = "R(3:0|(3:2|(2:(1:5)|6)(0)|7)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r8.mSize\lint[] int[] r1 = r8.mKeys\ljava.lang.Object[] java.lang.Object[] r2 = r8.mValues\lint r4 = 0\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1676114576 {
+label = "LOOP:0: (3:2|(2:(1:5)|6)(0)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r4 r5 \l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:7:0x001e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:0:0x0000, B:7:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:7:0x001e\l|if (r4 \< r0) goto L_0x000b\l}"];
+subgraph cluster_Region_42349144 {
+label = "R(3:2|(2:(1:5)|6)(0)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|java.lang.Object r6 = r2[r4]\l}"];
+subgraph cluster_IfRegion_1888408781 {
+label = "IF [B:3:0x000f] THEN: R(2:(1:5)|6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (r6 != DELETED) goto L_0x0011\l}"];
+subgraph cluster_Region_2116583770 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_650333416 {
+label = "IF [B:4:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r4 != r5) goto L_0x0013\l}"];
+subgraph cluster_Region_1094312496 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|r1[r5] = r1[r4]\lr2[r5] = r6\lr2[r4] = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|r5++\l}"];
+}
+subgraph cluster_Region_1501412755 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001e|LOOP_END\lPHI: r5 \l  PHI: (r5v2 int) = (r5v1 int), (r5v3 int) binds: [B:12:0x001e, B:11:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:7:0x001e\l|r4++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0021|r8.mGarbage = false\lr8.mSize = r5\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x0025}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0021|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v4.util.SparseArrayCompat.gc((r8v0 'this' android.support.v4.util.SparseArrayCompat A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_11;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_10 -> Node_8;
+Node_11 -> Node_7;
+Node_12 -> Node_7;
+}
+

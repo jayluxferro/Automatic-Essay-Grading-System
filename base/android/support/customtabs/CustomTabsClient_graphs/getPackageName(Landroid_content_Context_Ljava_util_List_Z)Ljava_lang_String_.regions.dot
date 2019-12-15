@@ -1,0 +1,99 @@
+digraph "CFG forandroid.support.customtabs.CustomTabsClient.getPackageName(Landroid\/content\/Context;Ljava\/util\/List;Z)Ljava\/lang\/String;" {
+subgraph cluster_Region_1259832059 {
+label = "R(7:0|(1:2)(1:16)|3|(3:7|(1:9)|10)|11|(2:14|(1:20))|17) | DECL_VAR: java.util.ArrayList packageNames, android.content.pm.ResolveInfo defaultViewHandlerInfo\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.pm.PackageManager android.content.pm.PackageManager r5 = r10.getPackageManager()\l}"];
+subgraph cluster_IfRegion_816188140 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r11 == null) goto L_0x0007\l}"];
+subgraph cluster_Region_693262519 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|java.util.ArrayList r3 = new java.util.ArrayList()\l}"];
+}
+subgraph cluster_Region_1256732058 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x005a|r3 = r11\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000c|PHI: r3 \l  PHI: (r3v1 'packageNames' java.util.List\<java.lang.String\>) = (r3v0 'packageNames' java.util.List\<java.lang.String\>), (r3v4 'packageNames' java.util.List\<java.lang.String\>) binds: [B:16:0x005a, B:2:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|android.content.Intent android.content.Intent r0 = new android.content.Intent(\"android.intent.action.VIEW\", android.net.Uri.parse(\"http:\/\/\"))\l}"];
+subgraph cluster_IfRegion_2078138498 {
+label = "IF [B:4:0x0019, B:6:0x001f] THEN: R(3:7|(1:9)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|ADDED_TO_REGION\l|if (r12 == false) goto L_0x001b\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|ADDED_TO_REGION\l|if ((r1 = r5.resolveActivity(r0, 0)) != null) goto L_0x0021\l}"];
+subgraph cluster_Region_1025472102 {
+label = "R(3:7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|java.lang.String java.lang.String r2 = r1.activityInfo.packageName\ljava.util.ArrayList java.util.ArrayList r4 = new java.util.ArrayList(r3.size() + 1)\lr4.add(r2)\l}"];
+subgraph cluster_IfRegion_166426160 {
+label = "IF [B:8:0x0033] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|if (r11 != null) goto L_0x0035\l}"];
+subgraph cluster_Region_1564440792 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|r4.addAll(r11)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0038|r3 = r4\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0039|PHI: r3 \l  PHI: (r3v2 'packageNames' java.util.List\<java.lang.String\>) = (r3v1 'packageNames' java.util.List\<java.lang.String\>), (r3v1 'packageNames' java.util.List\<java.lang.String\>), (r3v3 'packageNames' java.util.ArrayList) binds: [B:4:0x0019, B:6:0x001f, B:10:0x0038] A[DONT_GENERATE, DONT_INLINE]\l|android.content.Intent android.content.Intent r6 = new android.content.Intent(android.support.customtabs.CustomTabsService.ACTION_CUSTOM_TABS_CONNECTION)\ljava.util.Iterator r7 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_355494898 {
+label = "LOOP:0: (2:14|(1:20))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0048|if (r7.hasNext() != false) goto L_0x004a\l}"];
+subgraph cluster_Region_1458623353 {
+label = "R(2:14|(1:20))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004a|java.lang.String r2 = r7.next()\lr6.setPackage(r2)\l}"];
+subgraph cluster_IfRegion_1485110055 {
+label = "IF [B:15:0x0057] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0057|LOOP_END\lLOOP:0: B:12:0x0044\-\>B:15:0x0057\l|if (r5.resolveService(r6, 0) != null) goto L_0x0059\l}"];
+subgraph cluster_Region_1159686452 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x005c|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0044|LOOP_START\lLOOP:0: B:12:0x0044\-\>B:15:0x0057\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0059|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x005c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.lang.String android.support.customtabs.CustomTabsClient.getPackageName((r10v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'packages' java.util.List\<java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'ignoreDefault' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[BUILD, android.support.annotation.Nullable, \{\}], \lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/content\/Context;, Ljava\/util\/List, \<, Ljava\/lang\/String;, \>;Z), Ljava\/lang\/String;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_2 -> Node_3;
+Node_16 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_19[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_12[style=dashed];
+Node_15 -> Node_18;
+Node_5 -> Node_6;
+Node_12 -> Node_13;
+Node_18 -> Node_20;
+Node_19 -> Node_17;
+}
+

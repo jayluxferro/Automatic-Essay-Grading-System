@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseFrameRate(Lorg\/xmlpull\/v1\/XmlPullParser;F)F" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: MOVE  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r8 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('defaultValue' float)])\l \l0x0001: CONST  (r5 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0002: CONST_STR  (r6 I:java.lang.String) =  \"frameRate\" \l0x0004: INVOKE  (r2 I:java.lang.String) = \l  (r7 I:org.xmlpull.v1.XmlPullParser A[D('xpp' org.xmlpull.v1.XmlPullParser)])\l  (r5 I:java.lang.String)\l  (r6 I:java.lang.String)\l org.xmlpull.v1.XmlPullParser.getAttributeValue(java.lang.String, java.lang.String):java.lang.String type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('frameRateAttribute' java.lang.String)]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0032 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: SGET  (r5 I:java.util.regex.Pattern) =  com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.FRAME_RATE_PATTERN java.util.regex.Pattern \l0x000c: INVOKE  (r3 I:java.util.regex.Matcher) = \l  (r5 I:java.util.regex.Pattern)\l  (r2 I:java.lang.CharSequence A[D('frameRateAttribute' java.lang.String)])\l java.util.regex.Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher type: VIRTUAL \l0x0010: INVOKE  (r5 I:boolean) = \l  (r3 I:java.util.regex.Matcher A[D('frameRateMatcher' java.util.regex.Matcher)])\l java.util.regex.Matcher.matches():boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|0x0014: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0032 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: CONST  (r5 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0017: INVOKE  (r5 I:java.lang.String) = \l  (r3 I:java.util.regex.Matcher A[D('frameRateMatcher' java.util.regex.Matcher)])\l  (r5 I:int)\l java.util.regex.Matcher.group(int):java.lang.String type: VIRTUAL \l0x001b: INVOKE  (r4 I:int) = (r5 I:java.lang.String) java.lang.Integer.parseInt(java.lang.String):int type: STATIC \l0x001f: CONST  (r5 I:?[int, float, short, byte, char]) = (2 ?[int, float, short, byte, char]) \l0x0020: INVOKE  (r0 I:java.lang.String) = \l  (r3 I:java.util.regex.Matcher A[D('frameRateMatcher' java.util.regex.Matcher)])\l  (r5 I:int)\l java.util.regex.Matcher.group(int):java.lang.String type: VIRTUAL \l0x0024: INVOKE  (r5 I:boolean) = \l  (r0 I:java.lang.CharSequence A[D('denominatorString' java.lang.String)])\l android.text.TextUtils.isEmpty(java.lang.CharSequence):boolean type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|0x0028: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0033 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|0x002a: CAST  (r5 I:float) = (float) (r4 I:int A[D('numerator' int)]) \l0x002b: INVOKE  (r6 I:int) = \l  (r0 I:java.lang.String A[D('denominatorString' java.lang.String)])\l java.lang.Integer.parseInt(java.lang.String):int type: STATIC \l0x002f: CAST  (r6 I:float) = (float) (r6 I:int) \l0x0030: ARITH  (r1 I:float A[D('frameRate' float)]) = (r5 I:float) \/ (r6 I:float) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|0x0032: RETURN  (r1 I:float A[D('frameRate' float)]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|0x0033: CAST  (r1 I:float A[D('frameRate' float)]) = (float) (r4 I:int A[D('numerator' int)]) \l}"];
+MethodNode[shape=record,label="{protected static float com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseFrameRate((r7 I:org.xmlpull.v1.XmlPullParser A[D('xpp' org.xmlpull.v1.XmlPullParser), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:float A[D('defaultValue' float), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0024\-0x0032: r0 'denominatorString' java.lang.String\l  0x0010\-0x0032: r3 'frameRateMatcher' java.util.regex.Matcher\l  0x001f\-0x0032: r4 'numerator' int\l  0x0033\-0x0034: r0 'denominatorString' java.lang.String\l  0x0001\-0x0034: r1 'frameRate' float\l  0x0008\-0x0034: r2 'frameRateAttribute' java.lang.String\l  0x0033\-0x0034: r3 'frameRateMatcher' java.util.regex.Matcher\l  0x0033\-0x0034: r4 'numerator' int\l  ?\-0x0034: r7 'xpp' org.xmlpull.v1.XmlPullParser\l  ?\-0x0034: r8 'defaultValue' float\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_7;
+}
+

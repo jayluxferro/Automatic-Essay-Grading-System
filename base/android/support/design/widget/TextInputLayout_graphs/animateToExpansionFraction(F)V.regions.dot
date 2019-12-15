@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.design.widget.TextInputLayout.animateToExpansionFraction(F)V" {
+subgraph cluster_Region_703306082 {
+label = "R(1:(1:(2:(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_506287315 {
+label = "R(1:(2:(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1727911236 {
+label = "IF [B:1:0x0008] THEN: R(2:(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r4.collapsingTextHelper.getExpansionFraction() != r5) goto L_0x000b\l}"];
+subgraph cluster_Region_48185163 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2005571323 {
+label = "IF [B:4:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|if (r4.animator == null) goto L_0x000f\l}"];
+subgraph cluster_Region_66445077 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|r4.animator = new android.animation.ValueAnimator()\lr4.animator.setInterpolator(android.support.design.animation.AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR)\lr4.animator.setDuration(167)\lr4.animator.addUpdateListener(new android.support.design.widget.TextInputLayout.C01433())\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002e|r4.animator.setFloatValues(new float[]\{r4.collapsingTextHelper.getExpansionFraction(), r5\})\lr4.animator.start()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0047}"];
+MethodNode[shape=record,label="{void android.support.design.widget.TextInputLayout.animateToExpansionFraction((r4v0 'this' android.support.design.widget.TextInputLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

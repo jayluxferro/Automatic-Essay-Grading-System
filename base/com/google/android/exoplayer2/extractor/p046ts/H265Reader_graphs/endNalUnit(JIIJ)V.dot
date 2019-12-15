@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.H265Reader.endNalUnit(JIIJ)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r7.hasOutputFormat == false) goto L_0x005d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|r7.sampleReader.endNalUnit(r8, r10)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r7.prefixSei.endNalUnit(r11) == false) goto L_0x0033\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|int r0 = com.google.android.exoplayer2.util.NalUnitUtil.unescapeStream(r7.prefixSei.nalData, r7.prefixSei.nalLength)\lr7.seiWrapper.reset(r7.prefixSei.nalData, r0)\lr7.seiWrapper.skipBytes(5)\lr7.seiReader.consume(r12, r7.seiWrapper)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0033}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|if (r7.suffixSei.endNalUnit(r11) == false) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|int r0 = com.google.android.exoplayer2.util.NalUnitUtil.unescapeStream(r7.suffixSei.nalData, r7.suffixSei.nalLength)\lr7.seiWrapper.reset(r7.suffixSei.nalData, r0)\lr7.seiWrapper.skipBytes(5)\lr7.seiReader.consume(r12, r7.seiWrapper)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x005d|r7.vps.endNalUnit(r11)\lr7.sps.endNalUnit(r11)\lr7.pps.endNalUnit(r11)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0072|if (r7.vps.isCompleted() == false) goto L_0x000a\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0074}"];
+Node_12 [shape=record,label="{12\:\ 0x007a|if (r7.sps.isCompleted() == false) goto L_0x000a\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007c}"];
+Node_14 [shape=record,label="{14\:\ 0x0082|if (r7.pps.isCompleted() == false) goto L_0x000a\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0084|r7.output.format(parseMediaFormat(r7.formatId, r7.vps, r7.sps, r7.pps))\lr7.hasOutputFormat = true\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.ts.H265Reader.endNalUnit((r7v0 'this' com.google.android.exoplayer2.extractor.ts.H265Reader A[IMMUTABLE_TYPE, THIS]), (r8v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'discardPadding' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'pesTimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_17;
+Node_8 -> Node_16;
+Node_9 -> Node_10;
+Node_10 -> Node_3;
+Node_10 -> Node_11[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_3;
+Node_12 -> Node_13[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_3;
+Node_14 -> Node_15[style=dashed];
+Node_15 -> Node_3;
+}
+

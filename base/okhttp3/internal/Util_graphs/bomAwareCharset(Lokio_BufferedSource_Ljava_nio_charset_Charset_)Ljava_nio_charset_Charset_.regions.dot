@@ -1,0 +1,110 @@
+digraph "CFG forokhttp3.internal.Util.bomAwareCharset(Lokio\/BufferedSource;Ljava\/nio\/charset\/Charset;)Ljava\/nio\/charset\/Charset;" {
+subgraph cluster_Region_1549472442 {
+label = "R(1:(2:2|3)(1:(2:6|7)(1:(2:10|11)(1:(2:14|15)(1:(1:20)(2:18|19))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_433093734 {
+label = "IF [B:1:0x0008] THEN: R(2:2|3) ELSE: R(1:(2:6|7)(1:(2:10|11)(1:(2:14|15)(1:(1:20)(2:18|19)))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r3.rangeEquals(0, UTF_8_BOM) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_816948026 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r3.skip((long) UTF_8_BOM.size())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|RETURN\l|return UTF_8\l}"];
+}
+subgraph cluster_Region_66624072 {
+label = "R(1:(2:6|7)(1:(2:10|11)(1:(2:14|15)(1:(1:20)(2:18|19))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_120755791 {
+label = "IF [B:5:0x001d] THEN: R(2:6|7) ELSE: R(1:(2:10|11)(1:(2:14|15)(1:(1:20)(2:18|19)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|if (r3.rangeEquals(0, UTF_16_BE_BOM) == true) goto L_0x001f\l}"];
+subgraph cluster_Region_496757123 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|r3.skip((long) UTF_16_BE_BOM.size())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002b|RETURN\l|return UTF_16_BE\l}"];
+}
+subgraph cluster_Region_546185593 {
+label = "R(1:(2:10|11)(1:(2:14|15)(1:(1:20)(2:18|19)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1734596090 {
+label = "IF [B:9:0x0032] THEN: R(2:10|11) ELSE: R(1:(2:14|15)(1:(1:20)(2:18|19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|if (r3.rangeEquals(0, UTF_16_LE_BOM) == true) goto L_0x0034\l}"];
+subgraph cluster_Region_1953540023 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|r3.skip((long) UTF_16_LE_BOM.size())\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0040|RETURN\l|return UTF_16_LE\l}"];
+}
+subgraph cluster_Region_921014091 {
+label = "R(1:(2:14|15)(1:(1:20)(2:18|19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1731323143 {
+label = "IF [B:13:0x0047] THEN: R(2:14|15) ELSE: R(1:(1:20)(2:18|19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0047|if (r3.rangeEquals(0, UTF_32_BE_BOM) == true) goto L_0x0049\l}"];
+subgraph cluster_Region_503586846 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0049|r3.skip((long) UTF_32_BE_BOM.size())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0055|RETURN\l|return UTF_32_BE\l}"];
+}
+subgraph cluster_Region_1874354550 {
+label = "R(1:(1:20)(2:18|19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1966941213 {
+label = "IF [B:17:0x005c] THEN: R(1:20) ELSE: R(2:18|19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x005c|if (r3.rangeEquals(0, UTF_32_LE_BOM) != true) goto L_0x006b\l}"];
+subgraph cluster_Region_499969632 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006b|RETURN\l|return r4\l}"];
+}
+subgraph cluster_Region_578234647 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x005e|r3.skip((long) UTF_32_LE_BOM.size())\l}"];
+Node_19 [shape=record,label="{19\:\ 0x006a|RETURN\l|return UTF_32_LE\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002c}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0041}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0056}"];
+MethodNode[shape=record,label="{public static java.nio.charset.Charset okhttp3.internal.Util.bomAwareCharset((r3v0 okio.BufferedSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.nio.charset.Charset A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_20;
+Node_18 -> Node_19;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+}
+

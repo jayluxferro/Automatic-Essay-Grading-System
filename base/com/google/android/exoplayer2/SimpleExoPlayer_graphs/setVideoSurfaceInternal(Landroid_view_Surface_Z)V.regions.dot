@@ -1,0 +1,95 @@
+digraph "CFG forcom.google.android.exoplayer2.SimpleExoPlayer.setVideoSurfaceInternal(Landroid\/view\/Surface;Z)V" {
+subgraph cluster_Region_1498457624 {
+label = "R(4:0|(3:2|(1:4)(1:17)|5)|(1:16)(2:(1:12)|13)|14) | DECL_VAR: int count\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.ExoPlayer$ExoPlayerMessage[] com.google.android.exoplayer2.ExoPlayer.ExoPlayerMessage[] r2 = new com.google.android.exoplayer2.ExoPlayer.ExoPlayerMessage[r9.videoRendererCount]\lcom.google.android.exoplayer2.Renderer[] com.google.android.exoplayer2.Renderer[] r5 = r9.renderers\lint int r6 = r5.length\lint r4 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_366558864 {
+label = "LOOP:0: (3:2|(1:4)(1:17)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r1 r4 \l  PHI: (r1v1 'count' int) = (r1v0 'count' int), (r1v2 'count' int) binds: [B:0:0x0000, B:5:0x001f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v2 int) = (r4v1 int), (r4v9 int) binds: [B:0:0x0000, B:5:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:5:0x001f\l|if (r4 \< r6) goto L_0x000c\l}"];
+subgraph cluster_Region_1382164883 {
+label = "R(3:2|(1:4)(1:17)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|com.google.android.exoplayer2.Renderer r3 = r5[r4]\l}"];
+subgraph cluster_IfRegion_753007985 {
+label = "IF [B:3:0x0013] THEN: R(1:4) ELSE: R(1:17)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (r3.getTrackType() == 2) goto L_0x0015\l}"];
+subgraph cluster_Region_1265734062 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|int r0 = r1 + 1\lr2[r1] = new com.google.android.exoplayer2.ExoPlayer.ExoPlayerMessage(r3, 1, r10)\l}"];
+}
+subgraph cluster_Region_1395770927 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0044|r0 = r1\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001f|LOOP_END\lPHI: r0 \l  PHI: (r0v2 'count' int) = (r0v1 'count' int), (r0v3 'count' int) binds: [B:20:0x001f, B:19:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:5:0x001f\l|r4++\lr1 = r0\l}"];
+}
+}
+subgraph cluster_IfRegion_1581385082 {
+label = "IF [B:7:0x0025, B:9:0x0029] THEN: R(1:16) ELSE: R(2:(1:12)|13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|if (r9.surface == null) goto L_0x003e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|ADDED_TO_REGION\l|if (r9.surface == r10) goto L_0x003e\l}"];
+subgraph cluster_Region_537711696 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x003e|r9.player.sendMessages(r2)\l}"];
+}
+subgraph cluster_Region_241053222 {
+label = "R(2:(1:12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_367850751 {
+label = "IF [B:11:0x002d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002d|if (r9.ownsSurface == true) goto L_0x002f\l}"];
+subgraph cluster_Region_1941699507 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002f|r9.surface.release()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0034|r9.player.blockingSendMessages(r2)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0039|r9.surface = r10\lr9.ownsSurface = r11\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0023}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003d}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0023|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001f|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.SimpleExoPlayer.setVideoSurfaceInternal((r9v0 'this' com.google.android.exoplayer2.SimpleExoPlayer A[IMMUTABLE_TYPE, THIS]), (r10v0 'surface' android.view.Surface A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'ownsSurface' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_17[style=dashed];
+Node_4 -> Node_19;
+Node_17 -> Node_20;
+Node_5 -> Node_1;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_16;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_16 -> Node_14;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_18 -> Node_6;
+Node_19 -> Node_5;
+Node_20 -> Node_5;
+}
+

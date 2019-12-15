@@ -1,0 +1,40 @@
+digraph "CFG forokhttp3.internal.connection.StreamAllocation.releaseIfNoNewStreams()Ljava\/net\/Socket;" {
+subgraph cluster_Region_1092749796 {
+label = "R(2:0|(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.internal.connection.RealConnection okhttp3.internal.connection.RealConnection r0 = r2.connection\l}"];
+subgraph cluster_Region_126149856 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_910000582 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r0.noNewStreams == false) goto L_?\l}"];
+subgraph cluster_Region_112697071 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1603062815 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return deallocate(false, false, true)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private java.net.Socket okhttp3.internal.connection.StreamAllocation.releaseIfNoNewStreams((r2v0 'this' okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,51 @@
+digraph "CFG forcom.caverock.androidsvg.SVGAndroidRenderer.makePathAndBoundingBox(Lcom\/caverock\/androidsvg\/SVG$Ellipse;)Landroid\/graphics\/Path;" {
+subgraph cluster_Region_1498441112 {
+label = "R(7:0|1|(1:6)|7|(1:9)|10|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r19\lcom.caverock.androidsvg.SVG.Ellipse r1 = r20\lfloat r3 = 0.0f\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|float r2 = r1.f91cx != null ? r1.f91cx.floatValueX(r0) : 0.0f\l}"];
+subgraph cluster_IfRegion_1946016199 {
+label = "IF [B:5:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r1.f92cy != null) goto L_0x0015\l}"];
+subgraph cluster_Region_258742122 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|float r3 = r1.f92cy.floatValueY(r0)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001b|PHI: r3 \l  PHI: (r3v1 float) = (r3v0 float), (r3v3 float) binds: [B:5:0x0013, B:6:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|float float r4 = r1.f93rx.floatValueX(r0)\lfloat float r5 = r1.f94ry.floatValueY(r0)\lfloat float r11 = r2 \- r4\lfloat float r12 = r3 \- r5\lfloat float r13 = r2 + r4\lfloat float r14 = r3 + r5\l}"];
+subgraph cluster_IfRegion_350151100 {
+label = "IF [B:8:0x0031] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|if (r1.boundingBox == null) goto L_0x0033\l}"];
+subgraph cluster_Region_1324890650 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|r1.boundingBox = new com.caverock.androidsvg.SVG.Box(r11, r12, r4 * 2.0f, 2.0f * r5)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0040|float float r15 = r4 * BEZIER_ARC_FACTOR\lfloat float r1 = BEZIER_ARC_FACTOR * r5\landroid.graphics.Path android.graphics.Path r10 = new android.graphics.Path()\lr10.moveTo(r2, r12)\lfloat float r16 = r2 + r15\lfloat float r17 = r3 \- r1\landroid.graphics.Path r18 = r10\lr10.cubicTo(r16, r12, r13, r17, r13, r3)\lfloat float r1 = r1 + r3\landroid.graphics.Path r4 = r18\lr4.cubicTo(r13, r1, r16, r14, r2, r14)\lfloat float r13 = r2 \- r15\lr4.cubicTo(r13, r14, r11, r1, r11, r3)\lr4.cubicTo(r11, r17, r13, r12, r2, r12)\lr18.close()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0086|RETURN\l|return r18\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|PHI: r2 \l  PHI: (r2v1 float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private android.graphics.Path com.caverock.androidsvg.SVGAndroidRenderer.makePathAndBoundingBox((r19v0 'this' com.caverock.androidsvg.SVGAndroidRenderer A[IMMUTABLE_TYPE, THIS]), (r20v0 com.caverock.androidsvg.SVG$Ellipse A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

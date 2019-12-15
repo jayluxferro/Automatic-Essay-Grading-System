@@ -1,0 +1,62 @@
+digraph "CFG forcom.mapbox.android.gestures.MoveGestureDetector.checkAnyMoveAboveThreshold()Z" {
+subgraph cluster_Region_792170191 {
+label = "R(3:0|(3:3|(1:11)|(0))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = r4.moveDistancesObjectMap.values().iterator()\l}"];
+subgraph cluster_LoopRegion_868076018 {
+label = "LOOP:0: (3:3|(1:11)|(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0.hasNext() != false) goto L_0x0010\l}"];
+subgraph cluster_Region_1226106081 {
+label = "R(3:3|(1:11)|(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|com.mapbox.android.gestures.MoveDistancesObject r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_764327307 {
+label = "IF [B:4:0x0022, B:6:0x0030] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|ADDED_TO_REGION\l|if (java.lang.Math.abs(r1.getDistanceXSinceStart()) \>= r4.moveThreshold) goto L_0x0032\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0030|LOOP_END\lADDED_TO_REGION\lLOOP:0: B:1:0x000a\-\>B:6:0x0030\l|if (java.lang.Math.abs(r1.getDistanceYSinceStart()) \>= r4.moveThreshold) goto L_0x0032\l}"];
+subgraph cluster_Region_1054607107 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_LoopRegion_1676913523 {
+label = "LOOP:0: (0)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0.hasNext() != false) goto L_0x0010\l}"];
+subgraph cluster_Region_221145088 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0034|RETURN\l|return false\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:6:0x0030\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0032|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0032|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return true\l}"];
+MethodNode[shape=record,label="{boolean com.mapbox.android.gestures.MoveGestureDetector.checkAnyMoveAboveThreshold((r4v0 'this' com.mapbox.android.gestures.MoveGestureDetector A[IMMUTABLE_TYPE, THIS]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:3:0x0010 \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_1[style=dashed];
+Node_6 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_8 -> Node_11;
+Node_9 -> Node_12;
+Node_10 -> Node_7;
+}
+

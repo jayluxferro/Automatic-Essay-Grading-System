@@ -1,0 +1,30 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementBuilder.\<init\>(Lcom\/j256\/ormlite\/db\/DatabaseType;Lcom\/j256\/ormlite\/table\/TableInfo;Lcom\/j256\/ormlite\/dao\/Dao;Lcom\/j256\/ormlite\/stmt\/StatementBuilder$StatementType;)V" {
+subgraph cluster_Region_985203991 {
+label = "R(2:0|(1:(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.databaseType = r2\lr1.tableInfo = r3\lr1.tableName = r3.getTableName()\lr1.dao = r4\lr1.type = r5\l}"];
+subgraph cluster_Region_758309608 {
+label = "R(1:(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1026867290 {
+label = "IF [B:1:0x0018] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0018|if (r5.isOkForStatementBuilder() != true) goto L_0x001b\l}"];
+subgraph cluster_Region_551678054 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b}"];
+Node_4 [shape=record,label="{4\:\ 0x0036|throw new java.lang.IllegalStateException(\"Building a statement from a \" + r5 + \" statement is not allowed\")\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001a}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.stmt.StatementBuilder.\<init\>((r1v0 'this' com.j256.ormlite.stmt.StatementBuilder A[IMMUTABLE_TYPE, THIS]), (r2v0 com.j256.ormlite.db.DatabaseType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.j256.ormlite.table.TableInfo\<T, ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.j256.ormlite.dao.Dao\<T, ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.j256.ormlite.stmt.StatementBuilder$StatementType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/db\/DatabaseType;, Lcom\/j256\/ormlite\/table\/TableInfo\<, TT;TID;\>;, Lcom\/j256\/ormlite\/dao\/Dao\<, TT;TID;\>;, Lcom\/j256\/ormlite\/stmt\/StatementBuilder$StatementType;, )V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+}
+

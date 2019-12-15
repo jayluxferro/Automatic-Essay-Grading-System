@@ -1,0 +1,51 @@
+digraph "CFG forokio.Buffer.write(Ljava\/nio\/ByteBuffer;)I" {
+subgraph cluster_Region_1195932610 {
+label = "R(1:(2:(4:1|(1:3)|4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_548667649 {
+label = "R(2:(4:1|(1:3)|4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1022712148 {
+label = "IF [B:0:0x0000] THEN: R(4:1|(1:3)|4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_855489429 {
+label = "R(4:1|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|int int r0 = r7.remaining()\lint r1 = r0\l}"];
+subgraph cluster_LoopRegion_2003040980 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v4 int) binds: [B:1:0x0002, B:3:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:2:0x0007\-\>B:3:0x0009\l|if (r1 \> 0) goto L_0x0009\l}"];
+subgraph cluster_Region_1164299978 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|LOOP_END\lLOOP:0: B:2:0x0007\-\>B:3:0x0009\l|okio.Segment okio.Segment r2 = writableSegment(1)\lint int r3 = java.lang.Math.min(r1, 8192 \- r2.limit)\lr7.get(r2.data, r2.limit, r3)\lr1 \-= r3\lr2.limit += r3\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0024|r6.size += (long) r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002a|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1615862804 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"source == null\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x002b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.write((r6v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r7v0 java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_3 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_4;
+}
+

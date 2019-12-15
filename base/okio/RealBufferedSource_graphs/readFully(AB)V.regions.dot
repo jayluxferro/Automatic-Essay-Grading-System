@@ -1,0 +1,114 @@
+digraph "CFG forokio.RealBufferedSource.readFully([B)V" {
+subgraph cluster_Region_1357902707 {
+label = "R(1:(2:1|2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_238401948 {
+label = "Try: R(2:1|2) catches: R(4:4|5|(2:8|(1:10)(1:12))|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1102715767 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ EOFException \-\> 0x000b \}\lSplitter:B:0:0x0000\l|require((long) r7.length)     \/\/ Catch:\{ EOFException \-\> 0x000b \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|r6.buffer.readFully(r7)\l}"];
+}
+subgraph cluster_Region_1735932247 {
+label = "R(4:4|5|(2:8|(1:10)(1:12))|13) | ExcHandler: EOFException (r0v0 'e' java.io.EOFException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|ExcHandler: EOFException (r0v0 'e' java.io.EOFException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_345471749 {
+label = "LOOP:0: (2:8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|if (r6.buffer.size \> 0) goto L_0x0017\l}"];
+subgraph cluster_Region_1721302041 {
+label = "R(2:8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|int int r2 = r6.buffer.read(r7, r1, (int) r6.buffer.size)\l}"];
+subgraph cluster_IfRegion_1860073341 {
+label = "IF [B:9:0x0023] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r2 != \-1) goto L_0x0025\l}"];
+subgraph cluster_Region_390555926 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|LOOP_END\lLOOP:0: B:6:0x000d\-\>B:10:0x0025\l|r1 += r2\l}"];
+}
+subgraph cluster_Region_1003251343 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002c|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x002d|throw r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1735932247 {
+label = "R(4:4|5|(2:8|(1:10)(1:12))|13) | ExcHandler: EOFException (r0v0 'e' java.io.EOFException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|ExcHandler: EOFException (r0v0 'e' java.io.EOFException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_345471749 {
+label = "LOOP:0: (2:8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|if (r6.buffer.size \> 0) goto L_0x0017\l}"];
+subgraph cluster_Region_1721302041 {
+label = "R(2:8|(1:10)(1:12))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|int int r2 = r6.buffer.read(r7, r1, (int) r6.buffer.size)\l}"];
+subgraph cluster_IfRegion_1860073341 {
+label = "IF [B:9:0x0023] THEN: R(1:10) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r2 != \-1) goto L_0x0025\l}"];
+subgraph cluster_Region_390555926 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|LOOP_END\lLOOP:0: B:6:0x000d\-\>B:10:0x0025\l|r1 += r2\l}"];
+}
+subgraph cluster_Region_1003251343 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002c|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x002d|throw r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:5:0x000c, B:10:0x0025] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x000d\-\>B:10:0x0025\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0027|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okio.RealBufferedSource.readFully((r6v0 'this' okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r7v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_6;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_6;
+Node_0 -> Node_1;
+Node_0 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_14 -> Node_11;
+Node_15 -> Node_13;
+}
+

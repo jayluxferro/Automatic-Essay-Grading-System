@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.design.widget.HeaderBehavior.setHeaderTopBottomOffset(Landroid\/support\/design\/widget\/CoordinatorLayout;Landroid\/view\/View;III)I" {
+subgraph cluster_Region_748304394 {
+label = "R(2:0|(2:(1:7)|(2:6|8))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = getTopAndBottomOffset()\l}"];
+subgraph cluster_Region_951930905 {
+label = "R(2:(1:7)|(2:6|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_765526169 {
+label = "IF [B:1:0x0004, B:2:0x0006, B:3:0x0008, B:5:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4 == 0) goto L_0x0015\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r1 \< r4) goto L_0x0015\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r1 \> r5) goto L_0x0015\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ADDED_TO_REGION\l|if (r1 == (r2 = android.support.p000v4.math.MathUtils.clamp(r3, r4, r5))) goto L_0x0015\l}"];
+subgraph cluster_Region_190634938 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_697940401 {
+label = "R(2:6|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|setTopAndBottomOffset(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r1 \- r2\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+MethodNode[shape=record,label="{int android.support.design.widget.HeaderBehavior.setHeaderTopBottomOffset((r0v0 'this' android.support.design.widget.HeaderBehavior A[IMMUTABLE_TYPE, THIS]), (r1v0 android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 V A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/support\/design\/widget\/CoordinatorLayout;, TV;III)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_4 -> Node_5;
+}
+

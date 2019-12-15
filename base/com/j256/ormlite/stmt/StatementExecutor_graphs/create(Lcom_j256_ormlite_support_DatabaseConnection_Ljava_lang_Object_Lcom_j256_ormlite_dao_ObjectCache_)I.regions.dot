@@ -1,0 +1,45 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.create(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/lang\/Object;Lcom\/j256\/ormlite\/dao\/ObjectCache;)I" {
+subgraph cluster_Region_1473871383 {
+label = "R(4:(1:2)|3|(1:7)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1668616318 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mappedInsert == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1399478385 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mappedInsert = com.j256.ormlite.stmt.mapped.MappedCreate.build(r2.databaseType, r2.tableInfo)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000e|int int r3 = r2.mappedInsert.insert(r2.databaseType, r3, r4, r5)\l}"];
+subgraph cluster_IfRegion_289567301 {
+label = "IF [B:4:0x0018, B:6:0x0026] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|ADDED_TO_REGION\l|if (r2.dao != null) goto L_0x001a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|ADDED_TO_REGION\l|if (r2.localIsInBatchMode.get().booleanValue() == false) goto L_0x0028\l}"];
+subgraph cluster_Region_1143316532 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|r2.dao.notifyChanges()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002d|RETURN\l|return r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+MethodNode[shape=record,label="{public int com.j256.ormlite.stmt.StatementExecutor.create((r2v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r3v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, TT;, Lcom\/j256\/ormlite\/dao\/ObjectCache;, )I]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

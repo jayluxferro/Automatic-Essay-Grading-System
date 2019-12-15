@@ -1,0 +1,36 @@
+digraph "CFG forio.fabric.sdk.android.Fabric.Builder.kits([Lio\/fabric\/sdk\/android\/Kit;)Lio\/fabric\/sdk\/android\/Fabric$Builder;" {
+subgraph cluster_Region_1791069432 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_674212300 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_35224370 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.kits == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1028873439 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.kits = r2\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1528013249 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|throw new java.lang.IllegalStateException(\"Kits already set.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+MethodNode[shape=record,label="{public io.fabric.sdk.android.Fabric$Builder io.fabric.sdk.android.Fabric.Builder.kits((r1v0 'this' io.fabric.sdk.android.Fabric$Builder A[IMMUTABLE_TYPE, THIS]), (r2v0 io.fabric.sdk.android.Kit[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

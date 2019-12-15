@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageManagerImpl.addExternalDatabases(Ljava\/util\/Collection;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.util.List) = (r4 I:mil.nga.geopackage.factory.GeoPackageManagerImpl) mil.nga.geopackage.factory.GeoPackageManagerImpl.getExternalGeoPackages():java.util.List type: DIRECT \l0x0004: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0033 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0012: CHECK_CAST  (r1 I:mil.nga.geopackage.db.metadata.GeoPackageMetadata) = (mil.nga.geopackage.db.metadata.GeoPackageMetadata) (r1 I:?[OBJECT, ARRAY]) \l0x0014: NEW_INSTANCE  (r2 I:java.io.File) =  java.io.File \l0x0016: INVOKE  (r3 I:java.lang.String) = (r1 I:mil.nga.geopackage.db.metadata.GeoPackageMetadata) mil.nga.geopackage.db.metadata.GeoPackageMetadata.getExternalPath():java.lang.String type: VIRTUAL \l0x001a: INVOKE  (r2 I:java.io.File), (r3 I:java.lang.String) java.io.File.\<init\>(java.lang.String):void type: DIRECT \l0x001d: INVOKE  (r2 I:boolean) = (r2 I:java.io.File) java.io.File.exists():boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x002b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|0x0023: INVOKE  (r1 I:java.lang.String) = (r1 I:mil.nga.geopackage.db.metadata.GeoPackageMetadata) mil.nga.geopackage.db.metadata.GeoPackageMetadata.getName():java.lang.String type: VIRTUAL \l0x0027: INVOKE  (r5 I:java.util.Collection), (r1 I:java.lang.Object) java.util.Collection.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|0x002b: INVOKE  (r1 I:java.lang.String) = (r1 I:mil.nga.geopackage.db.metadata.GeoPackageMetadata) mil.nga.geopackage.db.metadata.GeoPackageMetadata.getName():java.lang.String type: VIRTUAL \l0x002f: INVOKE  \l  (r4 I:mil.nga.geopackage.factory.GeoPackageManagerImpl)\l  (r1 I:java.lang.String)\l mil.nga.geopackage.factory.GeoPackageManagerImpl.delete(java.lang.String):boolean type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0033|0x0033: RETURN   \l}"];
+MethodNode[shape=record,label="{private void mil.nga.geopackage.factory.GeoPackageManagerImpl.addExternalDatabases((r4 'this' I:mil.nga.geopackage.factory.GeoPackageManagerImpl A[IMMUTABLE_TYPE, THIS]), (r5 I:java.util.Collection\<java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Collection\<, Ljava\/lang\/String;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_1;
+Node_6 -> Node_1;
+}
+

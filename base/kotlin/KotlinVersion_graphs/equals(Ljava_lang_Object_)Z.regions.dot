@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.KotlinVersion.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1644187215 {
+label = "R(1:(2:(1:2)|(3:(1:5)|6|(2:(1:12)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1150562599 {
+label = "R(2:(1:2)|(3:(1:5)|6|(2:(1:12)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1060503498 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3 == r4) goto L_0x0006\l}"];
+subgraph cluster_Region_1242277841 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2010578352 {
+label = "R(3:(1:5)|6|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_714734313 {
+label = "IF [B:4:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if ((r4 instanceof kotlin.KotlinVersion) == false) goto L_0x000b\l}"];
+subgraph cluster_Region_1340205972 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|r4 = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000c|PHI: r4 \l  PHI: (r4v1 java.lang.Object) = (r4v0 java.lang.Object), (r4v4 java.lang.Object) binds: [B:4:0x0009, B:5:0x000b] A[DONT_GENERATE, DONT_INLINE]\l|kotlin.KotlinVersion kotlin.KotlinVersion r4 = (kotlin.KotlinVersion) r4\l}"];
+subgraph cluster_Region_1606059533 {
+label = "R(2:(1:12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_498311565 {
+label = "IF [B:7:0x000f, B:9:0x0015] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|if (r4 == null) goto L_0x0019\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0015|ADDED_TO_REGION\l|if (r3.version != r4.version) goto L_?\l}"];
+subgraph cluster_Region_1209566980 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_766734940 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0011}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0019|RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean kotlin.KotlinVersion.equals((r3v0 'this' kotlin.KotlinVersion A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+}
+

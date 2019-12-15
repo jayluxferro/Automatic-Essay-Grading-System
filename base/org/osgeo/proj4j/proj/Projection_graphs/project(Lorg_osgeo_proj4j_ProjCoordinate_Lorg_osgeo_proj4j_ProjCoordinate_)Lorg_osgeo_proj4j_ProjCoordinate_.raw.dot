@@ -1,0 +1,15 @@
+digraph "CFG fororg.osgeo.proj4j.proj.Projection.project(Lorg\/osgeo\/proj4j\/ProjCoordinate;Lorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:double) = (r11 I:org.osgeo.proj4j.ProjCoordinate) org.osgeo.proj4j.ProjCoordinate.x double \l0x0002: CONST  (r2 I:?[long, double]) = \l  (4580687790476533049(0x3f91df46a2529d39, double:0.017453292519943295) ?[long, double])\l \l0x0007: ARITH  (r0 I:double) = (r0 I:double) * (r2 I:double) \l0x0009: IGET  (r4 I:double) = (r10 I:org.osgeo.proj4j.proj.Projection) org.osgeo.proj4j.proj.Projection.projectionLongitude double \l0x000b: CONST  (r6 I:?[long, double]) = (0 ?[long, double]) \l0x000d: CMP_L  (r4 I:int) = (r4 I:double), (r6 I:double) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000f|0x000f: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0018 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: IGET  (r4 I:double) = (r10 I:org.osgeo.proj4j.proj.Projection) org.osgeo.proj4j.proj.Projection.projectionLongitude double \l0x0013: ARITH  (r0 I:double) = (r0 I:double) \- (r4 I:double) \l0x0014: INVOKE  (r0 I:double) = (r0 I:double) org.osgeo.proj4j.util.ProjectionMath.normalizeLongitude(double):double type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: MOVE  (r5 I:?[long, double]) = (r0 I:?[long, double]) \l0x0019: IGET  (r0 I:double) = (r11 I:org.osgeo.proj4j.ProjCoordinate) org.osgeo.proj4j.ProjCoordinate.y double \l0x001b: ARITH  (r7 I:double) = (r0 I:double) * (r2 I:double) \l0x001d: MOVE  (r4 I:?[OBJECT, ARRAY]) = (r10 I:?[OBJECT, ARRAY]) \l0x001e: MOVE  (r9 I:?[OBJECT, ARRAY]) = (r12 I:?[OBJECT, ARRAY]) \l0x001f: INVOKE  (r11 I:org.osgeo.proj4j.ProjCoordinate) = \l  (r4 I:org.osgeo.proj4j.proj.Projection)\l  (r5 I:double)\l  (r7 I:double)\l  (r9 I:org.osgeo.proj4j.ProjCoordinate)\l org.osgeo.proj4j.proj.Projection.projectRadians(double, double, org.osgeo.proj4j.ProjCoordinate):org.osgeo.proj4j.ProjCoordinate type: DIRECT \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|0x0023: RETURN  (r11 I:org.osgeo.proj4j.ProjCoordinate) \l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.Projection.project((r10 'this' I:org.osgeo.proj4j.proj.Projection A[IMMUTABLE_TYPE, THIS]), (r11 I:org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12 I:org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

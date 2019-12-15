@@ -1,0 +1,25 @@
+digraph "CFG fororg.kxml2.wap.WbxmlSerializer.setOutput(Ljava\/io\/OutputStream;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_276979141 {
+label = "R(2:(1:1)|2)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2126391201 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_783677818 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|java.lang.String r2 = p018io.fabric.sdk.android.services.network.HttpRequest.CHARSET_UTF8\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0004|PHI: r2 \l  PHI: (r2v1 java.lang.String) = (r2v0 java.lang.String), (r2v2 java.lang.String) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|r0.encoding = r2\lr0.out = r1\lr0.buf = new java.io.ByteArrayOutputStream()\lr0.stringTableBuf = new java.io.ByteArrayOutputStream()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016}"];
+MethodNode[shape=record,label="{public void org.kxml2.wap.WbxmlSerializer.setOutput((r0v0 'this' org.kxml2.wap.WbxmlSerializer A[IMMUTABLE_TYPE, THIS]), (r1v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+}
+

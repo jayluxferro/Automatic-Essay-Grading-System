@@ -1,0 +1,105 @@
+digraph "CFG forcom.squareup.picasso.Dispatcher.performCancel(Lcom\/squareup\/picasso\/Action;)V" {
+subgraph cluster_Region_1015798965 {
+label = "R(5:0|(2:2|(2:4|(1:6)))|(2:9|(1:11))|12|(1:(1:16)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r5.getKey()\lcom.squareup.picasso.BitmapHunter com.squareup.picasso.BitmapHunter r1 = r4.hunterMap.get(r0)\l}"];
+subgraph cluster_IfRegion_129224721 {
+label = "IF [B:1:0x000c] THEN: R(2:2|(2:4|(1:6))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r1 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1222007091 {
+label = "R(2:2|(2:4|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r1.detach(r5)\l}"];
+subgraph cluster_IfRegion_710560488 {
+label = "IF [B:3:0x0015] THEN: R(2:4|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|if (r1.cancel() == true) goto L_0x0017\l}"];
+subgraph cluster_Region_1638108085 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r4.hunterMap.remove(r0)\l}"];
+subgraph cluster_IfRegion_71601124 {
+label = "IF [B:5:0x0022] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (r5.getPicasso().loggingEnabled == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1205423066 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|com.squareup.picasso.Utils.log(DISPATCHER_THREAD_NAME, \"canceled\", r5.getRequest().logId())\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_211591134 {
+label = "IF [B:8:0x003d] THEN: R(2:9|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003d|if (r4.pausedTags.contains(r5.getTag()) == true) goto L_0x003f\l}"];
+subgraph cluster_Region_2106819059 {
+label = "R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003f|r4.pausedActions.remove(r5.getTarget())\l}"];
+subgraph cluster_IfRegion_1562918414 {
+label = "IF [B:10:0x004e] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004e|if (r5.getPicasso().loggingEnabled == true) goto L_0x0050\l}"];
+subgraph cluster_Region_1352808938 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0050|com.squareup.picasso.Utils.log(DISPATCHER_THREAD_NAME, \"canceled\", r5.getRequest().logId(), \"because paused request got canceled\")\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0061|com.squareup.picasso.Action com.squareup.picasso.Action r5 = r4.failedActions.remove(r5.getTarget())\l}"];
+subgraph cluster_Region_942157391 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1473872437 {
+label = "IF [B:13:0x006d, B:15:0x0075] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006d|if (r5 != null) goto L_0x006f\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0075|ADDED_TO_REGION\l|if (r5.getPicasso().loggingEnabled != false) goto L_0x0077\l}"];
+subgraph cluster_Region_1316221831 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0077|com.squareup.picasso.Utils.log(DISPATCHER_THREAD_NAME, \"canceled\", r5.getRequest().logId(), \"from replaying\")\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0033}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x006f}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.Dispatcher.performCancel((r4v0 'this' com.squareup.picasso.Dispatcher A[IMMUTABLE_TYPE, THIS]), (r5v0 com.squareup.picasso.Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_17;
+Node_7 -> Node_8;
+Node_14 -> Node_15;
+}
+

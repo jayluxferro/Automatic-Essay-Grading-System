@@ -1,0 +1,89 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.parseAttributesCircle(Lcom\/caverock\/androidsvg\/SVG$Circle;Lorg\/xml\/sax\/Attributes;)V" {
+subgraph cluster_Region_1325719893 {
+label = "R(2:0|(3:3|4|11))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1388225130 {
+label = "LOOP:0: (3:3|4|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|if (r0 \< r6.getLength()) goto L_0x0007\l}"];
+subgraph cluster_Region_1804263006 {
+label = "R(3:3|4|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.lang.String java.lang.String r1 = r6.getValue(r0).trim()\l}"];
+subgraph cluster_SwitchRegion_2000214708 {
+label = "Switch: 3, default: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|switch(com.caverock.androidsvg.SVGParser.SVGAttr.fromString(r6.getLocalName(r0))) \{\l    case com.caverock.androidsvg.SVGParser.SVGAttr.cx :com.caverock.androidsvg.SVGParser$SVGAttr: goto L_0x0041;\l    case com.caverock.androidsvg.SVGParser.SVGAttr.cy :com.caverock.androidsvg.SVGParser$SVGAttr: goto L_0x003a;\l    case com.caverock.androidsvg.SVGParser.SVGAttr.r :com.caverock.androidsvg.SVGParser$SVGAttr: goto L_0x0023;\l    default: goto L_0x0022;\l\}\l}"];
+subgraph cluster_Region_534676303 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|r5.f88cx = parseLength(r1)\l}"];
+Node_InsnContainer_722947097 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_945086252 {
+label = "R(2:9|1)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003a|r5.f89cy = parseLength(r1)\l}"];
+Node_InsnContainer_362286362 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_93425238 {
+label = "R(2:5|(1:1)(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|r5.f90r = parseLength(r1)\l}"];
+subgraph cluster_IfRegion_371726814 {
+label = "IF [B:6:0x002f] THEN: R(1:1) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002f|if (r5.f90r.isNegative() == false) goto L_0x0047\l}"];
+subgraph cluster_Region_1713185003 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_2004606901 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_585039005 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0039|throw new com.caverock.androidsvg.SVGParseException(\"Invalid \<circle\> element. r cannot be negative\")\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0047|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:11:0x0047\l|r0++\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:11:0x0047] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:11:0x0047\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0032}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0032|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0047|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0047|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0047|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0047|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGParser.parseAttributesCircle((r4v0 'this' com.caverock.androidsvg.SVGParser A[IMMUTABLE_TYPE, THIS]), (r5v0 com.caverock.androidsvg.SVG$Circle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.xml.sax.Attributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.SVGParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_13[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_4 -> Node_10;
+Node_4 -> Node_17;
+Node_10 -> Node_15;
+Node_9 -> Node_16;
+Node_5 -> Node_6;
+Node_6 -> Node_14[style=dashed];
+Node_6 -> Node_18;
+Node_11 -> Node_1;
+Node_1 -> Node_2;
+Node_7 -> Node_8;
+Node_13 -> Node_12;
+Node_14 -> Node_7;
+Node_15 -> Node_11;
+Node_16 -> Node_11;
+Node_17 -> Node_11;
+Node_18 -> Node_11;
+}
+

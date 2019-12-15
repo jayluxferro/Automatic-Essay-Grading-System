@@ -1,0 +1,29 @@
+digraph "CFG fororg.osmdroid.views.overlay.LinearRing.addGreatCircle(Lorg\/osmdroid\/util\/GeoPoint;Lorg\/osmdroid\/util\/GeoPoint;I)V" {
+subgraph cluster_Region_1457336196 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = r32\ldouble double r1 = r30.getLatitude() * 0.017453292519943295d\ldouble double r5 = r30.getLongitude() * 0.017453292519943295d\ldouble double r7 = r31.getLatitude() * 0.017453292519943295d\ldouble double r9 = r31.getLongitude() * 0.017453292519943295d\ldouble r17 = r9\ldouble double r3 = java.lang.Math.asin(java.lang.Math.sqrt(java.lang.Math.pow(java.lang.Math.sin((r1 \- r7) \/ 2.0d), 2.0d) + (java.lang.Math.cos(r1) * java.lang.Math.cos(r7) * java.lang.Math.pow(java.lang.Math.sin((r5 \- r9) \/ 2.0d), 2.0d)))) * 2.0d\lint r9 = 1\l}"];
+subgraph cluster_LoopRegion_567513771 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0051|LOOP_START\lPHI: r3 r9 \l  PHI: (r3v9 double) = (r3v8 double), (r3v15 double) binds: [B:0:0x0000, B:2:0x0053] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v5 int) = (r9v4 int), (r9v6 int) binds: [B:0:0x0000, B:2:0x0053] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0051\-\>B:2:0x0053\l|if (r9 \<= r0) goto L_0x0053\l}"];
+subgraph cluster_Region_1791945498 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0053|LOOP_END\lLOOP:0: B:1:0x0051\-\>B:2:0x0053\l|double double r13 = (((double) r9) * 1.0d) \/ ((double) (r0 + 1))\ldouble double r10 = java.lang.Math.sin((1.0d \- r13) * r3) \/ java.lang.Math.sin(r3)\ldouble double r12 = java.lang.Math.sin(r13 * r3) \/ java.lang.Math.sin(r3)\ldouble double r14 = (java.lang.Math.cos(r1) * r10 * java.lang.Math.cos(r5)) + (java.lang.Math.cos(r7) * r12 * java.lang.Math.cos(r17))\ldouble r27 = r3\ldouble double r3 = (java.lang.Math.cos(r1) * r10 * java.lang.Math.sin(r5)) + (java.lang.Math.cos(r7) * r12 * java.lang.Math.sin(r17))\lr29.mOriginalPoints.add(new org.osmdroid.util.GeoPoint(java.lang.Math.atan2((r10 * java.lang.Math.sin(r1)) + (r12 * java.lang.Math.sin(r7)), java.lang.Math.sqrt(java.lang.Math.pow(r14, 2.0d) + java.lang.Math.pow(r3, 2.0d))) * 57.29577951308232d, java.lang.Math.atan2(r3, r14) * 57.29577951308232d))\lr9++\lr3 = r27\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x00eb}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x00ed}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x00eb|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.osmdroid.views.overlay.LinearRing.addGreatCircle((r29v0 'this' org.osmdroid.views.overlay.LinearRing A[IMMUTABLE_TYPE, THIS]), (r30v0 org.osmdroid.util.GeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 org.osmdroid.util.GeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r32v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

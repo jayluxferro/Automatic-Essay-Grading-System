@@ -1,0 +1,71 @@
+digraph "CFG forandroid.arch.lifecycle.LiveData.postValue(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_2106298561 {
+label = "R(2:2|(1:(1:11))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_874782581 {
+label = "Synchronized:R(2:1|(2:4|7))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_120361731 {
+label = "R(2:4|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|r1 = r3.mPendingData == NOT_SET\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000c|PHI: r1 \l  PHI: (r1v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.mPendingData = r4\l}"];
+}
+}
+subgraph cluster_Region_774117862 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1216700873 {
+label = "IF [B:9:0x000f] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x000f|if (r1 != false) goto L_0x0012\l}"];
+subgraph cluster_Region_2047464256 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0012|android.arch.core.executor.ArchTaskExecutor.getInstance().postToMainThread(r3.mPostValueRunnable)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000e|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x000e: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0011}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001b}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c|LOOP_START\lREMOVE\lLOOP:0: B:13:0x001c\-\>B:17:0x001c\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001d|SYNTHETIC\lREMOVE\lSplitter:B:14:0x001d\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|REMOVE\lSplitter:B:14:0x001d\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001e|REMOVE\l|throw r4\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001c|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:13:0x001c\-\>B:17:0x001c\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001e|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x001c|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{protected void android.arch.lifecycle.LiveData.postValue((r3v0 'this' android.arch.lifecycle.LiveData A[IMMUTABLE_TYPE, THIS]), (r4v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_17;
+Node_15 -> Node_18;
+Node_15 -> Node_19;
+Node_17 -> Node_13;
+Node_18 -> Node_16;
+Node_19 -> Node_17;
+}
+

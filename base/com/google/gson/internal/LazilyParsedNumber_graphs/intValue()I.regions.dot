@@ -1,0 +1,53 @@
+digraph "CFG forcom.google.gson.internal.LazilyParsedNumber.intValue()I" {
+subgraph cluster_Region_482764910 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return java.lang.Integer.parseInt(r2.value)\l}"];
+}
+subgraph cluster_Region_756721920 {
+label = "R(1:(4:3|4|5|6))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_292079227 {
+label = "Try: R(4:3|4|5|6) catches: R(3:8|7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1307494441 {
+label = "R(4:3|4|5|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|SYNTHETIC\lSplitter:B:3:0x0007\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ NumberFormatException \-\> 0x000f \}\lSplitter:B:3:0x0007\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|RETURN\l|return (int) java.lang.Long.parseLong(r2.value)\l}"];
+}
+subgraph cluster_Region_1657036002 {
+label = "R(3:8|7|9) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\lSplitter:B:3:0x0007\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return new java.math.BigDecimal(r2.value).intValue()\l}"];
+}
+}
+}
+subgraph cluster_Region_1657036002 {
+label = "R(3:8|7|9) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\lSplitter:B:3:0x0007\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|RETURN\l|return new java.math.BigDecimal(r2.value).intValue()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ NumberFormatException \-\> 0x0007 \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public int com.google.gson.internal.LazilyParsedNumber.intValue((r2v0 'this' com.google.gson.internal.LazilyParsedNumber A[IMMUTABLE_TYPE, THIS]))  | INCONSISTENT_CODE\lMissing exception handler attribute for start block: B:3:0x0007\lFailed to process nested try\/catch\lCode restructure failed: missing block: B:6:0x000e, code lost:\l    return (int) java.lang.Long.parseLong(r2.value);\l\lCode restructure failed: missing block: B:9:0x001a, code lost:\l    return new java.math.BigDecimal(r2.value).intValue();\l\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_8 -> Node_7;
+Node_7 -> Node_9;
+Node_8 -> Node_7;
+Node_7 -> Node_9;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

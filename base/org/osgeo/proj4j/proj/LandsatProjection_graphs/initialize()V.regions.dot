@@ -1,0 +1,65 @@
+digraph "CFG fororg.osgeo.proj4j.proj.LandsatProjection.initialize()V" {
+subgraph cluster_Region_1108186118 {
+label = "R(7:0|(1:2)|3|(1:6)|7|(1:10)|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.initialize()\lr10.projectionLongitude = 2.2492058070450924d \- (((double) 120) * 0.025032610785576042d)\lr10.p22 = 103.2669323d\lr10.p22 \/= 1440.0d\lr10.f394sa = java.lang.Math.sin(1.729481662386221d)\lr10.f392ca = java.lang.Math.cos(1.729481662386221d)\l}"];
+subgraph cluster_IfRegion_702754773 {
+label = "IF [B:1:0x0044] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0044|if (java.lang.Math.abs(r10.f392ca) \< 1.0E\-9d) goto L_0x0046\l}"];
+subgraph cluster_Region_2082799667 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0046|r10.f392ca = 1.0E\-9d\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0048|double double r0 = r10.f424es * r10.f392ca * r10.f392ca\ldouble double r2 = r10.f424es * r10.f394sa * r10.f394sa\lr10.f397w = (1.0d \- r0) * r10.rone_es\lr10.f397w = (r10.f397w * r10.f397w) \- 1.0d\lr10.f393q = r10.rone_es * r2\lr10.f395t = r2 * (2.0d \- r10.f424es) * r10.rone_es * r10.rone_es\lr10.f396u = r0 * r10.rone_es\lr10.f398xj = r10.one_es * r10.one_es * r10.one_es\lr10.rlm = 1.6341348883592068d\lr10.rlm2 = r10.rlm + 6.283185307179586d\lr10.f391c3 = 0.0d\lr10.f390c1 = 0.0d\lr10.f389b = 0.0d\lr10.f388a4 = 0.0d\lr10.f387a2 = 0.0d\lseraz0(0.0d, 1.0d)\ldouble r0 = 9.0d\l}"];
+subgraph cluster_LoopRegion_1968722526 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x00c4|if (r0 \<= 81.0001d) goto L_0x00c6\l}"];
+subgraph cluster_Region_2131868919 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x00c6|LOOP_END\lLOOP:0: B:4:0x00bb\-\>B:6:0x00c6\l|seraz0(r0, 4.0d)\lr0 += 18.0d\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x00cd|double r0 = 18.0d\l}"];
+subgraph cluster_LoopRegion_706699877 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x00d5|if (r0 \<= 72.0001d) goto L_0x00d7\l}"];
+subgraph cluster_Region_77360772 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x00d7|LOOP_END\lLOOP:1: B:8:0x00ce\-\>B:10:0x00d7\l|seraz0(r0, 2.0d)\lr0 += 18.0d\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x00dc|seraz0(90.0d, 1.0d)\lr10.f387a2 \/= 30.0d\lr10.f388a4 \/= 60.0d\lr10.f389b \/= 30.0d\lr10.f390c1 \/= 15.0d\lr10.f391c3 \/= 45.0d\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x00bb|LOOP_START\lPHI: r0 \l  PHI: (r0v19 double) = (r0v18 double), (r0v34 double) binds: [B:3:0x0048, B:6:0x00c6] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x00bb\-\>B:6:0x00c6\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x00ce|LOOP_START\lPHI: r0 \l  PHI: (r0v21 double) = (r0v20 double), (r0v33 double) binds: [B:7:0x00cd, B:10:0x00d7] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x00ce\-\>B:10:0x00d7\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0108}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x00cd|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x00dc|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.proj.LandsatProjection.initialize((r10v0 'this' org.osgeo.proj4j.proj.LandsatProjection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_8;
+Node_11 -> Node_12;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_13 -> Node_7;
+Node_14 -> Node_11;
+}
+

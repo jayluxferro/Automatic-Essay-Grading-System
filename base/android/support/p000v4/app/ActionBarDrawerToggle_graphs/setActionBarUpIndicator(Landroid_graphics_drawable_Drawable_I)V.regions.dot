@@ -1,0 +1,154 @@
+digraph "CFG forandroid.support.v4.app.ActionBarDrawerToggle.setActionBarUpIndicator(Landroid\/graphics\/drawable\/Drawable;I)V" {
+subgraph cluster_Region_1701069070 {
+label = "R(1:(1:2)(1:(2:6|(1:(1:8)))(2:(1:11)|(1:(1:15))(1:(1:20)(1:21)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_217465604 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:(2:6|(1:(1:8)))(2:(1:11)|(1:(1:15))(1:(1:20)(1:21))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.mActivityImpl != null) goto L_0x0004\l}"];
+subgraph cluster_Region_871040869 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r5.mActivityImpl.setActionBarUpIndicator(r6, r7)\l}"];
+}
+subgraph cluster_Region_2129986343 {
+label = "R(1:(2:6|(1:(1:8)))(2:(1:11)|(1:(1:15))(1:(1:20)(1:21)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_970871238 {
+label = "IF [B:5:0x000e] THEN: R(2:6|(1:(1:8))) ELSE: R(2:(1:11)|(1:(1:15))(1:(1:20)(1:21))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L_0x0010\l}"];
+subgraph cluster_Region_1495748510 {
+label = "R(2:6|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|android.app.ActionBar android.app.ActionBar r0 = r5.mActivity.getActionBar()\l}"];
+subgraph cluster_Region_118414234 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1500120642 {
+label = "IF [B:7:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r0 != null) goto L_0x0018\l}"];
+subgraph cluster_Region_1874658323 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|r0.setHomeAsUpIndicator(r6)\lr0.setHomeActionContentDescription(r7)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1823810609 {
+label = "R(2:(1:11)|(1:(1:15))(1:(1:20)(1:21)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_982515387 {
+label = "IF [B:10:0x0021] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|if (r5.mSetIndicatorInfo == null) goto L_0x0023\l}"];
+subgraph cluster_Region_1897191501 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0023|r5.mSetIndicatorInfo = new android.support.p000v4.app.ActionBarDrawerToggle.SetIndicatorInfo(r5.mActivity)\l}"];
+}
+}
+subgraph cluster_IfRegion_11997182 {
+label = "IF [B:13:0x0030] THEN: R(1:(1:15)) ELSE: R(1:(1:20)(1:21))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0030|if (r5.mSetIndicatorInfo.mSetHomeAsUpIndicator != null) goto L_0x0032\l}"];
+subgraph cluster_Region_1172715381 {
+label = "R(1:(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_5862228 {
+label = "Try: R(1:15) catches: R(2:16|17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1236834607 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ Exception \-\> 0x0055 \}\lSplitter:B:14:0x0032\l|android.app.ActionBar android.app.ActionBar r0 = r5.mActivity.getActionBar()     \/\/ Catch:\{ Exception \-\> 0x0055 \}\lr5.mSetIndicatorInfo.mSetHomeAsUpIndicator.invoke(r0, new java.lang.Object[]\{r6\})     \/\/ Catch:\{ Exception \-\> 0x0055 \}\lr5.mSetIndicatorInfo.mSetHomeActionContentDescription.invoke(r0, new java.lang.Object[]\{java.lang.Integer.valueOf(r7)\})     \/\/ Catch:\{ Exception \-\> 0x0055 \}\l}"];
+}
+subgraph cluster_Region_1465390498 {
+label = "R(2:16|17) | ExcHandler: Exception (r6v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0055|ExcHandler: Exception (r6v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:14:0x0032\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0056|android.util.Log.w(TAG, \"Couldn't set home\-as\-up indicator via JB\-MR2 API\", r6)\l}"];
+}
+}
+}
+subgraph cluster_Region_1864906824 {
+label = "R(1:(1:20)(1:21)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_461502279 {
+label = "IF [B:19:0x0062] THEN: R(1:20) ELSE: R(1:21) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0062|if (r5.mSetIndicatorInfo.mUpIndicatorView != null) goto L_0x0064\l}"];
+subgraph cluster_Region_1351218352 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0064|r5.mSetIndicatorInfo.mUpIndicatorView.setImageDrawable(r6)\l}"];
+}
+subgraph cluster_Region_1198198278 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006c|android.util.Log.w(TAG, \"Couldn't set home\-as\-up indicator\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1465390498 {
+label = "R(2:16|17) | ExcHandler: Exception (r6v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0055|ExcHandler: Exception (r6v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:14:0x0032\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0056|android.util.Log.w(TAG, \"Couldn't set home\-as\-up indicator via JB\-MR2 API\", r6)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0032|SYNTHETIC\lSplitter:B:14:0x0032\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x005e}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ ?|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ ?|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v4.app.ActionBarDrawerToggle.setActionBarUpIndicator((r5v0 'this' android.support.v4.app.ActionBarDrawerToggle A[IMMUTABLE_TYPE, THIS]), (r6v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_23[style=dashed];
+Node_8 -> Node_24;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_27;
+Node_16 -> Node_17;
+Node_17 -> Node_25;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_26;
+Node_21 -> Node_22;
+Node_16 -> Node_17;
+Node_17 -> Node_25;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_16;
+Node_18 -> Node_19;
+}
+

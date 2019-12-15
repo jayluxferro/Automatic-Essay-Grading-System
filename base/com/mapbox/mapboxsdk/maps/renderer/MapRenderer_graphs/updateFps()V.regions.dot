@@ -1,0 +1,30 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.renderer.MapRenderer.updateFps()V" {
+subgraph cluster_Region_1126243985 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.frames++\llong long r0 = java.lang.System.nanoTime()\l}"];
+subgraph cluster_Region_1281624449 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_307610567 {
+label = "IF [B:1:0x0011] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if ((r0 \- r8.timeElapsed) \>= 1) goto L_0x0013\l}"];
+subgraph cluster_Region_987680880 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|r8.onFpsChangedListener.onFpsChanged(((double) r8.frames) \/ (((double) (r0 \- r8.timeElapsed)) \/ 1.0E9d))\lr8.timeElapsed = r0\lr8.frames = 0\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.mapboxsdk.maps.renderer.MapRenderer.updateFps((r8v0 'this' com.mapbox.mapboxsdk.maps.renderer.MapRenderer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

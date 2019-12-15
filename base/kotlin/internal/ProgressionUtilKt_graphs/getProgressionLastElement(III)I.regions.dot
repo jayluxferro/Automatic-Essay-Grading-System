@@ -1,0 +1,72 @@
+digraph "CFG forkotlin.internal.ProgressionUtilKt.getProgressionLastElement(III)I" {
+subgraph cluster_Region_661782453 {
+label = "R(1:(1:(2:(1:10)|(1:9)))(1:(1:4)(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1867137343 {
+label = "IF [B:0:0x0000] THEN: R(1:(2:(1:10)|(1:9))) ELSE: R(1:(1:4)(1:7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 \> 0) goto L_0x0002\l}"];
+subgraph cluster_Region_1810201049 {
+label = "R(1:(2:(1:10)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_835627373 {
+label = "R(2:(1:10)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_426402998 {
+label = "IF [B:1:0x0002] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 \>= r1) goto L_?\l}"];
+subgraph cluster_Region_605326621 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1686045687 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r1 \- differenceModulo(r1, r0, r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_540957652 {
+label = "R(1:(1:4)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1790690481 {
+label = "IF [B:3:0x000b] THEN: R(1:4) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r2 \< 0) goto L_0x000d\l}"];
+subgraph cluster_Region_1791475870 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return r0 \<= r1 ? r1 : r1 + differenceModulo(r0, r1, \-r2)\l}"];
+}
+subgraph cluster_Region_1991968394 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|throw new java.lang.IllegalArgumentException(\"Step is zero.\")\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.internal.ProgressionUtilKt.getProgressionLastElement((r0v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, kotlin.PublishedApi, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_2 -> Node_9;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+}
+

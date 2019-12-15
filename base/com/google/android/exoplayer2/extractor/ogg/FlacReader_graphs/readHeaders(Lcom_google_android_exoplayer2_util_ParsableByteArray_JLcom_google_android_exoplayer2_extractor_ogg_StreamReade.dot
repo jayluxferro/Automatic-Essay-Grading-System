@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.FlacReader.readHeaders(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;JLcom\/google\/android\/exoplayer2\/extractor\/ogg\/StreamReader$SetupData;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] r13 = r17.data\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r16.streamInfo != null) goto L_0x004e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|r16.streamInfo = new com.google.android.exoplayer2.util.FlacStreamInfo(r13, 17)\lbyte[] r14 = java.util.Arrays.copyOfRange(r13, 9, r17.limit())\lr14[4] = Byte.MIN_VALUE\ljava.util.List r9 = java.util.Collections.singletonList(r14)\lr20.format = com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_FLAC, (java.lang.String) null, \-1, r16.streamInfo.bitRate(), r16.streamInfo.channels, r16.streamInfo.sampleRate, r9, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x004c|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+Node_4 [shape=record,label="{4\:\ 0x004e}"];
+Node_5 [shape=record,label="{5\:\ 0x0054|if ((r13[0] & Byte.MAX_VALUE) != 3) goto L_0x006b\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0056|r16.flacOggSeeker = new com.google.android.exoplayer2.extractor.ogg.FlacReader.FlacOggSeeker(r16)\lr16.flacOggSeeker.parseSeekTable(r17)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006b}"];
+Node_8 [shape=record,label="{8\:\ 0x006f|if (isAudioPacket(r13) == false) goto L_0x004c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0071}"];
+Node_10 [shape=record,label="{10\:\ 0x0075|if (r16.flacOggSeeker == null) goto L_0x0088\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0077|r16.flacOggSeeker.setFirstFrameOffset(r18)\lr20.oggSeeker = r16.flacOggSeeker\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0088|SYNTHETIC\lRETURN\l|return false\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.extractor.ogg.FlacReader.readHeaders((r16v0 'this' com.google.android.exoplayer2.extractor.ogg.FlacReader A[IMMUTABLE_TYPE, THIS]), (r17v0 'packet' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'setupData' com.google.android.exoplayer2.extractor.ogg.StreamReader$SetupData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_3;
+Node_8 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG fororg.mapsforge.map.layer.labels.ThreadedLabelLayer.draw(Lorg\/mapsforge\/core\/model\/BoundingBox;BLorg\/mapsforge\/core\/graphics\/Canvas;Lorg\/mapsforge\/core\/model\/Point;)V" {
+subgraph cluster_Region_1473142480 {
+label = "R(3:0|(1:6)|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.mapsforge.core.model.Tile org.mapsforge.core.model.Tile r0 = org.mapsforge.map.util.LayerUtil.getUpperLeft(r3, r4, r2.displayModel.getTileSize())\lorg.mapsforge.core.model.Tile org.mapsforge.core.model.Tile r3 = org.mapsforge.map.util.LayerUtil.getLowerRight(r3, r4, r2.displayModel.getTileSize())\l}"];
+subgraph cluster_IfRegion_1569924338 {
+label = "IF [B:1:0x001a, B:3:0x0022, B:5:0x002c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001a|ADDED_TO_REGION\l|if (r0.equals(r2.upperLeft) == false) goto L_0x002e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|ADDED_TO_REGION\l|if (r3.equals(r2.lowerRight) == false) goto L_0x002e\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002c|ADDED_TO_REGION\l|if (r2.lastLabelStoreVersion != r2.labelStore.getVersion()) goto L_0x002e\l}"];
+subgraph cluster_Region_1982347294 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|getData(r0, r3)\l}"];
+}
+}
+subgraph cluster_Region_2090301782 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1612862122 {
+label = "IF [B:8:0x0033, B:10:0x003d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|if (r2.upperLeft != null) goto L_0x0035\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|ADDED_TO_REGION\l|if (org.mapsforge.core.model.Tile.tileAreasOverlap(r2.upperLeft, r2.lowerRight, r0, r3) != false) goto L_0x003f\l}"];
+subgraph cluster_Region_10883901 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|draw(r5, r6)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0024}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0031}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0035}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.layer.labels.ThreadedLabelLayer.draw((r2v0 'this' org.mapsforge.map.layer.labels.ThreadedLabelLayer A[IMMUTABLE_TYPE, THIS]), (r3v0 org.mapsforge.core.model.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 org.mapsforge.core.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.mapsforge.core.model.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_11 -> Node_12;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.AbstractList.lastIndexOf(Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_389173538 {
+label = "R(3:0|(1:(1:9))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ListIterator java.util.ListIterator r0 = listIterator(size())\l}"];
+subgraph cluster_LoopRegion_1308738084 {
+label = "LOOP:0: (1:(1:9))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r0.hasPrevious() != false) goto L_0x000e\l}"];
+subgraph cluster_Region_883366102 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_324096873 {
+label = "IF [B:4:0x0016] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:4:0x0016\l|if (kotlin.jvm.internal.Intrinsics.areEqual(r0.previous(), r3) == true) goto L_0x0018\l}"];
+subgraph cluster_Region_1406007149 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r0.nextIndex()\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001d|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lLOOP:0: B:1:0x0008\-\>B:4:0x0016\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int kotlin.collections.AbstractList.lastIndexOf((r2v0 'this' kotlin.collections.AbstractList A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_9;
+Node_7 -> Node_5;
+Node_8 -> Node_6;
+}
+

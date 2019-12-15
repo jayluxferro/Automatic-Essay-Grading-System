@@ -1,0 +1,16 @@
+digraph "CFG forokio.Buffer.readFully(Lokio\/Buffer;J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if ((r2.size \> r4 ? 1 : (r2.size == r4 ? 0 : \-1)) \< 0) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|r3.write(r2, r4)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|r3.write(r2, r2.size)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new java.io.EOFException()\l}"];
+MethodNode[shape=record,label="{public void okio.Buffer.readFully((r2v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r3v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.EOFException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

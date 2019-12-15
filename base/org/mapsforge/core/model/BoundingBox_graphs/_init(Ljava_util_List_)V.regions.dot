@@ -1,0 +1,31 @@
+digraph "CFG fororg.mapsforge.core.model.BoundingBox.\<init\>(Ljava\/util\/List;)V" {
+subgraph cluster_Region_543908371 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r14 = r14.iterator()\ldouble r2 = Double.POSITIVE_INFINITY\ldouble r4 = Double.NEGATIVE_INFINITY\ldouble r6 = Double.NEGATIVE_INFINITY\ldouble r0 = Double.POSITIVE_INFINITY\l}"];
+subgraph cluster_LoopRegion_1626816541 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r14.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_1398284056 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:3:0x0014\l|org.mapsforge.core.model.LatLong r8 = r14.next()\ldouble double r9 = r8.latitude\ldouble double r11 = r8.longitude\ldouble r2 = java.lang.Math.min(r2, r9)\ldouble r0 = java.lang.Math.min(r0, r11)\ldouble r4 = java.lang.Math.max(r4, r9)\ldouble r6 = java.lang.Math.max(r6, r11)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002f|r13.minLatitude = r2\lr13.minLongitude = r0\lr13.maxLatitude = r4\lr13.maxLongitude = r6\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lPHI: r0 r2 r4 r6 \l  PHI: (r0v2 double) = (r0v1 double), (r0v3 double) binds: [B:0:0x0000, B:3:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 double) = (r2v0 double), (r2v2 double) binds: [B:0:0x0000, B:3:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 double) = (r4v0 double), (r4v2 double) binds: [B:0:0x0000, B:3:0x0014] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 double) = (r6v0 double), (r6v2 double) binds: [B:0:0x0000, B:3:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:3:0x0014\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0037}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.core.model.BoundingBox.\<init\>((r13v0 'this' org.mapsforge.core.model.BoundingBox A[IMMUTABLE_TYPE, THIS]), (r14v0 java.util.List\<org.mapsforge.core.model.LatLong\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lorg\/mapsforge\/core\/model\/LatLong;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

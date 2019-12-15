@@ -1,0 +1,24 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.db.SpatialiteDBUtil.hasLocation(Ljava\/lang\/String;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x0022 \}\lSplitter:B:1:0x0001\l|java.util.HashMap new java.util.HashMap()     \/\/ Catch:\{ Exception \-\> 0x0022 \}\lorg.spatialite.database.SQLiteDatabase r1 = getReadableDatabase()     \/\/ Catch:\{ Exception \-\> 0x0022 \}\landroid.database.Cursor r0 = r1.rawQuery(\"SELECT * FROM\", (java.lang.Object[]) null)     \/\/ Catch:\{ Exception \-\> 0x0022 \}\lr0.moveToFirst()     \/\/ Catch:\{ Exception \-\> 0x0022 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|Catch:\{ Exception \-\> 0x0022 \}\l|if (r0.getCount() \<= 0) goto L_0x001b     \/\/ Catch:\{ Exception \-\> 0x0022 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|Catch:\{ Exception \-\> 0x0022 \}\l|r4 = true     \/\/ Catch:\{ Exception \-\> 0x0022 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|Catch:\{ Exception \-\> 0x0022 \}\lPHI: r4 \l  PHI: (r4v3 boolean) = (r4v1 boolean), (r4v4 boolean) binds: [B:3:0x0018, B:4:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|r0.close()     \/\/ Catch:\{ Exception \-\> 0x0022 \}\lr1.close()     \/\/ Catch:\{ Exception \-\> 0x0022 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l|java.lang.Exception r0 = move\-exception\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|r0.printStackTrace()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\lPHI: r4 \l  PHI: (r4v2 boolean) = (r4v1 boolean), (r4v3 boolean) binds: [B:7:0x0023, B:5:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|return r4\l}"];
+MethodNode[shape=record,label="{public boolean com.ghanapostgps.ghanapost.db.SpatialiteDBUtil.hasLocation((r3v0 'this' com.ghanapostgps.ghanapost.db.SpatialiteDBUtil A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

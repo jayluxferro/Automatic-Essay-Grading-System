@@ -1,0 +1,80 @@
+digraph "CFG fororg.osgeo.proj4j.proj.NellHProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1955783070 {
+label = "R(4:0|(2:3|(2:(1:14)|(1:5)))|(1:11)(1:12)|13)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.osgeo.proj4j.ProjCoordinate r4 = r25\ldouble double r7 = r23 * 0.5d\lint r9 = 9\l}"];
+subgraph cluster_LoopRegion_220807804 {
+label = "LOOP:0: (2:3|(2:(1:14)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r9 \> 0) goto L_0x000c\l}"];
+subgraph cluster_Region_684983380 {
+label = "R(2:3|(2:(1:14)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|double double r14 = java.lang.Math.cos(r7)\ldouble double r10 = r4.f295y\ldouble double r18 = ((r23 \- java.lang.Math.tan(r23 \/ 2.0d)) \- r7) \/ (1.0d \- (0.5d \/ (r14 * r14)))\lr4.f295y = r10 \- r18\l}"];
+subgraph cluster_Region_1955131483 {
+label = "R(2:(1:14)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1016601288 {
+label = "IF [B:4:0x0035] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0035|if (java.lang.Math.abs(r18) \< EPS) goto L_0x003b\l}"];
+subgraph cluster_Region_1169089132 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|SYNTHETIC\lEDGE_INSN: B:14:0x003b\-\>B:6:0x003b ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_97976374 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0038|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:5:0x0038\l|r9\-\-\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_236669316 {
+label = "IF [B:6:0x003b] THEN: R(1:11) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003b|EDGE_INSN: B:14:0x003b\-\>B:6:0x003b ?: BREAK  \l|if (r9 == 0) goto L_0x003d\l}"];
+subgraph cluster_Region_1936595958 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004e|PHI: r2 \l  PHI: (r2v4 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.f295y = r7 \< 0.0d ? \-1.5707963267948966d : 1.5707963267948966d\lr4.f294x = r21 * 2.0d\l}"];
+}
+subgraph cluster_Region_1722450796 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0055|r4.f294x = (r21 * 2.0d) \/ (java.lang.Math.cos(r23) + 1.0d)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0061|RETURN\l|return r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lPHI: r9 \l  PHI: (r9v1 int) = (r9v0 int), (r9v2 int) binds: [B:0:0x0000, B:5:0x0038] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:5:0x0038\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x003d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0041}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0043}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0049}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.NellHProjection.projectInverse((r20v0 'this' org.osgeo.proj4j.proj.NellHProjection A[IMMUTABLE_TYPE, THIS]), (r21v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_15[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_14;
+Node_14 -> Node_6;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_1 -> Node_2;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_15 -> Node_6;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG forcom.squareup.picasso.PicassoDrawable.setBitmap(Landroid\/widget\/ImageView;Landroid\/content\/Context;Landroid\/graphics\/Bitmap;Lcom\/squareup\/picasso\/Picasso$LoadedFrom;ZZ)V" {
+subgraph cluster_Region_230857693 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r3 = r8.getDrawable()\l}"];
+subgraph cluster_IfRegion_1974129315 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r3 instanceof android.graphics.drawable.Animatable) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_1294617521 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|((android.graphics.drawable.Animatable) r3).stop()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000e|r8.setImageDrawable(new com.squareup.picasso.PicassoDrawable(r9, r10, r3, r11, r12, r13))\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+MethodNode[shape=record,label="{static void com.squareup.picasso.PicassoDrawable.setBitmap((r8v0 android.widget.ImageView A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 com.squareup.picasso.Picasso$LoadedFrom A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

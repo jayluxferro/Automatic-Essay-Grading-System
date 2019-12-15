@@ -1,0 +1,125 @@
+digraph "CFG forcom.google.android.exoplayer2.mediacodec.MediaCodecUtil.getHevcProfileAndLevel(Ljava\/lang\/String;[Ljava\/lang\/String;)Landroid\/util\/Pair;" {
+subgraph cluster_Region_1980113091 {
+label = "R(1:(2:(2:2|17)|(2:3|(2:(2:5|18)|(4:6|(1:8)(1:(1:14)(2:15|20))|9|(2:(1:21)|(2:11|19))))))) | DECL_VAR: int profile\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1379440848 {
+label = "R(2:(2:2|17)|(2:3|(2:(2:5|18)|(4:6|(1:8)(1:(1:14)(2:15|20))|9|(2:(1:21)|(2:11|19))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1807241794 {
+label = "IF [B:1:0x0004] THEN: R(2:2|17) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r10.length \< 4) goto L_0x0006\l}"];
+subgraph cluster_Region_608310515 {
+label = "R(2:2|17)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.util.Log.w(TAG, \"Ignoring malformed HEVC codec string: \" + r9)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2004246167 {
+label = "R(2:3|(2:(2:5|18)|(4:6|(1:8)(1:(1:14)(2:15|20))|9|(2:(1:21)|(2:11|19)))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001f|java.util.regex.Matcher java.util.regex.Matcher r1 = PROFILE_PATTERN.matcher(r10[1])\l}"];
+subgraph cluster_Region_1669671040 {
+label = "R(2:(2:5|18)|(4:6|(1:8)(1:(1:14)(2:15|20))|9|(2:(1:21)|(2:11|19))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1105558727 {
+label = "IF [B:4:0x002b] THEN: R(2:5|18) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002b|if (r1.matches() == false) goto L_0x002d\l}"];
+subgraph cluster_Region_1970131512 {
+label = "R(2:5|18)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002d|android.util.Log.w(TAG, \"Ignoring malformed HEVC codec string: \" + r9)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1033455860 {
+label = "R(4:6|(1:8)(1:(1:14)(2:15|20))|9|(2:(1:21)|(2:11|19)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0046|java.lang.String java.lang.String r3 = r1.group(1)\l}"];
+subgraph cluster_IfRegion_1299140110 {
+label = "IF [B:7:0x0050] THEN: R(1:8) ELSE: R(1:(1:14)(2:15|20))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0050|if (\"1\".equals(r3) == true) goto L_0x0052\l}"];
+subgraph cluster_Region_775754330 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0052|r2 = 1\l}"];
+}
+subgraph cluster_Region_1559143573 {
+label = "R(1:(1:14)(2:15|20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_654704672 {
+label = "IF [B:13:0x0083] THEN: R(1:14) ELSE: R(2:15|20) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0083|if (\"2\".equals(r3) == true) goto L_0x0085\l}"];
+subgraph cluster_Region_420819016 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0085|r2 = 2\l}"];
+}
+subgraph cluster_Region_1345270492 {
+label = "R(2:15|20)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0087|android.util.Log.w(TAG, \"Unknown HEVC profile string: \" + r3)\l}"];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0053|PHI: r2 \l  PHI: (r2v1 'profile' int) = (r2v0 'profile' int), (r2v2 'profile' int) binds: [B:14:0x0085, B:8:0x0052] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Integer java.lang.Integer r0 = HEVC_CODEC_STRING_TO_PROFILE_LEVEL.get(r10[3])\l}"];
+subgraph cluster_Region_1749010039 {
+label = "R(2:(1:21)|(2:11|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_959254717 {
+label = "IF [B:10:0x005e] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x005e|if (r0 != null) goto L_0x00a1\l}"];
+subgraph cluster_Region_272465046 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return new android.util.Pair\<\>(java.lang.Integer.valueOf(r2), r0)\l}"];
+}
+}
+subgraph cluster_Region_136854394 {
+label = "R(2:11|19)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0060|android.util.Log.w(TAG, \"Unknown HEVC level string: \" + r1.group(1))\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x007d}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x00a1}"];
+MethodNode[shape=record,label="{private static android.util.Pair\<java.lang.Integer, java.lang.Integer\> com.google.android.exoplayer2.mediacodec.MediaCodecUtil.getHevcProfileAndLevel((r9v0 'codec' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'parts' java.lang.String[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, [, Ljava\/lang\/String;, ), Landroid\/util\/Pair, \<, Ljava\/lang\/Integer;, Ljava\/lang\/Integer;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_18;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_9;
+Node_15 -> Node_20;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_19;
+Node_0 -> Node_1;
+Node_12 -> Node_13;
+Node_16 -> Node_21;
+}
+

@@ -1,0 +1,41 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnectionPool.closeConnectionAndLogExceptionsLocked(Lorg\/spatialite\/database\/SQLiteConnection;)V" {
+subgraph cluster_Region_1520726359 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_677055143 {
+label = "Try: R(1:1) catches: R(2:2|3)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2064988312 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ RuntimeException \-\> 0x0004 \}\lSplitter:B:0:0x0000\l|r5.close()     \/\/ Catch:\{ RuntimeException \-\> 0x0004 \}\l}"];
+}
+subgraph cluster_Region_1683877034 {
+label = "R(2:2|3) | ExcHandler: RuntimeException (r0v0 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|ExcHandler: RuntimeException (r0v0 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|android.util.Log.e(TAG, \"Failed to close connection, its fate is now in the hands of the merciful GC: \" + r5, r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1683877034 {
+label = "R(2:2|3) | ExcHandler: RuntimeException (r0v0 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|ExcHandler: RuntimeException (r0v0 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|android.util.Log.e(TAG, \"Failed to close connection, its fate is now in the hands of the merciful GC: \" + r5, r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnectionPool.closeConnectionAndLogExceptionsLocked((r4v0 'this' org.spatialite.database.SQLiteConnectionPool A[IMMUTABLE_TYPE, THIS]), (r5v0 org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_2;
+}
+

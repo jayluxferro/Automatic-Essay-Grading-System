@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.content.ContextCompat.startActivities(Landroid\/content\/Context;[Landroid\/content\/Intent;Landroid\/os\/Bundle;)Z" {
+subgraph cluster_Region_1099673347 {
+label = "R(1:(2:(2:2|5)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_366093225 {
+label = "R(2:(2:2|5)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_346099062 {
+label = "IF [B:1:0x0004] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0006\l}"];
+subgraph cluster_Region_270583446 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r2.startActivities(r3, r4)\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_214929446 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|r2.startActivities(r3)\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public static boolean android.support.v4.content.ContextCompat.startActivities((r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.content.Intent[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

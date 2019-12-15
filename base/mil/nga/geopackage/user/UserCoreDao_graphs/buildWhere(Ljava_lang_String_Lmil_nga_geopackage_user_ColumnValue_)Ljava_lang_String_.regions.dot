@@ -1,0 +1,87 @@
+digraph "CFG formil.nga.geopackage.user.UserCoreDao.buildWhere(Ljava\/lang\/String;Lmil\/nga\/geopackage\/user\/ColumnValue;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1817990373 {
+label = "R(1:(2:(1:12)|(1:(2:(1:14)|(1:(2:(2:7|13)|(2:8|9)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_509411367 {
+label = "R(2:(1:12)|(1:(2:(1:14)|(1:(2:(2:7|13)|(2:8|9))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1708150976 {
+label = "IF [B:0:0x0000] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x005c\l}"];
+subgraph cluster_Region_738919370 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return buildWhere(r4, (java.lang.Object) null, com.j256.ormlite.stmt.query.SimpleComparison.EQUAL_TO_OPERATION)\l}"];
+}
+}
+subgraph cluster_Region_578720210 {
+label = "R(1:(2:(1:14)|(1:(2:(2:7|13)|(2:8|9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1423241602 {
+label = "R(2:(1:14)|(1:(2:(2:7|13)|(2:8|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_862317960 {
+label = "IF [B:2:0x0006, B:4:0x000c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r5.getValue() == null) goto L_0x0053\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r5.getTolerance() == null) goto L_0x0053\l}"];
+subgraph cluster_Region_1199877501 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return buildWhere(r4, r5.getValue())\l}"];
+}
+}
+subgraph cluster_Region_295847006 {
+label = "R(1:(2:(2:7|13)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1653210889 {
+label = "R(2:(2:7|13)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2124175229 {
+label = "IF [B:6:0x0014] THEN: R(2:7|13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|if ((r5.getValue() instanceof java.lang.Number) == true) goto L_0x0016\l}"];
+subgraph cluster_Region_1578629527 {
+label = "R(2:7|13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|java.lang.String java.lang.String r4 = mil.nga.geopackage.p021db.CoreSQLUtils.quoteWrap(r4)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r4 + \" \>= ? AND \" + r4 + \" \<= ?\"\l}"];
+}
+}
+subgraph cluster_Region_479326870 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0034}"];
+Node_9 [shape=record,label="{9\:\ 0x0052|throw new mil.nga.geopackage.GeoPackageException(\"Field value is not a number and can not use a tolerance, Field: \" + r4 + \", Value: \" + r5)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0053}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x005c}"];
+MethodNode[shape=record,label="{public java.lang.String mil.nga.geopackage.user.UserCoreDao.buildWhere((r3v0 'this' mil.nga.geopackage.user.UserCoreDao A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 mil.nga.geopackage.user.ColumnValue A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_11;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_10;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_13;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+}
+

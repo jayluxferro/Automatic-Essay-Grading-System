@@ -1,0 +1,60 @@
+digraph "CFG forokio.Segment.split(I)Lokio\/Segment;" {
+subgraph cluster_Region_597179821 {
+label = "R(1:(2:(1:10)|(3:(1:5)(1:6)|7|8))) | DECL_VAR: okio.Segment null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_211934067 {
+label = "R(2:(1:10)|(3:(1:5)(1:6)|7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1942427071 {
+label = "IF [B:0:0x0000, B:2:0x0007] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 \<= 0) goto L_0x0030\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|ADDED_TO_REGION\l|if (r6 \> (r5.limit \- r5.pos)) goto L_0x0030\l}"];
+subgraph cluster_Region_843469337 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0035|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+subgraph cluster_Region_1347511465 {
+label = "R(3:(1:5)(1:6)|7|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1378437011 {
+label = "IF [B:4:0x000b] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r6 \>= 1024) goto L_0x000d\l}"];
+subgraph cluster_Region_456850070 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|okio.Segment r0 = sharedCopy()\l}"];
+}
+subgraph cluster_Region_178108501 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|okio.Segment r0 = okio.SegmentPool.take()\ljava.lang.System.arraycopy(r5.data, r5.pos, r0.data, 0, r6)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0020|PHI: r0 \l  PHI: (r0v3 okio.Segment) = (r0v4 okio.Segment), (r0v5 okio.Segment) binds: [B:6:0x0012, B:5:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|r0.limit = r0.pos + r6\lr5.pos += r6\lr5.prev.push(r0)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002f|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0030}"];
+MethodNode[shape=record,label="{public okio.Segment okio.Segment.split((r5v0 'this' okio.Segment A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_9;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_9 -> Node_10;
+}
+

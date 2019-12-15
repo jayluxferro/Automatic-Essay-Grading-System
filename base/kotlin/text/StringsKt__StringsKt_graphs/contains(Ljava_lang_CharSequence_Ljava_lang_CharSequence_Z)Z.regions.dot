@@ -1,0 +1,72 @@
+digraph "CFG forkotlin.text.StringsKt__StringsKt.contains(Ljava\/lang\/CharSequence;Ljava\/lang\/CharSequence;Z)Z" {
+subgraph cluster_Region_1929807762 {
+label = "R(3:0|(2:(2:2|(2:(1:4)|(1:7)))|(2:5|(1:(1:8))))|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r11, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r12, \"other\")\l}"];
+subgraph cluster_Region_316171871 {
+label = "R(2:(2:2|(2:(1:4)|(1:7)))|(2:5|(1:(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_940715589 {
+label = "IF [B:1:0x000e] THEN: R(2:2|(2:(1:4)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if ((r12 instanceof java.lang.String) == true) goto L_0x0010\l}"];
+subgraph cluster_Region_1279679487 {
+label = "R(2:2|(2:(1:4)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010}"];
+subgraph cluster_Region_196837362 {
+label = "R(2:(1:4)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1509956164 {
+label = "IF [B:3:0x001c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|if (kotlin.text.StringsKt.indexOf$default(r11, (java.lang.String) r12, 0, r13, 2, (java.lang.Object) null) \>= 0) goto L_0x001e\l}"];
+subgraph cluster_Region_1942579015 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_221139810 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1564146138 {
+label = "R(2:5|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020}"];
+subgraph cluster_Region_120723971 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1073325821 {
+label = "IF [B:6:0x0030] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0030|if (indexOf$StringsKt__StringsKt$default(r11, r12, 0, r11.length(), r13, false, 16, (java.lang.Object) null) \< 0) goto L_?\l}"];
+subgraph cluster_Region_1077102371 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001e|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+MethodNode[shape=record,label="{public static final boolean kotlin.text.StringsKt__StringsKt.contains((r11v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lRemoved duplicated region for block: B:4:0x001e A[RETURN, SYNTHETIC]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_4[style=dashed];
+Node_6 -> Node_8;
+}
+

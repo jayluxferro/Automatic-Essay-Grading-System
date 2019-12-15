@@ -1,0 +1,42 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.recursiveDelete(Ljava\/io\/File;)V" {
+subgraph cluster_Region_1505796473 {
+label = "R(2:(2:2|(1:4))|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1792282163 {
+label = "IF [B:1:0x0004] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5.isDirectory() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_907861913 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int int r1 = r5.listFiles().length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_103083286 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0006, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000c\-\>B:4:0x000e\l|if (r2 \< r1) goto L_0x000e\l}"];
+subgraph cluster_Region_559155940 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|LOOP_END\lLOOP:0: B:3:0x000c\-\>B:4:0x000e\l|recursiveDelete(r3)\lr2++\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0016|r5.delete()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.recursiveDelete((r4v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r5v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_7 -> Node_5;
+}
+

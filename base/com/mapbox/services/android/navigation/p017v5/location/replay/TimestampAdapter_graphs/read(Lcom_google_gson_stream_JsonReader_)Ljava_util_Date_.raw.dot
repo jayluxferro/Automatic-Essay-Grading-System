@@ -1,0 +1,26 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.location.replay.TimestampAdapter.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/util\/Date;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:com.google.gson.stream.JsonToken) = (r4 I:com.google.gson.stream.JsonReader) com.google.gson.stream.JsonReader.peek():com.google.gson.stream.JsonToken type: VIRTUAL \l0x0004: SGET  (r1 I:com.google.gson.stream.JsonToken) =  com.google.gson.stream.JsonToken.NULL com.google.gson.stream.JsonToken \l0x0006: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|0x0009: INVOKE  (r4 I:com.google.gson.stream.JsonReader) com.google.gson.stream.JsonReader.nextNull():void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: RETURN  (r2 I:java.util.Date) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: INVOKE  (r4 I:java.lang.String) = (r4 I:com.google.gson.stream.JsonReader) com.google.gson.stream.JsonReader.nextString():java.lang.String type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|SYNTHETIC\lSplitter:B:5:0x0011\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Splitter:B:5:0x0011\l|0x0011: SGET  (r0 I:java.text.SimpleDateFormat) =  com.mapbox.services.android.navigation.v5.location.replay.TimestampAdapter.DATE_FORMAT java.text.SimpleDateFormat A[Catch:\{ ParseException \-\> 0x0018 \}, TRY_ENTER]\l0x0013: INVOKE  (r4 I:java.util.Date) = (r0 I:java.text.SimpleDateFormat), (r4 I:java.lang.String) java.text.SimpleDateFormat.parse(java.lang.String):java.util.Date type: VIRTUAL A[Catch:\{ ParseException \-\> 0x0018 \}]\l0x0016: NOP   A[TRY_LEAVE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|0x0017: RETURN  (r4 I:java.util.Date) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|ExcHandler: ParseException null\lSplitter:B:5:0x0011\l|0x0018: MOVE_EXCEPTION  (r4 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|0x0019: INVOKE  (r4 I:java.text.ParseException) java.text.ParseException.printStackTrace():void type: VIRTUAL \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001c|0x001c: RETURN  (r2 I:java.util.Date) \l}"];
+MethodNode[shape=record,label="{public java.util.Date com.mapbox.services.android.navigation.v5.location.replay.TimestampAdapter.read((r3 'this' I:com.mapbox.services.android.navigation.v5.location.replay.TimestampAdapter A[IMMUTABLE_TYPE, THIS]), (r4 I:com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

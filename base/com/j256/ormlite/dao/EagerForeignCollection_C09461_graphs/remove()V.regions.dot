@@ -1,0 +1,98 @@
+digraph "CFG forcom.j256.ormlite.dao.EagerForeignCollection.1.remove()V" {
+subgraph cluster_Region_1330488957 {
+label = "R(1:(1:14)(1:(2:4|(1:(1:7))(0))(2:11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1471843523 {
+label = "IF [B:1:0x0002] THEN: R(1:14) ELSE: R(1:(2:4|(1:(1:7))(0))(2:11|12))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.offset \< 0) goto L_0x0058\l}"];
+subgraph cluster_Region_209980574 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005f|throw new java.lang.IllegalStateException(\"next() must be called before remove()\")\l}"];
+}
+subgraph cluster_Region_1522745704 {
+label = "R(1:(2:4|(1:(1:7))(0))(2:11|12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2015324675 {
+label = "IF [B:3:0x0010] THEN: R(2:4|(1:(1:7))(0)) ELSE: R(2:11|12) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r3.offset \< com.j256.ormlite.dao.EagerForeignCollection.this.results.size()) goto L_0x0012\l}"];
+subgraph cluster_Region_474942895 {
+label = "R(2:4|(1:(1:7))(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|java.lang.Object java.lang.Object r0 = com.j256.ormlite.dao.EagerForeignCollection.this.results.remove(r3.offset)\lr3.offset\-\-\l}"];
+subgraph cluster_IfRegion_2076192087 {
+label = "IF [B:5:0x0028] THEN: R(1:(1:7)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0028|if (com.j256.ormlite.dao.EagerForeignCollection.this.dao != null) goto L_0x002a\l}"];
+subgraph cluster_Region_1460420173 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_386203077 {
+label = "Try: R(1:7) catches: R(2:8|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1359765025 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ SQLException \-\> 0x0032 \}\lSplitter:B:6:0x002a\l|com.j256.ormlite.dao.EagerForeignCollection.this.dao.delete(r0)     \/\/ Catch:\{ SQLException \-\> 0x0032 \}\l}"];
+}
+subgraph cluster_Region_348705364 {
+label = "R(2:8|10) | ExcHandler: SQLException (r0v7 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|ExcHandler: SQLException (r0v7 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0038|throw new java.lang.RuntimeException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1847127823 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1490045655 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003a}"];
+Node_12 [shape=record,label="{12\:\ 0x0057|throw new java.lang.IllegalStateException(\"current results position (\" + r3.offset + \") is out of bounds\")\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_348705364 {
+label = "R(2:8|10) | ExcHandler: SQLException (r0v7 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|ExcHandler: SQLException (r0v7 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0038|throw new java.lang.RuntimeException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a|SYNTHETIC\lSplitter:B:6:0x002a\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0033}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0058}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.dao.EagerForeignCollection.1.remove((r3v0 'this' com.j256.ormlite.dao.EagerForeignCollection$1 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_16;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_9 -> Node_10;
+Node_13 -> Node_14;
+}
+

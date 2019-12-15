@@ -1,0 +1,41 @@
+digraph "CFG forcom.facebook.ads.AdView.\<init\>(Landroid\/content\/Context;Ljava\/lang\/String;Lcom\/facebook\/ads\/AdSize;)V" {
+subgraph cluster_Region_371895488 {
+label = "R(2:0|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super(r10)\l}"];
+subgraph cluster_Region_846243359 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1761828216 {
+label = "IF [B:1:0x0004, B:3:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r12 == null) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r12 == com.facebook.ads.AdSize.INTERSTITIAL) goto L_0x000a\l}"];
+subgraph cluster_Region_248604670 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|throw new java.lang.IllegalArgumentException(\"adSize\")\l}"];
+}
+}
+subgraph cluster_Region_1298044488 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|r9.f87b = getContext().getResources().getDisplayMetrics()\lr9.f88c = r12.toInternalAdSize()\lr9.f89d = r11\lr9.f90e = new com.facebook.ads.internal.DisplayAdController(r10, r11, com.facebook.ads.internal.protocol.C0890g.m1677a(r9.f88c), com.facebook.ads.internal.protocol.AdPlacementType.BANNER, r12.toInternalAdSize(), f86a, 1, true)\lr9.f90e.mo10194a((com.facebook.ads.internal.adapters.C0630a) new com.facebook.ads.AdView.C05621())\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x004a}"];
+MethodNode[shape=record,label="{public void com.facebook.ads.AdView.\<init\>((r9v0 'this' com.facebook.ads.AdView A[IMMUTABLE_TYPE, THIS]), (r10v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 java.lang.String A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 com.facebook.ads.AdSize A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

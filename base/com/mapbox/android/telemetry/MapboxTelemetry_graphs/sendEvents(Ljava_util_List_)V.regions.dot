@@ -1,0 +1,30 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.sendEvents(Ljava\/util\/List;)V" {
+subgraph cluster_Region_972946860 {
+label = "R(1:(1:(1:2)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2037074336 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_676495006 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (checkRequiredParameters(r2.accessToken, r2.userAgent) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_50647069 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r2.telemetryClient.sendEvents(r3, r2.httpCallback)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.android.telemetry.MapboxTelemetry.sendEvents((r2v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.List\<com.mapbox.android.telemetry.Event\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/android\/telemetry\/Event;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

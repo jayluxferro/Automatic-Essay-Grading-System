@@ -1,0 +1,61 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationRouteProcessor.checkManeuverCompletion(Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/MapboxNavigation;Landroid\/location\/Location;Lcom\/mapbox\/api\/directions\/v5\/models\/DirectionsRoute;DD)V" {
+subgraph cluster_Region_1812440477 {
+label = "R(5:0|1|4|(1:7)|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r11\lboolean r3 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|boolean r1 = r0.stepDistanceRemaining \< r17\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|PHI: r1 \l  PHI: (r1v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|boolean boolean r2 = com.mapbox.services.android.navigation.p017v5.navigation.NavigationHelper.checkBearingForStepCompletion(r13, r0.routeProgress, r0.stepDistanceRemaining, r15)\l}"];
+subgraph cluster_IfRegion_1416770354 {
+label = "IF [B:5:0x001c, B:6:0x001e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|ADDED_TO_REGION\l|if (r0.stepDistanceRemaining == 0.0d) goto L_0x001e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|ADDED_TO_REGION\l|if (r2 == false) goto L_0x0020\l}"];
+subgraph cluster_Region_258709376 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|r3 = true\l}"];
+}
+}
+subgraph cluster_Region_1753561856 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_281123808 {
+label = "IF [B:8:0x0021, B:9:0x0023, B:10:0x0025] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|PHI: r3 \l  PHI: (r3v1 boolean) = (r3v0 boolean), (r3v0 boolean), (r3v2 boolean) binds: [B:5:0x001c, B:6:0x001e, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != false) goto L_0x0023\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|ADDED_TO_REGION\l|if (r1 != false) goto L_0x0027\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|ADDED_TO_REGION\l|if (r3 != false) goto L_0x0027\l}"];
+subgraph cluster_Region_84430700 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0027|advanceIndices(r12)\landroid.location.Location r1 = r13\lcom.mapbox.api.directions.p008v5.models.DirectionsRoute r2 = r14\lr0.stepDistanceRemaining = calculateStepDistanceRemaining(r13, r14)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.navigation.NavigationRouteProcessor.checkManeuverCompletion((r11v0 'this' com.mapbox.services.android.navigation.v5.navigation.NavigationRouteProcessor A[IMMUTABLE_TYPE, THIS]), (r12v0 com.mapbox.services.android.navigation.v5.navigation.MapboxNavigation A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 com.mapbox.api.directions.v5.models.DirectionsRoute A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

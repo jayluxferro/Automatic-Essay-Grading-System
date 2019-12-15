@@ -1,0 +1,71 @@
+digraph "CFG forcom.google.android.gms.common.data.SingleRefDataBufferIterator.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1552038839 {
+label = "R(1:(2:(3:2|(2:4|(2:6|7))(1:8)|10)|(2:11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_575923927 {
+label = "R(2:(3:2|(2:4|(2:6|7))(1:8)|10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_381955158 {
+label = "IF [B:1:0x0004] THEN: R(3:2|(2:4|(2:6|7))(1:8)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (hasNext() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_100311790 {
+label = "R(3:2|(2:4|(2:6|7))(1:8)|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r4.zalk++\l}"];
+subgraph cluster_IfRegion_1223196261 {
+label = "IF [B:3:0x000e] THEN: R(2:4|(2:6|7)) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r4.zalk == 0) goto L_0x0010\l}"];
+subgraph cluster_Region_1974488305 {
+label = "R(2:4|(2:6|7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r4.zamf = r4.zalj.get(0)\l}"];
+subgraph cluster_IfRegion_1117878413 {
+label = "IF [B:5:0x001d] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|if ((r4.zamf instanceof com.google.android.gms.common.data.DataBufferRef) == false) goto L_0x0020\l}"];
+subgraph cluster_Region_1120849334 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|java.lang.String java.lang.String r1 = java.lang.String.valueOf(r4.zamf.getClass())\ljava.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder(java.lang.String.valueOf(r1).length() + 44)\lr3.append(\"DataBuffer reference of type \")\lr3.append(r1)\lr3.append(\" is not movable\")\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004f|throw new java.lang.IllegalStateException(r3.toString())\l}"];
+}
+}
+}
+subgraph cluster_Region_312238053 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0050|((com.google.android.gms.common.data.DataBufferRef) r4.zamf).zag(r4.zalk)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x005b|RETURN\l|return r4.zamf\l}"];
+}
+}
+subgraph cluster_Region_1135063305 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005c|int int r1 = r4.zalk\ljava.lang.StringBuilder java.lang.StringBuilder r3 = new java.lang.StringBuilder(46)\lr3.append(\"Cannot advance the iterator beyond \")\lr3.append(r1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0076|throw new java.util.NoSuchElementException(r3.toString())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0059}"];
+MethodNode[shape=record,label="{public T com.google.android.gms.common.data.SingleRefDataBufferIterator.next((r4v0 'this' com.google.android.gms.common.data.SingleRefDataBufferIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+}
+

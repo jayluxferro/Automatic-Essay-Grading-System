@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.findLast(Ljava\/util\/List;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_308657994 {
+label = "R(3:0|(2:3|(1:8))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ListIterator java.util.ListIterator\<? extends T\> r2 = r2.listIterator(r2.size())\l}"];
+subgraph cluster_LoopRegion_420599481 {
+label = "LOOP:0: (2:3|(1:8))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r2.hasPrevious() != false) goto L_0x000e\l}"];
+subgraph cluster_Region_1420596284 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|java.lang.Object T r0 = r2.previous()\l}"];
+subgraph cluster_IfRegion_925061126 {
+label = "IF [B:4:0x001c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:4:0x001c\l|if (r3.invoke(r0).booleanValue() == true) goto L_0x0020\l}"];
+subgraph cluster_Region_134424135 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001f|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lLOOP:0: B:1:0x0008\-\>B:4:0x001c\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final T kotlin.collections.CollectionsKt___CollectionsKt.findLast((r2v0 java.util.List\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[BUILD, kotlin.internal.InlineOnly, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/util\/List\<, +TT;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;, Ljava\/lang\/Boolean;, \>;)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_6;
+Node_1 -> Node_2;
+Node_6 -> Node_8;
+Node_7 -> Node_5;
+}
+

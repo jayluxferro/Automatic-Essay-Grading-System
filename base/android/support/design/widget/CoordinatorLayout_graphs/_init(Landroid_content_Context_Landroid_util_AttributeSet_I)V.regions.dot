@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.\<init\>(Landroid\/content\/Context;Landroid\/util\/AttributeSet;I)V" {
+subgraph cluster_Region_1450848828 {
+label = "R(2:1|(5:0|(1:2)(1:3)|4|(2:6|(1:8))|9))";
+node [shape=record,color=blue];
+Node_InsnContainer_786669994 [shape=record,label="{|super(r4, r5, r6)\l}"];
+subgraph cluster_Region_2037429515 {
+label = "R(5:0|(1:2)(1:3)|4|(2:6|(1:8))|9) | DECL_VAR: android.content.res.TypedArray null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.mDependencySortedChildren = new java.util.ArrayList()\lr3.mChildDag = new android.support.p000v4.widget.DirectedAcyclicGraph\<\>()\lr3.mTempList1 = new java.util.ArrayList()\lr3.mTempDependenciesList = new java.util.ArrayList()\lr3.mTempIntPair = new int[2]\lr3.mNestedScrollingParentHelper = new android.support.p000v4.view.NestedScrollingParentHelper(r3)\lint r0 = 0\l}"];
+subgraph cluster_IfRegion_1323615609 {
+label = "IF [B:1:0x002c] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002c|if (r6 == 0) goto L_0x002e\l}"];
+subgraph cluster_Region_1140874740 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002e|android.content.res.TypedArray r5 = r4.obtainStyledAttributes(r5, android.support.coordinatorlayout.C0042R.styleable.CoordinatorLayout, 0, android.support.coordinatorlayout.C0042R.C0045style.Widget_Support_CoordinatorLayout)\l}"];
+}
+subgraph cluster_Region_941911830 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0037|android.content.res.TypedArray r5 = r4.obtainStyledAttributes(r5, android.support.coordinatorlayout.C0042R.styleable.CoordinatorLayout, r6, 0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x003d|PHI: r5 \l  PHI: (r5v1 android.content.res.TypedArray) = (r5v2 android.content.res.TypedArray), (r5v3 android.content.res.TypedArray) binds: [B:3:0x0037, B:2:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|int int r6 = r5.getResourceId(android.support.coordinatorlayout.C0042R.styleable.CoordinatorLayout_keylines, 0)\l}"];
+subgraph cluster_IfRegion_938897345 {
+label = "IF [B:5:0x0043] THEN: R(2:6|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0043|if (r6 != 0) goto L_0x0045\l}"];
+subgraph cluster_Region_1268898951 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|android.content.res.Resources android.content.res.Resources r4 = r4.getResources()\lr3.mKeylines = r4.getIntArray(r6)\lfloat float r4 = r4.getDisplayMetrics().density\lint int r6 = r3.mKeylines.length\l}"];
+subgraph cluster_LoopRegion_410877722 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0058|LOOP_START\lPHI: r0 \l  PHI: (r0v8 int) = (r0v7 int), (r0v9 int) binds: [B:6:0x0045, B:8:0x005a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0058\-\>B:8:0x005a\l|if (r0 \< r6) goto L_0x005a\l}"];
+subgraph cluster_Region_769277494 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005a|LOOP_END\lLOOP:0: B:7:0x0058\-\>B:8:0x005a\l|r3.mKeylines[r0] = (int) (((float) r3.mKeylines[r0]) * r4)\lr0++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0069|r3.mStatusBarBackground = r5.getDrawable(android.support.coordinatorlayout.C0042R.styleable.CoordinatorLayout_statusBarBackground)\lr5.recycle()\lsetupForInsets()\lsuper.setOnHierarchyChangeListener(new android.support.design.widget.CoordinatorLayout.HierarchyChangeListener())\l}"];
+}
+}
+Node_10 [shape=record,color=red,label="{10\:\ 0x007f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0069|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.CoordinatorLayout.\<init\>((r3v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.util.AttributeSet A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.AttrRes, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_9;
+}
+

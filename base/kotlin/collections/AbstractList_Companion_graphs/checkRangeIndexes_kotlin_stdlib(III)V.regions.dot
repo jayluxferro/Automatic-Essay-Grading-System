@@ -1,0 +1,49 @@
+digraph "CFG forkotlin.collections.AbstractList.Companion.checkRangeIndexes$kotlin_stdlib(III)V" {
+subgraph cluster_Region_252907853 {
+label = "R(1:(2:6|7)(1:(2:4|5)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2597031 {
+label = "IF [B:0:0x0000, B:1:0x0002] THEN: R(2:6|7) ELSE: R(1:(2:4|5)(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 \< 0) goto L_0x0028\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r5 \> r6) goto L_0x0028\l}"];
+subgraph cluster_Region_951940755 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028}"];
+Node_7 [shape=record,label="{7\:\ 0x0050|throw new java.lang.IndexOutOfBoundsException(\"fromIndex: \" + r4 + \", toIndex: \" + r5 + \", size: \" + r6)\l}"];
+}
+subgraph cluster_Region_1234621129 {
+label = "R(1:(2:4|5)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1578642383 {
+label = "IF [B:2:0x0004] THEN: R(2:4|5) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r4 \> r5) goto L_0x0007\l}"];
+subgraph cluster_Region_1669827123 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007}"];
+Node_5 [shape=record,label="{5\:\ 0x0027|throw new java.lang.IllegalArgumentException(\"fromIndex: \" + r4 + \" \> toIndex: \" + r5)\l}"];
+}
+subgraph cluster_Region_819814718 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.AbstractList.Companion.checkRangeIndexes$kotlin_stdlib((r3v0 'this' kotlin.collections.AbstractList$Companion A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_6;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+}
+

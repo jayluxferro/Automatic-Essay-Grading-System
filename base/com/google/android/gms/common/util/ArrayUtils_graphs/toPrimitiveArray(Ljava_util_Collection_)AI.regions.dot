@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.gms.common.util.ArrayUtils.toPrimitiveArray(Ljava\/util\/Collection;)[I" {
+subgraph cluster_Region_1484962438 {
+label = "R(2:0|(2:(1:10)|(3:4|(1:7)|8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_Region_346816275 {
+label = "R(2:(1:10)|(3:4|(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1589273893 {
+label = "IF [B:1:0x0001, B:3:0x0007] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x002b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r4.size() == 0) goto L_0x002b\l}"];
+subgraph cluster_Region_232426340 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002d|RETURN\l|return new int[0]\l}"];
+}
+}
+subgraph cluster_Region_774339250 {
+label = "R(3:4|(1:7)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|int[] int[] r1 = new int[r4.size()]\ljava.util.Iterator r4 = r4.iterator()\l}"];
+subgraph cluster_LoopRegion_219310149 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r4.hasNext() != false) goto L_0x001a\l}"];
+subgraph cluster_Region_847651496 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:7:0x001a\l|r1[r0] = r2.intValue()\lr0++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002a|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:4:0x000a, B:7:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0014\-\>B:7:0x001a\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static int[] com.google.android.gms.common.util.ArrayUtils.toPrimitiveArray((r4v0 java.util.Collection\<java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Collection\<, Ljava\/lang\/Integer;, \>;)[I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_5;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_8;
+}
+

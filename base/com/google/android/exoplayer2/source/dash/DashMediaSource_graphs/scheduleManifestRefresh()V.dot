@@ -1,0 +1,21 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.scheduleManifestRefresh()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r10.manifest.dynamic != false) goto L_0x0009\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|long r2 = r10.manifest.minUpdatePeriod\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|if ((r2 \> 0 ? 1 : (r2 == 0 ? 0 : \-1)) != 0) goto L_0x0013\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|r2 = com.google.android.exoplayer2.DefaultRenderersFactory.DEFAULT_ALLOWED_VIDEO_JOINING_TIME_MS\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|PHI: r2 \l  PHI: (r2v1 'minUpdatePeriod' long) = (r2v0 'minUpdatePeriod' long), (r2v2 'minUpdatePeriod' long) binds: [B:3:0x000f, B:4:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|long r0 = java.lang.Math.max(0, (r10.manifestLoadStartTimestamp + r2) \- android.os.SystemClock.elapsedRealtime())\lr10.handler.postDelayed(r10.refreshManifestRunnable, r0)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.source.dash.DashMediaSource.scheduleManifestRefresh((r10v0 'this' com.google.android.exoplayer2.source.dash.DashMediaSource A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_7;
+}
+

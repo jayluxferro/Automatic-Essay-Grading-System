@@ -1,0 +1,60 @@
+digraph "CFG forar.com.hjg.pngj.ChunkSeqReader.postProcessChunk(Lar\/com\/hjg\/pngj\/ChunkReader;)V" {
+subgraph cluster_Region_319236105 {
+label = "R(1:(2:6|7)(1:(1:10)(0))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_865934573 {
+label = "IF [B:1:0x0003, B:3:0x0009, B:5:0x0015] THEN: R(2:6|7) ELSE: R(1:(1:10)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.chunkCount == 1) goto L_0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if ((r0 = firstChunkId()) != null) goto L_0x000b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r0.equals(r4.getChunkRaw().f57id) != true) goto L_0x0018\l}"];
+subgraph cluster_Region_904302197 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018}"];
+Node_7 [shape=record,label="{7\:\ 0x0040|throw new p004ar.com.hjg.pngj.PngjInputException(\"Bad first chunk: \" + r4.getChunkRaw().f57id + \" expected: \" + firstChunkId())\l}"];
+}
+subgraph cluster_Region_566649438 {
+label = "R(1:(1:10)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_187384079 {
+label = "IF [B:9:0x004f] THEN: R(1:10) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004f|if (r4.getChunkRaw().f57id.equals(endChunkId()) == true) goto L_0x0051\l}"];
+subgraph cluster_Region_1342856947 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0051|r3.done = true\l}"];
+}
+subgraph cluster_Region_1369372577 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0041}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void ar.com.hjg.pngj.ChunkSeqReader.postProcessChunk((r3v0 'this' ar.com.hjg.pngj.ChunkSeqReader A[IMMUTABLE_TYPE, THIS]), (r4v0 ar.com.hjg.pngj.ChunkReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+}
+

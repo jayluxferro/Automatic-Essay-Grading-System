@@ -1,0 +1,68 @@
+digraph "CFG forcom.j256.ormlite.stmt.QueryBuilder.appendOffset(Ljava\/lang\/StringBuilder;)V" {
+subgraph cluster_Region_578696426 {
+label = "R(1:(1:(1:9)(1:(1:8)(0)))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1535567226 {
+label = "IF [B:1:0x0002] THEN: R(1:(1:9)(1:(1:8)(0))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.offset != null) goto L_0x0005\l}"];
+subgraph cluster_Region_1241868149 {
+label = "R(1:(1:9)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_730042972 {
+label = "IF [B:4:0x000b] THEN: R(1:9) ELSE: R(1:(1:8)(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r3.databaseType.isOffsetLimitArgument() != true) goto L_0x001a\l}"];
+subgraph cluster_Region_2022259362 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|r3.databaseType.appendOffsetValue(r4, r3.offset.longValue())\l}"];
+}
+subgraph cluster_Region_340307452 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1972854479 {
+label = "IF [B:6:0x000f] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r3.limit == null) goto L_0x0012\l}"];
+subgraph cluster_Region_1110516563 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|throw new java.sql.SQLException(\"If the offset is specified, limit must also be specified with this database\")\l}"];
+}
+subgraph cluster_Region_1935433117 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+subgraph cluster_Region_573192519 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.j256.ormlite.stmt.QueryBuilder.appendOffset((r3v0 'this' com.j256.ormlite.stmt.QueryBuilder A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.StringBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

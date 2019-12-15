@@ -1,0 +1,89 @@
+digraph "CFG forandroid.support.v4.content.LocalBroadcastManager.registerReceiver(Landroid\/content\/BroadcastReceiver;Landroid\/content\/IntentFilter;)V" {
+subgraph cluster_Region_1343915997 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_834485907 {
+label = "Synchronized:R(2:1|(4:3|(1:5)|6|(3:9|(1:11)(0)|12)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_533194867 {
+label = "R(4:3|(1:5)|6|(3:9|(1:11)(0)|12))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|android.support.v4.content.LocalBroadcastManager$ReceiverRecord android.support.p000v4.content.LocalBroadcastManager.ReceiverRecord r1 = new android.support.p000v4.content.LocalBroadcastManager.ReceiverRecord(r8, r7)     \/\/ Catch:\{  \}\ljava.util.ArrayList java.util.ArrayList r2 = r6.mReceivers.get(r7)\l}"];
+subgraph cluster_IfRegion_854113979 {
+label = "IF [B:4:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r2 == null) goto L_0x0013\l}"];
+subgraph cluster_Region_1873341464 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|java.util.ArrayList r2 = new java.util.ArrayList(1)     \/\/ Catch:\{  \}\lr6.mReceivers.put(r7, r2)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001d|PHI: r2 \l  PHI: (r2v3 java.util.ArrayList) = (r2v2 java.util.ArrayList), (r2v6 java.util.ArrayList) binds: [B:4:0x0011, B:5:0x0013] A[DONT_GENERATE, DONT_INLINE]\l|r2.add(r1)\lint r7 = 0\l}"];
+subgraph cluster_LoopRegion_306994405 {
+label = "LOOP:0: (3:9|(1:11)(0)|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|if (r7 \< r8.countActions()) goto L_0x0027\l}"];
+subgraph cluster_Region_1610634593 {
+label = "R(3:9|(1:11)(0)|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|java.lang.String java.lang.String r2 = r8.getAction(r7)\ljava.util.ArrayList java.util.ArrayList r4 = r6.mActions.get(r2)\l}"];
+subgraph cluster_IfRegion_1491419828 {
+label = "IF [B:10:0x0033] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0033|if (r4 == null) goto L_0x0035\l}"];
+subgraph cluster_Region_1887811728 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0035|java.util.ArrayList r4 = new java.util.ArrayList(1)     \/\/ Catch:\{  \}\lr6.mActions.put(r2, r4)\l}"];
+}
+subgraph cluster_Region_666732259 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x003f|LOOP_END\lPHI: r4 \l  PHI: (r4v3 java.util.ArrayList) = (r4v2 java.util.ArrayList), (r4v4 java.util.ArrayList) binds: [B:20:0x003f, B:19:0x003f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0021\-\>B:12:0x003f\l|r4.add(r1)\lr7++\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021|LOOP_START\lPHI: r7 \l  PHI: (r7v3 int) = (r7v2 int), (r7v4 int) binds: [B:6:0x001d, B:12:0x003f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0021\-\>B:12:0x003f\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0045|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0045: MONITOR_EXIT  \l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0046}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0047|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0048|REMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0049|REMOVE\l|throw r7\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0045|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x003f|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x003f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.content.LocalBroadcastManager.registerReceiver((r6v0 'this' android.support.v4.content.LocalBroadcastManager A[IMMUTABLE_TYPE, THIS]), (r7v0 android.content.BroadcastReceiver A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 android.content.IntentFilter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_18[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_20[style=dashed];
+Node_11 -> Node_19;
+Node_12 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_15;
+Node_7 -> Node_8;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_13;
+Node_19 -> Node_12;
+Node_20 -> Node_12;
+}
+

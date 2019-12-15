@@ -1,0 +1,56 @@
+digraph "CFG forandroid.support.v7.widget.OpReorderer.swapMoveOp(Ljava\/util\/List;II)V" {
+subgraph cluster_Region_1483038235 {
+label = "R(2:0|(1:2)(1:5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.widget.AdapterHelper$UpdateOp android.support.p003v7.widget.AdapterHelper.UpdateOp r4 = r8.get(r9)\landroid.support.v7.widget.AdapterHelper$UpdateOp android.support.p003v7.widget.AdapterHelper.UpdateOp r6 = r8.get(r10)\lint int r0 = r6.cmd\l}"];
+subgraph cluster_IfRegion_1398327449 {
+label = "IF [B:1:0x0011] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (r0 != 4) goto L_0x0013\l}"];
+subgraph cluster_Region_1080387855 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_761052175 {
+label = "Switch: 2, default: R(1:9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|switch(r0) \{\l    case 1: goto L_0x001f;\l    case 2: goto L_0x0017;\l    default: goto L_0x0016;\l\}\l}"];
+subgraph cluster_Region_882461817 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|swapMoveAdd(r8, r9, r4, r10, r6)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1468126140 {
+label = "R(2:3|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|swapMoveRemove(r8, r9, r4, r10, r6)\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_134056749 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_557829923 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|swapMoveUpdate(r8, r9, r4, r10, r6)\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.OpReorderer.swapMoveOp((r7v0 'this' android.support.v7.widget.OpReorderer A[IMMUTABLE_TYPE, THIS]), (r8v0 java.util.List\<android.support.v7.widget.AdapterHelper$UpdateOp\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Landroid\/support\/v7\/widget\/AdapterHelper$UpdateOp;, \>;II)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_2 -> Node_9;
+Node_4 -> Node_8;
+Node_3 -> Node_7;
+Node_5 -> Node_6;
+}
+

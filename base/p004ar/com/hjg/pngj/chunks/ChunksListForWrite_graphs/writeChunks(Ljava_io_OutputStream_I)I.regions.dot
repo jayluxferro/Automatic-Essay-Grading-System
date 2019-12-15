@@ -1,0 +1,121 @@
+digraph "CFG forar.com.hjg.pngj.chunks.ChunksListForWrite.writeChunks(Ljava\/io\/OutputStream;I)I" {
+subgraph cluster_Region_854992294 {
+label = "R(3:0|(2:3|(1:(2:9|10)(1:(3:17|(1:19)|20)(2:15|16)))(0))|21)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator java.util.Iterator\<p004ar.com.hjg.pngj.chunks.PngChunk\> r0 = r8.queuedChunks.iterator()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1973094229 {
+label = "LOOP:0: (2:3|(1:(2:9|10)(1:(3:17|(1:19)|20)(2:15|16)))(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|if (r0.hasNext() != false) goto L_0x000d\l}"];
+subgraph cluster_Region_968183808 {
+label = "R(2:3|(1:(2:9|10)(1:(3:17|(1:19)|20)(2:15|16)))(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|ar.com.hjg.pngj.chunks.PngChunk p004ar.com.hjg.pngj.chunks.PngChunk r2 = r0.next()\l}"];
+subgraph cluster_IfRegion_100358803 {
+label = "IF [B:4:0x0017] THEN: R(1:(2:9|10)(1:(3:17|(1:19)|20)(2:15|16))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (shouldWrite(r2, r10) == true) goto L_0x001a\l}"];
+subgraph cluster_Region_39067546 {
+label = "R(1:(2:9|10)(1:(3:17|(1:19)|20)(2:15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_687297750 {
+label = "IF [B:6:0x0020, B:8:0x002a] THEN: R(2:9|10) ELSE: R(1:(3:17|(1:19)|20)(2:15|16))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|if (p004ar.com.hjg.pngj.chunks.ChunkHelper.isCritical(r2.f58id) != false) goto L_0x0022\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|ADDED_TO_REGION\l|if (r2.f58id.equals(\"PLTE\") != true) goto L_0x002d\l}"];
+subgraph cluster_Region_995173528 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002d}"];
+Node_10 [shape=record,label="{10\:\ 0x0043|throw new p004ar.com.hjg.pngj.PngjOutputException(\"bad chunk queued: \" + r2)\l}"];
+}
+subgraph cluster_Region_2043737015 {
+label = "R(1:(3:17|(1:19)|20)(2:15|16)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_558859042 {
+label = "IF [B:12:0x004c, B:14:0x0052] THEN: R(3:17|(1:19)|20) ELSE: R(2:15|16) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004c|if (r8.alreadyWrittenKeys.containsKey(r2.f58id) == false) goto L_0x006c\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0052|ADDED_TO_REGION\l|if (r2.allowsMultiple() == true) goto L_0x006c\l}"];
+subgraph cluster_Region_111379700 {
+label = "R(3:17|(1:19)|20)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006c|r2.write(r9)\lr8.chunks.add(r2)\ljava.util.HashMap\<java.lang.String, java.lang.Integer\> java.util.HashMap\<java.lang.String, java.lang.Integer\> r3 = r8.alreadyWrittenKeys\ljava.lang.String java.lang.String r4 = r2.f58id\lint r6 = 1\l}"];
+subgraph cluster_IfRegion_2126477914 {
+label = "IF [B:18:0x0081] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0081|if (r8.alreadyWrittenKeys.containsKey(r2.f58id) == true) goto L_0x0083\l}"];
+subgraph cluster_Region_1828503743 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0083|int r6 = 1 + r8.alreadyWrittenKeys.get(r2.f58id).intValue()\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0092|PHI: r6 \l  PHI: (r6v2 int) = (r6v1 int), (r6v3 int) binds: [B:18:0x0081, B:19:0x0083] A[DONT_GENERATE, DONT_INLINE]\l|r3.put(r4, java.lang.Integer.valueOf(r6))\lr2.setChunkGroup(r10)\lr0.remove()\lr1++\l}"];
+}
+subgraph cluster_Region_1580948572 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0055}"];
+Node_16 [shape=record,label="{16\:\ 0x006b|throw new p004ar.com.hjg.pngj.PngjOutputException(\"duplicated chunk does not allow multiple: \" + r2)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_2068897364 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x00a3|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:22:0x0007] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:22:0x0007\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0044}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004e}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0007|LOOP_END\lSYNTHETIC\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:26:0x0007, B:27:0x0007] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:22:0x0007\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x002d|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00a3|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0055|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0007|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0007|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int ar.com.hjg.pngj.chunks.ChunksListForWrite.writeChunks((r8v0 'this' ar.com.hjg.pngj.chunks.ChunksListForWrite A[IMMUTABLE_TYPE, THIS]), (r9v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_24[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_26[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_8 -> Node_11[style=dashed];
+Node_8 -> Node_23;
+Node_9 -> Node_10;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_14 -> Node_17;
+Node_14 -> Node_25[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_27;
+Node_15 -> Node_16;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_22 -> Node_1;
+Node_23 -> Node_9;
+Node_24 -> Node_21;
+Node_25 -> Node_15;
+Node_26 -> Node_22;
+Node_27 -> Node_22;
+}
+

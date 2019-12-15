@@ -1,0 +1,39 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.getItemDecorationAt(I)Landroid\/support\/v7\/widget\/RecyclerView$ItemDecoration;" {
+subgraph cluster_Region_774194578 {
+label = "R(2:0|(2:(1:4)|(2:5|6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getItemDecorationCount()\l}"];
+subgraph cluster_Region_612094945 {
+label = "R(2:(1:4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_795825178 {
+label = "IF [B:1:0x0004, B:2:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4 \>= 0) goto L_0x0006\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r4 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_203404178 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|RETURN\l|return r3.mItemDecorations.get(r4)\l}"];
+}
+}
+subgraph cluster_Region_1952863270 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|throw new java.lang.IndexOutOfBoundsException(r4 + \" is an invalid index for size \" + r0)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{public android.support.v7.widget.RecyclerView$ItemDecoration android.support.v7.widget.RecyclerView.getItemDecorationAt((r3v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+}
+

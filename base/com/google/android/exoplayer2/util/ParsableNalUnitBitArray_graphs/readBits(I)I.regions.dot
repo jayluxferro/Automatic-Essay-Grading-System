@@ -1,0 +1,139 @@
+digraph "CFG forcom.google.android.exoplayer2.util.ParsableNalUnitBitArray.readBits(I)I" {
+subgraph cluster_Region_368952862 {
+label = "R(1:(2:(1:2)|(5:3|(3:6|(1:10)(1:13)|11)|(4:15|16|(1:19)(2:23|(1:25))|20)|21|29))) | DECL_VAR: int returnValue, int byteValue\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_598999113 {
+label = "R(2:(1:2)|(5:3|(3:6|(1:10)(1:13)|11)|(4:15|16|(1:19)(2:23|(1:25))|20)|21|29))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_357710963 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r12 == 0) goto L_0x0004\l}"];
+subgraph cluster_Region_704306597 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_872698456 {
+label = "R(5:3|(3:6|(1:10)(1:13)|11)|(4:15|16|(1:19)(2:23|(1:25))|20)|21|29)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|int r4 = 0\lint int r5 = r12 \/ 8\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1714294303 {
+label = "LOOP:0: (3:6|(1:10)(1:13)|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_START\lPHI: r1 r4 r12 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:3:0x0006, B:11:0x0036] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'returnValue' int) = (r4v0 'returnValue' int), (r4v6 'returnValue' int) binds: [B:3:0x0006, B:11:0x0036] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v1 'numBits' int) = (r12v0 'numBits' int), (r12v2 'numBits' int) binds: [B:3:0x0006, B:11:0x0036] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000a\-\>B:11:0x0036\l|if (r1 \< r5) goto L_0x000c\l}"];
+subgraph cluster_Region_1502745770 {
+label = "R(3:6|(1:10)(1:13)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|int r3 = shouldSkipByte(r11.byteOffset + 1) ? r11.byteOffset + 2 : r11.byteOffset + 1\l}"];
+subgraph cluster_IfRegion_1389110194 {
+label = "IF [B:9:0x001c] THEN: R(1:10) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|if (r11.bitOffset != 0) goto L_0x001e\l}"];
+subgraph cluster_Region_343713980 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|r0 = ((r11.data[r11.byteOffset] & 255) \<\< r11.bitOffset) \| ((r11.data[r3] & 255) \>\>\> (8 \- r11.bitOffset))\l}"];
+}
+subgraph cluster_Region_667519767 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0046|byte r0 = r11.data[r11.byteOffset]\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0036|LOOP_END\lPHI: r0 \l  PHI: (r0v1 'byteValue' int) = (r0v0 'byteValue' byte), (r0v2 'byteValue' int) binds: [B:28:0x0036, B:27:0x0036] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000a\-\>B:11:0x0036\l|r12 \-= 8\lr4 = r4 \| ((r0 & 255) \<\< r12)\lr11.byteOffset = r3\lr1++\l}"];
+}
+}
+subgraph cluster_IfRegion_1375324138 {
+label = "IF [B:14:0x004d] THEN: R(4:15|16|(1:19)(2:23|(1:25))|20) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004d|if (r12 \> 0) goto L_0x004f\l}"];
+subgraph cluster_Region_1957861868 {
+label = "R(4:15|16|(1:19)(2:23|(1:25))|20)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004f|int int r2 = r11.bitOffset + r12\lbyte int r6 = (byte) (255 \>\> (8 \- r12))\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0061|int r3 = shouldSkipByte(r11.byteOffset + 1) ? r11.byteOffset + 2 : r11.byteOffset + 1\l}"];
+subgraph cluster_IfRegion_1660563347 {
+label = "IF [B:18:0x0067] THEN: R(1:19) ELSE: R(2:23|(1:25))";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0067|PHI: r3 \l  PHI: (r3v1 'nextByteOffset' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 \> 8) goto L_0x0069\l}"];
+subgraph cluster_Region_1028451755 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0069|r4 \|= (((r11.data[r11.byteOffset] & 255) \<\< (r2 \- 8)) \| ((r11.data[r3] & 255) \>\> (16 \- r2))) & r6\lr11.byteOffset = r3\l}"];
+}
+subgraph cluster_Region_734850072 {
+label = "R(2:23|(1:25))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0090|r4 \|= ((r11.data[r11.byteOffset] & 255) \>\> (8 \- r2)) & r6\l}"];
+subgraph cluster_IfRegion_773501944 {
+label = "IF [B:24:0x009d] THEN: R(1:25) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x009d|if (r2 == 8) goto L_0x009f\l}"];
+subgraph cluster_Region_1952526885 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x009f|r11.byteOffset = r3\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0082|PHI: r4 \l  PHI: (r4v4 'returnValue' int) = (r4v3 'returnValue' int), (r4v3 'returnValue' int), (r4v5 'returnValue' int) binds: [B:24:0x009d, B:25:0x009f, B:19:0x0069] A[DONT_GENERATE, DONT_INLINE]\l|r11.bitOffset = r2 % 8\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0086|PHI: r4 \l  PHI: (r4v2 'returnValue' int) = (r4v1 'returnValue' int), (r4v4 'returnValue' int) binds: [B:14:0x004d, B:20:0x0082] A[DONT_GENERATE, DONT_INLINE]\l|assertValidOffset()\l}"];
+Node_29 [shape=record,label="{29\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a|PHI: r3 \l  PHI: (r3v4 'nextByteOffset' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0041}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0063}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x008b}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x004d|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0036|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.util.ParsableNalUnitBitArray.readBits((r11v0 'this' com.google.android.exoplayer2.util.ParsableNalUnitBitArray A[IMMUTABLE_TYPE, THIS]), (r12v0 'numBits' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lIncorrect type for immutable var: ssa=byte, code=int, for r0v0, types: [byte]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_26[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_27;
+Node_13 -> Node_28;
+Node_11 -> Node_4;
+Node_14 -> Node_15;
+Node_14 -> Node_21[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_22;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_24 -> Node_20[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_29;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_12 -> Node_8;
+Node_17 -> Node_18;
+Node_22 -> Node_18;
+Node_26 -> Node_14;
+Node_27 -> Node_11;
+Node_28 -> Node_11;
+}
+

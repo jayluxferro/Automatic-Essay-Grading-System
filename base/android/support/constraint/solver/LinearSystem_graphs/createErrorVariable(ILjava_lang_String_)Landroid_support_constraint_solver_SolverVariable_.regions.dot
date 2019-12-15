@@ -1,0 +1,42 @@
+digraph "CFG forandroid.support.constraint.solver.LinearSystem.createErrorVariable(ILjava\/lang\/String;)Landroid\/support\/constraint\/solver\/SolverVariable;" {
+subgraph cluster_Region_797381756 {
+label = "R(4:(1:2)|(1:5)|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_334902198 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (sMetrics != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1933987714 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|sMetrics.errors++\l}"];
+}
+}
+subgraph cluster_IfRegion_90252471 {
+label = "IF [B:4:0x0013] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if ((r5.mNumColumns + 1) \>= r5.mMaxColumns) goto L_0x0015\l}"];
+subgraph cluster_Region_1084642022 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|increaseTableSize()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0018|android.support.constraint.solver.SolverVariable android.support.constraint.solver.SolverVariable r7 = acquireSolverVariable(android.support.constraint.solver.SolverVariable.Type.ERROR, r7)\lr5.mVariablesID++\lr5.mNumColumns++\lr7.f3id = r5.mVariablesID\lr7.strength = r6\lr5.mCache.mIndexedVariables[r5.mVariablesID] = r7\lr5.mGoal.addError(r7)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003d|RETURN\l|return r7\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+MethodNode[shape=record,label="{public android.support.constraint.solver.SolverVariable android.support.constraint.solver.LinearSystem.createErrorVariable((r5v0 'this' android.support.constraint.solver.LinearSystem A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

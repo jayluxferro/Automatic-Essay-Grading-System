@@ -1,0 +1,85 @@
+digraph "CFG forcom.google.gson.reflect.TypeToken.isAssignableFrom(Ljava\/lang\/reflect\/Type;Ljava\/lang\/reflect\/GenericArrayType;)Z" {
+subgraph cluster_Region_121102266 {
+label = "R(2:0|(2:(1:13)|(2:(1:4)(2:5|(3:7|(1:10)|14))|12))) | DECL_VAR: java.lang.Class\<?\> null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.reflect.Type java.lang.reflect.Type r2 = r2.getGenericComponentType()\l}"];
+subgraph cluster_Region_1416419774 {
+label = "R(2:(1:13)|(2:(1:4)(2:5|(3:7|(1:10)|14))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1686986775 {
+label = "IF [B:1:0x0006] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r2 instanceof java.lang.reflect.ParameterizedType) != true) goto L_0x0030\l}"];
+subgraph cluster_Region_1441039351 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0030|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_836527431 {
+label = "R(2:(1:4)(2:5|(3:7|(1:10)|14))|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1206428778 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: R(2:5|(3:7|(1:10)|14))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if ((r1 instanceof java.lang.reflect.GenericArrayType) == true) goto L_0x000c\l}"];
+subgraph cluster_Region_1882291999 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r1 = ((java.lang.reflect.GenericArrayType) r1).getGenericComponentType()\l}"];
+}
+subgraph cluster_Region_1178662987 {
+label = "R(2:5|(3:7|(1:10)|14))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|boolean boolean r0 = r1 instanceof java.lang.Class\lr1 = r1\l}"];
+subgraph cluster_IfRegion_571853315 {
+label = "IF [B:6:0x0015] THEN: R(3:7|(1:10)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (r0 == true) goto L_0x0017\l}"];
+subgraph cluster_Region_2134058294 {
+label = "R(3:7|(1:10)|14)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|java.lang.Class\<?\> r1 = (java.lang.Class) r1\l}"];
+subgraph cluster_LoopRegion_95059811 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001d|if (r1.isArray() != false) goto L_0x001f\l}"];
+subgraph cluster_Region_1666641066 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|LOOP_END\lLOOP:0: B:8:0x0019\-\>B:10:0x001f\l|r1 = r1.getComponentType()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0024|SYNTHETIC\l|r1 = r1\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x002f|RETURN\l|return isAssignableFrom(r1, (java.lang.reflect.ParameterizedType) r2, new java.util.HashMap())\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0019|LOOP_START\lPHI: r1 \l  PHI: (r1v5 java.lang.Class\<?\>) = (r1v10 java.lang.Class\<?\>), (r1v12 java.lang.Class\<?\>) binds: [B:7:0x0017, B:10:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x0019\-\>B:10:0x001f\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0024|PHI: r1 \l  PHI: (r1v2 java.lang.reflect.Type) = (r1v9 java.lang.reflect.Type), (r1v11 java.lang.Class\<?\>), (r1v13 java.lang.reflect.Type) binds: [B:6:0x0015, B:14:0x0024, B:4:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static boolean com.google.gson.reflect.TypeToken.isAssignableFrom((r1v0 java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.lang.reflect.GenericArrayType A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_8;
+Node_14 -> Node_11;
+Node_2 -> Node_3;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+}
+

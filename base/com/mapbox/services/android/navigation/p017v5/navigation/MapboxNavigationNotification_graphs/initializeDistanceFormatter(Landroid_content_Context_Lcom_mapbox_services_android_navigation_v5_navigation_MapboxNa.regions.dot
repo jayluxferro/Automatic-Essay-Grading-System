@@ -1,0 +1,27 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification.initializeDistanceFormatter(Landroid\/content\/Context;Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/MapboxNavigation;)V" {
+subgraph cluster_Region_516684487 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.api.directions.v5.models.RouteOptions com.mapbox.api.directions.p008v5.models.RouteOptions r0 = r5.getRoute().routeOptions()\lcom.mapbox.services.android.navigation.v5.utils.LocaleUtils com.mapbox.services.android.navigation.p017v5.utils.LocaleUtils r1 = new com.mapbox.services.android.navigation.p017v5.utils.LocaleUtils()\ljava.lang.String java.lang.String r2 = r1.inferDeviceLanguage(r4)\ljava.lang.String java.lang.String r1 = r1.getUnitTypeForDeviceLocale(r4)\l}"];
+subgraph cluster_IfRegion_1775841238 {
+label = "IF [B:1:0x0015] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r0 != null) goto L_0x0017\l}"];
+subgraph cluster_Region_348967483 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|java.lang.String r2 = r0.language()\ljava.lang.String r1 = r0.voiceUnits()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001f|PHI: r1 r2 \l  PHI: (r1v2 java.lang.String) = (r1v1 java.lang.String), (r1v3 java.lang.String) binds: [B:1:0x0015, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 java.lang.String) = (r2v0 java.lang.String), (r2v2 java.lang.String) binds: [B:1:0x0015, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|r3.distanceFormatter = new com.mapbox.services.android.navigation.p017v5.utils.DistanceFormatter(r4, r2, r1, r5.options().roundingIncrement())\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002e}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification.initializeDistanceFormatter((r3v0 'this' com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification A[IMMUTABLE_TYPE, THIS]), (r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.mapbox.services.android.navigation.v5.navigation.MapboxNavigation A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

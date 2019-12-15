@@ -1,0 +1,25 @@
+digraph "CFG forar.com.hjg.pngj.PngReaderFilter.read([B)I" {
+subgraph cluster_Region_1375694254 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = super.read(r4)\l}"];
+subgraph cluster_IfRegion_1791260476 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \> 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1175754572 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r3.chunkseq.feedAll(r4, 0, r0)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{public int ar.com.hjg.pngj.PngReaderFilter.read((r3v0 'this' ar.com.hjg.pngj.PngReaderFilter A[IMMUTABLE_TYPE, THIS]), (r4v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+}
+

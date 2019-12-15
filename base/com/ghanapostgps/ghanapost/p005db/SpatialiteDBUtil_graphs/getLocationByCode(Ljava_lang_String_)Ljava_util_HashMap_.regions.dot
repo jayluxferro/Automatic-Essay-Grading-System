@@ -1,0 +1,151 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.db.SpatialiteDBUtil.getLocationByCode(Ljava\/lang\/String;)Ljava\/util\/HashMap;" {
+subgraph cluster_Region_216567833 {
+label = "R(3:0|(2:2|(1:(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18))))))|21)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7 = r22\ljava.util.HashMap java.util.HashMap\<java.lang.String, java.lang.String\> r8 = new java.util.HashMap\<\>()\l}"];
+subgraph cluster_TryCatchRegion_95222288 {
+label = "Try: R(2:2|(1:(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18)))))) catches: R(2:19|20)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1131293460 {
+label = "R(2:2|(1:(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18))))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x01a4 \}\lSplitter:B:1:0x0007\l|java.util.Iterator java.util.Iterator\<java.lang.String\> r0 = r7.RegionsDB.iterator()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String r1 = r23     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_LoopRegion_1922692701 {
+label = "LOOP:0: (1:(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_616849132 {
+label = "R(1:(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1225874055 {
+label = "R(2:(1:23)|(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_94032959 {
+label = "IF [B:4:0x0013] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|Catch:\{ Exception \-\> 0x01a4 \}\l|if (r0.hasNext() != true) goto L_0x01a8     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_Region_730809807 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x01a8|SYNTHETIC\lEDGE_INSN: B:23:0x01a8\-\>B:21:0x01a8 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1295705293 {
+label = "R(2:5|(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|Catch:\{ Exception \-\> 0x01a4 \}\l|java.lang.String java.lang.String r2 = r0.next()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_IfRegion_61737854 {
+label = "IF [B:6:0x0035, B:8:0x003b] THEN: R(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18)) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|ADDED_TO_REGION\lCatch:\{ Exception \-\> 0x01a4 \}\l|if (fileExist(r7.DB_PATH + \"\/\" + r2) == true) goto L_0x0037     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|ADDED_TO_REGION\lCatch:\{ Exception \-\> 0x01a4 \}\l|if (openDataBase(r2) == true) goto L_0x003d     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_Region_833269972 {
+label = "R(2:9|(5:11|(1:13)|14|(1:16)|17)(1:18))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|Catch:\{ Exception \-\> 0x01a4 \}\l|java.lang.String r1 = r1.toUpperCase().replace(\"\-\", \"\")     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String java.lang.String r2 = r1.substring(0, r1.length() \- 4)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String java.lang.String r4 = r1.substring(r1.length() \- 4)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String java.lang.String r6 = r4.substring(2)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String java.lang.String r9 = r4.substring(0, 2)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\landroid.database.Cursor android.database.Cursor r2 = r7.mDataBase.rawQuery(\"SELECT PostCodeAsaase,District,Region,ST_MaxX(Envelope(GeomFromText(PostCodeGeo))) as NorthLatitude, ST_MinX(Envelope(GeomFromText(PostCodeGeo))) as SouthLatitude, ST_MaxY(Envelope(GeomFromText(PostCodeGeo))) as EastLongitude, ST_MinY(Envelope(GeomFromText(PostCodeGeo))) as WestLongitude FROM PostCodes WHERE PostCodeAsaase=? LIMIT 1\", new java.lang.Object[]\{r2\})     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr2.moveToFirst()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_IfRegion_1346771992 {
+label = "IF [B:10:0x007b] THEN: R(5:11|(1:13)|14|(1:16)|17) ELSE: R(1:18)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x007b|Catch:\{ Exception \-\> 0x01a4 \}\l|if (r2.getCount() \> 0) goto L_0x007d     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_Region_2057361823 {
+label = "R(5:11|(1:13)|14|(1:16)|17)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007d|Catch:\{ Exception \-\> 0x01a4 \}\l|r8.put(\"PostCode\", r2.getString(r2.getColumnIndex(\"PostCodeAsaase\")))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ljava.lang.String java.lang.String r0 = r2.getString(r2.getColumnIndex(\"District\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_IfRegion_1569630361 {
+label = "IF [B:12:0x009a] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x009a|Catch:\{ Exception \-\> 0x01a4 \}\l|if (r0.isEmpty() == false) goto L_0x009c     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_Region_772322269 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x009c|Catch:\{ Exception \-\> 0x01a4 \}\l|java.lang.String r0 = r7.aeSenc.decrypt(r0)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x00a2|Catch:\{ Exception \-\> 0x01a4 \}\lPHI: r0 \l  PHI: (r0v7 java.lang.String) = (r0v6 java.lang.String), (r0v27 java.lang.String) binds: [B:12:0x009a, B:13:0x009c] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String java.lang.String r3 = r2.getString(r2.getColumnIndex(\"Region\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_IfRegion_1945379354 {
+label = "IF [B:15:0x00b0] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00b0|Catch:\{ Exception \-\> 0x01a4 \}\l|if (r3.isEmpty() == false) goto L_0x00b2     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+subgraph cluster_Region_1036569068 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00b2|Catch:\{ Exception \-\> 0x01a4 \}\l|java.lang.String r3 = r7.aeSenc.decrypt(r3)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x00b8|Catch:\{ Exception \-\> 0x01a4 \}\lPHI: r3 \l  PHI: (r3v13 java.lang.String) = (r3v12 java.lang.String), (r3v19 java.lang.String) binds: [B:15:0x00b0, B:16:0x00b2] A[DONT_GENERATE, DONT_INLINE]\l|r8.put(\"District\", r0)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr8.put(\"Region\", r3)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr8.put(\"GPSName\", r1)     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r3 = r2.getDouble(r2.getColumnIndex(\"NorthLatitude\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r10 = r2.getDouble(r2.getColumnIndex(\"SouthLatitude\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r12 = r2.getDouble(r2.getColumnIndex(\"EastLongitude\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r14 = r2.getDouble(r2.getColumnIndex(\"WestLongitude\"))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr2.close()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr7.mDataBase.close()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r10 = (getLatitude(r6, r3, r10) * 3.0d) \/ 180.0d     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r16 = java.lang.Math.asin((java.lang.Math.sin(r10) * java.lang.Math.cos(5.54320784569654E\-7d)) + (java.lang.Math.cos(r10) * java.lang.Math.sin(5.54320784569654E\-7d) * java.lang.Math.cos(0.785398163397448d)))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\ldouble double r0 = ((getLongitude(r9, r12, r14) * 3.0d) \/ 180.0d) + java.lang.Math.atan2(java.lang.Math.sin(0.785398163397448d) * java.lang.Math.sin(5.54320784569654E\-7d) * java.lang.Math.cos(r10), java.lang.Math.cos(5.54320784569654E\-7d) \- (java.lang.Math.sin(r10) * java.lang.Math.sin(r16)))     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr8.put(\"Latitude\", ((r16 * 180.0d) \/ 3.0d) + \"\")     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr8.put(\"Longitude\", ((r0 * 180.0d) \/ 3.0d) + \"\")     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+}
+subgraph cluster_Region_1245746769 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x019a|Catch:\{ Exception \-\> 0x01a4 \}\l|r2.close()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\lr7.mDataBase.close()     \/\/ Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_370767357 {
+label = "R(2:19|20) | ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x01a4|ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0007\l}"];
+Node_20 [shape=record,label="{20\:\ 0x01a5|r0.printStackTrace()\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x01a8|RETURN\lEDGE_INSN: B:23:0x01a8\-\>B:21:0x01a8 ?: BREAK  \l|return r8\l}"];
+}
+subgraph cluster_Region_370767357 {
+label = "R(2:19|20) | ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x01a4|ExcHandler: Exception (r0v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0007\l}"];
+Node_20 [shape=record,label="{20\:\ 0x01a5|r0.printStackTrace()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007|SYNTHETIC\lSplitter:B:1:0x0007\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|LOOP_START\lCatch:\{ Exception \-\> 0x01a4 \}\lPHI: r1 \l  PHI: (r1v1 java.lang.String) = (r1v0 java.lang.String), (r1v2 java.lang.String) binds: [B:2:?, B:22:0x000f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000f\-\>B:22:0x000f\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0037|Catch:\{ Exception \-\> 0x01a4 \}\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x000f|LOOP_END\lSYNTHETIC\lPHI: r1 \l  PHI: (r1v2 java.lang.String) = (r1v1 java.lang.String), (r1v1 java.lang.String), (r1v4 java.lang.String) binds: [B:25:0x000f, B:26:0x000f, B:27:0x000f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000f\-\>B:22:0x000f\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x007d|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000f|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.HashMap\<java.lang.String, java.lang.String\> com.ghanapostgps.ghanapost.db.SpatialiteDBUtil.getLocationByCode((r22v0 'this' com.ghanapostgps.ghanapost.db.SpatialiteDBUtil A[IMMUTABLE_TYPE, THIS]), (r23v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/HashMap\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_23;
+Node_23 -> Node_21;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_25[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_26[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_18[style=dashed];
+Node_10 -> Node_24;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_21;
+Node_18 -> Node_27;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_1 -> Node_2;
+Node_1 -> Node_19;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_22 -> Node_3;
+Node_24 -> Node_11;
+Node_25 -> Node_22;
+Node_26 -> Node_22;
+Node_27 -> Node_22;
+}
+

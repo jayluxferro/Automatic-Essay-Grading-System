@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.media.ExifInterface.copy(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;)I" {
+subgraph cluster_Region_1805801128 {
+label = "R(2:0|(2:1|(2:(1:4)|(1:3))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[8192]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1848232336 {
+label = "LOOP:0: (2:1|(2:(1:4)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1165429116 {
+label = "R(2:1|(2:(1:4)|(1:3)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:3:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:3:0x000d\l|int int r3 = r5.read(r0)\l}"];
+subgraph cluster_Region_2083274934 {
+label = "R(2:(1:4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_225939884 {
+label = "IF [B:2:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|if (r3 == \-1) goto L_0x0012\l}"];
+subgraph cluster_Region_1956224641 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_2072257828 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:3:0x000d\l|r2 += r3\lr6.write(r0, 0, r3)\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static int android.support.media.ExifInterface.copy((r5v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_1;
+Node_5 -> Node_4;
+}
+

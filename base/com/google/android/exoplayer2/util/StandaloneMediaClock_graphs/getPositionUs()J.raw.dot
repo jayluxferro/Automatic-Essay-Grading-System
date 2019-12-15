@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.util.StandaloneMediaClock.getPositionUs()J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r2 I:long) = \l  (r8 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l com.google.android.exoplayer2.util.StandaloneMediaClock.baseUs long \l0x0002: IGET  (r4 I:boolean) = \l  (r8 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l com.google.android.exoplayer2.util.StandaloneMediaClock.started boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x001d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: INVOKE  (r4 I:long) =  android.os.SystemClock.elapsedRealtime():long type: STATIC \l0x000a: IGET  (r6 I:long) = \l  (r8 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l com.google.android.exoplayer2.util.StandaloneMediaClock.baseElapsedMs long \l0x000c: ARITH  (r0 I:long) = (r4 I:long) \- (r6 I:long) \l0x000e: IGET  (r4 I:com.google.android.exoplayer2.PlaybackParameters) = \l  (r8 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l com.google.android.exoplayer2.util.StandaloneMediaClock.playbackParameters com.google.android.exoplayer2.PlaybackParameters \l0x0010: IGET  (r4 I:float) = (r4 I:com.google.android.exoplayer2.PlaybackParameters) com.google.android.exoplayer2.PlaybackParameters.speed float \l0x0012: CONST  (r5 I:?[int, float, short, byte, char]) = \l  (1065353216(0x3f800000, float:1.0) ?[int, float, short, byte, char])\l \l0x0014: CMP_L  (r4 I:int) = (r4 I:float), (r5 I:float) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|0x0016: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001e \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|0x0018: INVOKE  (r4 I:long) = (r0 I:long A[D('elapsedSinceBaseMs' long)]) com.google.android.exoplayer2.C.msToUs(long):long type: STATIC \l0x001c: ARITH  (r2 I:long A[D('positionUs' long)]) = (r2 I:long A[D('positionUs' long)]) + (r4 I:long) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|0x001d: RETURN  (r2 I:long A[D('positionUs' long)]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: IGET  (r4 I:com.google.android.exoplayer2.PlaybackParameters) = \l  (r8 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l com.google.android.exoplayer2.util.StandaloneMediaClock.playbackParameters com.google.android.exoplayer2.PlaybackParameters \l0x0020: INVOKE  (r4 I:long) = \l  (r4 I:com.google.android.exoplayer2.PlaybackParameters)\l  (r0 I:long A[D('elapsedSinceBaseMs' long)])\l com.google.android.exoplayer2.PlaybackParameters.getSpeedAdjustedDurationUs(long):long type: VIRTUAL \l0x0024: ARITH  (r2 I:long A[D('positionUs' long)]) = (r2 I:long A[D('positionUs' long)]) + (r4 I:long) \l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.util.StandaloneMediaClock.getPositionUs((r8 'this' I:com.google.android.exoplayer2.util.StandaloneMediaClock A[IMMUTABLE_TYPE, THIS]))  | Debug Info:\l  0x000e\-0x001d: r0 'elapsedSinceBaseMs' long\l  0x001e\-0x0025: r0 'elapsedSinceBaseMs' long\l  0x0002\-0x0025: r2 'positionUs' long\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_5;
+}
+

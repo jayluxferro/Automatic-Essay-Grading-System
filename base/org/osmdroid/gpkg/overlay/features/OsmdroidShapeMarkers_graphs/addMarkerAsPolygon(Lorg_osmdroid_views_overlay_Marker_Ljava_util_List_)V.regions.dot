@@ -1,0 +1,110 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.OsmdroidShapeMarkers.addMarkerAsPolygon(Lorg\/osmdroid\/views\/overlay\/Marker;Ljava\/util\/List;)V" {
+subgraph cluster_Region_1770454123 {
+label = "R(3:0|(5:2|(3:5|(1:7)(0)|8)|(1:10)(1:11)|(1:14)|16)|19) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.osmdroid.util.GeoPoint org.osmdroid.util.GeoPoint r0 = r10.getPosition()\lint int r1 = r11.size()\l}"];
+subgraph cluster_IfRegion_148477929 {
+label = "IF [B:1:0x000d] THEN: R(5:2|(3:5|(1:7)(0)|8)|(1:10)(1:11)|(1:14)|16) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r11.size() \> 2) goto L_0x000f\l}"];
+subgraph cluster_Region_231024367 {
+label = "R(5:2|(3:5|(1:7)(0)|8)|(1:10)(1:11)|(1:14)|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|double[] double[] r1 = new double[r11.size()]\lint r2 = 0\lr1[0] = org.osmdroid.gpkg.overlay.features.SphericalUtil.computeDistanceBetween(r0, r11.get(0).getPosition())\lint r4 = 1\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_618344621 {
+label = "LOOP:0: (3:5|(1:7)(0)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002d|if (r4 \< r11.size()) goto L_0x002f\l}"];
+subgraph cluster_Region_726913376 {
+label = "R(3:5|(1:7)(0)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002f|r1[r4] = org.osmdroid.gpkg.overlay.features.SphericalUtil.computeDistanceBetween(r0, r11.get(r4).getPosition())\l}"];
+subgraph cluster_IfRegion_1953327244 {
+label = "IF [B:6:0x0045] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|if (r1[r4] \< r1[r5]) goto L_0x0047\l}"];
+subgraph cluster_Region_992779071 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|r5 = r4\l}"];
+}
+subgraph cluster_Region_204784114 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0048|LOOP_END\lPHI: r5 \l  PHI: (r5v2 int) = (r5v1 int), (r5v3 int) binds: [B:23:0x0048, B:22:0x0048] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0029\-\>B:8:0x0048\l|r4++\l}"];
+}
+}
+subgraph cluster_IfRegion_903072585 {
+label = "IF [B:9:0x004b] THEN: R(1:10) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004b|if (r5 \> 0) goto L_0x004d\l}"];
+subgraph cluster_Region_1717548177 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004d|int r0 = r5 \- 1\l}"];
+}
+subgraph cluster_Region_718714830 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0050|int r0 = r1.length \- 1\l}"];
+}
+}
+subgraph cluster_IfRegion_243277349 {
+label = "IF [B:13:0x0054] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0054|if (r5 \< (r1.length \- 1)) goto L_0x0056\l}"];
+subgraph cluster_Region_997000772 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0056|int r2 = r5 + 1\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x005e|r1 = r1[r0] \> r1[r2] ? r2 : r5\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0063|PHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v5 int) binds: [B:1:0x000d, B:17:0x0060] A[DONT_GENERATE, DONT_INLINE]\l|r11.add(r1, r10)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0029|LOOP_START\lPHI: r4 r5 \l  PHI: (r4v1 int) = (r4v0 int), (r4v4 int) binds: [B:2:0x000f, B:8:0x0048] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:2:0x000f, B:8:0x0048] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0029\-\>B:8:0x0048\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0052|PHI: r0 \l  PHI: (r0v1 int) = (r0v5 int), (r0v6 int) binds: [B:11:0x0050, B:10:0x004d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0058|PHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:13:0x0054, B:14:0x0056] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0060}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0062}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0066}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004b|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0048|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0048|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void org.osmdroid.gpkg.overlay.features.OsmdroidShapeMarkers.addMarkerAsPolygon((r10v0 org.osmdroid.views.overlay.Marker A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 java.util.List\<org.osmdroid.views.overlay.Marker\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/osmdroid\/views\/overlay\/Marker;, Ljava\/util\/List\<, Lorg\/osmdroid\/views\/overlay\/Marker;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_19[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_21[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_23[style=dashed];
+Node_7 -> Node_22;
+Node_8 -> Node_3;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_18;
+Node_19 -> Node_20;
+Node_3 -> Node_4;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_17 -> Node_19;
+Node_18 -> Node_19;
+Node_21 -> Node_9;
+Node_22 -> Node_8;
+Node_23 -> Node_8;
+}
+

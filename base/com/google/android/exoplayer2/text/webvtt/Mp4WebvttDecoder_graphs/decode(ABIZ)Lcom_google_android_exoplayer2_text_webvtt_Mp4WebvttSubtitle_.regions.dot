@@ -1,0 +1,82 @@
+digraph "CFG forcom.google.android.exoplayer2.text.webvtt.Mp4WebvttDecoder.decode([BIZ)Lcom\/google\/android\/exoplayer2\/text\/webvtt\/Mp4WebvttSubtitle;" {
+subgraph cluster_Region_1717668983 {
+label = "R(3:0|(1:(2:(1:6)|(2:7|(1:9)(1:10))))|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.sampleData.reset(r7, r8)\ljava.util.ArrayList java.util.List\<com.google.android.exoplayer2.text.Cue\> r2 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_LoopRegion_529089668 {
+label = "LOOP:0: (1:(2:(1:6)|(2:7|(1:9)(1:10))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|if (r6.sampleData.bytesLeft() \> 0) goto L_0x0012\l}"];
+subgraph cluster_Region_1954188659 {
+label = "R(1:(2:(1:6)|(2:7|(1:9)(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1265947179 {
+label = "R(2:(1:6)|(2:7|(1:9)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_741440384 {
+label = "IF [B:4:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r6.sampleData.bytesLeft() \< 8) goto L_0x001c\l}"];
+subgraph cluster_Region_2043258854 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|throw new com.google.android.exoplayer2.text.SubtitleDecoderException(\"Incomplete Mp4Webvtt Top Level box header found.\")\l}"];
+}
+}
+subgraph cluster_Region_713992864 {
+label = "R(2:7|(1:9)(1:10))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|int int r0 = r6.sampleData.readInt()\l}"];
+subgraph cluster_IfRegion_1509473465 {
+label = "IF [B:8:0x0032] THEN: R(1:9) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|if (r6.sampleData.readInt() == TYPE_vttc) goto L_0x0034\l}"];
+subgraph cluster_Region_1513851456 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0034|r2.add(parseVttCueBox(r6.sampleData, r6.builder, r0 \- 8))\l}"];
+}
+subgraph cluster_Region_1944295163 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0042|r6.sampleData.skipBytes(r0 \- 8)\l}"];
+}
+}
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004f|RETURN\l|return new com.google.android.exoplayer2.text.webvtt.Mp4WebvttSubtitle(r2)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a|LOOP_START\lLOOP:0: B:1:0x000a\-\>B:13:0x000a\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001c}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x000a|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x000a\-\>B:13:0x000a\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x004a|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001c|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000a|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x000a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected com.google.android.exoplayer2.text.webvtt.Mp4WebvttSubtitle com.google.android.exoplayer2.text.webvtt.Mp4WebvttDecoder.decode((r6v0 'this' com.google.android.exoplayer2.text.webvtt.Mp4WebvttDecoder A[IMMUTABLE_TYPE, THIS]), (r7v0 'bytes' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'reset' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.text.SubtitleDecoderException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_14[style=dashed];
+Node_4 -> Node_7[style=dashed];
+Node_4 -> Node_15;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_10 -> Node_17;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_11 -> Node_12;
+Node_13 -> Node_1;
+Node_14 -> Node_11;
+Node_15 -> Node_5;
+Node_16 -> Node_13;
+Node_17 -> Node_13;
+}
+

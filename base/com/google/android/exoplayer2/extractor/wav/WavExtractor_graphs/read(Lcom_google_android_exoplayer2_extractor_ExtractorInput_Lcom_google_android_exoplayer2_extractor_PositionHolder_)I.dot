@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.wav.WavExtractor.read(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;Lcom\/google\/android\/exoplayer2\/extractor\/PositionHolder;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r17.wavHeader != null) goto L_0x005e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|r17.wavHeader = com.google.android.exoplayer2.extractor.wav.WavHeaderReader.peek(r18)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r17.wavHeader != null) goto L_0x001c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|throw new com.google.android.exoplayer2.ParserException(\"Unsupported or unrecognized wav header.\")\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|com.google.android.exoplayer2.Format r15 = com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_RAW, (java.lang.String) null, r17.wavHeader.getBitrate(), 32768, r17.wavHeader.getNumChannels(), r17.wavHeader.getSampleRateHz(), r17.wavHeader.getEncoding(), (java.util.List\<byte[]\>) null, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null)\lr17.trackOutput.format(r15)\lr17.bytesPerFrame = r17.wavHeader.getBytesPerFrame()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x005e}"];
+Node_8 [shape=record,label="{8\:\ 0x0066|if (r17.wavHeader.hasDataBounds() != false) goto L_0x007a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0068|com.google.android.exoplayer2.extractor.wav.WavHeader r2 = r17.wavHeader\lcom.google.android.exoplayer2.extractor.wav.WavHeaderReader.skipToData(r18, r2)\lr17.extractorOutput.seekMap(r17)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007a|r0 = r18\lint r14 = r17.trackOutput.sampleData(r0, 32768 \- r17.pendingBytes, true)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x008e|if (r14 == \-1) goto L_0x0099\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0090|r17.pendingBytes = r17.pendingBytes + r14\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0099|int r16 = r17.pendingBytes \/ r17.bytesPerFrame\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00a3|if (r16 \<= 0) goto L_0x00d3\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00a5|long r4 = r17.wavHeader.getTimeUs(r18.getPosition() \- ((long) r17.pendingBytes))\lint r7 = r16 * r17.bytesPerFrame\lr17.pendingBytes = r17.pendingBytes \- r7\lr17.trackOutput.sampleMetadata(r4, 1, r7, r17.pendingBytes, (byte[]) null)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x00d3}"];
+Node_17 [shape=record,label="{17\:\ 0x00d4|if (r14 != \-1) goto L_0x00d8\l}"];
+Node_18 [shape=record,label="{18\:\ 0x00d6|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+Node_19 [shape=record,label="{19\:\ 0x00d8|SYNTHETIC\lRETURN\l|return 0\l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.extractor.wav.WavExtractor.read((r17v0 'this' com.google.android.exoplayer2.extractor.wav.WavExtractor A[IMMUTABLE_TYPE, THIS]), (r18v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'seekPosition' com.google.android.exoplayer2.extractor.PositionHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_19;
+}
+

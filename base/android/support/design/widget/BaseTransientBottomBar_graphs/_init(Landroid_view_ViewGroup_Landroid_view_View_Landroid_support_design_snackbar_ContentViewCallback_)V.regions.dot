@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.design.widget.BaseTransientBottomBar.\<init\>(Landroid\/view\/ViewGroup;Landroid\/view\/View;Landroid\/support\/design\/snackbar\/ContentViewCallback;)V" {
+subgraph cluster_Region_135151302 {
+label = "R(2:0|(1:11)(1:(1:9)(1:(1:4)(1:7))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_IfRegion_70144366 {
+label = "IF [B:1:0x000a] THEN: R(1:11) ELSE: R(1:(1:9)(1:(1:4)(1:7)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r3 == null) goto L_0x007a\l}"];
+subgraph cluster_Region_2064075255 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0081|throw new java.lang.IllegalArgumentException(\"Transient bottom bar must have non\-null parent\")\l}"];
+}
+subgraph cluster_Region_1445510330 {
+label = "R(1:(1:9)(1:(1:4)(1:7))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_799621303 {
+label = "IF [B:2:0x000c] THEN: R(1:9) ELSE: R(1:(1:4)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r4 == null) goto L_0x0072\l}"];
+subgraph cluster_Region_1509605645 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0079|throw new java.lang.IllegalArgumentException(\"Transient bottom bar must have non\-null content\")\l}"];
+}
+subgraph cluster_Region_418603828 {
+label = "R(1:(1:4)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_187552252 {
+label = "IF [B:3:0x000e] THEN: R(1:4) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r5 != null) goto L_0x0010\l}"];
+subgraph cluster_Region_1860474070 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r2.targetParent = r3\lr2.contentViewCallback = r5\lr2.context = r3.getContext()\landroid.support.design.internal.ThemeEnforcement.checkAppCompatTheme(r2.context)\lr2.view = (android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout) android.view.LayoutInflater.from(r2.context).inflate(getSnackbarBaseLayoutResId(), r2.targetParent, false)\lr2.view.addView(r4)\landroid.support.p000v4.view.ViewCompat.setAccessibilityLiveRegion(r2.view, 1)\landroid.support.p000v4.view.ViewCompat.setImportantForAccessibility(r2.view, 1)\landroid.support.p000v4.view.ViewCompat.setFitsSystemWindows(r2.view, true)\landroid.support.p000v4.view.ViewCompat.setOnApplyWindowInsetsListener(r2.view, new android.support.design.widget.BaseTransientBottomBar.C01022())\landroid.support.p000v4.view.ViewCompat.setAccessibilityDelegate(r2.view, new android.support.design.widget.BaseTransientBottomBar.C01033())\lr2.accessibilityManager = (android.view.accessibility.AccessibilityManager) r2.context.getSystemService(\"accessibility\")\l}"];
+}
+subgraph cluster_Region_1629082286 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0071|throw new java.lang.IllegalArgumentException(\"Transient bottom bar must have non\-null callback\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0069}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x006a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0072}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x007a}"];
+MethodNode[shape=record,label="{protected void android.support.design.widget.BaseTransientBottomBar.\<init\>((r2v0 'this' android.support.design.widget.BaseTransientBottomBar A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.ViewGroup A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.support.design.snackbar.ContentViewCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

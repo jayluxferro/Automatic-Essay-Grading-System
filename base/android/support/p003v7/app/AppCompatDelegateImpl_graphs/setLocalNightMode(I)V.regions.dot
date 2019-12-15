@@ -1,0 +1,74 @@
+digraph "CFG forandroid.support.v7.app.AppCompatDelegateImpl.setLocalNightMode(I)V" {
+subgraph cluster_Region_1728210514 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1166568260 {
+label = "Switch: 1, default: R(2:1|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|switch(r2) \{\l    case \-1: goto L_0x000b;\l    case 0: goto L_0x000b;\l    case 1: goto L_0x000b;\l    case 2: goto L_0x000b;\l    default: goto L_0x0003;\l\}\l}"];
+subgraph cluster_Region_1049705467 {
+label = "R(1:(2:(2:4|(2:(2:6|7)|(1:10)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1301709900 {
+label = "R(2:(2:4|(2:(2:6|7)|(1:10)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_970083162 {
+label = "IF [B:3:0x000d] THEN: R(2:4|(2:(2:6|7)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r1.mLocalNightMode != r2) goto L_0x000f\l}"];
+subgraph cluster_Region_1065801071 {
+label = "R(2:4|(2:(2:6|7)|(1:10)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|r1.mLocalNightMode = r2\l}"];
+subgraph cluster_Region_142569351 {
+label = "R(2:(2:6|7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1899118112 {
+label = "IF [B:5:0x0013] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r1.mApplyDayNightCalled == true) goto L_0x0015\l}"];
+subgraph cluster_Region_1511076807 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|applyDayNight()\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1404418119 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_541456097 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_1088819191 {
+label = "R(2:1|8)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|android.util.Log.i(\"AppCompatDelegate\", \"setLocalNightMode() called with an unknown mode\")\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+MethodNode[shape=record,label="{public void android.support.v7.app.AppCompatDelegateImpl.setLocalNightMode((r1v0 'this' android.support.v7.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+}
+

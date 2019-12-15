@@ -1,0 +1,17 @@
+digraph "CFG formil.nga.tiff.Rasters.validateSample(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r4 I:?[int, byte, short, char]) \< (0 ?[int, byte, short, char])  \-\> B:4:0x0009 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: INVOKE  (r0 I:int) = (r3 I:mil.nga.tiff.Rasters) mil.nga.tiff.Rasters.getSamplesPerPixel():int type: VIRTUAL \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IF  (r4 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:4:0x0009 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|0x0009: NEW_INSTANCE  (r0 I:mil.nga.tiff.util.TiffException) =  mil.nga.tiff.util.TiffException \l0x000b: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x000d: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0010: CONST_STR  (r2 I:java.lang.String) =  \"Pixel sample out of bounds. sample: \" \l0x0012: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0015: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0018: CONST_STR  (r4 I:java.lang.String) =  \", samples per pixel: \" \l0x001a: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001d: INVOKE  (r4 I:int) = (r3 I:mil.nga.tiff.Rasters) mil.nga.tiff.Rasters.getSamplesPerPixel():int type: VIRTUAL \l0x0021: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x0024: INVOKE  (r4 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0028: INVOKE  \l  (r0 I:mil.nga.tiff.util.TiffException)\l  (r4 I:java.lang.String)\l mil.nga.tiff.util.TiffException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x002b|0x002b: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private void mil.nga.tiff.Rasters.validateSample((r3 'this' I:mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,78 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.WearableExtender.getActionFromActionCompat(Landroid\/support\/v4\/app\/NotificationCompat$Action;)Landroid\/app\/Notification$Action;" {
+subgraph cluster_Region_1796935180 {
+label = "R(7:0|(1:2)(1:3)|4|(1:6)|7|(2:9|(1:11))|13) | DECL_VAR: android.os.Bundle null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.app.Notification$Action$Builder android.app.Notification.Action.Builder r0 = new android.app.Notification.Action.Builder(r4.getIcon(), r4.getTitle(), r4.getActionIntent())\l}"];
+subgraph cluster_IfRegion_1525032556 {
+label = "IF [B:1:0x0015] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r4.getExtras() != null) goto L_0x0017\l}"];
+subgraph cluster_Region_1824790143 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|android.os.Bundle r1 = new android.os.Bundle(r4.getExtras())\l}"];
+}
+subgraph cluster_Region_1604061422 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|android.os.Bundle r1 = new android.os.Bundle()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0026|PHI: r1 \l  PHI: (r1v2 android.os.Bundle) = (r1v4 android.os.Bundle), (r1v5 android.os.Bundle) binds: [B:3:0x0021, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|r1.putBoolean(\"android.support.allowGeneratedReplies\", r4.getAllowGeneratedReplies())\l}"];
+subgraph cluster_IfRegion_280201424 {
+label = "IF [B:5:0x0033] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0033|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L_0x0035\l}"];
+subgraph cluster_Region_2089116388 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|r0.setAllowGeneratedReplies(r4.getAllowGeneratedReplies())\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x003c|r0.addExtras(r1)\landroid.support.v4.app.RemoteInput[] android.support.p000v4.app.RemoteInput[] r4 = r4.getRemoteInputs()\l}"];
+subgraph cluster_IfRegion_998366017 {
+label = "IF [B:8:0x0043] THEN: R(2:9|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0043|if (r4 != null) goto L_0x0045\l}"];
+subgraph cluster_Region_635623292 {
+label = "R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0045|int int r1 = android.support.p000v4.app.RemoteInput.fromCompat(r4).length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_646624369 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004b|LOOP_START\lPHI: r2 \l  PHI: (r2v4 int) = (r2v3 int), (r2v5 int) binds: [B:9:0x0045, B:11:0x004d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:10:0x004b\-\>B:11:0x004d\l|if (r2 \< r1) goto L_0x004d\l}"];
+subgraph cluster_Region_1602760379 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004d|LOOP_END\lLOOP:0: B:10:0x004b\-\>B:11:0x004d\l|r0.addRemoteInput(r3)\lr2++\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0059|RETURN\l|return r0.build()\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ 0x0055}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0055|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static android.app.Notification$Action android.support.v4.app.NotificationCompat.WearableExtender.getActionFromActionCompat((r4v0 android.support.v4.app.NotificationCompat$Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RequiresApi, \{value=20\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_12;
+}
+

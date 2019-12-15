@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.v4.widget.ExploreByTouchHelper.requestAccessibilityFocus(I)Z" {
+subgraph cluster_Region_131186830 {
+label = "R(1:(2:(1:11)|(3:(1:8)|9|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1412892224 {
+label = "R(2:(1:11)|(3:(1:8)|9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2076752083 {
+label = "IF [B:1:0x0007, B:3:0x000f, B:5:0x0014] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r2.mManager.isEnabled() == false) goto L_0x0031\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r2.mManager.isTouchExplorationEnabled() == false) goto L_0x0031\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r2.mAccessibilityFocusedVirtualViewId == r3) goto L_0x0030\l}"];
+subgraph cluster_Region_1059348513 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0030|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_922223355 {
+label = "R(3:(1:8)|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1511065442 {
+label = "IF [B:7:0x001a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|if (r2.mAccessibilityFocusedVirtualViewId != Integer.MIN_VALUE) goto L_0x001c\l}"];
+subgraph cluster_Region_1688285907 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|clearAccessibilityFocus(r2.mAccessibilityFocusedVirtualViewId)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0021|r2.mAccessibilityFocusedVirtualViewId = r3\lr2.mHost.invalidate()\lsendEventForVirtualView(r3, 32768)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002f|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0031|RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean android.support.v4.widget.ExploreByTouchHelper.requestAccessibilityFocus((r2v0 'this' android.support.v4.widget.ExploreByTouchHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_12;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

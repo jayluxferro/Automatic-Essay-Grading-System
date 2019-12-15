@@ -1,0 +1,82 @@
+digraph "CFG forar.com.hjg.pngj.pixels.PixelsWriterMultiple.computeInitialRowsPerBand()I" {
+subgraph cluster_Region_1081908844 {
+label = "R(7:0|(1:2)|(1:7)|(1:10)|(1:15)|16|17)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (int) (((((double) r6.hintMemoryKb) * 1024.0d) \/ ((double) (r6.imgInfo.bytesPerRow + 1))) \- 5.0d)\l}"];
+subgraph cluster_IfRegion_61463854 {
+label = "IF [B:1:0x0013] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0013|if (r0 \< 1) goto L_0x0015\l}"];
+subgraph cluster_Region_1410712790 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|r0 = 1\l}"];
+}
+}
+subgraph cluster_IfRegion_1896603909 {
+label = "IF [B:4:0x0018, B:6:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|ADDED_TO_REGION\l|if (r6.hintRowsPerBand \> 0) goto L_0x001a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|ADDED_TO_REGION\l|if (r0 \> r6.hintRowsPerBand) goto L_0x001e\l}"];
+subgraph cluster_Region_1891547987 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|int r0 = r6.hintRowsPerBand\l}"];
+}
+}
+subgraph cluster_IfRegion_1961535572 {
+label = "IF [B:9:0x0024] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0024|if (r0 \> r6.imgInfo.rows) goto L_0x0026\l}"];
+subgraph cluster_Region_1496677554 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0026|int r0 = r6.imgInfo.rows\l}"];
+}
+}
+subgraph cluster_IfRegion_237236587 {
+label = "IF [B:12:0x002b, B:14:0x0033] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002b|ADDED_TO_REGION\l|if (r0 \> 2) goto L_0x002d\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0033|ADDED_TO_REGION\l|if (r0 \> (r6.imgInfo.rows \/ 8)) goto L_0x0035\l}"];
+subgraph cluster_Region_682616962 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0035|int int r1 = (r6.imgInfo.rows + (r0 \- 1)) \/ r0\lint r0 = (r6.imgInfo.rows + (r1 \/ 2)) \/ r1\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0045|PHI: r0 \l  PHI: (r0v9 int) = (r0v8 int), (r0v8 int), (r0v13 int) binds: [B:12:0x002b, B:14:0x0033, B:15:0x0035] A[DONT_GENERATE, DONT_INLINE]\l|p004ar.com.hjg.pngj.PngHelperInternal.debug(\"rows :\" + r0 + \"\/\" + r6.imgInfo.rows)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0065|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016|PHI: r0 \l  PHI: (r0v6 int) = (r0v5 int), (r0v17 int) binds: [B:1:0x0013, B:2:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020|PHI: r0 \l  PHI: (r0v7 int) = (r0v6 int), (r0v6 int), (r0v16 int) binds: [B:4:0x0018, B:6:0x001c, B:7:0x001e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002a|PHI: r0 \l  PHI: (r0v8 int) = (r0v7 int), (r0v15 int) binds: [B:9:0x0024, B:10:0x0026] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002d}"];
+MethodNode[shape=record,label="{private int ar.com.hjg.pngj.pixels.PixelsWriterMultiple.computeInitialRowsPerBand((r6v0 'this' ar.com.hjg.pngj.pixels.PixelsWriterMultiple A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

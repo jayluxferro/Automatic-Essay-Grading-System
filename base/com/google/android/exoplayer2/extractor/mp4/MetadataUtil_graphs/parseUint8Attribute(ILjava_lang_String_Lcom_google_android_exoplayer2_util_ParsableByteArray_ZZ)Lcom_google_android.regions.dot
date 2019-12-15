@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseUint8Attribute(ILjava\/lang\/String;Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;ZZ)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/Id3Frame;" {
+subgraph cluster_Region_1462656725 {
+label = "R(3:0|(1:2)|(2:7|10)(1:(1:8)(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = parseUint8AttributeValue(r7)\l}"];
+subgraph cluster_IfRegion_1466755017 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r9 == true) goto L_0x0007\l}"];
+subgraph cluster_Region_2030050401 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|int r0 = java.lang.Math.min(1, r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_923078130 {
+label = "IF [B:3:0x000c] THEN: R(2:7|10) ELSE: R(1:(1:8)(1:9))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 'value' int) = (r0v0 'value' int), (r0v2 'value' int) binds: [B:1:0x0005, B:2:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \< 0) goto L_0x0026\l}"];
+subgraph cluster_Region_761055803 {
+label = "R(2:7|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|android.util.Log.w(TAG, \"Failed to parse uint8 attribute: \" + com.google.android.exoplayer2.extractor.mp4.Atom.getAtomTypeString(r5))\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+subgraph cluster_Region_942505004 {
+label = "R(1:(1:8)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1440855241 {
+label = "IF [B:4:0x000e] THEN: R(1:8) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r8 == true) goto L_0x0010\l}"];
+subgraph cluster_Region_1156794833 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new com.google.android.exoplayer2.metadata.id3.TextInformationFrame(r6, (java.lang.String) null, java.lang.Integer.toString(r0))\l}"];
+}
+subgraph cluster_Region_1636728684 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.metadata.id3.CommentFrame(LANGUAGE_UNDEFINED, r6, java.lang.Integer.toString(r0))\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.Id3Frame com.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseUint8Attribute((r5v0 'type' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'id' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'isTextInformationFrame' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'isBoolean' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_7 -> Node_10;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_9;
+}
+

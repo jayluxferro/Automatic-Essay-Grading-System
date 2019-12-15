@@ -1,0 +1,46 @@
+digraph "CFG forandroid.support.media.ExifInterface.isThumbnail(Ljava\/util\/HashMap;)Z" {
+subgraph cluster_Region_126544058 {
+label = "R(2:0|(2:(1:8)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r0 = (android.support.media.ExifInterface.ExifAttribute) r3.get(TAG_IMAGE_LENGTH)\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r3 = (android.support.media.ExifInterface.ExifAttribute) r3.get(TAG_IMAGE_WIDTH)\l}"];
+subgraph cluster_Region_1730643594 {
+label = "R(2:(1:8)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1173185165 {
+label = "IF [B:1:0x0010, B:2:0x0012] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r0 == null) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|ADDED_TO_REGION\l|if (r3 == null) goto L_?\l}"];
+subgraph cluster_Region_1952856478 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1029292353 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|RETURN\l|return r0.getIntValue(r2.mExifByteOrder) \<= 512 && r3.getIntValue(r2.mExifByteOrder) \<= 512\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024|REMOVE\lADDED_TO_REGION\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean android.support.media.ExifInterface.isThumbnail((r2v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.HashMap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+}
+

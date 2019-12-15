@@ -1,0 +1,48 @@
+digraph "CFG forokio.GzipSink.write(Lokio\/Buffer;J)V" {
+subgraph cluster_Region_951772487 {
+label = "R(2:0|(2:6|7)(1:(1:4)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (r4 \> 0 ? 1 : (r4 == 0 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_290620309 {
+label = "IF [B:1:0x0004] THEN: R(2:6|7) ELSE: R(1:(1:4)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \< 0) goto L_0x0012\l}"];
+subgraph cluster_Region_894871839 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"byteCount \< 0: \" + r4)\l}"];
+}
+subgraph cluster_Region_1405631719 {
+label = "R(1:(1:4)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1421127107 {
+label = "IF [B:2:0x0006] THEN: R(1:4) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r0 != 0) goto L_0x0009\l}"];
+subgraph cluster_Region_1505963738 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|updateCrc(r3, r4)\lr2.deflaterSink.write(r3, r4)\l}"];
+}
+subgraph cluster_Region_1302992087 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+MethodNode[shape=record,label="{public void okio.GzipSink.write((r2v0 'this' okio.GzipSink A[IMMUTABLE_TYPE, THIS]), (r3v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+}
+

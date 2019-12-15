@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.downSampleInput([SII)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r5 I:int) = (r7 I:com.google.android.exoplayer2.audio.Sonic) com.google.android.exoplayer2.audio.Sonic.maxRequired int \l0x0002: ARITH  (r2 I:int) = (r5 I:int) \/ (r10 I:int A[D('skip' int)]) \l0x0004: IGET  (r5 I:int) = (r7 I:com.google.android.exoplayer2.audio.Sonic) com.google.android.exoplayer2.audio.Sonic.numChannels int \l0x0006: ARITH  (r3 I:int) = (r5 I:int) * (r10 I:int A[D('skip' int)]) \l0x0008: IGET  (r5 I:int) = (r7 I:com.google.android.exoplayer2.audio.Sonic) com.google.android.exoplayer2.audio.Sonic.numChannels int \l0x000a: ARITH  (r9 I:int A[D('position' int)]) = (r9 I:int A[D('position' int)]) * (r5 I:int) \l0x000b: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r0 I:?[int, byte, short, char] A[D('i' int)]) \>= (r2 I:?[int, byte, short, char] A[D('numSamples' int)])  \-\> B:6:0x0025 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000f: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: IF  (r1 I:?[int, byte, short, char] A[D('j' int)]) \>= (r3 I:?[int, byte, short, char] A[D('samplesPerValue' int)])  \-\> B:5:0x001c \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: ARITH  (r5 I:int) = (r0 I:int A[D('i' int)]) * (r3 I:int A[D('samplesPerValue' int)]) \l0x0014: ARITH  (r5 I:int) = (r5 I:int) + (r9 I:int A[D('position' int)]) \l0x0015: ARITH  (r5 I:int) = (r5 I:int) + (r1 I:int A[D('j' int)]) \l0x0016: AGET  (r5 I:short A[IMMUTABLE_TYPE]) = \l  (r8 I:short[] A[D('samples' short[]), IMMUTABLE_TYPE])\l  (r5 I:?[int, short, byte, char])\l \l0x0018: ARITH  (r4 I:int A[D('value' int)]) = (r4 I:int A[D('value' int)]) + (r5 I:int) \l0x0019: ARITH  (r1 I:int A[D('j' int)]) = (r1 I:int A[D('j' int)]) + (1 int) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|0x001c: ARITH  (r4 I:int A[D('value' int)]) = (r4 I:int A[D('value' int)]) \/ (r3 I:int A[D('samplesPerValue' int)]) \l0x001d: IGET  (r5 I:short[]) = (r7 I:com.google.android.exoplayer2.audio.Sonic) com.google.android.exoplayer2.audio.Sonic.downSampleBuffer short[] \l0x001f: CAST  (r6 I:short) = (short) (r4 I:int A[D('value' int)]) \l0x0020: APUT  \l  (r5 I:short[] A[IMMUTABLE_TYPE])\l  (r0 I:?[int, short, byte, char] A[D('i' int)])\l  (r6 I:short A[IMMUTABLE_TYPE])\l \l0x0022: ARITH  (r0 I:int A[D('i' int)]) = (r0 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|0x0025: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.audio.Sonic.downSampleInput((r7 'this' I:com.google.android.exoplayer2.audio.Sonic A[IMMUTABLE_TYPE, THIS]), (r8 I:short[] A[D('samples' short[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:int A[D('position' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:int A[D('skip' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0010\-0x0025: r1 'j' int\l  0x000f\-0x0025: r4 'value' int\l  0x000c\-0x0025: r0 'i' int\l  0x0004\-0x0025: r2 'numSamples' int\l  0x0008\-0x0025: r3 'samplesPerValue' int\l  ?\-0x0025: r8 'samples' short[]\l  ?\-0x0025: r9 'position' int\l  ?\-0x0025: r10 'skip' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+}
+

@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v4.media.MediaBrowserCompat.MediaBrowserImplBase.connect()V" {
+subgraph cluster_Region_951130422 {
+label = "R(1:(2:(2:6|7)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2028448541 {
+label = "R(2:(2:6|7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1317370936 {
+label = "IF [B:1:0x0002, B:3:0x0007] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.mState == 0) goto L_0x002c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r3.mState == 1) goto L_0x002c\l}"];
+subgraph cluster_Region_591282231 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|r3.mState = 2\lr3.mHandler.post(new android.support.p000v4.media.MediaBrowserCompat.MediaBrowserImplBase.C02861())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_334923215 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a}"];
+Node_5 [shape=record,label="{5\:\ 0x002b|throw new java.lang.IllegalStateException(\"connect() called while neigther disconnecting nor disconnected (state=\" + getStateLabel(r3.mState) + \")\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public void android.support.v4.media.MediaBrowserCompat.MediaBrowserImplBase.connect((r3v0 'this' android.support.v4.media.MediaBrowserCompat$MediaBrowserImplBase A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

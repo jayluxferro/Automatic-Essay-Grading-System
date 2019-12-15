@@ -1,0 +1,54 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidDatabaseConnection.isTableExists(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_121052138 {
+label = "R(2:0|(3:3|6|8))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.database.sqlite.SQLiteDatabase android.database.sqlite.SQLiteDatabase r0 = r5.f183db\landroid.database.Cursor android.database.Cursor r0 = r0.rawQuery(\"SELECT DISTINCT tbl_name FROM sqlite_master WHERE tbl_name = '\" + r6 + \"'\", (java.lang.String[]) null)\l}"];
+subgraph cluster_TryCatchRegion_326962534 {
+label = "Try: R(3:3|6|8) finally: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2097036226 {
+label = "R(3:3|6|8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|Catch:\{ all \-\> 0x0035 \}\l|boolean r1 = r0.getCount() \> 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|Catch:\{ all \-\> 0x0035 \}\lPHI: r1 \l  PHI: (r1v3 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"\{\}: isTableExists '\{\}' returned \{\}\", (java.lang.Object) r5, (java.lang.Object) r6, (java.lang.Object) java.lang.Boolean.valueOf(r1))     \/\/ Catch:\{ all \-\> 0x0035 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0034|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_1439879687 {
+label = "R(3:9|10|11) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|ExcHandler:  FINALLY\lSplitter:B:1:0x001d\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0036|FINALLY_INSNS\l|r0.close()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0039|throw r6\l}"];
+}
+}
+}
+subgraph cluster_Region_1439879687 {
+label = "R(3:9|10|11) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|ExcHandler:  FINALLY\lSplitter:B:1:0x001d\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0036|FINALLY_INSNS\l|r0.close()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0039|throw r6\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001d|SYNTHETIC\lSplitter:B:1:0x001d\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x0035 \}\lSplitter:B:1:0x001d\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0023|Catch:\{ all \-\> 0x0035 \}\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0025|Catch:\{ all \-\> 0x0035 \}\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0031|DONT_GENERATE\l|r0.close()\l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.android.AndroidDatabaseConnection.isTableExists((r5v0 'this' com.j256.ormlite.android.AndroidDatabaseConnection A[IMMUTABLE_TYPE, THIS]), (r6v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,16 @@
+digraph "CFG forcom.google.gson.reflect.TypeToken.getSuperclassTypeParameter(Ljava\/lang\/Class;)Ljava\/lang\/reflect\/Type;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:java.lang.reflect.Type) = (r1 I:java.lang.Class) java.lang.Class.getGenericSuperclass():java.lang.reflect.Type type: VIRTUAL \l0x0004: INSTANCE_OF  (r0 I:boolean) = (r1 I:?[OBJECT, ARRAY]) java.lang.Class \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0016 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: CHECK_CAST  (r1 I:java.lang.reflect.ParameterizedType) = (java.lang.reflect.ParameterizedType) (r1 I:?[OBJECT, ARRAY]) \l0x000a: INVOKE  (r1 I:java.lang.reflect.Type[]) = (r1 I:java.lang.reflect.ParameterizedType) java.lang.reflect.ParameterizedType.getActualTypeArguments():java.lang.reflect.Type[] type: INTERFACE \l0x000e: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000f: AGET  (r1 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY][]), (r0 I:?[int, short, byte, char]) \l0x0011: INVOKE  (r1 I:java.lang.reflect.Type) = (r1 I:java.lang.reflect.Type) com.google.gson.internal.$Gson$Types.canonicalize(java.lang.reflect.Type):java.lang.reflect.Type type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|0x0015: RETURN  (r1 I:java.lang.reflect.Type) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: NEW_INSTANCE  (r1 I:java.lang.RuntimeException) =  java.lang.RuntimeException \l0x0018: CONST_STR  (r0 I:java.lang.String) =  \"Missing type parameter.\" \l0x001a: INVOKE  (r1 I:java.lang.RuntimeException), (r0 I:java.lang.String) java.lang.RuntimeException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|0x001d: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{static java.lang.reflect.Type com.google.gson.reflect.TypeToken.getSuperclassTypeParameter((r1 I:java.lang.Class\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/Class\<, *\>;), Ljava\/lang\/reflect\/Type;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

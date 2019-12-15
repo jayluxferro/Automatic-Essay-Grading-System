@@ -1,0 +1,102 @@
+digraph "CFG forretrofit2.Retrofit.nextResponseBodyConverter(Lretrofit2\/Converter$Factory;Ljava\/lang\/reflect\/Type;[Ljava\/lang\/annotation\/Annotation;)Lretrofit2\/Converter;" {
+subgraph cluster_Region_1543830498 {
+label = "R(7:0|(2:2|(2:(1:4)|(1:5)))|6|(3:8|(1:10)|11)|12|(1:14)|16)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|retrofit2.Utils.checkNotNull(r6, \"type == null\")\lretrofit2.Utils.checkNotNull(r7, \"annotations == null\")\lint int r0 = r4.converterFactories.indexOf(r5) + 1\lint int r1 = r4.converterFactories.size()\lint r2 = r0\l}"];
+subgraph cluster_LoopRegion_1743967375 {
+label = "LOOP:0: (2:2|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0019|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x002a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0019\-\>B:5:0x002a\l|if (r2 \< r1) goto L_0x001b\l}"];
+subgraph cluster_Region_1811678428 {
+label = "R(2:2|(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001b|retrofit2.Converter retrofit2.Converter\<okhttp3.ResponseBody, ?\> r3 = r4.converterFactories.get(r2).responseBodyConverter(r6, r7, r4)\l}"];
+subgraph cluster_Region_1044943302 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1419244159 {
+label = "IF [B:3:0x0027] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0027|if (r3 != null) goto L_0x0029\l}"];
+subgraph cluster_Region_1598478037 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0029|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_450620836 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002a|LOOP_END\lLOOP:0: B:1:0x0019\-\>B:5:0x002a\l|r2++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002d|java.lang.StringBuilder java.lang.StringBuilder r7 = new java.lang.StringBuilder(\"Could not locate ResponseBody converter for \")\lr7.append(r6)\lr7.append(\".n\")\l}"];
+subgraph cluster_IfRegion_1358731381 {
+label = "IF [B:7:0x003c] THEN: R(3:8|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003c|if (r5 != null) goto L_0x003e\l}"];
+subgraph cluster_Region_85279792 {
+label = "R(3:8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003e|r7.append(\"  Skipped:\")\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1108709961 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0044|LOOP_START\lPHI: r5 \l  PHI: (r5v7 int) = (r5v6 int), (r5v9 int) binds: [B:8:0x003e, B:10:0x0046] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:9:0x0044\-\>B:10:0x0046\l|if (r5 \< r0) goto L_0x0046\l}"];
+subgraph cluster_Region_291806010 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0046|LOOP_END\lLOOP:1: B:9:0x0044\-\>B:10:0x0046\l|r7.append(\"n   * \")\lr7.append(r4.converterFactories.get(r5).getClass().getName())\lr5++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0061|r7.append(10)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0066|r7.append(\"  Tried:\")\lint int r5 = r4.converterFactories.size()\l}"];
+subgraph cluster_LoopRegion_968210946 {
+label = "LOOP:2: (1:14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0071|LOOP_START\lPHI: r0 \l  PHI: (r0v5 int) = (r0v4 int), (r0v6 int) binds: [B:12:0x0066, B:14:0x0073] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:13:0x0071\-\>B:14:0x0073\l|if (r0 \< r5) goto L_0x0073\l}"];
+subgraph cluster_Region_744613277 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0073|LOOP_END\lLOOP:2: B:13:0x0071\-\>B:14:0x0073\l|r7.append(\"n   * \")\lr7.append(r4.converterFactories.get(r0).getClass().getName())\lr0++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0097|throw new java.lang.IllegalArgumentException(r7.toString())\l}"];
+}
+Node_15 [shape=record,color=red,label="{15\:\ 0x008e}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0029|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002d|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0061|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x008e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public retrofit2.Converter\<okhttp3.ResponseBody, T\> retrofit2.Retrofit.nextResponseBodyConverter((r4v0 'this' retrofit2.Retrofit A[IMMUTABLE_TYPE, THIS]), (r5v0 retrofit2.Converter$Factory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.annotation.Annotation[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}], , \lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Lretrofit2\/Converter$Factory;, Ljava\/lang\/reflect\/Type;, [, Ljava\/lang\/annotation\/Annotation;, ), Lretrofit2\/Converter\<, Lokhttp3\/ResponseBody;, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_17;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_19[style=dashed];
+Node_10 -> Node_9;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_20[style=dashed];
+Node_14 -> Node_13;
+Node_15 -> Node_16;
+Node_17 -> Node_4;
+Node_18 -> Node_6;
+Node_19 -> Node_11;
+Node_20 -> Node_15;
+}
+

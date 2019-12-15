@@ -1,0 +1,46 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageDataTiff.drawTile([[F)Lmil\/nga\/geopackage\/extension\/coverage\/CoverageDataTiffImage;" {
+subgraph cluster_Region_926288922 {
+label = "R(4:0|(3:2|(1:4)|5)|6|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r8[0].length\lint int r2 = r8.length\lmil.nga.geopackage.extension.coverage.CoverageDataTiffImage mil.nga.geopackage.extension.coverage.CoverageDataTiffImage r3 = createImage(r1, r2)\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_1787927104 {
+label = "LOOP:0: (3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:5:0x0019] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:5:0x0019\l|if (r4 \< r2) goto L_0x000c\l}"];
+subgraph cluster_Region_1403044855 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|int r5 = 0\l}"];
+subgraph cluster_LoopRegion_301180011 {
+label = "LOOP:1: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|LOOP_START\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:2:0x000c, B:4:0x000f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:3:0x000d\-\>B:4:0x000f\l|if (r5 \< r1) goto L_0x000f\l}"];
+subgraph cluster_Region_1425101743 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|LOOP_END\lLOOP:1: B:3:0x000d\-\>B:4:0x000f\l|setPixelValue(r3, r5, r4, r8[r4][r5])\lr5++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0019|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:5:0x0019\l|r4++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|r3.writeTiff()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001f|RETURN\l|return r3\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0019|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.extension.coverage.CoverageDataTiffImage mil.nga.geopackage.extension.coverage.CoverageDataTiff.drawTile((r7v0 'this' mil.nga.geopackage.extension.coverage.CoverageDataTiff A[IMMUTABLE_TYPE, THIS]), (r8v0 float[][] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_6;
+Node_9 -> Node_5;
+}
+

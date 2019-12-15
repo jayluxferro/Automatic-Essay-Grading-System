@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.v4.view.ViewCompat.onApplyWindowInsets(Landroid\/view\/View;Landroid\/support\/v4\/view\/WindowInsetsCompat;)Landroid\/support\/v4\/view\/WindowInsetsCompat;" {
+subgraph cluster_Region_725295356 {
+label = "R(1:(2:(1:7)|(3:2|(1:4)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1025769713 {
+label = "R(2:(1:7)|(3:2|(1:4)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_260663913 {
+label = "IF [B:1:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \< 21) goto L_0x001c\l}"];
+subgraph cluster_Region_274797454 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_183136025 {
+label = "R(3:2|(1:4)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.view.WindowInsets android.view.WindowInsets r3 = (android.view.WindowInsets) android.support.p000v4.view.WindowInsetsCompat.unwrap(r3)\landroid.view.WindowInsets android.view.WindowInsets r2 = r2.onApplyWindowInsets(r3)\l}"];
+subgraph cluster_IfRegion_1502935717 {
+label = "IF [B:3:0x0010] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r2 != r3) goto L_0x0012\l}"];
+subgraph cluster_Region_533473263 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|android.view.WindowInsets r3 = new android.view.WindowInsets(r2)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001b|RETURN\l|return android.support.p000v4.view.WindowInsetsCompat.wrap(r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017|PHI: r3 \l  PHI: (r3v3 android.view.WindowInsets) = (r3v2 android.view.WindowInsets), (r3v4 android.view.WindowInsets) binds: [B:3:0x0010, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static android.support.v4.view.WindowInsetsCompat android.support.v4.view.ViewCompat.onApplyWindowInsets((r2v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.support.v4.view.WindowInsetsCompat A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,129 @@
+digraph "CFG fororg.kxml2.wap.WbxmlParser.parseElement(I)V" {
+subgraph cluster_Region_877293277 {
+label = "R(8:0|(1:2)|7|(1:9)|10|(3:12|(2:(1:16)(0)|17)|18)|(1:21)(1:22)|23)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r7.type = 2\lr7.name = resolveId(r7.tagTable, r8 & 63)\lr7.attributeCount = 0\l}"];
+subgraph cluster_IfRegion_635714675 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if ((r8 & 128) != 0) goto L_0x0014\l}"];
+subgraph cluster_Region_1939330465 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|readAttr()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001f|PHI: r8 \l  PHI: (r8v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r7.degenerated = (r8 & 64) == 0\lint int r8 = r7.depth\lr7.depth = r8 + 1\lint int r8 = r8 \<\< 2\lr7.elementStack = ensureCapacity(r7.elementStack, r8 + 4)\lr7.elementStack[r8 + 3] = r7.name\l}"];
+subgraph cluster_IfRegion_274775085 {
+label = "IF [B:8:0x003f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|if (r7.depth \>= r7.nspCounts.length) goto L_0x0041\l}"];
+subgraph cluster_Region_864780794 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0041|int[] int[] r3 = new int[(r7.depth + 4)]\ljava.lang.System.arraycopy(r7.nspCounts, 0, r3, 0, r7.nspCounts.length)\lr7.nspCounts = r3\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0051|r7.nspCounts[r7.depth] = r7.nspCounts[r7.depth \- 1]\lint int r3 = r7.attributeCount \- 1\l}"];
+subgraph cluster_LoopRegion_1901989235 {
+label = "LOOP:0: (3:12|(2:(1:16)(0)|17)|18)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0061|LOOP_START\lPHI: r3 \l  PHI: (r3v8 int) = (r3v7 int), (r3v10 int) binds: [B:10:0x0051, B:18:0x008f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:11:0x0061\-\>B:18:0x008f\l|if (r3 \> 0) goto L_0x0063\l}"];
+subgraph cluster_Region_444007939 {
+label = "R(3:12|(2:(1:16)(0)|17)|18)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0063|int r2 = 0\l}"];
+subgraph cluster_LoopRegion_1526654337 {
+label = "LOOP:1: (2:(1:16)(0)|17)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0064|LOOP_START\lPHI: r2 \l  PHI: (r2v6 int) = (r2v5 int), (r2v7 int) binds: [B:12:0x0063, B:17:0x008c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:13:0x0064\-\>B:17:0x008c\l|if (r2 \< r3) goto L_0x0066\l}"];
+subgraph cluster_Region_510967128 {
+label = "R(2:(1:16)(0)|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1034241157 {
+label = "IF [B:15:0x0072] THEN: R(1:16) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0072|if (getAttributeName(r3).equals(getAttributeName(r2)) == true) goto L_0x0074\l}"];
+subgraph cluster_Region_1016198103 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0074|java.lang.StringBuffer java.lang.StringBuffer r4 = new java.lang.StringBuffer()\lr4.append(\"Duplicate Attribute: \")\lr4.append(getAttributeName(r3))\lexception(r4.toString())\l}"];
+}
+subgraph cluster_Region_2122190010 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x008c|LOOP_END\lLOOP:1: B:13:0x0064\-\>B:17:0x008c\l|r2++\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x008f|LOOP_END\lLOOP:0: B:11:0x0061\-\>B:18:0x008f\l|r3\-\-\l}"];
+}
+}
+subgraph cluster_IfRegion_2063442082 {
+label = "IF [B:20:0x0094] THEN: R(1:21) ELSE: R(1:22)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0094|if (r7.processNsp == true) goto L_0x0096\l}"];
+subgraph cluster_Region_931813505 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0096|adjustNsp()\l}"];
+}
+subgraph cluster_Region_580787081 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x009a|r7.namespace = \"\"\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x009e|r7.elementStack[r8] = r7.namespace\lr7.elementStack[r8 + 1] = r7.prefix\lr7.elementStack[r8 + 2] = r7.name\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001e}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0066}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0092}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00b3}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0092|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x008f|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x008c|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x008c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void org.kxml2.wap.WbxmlParser.parseElement((r7v0 'this' org.kxml2.wap.WbxmlParser A[IMMUTABLE_TYPE, THIS]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, org.xmlpull.v1.XmlPullParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_25[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_26[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_28[style=dashed];
+Node_16 -> Node_27;
+Node_17 -> Node_13;
+Node_18 -> Node_11;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_23;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_14 -> Node_15;
+Node_19 -> Node_20;
+Node_25 -> Node_19;
+Node_26 -> Node_18;
+Node_27 -> Node_17;
+Node_28 -> Node_17;
+}
+

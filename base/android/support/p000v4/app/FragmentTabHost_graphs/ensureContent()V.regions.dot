@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.v4.app.FragmentTabHost.ensureContent()V" {
+subgraph cluster_Region_1650461857 {
+label = "R(1:(1:(2:2|(1:(2:4|5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_820502608 {
+label = "R(1:(2:2|(1:(2:4|5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_409049725 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(1:(2:4|5))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.mRealTabContent == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1893295270 {
+label = "R(2:2|(1:(2:4|5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.mRealTabContent = (android.widget.FrameLayout) findViewById(r3.mContainerId)\l}"];
+subgraph cluster_Region_314473240 {
+label = "R(1:(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_500493439 {
+label = "IF [B:3:0x0010] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r3.mRealTabContent == null) goto L_0x0013\l}"];
+subgraph cluster_Region_158478282 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013}"];
+Node_5 [shape=record,label="{5\:\ 0x002b|throw new java.lang.IllegalStateException(\"No tab content FrameLayout found for id \" + r3.mContainerId)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v4.app.FragmentTabHost.ensureContent((r3v0 'this' android.support.v4.app.FragmentTabHost A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

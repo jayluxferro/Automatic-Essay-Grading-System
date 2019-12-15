@@ -1,0 +1,22 @@
+digraph "CFG forcom.mapbox.api.staticmap.v1.MapboxStaticMap.Builder.build()Lcom\/mapbox\/api\/staticmap\/v1\/MapboxStaticMap;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:com.mapbox.api.staticmap.v1.MapboxStaticMap) = (r2 I:com.mapbox.api.staticmap.v1.MapboxStaticMap$Builder) com.mapbox.api.staticmap.v1.MapboxStaticMap.Builder.autoBuild():com.mapbox.api.staticmap.v1.MapboxStaticMap type: VIRTUAL \l0x0004: INVOKE  (r1 I:java.lang.String) = (r0 I:com.mapbox.api.staticmap.v1.MapboxStaticMap) com.mapbox.api.staticmap.v1.MapboxStaticMap.accessToken():java.lang.String type: VIRTUAL \l0x0008: INVOKE  (r1 I:boolean) = (r1 I:java.lang.String) com.mapbox.core.utils.MapboxUtils.isAccessTokenValid(java.lang.String):boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0021 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: INVOKE  (r1 I:java.lang.String) = (r0 I:com.mapbox.api.staticmap.v1.MapboxStaticMap) com.mapbox.api.staticmap.v1.MapboxStaticMap.styleId():java.lang.String type: VIRTUAL \l0x0012: INVOKE  (r1 I:boolean) = (r1 I:java.lang.String) java.lang.String.isEmpty():boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|0x0016: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0019 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|0x0018: RETURN  (r0 I:com.mapbox.api.staticmap.v1.MapboxStaticMap) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|0x0019: NEW_INSTANCE  (r0 I:com.mapbox.core.exceptions.ServicesException) =  com.mapbox.core.exceptions.ServicesException \l0x001b: CONST_STR  (r1 I:java.lang.String) =  \"You need to set a map style.\" \l0x001d: INVOKE  \l  (r0 I:com.mapbox.core.exceptions.ServicesException)\l  (r1 I:java.lang.String)\l com.mapbox.core.exceptions.ServicesException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|0x0020: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|0x0021: NEW_INSTANCE  (r0 I:com.mapbox.core.exceptions.ServicesException) =  com.mapbox.core.exceptions.ServicesException \l0x0023: CONST_STR  (r1 I:java.lang.String) =  \"Using Mapbox Services requires setting a valid access token.\" \l0x0025: INVOKE  \l  (r0 I:com.mapbox.core.exceptions.ServicesException)\l  (r1 I:java.lang.String)\l com.mapbox.core.exceptions.ServicesException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|0x0028: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public com.mapbox.api.staticmap.v1.MapboxStaticMap com.mapbox.api.staticmap.v1.MapboxStaticMap.Builder.build((r2 'this' I:com.mapbox.api.staticmap.v1.MapboxStaticMap$Builder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

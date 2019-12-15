@@ -1,0 +1,52 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.SqliteArchiveTileWriter.exists(Lorg\/osmdroid\/tileprovider\/tilesource\/ITileSource;J)Z" {
+subgraph cluster_Region_1464937819 {
+label = "R(1:(4:2|3|6|7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1963008143 {
+label = "Try: R(4:2|3|6|7) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1635454313 {
+label = "R(4:2|3|6|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Throwable \-\> 0x001a \}\lSplitter:B:1:0x0001\l|android.database.Cursor android.database.Cursor r1 = getTileCursor(org.osmdroid.tileprovider.modules.SqlTileWriter.getPrimaryKeyParameters(org.osmdroid.tileprovider.modules.SqlTileWriter.getIndex(r7), r6))     \/\/ Catch:\{ Throwable \-\> 0x001a \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|Catch:\{ Throwable \-\> 0x001a \}\l|boolean r2 = r1.getCount() != 0\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|Catch:\{ Throwable \-\> 0x001a \}\lPHI: r2 \l  PHI: (r2v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1.close()     \/\/ Catch:\{ Throwable \-\> 0x001a \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_1350081798 {
+label = "R(3:8|9|10) | ExcHandler: Throwable (r1v0 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|ExcHandler: Throwable (r1v0 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|android.util.Log.e(org.osmdroid.api.IMapView.LOGTAG, \"Unable to store cached tile from \" + r6.name() + \" \" + org.osmdroid.util.MapTileIndex.toString(r7), r1)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1350081798 {
+label = "R(3:8|9|10) | ExcHandler: Throwable (r1v0 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|ExcHandler: Throwable (r1v0 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|android.util.Log.e(org.osmdroid.api.IMapView.LOGTAG, \"Unable to store cached tile from \" + r6.name() + \" \" + org.osmdroid.util.MapTileIndex.toString(r7), r1)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013|Catch:\{ Throwable \-\> 0x001a \}\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015|Catch:\{ Throwable \-\> 0x001a \}\l}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.tileprovider.modules.SqliteArchiveTileWriter.exists((r5v0 'this' org.osmdroid.tileprovider.modules.SqliteArchiveTileWriter A[IMMUTABLE_TYPE, THIS]), (r6v0 org.osmdroid.tileprovider.tilesource.ITileSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

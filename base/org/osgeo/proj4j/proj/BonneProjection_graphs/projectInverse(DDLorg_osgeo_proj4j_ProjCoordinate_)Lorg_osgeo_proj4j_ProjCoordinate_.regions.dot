@@ -1,0 +1,109 @@
+digraph "CFG fororg.osgeo.proj4j.proj.BonneProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1127723696 {
+label = "R(3:0|(2:2|(1:9)(1:(1:6)(1:7)))(2:10|(1:12)(1:(1:15)(1:18)))|16)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r15\ldouble r1 = r16\lorg.osgeo.proj4j.ProjCoordinate r5 = r20\l}"];
+subgraph cluster_IfRegion_328947752 {
+label = "IF [B:1:0x000c] THEN: R(2:2|(1:9)(1:(1:6)(1:7))) ELSE: R(2:10|(1:12)(1:(1:15)(1:18)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0.spherical == true) goto L_0x000e\l}"];
+subgraph cluster_Region_1493265104 {
+label = "R(2:2|(1:9)(1:(1:6)(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|double double r13 = r0.cphi1 \- r18\lr5.f295y = r13\ldouble double r13 = org.osgeo.proj4j.util.ProjectionMath.distance(r1, r13)\lr5.f295y = (r0.cphi1 + r0.phi1) \- r13\l}"];
+subgraph cluster_IfRegion_2075214652 {
+label = "IF [B:3:0x0028] THEN: R(1:9) ELSE: R(1:(1:6)(1:7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0028|if (java.lang.Math.abs(r5.f295y) \> 1.5707963267948966d) goto L_0x0053\l}"];
+subgraph cluster_Region_1597418909 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x005a|throw new org.osgeo.proj4j.ProjectionException(\"I\")\l}"];
+}
+subgraph cluster_Region_173017928 {
+label = "R(1:(1:6)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_91081928 {
+label = "IF [B:5:0x003c] THEN: R(1:6) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x003c|if (java.lang.Math.abs(java.lang.Math.abs(r5.f295y) \- 1.5707963267948966d) \<= 1.0E\-10d) goto L_0x003e\l}"];
+subgraph cluster_Region_1466458463 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003e|r5.f294x = 0.0d\l}"];
+}
+subgraph cluster_Region_1022690588 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0043|r5.f294x = (r13 * java.lang.Math.atan2(r16, r18)) \/ java.lang.Math.cos(r5.f295y)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1924348070 {
+label = "R(2:10|(1:12)(1:(1:15)(1:18)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x005b|double double r6 = r0.am1 \- r18\lr5.f295y = r6\ldouble double r6 = org.osgeo.proj4j.util.ProjectionMath.distance(r1, r6)\lr5.f295y = org.osgeo.proj4j.util.ProjectionMath.inv_mlfn((r0.am1 + r0.f324m1) \- r6, r0.f424es, r0.f323en)\ldouble double r8 = java.lang.Math.abs(r5.f295y)\l}"];
+subgraph cluster_IfRegion_842688739 {
+label = "IF [B:11:0x007d] THEN: R(1:12) ELSE: R(1:(1:15)(1:18))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007d|if (r8 \< 1.5707963267948966d) goto L_0x007f\l}"];
+subgraph cluster_Region_1294731549 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x007f|double double r8 = java.lang.Math.sin(r5.f295y)\lr5.f294x = ((r6 * java.lang.Math.atan2(r16, r18)) * java.lang.Math.sqrt(1.0d \- ((r0.f424es * r8) * r8))) \/ java.lang.Math.cos(r5.f295y)\l}"];
+}
+subgraph cluster_Region_83883167 {
+label = "R(1:(1:15)(1:18)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_645092957 {
+label = "IF [B:14:0x00b1] THEN: R(1:15) ELSE: R(1:18) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x00b1|if (java.lang.Math.abs(r8 \- 1.5707963267948966d) \<= 1.0E\-10d) goto L_0x00b3\l}"];
+subgraph cluster_Region_650938364 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00b3|r5.f294x = 0.0d\l}"];
+}
+subgraph cluster_Region_1298970160 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00bf|throw new org.osgeo.proj4j.ProjectionException(\"I\")\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x00b7|RETURN\l|return r5\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0053}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x00a4}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x00b8}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.BonneProjection.projectInverse((r15v0 'this' org.osgeo.proj4j.proj.BonneProjection A[IMMUTABLE_TYPE, THIS]), (r16v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_7 -> Node_16;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_16;
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_17 -> Node_18;
+}
+

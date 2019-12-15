@@ -1,0 +1,31 @@
+digraph "CFG formil.nga.geopackage.extension.RTreeIndexCoreExtension.substituteSqlArguments(Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/lang\/String;Ljava\/lang\/String;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1527208024 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r2 = r2.replaceAll(TABLE_SUBSTITUTE, r3).replaceAll(GEOMETRY_COLUMN_SUBSTITUTE, r4)\l}"];
+subgraph cluster_IfRegion_1997653253 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r5 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1277601865 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|java.lang.String r2 = r2.replaceAll(PK_COLUMN_SUBSTITUTE, r5)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0014|RETURN\lPHI: r2 \l  PHI: (r2v3 java.lang.String) = (r2v2 java.lang.String), (r2v5 java.lang.String) binds: [B:1:0x000c, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|return r6 != null ? r2.replaceAll(TRIGGER_SUBSTITUTE, r6) : r2\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.lang.String mil.nga.geopackage.extension.RTreeIndexCoreExtension.substituteSqlArguments((r1v0 'this' mil.nga.geopackage.extension.RTreeIndexCoreExtension A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+}
+

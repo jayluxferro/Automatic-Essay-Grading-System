@@ -1,0 +1,175 @@
+digraph "CFG forokhttp3.MultipartBody.writeOrCountBytes(Lokio\/BufferedSink;Z)J" {
+subgraph cluster_Region_1962927909 {
+label = "R(5:(1:1)(1:2)|3|(9:5|(2:7|(1:9))|10|(1:12)|13|(1:15)(1:(2:17|18))|19|(1:21)(1:22)|23)|24|(2:(1:33)|(2:26|32))) | DECL_VAR: okio.Buffer null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1908284383 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: R(1:2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r14 == true) goto L_0x0002\l}"];
+subgraph cluster_Region_1494084172 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|okio.Buffer r13 = new okio.Buffer()\lr0 = r13\l}"];
+}
+subgraph cluster_Region_929708952 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r0 = 0\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000a|PHI: r0 r13 \l  PHI: (r0v0 okio.Buffer) = (r0v1 okio.Buffer), (r0v2 okio.Buffer) binds: [B:2:0x0009, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v1 okio.BufferedSink) = (r13v0 okio.BufferedSink), (r13v3 okio.BufferedSink) binds: [B:2:0x0009, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|int int r1 = r12.parts.size()\llong r4 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1155813363 {
+label = "LOOP:0: (9:5|(2:7|(1:9))|10|(1:12)|13|(1:15)(1:(2:17|18))|19|(1:21)(1:22)|23)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|LOOP_START\lPHI: r3 r4 \l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:3:0x000a, B:23:0x009e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 long) = (r4v0 long), (r4v3 long) binds: [B:3:0x000a, B:23:0x009e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0015\-\>B:23:0x009e\l|if (r3 \< r1) goto L_0x0017\l}"];
+subgraph cluster_Region_2045611819 {
+label = "R(9:5|(2:7|(1:9))|10|(1:12)|13|(1:15)(1:(2:17|18))|19|(1:21)(1:22)|23)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|okhttp3.MultipartBody$Part okhttp3.MultipartBody.Part r6 = r12.parts.get(r3)\lokhttp3.Headers okhttp3.Headers r7 = r6.headers\lokhttp3.RequestBody okhttp3.RequestBody r6 = r6.body\lr13.write(DASHDASH)\lr13.write(r12.boundary)\lr13.write(CRLF)\l}"];
+subgraph cluster_IfRegion_2064359008 {
+label = "IF [B:6:0x0032] THEN: R(2:7|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0032|if (r7 != null) goto L_0x0034\l}"];
+subgraph cluster_Region_24161206 {
+label = "R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|int int r8 = r7.size()\lint r9 = 0\l}"];
+subgraph cluster_LoopRegion_511750573 {
+label = "LOOP:1: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0039|LOOP_START\lPHI: r9 \l  PHI: (r9v6 int) = (r9v5 int), (r9v7 int) binds: [B:7:0x0034, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x0039\-\>B:9:0x003b\l|if (r9 \< r8) goto L_0x003b\l}"];
+subgraph cluster_Region_410948701 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003b|LOOP_END\lLOOP:1: B:8:0x0039\-\>B:9:0x003b\l|r13.writeUtf8(r7.name(r9)).write(COLONSPACE).writeUtf8(r7.value(r9)).write(CRLF)\lr9++\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0059|okhttp3.MediaType okhttp3.MediaType r7 = r6.contentType()\l}"];
+subgraph cluster_IfRegion_715174895 {
+label = "IF [B:11:0x005d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005d|if (r7 != null) goto L_0x005f\l}"];
+subgraph cluster_Region_780763158 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005f|r13.writeUtf8(\"Content\-Type: \").writeUtf8(r7.toString()).write(CRLF)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0072|long long r7 = r6.contentLength()\l}"];
+subgraph cluster_IfRegion_1111041510 {
+label = "IF [B:14:0x007a] THEN: R(1:15) ELSE: R(1:(2:17|18))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x007a|if (r7 != \-1) goto L_0x007c\l}"];
+subgraph cluster_Region_831538107 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x007c|r13.writeUtf8(\"Content\-Length: \").writeDecimalLong(r7).write(CRLF)\l}"];
+}
+subgraph cluster_Region_1900219123 {
+label = "R(1:(2:17|18)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_911927607 {
+label = "IF [B:16:0x008c] THEN: R(2:17|18) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x008c|if (r14 == true) goto L_0x008e\l}"];
+subgraph cluster_Region_955712527 {
+label = "R(2:17|18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x008e|r0.clear()\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0091|RETURN\l|return \-1\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0092|r13.write(CRLF)\l}"];
+subgraph cluster_IfRegion_966164525 {
+label = "IF [B:20:0x0097] THEN: R(1:21) ELSE: R(1:22)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0097|if (r14 == true) goto L_0x0099\l}"];
+subgraph cluster_Region_582228492 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0099|r4 += r7\l}"];
+}
+subgraph cluster_Region_234865838 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x009b|r6.writeTo(r13)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x009e|LOOP_END\lPHI: r4 \l  PHI: (r4v3 long) = (r4v1 long), (r4v4 long) binds: [B:29:0x009e, B:30:0x009e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0015\-\>B:23:0x009e\l|r13.write(CRLF)\lr3++\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x00a7|r13.write(DASHDASH)\lr13.write(r12.boundary)\lr13.write(DASHDASH)\lr13.write(CRLF)\l}"];
+subgraph cluster_Region_1349190014 {
+label = "R(2:(1:33)|(2:26|32))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_823744789 {
+label = "IF [B:25:0x00bb] THEN: R(1:33) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00bb|if (r14 != true) goto L_?\l}"];
+subgraph cluster_Region_341691292 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_529584381 {
+label = "R(2:26|32)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00bd|long long r4 = r4 + r0.size()\lr0.clear()\l}"];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r4\l}"];
+}
+}
+}
+Node_27 [shape=record,color=red,label="{27\:\ 0x008e|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x00a7|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x009e|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x009e|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0059|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private long okhttp3.MultipartBody.writeOrCountBytes((r12v0 'this' okhttp3.MultipartBody A[IMMUTABLE_TYPE, THIS]), (r13v0 okio.BufferedSink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lAnnotation[RUNTIME, javax.annotation.Nullable, \{\}], \lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r13v1, resolved type: okio.BufferedSink\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r0v0, resolved type: okio.Buffer\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r0v1, resolved type: okio.Buffer\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r13v3, resolved type: okio.BufferedSink\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r0v2, resolved type: okio.Buffer\}\lMulti\-variable type inference failed\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_28[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_31[style=dashed];
+Node_9 -> Node_8;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_19;
+Node_16 -> Node_19[style=dashed];
+Node_16 -> Node_27;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_30;
+Node_22 -> Node_29;
+Node_23 -> Node_4;
+Node_24 -> Node_25;
+Node_25 -> Node_26[style=dashed];
+Node_25 -> Node_33;
+Node_26 -> Node_32;
+Node_27 -> Node_17;
+Node_28 -> Node_24;
+Node_29 -> Node_23;
+Node_30 -> Node_23;
+Node_31 -> Node_10;
+}
+

@@ -1,0 +1,116 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.SimpleDecoderAudioRenderer.onInputFormatChanged(Lcom\/google\/android\/exoplayer2\/Format;)V" {
+subgraph cluster_Region_1441955978 {
+label = "R(4:0|(1:(1:23)(1:(1:12)(2:15|(1:17))))|(1:20)(1:24)|21)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.Format com.google.android.exoplayer2.Format r1 = r6.inputFormat\lr6.inputFormat = r7\l}"];
+subgraph cluster_IfRegion_1831641697 {
+label = "IF [B:6:0x0014] THEN: R(1:(1:23)(1:(1:12)(2:15|(1:17)))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|PHI: r0 \l  PHI: (r0v1 'drmInitDataChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((!com.google.android.exoplayer2.util.Util.areEqual(r6.inputFormat.drmInitData, r1 == null ? null : r1.drmInitData)) == true) goto L_0x0016\l}"];
+subgraph cluster_Region_250147822 {
+label = "R(1:(1:23)(1:(1:12)(2:15|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1670047887 {
+label = "IF [B:8:0x001a] THEN: R(1:23) ELSE: R(1:(1:12)(2:15|(1:17)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|if (r6.inputFormat.drmInitData == null) goto L_0x005e\l}"];
+subgraph cluster_Region_4847756 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x005e|r6.pendingDrmSession = null\l}"];
+}
+subgraph cluster_Region_1852822730 {
+label = "R(1:(1:12)(2:15|(1:17))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_659631466 {
+label = "IF [B:10:0x001e] THEN: R(1:12) ELSE: R(2:15|(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|if (r6.drmSessionManager == null) goto L_0x0020\l}"];
+subgraph cluster_Region_321615775 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002f|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(new java.lang.IllegalStateException(\"Media requires a DrmSessionManager\"), getIndex())\l}"];
+}
+subgraph cluster_Region_1550414062 {
+label = "R(2:15|(1:17))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0035|r6.pendingDrmSession = r6.drmSessionManager.acquireSession(android.os.Looper.myLooper(), r6.inputFormat.drmInitData)\l}"];
+subgraph cluster_IfRegion_1286616621 {
+label = "IF [B:16:0x0049] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0049|if (r6.pendingDrmSession == r6.drmSession) goto L_0x004b\l}"];
+subgraph cluster_Region_1646557356 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004b|r6.drmSessionManager.releaseSession(r6.pendingDrmSession)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_712735992 {
+label = "IF [B:19:0x0054] THEN: R(1:20) ELSE: R(1:24)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0054|if (r6.decoderReceivedBuffers == true) goto L_0x0056\l}"];
+subgraph cluster_Region_1031968601 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0056|r6.decoderReinitializationState = 1\l}"];
+}
+subgraph cluster_Region_1884213146 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0061|releaseDecoder()\lmaybeInitDecoder()\lr6.audioTrackNeedsConfigure = true\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0058|r6.eventDispatcher.inputFormatChanged(r7)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|PHI: r2 \l  PHI: (r2v2 com.google.android.exoplayer2.drm.DrmInitData) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0030}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0033}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0052}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x005d}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.audio.SimpleDecoderAudioRenderer.onInputFormatChanged((r6v0 'this' com.google.android.exoplayer2.audio.SimpleDecoderAudioRenderer A[IMMUTABLE_TYPE, THIS]), (r7v0 'newFormat' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_23;
+Node_23 -> Node_18;
+Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_24 -> Node_21;
+Node_21 -> Node_22;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_14;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_3;
+Node_14 -> Node_6;
+Node_18 -> Node_19;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG fororg.mapsforge.map.layer.hills.LatchedLazyFuture.throwIfException()V" {
+subgraph cluster_Region_234882375 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.concurrent.ExecutionException java.util.concurrent.ExecutionException r0 = r2.state.get()\l}"];
+subgraph cluster_Region_1901392095 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1802235783 {
+label = "IF [B:1:0x0008, B:3:0x000c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 != null) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 instanceof org.mapsforge.map.layer.hills.LatchedLazyFuture.DummyExecutionException) != true) goto L_0x000f\l}"];
+subgraph cluster_Region_1586682399 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|throw r0\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.layer.hills.LatchedLazyFuture.throwIfException((r2v0 'this' org.mapsforge.map.layer.hills.LatchedLazyFuture A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.util.concurrent.ExecutionException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+}
+

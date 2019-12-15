@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.v4.media.AudioAttributesImplBase.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_50076519 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(\"AudioAttributesCompat:\")\l}"];
+subgraph cluster_IfRegion_1555705434 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r3.mLegacyStream != \-1) goto L_0x000c\l}"];
+subgraph cluster_Region_1251743092 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|r0.append(\" stream=\")\lr0.append(r3.mLegacyStream)\lr0.append(\" derived\")\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001b|r0.append(\" usage=\")\lr0.append(android.support.p000v4.media.AudioAttributesCompat.usageToString(r3.mUsage))\lr0.append(\" content=\")\lr0.append(r3.mContentType)\lr0.append(\" flags=0x\")\lr0.append(java.lang.Integer.toHexString(r3.mFlags).toUpperCase())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0049|RETURN\l|return r0.toString()\l}"];
+}
+MethodNode[shape=record,label="{public java.lang.String android.support.v4.media.AudioAttributesImplBase.toString((r3v0 'this' android.support.v4.media.AudioAttributesImplBase A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

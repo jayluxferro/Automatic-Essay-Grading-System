@@ -1,0 +1,84 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader.parsePayload(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;J)V" {
+subgraph cluster_Region_450035704 {
+label = "R(1:(2:(2:2|13)|(2:3|(1:7)(1:(1:12)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_126760915 {
+label = "R(2:(2:2|13)|(2:3|(1:7)(1:(1:12)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_496564087 {
+label = "IF [B:1:0x0005] THEN: R(2:2|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r22.audioFormat == 2) goto L_0x0007\l}"];
+subgraph cluster_Region_1654152310 {
+label = "R(2:2|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|int int r7 = r23.bytesLeft()\lr22.output.sampleData(r23, r7)\lr22.output.sampleMetadata(r24, 1, r7, 0, (byte[]) null)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_968409389 {
+label = "R(2:3|(1:7)(1:(1:12)(0)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|int int r21 = r23.readUnsignedByte()\l}"];
+subgraph cluster_IfRegion_841131014 {
+label = "IF [B:4:0x0025, B:6:0x002b] THEN: R(1:7) ELSE: R(1:(1:12)(0))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0025|if (r21 == 0) goto L_0x0027\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|ADDED_TO_REGION\l|if (r22.hasOutputFormat != true) goto L_0x002d\l}"];
+subgraph cluster_Region_1170063955 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|byte[] r19 = new byte[r23.bytesLeft()]\lr23.readBytes(r19, 0, r19.length)\landroid.util.Pair android.util.Pair\<java.lang.Integer, java.lang.Integer\> r2 = com.google.android.exoplayer2.util.CodecSpecificDataUtil.parseAacAudioSpecificConfig(r19)\lr22.output.format(com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_AAC, (java.lang.String) null, \-1, \-1, ((java.lang.Integer) r2.second).intValue(), ((java.lang.Integer) r2.first).intValue(), java.util.Collections.singletonList(r19), (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null))\lr22.hasOutputFormat = true\l}"];
+}
+subgraph cluster_Region_1267758441 {
+label = "R(1:(1:12)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_166533210 {
+label = "IF [B:9:0x007d, B:11:0x0082] THEN: R(1:12) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x007d|if (r22.audioFormat != 10) goto L_0x0084\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0082|ADDED_TO_REGION\l|if (r21 == 1) goto L_0x0084\l}"];
+subgraph cluster_Region_989056393 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0084|int int r7 = r23.bytesLeft()\lr22.output.sampleData(r23, r7)\lr22.output.sampleMetadata(r24, 1, r7, 0, (byte[]) null)\l}"];
+}
+subgraph cluster_Region_1185971932 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0027}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0077}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x007f}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader.parsePayload((r22v0 'this' com.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader A[IMMUTABLE_TYPE, THIS]), (r23v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_11 -> Node_12;
+Node_11 -> Node_15[style=dashed];
+Node_12 -> Node_16;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

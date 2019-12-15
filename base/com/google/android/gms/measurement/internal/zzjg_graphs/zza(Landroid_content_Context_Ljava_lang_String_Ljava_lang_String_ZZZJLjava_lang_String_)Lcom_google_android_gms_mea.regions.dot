@@ -1,0 +1,173 @@
+digraph "CFG forcom.google.android.gms.measurement.internal.zzjg.zza(Landroid\/content\/Context;Ljava\/lang\/String;Ljava\/lang\/String;ZZZJLjava\/lang\/String;)Lcom\/google\/android\/gms\/measurement\/internal\/zzn;" {
+subgraph cluster_Region_601192555 {
+label = "R(2:0|(2:(2:2|3)|(4:(1:6)|(1:10)(1:(1:14))|11|(5:16|(3:18|(1:20)|22)(1:23)|24|25|29)))) | DECL_VAR: java.lang.String null, int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r30\ljava.lang.String r2 = r32\ljava.lang.String java.lang.String r1 = \"Unknown\"\landroid.content.pm.PackageManager android.content.pm.PackageManager r5 = r31.getPackageManager()\l}"];
+subgraph cluster_Region_1366246169 {
+label = "R(2:(2:2|3)|(4:(1:6)|(1:10)(1:(1:14))|11|(5:16|(3:18|(1:20)|22)(1:23)|24|25|29)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1991578706 {
+label = "IF [B:1:0x000f] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r5 == null) goto L_0x0011\l}"];
+subgraph cluster_Region_1213600608 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|r0.zzj.zzab().zzgk().zzao(\"PackageManager is null, can not log app install information\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_238466321 {
+label = "R(4:(1:6)|(1:10)(1:(1:14))|11|(5:16|(3:18|(1:20)|22)(1:23)|24|25|29))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_405035615 {
+label = "Try: R(1:6) catches: R(1:7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1712554922 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|r1 = r5.getInstallerPackageName(r2)     \/\/ Catch:\{ IllegalArgumentException \-\> 0x0027 \}\l}"];
+}
+subgraph cluster_Region_544850058 {
+label = "R(1:7) | ExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|r0.zzj.zzab().zzgk().zza(\"Error retrieving installer package name. appId\", com.google.android.gms.measurement.internal.zzef.zzam(r32))\l}"];
+}
+}
+subgraph cluster_IfRegion_2003055398 {
+label = "IF [B:9:0x003a] THEN: R(1:10) ELSE: R(1:(1:14))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003a|PHI: r1 \l  PHI: (r1v1 java.lang.String) = (r1v0 java.lang.String), (r1v17 java.lang.String) binds: [B:7:0x0027, B:6:0x0025] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 == null) goto L_0x003c\l}"];
+subgraph cluster_Region_1973533518 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003c|java.lang.String r1 = \"manual_install\"\l}"];
+}
+subgraph cluster_Region_186988567 {
+label = "R(1:(1:14)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_720983068 {
+label = "IF [B:13:0x0046] THEN: R(1:14) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0046|if (\"com.android.vending\".equals(r1) == true) goto L_0x0048\l}"];
+subgraph cluster_Region_257255389 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0048|java.lang.String r1 = \"\"\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003e|PHI: r1 \l  PHI: (r1v3 java.lang.String) = (r1v1 java.lang.String), (r1v2 java.lang.String), (r1v16 java.lang.String) binds: [B:13:0x0046, B:14:0x0048, B:10:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String r7 = r1\l}"];
+subgraph cluster_TryCatchRegion_1938876160 {
+label = "Try: R(5:16|(3:18|(1:20)|22)(1:23)|24|25|29) catches: R(2:30|32)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2140125453 {
+label = "R(5:16|(3:18|(1:20)|22)(1:23)|24|25|29)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ ?|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\lSplitter:B:15:0x004b\l|android.content.pm.PackageInfo android.content.pm.PackageInfo r1 = com.google.android.gms.common.wrappers.Wrappers.packageManager(r31).getPackageInfo(r2, 0)     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+subgraph cluster_IfRegion_538895521 {
+label = "IF [B:17:0x0054] THEN: R(3:18|(1:20)|22) ELSE: R(1:23)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0054|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l|if (r1 != null) goto L_0x0056     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+subgraph cluster_Region_122376575 {
+label = "R(3:18|(1:20)|22)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0056|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l|java.lang.CharSequence java.lang.CharSequence r3 = com.google.android.gms.common.wrappers.Wrappers.packageManager(r31).getApplicationLabel(r2)     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+subgraph cluster_IfRegion_2063775282 {
+label = "IF [B:19:0x0062] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0062|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l|if (android.text.TextUtils.isEmpty(r3) == false) goto L_0x0064     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+subgraph cluster_Region_634075780 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0064|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l|java.lang.String r4 = r3.toString()     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x006d|r4 = r1.versionName     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\lr3 = r1.versionCode     \/\/ Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+}
+subgraph cluster_Region_1084689674 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0070|r4 = \"Unknown\"\lr3 = Integer.MIN_VALUE\l}"];
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x0075|PHI: r3 r4 \l  PHI: (r3v2 int) = (r3v8 int), (r3v12 int) binds: [B:23:0x0070, B:22:0x006d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 java.lang.String) = (r4v2 java.lang.String), (r4v3 java.lang.String) binds: [B:23:0x0070, B:22:0x006d] A[DONT_GENERATE, DONT_INLINE]\l|r0.zzj.zzae()\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0088}"];
+Node_29 [shape=record,label="{29\:\ 0x00c7|RETURN\l|return new com.google.android.gms.measurement.internal.zzn(r32, r33, r4, (long) r3, r7, r0.zzj.zzad().zzao(), r0.zzj.zzz().zzc(r31, r2), (java.lang.String) null, r34, false, \"\", 0, r0.zzj.zzad().zzr(r2) ? r37 : 0, 0, r35, r36, false, r39, (java.lang.Boolean) null, 0, (java.util.List\<java.lang.String\>) null)\l}"];
+}
+subgraph cluster_Region_1239203215 {
+label = "R(2:30|32) | ExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00c8|r0.zzj.zzab().zzgk().zza(\"Error retrieving newly installed package info. appId, appName\", com.google.android.gms.measurement.internal.zzef.zzam(r32), \"Unknown\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00db|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_544850058 {
+label = "R(1:7) | ExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|r0.zzj.zzab().zzgk().zza(\"Error retrieving installer package name. appId\", com.google.android.gms.measurement.internal.zzef.zzam(r32))\l}"];
+}
+subgraph cluster_Region_1239203215 {
+label = "R(2:30|32) | ExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00c8|r0.zzj.zzab().zzgk().zza(\"Error retrieving newly installed package info. appId, appName\", com.google.android.gms.measurement.internal.zzef.zzam(r32), \"Unknown\")\l}"];
+Node_32 [shape=record,label="{32\:\ 0x00db|RETURN\l|return null\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0021|SYNTHETIC\lSplitter:B:4:0x0021\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ IllegalArgumentException \-\> 0x0027 \}\lSplitter:B:4:0x0021\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lExcHandler: IllegalArgumentException (unused java.lang.IllegalArgumentException)\lSplitter:B:4:0x0021\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0040}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004b|SYNTHETIC\lSplitter:B:15:0x004b\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0069|Catch:\{ NameNotFoundException \-\> 0x00c8 \}\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x008a}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x008d}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x008f|PHI: r18 \l  PHI: (r18v0 long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\lExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\lSplitter:B:15:0x004b\l}"];
+MethodNode[shape=record,label="{private final com.google.android.gms.measurement.internal.zzn com.google.android.gms.measurement.internal.zzjg.zza((r30v0 'this' com.google.android.gms.measurement.internal.zzjg A[IMMUTABLE_TYPE, THIS]), (r31v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r32v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r33v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r34v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r35v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r36v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r37v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r39v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_6 -> Node_9;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_11[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_11;
+Node_11 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_23[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_24;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27;
+Node_30 -> Node_32;
+Node_7 -> Node_9;
+Node_30 -> Node_32;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_8 -> Node_7;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_15 -> Node_31;
+Node_21 -> Node_22;
+Node_26 -> Node_28;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_31 -> Node_30;
+}
+

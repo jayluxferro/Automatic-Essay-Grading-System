@@ -1,0 +1,36 @@
+digraph "CFG fororg.mapsforge.map.android.util.AndroidUtil.getAvailableCacheSlots(Ljava\/lang\/String;I)J" {
+subgraph cluster_Region_999056945 {
+label = "R(2:0|(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.StatFs android.os.StatFs r0 = new android.os.StatFs(r2)\l}"];
+subgraph cluster_Region_921382285 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1883259317 {
+label = "IF [B:1:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (android.os.Build.VERSION.SDK_INT \>= 18) goto L_0x000b\l}"];
+subgraph cluster_Region_1440549519 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|RETURN\l|return r0.getAvailableBytes() \/ ((long) r3)\l}"];
+}
+}
+subgraph cluster_Region_1236548491 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|RETURN\l|return (long) (r0.getAvailableBlocks() \/ java.lang.Math.max(r3 \/ r0.getBlockSize(), 1))\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+MethodNode[shape=record,label="{public static long org.mapsforge.map.android.util.AndroidUtil.getAvailableCacheSlots((r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=18\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

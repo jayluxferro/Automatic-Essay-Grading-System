@@ -1,0 +1,31 @@
+digraph "CFG forokhttp3.internal.http2.Http2Writer.frameHeader(IIBB)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (logger.isLoggable(java.util.logging.Level.FINE) == false) goto L_0x0014\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|logger.fine(okhttp3.internal.http2.Http2.frameLog(false, r4, r5, r6, r7))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r5 \> r3.maxFrameSize) goto L_0x004a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|if ((Integer.MIN_VALUE & r4) != 0) goto L_0x003b\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001e|writeMedium(r3.sink, r5)\lr3.sink.writeByte(r6 & 255)\lr3.sink.writeByte(r7 & 255)\lr3.sink.writeInt(r4 & Integer.MAX_VALUE)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003a|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003b|java.lang.Object[] r5 = new java.lang.Object[]\{java.lang.Integer.valueOf(r4)\}\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0049|throw okhttp3.internal.http2.Http2.illegalArgument(\"reserved bit set: %s\", r5)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004a|java.lang.Object[] r4 = new java.lang.Object[]\{java.lang.Integer.valueOf(r3.maxFrameSize), java.lang.Integer.valueOf(r5)\}\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0061|throw okhttp3.internal.http2.Http2.illegalArgument(\"FRAME_SIZE_ERROR length \> %d: %d\", r4)\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.http2.Http2Writer.frameHeader((r3v0 'this' okhttp3.internal.http2.Http2Writer A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

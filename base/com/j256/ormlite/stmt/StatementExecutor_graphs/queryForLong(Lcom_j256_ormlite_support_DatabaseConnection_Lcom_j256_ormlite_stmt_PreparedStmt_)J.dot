@@ -1,0 +1,40 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.queryForLong(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Lcom\/j256\/ormlite\/stmt\/PreparedStmt;)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.support.CompiledStatement r5 = r6.compile(r5, com.j256.ormlite.stmt.StatementBuilder.StatementType.SELECT_LONG)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|SYNTHETIC\lSplitter:B:1:0x0007\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x003e \}\lSplitter:B:1:0x0007\l|com.j256.ormlite.support.DatabaseResults r1 = r5.runQuery((com.j256.ormlite.dao.ObjectCache) null)     \/\/ Catch:\{ all \-\> 0x003e \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|SYNTHETIC\lSplitter:B:3:0x000b\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ all \-\> 0x003c \}\lSplitter:B:3:0x000b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|Catch:\{ all \-\> 0x003c \}\l|if (r1.first() == false) goto L_0x0021     \/\/ Catch:\{ all \-\> 0x003c \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|Catch:\{ all \-\> 0x003c \}\l|long r2 = r1.getLong(0)     \/\/ Catch:\{ all \-\> 0x003c \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|com.j256.ormlite.misc.IOUtils.closeThrowSqlException(r1, \"results\")\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r5, \"compiled statement\")\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|RETURN\l|return r2\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0021|SYNTHETIC\lSplitter:B:9:0x0021\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ all \-\> 0x003c \}\lSplitter:B:9:0x0021\l|java.lang.StringBuilder r2 = new java.lang.StringBuilder()     \/\/ Catch:\{ all \-\> 0x003c \}\lr2.append(\"No result found in queryForLong: \")     \/\/ Catch:\{ all \-\> 0x003c \}\lr2.append(r6.getStatement())     \/\/ Catch:\{ all \-\> 0x003c \}\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|Catch:\{ all \-\> 0x003c \}\l|throw new java.sql.SQLException(r2.toString())     \/\/ Catch:\{ all \-\> 0x003c \}\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003c|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:3:0x000b\l|java.lang.Throwable r6 = th\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003e|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:1:0x0007\l|java.lang.Throwable r6 = th\l}"];
+Node_14 [shape=record,label="{14\:\ 0x003f|r1 = null\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0040|PHI: r1 r6 \l  PHI: (r1v0 com.j256.ormlite.support.DatabaseResults) = (r1v1 com.j256.ormlite.support.DatabaseResults), (r1v2 com.j256.ormlite.support.DatabaseResults) binds: [B:14:0x003f, B:12:0x003c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'th' java.lang.Throwable) = (r6v2 'th' java.lang.Throwable), (r6v3 'th' java.lang.Throwable) binds: [B:14:0x003f, B:12:0x003c] A[DONT_GENERATE, DONT_INLINE]\l|com.j256.ormlite.misc.IOUtils.closeThrowSqlException(r1, \"results\")\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r5, \"compiled statement\")\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004a|throw r6\l}"];
+MethodNode[shape=record,label="{public long com.j256.ormlite.stmt.StatementExecutor.queryForLong((r4v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r5v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 com.j256.ormlite.stmt.PreparedStmt\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, Lcom\/j256\/ormlite\/stmt\/PreparedStmt\<, TT;\>;)J]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG formil.nga.geopackage.extension.index.FeatureTableIndex.index(Lmil\/nga\/geopackage\/features\/user\/FeatureRow;)Z" {
+subgraph cluster_Region_1082011777 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.geopackage.extension.index.TableIndex mil.nga.geopackage.extension.index.TableIndex r0 = getTableIndex()\l}"];
+subgraph cluster_Region_689842715 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_992419610 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1377156939 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|boolean boolean r4 = index(r0, r4.getId(), r4.getGeometry())\lupdateLastIndexed()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_423236835 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016}"];
+Node_5 [shape=record,label="{5\:\ 0x0040|throw new mil.nga.geopackage.GeoPackageException(\"GeoPackage table is not indexed. GeoPackage: \" + getGeoPackage().getName() + \", Table: \" + getTableName())\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public boolean mil.nga.geopackage.extension.index.FeatureTableIndex.index((r3v0 'this' mil.nga.geopackage.extension.index.FeatureTableIndex A[IMMUTABLE_TYPE, THIS]), (r4v0 mil.nga.geopackage.features.user.FeatureRow A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

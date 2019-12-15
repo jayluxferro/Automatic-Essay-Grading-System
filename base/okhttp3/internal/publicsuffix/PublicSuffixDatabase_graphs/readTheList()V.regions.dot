@@ -1,0 +1,98 @@
+digraph "CFG forokhttp3.internal.publicsuffix.PublicSuffixDatabase.readTheList()V" {
+subgraph cluster_Region_1507285935 {
+label = "R(2:0|(2:3|(3:5|2d|11))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.InputStream java.io.InputStream r0 = okhttp3.internal.publicsuffix.PublicSuffixDatabase.class.getResourceAsStream(PUBLIC_SUFFIX_RESOURCE)\l}"];
+subgraph cluster_IfRegion_1698698038 {
+label = "IF [B:1:0x0008] THEN: R(2:3|(3:5|2d|11)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_593226067 {
+label = "R(2:3|(3:5|2d|11))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|okio.BufferedSource okio.BufferedSource r0 = okio.Okio.buffer((okio.Source) new okio.GzipSource(okio.Okio.source(r0)))\l}"];
+subgraph cluster_TryCatchRegion_310803973 {
+label = "Try: R(3:5|2d|11) finally: R(3:17|18|19)";
+node [shape=record,color=blue];
+subgraph cluster_Region_616618359 {
+label = "R(3:5|2d|11)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ all \-\> 0x003c \}\lSplitter:B:4:0x0018\l|byte[] byte[] r1 = new byte[r0.readInt()]     \/\/ Catch:\{ all \-\> 0x003c \}\lr0.readFully(r1)     \/\/ Catch:\{ all \-\> 0x003c \}\lbyte[] byte[] r2 = new byte[r0.readInt()]     \/\/ Catch:\{ all \-\> 0x003c \}\lr0.readFully(r2)     \/\/ Catch:\{ all \-\> 0x003c \}\l}"];
+subgraph cluster_SynchronizedRegion_953157329 {
+label = "Synchronized:R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d}"];
+subgraph cluster_Region_571835907 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|r3.publicSuffixListBytes = r1\lr3.publicSuffixExceptionListBytes = r2\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0033|r3.readCompleteLatch.countDown()\l}"];
+}
+subgraph cluster_Region_1202316387 {
+label = "R(3:17|18|19) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003c|ExcHandler:  FINALLY\lSplitter:B:4:0x0018\l}"];
+Node_18 [shape=record,label="{18\:\ 0x003d|FINALLY_INSNS\l|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0040|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_1165486507 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1202316387 {
+label = "R(3:17|18|19) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003c|ExcHandler:  FINALLY\lSplitter:B:4:0x0018\l}"];
+Node_18 [shape=record,label="{18\:\ 0x003d|FINALLY_INSNS\l|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0040|throw r1\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0018|SYNTHETIC\lSplitter:B:4:0x0018\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a|DONT_GENERATE\l|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0)\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002e|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0032|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0032: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0038}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0039|LOOP_START\lREMOVE\lLOOP:0: B:13:0x0039\-\>B:20:0x0039\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003a|SYNTHETIC\lREMOVE\lSplitter:B:14:0x003a\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|REMOVE\lSplitter:B:14:0x003a\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003b|REMOVE\l|throw r0\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0039|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:13:0x0039\-\>B:20:0x0039\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003b|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0039|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.publicsuffix.PublicSuffixDatabase.readTheList((r3v0 'this' okhttp3.internal.publicsuffix.PublicSuffixDatabase A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_17;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_4 -> Node_5;
+Node_4 -> Node_17;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_13;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_20;
+Node_15 -> Node_21;
+Node_15 -> Node_22;
+Node_20 -> Node_13;
+Node_21 -> Node_16;
+Node_22 -> Node_20;
+}
+

@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ExtractorMediaPeriod.readData(ILcom\/google\/android\/exoplayer2\/FormatHolder;Lcom\/google\/android\/exoplayer2\/decoder\/DecoderInputBuffer;Z)I" {
+subgraph cluster_Region_521676044 {
+label = "R(1:(2:(1:4)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1682336879 {
+label = "R(2:(1:4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1351967776 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r8.notifyReset == true) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (isPendingReset() == true) goto L_0x000a\l}"];
+subgraph cluster_Region_779980290 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-3\l}"];
+}
+}
+subgraph cluster_Region_1880358532 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r8.sampleQueues.valueAt(r9).readData(r10, r11, r12, r8.loadingFinished, r8.lastSeekPositionUs)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{int com.google.android.exoplayer2.source.ExtractorMediaPeriod.readData((r8v0 'this' com.google.android.exoplayer2.source.ExtractorMediaPeriod A[IMMUTABLE_TYPE, THIS]), (r9v0 'track' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'formatHolder' com.google.android.exoplayer2.FormatHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'buffer' com.google.android.exoplayer2.decoder.DecoderInputBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'formatRequired' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

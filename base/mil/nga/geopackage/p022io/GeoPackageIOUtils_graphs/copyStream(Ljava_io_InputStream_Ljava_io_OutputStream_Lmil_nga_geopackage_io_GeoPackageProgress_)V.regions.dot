@@ -1,0 +1,96 @@
+digraph "CFG formil.nga.geopackage.io.GeoPackageIOUtils.copyStream(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;Lmil\/nga\/geopackage\/io\/GeoPackageProgress;)V" {
+subgraph cluster_Region_1801620314 {
+label = "R(3:0|(1:(2:(1:13)|(2:4|(2:(1:12)|(2:6|(1:8)(0))))))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[1024]\l}"];
+subgraph cluster_LoopRegion_560263663 {
+label = "LOOP:0: (1:(2:(1:13)|(2:4|(2:(1:12)|(2:6|(1:8)(0))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_664355226 {
+label = "R(1:(2:(1:13)|(2:4|(2:(1:12)|(2:6|(1:8)(0))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_236709317 {
+label = "R(2:(1:13)|(2:4|(2:(1:12)|(2:6|(1:8)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1639543151 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lLOOP:0: B:1:0x0004\-\>B:11:0x0004\l|if (r5 != null) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r5.isActive() != true) goto L_0x001c\l}"];
+subgraph cluster_Region_1741954878 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001c|SYNTHETIC\lEDGE_INSN: B:13:0x001c\-\>B:9:0x001c ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1635628317 {
+label = "R(2:4|(2:(1:12)|(2:6|(1:8)(0))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|int int r1 = r3.read(r0)\l}"];
+subgraph cluster_Region_179046351 {
+label = "R(2:(1:12)|(2:6|(1:8)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_169919185 {
+label = "IF [B:5:0x0010] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (r1 \<= 0) goto L_0x001c\l}"];
+subgraph cluster_Region_1531510418 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001c|SYNTHETIC\lEDGE_INSN: B:12:0x001c\-\>B:9:0x001c ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1546605294 {
+label = "R(2:6|(1:8)(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|r4.write(r0, 0, r1)\l}"];
+subgraph cluster_IfRegion_1909513885 {
+label = "IF [B:7:0x0016] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r5 != null) goto L_0x0018\l}"];
+subgraph cluster_Region_1969725588 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|r5.addProgress(r1)\l}"];
+}
+subgraph cluster_Region_918164086 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001c|EDGE_INSN: B:12:0x001c\-\>B:9:0x001c ?: BREAK  \lEDGE_INSN: B:13:0x001c\-\>B:9:0x001c ?: BREAK  \l|r4.flush()\lr4.close()\lr3.close()\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0004|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x0004\-\>B:11:0x0004\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0004|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0004|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void mil.nga.geopackage.io.GeoPackageIOUtils.copyStream((r3v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 mil.nga.geopackage.io.GeoPackageProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_12 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_15;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_11 -> Node_1;
+Node_14 -> Node_11;
+Node_15 -> Node_11;
+}
+

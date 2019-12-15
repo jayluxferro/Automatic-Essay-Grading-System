@@ -1,0 +1,20 @@
+digraph "CFG fororg.mapsforge.map.android.view.MapView.onChange()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r4 I:org.mapsforge.map.android.view.MapView) org.mapsforge.map.android.view.MapView.getChildCount():int type: VIRTUAL \l0x0004: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r1 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:6:0x0021 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: INVOKE  (r2 I:android.view.View) = (r4 I:org.mapsforge.map.android.view.MapView), (r1 I:int) org.mapsforge.map.android.view.MapView.getChildAt(int):android.view.View type: VIRTUAL \l0x000b: IGET  (r3 I:org.mapsforge.map.android.input.MapZoomControls) = (r4 I:org.mapsforge.map.android.view.MapView) org.mapsforge.map.android.view.MapView.mapZoomControls org.mapsforge.map.android.input.MapZoomControls \l0x000d: INVOKE  (r2 I:boolean) = (r2 I:java.lang.Object), (r3 I:java.lang.Object) java.lang.Object.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x001e \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: IGET  (r0 I:android.os.Handler) = (r4 I:org.mapsforge.map.android.view.MapView) org.mapsforge.map.android.view.MapView.layoutHandler android.os.Handler \l0x0015: NEW_INSTANCE  (r1 I:org.mapsforge.map.android.view.MapView$1) =  org.mapsforge.map.android.view.MapView$1 \l0x0017: INVOKE  \l  (r1 I:org.mapsforge.map.android.view.MapView$1)\l  (r4 I:org.mapsforge.map.android.view.MapView)\l org.mapsforge.map.android.view.MapView.1.\<init\>(org.mapsforge.map.android.view.MapView):void type: DIRECT \l0x001a: INVOKE  (r0 I:android.os.Handler), (r1 I:java.lang.Runnable) android.os.Handler.post(java.lang.Runnable):boolean type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|0x001e: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0021|0x0021: RETURN   \l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.android.view.MapView.onChange((r4 'this' I:org.mapsforge.map.android.view.MapView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_1;
+}
+

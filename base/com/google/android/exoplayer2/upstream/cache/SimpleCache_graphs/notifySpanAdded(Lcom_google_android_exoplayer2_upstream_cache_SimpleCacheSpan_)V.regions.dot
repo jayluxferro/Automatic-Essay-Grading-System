@@ -1,0 +1,42 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.SimpleCache.notifySpanAdded(Lcom\/google\/android\/exoplayer2\/upstream\/cache\/SimpleCacheSpan;)V" {
+subgraph cluster_Region_693828331 {
+label = "R(3:0|(2:2|(1:4))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList\<com.google.android.exoplayer2.upstream.cache.Cache.Listener\> r1 = r4.listeners.get(r5.key)\l}"];
+subgraph cluster_IfRegion_2101539805 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r1 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_1445323820 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|int int r0 = r1.size() \- 1\l}"];
+subgraph cluster_LoopRegion_2024865306 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|LOOP_START\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:2:0x000c, B:4:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0012\-\>B:4:0x0014\l|if (r0 \>= 0) goto L_0x0014\l}"];
+subgraph cluster_Region_105111109 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|LOOP_END\lLOOP:0: B:3:0x0012\-\>B:4:0x0014\l|r1.get(r0).onSpanAdded(r4, r5)\lr0\-\-\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0020|r4.evictor.onSpanAdded(r4, r5)\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.upstream.cache.SimpleCache.notifySpanAdded((r4v0 'this' com.google.android.exoplayer2.upstream.cache.SimpleCache A[IMMUTABLE_TYPE, THIS]), (r5v0 'span' com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_5;
+}
+

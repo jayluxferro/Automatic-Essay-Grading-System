@@ -1,0 +1,24 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.recordFatalFirebaseEvent(J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (firebaseCrashExists() == false) goto L_0x0012\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Skipping logging Crashlytics event to Firebase, FirebaseCrash exists\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r3.firebaseAnalyticsLogger == null) goto L_0x0040\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Logging Crashlytics event to Firebase\")\landroid.os.Bundle r0 = new android.os.Bundle()\lr0.putInt(FIREBASE_REALTIME, 1)\lr0.putInt(\"fatal\", 1)\lr0.putLong(\"timestamp\", r4)\lr3.firebaseAnalyticsLogger.logEvent(FIREBASE_ANALYTICS_ORIGIN_CRASHLYTICS, \"_ae\", r0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0040|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Skipping logging Crashlytics event to Firebase, no Firebase Analytics\")\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.recordFatalFirebaseEvent((r3v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+}
+

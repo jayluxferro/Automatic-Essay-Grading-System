@@ -1,0 +1,22 @@
+digraph "CFG forokio.ByteString.hmac(Ljava\/lang\/String;Lokio\/ByteString;)Lokio\/ByteString;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}\lSplitter:B:0:0x0000\l|javax.crypto.Mac r0 = javax.crypto.Mac.getInstance(r3)     \/\/ Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}\lr0.init(new javax.crypto.spec.SecretKeySpec(r4.toByteArray(), r3))     \/\/ Catch:\{ NoSuchAlgorithmException \-\> 0x0022, InvalidKeyException \-\> 0x001b \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001a|RETURN\l|return m183of(r0.doFinal(r2.data))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|ExcHandler: InvalidKeyException (r3v2 'e' java.security.InvalidKeyException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.security.InvalidKeyException r3 = move\-exception\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|throw new java.lang.IllegalArgumentException(r3)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|ExcHandler: NoSuchAlgorithmException (r3v1 'e' java.security.NoSuchAlgorithmException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.security.NoSuchAlgorithmException r3 = move\-exception\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|throw new java.lang.AssertionError(r3)\l}"];
+MethodNode[shape=record,label="{private okio.ByteString okio.ByteString.hmac((r2v0 'this' okio.ByteString A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 okio.ByteString A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

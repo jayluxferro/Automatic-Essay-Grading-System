@@ -1,0 +1,73 @@
+digraph "CFG forcom.j256.ormlite.android.apptools.OrmLiteConfigUtil.findResRawDir(Ljava\/io\/File;)Ljava\/io\/File;" {
+subgraph cluster_Region_2132391457 {
+label = "R(3:0|(3:2|(2:6|(1:(1:9)))|10)|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r6.listFiles().length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1953059409 {
+label = "LOOP:0: (3:2|(2:6|(1:(1:9)))|10)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:10:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:10:0x002d\l|if (r2 \< r0) goto L_0x0009\l}"];
+subgraph cluster_Region_525434738 {
+label = "R(3:2|(2:6|(1:(1:9)))|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r3 = r6[r2]\l}"];
+subgraph cluster_IfRegion_1421468092 {
+label = "IF [B:3:0x0015, B:5:0x001b] THEN: R(2:6|(1:(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|ADDED_TO_REGION\l|if (r3.getName().equals(RESOURCE_DIR_NAME) == true) goto L_0x0017\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|ADDED_TO_REGION\l|if (r3.isDirectory() == true) goto L_0x001d\l}"];
+subgraph cluster_Region_740639211 {
+label = "R(2:6|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001d|java.io.File[] java.io.File[] r3 = r3.listFiles(new com.j256.ormlite.android.apptools.OrmLiteConfigUtil.C09391())\l}"];
+subgraph cluster_Region_1388500355 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1161866885 {
+label = "IF [B:7:0x0028] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|if (r3.length == 1) goto L_0x002a\l}"];
+subgraph cluster_Region_2010816690 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002c|RETURN\l|return r3[0]\l}"];
+}
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002d|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:10:0x002d\l|r2++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0030|RETURN\l|return null\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002a}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.io.File com.j256.ormlite.android.apptools.OrmLiteConfigUtil.findResRawDir((r6v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_13;
+Node_7 -> Node_16[style=dashed];
+Node_10 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_12 -> Node_11;
+Node_13 -> Node_8;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+Node_16 -> Node_10;
+}
+

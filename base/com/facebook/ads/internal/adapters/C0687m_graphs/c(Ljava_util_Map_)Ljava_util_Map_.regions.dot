@@ -1,0 +1,40 @@
+digraph "CFG forcom.facebook.ads.internal.adapters.m.c(Ljava\/util\/Map;)Ljava\/util\/Map;" {
+subgraph cluster_Region_1205444493 {
+label = "R(4:0|(1:2)|(1:5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashMap java.util.HashMap r0 = new java.util.HashMap()\l}"];
+subgraph cluster_IfRegion_1373691563 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r4.containsKey(\"view\") == true) goto L_0x000d\l}"];
+subgraph cluster_Region_1553435992 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|r0.put(\"view\", r4.get(\"view\"))\l}"];
+}
+}
+subgraph cluster_IfRegion_50019057 {
+label = "IF [B:4:0x001e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|if (r4.containsKey(\"snapshot\") == true) goto L_0x0020\l}"];
+subgraph cluster_Region_1820749470 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|r0.put(\"snapshot\", r4.get(\"snapshot\"))\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002b|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018}"];
+MethodNode[shape=record,label="{private java.util.Map\<java.lang.String, java.lang.String\> com.facebook.ads.internal.adapters.m.c((r3v0 'this' com.facebook.ads.internal.adapters.m A[IMMUTABLE_TYPE, THIS]), (r4v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map, \<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;), Ljava\/util\/Map, \<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+}
+

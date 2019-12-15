@@ -1,0 +1,29 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.sumOfDouble(Lkotlin\/sequences\/Sequence;)D" {
+subgraph cluster_Region_1242009449 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"$receiver\")\ljava.util.Iterator r4 = r4.iterator()\ldouble r0 = 0.0d\l}"];
+subgraph cluster_LoopRegion_1415630403 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r4.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_305241609 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|LOOP_END\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l|r0 += r2.doubleValue()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001d|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|LOOP_START\lPHI: r0 \l  PHI: (r0v2 double) = (r0v1 double), (r0v3 double) binds: [B:0:0x0000, B:3:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.sequences.SequencesKt___SequencesKt.sumOfDouble((r4v0 kotlin.sequences.Sequence\<java.lang.Double\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lkotlin\/sequences\/Sequence\<, Ljava\/lang\/Double;, \>;)D]\}], Annotation[BUILD, kotlin.jvm.JvmName, \{name=sumOfDouble\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

@@ -1,0 +1,86 @@
+digraph "CFG forandroid.support.v4.app.FragmentActivity.markState(Landroid\/support\/v4\/app\/FragmentManager;Landroid\/arch\/lifecycle\/Lifecycle$State;)Z" {
+subgraph cluster_Region_795077818 {
+label = "R(3:0|(2:3|(3:(1:7)|8|(1:10)(0))(0))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r4 = r4.getFragments().iterator()\lboolean r0 = false\l}"];
+subgraph cluster_LoopRegion_158869920 {
+label = "LOOP:0: (2:3|(3:(1:7)|8|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|if (r4.hasNext() != false) goto L_0x000f\l}"];
+subgraph cluster_Region_1254901034 {
+label = "R(2:3|(3:(1:7)|8|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|android.support.v4.app.Fragment r1 = r4.next()\l}"];
+subgraph cluster_IfRegion_1126037712 {
+label = "IF [B:4:0x0015] THEN: R(3:(1:7)|8|(1:10)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|if (r1 != null) goto L_0x0018\l}"];
+subgraph cluster_Region_2097713306 {
+label = "R(3:(1:7)|8|(1:10)(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1050661439 {
+label = "IF [B:6:0x0026] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|if (r1.getLifecycle().getCurrentState().isAtLeast(android.arch.lifecycle.Lifecycle.State.STARTED) == true) goto L_0x0028\l}"];
+subgraph cluster_Region_1289971677 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|r1.mLifecycleRegistry.markState(r5)\lr0 = true\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002e|PHI: r0 \l  PHI: (r0v3 boolean) = (r0v1 boolean), (r0v6 boolean) binds: [B:6:0x0026, B:7:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|android.support.v4.app.FragmentManager android.support.p000v4.app.FragmentManager r1 = r1.peekChildFragmentManager()\l}"];
+subgraph cluster_IfRegion_1304339901 {
+label = "IF [B:9:0x0032] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|if (r1 != null) goto L_0x0034\l}"];
+subgraph cluster_Region_1197506912 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|r0 \|= markState(r1, r5)\l}"];
+}
+subgraph cluster_Region_1986189669 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1580148630 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003a|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009|LOOP_START\lPHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v2 boolean) binds: [B:0:0x0000, B:12:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:12:0x0009\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0009|LOOP_END\lSYNTHETIC\lPHI: r0 \l  PHI: (r0v2 boolean) = (r0v1 boolean), (r0v3 boolean), (r0v4 boolean) binds: [B:14:0x0009, B:15:0x0009, B:16:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:12:0x0009\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003a|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0009|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0009|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0009|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static boolean android.support.v4.app.FragmentActivity.markState((r4v0 android.support.v4.app.FragmentManager A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.arch.lifecycle.Lifecycle$State A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_13[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_14[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_16;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_12 -> Node_1;
+Node_13 -> Node_11;
+Node_14 -> Node_12;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+}
+

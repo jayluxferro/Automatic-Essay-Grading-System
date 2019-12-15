@@ -1,0 +1,36 @@
+digraph "CFG fororg.mapsforge.map.layer.queue.Job.\<init\>(Lorg\/mapsforge\/core\/model\/Tile;Z)V" {
+subgraph cluster_Region_1297153213 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_262979350 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1859580009 {
+label = "IF [B:1:0x0003] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r5 != null) goto L_0x0005\l}"];
+subgraph cluster_Region_1713759668 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r4.tile = r5\lr4.hasAlpha = r6\lr4.key = composeKey(r4.tile.zoomLevel, (long) r4.tile.tileX, (long) r4.tile.tileY)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_752503001 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|throw new java.lang.IllegalArgumentException(\"tile must not be null\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.layer.queue.Job.\<init\>((r4v0 'this' org.mapsforge.map.layer.queue.Job A[IMMUTABLE_TYPE, THIS]), (r5v0 org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,50 @@
+digraph "CFG fororg.osmdroid.tileprovider.tilesource.TileSourceFactory.removeTileSources(Ljava\/lang\/String;)I" {
+subgraph cluster_Region_1321221452 {
+label = "R(3:0|(2:(1:4)(0)|5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = mTileSources.size() \- 1\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_772213141 {
+label = "LOOP:0: (2:(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r0 r1 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:5:0x0024] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:5:0x0024] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:5:0x0024\l|if (r0 \>= 0) goto L_0x000b\l}"];
+subgraph cluster_Region_854083223 {
+label = "R(2:(1:4)(0)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_896019857 {
+label = "IF [B:3:0x001b] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|if (mTileSources.get(r0).name().matches(r3) == true) goto L_0x001d\l}"];
+subgraph cluster_Region_2047691821 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|mTileSources.remove(r0)\lr1++\l}"];
+}
+subgraph cluster_Region_160434524 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0024|LOOP_END\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:9:0x0024, B:8:0x0024] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:5:0x0024\l|r0\-\-\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0027|RETURN\l|return r1\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0027|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static int org.osmdroid.tileprovider.tilesource.TileSourceFactory.removeTileSources((r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+Node_9 -> Node_5;
+}
+

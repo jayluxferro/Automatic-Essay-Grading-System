@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.v4.util.ArraySet.removeAll(Landroid\/support\/v4\/util\/ArraySet;)Z" {
+subgraph cluster_Region_2099829341 {
+label = "R(3:0|(1:2)|(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r6.mSize\lint int r1 = r5.mSize\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_217460759 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:2:0x0008\l|if (r3 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_301296021 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:2:0x0008\l|remove(r6.valueAt(r3))\lr3++\l}"];
+}
+}
+subgraph cluster_Region_1479854878 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_425139015 {
+label = "IF [B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r1 != r5.mSize) goto L_0x0016\l}"];
+subgraph cluster_Region_1198569518 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_601711163 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.util.ArraySet.removeAll((r5v0 'this' android.support.v4.util.ArraySet A[IMMUTABLE_TYPE, THIS]), (r6v0 android.support.v4.util.ArraySet\<? extends E\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/support\/v4\/util\/ArraySet\<, +TE;\>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_3;
+}
+

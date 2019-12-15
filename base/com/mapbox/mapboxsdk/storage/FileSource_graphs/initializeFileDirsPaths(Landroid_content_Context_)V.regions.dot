@@ -1,0 +1,35 @@
+digraph "CFG forcom.mapbox.mapboxsdk.storage.FileSource.initializeFileDirsPaths(Landroid\/content\/Context;)V" {
+subgraph cluster_Region_106525697 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.utils.ThreadUtils.checkThread(android.support.media.ExifInterface.TAG_FILE_SOURCE)\llockPathLoaders()\l}"];
+subgraph cluster_Region_1117264086 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1773596074 {
+label = "IF [B:1:0x000a, B:3:0x000e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (resourcesCachePath == null) goto L_0x0010\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if (internalCachePath == null) goto L_0x0010\l}"];
+subgraph cluster_Region_306601000 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|new com.mapbox.mapboxsdk.storage.FileSource.FileDirsPathsTask().execute(new android.content.Context[]\{r3\})\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void com.mapbox.mapboxsdk.storage.FileSource.initializeFileDirsPaths((r3v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.UiThread, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

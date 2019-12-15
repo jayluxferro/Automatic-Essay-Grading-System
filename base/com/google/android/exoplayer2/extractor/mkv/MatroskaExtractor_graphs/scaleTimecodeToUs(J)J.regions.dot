@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.scaleTimecodeToUs(J)J" {
+subgraph cluster_Region_856142419 {
+label = "R(1:(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1659746723 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_134142334 {
+label = "IF [B:1:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r7.timecodeScale == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x000b\l}"];
+subgraph cluster_Region_1098907921 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|throw new com.google.android.exoplayer2.ParserException(\"Can't scale timecode prior to timecodeScale being set.\")\l}"];
+}
+}
+subgraph cluster_Region_1335600728 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|RETURN\l|return com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r8, r7.timecodeScale, 1000)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+MethodNode[shape=record,label="{private long com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.scaleTimecodeToUs((r7v0 'this' com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor A[IMMUTABLE_TYPE, THIS]), (r8v0 'unscaledTimecode' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forio.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.run()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: IGET  (r0 I:android.content.Context) = \l  (r3 I:io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable)\l io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.context android.content.Context A[Catch:\{ Exception \-\> 0x0015 \}, TRY_ENTER]\l0x0002: CONST_STR  (r1 I:java.lang.String) =  \"Performing time based file roll over.\" A[Catch:\{ Exception \-\> 0x0015 \}]\l0x0004: INVOKE  (r0 I:android.content.Context), (r1 I:java.lang.String) io.fabric.sdk.android.services.common.CommonUtils.logControlled(android.content.Context, java.lang.String):void type: STATIC A[Catch:\{ Exception \-\> 0x0015 \}]\l0x0007: IGET  (r0 I:io.fabric.sdk.android.services.events.FileRollOverManager) = \l  (r3 I:io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable)\l io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.fileRollOverManager io.fabric.sdk.android.services.events.FileRollOverManager A[Catch:\{ Exception \-\> 0x0015 \}]\l0x0009: INVOKE  (r0 I:boolean) = \l  (r0 I:io.fabric.sdk.android.services.events.FileRollOverManager)\l io.fabric.sdk.android.services.events.FileRollOverManager.rollFileOver():boolean type: INTERFACE A[Catch:\{ Exception \-\> 0x0015 \}]\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|0x000d: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001d A[Catch:\{ Exception \-\> 0x0015 \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|0x000f: IGET  (r0 I:io.fabric.sdk.android.services.events.FileRollOverManager) = \l  (r3 I:io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable)\l io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.fileRollOverManager io.fabric.sdk.android.services.events.FileRollOverManager A[Catch:\{ Exception \-\> 0x0015 \}]\l0x0011: INVOKE  \l  (r0 I:io.fabric.sdk.android.services.events.FileRollOverManager)\l io.fabric.sdk.android.services.events.FileRollOverManager.cancelTimeBasedFileRollOver():void type: INTERFACE A[Catch:\{ Exception \-\> 0x0015 \}, TRY_LEAVE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ExcHandler: Exception null\lSplitter:B:0:0x0000\l|0x0015: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: IGET  (r1 I:android.content.Context) = \l  (r3 I:io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable)\l io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.context android.content.Context \l0x0018: CONST_STR  (r2 I:java.lang.String) =  \"Failed to roll over file\" \l0x001a: INVOKE  \l  (r1 I:android.content.Context)\l  (r2 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l io.fabric.sdk.android.services.common.CommonUtils.logControlledError(android.content.Context, java.lang.String, java.lang.Throwable):void type: STATIC \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|0x001d: RETURN   \l}"];
+MethodNode[shape=record,label="{public void io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable.run((r3 'this' I:io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forretrofit2.Utils.WildcardTypeImpl.getLowerBounds()[Ljava\/lang\/reflect\/Type;" {
+subgraph cluster_Region_1703502654 {
+label = "R(1:(2:(1:4)|(2:2|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1301898765 {
+label = "R(2:(1:4)|(2:2|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1261637406 {
+label = "IF [B:1:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.lowerBound == null) goto L_0x000d\l}"];
+subgraph cluster_Region_865218127 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return retrofit2.Utils.EMPTY_TYPE_ARRAY\l}"];
+}
+}
+subgraph cluster_Region_497826704 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return new java.lang.reflect.Type[]\{r3.lowerBound\}\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+MethodNode[shape=record,label="{public java.lang.reflect.Type[] retrofit2.Utils.WildcardTypeImpl.getLowerBounds((r3v0 'this' retrofit2.Utils$WildcardTypeImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_5;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

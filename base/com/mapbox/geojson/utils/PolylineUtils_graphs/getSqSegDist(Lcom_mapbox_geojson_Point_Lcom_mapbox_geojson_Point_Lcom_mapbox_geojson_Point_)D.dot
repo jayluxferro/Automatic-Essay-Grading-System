@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.geojson.utils.PolylineUtils.getSqSegDist(Lcom\/mapbox\/geojson\/Point;Lcom\/mapbox\/geojson\/Point;Lcom\/mapbox\/geojson\/Point;)D" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r0 = r17.longitude()\ldouble r2 = r17.latitude()\ldouble r4 = r18.longitude() \- r0\ldouble r6 = r18.latitude() \- r2\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0016|if ((r4 \> 0.0d ? 1 : (r4 == 0.0d ? 0 : \-1)) != 0) goto L_0x001c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0018}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|if ((r6 \> 0.0d ? 1 : (r6 == 0.0d ? 0 : \-1)) == 0) goto L_0x004a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c|double r10 = (((r16.longitude() \- r0) * r4) + ((r16.latitude() \- r2) * r6)) \/ ((r4 * r4) + (r6 * r6))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0035|if ((r10 \> SIMPLIFY_DEFAULT_TOLERANCE ? 1 : (r10 == SIMPLIFY_DEFAULT_TOLERANCE ? 0 : \-1)) \<= 0) goto L_0x0040\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037|double r0 = r18.longitude()\ldouble r2 = r18.latitude()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0040}"];
+Node_8 [shape=record,label="{8\:\ 0x0042|if ((r10 \> 0.0d ? 1 : (r10 == 0.0d ? 0 : \-1)) \<= 0) goto L_0x004a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0044|double r0 = r0 + (r4 * r10)\ldouble r2 = r2 + (r6 * r10)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004a|PHI: r0 r2 \l  PHI: (r0v1 double) = (r0v0 double), (r0v5 double), (r0v6 double), (r0v0 double) binds: [B:8:0x0042, B:9:0x0044, B:6:0x0037, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 double) = (r2v0 double), (r2v2 double), (r2v3 double), (r2v0 double) binds: [B:8:0x0042, B:9:0x0044, B:6:0x0037, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|double r4 = r16.longitude() \- r0\ldouble r0 = r16.latitude() \- r2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0059|RETURN\l|return (r4 * r4) + (r0 * r0)\l}"];
+MethodNode[shape=record,label="{private static double com.mapbox.geojson.utils.PolylineUtils.getSqSegDist((r16v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

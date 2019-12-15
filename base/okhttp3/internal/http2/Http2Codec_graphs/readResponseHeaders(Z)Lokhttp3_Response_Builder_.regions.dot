@@ -1,0 +1,37 @@
+digraph "CFG forokhttp3.internal.http2.Http2Codec.readResponseHeaders(Z)Lokhttp3\/Response$Builder;" {
+subgraph cluster_Region_255014855 {
+label = "R(2:0|(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.Response$Builder okhttp3.Response.Builder r0 = readHttp2HeadersList(r2.stream.takeResponseHeaders(), r2.protocol)\l}"];
+subgraph cluster_Region_892501678 {
+label = "R(2:(1:5)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_572603476 {
+label = "IF [B:1:0x000c, B:3:0x0016] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r3 == false) goto L_0x001a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|ADDED_TO_REGION\l|if (okhttp3.internal.Internal.instance.code(r0) != 100) goto L_0x001a\l}"];
+subgraph cluster_Region_1157315367 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1621939013 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|RETURN\l|return null\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+MethodNode[shape=record,label="{public okhttp3.Response$Builder okhttp3.internal.http2.Http2Codec.readResponseHeaders((r2v0 'this' okhttp3.internal.http2.Http2Codec A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_2 -> Node_3;
+}
+

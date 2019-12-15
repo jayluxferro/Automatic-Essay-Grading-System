@@ -1,0 +1,65 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseDaoImpl.countOf(Lcom\/j256\/ormlite\/stmt\/PreparedQuery;)J" {
+subgraph cluster_Region_310959500 {
+label = "R(2:0|(2:2|(1:6))(2:10|11))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|checkForInitialized()\l}"];
+subgraph cluster_IfRegion_2128028598 {
+label = "IF [B:1:0x0009] THEN: R(2:2|(1:6)) ELSE: R(2:10|11)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.getType() == com.j256.ormlite.stmt.StatementBuilder.StatementType.SELECT_LONG) goto L_0x000b\l}"];
+subgraph cluster_Region_1844403246 {
+label = "R(2:2|(1:6))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|com.j256.ormlite.support.DatabaseConnection com.j256.ormlite.support.DatabaseConnection r0 = r3.connectionSource.getReadOnlyConnection(r3.tableInfo.getTableName())\l}"];
+subgraph cluster_TryCatchRegion_2136083371 {
+label = "Try: R(1:6) finally: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1412788931 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|RETURN\l|return r3.statementExecutor.queryForLong(r0, r4)\l}"];
+}
+subgraph cluster_Region_1850829412 {
+label = "R(3:7|8|9) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|ExcHandler:  FINALLY\lSplitter:B:3:0x0017\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0024|FINALLY_INSNS\l|r3.connectionSource.releaseConnection(r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_1624771680 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a}"];
+Node_11 [shape=record,label="{11\:\ 0x0047|throw new java.lang.IllegalArgumentException(\"Prepared query is not of type \" + com.j256.ormlite.stmt.StatementBuilder.StatementType.SELECT_LONG + \", you need to call QueryBuilder.setCountOf(true)\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1850829412 {
+label = "R(3:7|8|9) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|ExcHandler:  FINALLY\lSplitter:B:3:0x0017\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0024|FINALLY_INSNS\l|r3.connectionSource.releaseConnection(r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|throw r4\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017|SYNTHETIC\lSplitter:B:3:0x0017\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|Catch:\{ all \-\> 0x0023 \}\lSplitter:B:3:0x0017\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|DONT_GENERATE\l|com.j256.ormlite.support.ConnectionSource r4 = r3.connectionSource\lr4.releaseConnection(r0)\l}"];
+MethodNode[shape=record,label="{public long com.j256.ormlite.dao.BaseDaoImpl.countOf((r3v0 'this' com.j256.ormlite.dao.BaseDaoImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 com.j256.ormlite.stmt.PreparedQuery\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/stmt\/PreparedQuery\<, TT;\>;)J]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

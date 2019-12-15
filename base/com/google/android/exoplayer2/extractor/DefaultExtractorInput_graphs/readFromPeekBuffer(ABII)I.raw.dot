@@ -1,0 +1,15 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultExtractorInput.readFromPeekBuffer([BII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0001: IGET  (r2 I:int) = \l  (r3 I:com.google.android.exoplayer2.extractor.DefaultExtractorInput)\l com.google.android.exoplayer2.extractor.DefaultExtractorInput.peekBufferLength int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0007 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: MOVE  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: RETURN  (r0 I:int) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|0x0007: IGET  (r2 I:int) = \l  (r3 I:com.google.android.exoplayer2.extractor.DefaultExtractorInput)\l com.google.android.exoplayer2.extractor.DefaultExtractorInput.peekBufferLength int \l0x0009: INVOKE  (r0 I:int) = (r2 I:int), (r6 I:int A[D('length' int)]) java.lang.Math.min(int, int):int type: STATIC \l0x000d: IGET  (r2 I:byte[]) = \l  (r3 I:com.google.android.exoplayer2.extractor.DefaultExtractorInput)\l com.google.android.exoplayer2.extractor.DefaultExtractorInput.peekBuffer byte[] \l0x000f: INVOKE  \l  (r2 I:java.lang.Object)\l  (r1 I:int)\l  (r4 I:java.lang.Object A[D('target' byte[])])\l  (r5 I:int A[D('offset' int)])\l  (r0 I:int A[D('peekBytes' int)])\l java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void type: STATIC \l0x0012: INVOKE  \l  (r3 I:com.google.android.exoplayer2.extractor.DefaultExtractorInput)\l  (r0 I:int A[D('peekBytes' int)])\l com.google.android.exoplayer2.extractor.DefaultExtractorInput.updatePeekBuffer(int):void type: DIRECT \l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.extractor.DefaultExtractorInput.readFromPeekBuffer((r3 'this' I:com.google.android.exoplayer2.extractor.DefaultExtractorInput A[IMMUTABLE_TYPE, THIS]), (r4 I:byte[] A[D('target' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6 I:int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x000d\-0x0015: r0 'peekBytes' int\l  ?\-0x0015: r4 'target' byte[]\l  ?\-0x0015: r5 'offset' int\l  ?\-0x0015: r6 'length' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_3;
+}
+

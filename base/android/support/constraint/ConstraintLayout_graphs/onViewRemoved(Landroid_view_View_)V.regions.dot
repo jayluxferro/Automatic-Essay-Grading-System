@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.constraint.ConstraintLayout.onViewRemoved(Landroid\/view\/View;)V" {
+subgraph cluster_Region_851326561 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1357829885 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 14) goto L_0x0006\l}"];
+subgraph cluster_Region_1574011918 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|super.onViewRemoved(r3)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|r2.mChildrenByIds.remove(r3.getId())\landroid.support.constraint.solver.widgets.ConstraintWidget android.support.constraint.solver.widgets.ConstraintWidget r0 = getViewWidget(r3)\lr2.mLayoutWidget.remove(r0)\lr2.mConstraintHelpers.remove(r3)\lr2.mVariableDimensionsWidgets.remove(r0)\lr2.mDirtyHierarchy = true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0028}"];
+MethodNode[shape=record,label="{public void android.support.constraint.ConstraintLayout.onViewRemoved((r2v0 'this' android.support.constraint.ConstraintLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

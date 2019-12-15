@@ -1,0 +1,32 @@
+digraph "CFG forandroid.support.v4.media.VolumeProviderCompat.getVolumeProvider()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1328694491 {
+label = "R(2:(1:4)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1699419429 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r4.mVolumeProviderObj == null) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L_0x000a\l}"];
+subgraph cluster_Region_2011250133 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r4.mVolumeProviderObj = android.support.p000v4.media.VolumeProviderCompatApi21.createVolumeProvider(r4.mControlType, r4.mMaxVolume, r4.mCurrentVolume, new android.support.p000v4.media.VolumeProviderCompat.C03211())\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001d|RETURN\l|return r4.mVolumeProviderObj\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{public java.lang.Object android.support.v4.media.VolumeProviderCompat.getVolumeProvider((r4v0 'this' android.support.v4.media.VolumeProviderCompat A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

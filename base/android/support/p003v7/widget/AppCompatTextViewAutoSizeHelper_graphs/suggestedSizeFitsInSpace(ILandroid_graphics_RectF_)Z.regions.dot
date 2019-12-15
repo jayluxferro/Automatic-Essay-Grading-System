@@ -1,0 +1,103 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatTextViewAutoSizeHelper.suggestedSizeFitsInSpace(ILandroid\/graphics\/RectF;)Z" {
+subgraph cluster_Region_2126792171 {
+label = "R(7:0|(1:4)|6|(1:11)(1:12)|13|(1:15)(1:16)|18) | DECL_VAR: android.text.StaticLayout null, java.lang.CharSequence null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.CharSequence java.lang.CharSequence r0 = r5.mTextView.getText()\landroid.text.method.TransformationMethod android.text.method.TransformationMethod r1 = r5.mTextView.getTransformationMethod()\l}"];
+subgraph cluster_IfRegion_1463948836 {
+label = "IF [B:1:0x000c, B:3:0x0014] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|ADDED_TO_REGION\l|if (r1 == null) goto L_0x0017\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|ADDED_TO_REGION\l|if ((r1 = r1.getTransformation(r0, r5.mTextView)) == null) goto L_0x0017\l}"];
+subgraph cluster_Region_14608396 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|r0 = r1\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|int r1 = android.os.Build.VERSION.SDK_INT \>= 16 ? r5.mTextView.getMaxLines() : \-1\l}"];
+subgraph cluster_IfRegion_909329240 {
+label = "IF [B:10:0x0028] THEN: R(1:11) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|if (r5.mTempTextPaint == null) goto L_0x002a\l}"];
+subgraph cluster_Region_1078887039 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002a|r5.mTempTextPaint = new android.text.TextPaint()\l}"];
+}
+subgraph cluster_Region_328715096 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0032|r5.mTempTextPaint.reset()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0037|r5.mTempTextPaint.set(r5.mTextView.getPaint())\lr5.mTempTextPaint.setTextSize((float) r6)\landroid.text.Layout$Alignment android.text.Layout.Alignment r6 = (android.text.Layout.Alignment) invokeAndReturnWithDefault(r5.mTextView, \"getLayoutAlignment\", android.text.Layout.Alignment.ALIGN_NORMAL)\l}"];
+subgraph cluster_IfRegion_2015564703 {
+label = "IF [B:14:0x0058] THEN: R(1:15) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0058|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L_0x005a\l}"];
+subgraph cluster_Region_725914143 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x005a|android.text.StaticLayout r6 = createStaticLayoutForMeasuring(r0, r6, java.lang.Math.round(r7.right), r1)\l}"];
+}
+subgraph cluster_Region_2004054401 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0065|android.text.StaticLayout r6 = createStaticLayoutForMeasuringPre23(r0, r6, java.lang.Math.round(r7.right))\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0071|RETURN\l|return (r1 == \-1 \|\| (r6.getLineCount() \<= r1 && r6.getLineEnd(r6.getLineCount() \- 1) == r0.length())) && ((float) r6.getHeight()) \<= r7.bottom\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017|PHI: r0 \l  PHI: (r0v2 java.lang.CharSequence) = (r0v1 java.lang.CharSequence), (r0v1 java.lang.CharSequence), (r0v4 java.lang.CharSequence) binds: [B:1:0x000c, B:3:0x0014, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001e}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0026|PHI: r1 \l  PHI: (r1v3 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x006f|PHI: r6 \l  PHI: (r6v5 android.text.StaticLayout) = (r6v9 android.text.StaticLayout), (r6v10 android.text.StaticLayout) binds: [B:16:0x0065, B:15:0x005a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0073}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0077|REMOVE\lADDED_TO_REGION\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0079}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0086|REMOVE\lADDED_TO_REGION\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0088|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0089}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0092|REMOVE\lADDED_TO_REGION\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0094}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0095}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.widget.AppCompatTextViewAutoSizeHelper.suggestedSizeFitsInSpace((r5v0 'this' android.support.v7.widget.AppCompatTextViewAutoSizeHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 android.graphics.RectF A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_24;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_24;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_27;
+}
+

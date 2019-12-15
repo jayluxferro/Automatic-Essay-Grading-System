@@ -1,0 +1,16 @@
+digraph "CFG forcom.mapbox.mapboxsdk.style.sources.ImageSource.setImage(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:com.mapbox.mapboxsdk.style.sources.ImageSource) com.mapbox.mapboxsdk.style.sources.ImageSource.checkThread():void type: VIRTUAL \l0x0003: INVOKE  (r0 I:android.content.Context) =  com.mapbox.mapboxsdk.Mapbox.getApplicationContext():android.content.Context type: STATIC \l0x0007: INVOKE  (r2 I:android.graphics.drawable.Drawable) = (r0 I:android.content.Context), (r2 I:int) android.support.v4.content.ContextCompat.getDrawable(android.content.Context, int):android.graphics.drawable.Drawable type: STATIC \l0x000b: INSTANCE_OF  (r0 I:boolean) = (r2 I:?[OBJECT, ARRAY]) android.graphics.drawable.BitmapDrawable \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0019 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|0x000f: CHECK_CAST  (r2 I:android.graphics.drawable.BitmapDrawable) = (android.graphics.drawable.BitmapDrawable) (r2 I:?[OBJECT, ARRAY]) \l0x0011: INVOKE  (r2 I:android.graphics.Bitmap) = (r2 I:android.graphics.drawable.BitmapDrawable) android.graphics.drawable.BitmapDrawable.getBitmap():android.graphics.Bitmap type: VIRTUAL \l0x0015: INVOKE  \l  (r1 I:com.mapbox.mapboxsdk.style.sources.ImageSource)\l  (r2 I:android.graphics.Bitmap)\l com.mapbox.mapboxsdk.style.sources.ImageSource.nativeSetImage(android.graphics.Bitmap):void type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|0x0019: NEW_INSTANCE  (r2 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x001b: CONST_STR  (r0 I:java.lang.String) =  \"Failed to decode image. The resource provided must be a Bitmap.\" \l0x001d: INVOKE  \l  (r2 I:java.lang.IllegalArgumentException)\l  (r0 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|0x0020: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.style.sources.ImageSource.setImage((r1 'this' I:com.mapbox.mapboxsdk.style.sources.ImageSource A[IMMUTABLE_TYPE, THIS]), (r2 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.DrawableRes, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.IllegalArgumentException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

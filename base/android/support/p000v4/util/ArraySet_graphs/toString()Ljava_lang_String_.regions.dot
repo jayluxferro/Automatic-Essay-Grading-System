@@ -1,0 +1,91 @@
+digraph "CFG forandroid.support.v4.util.ArraySet.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1585104013 {
+label = "R(1:(2:(1:2)|(4:3|(4:(1:7)|8|(1:10)(1:11)|12)|13|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_522558968 {
+label = "R(2:(1:2)|(4:3|(4:(1:7)|8|(1:10)(1:11)|12)|13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1138211838 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isEmpty() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_2002315928 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return \"\{\}\"\l}"];
+}
+}
+subgraph cluster_Region_2118601407 {
+label = "R(4:3|(4:(1:7)|8|(1:10)(1:11)|12)|13|14)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(r3.mSize * 14)\lr0.append('\{')\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1301843976 {
+label = "LOOP:0: (4:(1:7)|8|(1:10)(1:11)|12)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (r1 \< r3.mSize) goto L_0x001c\l}"];
+subgraph cluster_Region_1395571747 {
+label = "R(4:(1:7)|8|(1:10)(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1446614288 {
+label = "IF [B:6:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|if (r1 \> 0) goto L_0x001e\l}"];
+subgraph cluster_Region_528491797 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|r0.append(\", \")\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0023|java.lang.Object java.lang.Object r2 = valueAt(r1)\l}"];
+subgraph cluster_IfRegion_780573114 {
+label = "IF [B:9:0x0027] THEN: R(1:10) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|if (r2 != r3) goto L_0x0029\l}"];
+subgraph cluster_Region_1297680743 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|r0.append(r2)\l}"];
+}
+subgraph cluster_Region_156115244 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002d|r0.append(\"(this Set)\")\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0032|LOOP_END\lLOOP:0: B:4:0x0018\-\>B:12:0x0032\l|r1++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0035|r0.append('\}')\l}"];
+Node_14 [shape=record,label="{14\:\ 0x003e|RETURN\l|return r0.toString()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0018|LOOP_START\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v6 int) binds: [B:3:0x0009, B:12:0x0032] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0018\-\>B:12:0x0032\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0035|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0032|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0032|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.lang.String android.support.v4.util.ArraySet.toString((r3v0 'this' android.support.v4.util.ArraySet A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_17;
+Node_11 -> Node_16;
+Node_12 -> Node_4;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_15 -> Node_13;
+Node_16 -> Node_12;
+Node_17 -> Node_12;
+}
+

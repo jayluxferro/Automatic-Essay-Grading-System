@@ -1,0 +1,69 @@
+digraph "CFG forcom.facebook.ads.MediaView.b(Lcom\/facebook\/ads\/NativeAd;)Z" {
+subgraph cluster_Region_1318456120 {
+label = "R(1:(2:(1:12)|(3:3|(1:(1:13))|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1101396664 {
+label = "R(2:(1:12)|(3:3|(1:(1:13))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713933831 {
+label = "IF [B:1:0x0005] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.mo10062e() == null) goto L_0x0007\l}"];
+subgraph cluster_Region_395234846 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1774176284 {
+label = "R(3:3|(1:(1:13))|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|java.util.Iterator r2 = r4.mo10062e().iterator()\l}"];
+subgraph cluster_LoopRegion_128032681 {
+label = "LOOP:0: (1:(1:13))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|if (r2.hasNext() != false) goto L_0x0017\l}"];
+subgraph cluster_Region_1137237670 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_576132863 {
+label = "IF [B:7:0x0021] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|LOOP_END\lLOOP:0: B:4:0x0011\-\>B:7:0x0021\l|if (r0.getAdCoverImage() == null) goto L_0x0023\l}"];
+subgraph cluster_Region_901760385 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0025|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|LOOP_START\lLOOP:0: B:4:0x0011\-\>B:7:0x0021\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0023|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean com.facebook.ads.MediaView.b((r3v0 'this' com.facebook.ads.MediaView A[IMMUTABLE_TYPE, THIS]), (r4v0 com.facebook.ads.NativeAd A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_7 -> Node_4[style=dashed];
+Node_7 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_12;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_13;
+Node_10 -> Node_8;
+Node_11 -> Node_9;
+}
+

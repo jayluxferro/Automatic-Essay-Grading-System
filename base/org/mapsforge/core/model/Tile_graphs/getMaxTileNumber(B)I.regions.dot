@@ -1,0 +1,46 @@
+digraph "CFG fororg.mapsforge.core.model.Tile.getMaxTileNumber(B)I" {
+subgraph cluster_Region_473001729 {
+label = "R(1:(2:5|6)(1:(1:2)(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1143688753 {
+label = "IF [B:0:0x0000] THEN: R(2:5|6) ELSE: R(1:(1:2)(1:4))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 \< 0) goto L_0x000e\l}"];
+subgraph cluster_Region_1677864686 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|throw new java.lang.IllegalArgumentException(\"zoomLevel must not be negative: \" + r3)\l}"];
+}
+subgraph cluster_Region_1170465281 {
+label = "R(1:(1:2)(1:4)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1377682655 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:4) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3 == 0) goto L_0x0004\l}"];
+subgraph cluster_Region_1280918123 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_962162768 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return (2 \<\< (r3 \- 1)) \- 1\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{public static int org.mapsforge.core.model.Tile.getMaxTileNumber((r3v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_5 -> Node_6;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

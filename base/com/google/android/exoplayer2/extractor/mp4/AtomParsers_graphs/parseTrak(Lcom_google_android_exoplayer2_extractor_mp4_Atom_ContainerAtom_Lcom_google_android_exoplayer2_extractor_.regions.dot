@@ -1,0 +1,92 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.AtomParsers.parseTrak(Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$ContainerAtom;Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$LeafAtom;JLcom\/google\/android\/exoplayer2\/drm\/DrmInitData;Z)Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Track;" {
+subgraph cluster_Region_1797144029 {
+label = "R(2:0|(2:(1:2)|(6:3|(1:5)|6|(1:8)(1:12)|9|(2:(1:11)|(2:13|14))))) | DECL_VAR: long durationUs\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom r26 = r32.getContainerAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_mdia)\lint int r30 = parseHdlr(r26.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_hdlr).data)\l}"];
+subgraph cluster_Region_1051460961 {
+label = "R(2:(1:2)|(6:3|(1:5)|6|(1:8)(1:12)|9|(2:(1:11)|(2:13|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_903769175 {
+label = "IF [B:1:0x0019] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0019|if (r30 == \-1) goto L_0x001b\l}"];
+subgraph cluster_Region_889309329 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1978115336 {
+label = "R(6:3|(1:5)|6|(1:8)(1:12)|9|(2:(1:11)|(2:13|14)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001d|com.google.android.exoplayer2.extractor.mp4.AtomParsers$TkhdData com.google.android.exoplayer2.extractor.mp4.AtomParsers.TkhdData r29 = parseTkhd(r32.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_tkhd).data)\l}"];
+subgraph cluster_IfRegion_976133719 {
+label = "IF [B:4:0x0032] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0032|if (r34 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0034\l}"];
+subgraph cluster_Region_55110107 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|long r34 = r29.duration\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0038|PHI: r34 \l  PHI: (r34v1 'duration' long) = (r34v0 'duration' long), (r34v2 'duration' long) binds: [B:4:0x0032, B:5:0x0034] A[DONT_GENERATE, DONT_INLINE]\l|long long r6 = parseMvhd(r33.data)\l}"];
+subgraph cluster_IfRegion_1895532652 {
+label = "IF [B:7:0x0047] THEN: R(1:8) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|if (r34 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0049\l}"];
+subgraph cluster_Region_221622965 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0049|r16 = com.google.android.exoplayer2.C1260C.TIME_UNSET\l}"];
+}
+subgraph cluster_Region_1263522655 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x009f|long r16 = com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r34, com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND, r6)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x004e|PHI: r16 \l  PHI: (r16v1 'durationUs' long) = (r16v0 'durationUs' long), (r16v2 'durationUs' long) binds: [B:12:0x009f, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom r27 = r26.getContainerAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_minf).getContainerAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_stbl)\landroid.util.Pair android.util.Pair\<java.lang.Long, java.lang.String\> r25 = parseMdhd(r26.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_mdhd).data)\lcom.google.android.exoplayer2.extractor.mp4.AtomParsers$StsdData com.google.android.exoplayer2.extractor.mp4.AtomParsers.StsdData r28 = parseStsd(r27.getLeafAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_stsd).data, r29.f2447id, r29.rotationDegrees, (java.lang.String) r25.second, r36, r37)\landroid.util.Pair android.util.Pair\<long[], long[]\> r24 = parseEdts(r32.getContainerAtomOfType(com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_edts))\l}"];
+subgraph cluster_Region_782375967 {
+label = "R(2:(1:11)|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_48699667 {
+label = "IF [B:10:0x009a] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x009a|if (r28.format == null) goto L_0x009c\l}"];
+subgraph cluster_Region_366746650 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x009c|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_430104551 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00a9}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.extractor.mp4.Track(r29.f2447id, r30, ((java.lang.Long) r25.first).longValue(), r6, r16, r28.format, r28.requiredSampleTransformation, r28.trackEncryptionBoxes, r28.nalUnitLengthFieldLength, (long[]) r24.first, (long[]) r24.second)\l}"];
+}
+}
+}
+}
+}
+MethodNode[shape=record,label="{public static com.google.android.exoplayer2.extractor.mp4.Track com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseTrak((r32v0 'trak' com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r33v0 'mvhd' com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r34v0 'duration' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r36v0 'drmInitData' com.google.android.exoplayer2.drm.DrmInitData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r37v0 'isQuickTime' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_12 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_13 -> Node_14;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG fororg.kxml2.io.KXmlParser.nextText()Ljava\/lang\/String;" {
+subgraph cluster_Region_934416747 {
+label = "R(5:(1:2)|3|(1:5)(1:6)|(1:9)|10) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_472754425 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.type != 2) goto L_0x0005\l}"];
+subgraph cluster_Region_968031258 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|exception(\"precondition: START_TAG\")\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000a|next()\l}"];
+subgraph cluster_IfRegion_825333838 {
+label = "IF [B:4:0x0010] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r3.type == 4) goto L_0x0012\l}"];
+subgraph cluster_Region_234589867 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|java.lang.String r0 = getText()\lnext()\l}"];
+}
+subgraph cluster_Region_2072320112 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|java.lang.String r0 = \"\"\l}"];
+}
+}
+subgraph cluster_IfRegion_380628554 {
+label = "IF [B:8:0x001f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|if (r3.type != 3) goto L_0x0021\l}"];
+subgraph cluster_Region_1731524102 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|exception(\"END_TAG expected\")\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0026|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c|PHI: r0 \l  PHI: (r0v2 java.lang.String) = (r0v3 java.lang.String), (r0v4 java.lang.String) binds: [B:6:0x001a, B:5:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public java.lang.String org.kxml2.io.KXmlParser.nextText((r3v0 'this' org.kxml2.io.KXmlParser A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException, java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+}
+

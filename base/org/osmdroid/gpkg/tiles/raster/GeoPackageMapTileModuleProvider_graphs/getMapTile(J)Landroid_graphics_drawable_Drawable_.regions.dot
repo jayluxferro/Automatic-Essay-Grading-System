@@ -1,0 +1,43 @@
+digraph "CFG fororg.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.getMapTile(J)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_27200388 {
+label = "R(4:0|(1:7)(1:6)|8|9) | DECL_VAR: android.graphics.drawable.BitmapDrawable null, byte[] null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r4.currentTileSource.getDatabase()\ljava.lang.String java.lang.String r1 = r4.currentTileSource.getTableDao()\lmil.nga.geopackage.GeoPackage mil.nga.geopackage.GeoPackage r0 = r4.manager.open(r0)\lmil.nga.geopackage.tiles.retriever.GeoPackageTile mil.nga.geopackage.tiles.retriever.GeoPackageTile r5 = new mil.nga.geopackage.tiles.retriever.GeoPackageTileRetriever(r0.getTileDao(r1)).getTile(org.osmdroid.util.MapTileIndex.getX(r5), org.osmdroid.util.MapTileIndex.getY(r5), org.osmdroid.util.MapTileIndex.getZoom(r5))\l}"];
+subgraph cluster_IfRegion_1321511984 {
+label = "IF [B:1:0x002b, B:3:0x002f, B:5:0x0033] THEN: R(1:7) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002b|if (r5 == null) goto L_0x004c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002f|ADDED_TO_REGION\l|if (r5.data == null) goto L_0x004c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0033|ADDED_TO_REGION\l|if ((r5 = r5.data) == null) goto L_0x004c\l}"];
+subgraph cluster_Region_18354427 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004c|r6 = null\l}"];
+}
+subgraph cluster_Region_1011035575 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|android.graphics.BitmapFactory$Options android.graphics.BitmapFactory.Options r6 = new android.graphics.BitmapFactory.Options()\lr6.outHeight = 256\lr6.outWidth = 256\landroid.graphics.drawable.BitmapDrawable r6 = new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(r5, 0, r5.length, r6))\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x004d|PHI: r6 \l  PHI: (r6v0 android.graphics.drawable.BitmapDrawable) = (r6v1 android.graphics.drawable.BitmapDrawable), (r6v4 android.graphics.drawable.BitmapDrawable) binds: [B:7:0x004c, B:6:0x0035] A[DONT_GENERATE, DONT_INLINE]\l|r0.close()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0050|RETURN\l|return r6\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x002d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0031}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.getMapTile((r4v0 'this' org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

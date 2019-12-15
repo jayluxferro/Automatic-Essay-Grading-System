@@ -1,0 +1,49 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.VorbisReader.preparePayload(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)J" {
+subgraph cluster_Region_1060610755 {
+label = "R(2:0|(2:(1:2)|(4:3|(1:5)|6|7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_Region_1794230258 {
+label = "R(2:(1:2)|(4:3|(1:5)|6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1494113016 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if ((r6.data[0] & 1) == 1) goto L_0x000a\l}"];
+subgraph cluster_Region_1850354119 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_790458107 {
+label = "R(4:3|(1:5)|6|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|int int r0 = decodeBlockSize(r6.data[0], r5.vorbisSetup)\l}"];
+subgraph cluster_IfRegion_1508416813 {
+label = "IF [B:4:0x0019] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|if (r5.seenFirstAudioPacket == true) goto L_0x001b\l}"];
+subgraph cluster_Region_1396737972 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|int r1 = (r5.previousPacketBlockSize + r0) \/ 4\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0020|PHI: r1 \l  PHI: (r1v1 'samplesInPacket' int) = (r1v0 'samplesInPacket' int), (r1v2 'samplesInPacket' int) binds: [B:4:0x0019, B:5:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|appendNumberOfSamples(r6, (long) r1)\lr5.seenFirstAudioPacket = true\lr5.previousPacketBlockSize = r0\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return (long) r1\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{protected long com.google.android.exoplayer2.extractor.ogg.VorbisReader.preparePayload((r5v0 'this' com.google.android.exoplayer2.extractor.ogg.VorbisReader A[IMMUTABLE_TYPE, THIS]), (r6v0 'packet' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

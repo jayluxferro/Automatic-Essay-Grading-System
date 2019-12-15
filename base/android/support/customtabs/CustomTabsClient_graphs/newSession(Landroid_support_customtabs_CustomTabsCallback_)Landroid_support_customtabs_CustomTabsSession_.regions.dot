@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.customtabs.CustomTabsClient.newSession(Landroid\/support\/customtabs\/CustomTabsCallback;)Landroid\/support\/customtabs\/CustomTabsSession;" {
+subgraph cluster_Region_1630904970 {
+label = "R(2:0|(1:(2:(1:6)|(1:7))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.customtabs.CustomTabsClient$2 android.support.customtabs.ICustomTabsCallback.Stub r1 = new android.support.customtabs.CustomTabsClient.C00432()\l}"];
+subgraph cluster_TryCatchRegion_226200780 {
+label = "Try: R(1:(2:(1:6)|(1:7))) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_684393991 {
+label = "R(1:(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1466955809 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_248008995 {
+label = "IF [B:3:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r5.mService.newSession(r1) == false) goto L_?\l}"];
+subgraph cluster_Region_1378345026 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1780890516 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return new android.support.customtabs.CustomTabsSession(r5.mService, r1, r5.mServiceComponentName)\l}"];
+}
+}
+}
+subgraph cluster_Region_57346854 {
+label = "R(1:8) | ExcHandler: RemoteException (e android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_57346854 {
+label = "R(1:8) | ExcHandler: RemoteException (e android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ RemoteException \-\> 0x000f \}\lSplitter:B:1:0x0006\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f|ExcHandler: RemoteException (e android.os.RemoteException)\lSplitter:B:1:0x0006\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+MethodNode[shape=record,label="{public android.support.customtabs.CustomTabsSession android.support.customtabs.CustomTabsClient.newSession((r5v0 'this' android.support.customtabs.CustomTabsClient A[IMMUTABLE_TYPE, THIS]), (r6v0 'callback' android.support.customtabs.CustomTabsCallback A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_6;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_8;
+Node_5 -> Node_7;
+}
+

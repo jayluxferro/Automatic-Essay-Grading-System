@@ -1,0 +1,41 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.instruction.NavigationAlertView.obtainSupportFragmentManager()Landroid\/support\/v4\/app\/FragmentManager;" {
+subgraph cluster_Region_1355877712 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1543480767 {
+label = "Try: R(1:2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1979747597 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|RETURN\l|return ((android.support.p000v4.app.FragmentActivity) getContext()).getSupportFragmentManager()\l}"];
+}
+subgraph cluster_Region_671224504 {
+label = "R(3:3|4|5) | ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|timber.log.Timber.m193e(r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_671224504 {
+label = "R(3:3|4|5) | ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|ExcHandler: ClassCastException (r0v0 'e' java.lang.ClassCastException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|timber.log.Timber.m193e(r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ ClassCastException \-\> 0x000b \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{private android.support.v4.app.FragmentManager com.mapbox.services.android.navigation.ui.v5.instruction.NavigationAlertView.obtainSupportFragmentManager((r1v0 'this' com.mapbox.services.android.navigation.ui.v5.instruction.NavigationAlertView A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

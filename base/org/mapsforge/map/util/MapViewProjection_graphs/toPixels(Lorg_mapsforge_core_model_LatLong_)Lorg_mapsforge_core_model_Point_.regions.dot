@@ -1,0 +1,50 @@
+digraph "CFG fororg.mapsforge.map.util.MapViewProjection.toPixels(Lorg\/mapsforge\/core\/model\/LatLong;)Lorg\/mapsforge\/core\/model\/Point;" {
+subgraph cluster_Region_1105232518 {
+label = "R(1:(2:(1:8)|(2:9|10))) | DECL_VAR: org.mapsforge.core.model.MapPosition null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1419935957 {
+label = "R(2:(1:8)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_730711912 {
+label = "IF [B:1:0x0001, B:3:0x0009, B:5:0x0011, B:7:0x0020] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r10 == null) goto L_0x006f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (r9.mapView.getWidth() \<= 0) goto L_0x006f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|ADDED_TO_REGION\l|if (r9.mapView.getHeight() \<= 0) goto L_0x006f\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0020|ADDED_TO_REGION\l|if ((r1 = r9.mapView.getModel().mapViewPosition.getMapPosition()) == null) goto L_0x0022\l}"];
+subgraph cluster_Region_96976270 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_432226761 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|org.mapsforge.core.model.LatLong org.mapsforge.core.model.LatLong r0 = r1.latLong\llong long r1 = org.mapsforge.core.util.MercatorProjection.getMapSize(r1.zoomLevel, r9.mapView.getModel().displayModel.getTileSize())\ldouble double r3 = org.mapsforge.core.util.MercatorProjection.longitudeToPixelX(r0.longitude, r1)\ldouble double r5 = org.mapsforge.core.util.MercatorProjection.latitudeToPixelY(r0.latitude, r1)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x006e|RETURN\l|return new org.mapsforge.core.model.Point((double) ((int) (org.mapsforge.core.util.MercatorProjection.longitudeToPixelX(r10.longitude, r1) \- (r3 \- ((double) (r9.mapView.getWidth() \>\> 1))))), (double) ((int) (org.mapsforge.core.util.MercatorProjection.latitudeToPixelY(r10.latitude, r1) \- (r5 \- ((double) (r9.mapView.getHeight() \>\> 1))))))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x006f|RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.Point org.mapsforge.map.util.MapViewProjection.toPixels((r9v0 'this' org.mapsforge.map.util.MapViewProjection A[IMMUTABLE_TYPE, THIS]), (r10v0 org.mapsforge.core.model.LatLong A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

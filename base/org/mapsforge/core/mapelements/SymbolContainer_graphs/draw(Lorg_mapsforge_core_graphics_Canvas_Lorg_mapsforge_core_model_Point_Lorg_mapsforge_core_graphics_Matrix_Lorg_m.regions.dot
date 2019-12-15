@@ -1,0 +1,38 @@
+digraph "CFG fororg.mapsforge.core.mapelements.SymbolContainer.draw(Lorg\/mapsforge\/core\/graphics\/Canvas;Lorg\/mapsforge\/core\/model\/Point;Lorg\/mapsforge\/core\/graphics\/Matrix;Lorg\/mapsforge\/core\/graphics\/Filter;)V" {
+subgraph cluster_Region_729043027 {
+label = "R(3:0|(1:5)(1:4)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.reset()\lr8.translate((float) ((int) ((r5.f265xy.f266x \- r7.f266x) + r5.boundary.left)), (float) ((int) ((r5.f265xy.f267y \- r7.f267y) + r5.boundary.top)))\l}"];
+subgraph cluster_IfRegion_1197173193 {
+label = "IF [B:1:0x0027, B:3:0x002b] THEN: R(1:5) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0027|if (r5.theta == 0.0f) goto L_0x003f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002b|ADDED_TO_REGION\l|if (r5.alignCenter == false) goto L_0x003f\l}"];
+subgraph cluster_Region_1655102852 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x003f|r8.rotate(r5.theta)\l}"];
+}
+subgraph cluster_Region_2042087366 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002d|r8.rotate(r5.theta, (float) (\-r5.boundary.left), (float) (\-r5.boundary.top))\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0044|r6.drawBitmap(r5.symbol, r8, r9)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0029}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0049}"];
+MethodNode[shape=record,label="{public void org.mapsforge.core.mapelements.SymbolContainer.draw((r5v0 'this' org.mapsforge.core.mapelements.SymbolContainer A[IMMUTABLE_TYPE, THIS]), (r6v0 org.mapsforge.core.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 org.mapsforge.core.model.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 org.mapsforge.core.graphics.Matrix A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 org.mapsforge.core.graphics.Filter A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+}
+

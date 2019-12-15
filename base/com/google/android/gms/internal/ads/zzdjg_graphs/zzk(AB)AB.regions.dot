@@ -1,0 +1,76 @@
+digraph "CFG forcom.google.android.gms.internal.ads.zzdjg.zzk([B)[B" {
+subgraph cluster_Region_298282335 {
+label = "R(6:0|(1:2)(2:7|(2:(1:10)|(1:11)))|3|(1:6)|12|13) | DECL_VAR: byte[] null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|javax.crypto.Cipher javax.crypto.Cipher r4 = zzauu()\lr4.init(1, r9.zzgxc)\lint int r5 = java.lang.Math.max(1, (int) java.lang.Math.ceil(((double) r10.length) \/ 16.0d))\l}"];
+subgraph cluster_IfRegion_1659008341 {
+label = "IF [B:1:0x001e] THEN: R(1:2) ELSE: R(2:7|(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001e|if ((r5 \<\< 4) == r10.length) goto L_0x0020\l}"];
+subgraph cluster_Region_1559952440 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0020|byte[] r0 = com.google.android.gms.internal.ads.zzdjr.zza(r10, (r5 \- 1) \<\< 4, r9.zzgxe, 0, 16)\l}"];
+}
+subgraph cluster_Region_1987960685 {
+label = "R(2:7|(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003f|byte[] byte[] r0 = java.util.Arrays.copyOfRange(r10, (r5 \- 1) \<\< 4, r10.length)\l}"];
+subgraph cluster_Region_2003586722 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1025195090 {
+label = "IF [B:8:0x0049] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0049|if (r0.length \>= 16) goto L_0x004b\l}"];
+subgraph cluster_Region_334562737 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0052|throw new java.lang.IllegalArgumentException(\"x must be smaller than a block.\")\l}"];
+}
+}
+subgraph cluster_Region_906693877 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0053|byte[] byte[] r1 = java.util.Arrays.copyOf(r0, 16)\lr1[r0.length] = Byte.MIN_VALUE\lbyte[] r0 = com.google.android.gms.internal.ads.zzdjr.zzd(r1, r9.zzgxf)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x002a|PHI: r0 \l  PHI: (r0v14 byte[]) = (r0v12 byte[]), (r0v19 byte[]) binds: [B:11:0x0053, B:2:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|byte[] r3 = new byte[16]\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1285726286 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0030|if (r1 \< (r5 \- 1)) goto L_0x0032\l}"];
+subgraph cluster_Region_675431656 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0032|LOOP_END\lLOOP:0: B:4:0x002e\-\>B:6:0x0032\l|byte[] r3 = r4.doFinal(com.google.android.gms.internal.ads.zzdjr.zza(r3, 0, r10, r1 \<\< 4, 16))\lr1++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0063|byte[] byte[] r0 = com.google.android.gms.internal.ads.zzdjr.zzd(r0, r3)\lbyte[] byte[] r1 = new byte[r9.zzgxd]\ljava.lang.System.arraycopy(r4.doFinal(r0), 0, r1, 0, r9.zzgxd)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0074|RETURN\l|return r1\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002e|LOOP_START\lPHI: r1 r3 \l  PHI: (r1v7 int) = (r1v6 int), (r1v10 int) binds: [B:3:0x002a, B:6:0x0032] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v3 byte[]) = (r3v2 byte[]), (r3v6 byte[]) binds: [B:3:0x002a, B:6:0x0032] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x002e\-\>B:6:0x0032\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x004b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0063|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final byte[] com.google.android.gms.internal.ads.zzdjg.zzk((r9v0 'this' com.google.android.gms.internal.ads.zzdjg A[IMMUTABLE_TYPE, THIS]), (r10v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.security.GeneralSecurityException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_11 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_14[style=dashed];
+Node_6 -> Node_4;
+Node_12 -> Node_13;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_14 -> Node_12;
+}
+

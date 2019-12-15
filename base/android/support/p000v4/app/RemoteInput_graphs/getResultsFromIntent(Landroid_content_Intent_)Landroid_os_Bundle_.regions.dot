@@ -1,0 +1,82 @@
+digraph "CFG forandroid.support.v4.app.RemoteInput.getResultsFromIntent(Landroid\/content\/Intent;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_353857047 {
+label = "R(1:(2:(1:3)|(1:(2:(2:6|(2:(1:8)|(1:10)))|(2:11|12)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1205351725 {
+label = "R(2:(1:3)|(1:(2:(2:6|(2:(1:8)|(1:10)))|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_394124876 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 20) goto L_0x0006\l}"];
+subgraph cluster_Region_1028233500 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return android.app.RemoteInput.getResultsFromIntent(r3)\l}"];
+}
+}
+subgraph cluster_Region_318783348 {
+label = "R(1:(2:(2:6|(2:(1:8)|(1:10)))|(2:11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_368509284 {
+label = "R(2:(2:6|(2:(1:8)|(1:10)))|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1820406312 {
+label = "IF [B:5:0x0010] THEN: R(2:6|(2:(1:8)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0012\l}"];
+subgraph cluster_Region_2120011697 {
+label = "R(2:6|(2:(1:8)|(1:10)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|android.content.Intent android.content.Intent r3 = getClipDataIntentFromIntent(r3)\l}"];
+subgraph cluster_Region_502388701 {
+label = "R(2:(1:8)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_686260396 {
+label = "IF [B:7:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (r3 == null) goto L_0x0018\l}"];
+subgraph cluster_Region_261664904 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_230620351 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|RETURN\l|return (android.os.Bundle) r3.getExtras().getParcelable(EXTRA_RESULTS_DATA)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_583629886 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0026|android.util.Log.w(TAG, \"RemoteInput is only supported from API Level 16\")\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002d|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0019}"];
+MethodNode[shape=record,label="{public static android.os.Bundle android.support.v4.app.RemoteInput.getResultsFromIntent((r3v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+}
+

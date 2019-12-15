@@ -1,0 +1,23 @@
+digraph "CFG forcom.android.volley.toolbox.DiskBasedCache.CacheHeader.readHeader(Ljava\/io\/InputStream;)Lcom\/android\/volley\/toolbox\/DiskBasedCache$CacheHeader;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.android.volley.toolbox.DiskBasedCache$CacheHeader r0 = new com.android.volley.toolbox.DiskBasedCache.CacheHeader()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (com.android.volley.toolbox.DiskBasedCache.readInt(r4) == com.android.volley.toolbox.DiskBasedCache.CACHE_MAGIC) goto L_0x0014\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|throw new java.io.IOException()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|r0.key = com.android.volley.toolbox.DiskBasedCache.readString(r4)\lr0.etag = com.android.volley.toolbox.DiskBasedCache.readString(r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|if (r0.etag.equals(\"\") == false) goto L_0x002d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|r0.etag = null\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|r0.serverDate = com.android.volley.toolbox.DiskBasedCache.readLong(r4)\lr0.ttl = com.android.volley.toolbox.DiskBasedCache.readLong(r4)\lr0.softTtl = com.android.volley.toolbox.DiskBasedCache.readLong(r4)\lr0.responseHeaders = com.android.volley.toolbox.DiskBasedCache.readStringStringMap(r4)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0045|RETURN\l|return r0\l}"];
+MethodNode[shape=record,label="{public static com.android.volley.toolbox.DiskBasedCache$CacheHeader com.android.volley.toolbox.DiskBasedCache.CacheHeader.readHeader((r4v0 'is' java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

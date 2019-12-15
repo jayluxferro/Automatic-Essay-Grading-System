@@ -1,0 +1,282 @@
+digraph "CFG forokhttp3.internal.cache.CacheInterceptor.intercept(Lokhttp3\/Interceptor$Chain;)Lokhttp3\/Response;" {
+subgraph cluster_Region_900641542 {
+label = "R(5:1|4|(1:6)|(1:9)|(2:(1:13)|(1:(2:(1:16)|(1:(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40))))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|okhttp3.Response r0 = r5.cache != null ? r5.cache.get(r6.request()) : null\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|PHI: r0 \l  PHI: (r0v1 okhttp3.Response) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|okhttp3.internal.cache.CacheStrategy okhttp3.internal.cache.CacheStrategy r1 = new okhttp3.internal.cache.CacheStrategy.Factory(java.lang.System.currentTimeMillis(), r6.request(), r0).get()\lokhttp3.Request okhttp3.Request r2 = r1.networkRequest\lokhttp3.Response okhttp3.Response r3 = r1.cacheResponse\l}"];
+subgraph cluster_IfRegion_1731069282 {
+label = "IF [B:5:0x0027] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|if (r5.cache != null) goto L_0x0029\l}"];
+subgraph cluster_Region_1592548407 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|r5.cache.trackResponse(r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_159230865 {
+label = "IF [B:7:0x002e, B:8:0x0030] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|ADDED_TO_REGION\l|if (r0 != null) goto L_0x0030\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030|ADDED_TO_REGION\l|if (r3 == null) goto L_0x0032\l}"];
+subgraph cluster_Region_1328959545 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0.body())\l}"];
+}
+}
+subgraph cluster_Region_2058903861 {
+label = "R(2:(1:13)|(1:(2:(1:16)|(1:(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2006320177 {
+label = "IF [B:10:0x0039, B:11:0x003b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0039|if (r2 == null) goto L_0x003b\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|ADDED_TO_REGION\l|if (r3 == null) goto L_0x003d\l}"];
+subgraph cluster_Region_755605609 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0074|RETURN\l|return new okhttp3.Response.Builder().request(r6.request()).protocol(okhttp3.Protocol.HTTP_1_1).code(504).message(\"Unsatisfiable Request (only\-if\-cached)\").body(okhttp3.internal.Util.EMPTY_RESPONSE).sentRequestAtMillis(\-1).receivedResponseAtMillis(java.lang.System.currentTimeMillis()).build()\l}"];
+}
+}
+subgraph cluster_Region_643111835 {
+label = "R(1:(2:(1:16)|(1:(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_826740518 {
+label = "R(2:(1:16)|(1:(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_725916018 {
+label = "IF [B:14:0x0075] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0075|if (r2 == null) goto L_0x0077\l}"];
+subgraph cluster_Region_461764601 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0087|RETURN\l|return r3.newBuilder().cacheResponse(stripBody(r3)).build()\l}"];
+}
+}
+subgraph cluster_Region_139424242 {
+label = "R(1:(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1747288698 {
+label = "Try: R(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40) finally: R(3:42|(1:44)|45)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1003348495 {
+label = "R(6:18|(0)|(1:(2:(2:25|26)|(1:27)))|28|(1:(2:(1:35)|(1:(1:(1:39)))))|40)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|Catch:\{ all \-\> 0x0135 \}\lSplitter:B:17:0x0088\l|okhttp3.Response okhttp3.Response r6 = r6.proceed(r2)     \/\/ Catch:\{ all \-\> 0x0135 \}\l}"];
+subgraph cluster_IfRegion_127260891 {
+label = "IF [B:19:0x008c, B:20:0x008e] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x008c|ADDED_TO_REGION\l|if (r6 == null) goto L_0x008e\l}"];
+Node_20 [shape=record,label="{20\:\ 0x008e|DONT_GENERATE\lADDED_TO_REGION\l|if (r0 != null) goto L_0x0090\l}"];
+subgraph cluster_Region_1713558822 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+subgraph cluster_IfRegion_2096847112 {
+label = "IF [B:22:0x0097] THEN: R(1:(2:(2:25|26)|(1:27))) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0097|if (r3 != null) goto L_0x0099\l}"];
+subgraph cluster_Region_1863702779 {
+label = "R(1:(2:(2:25|26)|(1:27)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_472314890 {
+label = "R(2:(2:25|26)|(1:27))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1124989864 {
+label = "IF [B:24:0x009f] THEN: R(2:25|26) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x009f|if (r6.code() == 304) goto L_0x00a1\l}"];
+subgraph cluster_Region_1567189631 {
+label = "R(2:25|26)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00a1|okhttp3.Response okhttp3.Response r0 = r3.newBuilder().headers(combine(r3.headers(), r6.headers())).sentRequestAtMillis(r6.sentRequestAtMillis()).receivedResponseAtMillis(r6.receivedResponseAtMillis()).cacheResponse(stripBody(r3)).networkResponse(stripBody(r6)).build()\lr6.body().close()\lr5.cache.trackConditionalCacheHit()\lr5.cache.update(r3, r0)\l}"];
+Node_26 [shape=record,label="{26\:\ 0x00ea|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_2005135518 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00eb|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r3.body())\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x00f2|okhttp3.Response okhttp3.Response r6 = r6.newBuilder().cacheResponse(stripBody(r3)).networkResponse(stripBody(r6)).build()\l}"];
+subgraph cluster_IfRegion_1490322342 {
+label = "IF [B:29:0x010c] THEN: R(1:(2:(1:35)|(1:(1:(1:39))))) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x010c|if (r5.cache != null) goto L_0x010e\l}"];
+subgraph cluster_Region_674227839 {
+label = "R(1:(2:(1:35)|(1:(1:(1:39)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1765552513 {
+label = "R(2:(1:35)|(1:(1:(1:39))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_133958821 {
+label = "IF [B:31:0x0112, B:33:0x0118] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0112|if (okhttp3.internal.http.HttpHeaders.hasBody(r6) != false) goto L_0x0114\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0118|ADDED_TO_REGION\l|if (okhttp3.internal.cache.CacheStrategy.isCacheable(r6, r2) != false) goto L_0x011a\l}"];
+subgraph cluster_Region_1704511960 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0124|RETURN\l|return cacheWritingResponse(r5.cache.put(r6), r6)\l}"];
+}
+}
+subgraph cluster_Region_1108413960 {
+label = "R(1:(1:(1:39)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1082931175 {
+label = "IF [B:37:0x012d] THEN: R(1:(1:39)) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x012d|if (okhttp3.internal.http.HttpMethod.invalidatesCache(r2.method()) == true) goto L_0x012f\l}"];
+subgraph cluster_Region_1042578527 {
+label = "R(1:(1:39))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1768909306 {
+label = "Try: R(1:39) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1326229901 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ ?|Catch:\{ IOException \-\> 0x0134 \}\lSplitter:B:38:0x012f\l|r5.cache.remove(r2)     \/\/ Catch:\{ IOException \-\> 0x0134 \}\l}"];
+}
+subgraph cluster_Region_1641545071 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_40 [shape=record,label="{40\:\ 0x0134|RETURN\l|return r6\l}"];
+}
+subgraph cluster_Region_729599507 {
+label = "R(3:42|(1:44)|45) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0135|ExcHandler:  FINALLY\lSplitter:B:17:0x0088\l}"];
+subgraph cluster_IfRegion_1197702572 {
+label = "IF [B:43:0x0136] THEN: R(1:44) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0136|FINALLY_INSNS\l|if (r0 != null) goto L_0x0138\l}"];
+subgraph cluster_Region_589723634 {
+label = "R(1:44)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0138|FINALLY_INSNS\l|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0.body())\l}"];
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x013f|throw r6\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_729599507 {
+label = "R(3:42|(1:44)|45) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x0135|ExcHandler:  FINALLY\lSplitter:B:17:0x0088\l}"];
+subgraph cluster_IfRegion_1197702572 {
+label = "IF [B:43:0x0136] THEN: R(1:44) ELSE: null";
+node [shape=record,color=blue];
+Node_43 [shape=record,label="{43\:\ 0x0136|FINALLY_INSNS\l|if (r0 != null) goto L_0x0138\l}"];
+subgraph cluster_Region_589723634 {
+label = "R(1:44)";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x0138|FINALLY_INSNS\l|okhttp3.internal.Util.closeQuietly((java.io.Closeable) r0.body())\l}"];
+}
+}
+Node_45 [shape=record,label="{45\:\ 0x013f|throw r6\l}"];
+}
+subgraph cluster_Region_1641545071 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003d}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0077}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0088|SYNTHETIC\lSplitter:B:17:0x0088\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0090|DONT_GENERATE\l|okhttp3.ResponseBody r0 = r0.body()\lokhttp3.internal.Util.closeQuietly((java.io.Closeable) r0)\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0099}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x010e}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0114}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x011a}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0125}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x012f|SYNTHETIC\lSplitter:B:38:0x012f\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:38:0x012f\l}"];
+MethodNode[shape=record,label="{public okhttp3.Response okhttp3.internal.cache.CacheInterceptor.intercept((r5v0 'this' okhttp3.internal.cache.CacheInterceptor A[IMMUTABLE_TYPE, THIS]), (r6v0 okhttp3.Interceptor$Chain A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_17[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_27[style=dashed];
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_40[style=dashed];
+Node_31 -> Node_32;
+Node_31 -> Node_36[style=dashed];
+Node_33 -> Node_34;
+Node_33 -> Node_36[style=dashed];
+Node_37 -> Node_38;
+Node_37 -> Node_40[style=dashed];
+Node_39 -> Node_40;
+Node_39 -> Node_41;
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_45;
+Node_42 -> Node_43;
+Node_43 -> Node_44;
+Node_43 -> Node_45[style=dashed];
+Node_44 -> Node_45;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_42;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_34 -> Node_35;
+Node_36 -> Node_37;
+Node_38 -> Node_39;
+Node_38 -> Node_41;
+Node_41 -> Node_40;
+}
+

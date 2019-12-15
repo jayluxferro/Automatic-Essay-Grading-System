@@ -1,0 +1,32 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.TileWriter.getDirectoryFileList(Ljava\/io\/File;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList \l0x0002: INVOKE  (r0 I:java.util.ArrayList) java.util.ArrayList.\<init\>():void type: DIRECT \l0x0005: INVOKE  (r6 I:java.io.File[]) = (r6 I:java.io.File) java.io.File.listFiles():java.io.File[] type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x002a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: ARRAY_LENGTH  (r1 I:int) = (r6 I:?[]) \l0x000c: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: IF  (r2 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:11:0x002a \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: AGET  (r3 I:?[OBJECT, ARRAY]) = (r6 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x0011: INVOKE  (r4 I:boolean) = (r3 I:java.io.File) java.io.File.isFile():boolean type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001a \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0017|0x0017: INVOKE  (r0 I:java.util.List), (r3 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001a|0x001a: INVOKE  (r4 I:boolean) = (r3 I:java.io.File) java.io.File.isDirectory():boolean type: VIRTUAL \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|0x001e: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0027 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|0x0020: INVOKE  (r3 I:java.util.List) = \l  (r5 I:org.osmdroid.tileprovider.modules.TileWriter)\l  (r3 I:java.io.File)\l org.osmdroid.tileprovider.modules.TileWriter.getDirectoryFileList(java.io.File):java.util.List type: DIRECT \l0x0024: INVOKE  (r0 I:java.util.List), (r3 I:java.util.Collection) java.util.List.addAll(java.util.Collection):boolean type: INTERFACE \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|0x0027: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x002a|0x002a: RETURN  (r0 I:java.util.List\<java.io.File\>) \l}"];
+MethodNode[shape=record,label="{private java.util.List\<java.io.File\> org.osmdroid.tileprovider.modules.TileWriter.getDirectoryFileList((r5 'this' I:org.osmdroid.tileprovider.modules.TileWriter A[IMMUTABLE_TYPE, THIS]), (r6 I:java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/io\/File;, ), Ljava\/util\/List\<, Ljava\/io\/File;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_3;
+}
+

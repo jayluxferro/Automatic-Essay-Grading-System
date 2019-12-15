@@ -1,0 +1,36 @@
+digraph "CFG fororg.osgeo.proj4j.proj.TranverseCentralCylindricalProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1894406768 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = java.lang.Math.cos(r9) * java.lang.Math.sin(r7)\ldouble double r4 = 1.0d \- (r0 * r0)\l}"];
+subgraph cluster_Region_1646144037 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2144383397 {
+label = "IF [B:1:0x0016] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r4 \>= 1.0E\-10d) goto L_0x0018\l}"];
+subgraph cluster_Region_1748373518 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|r11.f294x = r0 \/ java.lang.Math.sqrt(r4)\lr11.f295y = java.lang.Math.atan2(java.lang.Math.tan(r9), java.lang.Math.cos(r7))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002d|RETURN\l|return r11\l}"];
+}
+}
+subgraph cluster_Region_1722976875 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|throw new org.osgeo.proj4j.ProjectionException(\"F\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002e}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.TranverseCentralCylindricalProjection.project((r6v0 'this' org.osgeo.proj4j.proj.TranverseCentralCylindricalProjection A[IMMUTABLE_TYPE, THIS]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

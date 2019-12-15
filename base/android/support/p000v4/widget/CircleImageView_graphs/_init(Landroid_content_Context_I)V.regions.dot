@@ -1,0 +1,38 @@
+digraph "CFG forandroid.support.v4.widget.CircleImageView.\<init\>(Landroid\/content\/Context;I)V" {
+subgraph cluster_Region_1292222571 {
+label = "R(2:1|(3:0|(1:2)(1:3)|4))";
+node [shape=record,color=blue];
+Node_InsnContainer_1508218297 [shape=record,label="{|super(r6)\l}"];
+subgraph cluster_Region_597528390 {
+label = "R(3:0|(1:2)(1:3)|4) | DECL_VAR: android.graphics.drawable.ShapeDrawable null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r6 = getContext().getResources().getDisplayMetrics().density\lint int r0 = (int) (Y_OFFSET * r6)\lint int r1 = (int) (0.0f * r6)\lr5.mShadowRadius = (int) (SHADOW_RADIUS * r6)\l}"];
+subgraph cluster_IfRegion_2143167100 {
+label = "IF [B:1:0x0025] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0025|if (elevationSupported() == true) goto L_0x0027\l}"];
+subgraph cluster_Region_662004582 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0027|android.graphics.drawable.ShapeDrawable r0 = new android.graphics.drawable.ShapeDrawable(new android.graphics.drawable.shapes.OvalShape())\landroid.support.p000v4.view.ViewCompat.setElevation(r5, r6 * 4.0f)\l}"];
+}
+subgraph cluster_Region_199744928 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0039|android.graphics.drawable.ShapeDrawable android.graphics.drawable.ShapeDrawable r2 = new android.graphics.drawable.ShapeDrawable(new android.support.p000v4.widget.CircleImageView.OvalShadow(r5.mShadowRadius))\lsetLayerType(1, r2.getPaint())\lr2.getPaint().setShadowLayer((float) r5.mShadowRadius, (float) r1, (float) r0, KEY_SHADOW_COLOR)\lint int r6 = r5.mShadowRadius\lsetPadding(r6, r6, r6, r6)\lr0 = r2\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0061|PHI: r0 \l  PHI: (r0v3 android.graphics.drawable.ShapeDrawable) = (r0v5 android.graphics.drawable.ShapeDrawable), (r0v6 android.graphics.drawable.ShapeDrawable) binds: [B:3:0x0039, B:2:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|r0.getPaint().setColor(r7)\landroid.support.p000v4.view.ViewCompat.setBackground(r5, r0)\l}"];
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x006b}"];
+MethodNode[shape=record,label="{void android.support.v4.widget.CircleImageView.\<init\>((r5v0 'this' android.support.v4.widget.CircleImageView A[IMMUTABLE_TYPE, THIS]), (r6v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

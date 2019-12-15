@@ -1,0 +1,28 @@
+digraph "CFG formil.nga.geopackage.validate.GeoPackageValidate.hasMinimumTables(Lmil\/nga\/geopackage\/GeoPackageCore;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Splitter:B:0:0x0000\l|0x0000: INVOKE  (r0 I:mil.nga.geopackage.core.srs.SpatialReferenceSystemDao) = (r3 I:mil.nga.geopackage.GeoPackageCore) mil.nga.geopackage.GeoPackageCore.getSpatialReferenceSystemDao():mil.nga.geopackage.core.srs.SpatialReferenceSystemDao type: INTERFACE A[Catch:\{ SQLException \-\> 0x0018 \}, TRY_ENTER]\l0x0004: INVOKE  (r0 I:boolean) = \l  (r0 I:mil.nga.geopackage.core.srs.SpatialReferenceSystemDao)\l mil.nga.geopackage.core.srs.SpatialReferenceSystemDao.isTableExists():boolean type: VIRTUAL A[Catch:\{ SQLException \-\> 0x0018 \}]\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0016 A[Catch:\{ SQLException \-\> 0x0018 \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: INVOKE  (r0 I:mil.nga.geopackage.core.contents.ContentsDao) = (r3 I:mil.nga.geopackage.GeoPackageCore) mil.nga.geopackage.GeoPackageCore.getContentsDao():mil.nga.geopackage.core.contents.ContentsDao type: INTERFACE A[Catch:\{ SQLException \-\> 0x0018 \}]\l0x000e: INVOKE  (r0 I:boolean) = (r0 I:mil.nga.geopackage.core.contents.ContentsDao) mil.nga.geopackage.core.contents.ContentsDao.isTableExists():boolean type: VIRTUAL A[Catch:\{ SQLException \-\> 0x0018 \}]\l0x0011: NOP   A[TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0016 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: CONST  (r3 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|0x0017: RETURN  (r3 I:boolean) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|0x0018: NEW_INSTANCE  (r0 I:mil.nga.geopackage.GeoPackageException) =  mil.nga.geopackage.GeoPackageException \l0x001a: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001c: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x001f: CONST_STR  (r2 I:java.lang.String) =  \"Failed to check for required minimum GeoPackage tables. GeoPackage Name: \" \l0x0021: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0024: INVOKE  (r3 I:java.lang.String) = (r3 I:mil.nga.geopackage.GeoPackageCore) mil.nga.geopackage.GeoPackageCore.getName():java.lang.String type: INTERFACE \l0x0028: INVOKE  (r1 I:java.lang.StringBuilder), (r3 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x002b: INVOKE  (r3 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x002f: INVOKE  \l  (r0 I:mil.nga.geopackage.GeoPackageException)\l  (r3 I:java.lang.String)\l mil.nga.geopackage.GeoPackageException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lExcHandler: SQLException null\lSplitter:B:0:0x0000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0032|0x0032: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static boolean mil.nga.geopackage.validate.GeoPackageValidate.hasMinimumTables((r3 I:mil.nga.geopackage.GeoPackageCore A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_9;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_10;
+Node_9 -> Node_8;
+}
+

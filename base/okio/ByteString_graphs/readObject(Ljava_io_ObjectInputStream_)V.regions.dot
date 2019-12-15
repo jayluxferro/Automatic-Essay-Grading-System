@@ -1,0 +1,56 @@
+digraph "CFG forokio.ByteString.readObject(Ljava\/io\/ObjectInputStream;)V" {
+subgraph cluster_Region_239283779 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okio.ByteString okio.ByteString r3 = read(r3, r3.readInt())\l}"];
+subgraph cluster_TryCatchRegion_164374273 {
+label = "Try: R(1:2) catches: R(1:9), R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_670542968 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ NoSuchFieldException \-\> 0x0020, IllegalAccessException \-\> 0x001a \}\lSplitter:B:1:0x000c\l|java.lang.reflect.Field java.lang.reflect.Field r0 = okio.ByteString.class.getDeclaredField(\"data\")     \/\/ Catch:\{ NoSuchFieldException \-\> 0x0020, IllegalAccessException \-\> 0x001a \}\lr0.setAccessible(true)     \/\/ Catch:\{ NoSuchFieldException \-\> 0x0020, IllegalAccessException \-\> 0x001a \}\lr0.set(r2, r3.data)     \/\/ Catch:\{ NoSuchFieldException \-\> 0x0020, IllegalAccessException \-\> 0x001a \}\l}"];
+}
+subgraph cluster_Region_817920652 {
+label = "R(1:9) | ExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|throw new java.lang.AssertionError()\l}"];
+}
+subgraph cluster_Region_545932717 {
+label = "R(1:6) | ExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+subgraph cluster_Region_817920652 {
+label = "R(1:9) | ExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|throw new java.lang.AssertionError()\l}"];
+}
+subgraph cluster_Region_545932717 {
+label = "R(1:6) | ExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|throw new java.lang.AssertionError()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000c|SYNTHETIC\lSplitter:B:1:0x000c\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0019}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\lSplitter:B:1:0x000c\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\lSplitter:B:1:0x000c\l}"];
+MethodNode[shape=record,label="{private void okio.ByteString.readObject((r2v0 'this' okio.ByteString A[IMMUTABLE_TYPE, THIS]), (r3v0 java.io.ObjectInputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_2 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_1 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_4;
+Node_7 -> Node_9;
+Node_8 -> Node_7;
+}
+

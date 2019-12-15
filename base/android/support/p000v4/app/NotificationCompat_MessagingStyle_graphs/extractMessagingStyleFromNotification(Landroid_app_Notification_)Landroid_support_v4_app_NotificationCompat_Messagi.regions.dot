@@ -1,0 +1,68 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.MessagingStyle.extractMessagingStyleFromNotification(Landroid\/app\/Notification;)Landroid\/support\/v4\/app\/NotificationCompat$MessagingStyle;" {
+subgraph cluster_Region_531466172 {
+label = "R(2:0|(2:(1:6)|(1:(2:8|9))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Bundle android.os.Bundle r2 = android.support.p000v4.app.NotificationCompat.getExtras(r2)\l}"];
+subgraph cluster_Region_57489027 {
+label = "R(2:(1:6)|(1:(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_6254710 {
+label = "IF [B:1:0x0005, B:3:0x000d, B:5:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r2 != null) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if (r2.containsKey(android.support.p000v4.app.NotificationCompat.EXTRA_SELF_DISPLAY_NAME) != true) goto L_0x000f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r2.containsKey(android.support.p000v4.app.NotificationCompat.EXTRA_MESSAGING_STYLE_USER) != true) goto L_0x0017\l}"];
+subgraph cluster_Region_1729182005 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2133821112 {
+label = "R(1:(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1944616053 {
+label = "Try: R(2:8|9) catches: R(1:10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_924510069 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ ClassCastException \-\> 0x0021 \}\lSplitter:B:7:0x0018\l|android.support.v4.app.NotificationCompat$MessagingStyle android.support.p000v4.app.NotificationCompat.MessagingStyle r1 = new android.support.p000v4.app.NotificationCompat.MessagingStyle()     \/\/ Catch:\{ ClassCastException \-\> 0x0021 \}\lr1.restoreFromCompatExtras(r2)     \/\/ Catch:\{ ClassCastException \-\> 0x0021 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_425432485 {
+label = "R(1:10) | ExcHandler: ClassCastException (unused java.lang.ClassCastException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_425432485 {
+label = "R(1:10) | ExcHandler: ClassCastException (unused java.lang.ClassCastException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|RETURN\l|return null\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018|SYNTHETIC\lSplitter:B:7:0x0018\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lExcHandler: ClassCastException (unused java.lang.ClassCastException)\lSplitter:B:7:0x0018\l}"];
+MethodNode[shape=record,label="{public static android.support.v4.app.NotificationCompat$MessagingStyle android.support.v4.app.NotificationCompat.MessagingStyle.extractMessagingStyleFromNotification((r2v0 android.app.Notification A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_11 -> Node_10;
+}
+

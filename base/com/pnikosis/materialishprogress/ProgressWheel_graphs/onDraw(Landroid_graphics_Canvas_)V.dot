@@ -1,0 +1,35 @@
+digraph "CFG forcom.pnikosis.materialishprogress.ProgressWheel.onDraw(Landroid\/graphics\/Canvas;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onDraw(r15)\lr0 = r15\lr0.drawArc(r14.circleBounds, 360.0f, 360.0f, false, r14.rimPaint)\lr11 = false\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0013|if (r14.isSpinning == false) goto L_0x005e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0015|r11 = true\llong r12 = android.os.SystemClock.uptimeMillis() \- r14.lastTimeAnimated\lfloat r10 = (((float) r12) * r14.spinSpeed) \/ 1000.0f\lupdateBarLength(r12)\lr14.mProgress = r14.mProgress + r10\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0034|if ((r14.mProgress \> 360.0f ? 1 : (r14.mProgress == 360.0f ? 0 : \-1)) \<= 0) goto L_0x003d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0036|r14.mProgress = r14.mProgress \- 360.0f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003d|r14.lastTimeAnimated = android.os.SystemClock.uptimeMillis()\lfloat r3 = 40.0f + r14.barExtraLength\landroid.graphics.RectF r1 = r14.circleBounds\lr0 = r15\lr0.drawArc(r1, r14.mProgress \- 90.0f, r3, false, r14.barPaint)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0058|PHI: r11 \l  PHI: (r11v3 'mustInvalidate' boolean) = (r11v1 'mustInvalidate' boolean), (r11v4 'mustInvalidate' boolean) binds: [B:11:0x0088, B:5:0x003d] A[DONT_GENERATE, DONT_INLINE]\l|if (r11 == false) goto L_?\l}"];
+Node_7 [shape=record,label="{7\:\ 0x005a|invalidate()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x005e}"];
+Node_9 [shape=record,label="{9\:\ 0x0064|if ((r14.mProgress \> r14.mTargetProgress ? 1 : (r14.mProgress == r14.mTargetProgress ? 0 : \-1)) == 0) goto L_0x0088\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0066|r11 = true\lfloat r10 = (((float) (android.os.SystemClock.uptimeMillis() \- r14.lastTimeAnimated)) \/ 1000.0f) * r14.spinSpeed\lr14.mProgress = java.lang.Math.min(r14.mProgress + r10, r14.mTargetProgress)\lr14.lastTimeAnimated = android.os.SystemClock.uptimeMillis()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0088|PHI: r11 \l  PHI: (r11v1 'mustInvalidate' boolean) = (r11v0 'mustInvalidate' boolean), (r11v2 'mustInvalidate' boolean) binds: [B:9:0x0064, B:10:0x0066] A[DONT_GENERATE, DONT_INLINE]\l|r4 = r15\lr4.drawArc(r14.circleBounds, \-90.0f, r14.mProgress, false, r14.barPaint)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{protected void com.pnikosis.materialishprogress.ProgressWheel.onDraw((r14v0 'this' com.pnikosis.materialishprogress.ProgressWheel A[IMMUTABLE_TYPE, THIS]), (r15v0 'canvas' android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_6;
+}
+

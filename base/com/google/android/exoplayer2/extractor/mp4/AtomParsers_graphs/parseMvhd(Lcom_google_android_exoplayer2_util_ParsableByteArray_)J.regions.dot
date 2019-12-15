@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.AtomParsers.parseMvhd(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)J" {
+subgraph cluster_Region_648107011 {
+label = "R(4:0|(1:4)|2|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r2 = 8\lr4.setPosition(8)\l}"];
+subgraph cluster_IfRegion_1544898937 {
+label = "IF [B:1:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (com.google.android.exoplayer2.extractor.mp4.Atom.parseFullAtomVersion(r4.readInt()) != 0) goto L_0x0017\l}"];
+subgraph cluster_Region_917689996 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r2 = 16\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x000f|PHI: r2 \l  PHI: (r2v2 int) = (r2v0 int), (r2v1 int) binds: [B:1:0x000d, B:4:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|r4.skipBytes(r2)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|RETURN\l|return r4.readUnsignedInt()\l}"];
+}
+MethodNode[shape=record,label="{private static long com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseMvhd((r4v0 'mvhd' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_4 -> Node_2;
+Node_2 -> Node_3;
+}
+

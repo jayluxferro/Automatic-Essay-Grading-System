@@ -1,0 +1,41 @@
+digraph "CFG forcom.mapbox.mapboxsdk.http.HttpIdentifier.getIdentifier(Landroid\/content\/Context;)Ljava\/lang\/String;" {
+subgraph cluster_Region_1190284382 {
+label = "R(1:(2:1|2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1541013017 {
+label = "Try: R(2:1|2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_739648533 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ Exception \-\> 0x002b \}\lSplitter:B:0:0x0000\l|android.content.pm.PackageInfo android.content.pm.PackageInfo r0 = r4.getPackageManager().getPackageInfo(r4.getPackageName(), 0)     \/\/ Catch:\{ Exception \-\> 0x002b \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x002a|RETURN\l|return java.lang.String.format(\"%s\/%s (%s)\", new java.lang.Object[]\{r4.getPackageName(), r0.versionName, java.lang.Integer.valueOf(r0.versionCode)\})\l}"];
+}
+subgraph cluster_Region_1013748979 {
+label = "R(3:3|4|5) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002b|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002c|com.mapbox.mapboxsdk.MapStrictMode.strictModeViolation(r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|RETURN\l|return \"\"\l}"];
+}
+}
+}
+subgraph cluster_Region_1013748979 {
+label = "R(3:3|4|5) | ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002b|ExcHandler: Exception (r4v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002c|com.mapbox.mapboxsdk.MapStrictMode.strictModeViolation(r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|RETURN\l|return \"\"\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{private static java.lang.String com.mapbox.mapboxsdk.http.HttpIdentifier.getIdentifier((r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG fororg.osmdroid.views.overlay.MinimapOverlay.setViewPort(Landroid\/graphics\/Canvas;Lorg\/osmdroid\/views\/Projection;)Z" {
+subgraph cluster_Region_884611844 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = r8.getZoomLevel() \- ((double) getZoomDifference())\l}"];
+subgraph cluster_Region_669010775 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1367538534 {
+label = "IF [B:1:0x0013] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0013|if (r0 \< ((double) r6.mTileProvider.getMinimumZoomLevel())) goto L_0x0015\l}"];
+subgraph cluster_Region_2060373506 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1112017223 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|int int r2 = (r7.getWidth() \- getPadding()) \- getWidth()\lint int r7 = (r7.getHeight() \- getPadding()) \- getHeight()\lsetCanvasRect(new android.graphics.Rect(r2, r7, getWidth() + r2, getHeight() + r7))\lsetProjection(r8.getOffspring(r0, getCanvasRect()))\lgetProjection().getMercatorViewPort(r6.mViewPort)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x005a|RETURN\l|return true\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{protected boolean org.osmdroid.views.overlay.MinimapOverlay.setViewPort((r6v0 'this' org.osmdroid.views.overlay.MinimapOverlay A[IMMUTABLE_TYPE, THIS]), (r7v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

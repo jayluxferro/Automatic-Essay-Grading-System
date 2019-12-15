@@ -1,0 +1,43 @@
+digraph "CFG formil.nga.geopackage.tiles.user.TileDao.queryForTileGrid(J)Lmil\/nga\/geopackage\/tiles\/TileGrid;" {
+subgraph cluster_Region_485747430 {
+label = "R(2:0|(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = buildWhere(\"zoom_level\", (java.lang.Object) java.lang.Long.valueOf(r13))\ljava.lang.String[] java.lang.String[] r13 = buildWhereArgs(new java.lang.Object[]\{java.lang.Long.valueOf(r13)\})\ljava.lang.Integer java.lang.Integer r14 = min(\"tile_column\", r0, r13)\ljava.lang.Integer java.lang.Integer r1 = max(\"tile_column\", r0, r13)\ljava.lang.Integer java.lang.Integer r2 = min(\"tile_row\", r0, r13)\ljava.lang.Integer java.lang.Integer r13 = max(\"tile_row\", r0, r13)\l}"];
+subgraph cluster_Region_624313346 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_681956758 {
+label = "IF [B:1:0x0030, B:2:0x0032, B:3:0x0034, B:4:0x0036] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0030|if (r14 == null) goto L_0x0053\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0032|ADDED_TO_REGION\l|if (r1 == null) goto L_0x0053\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0034|ADDED_TO_REGION\l|if (r2 == null) goto L_0x0053\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0036|ADDED_TO_REGION\l|if (r13 == null) goto L_0x0053\l}"];
+subgraph cluster_Region_312890889 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0053|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_859720027 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return new mil.nga.geopackage.tiles.TileGrid((long) r14.intValue(), (long) r2.intValue(), (long) r1.intValue(), (long) r13.intValue())\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0038}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.tiles.TileGrid mil.nga.geopackage.tiles.user.TileDao.queryForTileGrid((r12v0 'this' mil.nga.geopackage.tiles.user.TileDao A[IMMUTABLE_TYPE, THIS]), (r13v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+}
+

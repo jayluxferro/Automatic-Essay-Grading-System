@@ -1,0 +1,31 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseDaoImpl.2.call()Ljava\/lang\/Integer;" {
+subgraph cluster_Region_1634947373 {
+label = "R(3:0|(1:3)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = r4.iterator()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1216796237 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|if (r0.hasNext() != false) goto L_0x000d\l}"];
+subgraph cluster_Region_7508866 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:3:0x000d\l|r1 += com.j256.ormlite.dao.BaseDaoImpl.this.statementExecutor.create(r0, r2, com.j256.ormlite.dao.BaseDaoImpl.this.objectCache)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0027|RETURN\l|return java.lang.Integer.valueOf(r1)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0007|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:3:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:3:0x000d\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0023}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.lang.Integer com.j256.ormlite.dao.BaseDaoImpl.2.call((r6v0 'this' com.j256.ormlite.dao.BaseDaoImpl$2 A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

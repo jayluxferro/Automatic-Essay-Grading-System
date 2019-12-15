@@ -1,0 +1,71 @@
+digraph "CFG forandroid.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi18.registerMediaButtonEventReceiver(Landroid\/app\/PendingIntent;Landroid\/content\/ComponentName;)V" {
+subgraph cluster_Region_495885247 {
+label = "R(2:(1:(1:3))|(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_291512812 {
+label = "IF [B:1:0x0002] THEN: R(1:(1:3)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (sIsMbrPendingIntentSupported == true) goto L_0x0004\l}"];
+subgraph cluster_Region_467630426 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_682448451 {
+label = "Try: R(1:3) catches: R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1100440458 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ NullPointerException \-\> 0x000a \}\lSplitter:B:2:0x0004\l|r2.mAudioManager.registerMediaButtonEventReceiver(r3)     \/\/ Catch:\{ NullPointerException \-\> 0x000a \}\l}"];
+}
+subgraph cluster_Region_1374176533 {
+label = "R(1:4) | ExcHandler: NullPointerException (unused java.lang.NullPointerException)\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|android.util.Log.w(android.support.p000v4.media.session.MediaSessionCompat.TAG, \"Unable to register media button event receiver with PendingIntent, falling back to ComponentName.\")\lsIsMbrPendingIntentSupported = false\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_824046555 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1933620469 {
+label = "IF [B:7:0x0016] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|if (sIsMbrPendingIntentSupported == false) goto L_0x0018\l}"];
+subgraph cluster_Region_154210852 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|super.registerMediaButtonEventReceiver(r3, r4)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1374176533 {
+label = "R(1:4) | ExcHandler: NullPointerException (unused java.lang.NullPointerException)\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|android.util.Log.w(android.support.p000v4.media.session.MediaSessionCompat.TAG, \"Unable to register media button event receiver with PendingIntent, falling back to ComponentName.\")\lsIsMbrPendingIntentSupported = false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|SYNTHETIC\lSplitter:B:2:0x0004\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lExcHandler: NullPointerException (unused java.lang.NullPointerException)\lSplitter:B:2:0x0004\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi18.registerMediaButtonEventReceiver((r2v0 'this' android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi18 A[IMMUTABLE_TYPE, THIS]), (r3v0 android.app.PendingIntent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.content.ComponentName A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_5 -> Node_4;
+Node_6 -> Node_7;
+}
+

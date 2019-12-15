@@ -1,0 +1,86 @@
+digraph "CFG forandroid.support.constraint.Barrier.init(Landroid\/util\/AttributeSet;)V" {
+subgraph cluster_Region_2000098553 {
+label = "R(3:0|(2:2|(3:4|(1:6)(1:(1:9)(0))|10))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.init(r7)\lr6.mBarrier = new android.support.constraint.solver.widgets.Barrier()\l}"];
+subgraph cluster_IfRegion_1129748500 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(3:4|(1:6)(1:(1:9)(0))|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r7 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_567854154 {
+label = "R(2:2|(3:4|(1:6)(1:(1:9)(0))|10))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|android.content.res.TypedArray android.content.res.TypedArray r7 = getContext().obtainStyledAttributes(r7, android.support.constraint.C0036R.styleable.ConstraintLayout_Layout)\lint int r0 = r7.getIndexCount()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_44836236 {
+label = "LOOP:0: (3:4|(1:6)(1:(1:9)(0))|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x000c, B:10:0x003c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x001c\-\>B:10:0x003c\l|if (r2 \< r0) goto L_0x001e\l}"];
+subgraph cluster_Region_590949003 {
+label = "R(3:4|(1:6)(1:(1:9)(0))|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|int int r3 = r7.getIndex(r2)\l}"];
+subgraph cluster_IfRegion_1756047904 {
+label = "IF [B:5:0x0024] THEN: R(1:6) ELSE: R(1:(1:9)(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|if (r3 == android.support.constraint.C0036R.styleable.ConstraintLayout_Layout_barrierDirection) goto L_0x0026\l}"];
+subgraph cluster_Region_1780633940 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|setType(r7.getInt(r3, 0))\l}"];
+}
+subgraph cluster_Region_303535555 {
+label = "R(1:(1:9)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_276524688 {
+label = "IF [B:8:0x0030] THEN: R(1:9) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0030|if (r3 == android.support.constraint.C0036R.styleable.ConstraintLayout_Layout_barrierAllowsGoneWidgets) goto L_0x0032\l}"];
+subgraph cluster_Region_1697732596 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|r6.mBarrier.setAllowsGoneWidget(r7.getBoolean(r3, true))\l}"];
+}
+subgraph cluster_Region_215060008 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x003c|LOOP_END\lLOOP:0: B:3:0x001c\-\>B:10:0x003c\l|r2++\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003f|r6.mHelperWidget = r6.mBarrier\lvalidateParams()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0046}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003f|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003c|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003c|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void android.support.constraint.Barrier.init((r6v0 'this' android.support.constraint.Barrier A[IMMUTABLE_TYPE, THIS]), (r7v0 android.util.AttributeSet A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_15;
+Node_8 -> Node_9;
+Node_8 -> Node_16[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_3;
+Node_11 -> Node_12;
+Node_7 -> Node_8;
+Node_13 -> Node_11;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+Node_16 -> Node_10;
+}
+

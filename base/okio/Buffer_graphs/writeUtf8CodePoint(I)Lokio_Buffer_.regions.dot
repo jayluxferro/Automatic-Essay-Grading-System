@@ -1,0 +1,113 @@
+digraph "CFG forokio.Buffer.writeUtf8CodePoint(I)Lokio\/Buffer;" {
+subgraph cluster_Region_915442737 {
+label = "R(2:(1:2)(1:(1:5)(1:(1:(1:13)(1:12))(1:(1:16)(2:18|19))))|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_17404211 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:(1:5)(1:(1:(1:13)(1:12))(1:(1:16)(2:18|19))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4 \< 128) goto L_0x0004\l}"];
+subgraph cluster_Region_267164835 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|writeByte(r4)\l}"];
+}
+subgraph cluster_Region_1733595803 {
+label = "R(1:(1:5)(1:(1:(1:13)(1:12))(1:(1:16)(2:18|19)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1435986756 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: R(1:(1:(1:13)(1:12))(1:(1:16)(2:18|19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r4 \< 2048) goto L_0x000e\l}"];
+subgraph cluster_Region_408611020 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|writeByte((r4 \>\> 6) \| org.kxml2.wap.Wbxml.EXT_0)\lwriteByte((r4 & 63) \| 128)\l}"];
+}
+subgraph cluster_Region_1933076192 {
+label = "R(1:(1:(1:13)(1:12))(1:(1:16)(2:18|19))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_809230934 {
+label = "IF [B:7:0x001d] THEN: R(1:(1:13)(1:12)) ELSE: R(1:(1:16)(2:18|19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r4 \< 65536) goto L_0x001f\l}"];
+subgraph cluster_Region_1578660446 {
+label = "R(1:(1:13)(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_298577369 {
+label = "IF [B:9:0x0022, B:11:0x0027] THEN: R(1:13) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|if (r4 \< 55296) goto L_0x002d\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0027|ADDED_TO_REGION\l|if (r4 \> 57343) goto L_0x002d\l}"];
+subgraph cluster_Region_561288806 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002d|writeByte((r4 \>\> 12) \| 224)\lwriteByte(((r4 \>\> 6) & 63) \| 128)\lwriteByte((r4 & 63) \| 128)\l}"];
+}
+subgraph cluster_Region_1311959372 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0029|writeByte(63)\l}"];
+}
+}
+}
+subgraph cluster_Region_1394993238 {
+label = "R(1:(1:16)(2:18|19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_491680462 {
+label = "IF [B:15:0x0044] THEN: R(1:16) ELSE: R(2:18|19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0044|if (r4 \<= 1114111) goto L_0x0046\l}"];
+subgraph cluster_Region_403443879 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0046|writeByte((r4 \>\> 18) \| 240)\lwriteByte(((r4 \>\> 12) & 63) \| 128)\lwriteByte(((r4 \>\> 6) & 63) \| 128)\lwriteByte((r4 & 63) \| 128)\l}"];
+}
+subgraph cluster_Region_1101918819 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0061}"];
+Node_19 [shape=record,label="{19\:\ 0x007b|throw new java.lang.IllegalArgumentException(\"Unexpected code point: \" + java.lang.Integer.toHexString(r4))\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0060|RETURN\l|return r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0041}"];
+MethodNode[shape=record,label="{public okio.Buffer okio.Buffer.writeUtf8CodePoint((r3v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_17;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_17;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_13;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_13 -> Node_17;
+Node_12 -> Node_17;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+}
+

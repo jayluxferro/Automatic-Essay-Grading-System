@@ -1,0 +1,91 @@
+digraph "CFG forandroid.support.v4.media.MediaBrowserCompat.MediaBrowserImplBase.subscribe(Ljava\/lang\/String;Landroid\/os\/Bundle;Landroid\/support\/v4\/media\/MediaBrowserCompat$SubscriptionCallback;)V" {
+subgraph cluster_Region_1918461378 {
+label = "R(5:0|(1:2)|(1:4)(1:5)|6|(1:(1:9))(0)) | DECL_VAR: android.os.Bundle null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v4.media.MediaBrowserCompat$Subscription android.support.p000v4.media.MediaBrowserCompat.Subscription r0 = r2.mSubscriptions.get(r3)\l}"];
+subgraph cluster_IfRegion_1824283932 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_0x000a\l}"];
+subgraph cluster_Region_679060231 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.support.v4.media.MediaBrowserCompat$Subscription r0 = new android.support.p000v4.media.MediaBrowserCompat.Subscription()\lr2.mSubscriptions.put(r3, r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_1215430796 {
+label = "IF [B:3:0x0014] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|PHI: r0 \l  PHI: (r0v3 android.support.v4.media.MediaBrowserCompat$Subscription) = (r0v2 android.support.v4.media.MediaBrowserCompat$Subscription), (r0v7 android.support.v4.media.MediaBrowserCompat$Subscription) binds: [B:1:0x0008, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 == null) goto L_0x0016\l}"];
+subgraph cluster_Region_971268612 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|r4 = null\l}"];
+}
+subgraph cluster_Region_2777270 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|r4 = new android.os.Bundle(r4)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001e|PHI: r4 \l  PHI: (r4v1 android.os.Bundle) = (r4v3 android.os.Bundle), (r4v4 android.os.Bundle) binds: [B:5:0x0018, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|r0.putCallback(r4, r5)\l}"];
+subgraph cluster_IfRegion_1137737301 {
+label = "IF [B:7:0x0025] THEN: R(1:(1:9)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|if (isConnected() == true) goto L_0x0027\l}"];
+subgraph cluster_Region_166201592 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1300792820 {
+label = "Try: R(1:9) catches: R(1:10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_354851497 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|Catch:\{ RemoteException \-\> 0x0031 \}\lSplitter:B:8:0x0027\l|r2.mServiceBinderWrapper.addSubscription(r3, r5.mToken, r4, r2.mCallbacksMessenger)     \/\/ Catch:\{ RemoteException \-\> 0x0031 \}\l}"];
+}
+subgraph cluster_Region_1430551694 {
+label = "R(1:10) | ExcHandler: RemoteException (unused android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0031|android.util.Log.d(android.support.p000v4.media.MediaBrowserCompat.TAG, \"addSubscription failed with RemoteException parentId=\" + r3)\l}"];
+}
+}
+}
+subgraph cluster_Region_480379158 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1430551694 {
+label = "R(1:10) | ExcHandler: RemoteException (unused android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0031|android.util.Log.d(android.support.p000v4.media.MediaBrowserCompat.TAG, \"addSubscription failed with RemoteException parentId=\" + r3)\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027|SYNTHETIC\lSplitter:B:8:0x0027\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lExcHandler: RemoteException (unused android.os.RemoteException)\lSplitter:B:8:0x0027\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.media.MediaBrowserCompat.MediaBrowserImplBase.subscribe((r2v0 'this' android.support.v4.media.MediaBrowserCompat$MediaBrowserImplBase A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.support.v4.media.MediaBrowserCompat$SubscriptionCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], , Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_9 -> Node_11;
+Node_9 -> Node_14;
+Node_10 -> Node_12;
+Node_10 -> Node_12;
+Node_8 -> Node_9;
+Node_8 -> Node_11;
+Node_11 -> Node_10;
+}
+

@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.H264Reader.consume(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r19 = r21.getPosition()\lint r17 = r21.limit()\lbyte[] r4 = r21.data\lr20.totalBytesWritten = r20.totalBytesWritten + ((long) r21.bytesLeft())\lr0 = r21\lr20.output.sampleData(r0, r21.bytesLeft())\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0027|LOOP_START\lPHI: r19 \l  PHI: (r19v1 'offset' int) = (r19v0 'offset' int), (r19v2 'offset' int) binds: [B:0:0x0000, B:11:0x0064] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0027\-\>B:11:0x0064\l|boolean[] r5 = r20.prefixFlags\lint r18 = com.google.android.exoplayer2.util.NalUnitUtil.findNalUnit(r4, r19, r17, r5)\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0037|if (r18 != r17) goto L_0x0043\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0039|nalUnitData(r4, r19, r17)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0042|RETURN\l|return\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0043|int r13 = com.google.android.exoplayer2.util.NalUnitUtil.getNalUnitType(r4, r18)\lint r16 = r18 \- r19\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004b|if (r16 \<= 0) goto L_0x0056\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004d|nalUnitData(r4, r19, r18)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0056|int r8 = r17 \- r18\llong r6 = r20.totalBytesWritten \- ((long) r8)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x005f|if (r16 \>= 0) goto L_0x007a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0061|int r9 = \-r16\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0064|LOOP_END\lPHI: r9 \l  PHI: (r9v2 int) = (r9v1 int), (r9v3 int) binds: [B:15:0x0064, B:14:0x0064] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0027\-\>B:11:0x0064\l|r5 = r20\lendNalUnit(r6, r8, r9, r20.pesTimeUs)\lr10 = r20\lr11 = r6\lstartNalUnit(r11, r13, r20.pesTimeUs)\lint r19 = r18 + 3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x007a|r9 = 0\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0039|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0064|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0064|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.extractor.ts.H264Reader.consume((r20v0 'this' com.google.android.exoplayer2.extractor.ts.H264Reader A[IMMUTABLE_TYPE, THIS]), (r21v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_5;
+Node_2 -> Node_13[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_10 -> Node_14;
+Node_11 -> Node_1;
+Node_12 -> Node_15;
+Node_13 -> Node_3;
+Node_14 -> Node_11;
+Node_15 -> Node_11;
+}
+

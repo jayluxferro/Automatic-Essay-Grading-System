@@ -1,0 +1,29 @@
+digraph "CFG fororg.osmdroid.views.overlay.Polygon.pointsAsCircle(Lorg\/osmdroid\/util\/GeoPoint;D)Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_1404437510 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList\<org.osmdroid.util.GeoPoint\> r0 = new java.util.ArrayList\<\>(60)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1780135313 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r1 \< 360) goto L_0x000c\l}"];
+subgraph cluster_Region_2067864442 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:3:0x000c\l|r0.add(r4.destinationPoint(r5, (double) r1))\lr1 += 6\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:0:0x0000, B:3:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:3:0x000c\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.util.ArrayList\<org.osmdroid.util.GeoPoint\> org.osmdroid.views.overlay.Polygon.pointsAsCircle((r4v0 org.osmdroid.util.GeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/osmdroid\/util\/GeoPoint;, D), Ljava\/util\/ArrayList\<, Lorg\/osmdroid\/util\/GeoPoint;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

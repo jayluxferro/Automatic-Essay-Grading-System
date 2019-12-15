@@ -1,0 +1,29 @@
+digraph "CFG fororg.osmdroid.views.MapController.MapAnimatorListener.onAnimationUpdate(Landroid\/animation\/ValueAnimator;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float r10 = ((java.lang.Float) r10.getAnimatedValue()).floatValue()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r9.mZoomEnd == null) goto L_0x002c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|double r0 = r9.mZoomStart.doubleValue() + ((r9.mZoomEnd.doubleValue() \- r9.mZoomStart.doubleValue()) * ((double) r10))\lr9.mMapController.mMapView.setZoomLevel(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002c}"];
+Node_4 [shape=record,label="{4\:\ 0x002e|if (r9.mOrientationSpan == null) goto L_0x0046\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0030|float r0 = r9.mOrientationStart.floatValue() + (r9.mOrientationSpan.floatValue() * r10)\lr9.mMapController.mMapView.setMapOrientation(r0)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0046}"];
+Node_7 [shape=record,label="{7\:\ 0x0048|if (r9.mCenterEnd == null) goto L_0x0099\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004a|org.osmdroid.views.MapView r0 = r9.mMapController.mMapView\lorg.osmdroid.util.TileSystem r0 = org.osmdroid.views.MapView.getTileSystem()\ldouble r1 = r0.cleanLongitude(r9.mCenterStart.getLongitude())\ldouble r5 = (double) r10\ldouble r1 = r0.cleanLongitude(r1 + ((r0.cleanLongitude(r9.mCenterEnd.getLongitude()) \- r1) * r5))\ldouble r3 = r0.cleanLatitude(r9.mCenterStart.getLatitude())\ldouble r3 = r0.cleanLatitude(r3 + ((r0.cleanLatitude(r9.mCenterEnd.getLatitude()) \- r3) * r5))\lr9.mCenter.setCoords(r3, r1)\lr9.mMapController.mMapView.setExpectedCenter(r9.mCenter)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0099|r9.mMapController.mMapView.invalidate()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x00a0|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.MapController.MapAnimatorListener.onAnimationUpdate((r9v0 'this' org.osmdroid.views.MapController$MapAnimatorListener A[IMMUTABLE_TYPE, THIS]), (r10v0 android.animation.ValueAnimator A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

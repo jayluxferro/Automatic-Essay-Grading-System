@@ -1,0 +1,80 @@
+digraph "CFG forcom.facebook.ads.internal.n.f.a(Ljava\/util\/List;Landroid\/view\/View;)V" {
+subgraph cluster_Region_1571580342 {
+label = "R(1:(2:(1:12)|(1:(2:(3:6|(1:9)|14)|(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_113517470 {
+label = "R(2:(1:12)|(1:(2:(3:6|(1:9)|14)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_524594891 {
+label = "IF [B:1:0x0002, B:3:0x000a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.f1052j != null) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r2.f1052j.mo10107a(r4) != false) goto L_?\l}"];
+subgraph cluster_Region_1903272055 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1336837686 {
+label = "R(1:(2:(3:6|(1:9)|14)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1750176910 {
+label = "R(2:(3:6|(1:9)|14)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1381584313 {
+label = "IF [B:5:0x000f] THEN: R(3:6|(1:9)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if ((r4 instanceof android.view.ViewGroup) == true) goto L_0x0011\l}"];
+subgraph cluster_Region_774479309 {
+label = "R(3:6|(1:9)|14)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|android.view.ViewGroup android.view.ViewGroup r4 = (android.view.ViewGroup) r4\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_674290361 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|if (r0 \< r4.getChildCount()) goto L_0x001a\l}"];
+subgraph cluster_Region_1636247956 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|LOOP_END\lLOOP:0: B:7:0x0014\-\>B:9:0x001a\l|m1298a(r3, r4.getChildAt(r0))\lr0++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_777469341 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|r3.add(r4)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0014|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:6:0x0011, B:9:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0014\-\>B:9:0x001a\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.facebook.ads.internal.n.f.a((r2v0 'this' com.facebook.ads.internal.n.f A[IMMUTABLE_TYPE, THIS]), (r3v0 java.util.List\<android.view.View\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Landroid\/view\/View;, \>;, Landroid\/view\/View;, )V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_7;
+Node_10 -> Node_13;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_11 -> Node_14;
+}
+

@@ -1,0 +1,32 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt$requireNoNulls$1.invoke(Ljava\/lang\/Object;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_340885122 {
+label = "R(1:(2:(1:1)|(2:2|3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_750966057 {
+label = "R(2:(1:1)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_722670524 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_2096164637 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1674193775 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|throw new java.lang.IllegalArgumentException(\"null element found in \" + r2.receiver$0 + '.')\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public final T kotlin.sequences.SequencesKt___SequencesKt$requireNoNulls$1.invoke((r2v0 'this' kotlin.sequences.SequencesKt___SequencesKt$requireNoNulls$1 A[IMMUTABLE_TYPE, THIS]), (r3v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+}
+

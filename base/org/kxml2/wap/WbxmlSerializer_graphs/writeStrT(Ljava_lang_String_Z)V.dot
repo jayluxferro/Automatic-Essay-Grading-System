@@ -1,0 +1,42 @@
+digraph "CFG fororg.kxml2.wap.WbxmlSerializer.writeStrT(Ljava\/lang\/String;Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Integer r0 = (java.lang.Integer) r6.stringTable.get(r7)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_0x0015\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|writeInt(r6.buf, r0.intValue())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|int r0 = r6.stringTableBuf.size()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0024|if (r7.charAt(0) \< '0') goto L_0x003f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0026|if (r8 == false) goto L_0x003f\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|java.lang.StringBuffer r8 = new java.lang.StringBuffer()\lr8.append(' ')\lr8.append(r7)\ljava.lang.String r7 = r8.toString()\lwriteInt(r6.buf, r0 + 1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003f|writeInt(r6.buf, r0)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0044|PHI: r7 \l  PHI: (r7v1 java.lang.String) = (r7v0 java.lang.String), (r7v3 java.lang.String) binds: [B:7:0x003f, B:6:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|r6.stringTable.put(r7, new java.lang.Integer(r0))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0053|if (r7.charAt(0) != ' ') goto L_0x0065\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0055|r6.stringTable.put(r7.substring(1), new java.lang.Integer(r0 + 1))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0065|int r8 = r7.lastIndexOf(32)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0069|if (r8 \<= 1) goto L_0x008a\l}"];
+Node_13 [shape=record,label="{13\:\ 0x006b|int r0 = r0 + r8\lr6.stringTable.put(r7.substring(r8), new java.lang.Integer(r0))\lr6.stringTable.put(r7.substring(r8 + 1), new java.lang.Integer(r0 + 1))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x008a|writeStrI(r6.stringTableBuf, r7)\lr6.stringTableBuf.flush()\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private final void org.kxml2.wap.WbxmlSerializer.writeStrT((r6v0 'this' org.kxml2.wap.WbxmlSerializer A[IMMUTABLE_TYPE, THIS]), (r7v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

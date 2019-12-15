@@ -1,0 +1,122 @@
+digraph "CFG forcom.mapbox.turf.TurfMisc.nearestPointOnLine(Lcom\/mapbox\/geojson\/Point;Ljava\/util\/List;)Lcom\/mapbox\/geojson\/Feature;" {
+subgraph cluster_Region_1004689797 {
+label = "R(2:0|(2:(3:2|(6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)|19)|(1:21)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.geojson.Point r6 = r36\ljava.util.List\<com.mapbox.geojson.Point\> r7 = r37\l}"];
+subgraph cluster_Region_1663865992 {
+label = "R(2:(3:2|(6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)|19)|(1:21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_609376105 {
+label = "IF [B:1:0x0009] THEN: R(3:2|(6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)|19) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r37.size() \>= 2) goto L_0x000b\l}"];
+subgraph cluster_Region_262364209 {
+label = "R(3:2|(6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)|19)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|com.mapbox.geojson.Feature com.mapbox.geojson.Feature r2 = com.mapbox.geojson.Feature.fromGeometry(com.mapbox.geojson.Point.fromLngLat(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY))\lr2.addNumberProperty(\"dist\", java.lang.Double.valueOf(Double.POSITIVE_INFINITY))\lcom.mapbox.geojson.Feature r9 = r2\lint r8 = 0\l}"];
+subgraph cluster_LoopRegion_1667398571 {
+label = "LOOP:0: (6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|if (r8 \< (r37.size() \- 1)) goto L_0x0029\l}"];
+subgraph cluster_Region_1918358107 {
+label = "R(6:5|(1:7)|(1:10)|(1:13)|(1:17)|18)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|com.mapbox.geojson.Feature com.mapbox.geojson.Feature r10 = com.mapbox.geojson.Feature.fromGeometry(r7.get(r8))\lint int r11 = r8 + 1\lcom.mapbox.geojson.Feature com.mapbox.geojson.Feature r12 = com.mapbox.geojson.Feature.fromGeometry(r7.get(r11))\lr10.addNumberProperty(\"dist\", java.lang.Double.valueOf(com.mapbox.turf.TurfMeasurement.distance(r6, (com.mapbox.geojson.Point) r10.geometry(), com.mapbox.turf.TurfConstants.UNIT_MILES)))\lr12.addNumberProperty(\"dist\", java.lang.Double.valueOf(com.mapbox.turf.TurfMeasurement.distance(r6, (com.mapbox.geojson.Point) r12.geometry(), com.mapbox.turf.TurfConstants.UNIT_MILES)))\ldouble double r13 = java.lang.Math.max(r10.properties().get(\"dist\").getAsDouble(), r12.properties().get(\"dist\").getAsDouble())\ldouble double r15 = com.mapbox.turf.TurfMeasurement.bearing((com.mapbox.geojson.Point) r10.geometry(), (com.mapbox.geojson.Point) r12.geometry())\ldouble r1 = r13\lcom.mapbox.geojson.Feature com.mapbox.geojson.Feature r19 = com.mapbox.geojson.Feature.fromGeometry(com.mapbox.turf.TurfMeasurement.destination(r36, r1, r15 + 90.0d, com.mapbox.turf.TurfConstants.UNIT_MILES))\lcom.mapbox.geojson.Feature com.mapbox.geojson.Feature r0 = com.mapbox.geojson.Feature.fromGeometry(com.mapbox.turf.TurfMeasurement.destination(r36, r1, r15 \- 90.0d, com.mapbox.turf.TurfConstants.UNIT_MILES))\lcom.mapbox.turf.models.LineIntersectsResult com.mapbox.turf.models.LineIntersectsResult r0 = lineIntersects(((com.mapbox.geojson.Point) r19.geometry()).longitude(), ((com.mapbox.geojson.Point) r19.geometry()).latitude(), ((com.mapbox.geojson.Point) r0.geometry()).longitude(), ((com.mapbox.geojson.Point) r0.geometry()).latitude(), ((com.mapbox.geojson.Point) r10.geometry()).longitude(), ((com.mapbox.geojson.Point) r10.geometry()).latitude(), ((com.mapbox.geojson.Point) r12.geometry()).longitude(), ((com.mapbox.geojson.Point) r12.geometry()).latitude())\lcom.mapbox.geojson.Feature r1 = null\l}"];
+subgraph cluster_IfRegion_1602628593 {
+label = "IF [B:6:0x0110] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0110|if (r0 != null) goto L_0x0112\l}"];
+subgraph cluster_Region_2036226769 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0112|com.mapbox.geojson.Feature r1 = com.mapbox.geojson.Feature.fromGeometry(com.mapbox.geojson.Point.fromLngLat(r0.horizontalIntersection().doubleValue(), r0.verticalIntersection().doubleValue()))\lr1.addNumberProperty(\"dist\", java.lang.Double.valueOf(com.mapbox.turf.TurfMeasurement.distance(r6, (com.mapbox.geojson.Point) r1.geometry(), com.mapbox.turf.TurfConstants.UNIT_MILES)))\l}"];
+}
+}
+subgraph cluster_IfRegion_1954087970 {
+label = "IF [B:9:0x0159] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0159|if (((java.lang.Double) r10.getNumberProperty(\"dist\")).doubleValue() \< ((java.lang.Double) r9.getNumberProperty(\"dist\")).doubleValue()) goto L_0x015b\l}"];
+subgraph cluster_Region_1638829810 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x015b|r10.addNumberProperty(\"index\", java.lang.Integer.valueOf(r8))\lr9 = r10\l}"];
+}
+}
+subgraph cluster_IfRegion_1925883142 {
+label = "IF [B:12:0x017f] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x017f|if (((java.lang.Double) r12.getNumberProperty(\"dist\")).doubleValue() \< ((java.lang.Double) r9.getNumberProperty(\"dist\")).doubleValue()) goto L_0x0181\l}"];
+subgraph cluster_Region_1781385652 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0181|r12.addNumberProperty(\"index\", java.lang.Integer.valueOf(r8))\lr9 = r12\l}"];
+}
+}
+subgraph cluster_IfRegion_1982771842 {
+label = "IF [B:14:0x018b, B:16:0x01a7] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x018b|ADDED_TO_REGION\lPHI: r9 \l  PHI: (r9v3 com.mapbox.geojson.Feature) = (r9v2 com.mapbox.geojson.Feature), (r9v6 com.mapbox.geojson.Feature) binds: [B:12:0x017f, B:13:0x0181] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L_0x018d\l}"];
+Node_16 [shape=record,label="{16\:\ 0x01a7|ADDED_TO_REGION\l|if (((java.lang.Double) r1.getNumberProperty(\"dist\")).doubleValue() \< ((java.lang.Double) r9.getNumberProperty(\"dist\")).doubleValue()) goto L_0x01a9\l}"];
+subgraph cluster_Region_648286769 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x01a9|r1.addNumberProperty(\"index\", java.lang.Integer.valueOf(r8))\lr9 = r1\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x01b3|LOOP_END\lPHI: r9 \l  PHI: (r9v4 com.mapbox.geojson.Feature) = (r9v3 com.mapbox.geojson.Feature), (r9v3 com.mapbox.geojson.Feature), (r9v5 com.mapbox.geojson.Feature) binds: [B:24:0x01b3, B:25:0x01b3, B:23:0x01b3] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0021\-\>B:18:0x01b3\l|r8 = r11\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x01b6|RETURN\l|return r9\l}"];
+}
+}
+subgraph cluster_Region_1352882860 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x01be|throw new com.mapbox.turf.TurfException(\"Turf nearestPointOnLine requires a List of Points made up of at least 2 coordinates.\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0021|LOOP_START\lPHI: r8 r9 \l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:2:0x000b, B:18:0x01b3] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v1 com.mapbox.geojson.Feature) = (r9v0 com.mapbox.geojson.Feature), (r9v4 com.mapbox.geojson.Feature) binds: [B:2:0x000b, B:18:0x01b3] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0021\-\>B:18:0x01b3\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x013f|PHI: r1 \l  PHI: (r1v21 com.mapbox.geojson.Feature) = (r1v20 com.mapbox.geojson.Feature), (r1v24 com.mapbox.geojson.Feature) binds: [B:6:0x0110, B:7:0x0112] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0165|PHI: r9 \l  PHI: (r9v2 com.mapbox.geojson.Feature) = (r9v1 com.mapbox.geojson.Feature), (r9v7 com.mapbox.geojson.Feature) binds: [B:9:0x0159, B:10:0x015b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x018d}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x01b7}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x01b6|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x01b3|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x01b3|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x01b3|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static com.mapbox.geojson.Feature com.mapbox.turf.TurfMisc.nearestPointOnLine((r36v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r37v0 java.util.List\<com.mapbox.geojson.Point\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/mapbox\/geojson\/Point;, Ljava\/util\/List\<, Lcom\/mapbox\/geojson\/Point;, \>;), Lcom\/mapbox\/geojson\/Feature;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_20[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_22[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_24[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_25[style=dashed];
+Node_17 -> Node_23;
+Node_18 -> Node_3;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_22 -> Node_19;
+Node_23 -> Node_18;
+Node_24 -> Node_18;
+Node_25 -> Node_18;
+}
+

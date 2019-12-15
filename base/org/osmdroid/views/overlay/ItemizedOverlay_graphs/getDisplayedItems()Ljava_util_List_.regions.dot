@@ -1,0 +1,74 @@
+digraph "CFG fororg.osmdroid.views.overlay.ItemizedOverlay.getDisplayedItems()Ljava\/util\/List;" {
+subgraph cluster_Region_687514706 {
+label = "R(2:0|(2:(1:2)|(3:3|(2:(1:8)(0)|9)|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\l}"];
+subgraph cluster_Region_1377550297 {
+label = "R(2:(1:2)|(3:3|(2:(1:8)(0)|9)|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1903480022 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r3.mInternalItemDisplayedList == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1916017513 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1362574186 {
+label = "R(3:3|(2:(1:8)(0)|9)|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_747822378 {
+label = "LOOP:0: (2:(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r1 \< r3.mInternalItemDisplayedList.length) goto L_0x0010\l}"];
+subgraph cluster_Region_2125423746 {
+label = "R(2:(1:8)(0)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_824552768 {
+label = "IF [B:7:0x0014] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (r3.mInternalItemDisplayedList[r1] == true) goto L_0x0016\l}"];
+subgraph cluster_Region_643642116 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|r0.add(getItem(r1))\l}"];
+}
+subgraph cluster_Region_823484561 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001d|LOOP_END\lLOOP:0: B:4:0x000b\-\>B:9:0x001d\l|r1++\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0020|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:3:0x000a, B:9:0x001d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000b\-\>B:9:0x001d\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<Item\> org.osmdroid.views.overlay.ItemizedOverlay.getDisplayedItems((r3v0 'this' org.osmdroid.views.overlay.ItemizedOverlay A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, TItem;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_11 -> Node_10;
+Node_12 -> Node_9;
+Node_13 -> Node_9;
+}
+

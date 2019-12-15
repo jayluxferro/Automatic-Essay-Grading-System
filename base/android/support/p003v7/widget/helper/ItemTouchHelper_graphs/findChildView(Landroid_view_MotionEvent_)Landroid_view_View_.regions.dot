@@ -1,0 +1,80 @@
+digraph "CFG forandroid.support.v7.widget.helper.ItemTouchHelper.findChildView(Landroid\/view\/MotionEvent;)Landroid\/view\/View;" {
+subgraph cluster_Region_1882285770 {
+label = "R(5:0|(2:2|(1:4))|5|(2:7|(2:(1:9)|(1:10)))|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r0 = r6.getX()\lfloat float r6 = r6.getY()\l}"];
+subgraph cluster_IfRegion_1124413659 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r5.mSelected != null) goto L_0x000c\l}"];
+subgraph cluster_Region_117967797 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|android.view.View android.view.View r1 = r5.mSelected.itemView\l}"];
+subgraph cluster_IfRegion_829749778 {
+label = "IF [B:3:0x001e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|if (hitTest(r1, r0, r6, r5.mSelectedStartX + r5.mDx, r5.mSelectedStartY + r5.mDy) == true) goto L_0x0020\l}"];
+subgraph cluster_Region_1199448053 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0021|int int r1 = r5.mRecoverAnimations.size() \- 1\l}"];
+subgraph cluster_LoopRegion_245008940 {
+label = "LOOP:0: (2:7|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|LOOP_START\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v6 int) binds: [B:5:0x0021, B:10:0x0042] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x0029\-\>B:10:0x0042\l|if (r1 \>= 0) goto L_0x002b\l}"];
+subgraph cluster_Region_1674865367 {
+label = "R(2:7|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|android.support.v7.widget.helper.ItemTouchHelper$RecoverAnimation android.support.p003v7.widget.helper.ItemTouchHelper.RecoverAnimation r2 = r5.mRecoverAnimations.get(r1)\landroid.view.View android.view.View r3 = r2.mViewHolder.itemView\l}"];
+subgraph cluster_Region_1246005987 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_286653641 {
+label = "IF [B:8:0x003f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|if (hitTest(r3, r0, r6, r2.f46mX, r2.f47mY) == true) goto L_0x0041\l}"];
+subgraph cluster_Region_1561932240 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0041|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1969666563 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0042|LOOP_END\lLOOP:0: B:6:0x0029\-\>B:10:0x0042\l|r1\-\-\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004b|RETURN\l|return r5.mRecyclerView.findChildViewUnder(r0, r6)\l}"];
+}
+Node_11 [shape=record,color=red,label="{11\:\ 0x0045}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0045|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0041|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{android.view.View android.support.v7.widget.helper.ItemTouchHelper.findChildView((r5v0 'this' android.support.v7.widget.helper.ItemTouchHelper A[IMMUTABLE_TYPE, THIS]), (r6v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10[style=dashed];
+Node_8 -> Node_14;
+Node_10 -> Node_6;
+Node_11 -> Node_12;
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+}
+

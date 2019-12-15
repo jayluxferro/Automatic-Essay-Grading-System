@@ -1,0 +1,39 @@
+digraph "CFG formil.nga.geopackage.tiles.retriever.TileCreator.getTileMatrix(Lmil\/nga\/geopackage\/BoundingBox;)Lmil\/nga\/geopackage\/tiles\/matrix\/TileMatrix;" {
+subgraph cluster_Region_1933275596 {
+label = "R(1:(2:(1:5)|(1:6))) | DECL_VAR: java.lang.Long null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_850957163 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_474920226 {
+label = "IF [B:1:0x0006, B:3:0x0020] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (mil.nga.geopackage.tiles.TileBoundingBoxUtils.overlap(r7, r6.tileSetBoundingBox) == null) goto L_0x002d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|ADDED_TO_REGION\l|if ((r7 = r6.tileDao.getZoomLevel(r7.getMaxLongitude() \- r7.getMinLongitude(), r7.getMaxLatitude() \- r7.getMinLatitude())) == null) goto L_0x002d\l}"];
+subgraph cluster_Region_1559310204 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002d|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1953267775 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r6.tileDao.getTileMatrix(r7.longValue())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0022}"];
+MethodNode[shape=record,label="{private mil.nga.geopackage.tiles.matrix.TileMatrix mil.nga.geopackage.tiles.retriever.TileCreator.getTileMatrix((r6v0 'this' mil.nga.geopackage.tiles.retriever.TileCreator A[IMMUTABLE_TYPE, THIS]), (r7v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+}
+

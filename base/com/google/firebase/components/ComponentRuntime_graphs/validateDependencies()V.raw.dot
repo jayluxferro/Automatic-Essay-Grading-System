@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.firebase.components.ComponentRuntime.validateDependencies()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:java.util.Map\<com.google.firebase.components.Component\<?\>, com.google.firebase.components.Lazy\<?\>\>) = (r6 I:com.google.firebase.components.ComponentRuntime) com.google.firebase.components.ComponentRuntime.components java.util.Map \l0x0002: INVOKE  (r0 I:java.util.Set) = (r0 I:java.util.Map) java.util.Map.keySet():java.util.Set type: INTERFACE \l0x0006: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.Set) java.util.Set.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:13:0x0056 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0014: CHECK_CAST  (r1 I:com.google.firebase.components.Component) = (com.google.firebase.components.Component) (r1 I:?[OBJECT, ARRAY]) \l0x0016: INVOKE  (r2 I:java.util.Set) = (r1 I:com.google.firebase.components.Component) com.google.firebase.components.Component.getDependencies():java.util.Set type: VIRTUAL \l0x001a: INVOKE  (r2 I:java.util.Iterator) = (r2 I:java.util.Set) java.util.Set.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|0x001e: INVOKE  (r3 I:boolean) = (r2 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|0x0022: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x000a \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|0x0024: INVOKE  (r3 I:java.lang.Object) = (r2 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0028: CHECK_CAST  (r3 I:com.google.firebase.components.Dependency) = (com.google.firebase.components.Dependency) (r3 I:?[OBJECT, ARRAY]) \l0x002a: INVOKE  (r4 I:boolean) = (r3 I:com.google.firebase.components.Dependency) com.google.firebase.components.Dependency.isRequired():boolean type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x002e|0x002e: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x001e \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030|0x0030: IGET  (r4 I:java.util.Map\<java.lang.Class\<?\>, com.google.firebase.components.Lazy\<?\>\>) = (r6 I:com.google.firebase.components.ComponentRuntime) com.google.firebase.components.ComponentRuntime.lazyInstanceMap java.util.Map \l0x0032: INVOKE  (r5 I:java.lang.Class) = (r3 I:com.google.firebase.components.Dependency) com.google.firebase.components.Dependency.getInterface():java.lang.Class type: VIRTUAL \l0x0036: INVOKE  (r4 I:boolean) = (r4 I:java.util.Map), (r5 I:java.lang.Object) java.util.Map.containsKey(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a|0x003a: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x003d \l}"];
+Node_11 [shape=record,label="{11\:\ 0x003d|0x003d: NEW_INSTANCE  (r0 I:com.google.firebase.components.MissingDependencyException) =  com.google.firebase.components.MissingDependencyException \l0x003f: CONST  (r2 I:?[int, float, short, byte, char]) = (2 ?[int, float, short, byte, char]) \l0x0040: NEW_ARRAY  (r2 I:java.lang.Object[]) = (r2 I:int A[IMMUTABLE_TYPE]) type: java.lang.Object[] \l0x0042: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0043: APUT  \l  (r2 I:?[OBJECT, ARRAY][])\l  (r4 I:?[int, short, byte, char])\l  (r1 I:?[OBJECT, ARRAY])\l \l0x0045: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0046: INVOKE  (r3 I:java.lang.Class) = (r3 I:com.google.firebase.components.Dependency) com.google.firebase.components.Dependency.getInterface():java.lang.Class type: VIRTUAL \l0x004a: APUT  \l  (r2 I:?[OBJECT, ARRAY][])\l  (r1 I:?[int, short, byte, char])\l  (r3 I:?[OBJECT, ARRAY])\l \l0x004c: CONST_STR  (r1 I:java.lang.String) =  \"Unsatisfied dependency for component %s: %s\" \l0x004e: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.String), (r2 I:java.lang.Object[]) java.lang.String.format(java.lang.String, java.lang.Object[]):java.lang.String type: STATIC \l0x0052: INVOKE  \l  (r0 I:com.google.firebase.components.MissingDependencyException)\l  (r1 I:java.lang.String)\l com.google.firebase.components.MissingDependencyException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0055|0x0055: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0056|0x0056: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.google.firebase.components.ComponentRuntime.validateDependencies((r6 'this' I:com.google.firebase.components.ComponentRuntime A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_5 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_4;
+Node_7 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_11;
+Node_9 -> Node_4[style=dashed];
+Node_11 -> Node_12;
+}
+

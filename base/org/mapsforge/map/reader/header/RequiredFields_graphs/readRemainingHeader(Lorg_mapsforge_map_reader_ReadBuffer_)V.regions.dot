@@ -1,0 +1,55 @@
+digraph "CFG fororg.mapsforge.map.reader.header.RequiredFields.readRemainingHeader(Lorg\/mapsforge\/map\/reader\/ReadBuffer;)V" {
+subgraph cluster_Region_1295205391 {
+label = "R(2:0|(2:9|10)(1:(2:7|8)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r3.readInt()\l}"];
+subgraph cluster_IfRegion_197332745 {
+label = "IF [B:1:0x0006, B:3:0x000b] THEN: R(2:9|10) ELSE: R(1:(2:7|8)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 \< 70) goto L_0x002b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ADDED_TO_REGION\l|if (r0 \> HEADER_SIZE_MAX) goto L_0x002b\l}"];
+subgraph cluster_Region_1321780123 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|throw new org.mapsforge.map.reader.header.MapFileException(\"invalid remaining header size: \" + r0)\l}"];
+}
+subgraph cluster_Region_1710470154 {
+label = "R(1:(2:7|8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_97928158 {
+label = "IF [B:5:0x0011] THEN: R(2:7|8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (r3.readFromFile(r0) != true) goto L_0x0014\l}"];
+subgraph cluster_Region_1385331799 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014}"];
+Node_8 [shape=record,label="{8\:\ 0x002a|throw new org.mapsforge.map.reader.header.MapFileException(\"reading header data has failed: \" + r0)\l}"];
+}
+subgraph cluster_Region_798266757 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+MethodNode[shape=record,label="{static void org.mapsforge.map.reader.header.RequiredFields.readRemainingHeader((r3v0 org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_9 -> Node_10;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

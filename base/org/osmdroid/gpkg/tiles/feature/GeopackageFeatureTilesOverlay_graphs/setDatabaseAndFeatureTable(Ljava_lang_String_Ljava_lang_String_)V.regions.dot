@@ -1,0 +1,42 @@
+digraph "CFG fororg.osmdroid.gpkg.tiles.feature.GeopackageFeatureTilesOverlay.setDatabaseAndFeatureTable(Ljava\/lang\/String;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_975813808 {
+label = "R(3:(1:2)|(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_507943624 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.featureDao != null) goto L_0x0005\l}"];
+subgraph cluster_Region_1764520771 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r2.featureDao = null\l}"];
+}
+}
+subgraph cluster_IfRegion_1673943228 {
+label = "IF [B:4:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r2.geoPackage != null) goto L_0x000b\l}"];
+subgraph cluster_Region_1408893430 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|r2.geoPackage.close()\lr2.geoPackage = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0012|r2.geoPackage = r2.manager.open(r3)\lmil.nga.geopackage.features.user.FeatureDao mil.nga.geopackage.features.user.FeatureDao r3 = r2.geoPackage.getFeatureDao(r4)\lmil.nga.geopackage.features.index.FeatureIndexManager mil.nga.geopackage.features.index.FeatureIndexManager r4 = new mil.nga.geopackage.features.index.FeatureIndexManager(r2.ctx, r2.geoPackage, r3)\lr4.setIndexLocation(mil.nga.geopackage.features.index.FeatureIndexType.GEOPACKAGE)\lr4.index()\lr2.featureTiles = new mil.nga.geopackage.tiles.features.DefaultFeatureTiles(r2.ctx, r3)\lr2.featureTiles.setMaxFeaturesPerTile(1000)\lr2.featureTiles.setMaxFeaturesTileDraw(new mil.nga.geopackage.tiles.features.custom.NumberFeaturesTile(r2.ctx))\lr2.featureTiles.setIndexManager(r4)\lr2.provider.set(r3.getZoomLevel(), r2.featureTiles)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0061}"];
+MethodNode[shape=record,label="{public void org.osmdroid.gpkg.tiles.feature.GeopackageFeatureTilesOverlay.setDatabaseAndFeatureTable((r2v0 'this' org.osmdroid.gpkg.tiles.feature.GeopackageFeatureTilesOverlay A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

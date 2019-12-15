@@ -1,0 +1,100 @@
+digraph "CFG formil.nga.geopackage.core.contents.ContentsDao.deleteCascade(Lmil\/nga\/geopackage\/core\/contents\/Contents;)I" {
+subgraph cluster_Region_1106313624 {
+label = "R(1:(2:(1:17)|(7:1|(1:5)|6|(2:8|(1:10))|11|(1:15)|18))) | DECL_VAR: mil.nga.geopackage.tiles.matrixset.TileMatrixSet null, mil.nga.geopackage.features.columns.GeometryColumns null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1895695328 {
+label = "R(2:(1:17)|(7:1|(1:5)|6|(2:8|(1:10))|11|(1:15)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1290500192 {
+label = "IF [B:0:0x0000] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0044\l}"];
+subgraph cluster_Region_577070594 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0044|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1822657827 {
+label = "R(7:1|(1:5)|6|(2:8|(1:10))|11|(1:15)|18)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|mil.nga.geopackage.features.columns.GeometryColumnsDao mil.nga.geopackage.features.columns.GeometryColumnsDao r0 = getGeometryColumnsDao()\l}"];
+subgraph cluster_IfRegion_1615267779 {
+label = "IF [B:2:0x000a, B:4:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|ADDED_TO_REGION\l|if (r0.isTableExists() == true) goto L_0x000c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|ADDED_TO_REGION\l|if ((r1 = r4.getGeometryColumns()) != null) goto L_0x0012\l}"];
+subgraph cluster_Region_207198283 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|r0.delete(r1)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|mil.nga.geopackage.tiles.matrix.TileMatrixDao mil.nga.geopackage.tiles.matrix.TileMatrixDao r0 = getTileMatrixDao()\l}"];
+subgraph cluster_IfRegion_1420141894 {
+label = "IF [B:7:0x001d] THEN: R(2:8|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r0.isTableExists() == true) goto L_0x001f\l}"];
+subgraph cluster_Region_1167313768 {
+label = "R(2:8|(1:10))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|com.j256.ormlite.dao.ForeignCollection com.j256.ormlite.dao.ForeignCollection\<mil.nga.geopackage.tiles.matrix.TileMatrix\> r1 = r4.getTileMatrix()\l}"];
+subgraph cluster_IfRegion_517250926 {
+label = "IF [B:9:0x0027] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|if (r1.isEmpty() == false) goto L_0x0029\l}"];
+subgraph cluster_Region_606072932 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|r0.delete(r1)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x002c|mil.nga.geopackage.tiles.matrixset.TileMatrixSetDao mil.nga.geopackage.tiles.matrixset.TileMatrixSetDao r0 = getTileMatrixSetDao()\l}"];
+subgraph cluster_IfRegion_2084475451 {
+label = "IF [B:12:0x0034, B:14:0x003a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0034|ADDED_TO_REGION\l|if (r0.isTableExists() == true) goto L_0x0036\l}"];
+Node_14 [shape=record,label="{14\:\ 0x003a|ADDED_TO_REGION\l|if ((r1 = r4.getTileMatrixSet()) != null) goto L_0x003c\l}"];
+subgraph cluster_Region_1013302839 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003c|r0.delete(r1)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return delete(r4)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0036}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003f}"];
+MethodNode[shape=record,label="{public int mil.nga.geopackage.core.contents.ContentsDao.deleteCascade((r3v0 'this' mil.nga.geopackage.core.contents.ContentsDao A[IMMUTABLE_TYPE, THIS]), (r4v0 mil.nga.geopackage.core.contents.Contents A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_17;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_3 -> Node_4;
+Node_13 -> Node_14;
+Node_16 -> Node_18;
+}
+

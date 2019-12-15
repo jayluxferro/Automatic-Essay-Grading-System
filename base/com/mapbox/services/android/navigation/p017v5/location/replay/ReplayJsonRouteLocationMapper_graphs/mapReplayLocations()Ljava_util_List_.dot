@@ -1,0 +1,35 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.location.replay.ReplayJsonRouteLocationMapper.mapReplayLocations()Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList r0 = new java.util.ArrayList(r6.replayLocations.size())\ljava.util.Iterator r1 = r6.replayLocations.iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0011|LOOP_START\lLOOP:0: B:1:0x0011\-\>B:9:0x006a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0015|if (r1.hasNext() == false) goto L_0x006e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|com.mapbox.services.android.navigation.v5.location.replay.ReplayLocationDto r2 = r1.next()\landroid.location.Location r3 = new android.location.Location(REPLAY)\lr3.setLongitude(r2.getLongitude())\lr3.setAccuracy(r2.getHorizontalAccuracyMeters())\lr3.setBearing((float) r2.getBearing())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x003e|if (android.os.Build.VERSION.SDK_INT \< 26) goto L_0x0047\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0040|r3.setVerticalAccuracyMeters(r2.getVerticalAccuracyMeters())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0047|r3.setSpeed((float) r2.getSpeed())\lr3.setLatitude(r2.getLatitude())\lr3.setAltitude(r2.getAltitude())\ljava.util.Date r2 = r2.getDate()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0061|if (r2 == null) goto L_0x006a\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0063|r3.setTime(r2.getTime())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x006a|LOOP_END\lLOOP:0: B:1:0x0011\-\>B:9:0x006a\l|r0.add(r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x006e|RETURN\l|return r0\l}"];
+Node_11 [shape=record,label="{11\:\ 0x006e|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ 0x006a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.util.List\<android.location.Location\> com.mapbox.services.android.navigation.v5.location.replay.ReplayJsonRouteLocationMapper.mapReplayLocations((r6v0 'this' com.mapbox.services.android.navigation.v5.location.replay.ReplayJsonRouteLocationMapper A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Landroid\/location\/Location;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_13;
+Node_8 -> Node_12;
+Node_9 -> Node_1;
+Node_11 -> Node_10;
+Node_12 -> Node_9;
+Node_13 -> Node_9;
+}
+

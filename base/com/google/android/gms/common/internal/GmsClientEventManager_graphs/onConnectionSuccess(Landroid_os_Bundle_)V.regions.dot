@@ -1,0 +1,137 @@
+digraph "CFG forcom.google.android.gms.common.internal.GmsClientEventManager.onConnectionSuccess(Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_243616701 {
+label = "R(3:0|4|18)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r3 = true\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|PHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.gms.common.internal.Preconditions.checkState(android.os.Looper.myLooper() == r8.mHandler.getLooper(), \"onConnectionSuccess must only be called on the Handler thread\")\l}"];
+subgraph cluster_SynchronizedRegion_287795284 {
+label = "Synchronized:R(2:5|(5:7|(1:10)(0)|11|(2:13|(1:32)(1:(1:21)(0)))|22))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018}"];
+subgraph cluster_Region_1582263631 {
+label = "R(5:7|(1:10)(0)|11|(2:13|(1:32)(1:(1:21)(0)))|22)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|com.google.android.gms.common.internal.Preconditions.checkState(!r8.zaoq)\lr8.mHandler.removeMessages(1)\lr8.zaoq = true\l}"];
+subgraph cluster_IfRegion_570216053 {
+label = "IF [B:8:0x002c] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|if (r8.zaom.size() != 0) goto L_0x002f\l}"];
+subgraph cluster_Region_1541140931 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002f|r3 = false\l}"];
+}
+subgraph cluster_Region_1818239582 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0030|PHI: r3 \l  PHI: (r3v1 boolean) = (r3v5 boolean), (r3v0 boolean) binds: [B:10:0x002f, B:9:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.gms.common.internal.Preconditions.checkState(r3)\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r8.zaol)     \/\/ Catch:\{  \}\lint int r3 = r8.zaop.get()\ljava.util.ArrayList java.util.ArrayList r1 = r1\lint int r4 = r1.size()\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_620963431 {
+label = "LOOP:0: (2:13|(1:32)(1:(1:21)(0)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0047|LOOP_START\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:11:0x0030, B:28:0x0047] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:12:0x0047\-\>B:28:0x0047\l|if (r5 \< r4) goto L_0x0049\l}"];
+subgraph cluster_Region_567447159 {
+label = "R(2:13|(1:32)(1:(1:21)(0)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0049|java.lang.Object java.lang.Object r6 = r1.get(r5)\lr5++\lcom.google.android.gms.common.api.GoogleApiClient$ConnectionCallbacks com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks r6 = (com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks) r6\l}"];
+subgraph cluster_IfRegion_95352284 {
+label = "IF [B:14:0x0053, B:16:0x005b, B:18:0x0063] THEN: R(1:32) ELSE: R(1:(1:21)(0))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0053|ADDED_TO_REGION\l|if (r8.zaoo != true) goto L_0x0071\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005b|ADDED_TO_REGION\l|if (r8.zaok.isConnected() != true) goto L_0x0071\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0063|ADDED_TO_REGION\l|if (r8.zaop.get() != r3) goto L_0x0071\l}"];
+subgraph cluster_Region_298567306 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0071|SYNTHETIC\lEDGE_INSN: B:32:0x0071\-\>B:22:0x0071 ?: BREAK  \l|break\l}"];
+}
+subgraph cluster_Region_990148911 {
+label = "R(1:(1:21)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_8589981 {
+label = "IF [B:20:0x006b] THEN: R(1:21) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006b|if (r8.zaom.contains(r6) == false) goto L_0x006d\l}"];
+subgraph cluster_Region_1928402756 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006d|r6.onConnected(r9)\l}"];
+}
+subgraph cluster_Region_2085394268 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0071|EDGE_INSN: B:29:0x0071\-\>B:22:0x0071 ?: BREAK  \lEDGE_INSN: B:30:0x0071\-\>B:22:0x0071 ?: BREAK  \lEDGE_INSN: B:32:0x0071\-\>B:22:0x0071 ?: BREAK  \l|r8.zaom.clear()\lr8.zaoq = false\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000c}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002e}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0055}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x005d}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0065}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0078|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0078: MONITOR_EXIT  \l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0079}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x007a|REMOVE\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x007b|REMOVE\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x007c|REMOVE\l|throw r9\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0047|LOOP_END\lSYNTHETIC\lLOOP:0: B:12:0x0047\-\>B:28:0x0047\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0071|SYNTHETIC\lEDGE_INSN: B:29:0x0071\-\>B:22:0x0071 ?: BREAK  \l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0071|SYNTHETIC\lADDED_TO_REGION\lEDGE_INSN: B:30:0x0071\-\>B:22:0x0071 ?: BREAK  \l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0071|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0047|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0047|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.gms.common.internal.GmsClientEventManager.onConnectionSuccess((r8v0 'this' com.google.android.gms.common.internal.GmsClientEventManager A[IMMUTABLE_TYPE, THIS]), (r9v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.util.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_31[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_30;
+Node_16 -> Node_17[style=dashed];
+Node_16 -> Node_32;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_29;
+Node_32 -> Node_22;
+Node_20 -> Node_21;
+Node_20 -> Node_33[style=dashed];
+Node_21 -> Node_34;
+Node_22 -> Node_23;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_25;
+Node_9 -> Node_11;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_28 -> Node_12;
+Node_29 -> Node_22;
+Node_30 -> Node_22;
+Node_31 -> Node_22;
+Node_33 -> Node_28;
+Node_34 -> Node_28;
+}
+

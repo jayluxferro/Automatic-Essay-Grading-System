@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.id3.Id3Decoder.decodeTxxxFrame(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;I)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/TextInformationFrame;" {
+subgraph cluster_Region_1784021500 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)(1:7)|8))) | DECL_VAR: java.lang.String value\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1047750415 {
+label = "R(2:(1:2)|(3:3|(1:5)(1:7)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1585466191 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r11 \< 1) goto L_0x0004\l}"];
+subgraph cluster_Region_1749856820 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_920926290 {
+label = "R(3:3|(1:5)(1:7)|8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|int int r4 = r10.readUnsignedByte()\ljava.lang.String java.lang.String r0 = getCharsetName(r4)\lbyte[] byte[] r1 = new byte[(r11 \- 1)]\lr10.readBytes(r1, 0, r11 \- 1)\lint int r3 = indexOfEos(r1, 0, r4)\ljava.lang.String java.lang.String r2 = new java.lang.String(r1, 0, r3, r0)\lint int r7 = r3 + delimiterLength(r4)\l}"];
+subgraph cluster_IfRegion_683447453 {
+label = "IF [B:4:0x0027] THEN: R(1:5) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0027|if (r7 \< r1.length) goto L_0x0029\l}"];
+subgraph cluster_Region_976880599 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|java.lang.String r5 = new java.lang.String(r1, r7, indexOfEos(r1, r7, r4) \- r7, r0)\l}"];
+}
+subgraph cluster_Region_261922043 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003c|java.lang.String r5 = \"\"\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.metadata.id3.TextInformationFrame(\"TXXX\", r2, r5)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0034|PHI: r5 \l  PHI: (r5v1 'value' java.lang.String) = (r5v0 'value' java.lang.String), (r5v2 'value' java.lang.String) binds: [B:7:0x003c, B:5:0x0029] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.TextInformationFrame com.google.android.exoplayer2.metadata.id3.Id3Decoder.decodeTxxxFrame((r10v0 'id3Data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'frameSize' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.UnsupportedEncodingException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_6;
+Node_0 -> Node_1;
+Node_6 -> Node_8;
+}
+

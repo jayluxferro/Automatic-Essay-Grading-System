@@ -1,0 +1,36 @@
+digraph "CFG fororg.osmdroid.util.BoundingBox.increaseByScale(F)Lorg\/osmdroid\/util\/BoundingBox;" {
+subgraph cluster_Region_1401427412 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float r0 = r22\l}"];
+subgraph cluster_Region_1769341891 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1156349305 {
+label = "IF [B:1:0x0005] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 \> 0.0f) goto L_0x0007\l}"];
+subgraph cluster_Region_585181361 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|org.osmdroid.util.TileSystem org.osmdroid.util.TileSystem r1 = org.osmdroid.views.MapView.getTileSystem()\ldouble double r2 = getCenterLatitude()\ldouble double r8 = (double) r0\ldouble double r4 = (getLatitudeSpan() \/ 2.0d) * r8\ldouble double r13 = r1.cleanLatitude(r2 + r4)\ldouble double r17 = r1.cleanLatitude(r2 \- r4)\ldouble double r2 = getCenterLongitude()\ldouble double r4 = (getLongitudeSpanWithDateLine() \/ 2.0d) * r8\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0040|RETURN\l|return new org.osmdroid.util.BoundingBox(r13, r1.cleanLongitude(r2 + r4), r17, r1.cleanLongitude(r2 \- r4))\l}"];
+}
+}
+subgraph cluster_Region_536546671 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0048|throw new java.lang.IllegalArgumentException(\"pBoundingboxPaddingRelativeScale must be positive\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0041}"];
+MethodNode[shape=record,label="{public org.osmdroid.util.BoundingBox org.osmdroid.util.BoundingBox.increaseByScale((r21v0 'this' org.osmdroid.util.BoundingBox A[IMMUTABLE_TYPE, THIS]), (r22v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

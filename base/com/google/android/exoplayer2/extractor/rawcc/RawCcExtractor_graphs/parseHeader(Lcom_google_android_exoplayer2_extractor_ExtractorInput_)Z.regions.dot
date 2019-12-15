@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.rawcc.RawCcExtractor.parseHeader(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)Z" {
+subgraph cluster_Region_1194413063 {
+label = "R(2:0|(2:(1:9)|(1:(2:(1:5)|(2:6|8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.dataScratch.reset()\l}"];
+subgraph cluster_Region_1280686334 {
+label = "R(2:(1:9)|(1:(2:(1:5)|(2:6|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_306848798 {
+label = "IF [B:1:0x0011] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (r5.readFully(r4.dataScratch.data, 0, 8, true) != true) goto L_0x002e\l}"];
+subgraph cluster_Region_75218430 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1231525890 {
+label = "R(1:(2:(1:5)|(2:6|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_680807320 {
+label = "R(2:(1:5)|(2:6|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1807609920 {
+label = "IF [B:3:0x001b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|if (r4.dataScratch.readInt() != HEADER_ID) goto L_0x001d\l}"];
+subgraph cluster_Region_854598788 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|throw new java.io.IOException(\"Input not RawCC\")\l}"];
+}
+}
+subgraph cluster_Region_1193418064 {
+label = "R(2:6|8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|r4.version = r4.dataScratch.readUnsignedByte()\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0013}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor.parseHeader((r4v0 'this' com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor A[IMMUTABLE_TYPE, THIS]), (r5v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_9;
+}
+

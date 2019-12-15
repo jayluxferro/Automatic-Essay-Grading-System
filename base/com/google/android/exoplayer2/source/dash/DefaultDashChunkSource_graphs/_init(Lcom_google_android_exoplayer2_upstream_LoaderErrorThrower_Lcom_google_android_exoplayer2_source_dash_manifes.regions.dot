@@ -1,0 +1,29 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DefaultDashChunkSource.\<init\>(Lcom\/google\/android\/exoplayer2\/upstream\/LoaderErrorThrower;Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifest;IILcom\/google\/android\/exoplayer2\/trackselection\/TrackSelection;Lcom\/google\/android\/exoplayer2\/upstream\/DataSource;JIZZ)V" {
+subgraph cluster_Region_1413135126 {
+label = "R(2:0|(1:3))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r13.manifestLoaderErrorThrower = r14\lr13.manifest = r15\lr13.adaptationSetIndex = r17\lr13.trackSelection = r18\lr13.dataSource = r19\lr13.periodIndex = r16\lr13.elapsedRealtimeOffsetMs = r20\lr13.maxSegmentsPerLoad = r22\llong long r4 = r15.getPeriodDurationUs(r16)\lcom.google.android.exoplayer2.source.dash.manifest.AdaptationSet com.google.android.exoplayer2.source.dash.manifest.AdaptationSet r2 = getAdaptationSet()\ljava.util.List\<com.google.android.exoplayer2.source.dash.manifest.Representation\> java.util.List\<com.google.android.exoplayer2.source.dash.manifest.Representation\> r11 = r2.representations\lr13.representationHolders = new com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder[r18.length()]\lint r10 = 0\l}"];
+subgraph cluster_LoopRegion_1846421811 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0035|if (r10 \< r13.representationHolders.length) goto L_0x0037\l}"];
+subgraph cluster_Region_1016542927 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0037|LOOP_END\lLOOP:0: B:1:0x0032\-\>B:3:0x0037\l|r13.representationHolders[r10] = new com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.RepresentationHolder(r4, r11.get(r18.getIndexInTrackGroup(r10)), r23, r24, r2.type)\lr10++\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0032|LOOP_START\lPHI: r10 \l  PHI: (r10v1 'i' int) = (r10v0 'i' int), (r10v2 'i' int) binds: [B:0:0x0000, B:3:0x0037] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0032\-\>B:3:0x0037\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0055}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0055|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.\<init\>((r13v0 'this' com.google.android.exoplayer2.source.dash.DefaultDashChunkSource A[IMMUTABLE_TYPE, THIS]), (r14v0 'manifestLoaderErrorThrower' com.google.android.exoplayer2.upstream.LoaderErrorThrower A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'manifest' com.google.android.exoplayer2.source.dash.manifest.DashManifest A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'periodIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 'adaptationSetIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'trackSelection' com.google.android.exoplayer2.trackselection.TrackSelection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 'dataSource' com.google.android.exoplayer2.upstream.DataSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 'elapsedRealtimeOffsetMs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 'maxSegmentsPerLoad' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 'enableEventMessageTrack' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 'enableCea608Track' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

@@ -1,0 +1,54 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseForeignCollection.addElement(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1949048742 {
+label = "R(1:(2:(1:2)|(3:(1:7)|8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1341739923 {
+label = "R(2:(1:2)|(3:(1:7)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_532617200 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.dao == null) goto L_0x0004\l}"];
+subgraph cluster_Region_187977569 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_527544462 {
+label = "R(3:(1:7)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_445713720 {
+label = "IF [B:4:0x0009, B:6:0x0011] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|ADDED_TO_REGION\l|if (r4.parent != null) goto L_0x000b\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|ADDED_TO_REGION\l|if (r4.foreignFieldType.getFieldValueIfNotDefault(r5) == null) goto L_0x0013\l}"];
+subgraph cluster_Region_2113313037 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|r4.foreignFieldType.assignField(r5, r4.parent, true, (com.j256.ormlite.dao.ObjectCache) null)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001b|r4.dao.create(r5)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+MethodNode[shape=record,label="{private boolean com.j256.ormlite.dao.BaseForeignCollection.addElement((r4v0 'this' com.j256.ormlite.dao.BaseForeignCollection A[IMMUTABLE_TYPE, THIS]), (r5v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

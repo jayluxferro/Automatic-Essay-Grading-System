@@ -1,0 +1,77 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseForeignCollection.getPreparedQuery()Lcom\/j256\/ormlite\/stmt\/PreparedQuery;" {
+subgraph cluster_Region_738968025 {
+label = "R(1:(2:(1:2)|(2:(4:5|(1:7)|8|(1:10))|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1764749266 {
+label = "R(2:(1:2)|(2:(4:5|(1:7)|8|(1:10))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_969368639 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.dao == null) goto L_0x0004\l}"];
+subgraph cluster_Region_322176937 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1631787295 {
+label = "R(2:(4:5|(1:7)|8|(1:10))|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1996762010 {
+label = "IF [B:4:0x0008] THEN: R(4:5|(1:7)|8|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|if (r4.preparedQuery == null) goto L_0x000a\l}"];
+subgraph cluster_Region_202656882 {
+label = "R(4:5|(1:7)|8|(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|com.j256.ormlite.stmt.SelectArg com.j256.ormlite.stmt.SelectArg r0 = new com.j256.ormlite.stmt.SelectArg()\lr0.setValue(r4.parentId)\lcom.j256.ormlite.stmt.QueryBuilder com.j256.ormlite.stmt.QueryBuilder\<T, ID\> r1 = r4.dao.queryBuilder()\l}"];
+subgraph cluster_IfRegion_1969246169 {
+label = "IF [B:6:0x001c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|if (r4.orderColumn != null) goto L_0x001e\l}"];
+subgraph cluster_Region_1943932889 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|r1.orderBy(r4.orderColumn, r4.orderAscending)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0025|r4.preparedQuery = r1.where().mo17213eq(r4.foreignFieldType.getColumnName(), r0).prepare()\l}"];
+subgraph cluster_IfRegion_1180305299 {
+label = "IF [B:9:0x003d] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|if ((r4.preparedQuery instanceof com.j256.ormlite.stmt.mapped.MappedPreparedStmt) == true) goto L_0x003f\l}"];
+subgraph cluster_Region_1059612070 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003f|((com.j256.ormlite.stmt.mapped.MappedPreparedStmt) r4.preparedQuery).setParentInformation(r4.parent, r4.parentId)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004c|RETURN\l|return r4.preparedQuery\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004a}"];
+MethodNode[shape=record,label="{protected com.j256.ormlite.stmt.PreparedQuery\<T\> com.j256.ormlite.dao.BaseForeignCollection.getPreparedQuery((r4v0 'this' com.j256.ormlite.dao.BaseForeignCollection A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Lcom\/j256\/ormlite\/stmt\/PreparedQuery\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_11 -> Node_12;
+}
+

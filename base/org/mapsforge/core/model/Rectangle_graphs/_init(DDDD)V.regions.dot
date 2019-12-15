@@ -1,0 +1,52 @@
+digraph "CFG fororg.mapsforge.core.model.Rectangle.\<init\>(DDDD)V" {
+subgraph cluster_Region_1141381605 {
+label = "R(1:(2:8|9)(1:(1:4)(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1833351274 {
+label = "IF [B:1:0x0005] THEN: R(2:8|9) ELSE: R(1:(1:4)(2:6|7))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r2 \> r6) goto L_0x0033\l}"];
+subgraph cluster_Region_1469114535 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033}"];
+Node_9 [shape=record,label="{9\:\ 0x0051|throw new java.lang.IllegalArgumentException(\"left: \" + r2 + \", right: \" + r6)\l}"];
+}
+subgraph cluster_Region_973544230 {
+label = "R(1:(1:4)(2:6|7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1044708018 {
+label = "IF [B:3:0x0009] THEN: R(1:4) ELSE: R(2:6|7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|if (r4 \<= r8) goto L_0x000b\l}"];
+subgraph cluster_Region_1721340152 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|r1.left = r2\lr1.top = r4\lr1.right = r6\lr1.bottom = r8\l}"];
+}
+subgraph cluster_Region_907843932 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|throw new java.lang.IllegalArgumentException(\"top: \" + r4 + \", bottom: \" + r8)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+MethodNode[shape=record,label="{public void org.mapsforge.core.model.Rectangle.\<init\>((r1v0 'this' org.mapsforge.core.model.Rectangle A[IMMUTABLE_TYPE, THIS]), (r2v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_8 -> Node_9;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

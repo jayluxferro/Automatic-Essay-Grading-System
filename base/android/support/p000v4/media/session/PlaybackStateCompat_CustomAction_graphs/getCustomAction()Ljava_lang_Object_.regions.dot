@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v4.media.session.PlaybackStateCompat.CustomAction.getCustomAction()Ljava\/lang\/Object;" {
+subgraph cluster_Region_2082069117 {
+label = "R(1:(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_427457962 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_879421234 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mCustomActionObj != null) goto L_0x001c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 21) goto L_0x001c\l}"];
+subgraph cluster_Region_112185643 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|RETURN\l|return r4.mCustomActionObj\l}"];
+}
+}
+subgraph cluster_Region_886516145 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|r4.mCustomActionObj = android.support.p000v4.media.session.PlaybackStateCompatApi21.CustomAction.newInstance(r4.mAction, r4.mName, r4.mIcon, r4.mExtras)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|RETURN\l|return r4.mCustomActionObj\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001c}"];
+MethodNode[shape=record,label="{public java.lang.Object android.support.v4.media.session.PlaybackStateCompat.CustomAction.getCustomAction((r4v0 'this' android.support.v4.media.session.PlaybackStateCompat$CustomAction A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

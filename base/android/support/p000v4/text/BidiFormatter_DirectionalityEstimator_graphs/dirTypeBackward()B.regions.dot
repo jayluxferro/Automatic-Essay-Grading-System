@@ -1,0 +1,88 @@
+digraph "CFG forandroid.support.v4.text.BidiFormatter.DirectionalityEstimator.dirTypeBackward()B" {
+subgraph cluster_Region_549136133 {
+label = "R(2:0|(2:(2:2|3)|(2:4|(2:(1:13)|(1:(2:(1:14)|(1:10)))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.lastChar = r3.text.charAt(r3.charIndex \- 1)\l}"];
+subgraph cluster_Region_1971053030 {
+label = "R(2:(2:2|3)|(2:4|(2:(1:13)|(1:(2:(1:14)|(1:10))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1530595630 {
+label = "IF [B:1:0x0012] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (java.lang.Character.isLowSurrogate(r3.lastChar) == true) goto L_0x0014\l}"];
+subgraph cluster_Region_1910923733 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|int int r0 = java.lang.Character.codePointBefore(r3.text, r3.charIndex)\lr3.charIndex \-= java.lang.Character.charCount(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0029|RETURN\l|return java.lang.Character.getDirectionality(r0)\l}"];
+}
+}
+subgraph cluster_Region_549545797 {
+label = "R(2:4|(2:(1:13)|(1:(2:(1:14)|(1:10)))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a|r3.charIndex\-\-\lbyte byte r0 = getCachedDirectionality(r3.lastChar)\l}"];
+subgraph cluster_Region_1556096002 {
+label = "R(2:(1:13)|(1:(2:(1:14)|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_624604048 {
+label = "IF [B:5:0x0038] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0038|if (r3.isHtml != true) goto L_?\l}"];
+subgraph cluster_Region_64090565 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_266600960 {
+label = "R(1:(2:(1:14)|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_211093675 {
+label = "R(2:(1:14)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1370021135 {
+label = "IF [B:7:0x003e] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003e|if (r3.lastChar == '\>') goto L_0x0040\l}"];
+subgraph cluster_Region_561926809 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return skipTagBackward()\l}"];
+}
+}
+subgraph cluster_Region_852661171 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|RETURN\l|return r3.lastChar == ';' ? skipEntityBackward() : r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x003a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0040}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0045}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004b}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{byte android.support.v4.text.BidiFormatter.DirectionalityEstimator.dirTypeBackward((r3v0 'this' android.support.v4.text.BidiFormatter$DirectionalityEstimator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_13;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_15;
+Node_6 -> Node_7;
+Node_8 -> Node_14;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,88 @@
+digraph "CFG fororg.osmdroid.tileprovider.MapTileProviderArray.runAsyncNextProvider(Lorg\/osmdroid\/tileprovider\/MapTileRequestState;)V" {
+subgraph cluster_Region_788913208 {
+label = "R(2:0|(2:(2:2|3)|(4:4|c|(1:12)|13))) | DECL_VAR: java.lang.Integer null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.osmdroid.tileprovider.modules.MapTileModuleProviderBase org.osmdroid.tileprovider.modules.MapTileModuleProviderBase r0 = findNextAppropriateProvider(r5)\l}"];
+subgraph cluster_Region_1671612404 {
+label = "R(2:(2:2|3)|(4:4|c|(1:12)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_577595883 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1732182529 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r0.loadMapTileAsync(r5)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_201326976 {
+label = "R(4:4|c|(1:12)|13)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a}"];
+subgraph cluster_SynchronizedRegion_276926318 {
+label = "Synchronized:R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c}"];
+subgraph cluster_Region_265668296 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|java.lang.Integer r1 = r4.mWorking.get(java.lang.Long.valueOf(r5.getMapTile()))\l}"];
+}
+}
+subgraph cluster_IfRegion_238042902 {
+label = "IF [B:9:0x001e, B:11:0x0024] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|ADDED_TO_REGION\l|if (r1 != null) goto L_0x0020\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0024|ADDED_TO_REGION\l|if (r1.intValue() == 0) goto L_0x0026\l}"];
+subgraph cluster_Region_935209181 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0026|super.mapTileRequestFailed(r5)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0029|remove(r5.getMapTile())\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001d|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001d: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0031|LOOP_START\lREMOVE\lLOOP:0: B:15:0x0031\-\>B:19:0x0031\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0032|SYNTHETIC\lREMOVE\lSplitter:B:16:0x0032\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|REMOVE\lSplitter:B:16:0x0032\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0033|REMOVE\l|throw r5\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0031|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:15:0x0031\-\>B:19:0x0031\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0033|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0031|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.tileprovider.MapTileProviderArray.runAsyncNextProvider((r4v0 'this' org.osmdroid.tileprovider.MapTileProviderArray A[IMMUTABLE_TYPE, THIS]), (r5v0 org.osmdroid.tileprovider.MapTileRequestState A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_6 -> Node_7;
+Node_6 -> Node_15;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_19;
+Node_17 -> Node_20;
+Node_17 -> Node_21;
+Node_19 -> Node_15;
+Node_20 -> Node_18;
+Node_21 -> Node_19;
+}
+

@@ -1,0 +1,71 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readCharArray([CI)[C" {
+subgraph cluster_Region_1912359655 {
+label = "R(1:(2:(1:2)|(2:3|(2:(1:5)|(3:6|(1:8)|9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1563426182 {
+label = "R(2:(1:2)|(2:3|(2:(1:5)|(3:6|(1:8)|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1824659224 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (readField(r4) == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1654666912 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1488281915 {
+label = "R(2:3|(2:(1:5)|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|int int r3 = readInt()\l}"];
+subgraph cluster_Region_1905849185 {
+label = "R(2:(1:5)|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_332537916 {
+label = "IF [B:4:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r3 \< 0) goto L_0x000d\l}"];
+subgraph cluster_Region_1400501017 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_702101826 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|char[] char[] r4 = new char[r3]\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_686751863 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:6:0x000f, B:8:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0012\-\>B:8:0x0014\l|if (r0 \< r3) goto L_0x0014\l}"];
+subgraph cluster_Region_1528824040 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|LOOP_END\lLOOP:0: B:7:0x0012\-\>B:8:0x0014\l|r4[r0] = (char) readInt()\lr0++\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001e|RETURN\l|return r4\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public char[] androidx.versionedparcelable.VersionedParcel.readCharArray((r2v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r3v0 char[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_7;
+Node_0 -> Node_1;
+Node_10 -> Node_9;
+}
+

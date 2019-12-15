@@ -1,0 +1,60 @@
+digraph "CFG fororg.osgeo.proj4j.proj.LagrangeProjection.initialize()V" {
+subgraph cluster_Region_1672884993 {
+label = "R(2:0|(2:(2:2|(2:(2:4|5)|(1:7)))|(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.initialize()\l}"];
+subgraph cluster_Region_447674753 {
+label = "R(2:(2:2|(2:(2:4|5)|(1:7)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2120975098 {
+label = "IF [B:1:0x0009] THEN: R(2:2|(2:(2:4|5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r6.f381rw \> 0.0d) goto L_0x000b\l}"];
+subgraph cluster_Region_1878337271 {
+label = "R(2:2|(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|double double r2 = 1.0d \/ r6.f381rw\lr6.f381rw = r2\lr6.hrw = r2 * 0.5d\lr6.phi1 = r6.projectionLatitude1\ldouble double r0 = java.lang.Math.sin(r6.phi1)\lr6.phi1 = r0\l}"];
+subgraph cluster_Region_1950339659 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1465332206 {
+label = "IF [B:3:0x0035] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0035|if (java.lang.Math.abs(java.lang.Math.abs(r0) \- 1.0d) \>= 1.0E\-10d) goto L_0x0037\l}"];
+subgraph cluster_Region_650365430 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0037|r6.f380a1 = java.lang.Math.pow((1.0d \- r6.phi1) \/ (r6.phi1 + 1.0d), r6.hrw)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0047|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1263291998 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004f|throw new org.osgeo.proj4j.ProjectionException(\"\-22\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1771202975 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0057|throw new org.osgeo.proj4j.ProjectionException(\"\-27\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0048}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0050}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.proj.LagrangeProjection.initialize((r6v0 'this' org.osgeo.proj4j.proj.LagrangeProjection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

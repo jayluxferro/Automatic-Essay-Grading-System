@@ -1,0 +1,25 @@
+digraph "CFG fororg.osmdroid.views.Projection.getLongPixelsFromProjected(Lorg\/osmdroid\/util\/PointL;DZLorg\/osmdroid\/util\/PointL;)Lorg\/osmdroid\/util\/PointL;" {
+subgraph cluster_Region_970966990 {
+label = "R(3:(1:1)|2|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_544975368 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_200255560 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|org.osmdroid.util.PointL r7 = new org.osmdroid.util.PointL()\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0008|PHI: r7 \l  PHI: (r7v1 org.osmdroid.util.PointL) = (r7v0 org.osmdroid.util.PointL), (r7v2 org.osmdroid.util.PointL) binds: [B:0:0x0000, B:1:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|r7.f444x = getLongPixelXFromMercator((long) (((double) r3.f444x) \/ r4), r6)\lr7.f445y = getLongPixelYFromMercator((long) (((double) r3.f445y) \/ r4), r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001e|RETURN\l|return r7\l}"];
+}
+MethodNode[shape=record,label="{public org.osmdroid.util.PointL org.osmdroid.views.Projection.getLongPixelsFromProjected((r2v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS]), (r3v0 org.osmdroid.util.PointL A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 org.osmdroid.util.PointL A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+}
+

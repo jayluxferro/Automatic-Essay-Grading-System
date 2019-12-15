@@ -1,0 +1,38 @@
+digraph "CFG forcom.google.firebase.messaging.FirebaseMessagingService.zzc(Landroid\/content\/Intent;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"com.google.firebase.messaging.NOTIFICATION_OPEN\" \l0x0002: INVOKE  (r1 I:java.lang.String) = (r3 I:android.content.Intent) android.content.Intent.getAction():java.lang.String type: VIRTUAL \l0x0006: INVOKE  (r0 I:boolean) = (r0 I:java.lang.String), (r1 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x002c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: CONST_STR  (r0 I:java.lang.String) =  \"pending_intent\" \l0x000e: INVOKE  (r0 I:android.os.Parcelable) = (r3 I:android.content.Intent), (r0 I:java.lang.String) android.content.Intent.getParcelableExtra(java.lang.String):android.os.Parcelable type: VIRTUAL \l0x0012: CHECK_CAST  (r0 I:android.app.PendingIntent) = (android.app.PendingIntent) (r0 I:?[OBJECT, ARRAY]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|0x0014: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0021 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|SYNTHETIC\lSplitter:B:4:0x0016\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Splitter:B:4:0x0016\l|0x0016: INVOKE  (r0 I:android.app.PendingIntent) android.app.PendingIntent.send():void type: VIRTUAL A[Catch:\{ CanceledException \-\> 0x001a \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001a|0x001a: CONST_STR  (r0 I:java.lang.String) =  \"FirebaseMessaging\" \l0x001c: CONST_STR  (r1 I:java.lang.String) =  \"Notification pending intent canceled\" \l0x001e: INVOKE  (r0 I:java.lang.String), (r1 I:java.lang.String) android.util.Log.e(java.lang.String, java.lang.String):int type: STATIC \l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lExcHandler: CanceledException null\lSplitter:B:4:0x0016\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0021|0x0021: INVOKE  (r0 I:boolean) = (r3 I:android.content.Intent) com.google.firebase.messaging.MessagingAnalytics.shouldUploadMetrics(android.content.Intent):boolean type: STATIC \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|0x0025: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:0x002a \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0027|0x0027: INVOKE  (r3 I:android.content.Intent) com.google.firebase.messaging.MessagingAnalytics.logNotificationOpen(android.content.Intent):void type: STATIC \l}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|0x002a: CONST  (r3 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_13 [shape=record,label="{13\:\ 0x002b|0x002b: RETURN  (r3 I:boolean) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x002c|0x002c: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|0x002d: RETURN  (r3 I:boolean) \l}"];
+MethodNode[shape=record,label="{public final boolean com.google.firebase.messaging.FirebaseMessagingService.zzc((r2 'this' I:com.google.firebase.messaging.FirebaseMessagingService A[IMMUTABLE_TYPE, THIS]), (r3 I:android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_8;
+Node_5 -> Node_9;
+Node_7 -> Node_9;
+Node_8 -> Node_7;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

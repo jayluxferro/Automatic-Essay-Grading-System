@@ -1,0 +1,47 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.db.SQLiteHandler.getLocations()Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_822422557 {
+label = "R(4:0|(1:(1:6))|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.database.sqlite.SQLiteDatabase android.database.sqlite.SQLiteDatabase r1 = getReadableDatabase()\landroid.database.Cursor android.database.Cursor r0 = r1.rawQuery(\"SELECT * FROM locations ORDER BY id DESC\", (java.lang.String[]) null)\ljava.util.ArrayList java.util.ArrayList\<java.util.HashMap\<java.lang.String, java.lang.String\>\> r2 = new java.util.ArrayList\<\>()\l}"];
+subgraph cluster_IfRegion_122605029 {
+label = "IF [B:1:0x0014, B:3:0x001a] THEN: R(1:(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|ADDED_TO_REGION\l|if (r0.moveToFirst() == true) goto L_0x0016\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|ADDED_TO_REGION\l|if (r0.getCount() \> 0) goto L_0x001c\l}"];
+subgraph cluster_Region_1161452119 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1157863445 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r0.isAfterLast() == false) goto L_0x0022\l}"];
+subgraph cluster_Region_83724943 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|LOOP_END\lLOOP:0: B:4:0x001c\-\>B:6:0x0022\l|java.util.HashMap java.util.HashMap r3 = new java.util.HashMap()\lr3.put(\"id\", r0.getString(r0.getColumnIndex(\"id\")))\lr3.put(\"title\", r0.getString(r0.getColumnIndex(\"title\")))\lr3.put(KEY_STREET, r0.getString(r0.getColumnIndex(KEY_STREET)))\lr3.put(\"address\", r0.getString(r0.getColumnIndex(\"address\")))\lr3.put(KEY_ADDRESS_CODE, r0.getString(r0.getColumnIndex(KEY_ADDRESS_CODE)))\lr3.put(KEY_LATITUDE, r0.getString(r0.getColumnIndex(KEY_LATITUDE)))\lr3.put(KEY_LONGITUDE, r0.getString(r0.getColumnIndex(KEY_LONGITUDE)))\lr3.put(\"district\", r0.getString(r0.getColumnIndex(\"district\")))\lr3.put(\"region\", r0.getString(r0.getColumnIndex(\"region\")))\lr3.put(\"postcode\", r0.getString(r0.getColumnIndex(\"postcode\")))\lr3.put(KEY_VERIFY, r0.getString(r0.getColumnIndex(KEY_VERIFY)))\lr3.put(\"country\", r0.getString(r0.getColumnIndex(\"country\")))\lr3.put(\"world_address\", r0.getString(r0.getColumnIndex(KEY_WORLD_ADDRESS)))\lr3.put(KEY_AREA, r0.getString(r0.getColumnIndex(KEY_AREA)))\lr3.put(KEY_ACCURACY, r0.getString(r0.getColumnIndex(KEY_ACCURACY)))\lr3.put(\"timestamp\", r0.getString(r0.getColumnIndex(\"timestamp\")))\lr2.add(r3)\lr0.moveToNext()\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x011f|r0.close()\lr1.close()\ltimber.log.Timber.m189d(\"Fetching ads from Sqlite: \" + r2.toString(), new java.lang.Object[0])\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0140|RETURN\l|return r2\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0016}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c|LOOP_START\lLOOP:0: B:4:0x001c\-\>B:6:0x0022\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x011f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.ArrayList\<java.util.HashMap\<java.lang.String, java.lang.String\>\> com.ghanapostgps.ghanapost.db.SQLiteHandler.getLocations((r6v0 'this' com.ghanapostgps.ghanapost.db.SQLiteHandler A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/ArrayList\<, Ljava\/util\/HashMap\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_7;
+}
+

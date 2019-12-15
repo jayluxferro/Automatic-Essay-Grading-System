@@ -1,0 +1,82 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.coerceIn(ILkotlin\/ranges\/ClosedRange;)I" {
+subgraph cluster_Region_1128951590 {
+label = "R(2:0|(2:(1:3)|(1:(2:12|13)(1:(1:15)(1:10)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"range\")\l}"];
+subgraph cluster_Region_2050769211 {
+label = "R(2:(1:3)|(1:(2:12|13)(1:(1:15)(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1383411343 {
+label = "IF [B:1:0x0007] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if ((r3 instanceof kotlin.ranges.ClosedFloatingPointRange) == true) goto L_0x0009\l}"];
+subgraph cluster_Region_1688779989 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|RETURN\l|return ((java.lang.Number) kotlin.ranges.RangesKt.coerceIn(java.lang.Integer.valueOf(r2), (kotlin.ranges.ClosedFloatingPointRange) r3)).intValue()\l}"];
+}
+}
+subgraph cluster_Region_1955318841 {
+label = "R(1:(2:12|13)(1:(1:15)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1822850570 {
+label = "IF [B:5:0x0020] THEN: R(2:12|13) ELSE: R(1:(1:15)(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r3.isEmpty() != false) goto L_0x0050\l}"];
+subgraph cluster_Region_391918663 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0050}"];
+Node_13 [shape=record,label="{13\:\ 0x006d|throw new java.lang.IllegalArgumentException(\"Cannot coerce value to an empty range: \" + r3 + '.')\l}"];
+}
+subgraph cluster_Region_917728365 {
+label = "R(1:(1:15)(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_485725318 {
+label = "IF [B:7:0x002c] THEN: R(1:15) ELSE: R(1:10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|if (r2 \< r3.getStart().intValue()) goto L_0x002e\l}"];
+subgraph cluster_Region_1132130108 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r3.getStart().intValue()\l}"];
+}
+subgraph cluster_Region_896664856 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0043|RETURN\l|return r2 \> r3.getEndInclusive().intValue() ? r3.getEndInclusive().intValue() : r2\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0022}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0039}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0045}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.ranges.RangesKt___RangesKt.coerceIn((r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.ranges.ClosedRange\<java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I, Lkotlin\/ranges\/ClosedRange\<, Ljava\/lang\/Integer;, \>;)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_12 -> Node_13;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_16;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_15;
+Node_9 -> Node_10;
+Node_11 -> Node_14;
+}
+

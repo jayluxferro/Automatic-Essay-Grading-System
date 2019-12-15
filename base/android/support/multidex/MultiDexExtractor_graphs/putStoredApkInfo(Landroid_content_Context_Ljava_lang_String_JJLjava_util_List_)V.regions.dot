@@ -1,0 +1,31 @@
+digraph "CFG forandroid.support.multidex.MultiDexExtractor.putStoredApkInfo(Landroid\/content\/Context;Ljava\/lang\/String;JJLjava\/util\/List;)V" {
+subgraph cluster_Region_1180407492 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.SharedPreferences$Editor android.content.SharedPreferences.Editor r1 = getMultiDexPreferences(r8).edit()\lr1.putLong(r9 + KEY_TIME_STAMP, r10)\lr1.putLong(r9 + KEY_CRC, r12)\lr1.putInt(r9 + KEY_DEX_NUMBER, r14.size() + 1)\lint r2 = 2\ljava.util.Iterator r4 = r14.iterator()\l}"];
+subgraph cluster_LoopRegion_1022888667 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0059|if (r4.hasNext() != false) goto L_0x005b\l}"];
+subgraph cluster_Region_1060430643 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005b|LOOP_END\lLOOP:0: B:1:0x0055\-\>B:3:0x005b\l|android.support.multidex.MultiDexExtractor$ExtractedDex r0 = r4.next()\lr1.putLong(r9 + KEY_DEX_CRC + r2, r0.crc)\lr1.putLong(r9 + KEY_DEX_TIME + r2, r0.lastModified())\lr2++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x009e|r1.commit()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0055|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'extractedDexId' int) = (r2v0 'extractedDexId' int), (r2v2 'extractedDexId' int) binds: [B:0:0x0000, B:3:0x005b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0055\-\>B:3:0x005b\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x00a1}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x009e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void android.support.multidex.MultiDexExtractor.putStoredApkInfo((r8v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'keyPrefix' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'timeStamp' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'crc' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'extractedDexes' java.util.List\<android.support.multidex.MultiDexExtractor$ExtractedDex\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/content\/Context;, Ljava\/lang\/String;, JJ, Ljava\/util\/List, \<, Landroid\/support\/multidex\/MultiDexExtractor$ExtractedDex;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

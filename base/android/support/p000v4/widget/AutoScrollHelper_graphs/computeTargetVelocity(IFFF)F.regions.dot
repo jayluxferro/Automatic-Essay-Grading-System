@@ -1,0 +1,58 @@
+digraph "CFG forandroid.support.v4.widget.AutoScrollHelper.computeTargetVelocity(IFFF)F" {
+subgraph cluster_Region_802887259 {
+label = "R(2:0|(2:(1:2)|(2:3|(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r5 = getEdgeValue(r3.mRelativeEdges[r4], r6, r3.mMaximumEdges[r4], r5)\lint int r0 = (r5 \> 0.0f ? 1 : (r5 == 0.0f ? 0 : \-1))\l}"];
+subgraph cluster_Region_1224005474 {
+label = "R(2:(1:2)|(2:3|(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_945490630 {
+label = "IF [B:1:0x000f] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r0 == 0) goto L_0x0011\l}"];
+subgraph cluster_Region_819245451 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_99307058 {
+label = "R(2:3|(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|float r6 = r3.mRelativeVelocity[r4]\lfloat r1 = r3.mMinimumVelocity[r4]\lfloat r4 = r3.mMaximumVelocity[r4]\lfloat float r6 = r6 * r7\l}"];
+subgraph cluster_Region_1100694429 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1338354264 {
+label = "IF [B:4:0x0020] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020|if (r0 \> 0) goto L_0x0022\l}"];
+subgraph cluster_Region_149438859 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|RETURN\l|return constrain(r5 * r6, r1, r4)\l}"];
+}
+}
+subgraph cluster_Region_1412471057 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|RETURN\l|return \-constrain((\-r5) * r6, r1, r4)\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0029}"];
+MethodNode[shape=record,label="{private float android.support.v4.widget.AutoScrollHelper.computeTargetVelocity((r3v0 'this' android.support.v4.widget.AutoScrollHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

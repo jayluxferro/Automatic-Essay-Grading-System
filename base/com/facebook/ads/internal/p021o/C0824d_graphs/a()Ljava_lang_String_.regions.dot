@@ -1,0 +1,34 @@
+digraph "CFG forcom.facebook.ads.internal.o.d.a()Ljava\/lang\/String;" {
+subgraph cluster_Region_365375630 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = com.facebook.ads.internal.settings.AdInternalSettings.getUrlPrefix()\l}"];
+subgraph cluster_Region_736195101 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1927619821 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (android.text.TextUtils.isEmpty(r0) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_1394738384 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \"https:\/\/graph.facebook.com\/network_ads_common\"\l}"];
+}
+}
+subgraph cluster_Region_1657738462 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.String.format(\"https:\/\/graph.%s.facebook.com\/network_ads_common\", new java.lang.Object[]\{r0\})\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public static java.lang.String com.facebook.ads.internal.o.d.a() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

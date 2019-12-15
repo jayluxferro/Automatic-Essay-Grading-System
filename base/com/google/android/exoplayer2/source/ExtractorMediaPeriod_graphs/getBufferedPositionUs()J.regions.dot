@@ -1,0 +1,125 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ExtractorMediaPeriod.getBufferedPositionUs()J" {
+subgraph cluster_Region_955588966 {
+label = "R(1:(2:(1:21)|(1:(2:(1:22)|(2:(2:8|(2:(1:12)(0)|13))(1:14)|16))))) | DECL_VAR: long largestQueuedTimestampUs\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_207641462 {
+label = "R(2:(1:21)|(1:(2:(1:22)|(2:(2:8|(2:(1:12)(0)|13))(1:14)|16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_876017634 {
+label = "IF [B:1:0x0004] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r8.loadingFinished == true) goto L_0x0006\l}"];
+subgraph cluster_Region_192013669 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return Long.MIN_VALUE\l}"];
+}
+}
+subgraph cluster_Region_446569340 {
+label = "R(1:(2:(1:22)|(2:(2:8|(2:(1:12)(0)|13))(1:14)|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_346773682 {
+label = "R(2:(1:22)|(2:(2:8|(2:(1:12)(0)|13))(1:14)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_388052002 {
+label = "IF [B:4:0x000c] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (isPendingReset() == true) goto L_0x000e\l}"];
+subgraph cluster_Region_327131502 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ ?|SYNTHETIC\lRETURN\l|return r8.pendingResetPositionUs\l}"];
+}
+}
+subgraph cluster_Region_2035293574 {
+label = "R(2:(2:8|(2:(1:12)(0)|13))(1:14)|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_930133206 {
+label = "IF [B:7:0x0013] THEN: R(2:8|(2:(1:12)(0)|13)) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|if (r8.haveAudioVideoTracks == true) goto L_0x0015\l}"];
+subgraph cluster_Region_1652746295 {
+label = "R(2:8|(2:(1:12)(0)|13))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|r2 = Long.MAX_VALUE\lint int r1 = r8.sampleQueues.size()\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_44977907 {
+label = "LOOP:0: (2:(1:12)(0)|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|LOOP_START\lPHI: r0 r2 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:8:0x0015, B:13:0x0039] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 'largestQueuedTimestampUs' long) = (r2v3 'largestQueuedTimestampUs' long), (r2v5 'largestQueuedTimestampUs' long) binds: [B:8:0x0015, B:13:0x0039] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0021\-\>B:13:0x0039\l|if (r0 \< r1) goto L_0x0023\l}"];
+subgraph cluster_Region_947333953 {
+label = "R(2:(1:12)(0)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1296154408 {
+label = "IF [B:11:0x0027] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0027|if (r8.trackIsAudioVideoFlags[r0] == true) goto L_0x0029\l}"];
+subgraph cluster_Region_1189211694 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0029|long r2 = java.lang.Math.min(r2, r8.sampleQueues.valueAt(r0).getLargestQueuedTimestampUs())\l}"];
+}
+subgraph cluster_Region_703469118 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0039|LOOP_END\lPHI: r2 \l  PHI: (r2v5 'largestQueuedTimestampUs' long) = (r2v4 'largestQueuedTimestampUs' long), (r2v6 'largestQueuedTimestampUs' long) binds: [B:20:0x0039, B:19:0x0039] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0021\-\>B:13:0x0039\l|r0++\l}"];
+}
+}
+}
+subgraph cluster_Region_1049661025 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003c|long r2 = getLargestQueuedTimestampUs()\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0042|RETURN\l|return r2 == Long.MIN_VALUE ? r8.lastSeekPositionUs : r2\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0023}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0040|PHI: r2 \l  PHI: (r2v0 'largestQueuedTimestampUs' long) = (r2v2 'largestQueuedTimestampUs' long), (r2v4 'largestQueuedTimestampUs' long) binds: [B:14:0x003c, B:18:0x0040] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0044}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0040|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0039|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0039|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.source.ExtractorMediaPeriod.getBufferedPositionUs((r8v0 'this' com.google.android.exoplayer2.source.ExtractorMediaPeriod A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_18[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_20[style=dashed];
+Node_12 -> Node_19;
+Node_13 -> Node_9;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_23;
+Node_0 -> Node_1;
+Node_2 -> Node_21;
+Node_3 -> Node_4;
+Node_5 -> Node_22;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_17 -> Node_24;
+Node_18 -> Node_15;
+Node_19 -> Node_13;
+Node_20 -> Node_13;
+}
+

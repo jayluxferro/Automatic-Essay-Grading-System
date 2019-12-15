@@ -1,0 +1,45 @@
+digraph "CFG fororg.osmdroid.views.overlay.mylocation.MyLocationNewOverlay.enableMyLocation(Lorg\/osmdroid\/views\/overlay\/mylocation\/IMyLocationProvider;)Z" {
+subgraph cluster_Region_256072254 {
+label = "R(4:0|(1:4)|(1:7)|8) | DECL_VAR: android.location.Location null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|setMyLocationProvider(r2)\lboolean boolean r2 = r1.mMyLocationProvider.startLocationProvider(r1)\lr1.mIsLocationEnabled = r2\l}"];
+subgraph cluster_IfRegion_179618906 {
+label = "IF [B:1:0x000b, B:3:0x0013] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|ADDED_TO_REGION\l|if (r2 == true) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|ADDED_TO_REGION\l|if ((r0 = r1.mMyLocationProvider.getLastKnownLocation()) != null) goto L_0x0015\l}"];
+subgraph cluster_Region_1399288610 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|setLocation(r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_595991912 {
+label = "IF [B:6:0x001a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|if (r1.mMapView != null) goto L_0x001c\l}"];
+subgraph cluster_Region_110486862 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|r1.mMapView.postInvalidate()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0021|RETURN\l|return r2\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay.enableMyLocation((r1v0 'this' org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay A[IMMUTABLE_TYPE, THIS]), (r2v0 org.osmdroid.views.overlay.mylocation.IMyLocationProvider A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.MediaCodecAudioRenderer.configureCodec(Lcom\/google\/android\/exoplayer2\/mediacodec\/MediaCodecInfo;Landroid\/media\/MediaCodec;Lcom\/google\/android\/exoplayer2\/Format;Landroid\/media\/MediaCrypto;)V" {
+subgraph cluster_Region_1888132458 {
+label = "R(2:0|(2:(2:2|4)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.codecNeedsDiscardChannelsWorkaround = codecNeedsDiscardChannelsWorkaround(r6.name)\l}"];
+subgraph cluster_Region_1461606859 {
+label = "R(2:(2:2|4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1058662885 {
+label = "IF [B:1:0x000c] THEN: R(2:2|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r5.passthroughEnabled == true) goto L_0x000e\l}"];
+subgraph cluster_Region_2066254959 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r5.passthroughMediaFormat = r8.getFrameworkMediaFormatV16()\lr5.passthroughMediaFormat.setString(\"mime\", com.google.android.exoplayer2.util.MimeTypes.AUDIO_RAW)\lr7.configure(r5.passthroughMediaFormat, (android.view.Surface) null, r9, 0)\lr5.passthroughMediaFormat.setString(\"mime\", r8.sampleMimeType)\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1600991149 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002c|r7.configure(r8.getFrameworkMediaFormatV16(), (android.view.Surface) null, r9, 0)\lr5.passthroughMediaFormat = null\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.audio.MediaCodecAudioRenderer.configureCodec((r5v0 'this' com.google.android.exoplayer2.audio.MediaCodecAudioRenderer A[IMMUTABLE_TYPE, THIS]), (r6v0 'codecInfo' com.google.android.exoplayer2.mediacodec.MediaCodecInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'format' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'crypto' android.media.MediaCrypto A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_5;
+}
+

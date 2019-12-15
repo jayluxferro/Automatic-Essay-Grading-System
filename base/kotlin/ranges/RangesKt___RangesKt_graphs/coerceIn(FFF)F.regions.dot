@@ -1,0 +1,54 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.coerceIn(FFF)F" {
+subgraph cluster_Region_30052539 {
+label = "R(1:(2:9|10)(1:(1:4)(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1634666090 {
+label = "IF [B:1:0x0002] THEN: R(2:9|10) ELSE: R(1:(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3 \> r4) goto L_0x000f\l}"];
+subgraph cluster_Region_582832626 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x000f}"];
+Node_10 [shape=record,label="{10\:\ 0x0034|throw new java.lang.IllegalArgumentException(\"Cannot coerce value to an empty range: maximum \" + r4 + \" is less than minimum \" + r3 + '.')\l}"];
+}
+subgraph cluster_Region_1916973364 {
+label = "R(1:(1:4)(1:6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_660125839 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: R(1:6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r2 \< r3) goto L_0x0008\l}"];
+subgraph cluster_Region_1050523224 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_1986482872 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|RETURN\l|return r2 \> r4 ? r4 : r2\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000e}"];
+MethodNode[shape=record,label="{public static final float kotlin.ranges.RangesKt___RangesKt.coerceIn((r2v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_9 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

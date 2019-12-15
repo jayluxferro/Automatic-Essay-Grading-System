@@ -1,0 +1,34 @@
+digraph "CFG forokio.AsyncTimeout.exit(Ljava\/io\/IOException;)Ljava\/io\/IOException;" {
+subgraph cluster_Region_245973492 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_423751941 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_950493393 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (exit() == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1290389390 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_134977798 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|RETURN\l|return newTimeoutException(r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+MethodNode[shape=record,label="{final java.io.IOException okio.AsyncTimeout.exit((r1v0 'this' okio.AsyncTimeout A[IMMUTABLE_TYPE, THIS]), (r2v0 java.io.IOException A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

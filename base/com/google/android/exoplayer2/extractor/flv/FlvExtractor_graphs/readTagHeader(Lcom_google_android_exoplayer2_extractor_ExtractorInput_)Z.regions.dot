@@ -1,0 +1,34 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.FlvExtractor.readTagHeader(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)Z" {
+subgraph cluster_Region_1167359705 {
+label = "R(1:(2:(1:3)|(2:2|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_231220691 {
+label = "R(2:(1:3)|(2:2|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1276599676 {
+label = "IF [B:1:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r7.readFully(r6.tagHeaderBuffer.data, 0, 11, true) == false) goto L_?\l}"];
+subgraph cluster_Region_1211007494 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_774528876 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|r6.tagHeaderBuffer.setPosition(0)\lr6.tagType = r6.tagHeaderBuffer.readUnsignedByte()\lr6.tagDataSize = r6.tagHeaderBuffer.readUnsignedInt24()\lr6.tagTimestampUs = (long) r6.tagHeaderBuffer.readUnsignedInt24()\lr6.tagTimestampUs = (((long) (r6.tagHeaderBuffer.readUnsignedByte() \<\< 24)) \| r6.tagTimestampUs) * 1000\lr6.tagHeaderBuffer.skipBytes(3)\lr6.parserState = 4\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.flv.FlvExtractor.readTagHeader((r6v0 'this' com.google.android.exoplayer2.extractor.flv.FlvExtractor A[IMMUTABLE_TYPE, THIS]), (r7v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_0 -> Node_1;
+}
+

@@ -1,0 +1,31 @@
+digraph "CFG forcom.mapbox.android.telemetry.CertificateBlacklist.createListContent(Ljava\/util\/List;)Ljava\/lang\/String;" {
+subgraph cluster_Region_572058969 {
+label = "R(3:0|(1:3)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Date java.util.Date r0 = new java.util.Date()\ljava.lang.StringBuilder java.lang.StringBuilder r1 = new java.lang.StringBuilder(r0.getTime() + NEW_LINE)\ljava.util.Iterator r6 = r6.iterator()\l}"];
+subgraph cluster_LoopRegion_936972486 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0027|if (r6.hasNext() != false) goto L_0x0029\l}"];
+subgraph cluster_Region_963562999 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0029|LOOP_END\lLOOP:0: B:1:0x0023\-\>B:3:0x0029\l|r1.append(SHA256)\lr1.append(r0)\lr1.append(NEW_LINE)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0041|RETURN\l|return r1.toString()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0023|LOOP_START\lLOOP:0: B:1:0x0023\-\>B:3:0x0029\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x003d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x003d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.lang.String com.mapbox.android.telemetry.CertificateBlacklist.createListContent((r5v0 'this' com.mapbox.android.telemetry.CertificateBlacklist A[IMMUTABLE_TYPE, THIS]), (r6v0 java.util.List\<java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Ljava\/lang\/String;, \>;), Ljava\/lang\/String;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

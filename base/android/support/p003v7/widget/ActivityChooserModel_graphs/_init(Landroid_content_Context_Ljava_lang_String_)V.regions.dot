@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v7.widget.ActivityChooserModel.\<init\>(Landroid\/content\/Context;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1613350929 {
+label = "R(2:0|(2:(2:5|6)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.mContext = r3.getApplicationContext()\l}"];
+subgraph cluster_Region_1758674234 {
+label = "R(2:(2:5|6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_132320414 {
+label = "IF [B:1:0x0037, B:3:0x003f] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0037|if (android.text.TextUtils.isEmpty(r4) == true) goto L_0x0055\l}"];
+Node_3 [shape=record,label="{3\:\ 0x003f|ADDED_TO_REGION\l|if (r4.endsWith(HISTORY_FILE_EXTENSION) == true) goto L_0x0055\l}"];
+subgraph cluster_Region_563228321 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0055|r2.mHistoryFileName = r4\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_265618370 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0041|r2.mHistoryFileName = r4 + HISTORY_FILE_EXTENSION\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0039}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.ActivityChooserModel.\<init\>((r2v0 'this' android.support.v7.widget.ActivityChooserModel A[IMMUTABLE_TYPE, THIS]), (r3v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_4 -> Node_7;
+Node_2 -> Node_3;
+}
+

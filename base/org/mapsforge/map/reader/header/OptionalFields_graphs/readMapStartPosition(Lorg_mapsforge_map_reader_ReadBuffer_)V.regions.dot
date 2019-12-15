@@ -1,0 +1,60 @@
+digraph "CFG fororg.mapsforge.map.reader.header.OptionalFields.readMapStartPosition(Lorg\/mapsforge\/map\/reader\/ReadBuffer;)V" {
+subgraph cluster_Region_528930860 {
+label = "R(1:(1:(1:4))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1353558646 {
+label = "IF [B:1:0x0002] THEN: R(1:(1:4)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.hasStartPosition == true) goto L_0x0004\l}"];
+subgraph cluster_Region_759632507 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_809393109 {
+label = "Try: R(1:4) catches: R(2:5|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_424718918 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ IllegalArgumentException \-\> 0x001c \}\lSplitter:B:3:0x0014\l|r4.startPosition = new org.mapsforge.core.model.LatLong(org.mapsforge.core.util.LatLongUtils.microdegreesToDegrees(r5.readInt()), org.mapsforge.core.util.LatLongUtils.microdegreesToDegrees(r5.readInt()))     \/\/ Catch:\{ IllegalArgumentException \-\> 0x001c \}\l}"];
+}
+subgraph cluster_Region_605242624 {
+label = "R(2:5|7) | ExcHandler: IllegalArgumentException (r5v2 'e' java.lang.IllegalArgumentException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|ExcHandler: IllegalArgumentException (r5v2 'e' java.lang.IllegalArgumentException A[CUSTOM_DECLARE])\lSplitter:B:3:0x0014\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0026|throw new org.mapsforge.map.reader.header.MapFileException(r5.getMessage())\l}"];
+}
+}
+}
+subgraph cluster_Region_827481907 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_605242624 {
+label = "R(2:5|7) | ExcHandler: IllegalArgumentException (r5v2 'e' java.lang.IllegalArgumentException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|ExcHandler: IllegalArgumentException (r5v2 'e' java.lang.IllegalArgumentException A[CUSTOM_DECLARE])\lSplitter:B:3:0x0014\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0026|throw new org.mapsforge.map.reader.header.MapFileException(r5.getMessage())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014|SYNTHETIC\lSplitter:B:3:0x0014\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.reader.header.OptionalFields.readMapStartPosition((r4v0 'this' org.mapsforge.map.reader.header.OptionalFields A[IMMUTABLE_TYPE, THIS]), (r5v0 org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_6 -> Node_7;
+}
+

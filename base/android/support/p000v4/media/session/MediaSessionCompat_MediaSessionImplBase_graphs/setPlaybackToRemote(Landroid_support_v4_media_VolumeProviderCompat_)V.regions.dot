@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.setPlaybackToRemote(Landroid\/support\/v4\/media\/VolumeProviderCompat;)V" {
+subgraph cluster_Region_416350736 {
+label = "R(1:(2:(3:(1:3)|4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_292477 {
+label = "R(2:(3:(1:3)|4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_268290559 {
+label = "IF [B:0:0x0000] THEN: R(3:(1:3)|4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1762600094 {
+label = "R(3:(1:3)|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2044619309 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r7.mVolumeProvider != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1523207413 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r7.mVolumeProvider.setCallback((android.support.p000v4.media.VolumeProviderCompat.Callback) null)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000c|r7.mVolumeType = 2\lr7.mVolumeProvider = r8\lsendVolumeInfoChanged(new android.support.p000v4.media.session.ParcelableVolumeInfo(r7.mVolumeType, r7.mLocalStream, r7.mVolumeProvider.getVolumeControl(), r7.mVolumeProvider.getMaxVolume(), r7.mVolumeProvider.getCurrentVolume()))\lr8.setCallback(r7.mVolumeCallback)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0035|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_991548514 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003d|throw new java.lang.IllegalArgumentException(\"volumeProvider may not be null\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0036}"];
+MethodNode[shape=record,label="{public void android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.setPlaybackToRemote((r7v0 'this' android.support.v4.media.session.MediaSessionCompat$MediaSessionImplBase A[IMMUTABLE_TYPE, THIS]), (r8v0 android.support.v4.media.VolumeProviderCompat A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_7;
+}
+

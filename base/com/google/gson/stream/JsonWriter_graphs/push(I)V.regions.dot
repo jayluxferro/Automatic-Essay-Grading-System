@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.gson.stream.JsonWriter.push(I)V" {
+subgraph cluster_Region_837350577 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_484255951 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.stackSize == r4.stack.length) goto L_0x0007\l}"];
+subgraph cluster_Region_242438358 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|int[] int[] r0 = new int[(r4.stackSize * 2)]\ljava.lang.System.arraycopy(r4.stack, 0, r0, 0, r4.stackSize)\lr4.stack = r0\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0017|int[] int[] r0 = r4.stack\lint int r1 = r4.stackSize\lr4.stackSize = r1 + 1\lr0[r1] = r5\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0021}"];
+MethodNode[shape=record,label="{private void com.google.gson.stream.JsonWriter.push((r4v0 'this' com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

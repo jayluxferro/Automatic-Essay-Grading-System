@@ -1,0 +1,25 @@
+digraph "CFG forretrofit2.ParameterHandler.Body.apply(Lretrofit2\/RequestBuilder;Ljava\/lang\/Object;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x002b \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0002\l|0x0002: IGET  (r0 I:retrofit2.Converter\<T, okhttp3.RequestBody\>) = (r3 I:retrofit2.ParameterHandler$Body) retrofit2.ParameterHandler.Body.converter retrofit2.Converter A[Catch:\{ IOException \-\> 0x000e \}, TRY_ENTER]\l0x0004: INVOKE  (r0 I:java.lang.Object) = (r0 I:retrofit2.Converter), (r5 I:java.lang.Object) retrofit2.Converter.convert(java.lang.Object):java.lang.Object type: INTERFACE A[Catch:\{ IOException \-\> 0x000e \}]\l0x0008: CHECK_CAST  (r0 I:okhttp3.RequestBody) = (okhttp3.RequestBody) (r0 I:?[OBJECT, ARRAY]) A[Catch:\{ IOException \-\> 0x000e \}, TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: INVOKE  (r4 I:retrofit2.RequestBuilder), (r0 I:okhttp3.RequestBody) retrofit2.RequestBuilder.setBody(okhttp3.RequestBody):void type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: RETURN   \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|ExcHandler: IOException null\lSplitter:B:1:0x0002\l|0x000e: MOVE_EXCEPTION  (r4 I:?[OBJECT]) =  \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|0x000f: NEW_INSTANCE  (r0 I:java.lang.RuntimeException) =  java.lang.RuntimeException \l0x0011: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0013: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0016: CONST_STR  (r2 I:java.lang.String) =  \"Unable to convert \" \l0x0018: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001b: INVOKE  (r1 I:java.lang.StringBuilder), (r5 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x001e: CONST_STR  (r5 I:java.lang.String) =  \" to RequestBody\" \l0x0020: INVOKE  (r1 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0023: INVOKE  (r5 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0027: INVOKE  \l  (r0 I:java.lang.RuntimeException)\l  (r5 I:java.lang.String)\l  (r4 I:java.lang.Throwable)\l java.lang.RuntimeException.\<init\>(java.lang.String, java.lang.Throwable):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|0x002a: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b|0x002b: NEW_INSTANCE  (r4 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x002d: CONST_STR  (r5 I:java.lang.String) =  \"Body parameter value must not be null.\" \l0x002f: INVOKE  \l  (r4 I:java.lang.IllegalArgumentException)\l  (r5 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|0x0032: THROW  (r4 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{void retrofit2.ParameterHandler.Body.apply((r3 'this' I:retrofit2.ParameterHandler$Body A[IMMUTABLE_TYPE, THIS]), (r4 I:retrofit2.RequestBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lretrofit2\/RequestBuilder;, TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_8;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

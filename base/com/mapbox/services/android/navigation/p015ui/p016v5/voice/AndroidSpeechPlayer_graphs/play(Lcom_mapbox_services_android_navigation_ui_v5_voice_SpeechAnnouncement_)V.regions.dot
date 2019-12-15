@@ -1,0 +1,65 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.voice.AndroidSpeechPlayer.play(Lcom\/mapbox\/services\/android\/navigation\/ui\/v5\/voice\/SpeechAnnouncement;)V" {
+subgraph cluster_Region_1913504406 {
+label = "R(3:0|(1:11)|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r0 = false\l}"];
+subgraph cluster_IfRegion_1685534780 {
+label = "IF [B:6:0x0011, B:8:0x0015, B:10:0x0019] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|ADDED_TO_REGION\lPHI: r2 \l  PHI: (r2v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r5 != null && !android.text.TextUtils.isEmpty(r5.announcement())) == true) goto L_0x0013\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0015|ADDED_TO_REGION\l|if (r4.languageSupported == true) goto L_0x0017\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0019|ADDED_TO_REGION\l|if (r4.isMuted == false) goto L_0x001b\l}"];
+subgraph cluster_Region_183236137 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001b|r0 = true\l}"];
+}
+}
+subgraph cluster_Region_229262697 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2034536841 {
+label = "IF [B:12:0x001c] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001c|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v0 boolean), (r0v0 boolean), (r0v3 boolean) binds: [B:6:0x0011, B:8:0x0015, B:10:0x0019, B:11:0x001b] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != false) goto L_0x001f\l}"];
+subgraph cluster_Region_1060450792 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x001f|fireInstructionListenerIfApi14()\ljava.util.HashMap java.util.HashMap r0 = new java.util.HashMap(1)\lr0.put(\"utteranceId\", DEFAULT_UTTERANCE_ID)\lr4.textToSpeech.speak(r5.announcement(), 1, r0)\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001e}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0037}"];
+MethodNode[shape=record,label="{public void com.mapbox.services.android.navigation.ui.v5.voice.AndroidSpeechPlayer.play((r4v0 'this' com.mapbox.services.android.navigation.ui.v5.voice.AndroidSpeechPlayer A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.services.android.navigation.ui.v5.voice.SpeechAnnouncement A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.connection.RealConnection.newCodec(Lokhttp3\/OkHttpClient;Lokhttp3\/Interceptor$Chain;Lokhttp3\/internal\/connection\/StreamAllocation;)Lokhttp3\/internal\/http\/HttpCodec;" {
+subgraph cluster_Region_1691870524 {
+label = "R(1:(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_191723480 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_132076582 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.http2Connection != null) goto L_0x0004\l}"];
+subgraph cluster_Region_923055951 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return new okhttp3.internal.http2.Http2Codec(r5, r6, r7, r4.http2Connection)\l}"];
+}
+}
+subgraph cluster_Region_1814121110 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r4.socket.setSoTimeout(r6.readTimeoutMillis())\lr4.source.timeout().timeout((long) r6.readTimeoutMillis(), java.util.concurrent.TimeUnit.MILLISECONDS)\lr4.sink.timeout().timeout((long) r6.writeTimeoutMillis(), java.util.concurrent.TimeUnit.MILLISECONDS)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003e|RETURN\l|return new okhttp3.internal.http1.Http1Codec(r5, r7, r4.source, r4.sink)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public okhttp3.internal.http.HttpCodec okhttp3.internal.connection.RealConnection.newCodec((r4v0 'this' okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, THIS]), (r5v0 okhttp3.OkHttpClient A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 okhttp3.Interceptor$Chain A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.net.SocketException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

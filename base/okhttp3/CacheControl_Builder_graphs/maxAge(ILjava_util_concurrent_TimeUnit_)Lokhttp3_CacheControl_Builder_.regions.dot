@@ -1,0 +1,43 @@
+digraph "CFG forokhttp3.CacheControl.Builder.maxAge(ILjava\/util\/concurrent\/TimeUnit;)Lokhttp3\/CacheControl$Builder;" {
+subgraph cluster_Region_419732716 {
+label = "R(1:(2:(3:1|5|6)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2123536247 {
+label = "R(2:(3:1|5|6)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1038628481 {
+label = "IF [B:0:0x0000] THEN: R(3:1|5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 \>= 0) goto L_0x0002\l}"];
+subgraph cluster_Region_521035378 {
+label = "R(3:1|5|6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|long long r3 = r4.toSeconds((long) r3)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|PHI: r3 \l  PHI: (r3v3 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r2.maxAgeSeconds = r3 \> 2147483647L ? Integer.MAX_VALUE : (int) r3\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_260773710 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016}"];
+Node_8 [shape=record,label="{8\:\ 0x002c|throw new java.lang.IllegalArgumentException(\"maxAge \< 0: \" + r3)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+MethodNode[shape=record,label="{public okhttp3.CacheControl$Builder okhttp3.CacheControl.Builder.maxAge((r2v0 'this' okhttp3.CacheControl$Builder A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.util.concurrent.TimeUnit A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_7[style=dashed];
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+}
+

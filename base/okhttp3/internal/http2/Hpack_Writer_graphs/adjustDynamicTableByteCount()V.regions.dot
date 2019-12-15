@@ -1,0 +1,54 @@
+digraph "CFG forokhttp3.internal.http2.Hpack.Writer.adjustDynamicTableByteCount()V" {
+subgraph cluster_Region_1840353127 {
+label = "R(1:(2:(1:7)|(1:(1:4)(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1893829524 {
+label = "R(2:(1:7)|(1:(1:4)(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1603943158 {
+label = "IF [B:1:0x0004] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2.maxDynamicTableByteCount \>= r2.dynamicTableByteCount) goto L_?\l}"];
+subgraph cluster_Region_1946039780 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_307578443 {
+label = "R(1:(1:4)(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1855247038 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r2.maxDynamicTableByteCount == 0) goto L_0x000a\l}"];
+subgraph cluster_Region_1616320528 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|clearDynamicTable()\l}"];
+}
+subgraph cluster_Region_1652834539 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|evictToRecoverBytes(r2.dynamicTableByteCount \- r2.maxDynamicTableByteCount)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http2.Hpack.Writer.adjustDynamicTableByteCount((r2v0 'this' okhttp3.internal.http2.Hpack$Writer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

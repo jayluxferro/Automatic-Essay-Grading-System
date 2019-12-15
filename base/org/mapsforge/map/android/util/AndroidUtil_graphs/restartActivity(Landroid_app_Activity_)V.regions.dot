@@ -1,0 +1,36 @@
+digraph "CFG fororg.mapsforge.map.android.util.AndroidUtil.restartActivity(Landroid\/app\/Activity;)V" {
+subgraph cluster_Region_1646638820 {
+label = "R(1:(2:(2:2|5)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_223176808 {
+label = "R(2:(2:2|5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2138230173 {
+label = "IF [B:1:0x0004] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 11) goto L_0x0006\l}"];
+subgraph cluster_Region_1384323966 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r2.recreate()\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_396330367 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|android.content.Intent android.content.Intent r0 = r2.getIntent()\lr0.addFlags(65536)\lr2.finish()\lr2.overridePendingTransition(0, 0)\lr2.startActivity(r0)\lr2.overridePendingTransition(0, 0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static void org.mapsforge.map.android.util.AndroidUtil.restartActivity((r2v0 android.app.Activity A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=11\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

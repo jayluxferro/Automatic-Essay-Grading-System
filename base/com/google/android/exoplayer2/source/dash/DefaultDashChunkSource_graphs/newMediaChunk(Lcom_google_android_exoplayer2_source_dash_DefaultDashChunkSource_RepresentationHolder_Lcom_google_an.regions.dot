@@ -1,0 +1,62 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DefaultDashChunkSource.newMediaChunk(Lcom\/google\/android\/exoplayer2\/source\/dash\/DefaultDashChunkSource$RepresentationHolder;Lcom\/google\/android\/exoplayer2\/upstream\/DataSource;Lcom\/google\/android\/exoplayer2\/Format;ILjava\/lang\/Object;II)Lcom\/google\/android\/exoplayer2\/source\/chunk\/Chunk;" {
+subgraph cluster_Region_1819149922 {
+label = "R(2:0|(2:(2:2|12)|(4:3|(1:9)|8|13))) | DECL_VAR: com.google.android.exoplayer2.source.dash.manifest.RangedUri mergedSegmentUri\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.source.dash.manifest.Representation r25 = r27.representation\llong long r12 = r27.getSegmentStartTimeUs(r32)\lcom.google.android.exoplayer2.source.dash.manifest.RangedUri com.google.android.exoplayer2.source.dash.manifest.RangedUri r26 = r27.getSegmentUrl(r32)\ljava.lang.String r21 = r25.baseUrl\l}"];
+subgraph cluster_Region_177519240 {
+label = "R(2:(2:2|12)|(4:3|(1:9)|8|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_132964513 {
+label = "IF [B:1:0x0020] THEN: R(2:2|12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0020|if (r27.extractorWrapper == null) goto L_0x0022\l}"];
+subgraph cluster_Region_1501548444 {
+label = "R(2:2|12)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0022|long long r14 = r27.getSegmentEndTimeUs(r32)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new com.google.android.exoplayer2.source.chunk.SingleSampleMediaChunk(r28, new com.google.android.exoplayer2.upstream.DataSpec(r26.resolveUri(r21), r26.start, r26.length, r25.getCacheKey()), r29, r30, r31, r12, r14, r32, r27.trackType, r29)\l}"];
+}
+}
+subgraph cluster_Region_710002766 {
+label = "R(4:3|(1:9)|8|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005c|int r17 = 1\lint r22 = 1\l}"];
+subgraph cluster_LoopRegion_1709971392 {
+label = "LOOP:0: (1:9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0064|if (r22 \< r33) goto L_0x0066\l}"];
+subgraph cluster_Region_2041398145 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x00bb|LOOP_END\lLOOP:0: B:4:0x0060\-\>B:9:0x00bb\l|r26 = r23\lr17++\lr22++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x007a|long long r14 = r27.getSegmentEndTimeUs((r32 + r17) \- 1)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.source.chunk.ContainerMediaChunk(r28, new com.google.android.exoplayer2.upstream.DataSpec(r26.resolveUri(r21), r26.start, r26.length, r25.getCacheKey()), r29, r30, r31, r12, r14, r32, r17, \-r25.presentationTimeOffsetUs, r27.extractorWrapper)\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0060|LOOP_START\lPHI: r17 r22 r26 \l  PHI: (r17v1 'segmentCount' int) = (r17v0 'segmentCount' int), (r17v2 'segmentCount' int) binds: [B:3:0x005c, B:9:0x00bb] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r22v1 'i' int) = (r22v0 'i' int), (r22v2 'i' int) binds: [B:3:0x005c, B:9:0x00bb] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r26v1 'segmentUri' com.google.android.exoplayer2.source.dash.manifest.RangedUri) = (r26v0 'segmentUri' com.google.android.exoplayer2.source.dash.manifest.RangedUri), (r26v2 'segmentUri' com.google.android.exoplayer2.source.dash.manifest.RangedUri) binds: [B:3:0x005c, B:9:0x00bb] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0060\-\>B:9:0x00bb\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0066}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0078|ADDED_TO_REGION\l|if ((r23 = r26.attemptMerge(r27.getSegmentUrl(r32 + r22), r21)) != null) goto L_0x00bb\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x007a|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x007a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.source.chunk.Chunk com.google.android.exoplayer2.source.dash.DefaultDashChunkSource.newMediaChunk((r27v0 'representationHolder' com.google.android.exoplayer2.source.dash.DefaultDashChunkSource$RepresentationHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r28v0 'dataSource' com.google.android.exoplayer2.upstream.DataSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 'trackFormat' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r30v0 'trackSelectionReason' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 'trackSelectionData' java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r32v0 'firstSegmentNum' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r33v0 'maxSegmentCount' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_12;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_9 -> Node_4;
+Node_8 -> Node_13;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_9;
+Node_7 -> Node_11[style=dashed];
+Node_10 -> Node_8;
+Node_11 -> Node_8;
+}
+

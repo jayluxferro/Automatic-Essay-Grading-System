@@ -1,0 +1,101 @@
+digraph "CFG fororg.osgeo.proj4j.datum.GeocentricConverter.convertGeodeticToGeocentric(Lorg\/osgeo\/proj4j\/ProjCoordinate;)V" {
+subgraph cluster_Region_1262581007 {
+label = "R(6:0|1|4|(2:9|(1:13)(1:(2:21|22)))(1:8)|(1:18)|19)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = r15.f294x\ldouble double r2 = r15.f295y\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|double r4 = r15.hasValidZOrdinate() ? r15.f296z : 0.0d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|PHI: r4 \l  PHI: (r4v1 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r10 = (r2 \> \-1.5707963267948966d ? 1 : (r2 == \-1.5707963267948966d ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_1658406493 {
+label = "IF [B:5:0x001b, B:7:0x0024] THEN: R(2:9|(1:13)(1:(2:21|22))) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|if (r10 \>= 0) goto L_0x0028\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|ADDED_TO_REGION\l|if (r2 \<= \-1.5723671231216914d) goto L_0x0028\l}"];
+subgraph cluster_Region_1908676859 {
+label = "R(2:9|(1:13)(1:(2:21|22)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0028|int int r8 = (r2 \> 1.5707963267948966d ? 1 : (r2 == 1.5707963267948966d ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_1451015416 {
+label = "IF [B:10:0x002a, B:12:0x0033] THEN: R(1:13) ELSE: R(1:(2:21|22))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002a|if (r8 \> 0) goto L_0x002c\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0033|ADDED_TO_REGION\l|if (r2 \< 1.5723671231216914d) goto L_0x0035\l}"];
+subgraph cluster_Region_498550030 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0035|r2 = 1.5707963267948966d\l}"];
+}
+subgraph cluster_Region_1914773821 {
+label = "R(1:(2:21|22)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1444681159 {
+label = "IF [B:14:0x0037, B:15:0x0039] THEN: R(2:21|22) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0037|ADDED_TO_REGION\l|if (r10 \< 0) goto L_0x0082\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0039|ADDED_TO_REGION\l|if (r8 \> 0) goto L_0x0082\l}"];
+subgraph cluster_Region_2128568303 {
+label = "R(2:21|22)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0082}"];
+Node_22 [shape=record,label="{22\:\ 0x0098|throw new java.lang.IllegalStateException(\"Latitude is out of range: \" + r2)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1562292922 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|r2 = \-1.5707963267948966d\l}"];
+}
+}
+subgraph cluster_IfRegion_1773093937 {
+label = "IF [B:17:0x0042] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0042|if (r0 \> 3.141592653589793d) goto L_0x0044\l}"];
+subgraph cluster_Region_729976659 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0044|r0 \-= 6.283185307179586d\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x004a|PHI: r0 \l  PHI: (r0v1 double) = (r0v0 double), (r0v4 double) binds: [B:17:0x0042, B:18:0x0044] A[DONT_GENERATE, DONT_INLINE]\l|double double r6 = java.lang.Math.sin(r2)\ldouble double r2 = java.lang.Math.cos(r2)\ldouble double r10 = r14.f297a \/ java.lang.Math.sqrt(1.0d \- (r14.f301e2 * (r6 * r6)))\ldouble double r12 = (r10 + r4) * r2\ldouble double r2 = java.lang.Math.cos(r0) * r12\ldouble double r12 = r12 * java.lang.Math.sin(r0)\lr15.f294x = r2\lr15.f295y = r12\lr15.f296z = ((r10 * (1.0d \- r14.f301e2)) + r4) * r6\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003b|PHI: r2 \l  PHI: (r2v1 double) = (r2v0 double), (r2v5 double), (r2v6 double) binds: [B:15:0x0039, B:13:0x0035, B:8:0x0026] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0081}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.datum.GeocentricConverter.convertGeodeticToGeocentric((r14v0 'this' org.osgeo.proj4j.datum.GeocentricConverter A[IMMUTABLE_TYPE, THIS]), (r15v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_16;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_21;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_21;
+Node_21 -> Node_22;
+Node_8 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_16 -> Node_17;
+}
+

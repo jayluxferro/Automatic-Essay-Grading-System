@@ -1,0 +1,96 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.offsetChildToAnchor(Landroid\/view\/View;I)V" {
+subgraph cluster_Region_1022610729 {
+label = "R(2:0|(1:(7:2|(1:6)|7|(1:9)|(1:11)|(1:15)|16))) | DECL_VAR: android.support.design.widget.CoordinatorLayout$Behavior null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8 = r17\landroid.view.View r9 = r18\landroid.support.design.widget.CoordinatorLayout$LayoutParams android.support.design.widget.CoordinatorLayout.LayoutParams r10 = (android.support.design.widget.CoordinatorLayout.LayoutParams) r18.getLayoutParams()\l}"];
+subgraph cluster_Region_818875051 {
+label = "R(1:(7:2|(1:6)|7|(1:9)|(1:11)|(1:15)|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_31035331 {
+label = "IF [B:1:0x000d] THEN: R(7:2|(1:6)|7|(1:9)|(1:11)|(1:15)|16) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r10.mAnchorView != null) goto L_0x000f\l}"];
+subgraph cluster_Region_1052934071 {
+label = "R(7:2|(1:6)|7|(1:9)|(1:11)|(1:15)|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|android.graphics.Rect android.graphics.Rect r11 = acquireTempRect()\landroid.graphics.Rect android.graphics.Rect r12 = acquireTempRect()\landroid.graphics.Rect android.graphics.Rect r13 = acquireTempRect()\lgetDescendantRect(r10.mAnchorView, r11)\lboolean r14 = false\lgetChildRect(r9, false, r12)\lint int r15 = r18.getMeasuredWidth()\lint int r7 = r18.getMeasuredHeight()\lint r16 = r7\lgetDesiredAnchoredChildRectWithoutConstraints(r18, r19, r11, r13, r10, r15, r7)\l}"];
+subgraph cluster_IfRegion_1639839398 {
+label = "IF [B:3:0x003f, B:5:0x0045] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003f|ADDED_TO_REGION\l|if (r13.left == r12.left) goto L_0x0041\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0045|ADDED_TO_REGION\l|if (r13.top == r12.top) goto L_0x0048\l}"];
+subgraph cluster_Region_378569369 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0047|r14 = true\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0048|PHI: r14 \l  PHI: (r14v1 boolean) = (r14v2 boolean), (r14v0 boolean) binds: [B:6:0x0047, B:5:0x0045] A[DONT_GENERATE, DONT_INLINE]\l|constrainChildRect(r10, r13, r15, r16)\lint int r0 = r13.left \- r12.left\lint int r1 = r13.top \- r12.top\l}"];
+subgraph cluster_IfRegion_1543155743 {
+label = "IF [B:8:0x0057] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0057|if (r0 != 0) goto L_0x0059\l}"];
+subgraph cluster_Region_602595298 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0059|android.support.p000v4.view.ViewCompat.offsetLeftAndRight(r9, r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_1699955016 {
+label = "IF [B:10:0x005c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x005c|if (r1 != 0) goto L_0x005e\l}"];
+subgraph cluster_Region_250838104 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005e|android.support.p000v4.view.ViewCompat.offsetTopAndBottom(r9, r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_1958303189 {
+label = "IF [B:12:0x0061, B:14:0x0067] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0061|ADDED_TO_REGION\l|if (r14 == true) goto L_0x0063\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0067|ADDED_TO_REGION\l|if ((r0 = r10.getBehavior()) != null) goto L_0x0069\l}"];
+subgraph cluster_Region_751530538 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0069|r0.onDependentViewChanged(r8, r9, r10.mAnchorView)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x006e|releaseTempRect(r11)\lreleaseTempRect(r12)\lreleaseTempRect(r13)\l}"];
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0041}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0063}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.design.widget.CoordinatorLayout.offsetChildToAnchor((r17v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r18v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_4 -> Node_5;
+Node_13 -> Node_14;
+}
+

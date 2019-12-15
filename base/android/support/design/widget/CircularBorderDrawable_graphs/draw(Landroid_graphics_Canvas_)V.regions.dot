@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.design.widget.CircularBorderDrawable.draw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_811995204 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_227827873 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.invalidateShader == true) goto L_0x0004\l}"];
+subgraph cluster_Region_2042209766 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r4.paint.setShader(createGradientShader())\lr4.invalidateShader = false\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0010|float float r0 = r4.paint.getStrokeWidth() \/ 2.0f\landroid.graphics.RectF android.graphics.RectF r1 = r4.rectF\lcopyBounds(r4.rect)\lr1.set(r4.rect)\lr1.left += r0\lr1.top += r0\lr1.right \-= r0\lr1.bottom \-= r0\lr5.save()\lr5.rotate(r4.rotation, r1.centerX(), r1.centerY())\lr5.drawOval(r1, r4.paint)\lr5.restore()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0051}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.CircularBorderDrawable.draw((r4v0 'this' android.support.design.widget.CircularBorderDrawable A[IMMUTABLE_TYPE, THIS]), (r5v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

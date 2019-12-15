@@ -1,0 +1,64 @@
+digraph "CFG forokhttp3.internal.http2.Huffman.encode(Lokio\/ByteString;Lokio\/BufferedSink;)V" {
+subgraph cluster_Region_1103817452 {
+label = "R(3:0|(3:3|(1:5)|6)|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\llong r1 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_981320311 {
+label = "LOOP:0: (3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r0 \< r9.size()) goto L_0x000e\l}"];
+subgraph cluster_Region_877998275 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|byte r4 = r9.getByte(r0) & 255\lint r6 = CODES[r4]\lbyte byte r4 = CODE_LENGTHS[r4]\llong r1 = (r1 \<\< r4) \| ((long) r6)\lint r3 = r3 + r4\l}"];
+subgraph cluster_LoopRegion_1919969013 {
+label = "LOOP:1: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|LOOP_START\lPHI: r3 \l  PHI: (r3v3 int) = (r3v5 int), (r3v7 int) binds: [B:3:0x000e, B:5:0x0021] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:4:0x001f\-\>B:5:0x0021\l|if (r3 \>= 8) goto L_0x0021\l}"];
+subgraph cluster_Region_998546106 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|LOOP_END\lLOOP:1: B:4:0x001f\-\>B:5:0x0021\l|int long r3 = r3 \- 8\lr10.writeByte((int) (r1 \>\> r3))\lr3 = r3\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002a|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:6:0x002a\l|r0++\lr3 = r3\l}"];
+}
+}
+subgraph cluster_Region_1094134967 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_650798625 {
+label = "IF [B:7:0x002d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002d|if (r3 \> 0) goto L_0x002f\l}"];
+subgraph cluster_Region_755992701 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002f|r10.writeByte((int) ((r1 \<\< (8 \- r3)) \| ((long) (255 \>\>\> r3))))\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|LOOP_START\lPHI: r0 r1 r3 \l  PHI: (r0v1 int) = (r0v0 int), (r0v4 int) binds: [B:0:0x0000, B:6:0x002a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 long) = (r1v0 long), (r1v3 long) binds: [B:0:0x0000, B:6:0x002a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v6 int) binds: [B:0:0x0000, B:6:0x002a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:6:0x002a\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002d|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002a|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Huffman.encode((r8v0 'this' okhttp3.internal.http2.Huffman A[IMMUTABLE_TYPE, THIS]), (r9v0 okio.ByteString A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 okio.BufferedSink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v3, resolved type: byte\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v4, resolved type: long\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v5, resolved type: byte\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v6, resolved type: byte\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v7, resolved type: byte\}\lMulti\-variable type inference failed\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_4;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_11;
+Node_1 -> Node_2;
+Node_9 -> Node_7;
+Node_10 -> Node_6;
+}
+

@@ -1,0 +1,93 @@
+digraph "CFG forandroid.support.v4.widget.NestedScrollView.onRequestFocusInDescendants(ILandroid\/graphics\/Rect;)Z" {
+subgraph cluster_Region_603662259 {
+label = "R(3:(1:2)(1:(1:5))|(1:7)(1:8)|(2:(1:16)|(1:14))) | DECL_VAR: android.view.View null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_60745835 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: R(1:(1:5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == 2) goto L_0x0003\l}"];
+subgraph cluster_Region_189895452 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|r4 = org.kxml2.wap.Wbxml.EXT_T_2\l}"];
+}
+subgraph cluster_Region_2132820721 {
+label = "R(1:(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_85730329 {
+label = "IF [B:4:0x0007] THEN: R(1:5) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (r4 == 1) goto L_0x0009\l}"];
+subgraph cluster_Region_1907706209 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|r4 = 33\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1987837240 {
+label = "IF [B:6:0x000b] THEN: R(1:7) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|PHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v3 int), (r4v4 int) binds: [B:4:0x0007, B:5:0x0009, B:2:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == null) goto L_0x000d\l}"];
+subgraph cluster_Region_1424978825 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|android.view.View r0 = android.view.FocusFinder.getInstance().findNextFocus(r3, (android.view.View) null, r4)\l}"];
+}
+subgraph cluster_Region_488277422 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|android.view.View r0 = android.view.FocusFinder.getInstance().findNextFocusFromRect(r3, r5, r4)\l}"];
+}
+}
+subgraph cluster_Region_196153036 {
+label = "R(2:(1:16)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1869205327 {
+label = "IF [B:10:0x0020, B:13:0x0027] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0020|if (r0 != null) goto L_0x0023\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0027|ADDED_TO_REGION\l|if (isOffScreen(r0) == false) goto L_0x002a\l}"];
+subgraph cluster_Region_877428098 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x002e|RETURN\l|return r0.requestFocus(r4, r5)\l}"];
+}
+}
+subgraph cluster_Region_494388238 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0029|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001f|PHI: r0 \l  PHI: (r0v1 android.view.View) = (r0v3 android.view.View), (r0v5 android.view.View) binds: [B:8:0x0017, B:7:0x000d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0023}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002a}"];
+MethodNode[shape=record,label="{protected boolean android.support.v4.widget.NestedScrollView.onRequestFocusInDescendants((r3v0 'this' android.support.v4.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+}
+

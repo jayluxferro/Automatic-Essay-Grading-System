@@ -1,0 +1,78 @@
+digraph "CFG forandroid.support.v4.view.PagerTitleStrip.updateText(ILandroid\/support\/v4\/view\/PagerAdapter;)V" {
+subgraph cluster_Region_1123465268 {
+label = "R(8:1|4|9|14|(1:17)|18|(1:20)|21)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|int r1 = r7 != null ? r7.getCount() : 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|PHI: r1 \l  PHI: (r1v0 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.mUpdatingText = true\ljava.lang.CharSequence r3 = null\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|PHI: r2 \l  PHI: (r2v1 java.lang.CharSequence) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.mPrevText.setText((r6 \< 1 \|\| r7 == null) ? null : r7.getPageTitle(r6 \- 1))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x002a|PHI: r4 \l  PHI: (r4v1 java.lang.CharSequence) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r5.mCurrText.setText((r7 == null \|\| r6 \>= r1) ? null : r7.getPageTitle(r6))\lint int r2 = r6 + 1\l}"];
+subgraph cluster_IfRegion_2103293374 {
+label = "IF [B:15:0x002f, B:16:0x0031] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002f|ADDED_TO_REGION\l|if (r2 \< r1) goto L_0x0031\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0031|ADDED_TO_REGION\l|if (r7 != null) goto L_0x0033\l}"];
+subgraph cluster_Region_1106598552 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0033|java.lang.CharSequence r3 = r7.getPageTitle(r2)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0037|PHI: r3 \l  PHI: (r3v1 java.lang.CharSequence) = (r3v0 java.lang.CharSequence), (r3v0 java.lang.CharSequence), (r3v4 java.lang.CharSequence) binds: [B:15:0x002f, B:16:0x0031, B:17:0x0033] A[DONT_GENERATE, DONT_INLINE]\l|r5.mNextText.setText(r3)\lint int r7 = android.view.View.MeasureSpec.makeMeasureSpec(java.lang.Math.max(0, (int) (((float) ((getWidth() \- getPaddingLeft()) \- getPaddingRight())) * 0.8f)), Integer.MIN_VALUE)\lint int r1 = android.view.View.MeasureSpec.makeMeasureSpec(java.lang.Math.max(0, (getHeight() \- getPaddingTop()) \- getPaddingBottom()), Integer.MIN_VALUE)\lr5.mPrevText.measure(r7, r1)\lr5.mCurrText.measure(r7, r1)\lr5.mNextText.measure(r7, r1)\lr5.mLastKnownCurrentPage = r6\l}"];
+subgraph cluster_IfRegion_143130226 {
+label = "IF [B:19:0x0084] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0084|if (r5.mUpdatingPositions == false) goto L_0x0086\l}"];
+subgraph cluster_Region_894110469 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0086|updateTextPositions(r6, r5.mLastKnownPositionOffset, false)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x008b|r5.mUpdatingText = false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000f|REMOVE\lADDED_TO_REGION\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|REMOVE\lADDED_TO_REGION\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0024}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x008d}"];
+MethodNode[shape=record,label="{void android.support.v4.view.PagerTitleStrip.updateText((r5v0 'this' android.support.v4.view.PagerTitleStrip A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 android.support.v4.view.PagerAdapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+}
+

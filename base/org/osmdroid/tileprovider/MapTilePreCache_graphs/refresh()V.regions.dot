@@ -1,0 +1,97 @@
+digraph "CFG fororg.osmdroid.tileprovider.MapTilePreCache.refresh()V" {
+subgraph cluster_Region_420342311 {
+label = "R(2:0|2) | DECL_VAR: org.osmdroid.util.MapTileArea null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_576328748 {
+label = "Synchronized:R(2:1|(5:2|4|(3:7|(1:9)(1:10)|11)|(1:14)|15))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_907147941 {
+label = "R(5:2|4|(3:7|(1:9)(1:10)|11)|(1:14)|15)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int r1 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ ?|java.util.Iterator r2 = r6.mCache.getAdditionalMapTileList().getList().iterator()\l}"];
+subgraph cluster_LoopRegion_2020752261 {
+label = "LOOP:0: (3:7|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r2.hasNext() != false) goto L_0x0018\l}"];
+subgraph cluster_Region_860642645 {
+label = "R(3:7|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|org.osmdroid.util.MapTileArea r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_626467260 {
+label = "IF [B:8:0x0028] THEN: R(1:9) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|if (r1 \< r6.mTileAreas.getList().size()) goto L_0x002a\l}"];
+subgraph cluster_Region_958155512 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|org.osmdroid.util.MapTileArea r4 = r6.mTileAreas.getList().get(r1)\l}"];
+}
+subgraph cluster_Region_1368786960 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|org.osmdroid.util.MapTileArea r4 = new org.osmdroid.util.MapTileArea()     \/\/ Catch:\{  \}\lr6.mTileAreas.getList().add(r4)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0045|LOOP_END\lPHI: r4 \l  PHI: (r4v3 org.osmdroid.util.MapTileArea) = (r4v4 org.osmdroid.util.MapTileArea), (r4v8 org.osmdroid.util.MapTileArea) binds: [B:22:0x0045, B:23:0x0045] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0012\-\>B:11:0x0045\l|r4.set(r3)\lr1++\l}"];
+}
+}
+subgraph cluster_LoopRegion_14769068 {
+label = "LOOP:1: (1:14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0055|if (r1 \< r6.mTileAreas.getList().size()) goto L_0x0057\l}"];
+subgraph cluster_Region_34926761 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0057|LOOP_END\lLOOP:1: B:12:0x004b\-\>B:14:0x0057\l|r6.mTileAreas.getList().remove(r6.mTileAreas.getList().size() \- 1)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x006d|r6.mTileIndices = r6.mTileAreas.iterator()\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v0 int), (r1v5 int) binds: [B:4:?, B:11:0x0045] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0012\-\>B:11:0x0045\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004b|LOOP_START\lLOOP:1: B:12:0x004b\-\>B:14:0x0057\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0075|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0075: MONITOR_EXIT  \l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0076}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0077|REMOVE\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0078|REMOVE\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0079|REMOVE\l|throw r1\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x004b|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0045|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0045|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x006d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.tileprovider.MapTilePreCache.refresh((r6v0 'this' org.osmdroid.tileprovider.MapTilePreCache A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_21[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_23;
+Node_10 -> Node_22;
+Node_11 -> Node_5;
+Node_13 -> Node_14;
+Node_13 -> Node_24[style=dashed];
+Node_14 -> Node_12;
+Node_15 -> Node_16;
+Node_3 -> Node_4;
+Node_3 -> Node_18;
+Node_5 -> Node_6;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_21 -> Node_12;
+Node_22 -> Node_11;
+Node_23 -> Node_11;
+Node_24 -> Node_15;
+}
+

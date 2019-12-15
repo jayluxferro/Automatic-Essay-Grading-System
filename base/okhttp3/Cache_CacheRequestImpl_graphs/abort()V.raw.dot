@@ -1,0 +1,44 @@
+digraph "CFG forokhttp3.Cache.CacheRequestImpl.abort()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okhttp3.Cache) = (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.this$0 okhttp3.Cache \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: MONITOR_ENTER  (r0 I:?[OBJECT, ARRAY]) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|SYNTHETIC\lSplitter:B:2:0x0003\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0003\l|0x0003: IGET  (r1 I:boolean) = (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.done boolean A[Catch:\{ all \-\> 0x001f \}, TRY_ENTER]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0005|0x0005: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0009 A[Catch:\{ all \-\> 0x001f \}]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0007|0x0007: MONITOR_EXIT  (r0 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x001f \}]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0008|0x0008: RETURN   A[Catch:\{ all \-\> 0x001f \}]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0009|0x0009: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) A[Catch:\{ all \-\> 0x001f \}]\l0x000a: IPUT  (r1 I:boolean), (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.done boolean A[Catch:\{ all \-\> 0x001f \}]\l0x000c: IGET  (r2 I:okhttp3.Cache) = (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.this$0 okhttp3.Cache A[Catch:\{ all \-\> 0x001f \}]\l0x000e: IGET  (r3 I:int) = (r2 I:okhttp3.Cache) okhttp3.Cache.writeAbortCount int A[Catch:\{ all \-\> 0x001f \}]\l0x0010: ARITH  (r3 I:int) = (r3 I:int) + (r1 I:int) A[Catch:\{ all \-\> 0x001f \}]\l0x0011: IPUT  (r3 I:int), (r2 I:okhttp3.Cache) okhttp3.Cache.writeAbortCount int A[Catch:\{ all \-\> 0x001f \}]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0013|0x0013: MONITOR_EXIT  (r0 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x001f \}, TRY_LEAVE]\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0014|0x0014: IGET  (r0 I:okio.Sink) = (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.cacheOut okio.Sink \l0x0016: INVOKE  (r0 I:java.io.Closeable) okhttp3.internal.Util.closeQuietly(java.io.Closeable):void type: STATIC \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0019|SYNTHETIC\lSplitter:B:10:0x0019\l}"];
+Node_11 [shape=record,label="{11\:\ ?|Splitter:B:10:0x0019\l|0x0019: IGET  (r0 I:okhttp3.internal.cache.DiskLruCache$Editor) = (r4 I:okhttp3.Cache$CacheRequestImpl) okhttp3.Cache.CacheRequestImpl.editor okhttp3.internal.cache.DiskLruCache$Editor A[Catch:\{ IOException \-\> 0x001e \}, TRY_ENTER]\l0x001b: INVOKE  (r0 I:okhttp3.internal.cache.DiskLruCache$Editor) okhttp3.internal.cache.DiskLruCache.Editor.abort():void type: VIRTUAL A[Catch:\{ IOException \-\> 0x001e \}, TRY_LEAVE]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001e|0x001e: RETURN   \l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lExcHandler: IOException null\lSplitter:B:10:0x0019\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001f|ExcHandler: all null\lSplitter:B:2:0x0003\l|0x001f: MOVE_EXCEPTION  (r1 I:?[OBJECT]) =  \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0020|SYNTHETIC\lSplitter:B:15:0x0020\l}"];
+Node_16 [shape=record,label="{16\:\ ?|Splitter:B:15:0x0020\l|0x0020: MONITOR_EXIT  (r0 I:?[OBJECT, ARRAY]) A[Catch:\{ all \-\> 0x001f \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0021|0x0021: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okhttp3.Cache.CacheRequestImpl.abort((r4 'this' I:okhttp3.Cache$CacheRequestImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_14;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_12;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_14;
+Node_16 -> Node_17;
+Node_16 -> Node_14;
+}
+

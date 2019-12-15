@@ -1,0 +1,84 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.isReady()Z" {
+subgraph cluster_Region_1293294592 {
+label = "R(1:(2:6|13)(1:(1:14)(1:(2:(1:15)|(2:12|16)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1398182519 {
+label = "IF [B:1:0x0009, B:3:0x000f, B:5:0x0015] THEN: R(2:6|13) ELSE: R(1:(1:14)(1:(2:(1:15)|(2:12|16))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r8.renderedFirstFrame == true) goto L_0x0011\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (super.shouldInitCodec() == true) goto L_0x0011\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (super.isReady() == true) goto L_0x0017\l}"];
+subgraph cluster_Region_567985582 {
+label = "R(2:6|13)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|r8.joiningDeadlineMs = com.google.android.exoplayer2.C1260C.TIME_UNSET\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_679876662 {
+label = "R(1:(1:14)(1:(2:(1:15)|(2:12|16)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1426974522 {
+label = "IF [B:8:0x001e] THEN: R(1:14) ELSE: R(1:(2:(1:15)|(2:12|16))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|if (r8.joiningDeadlineMs == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0020\l}"];
+subgraph cluster_Region_850334406 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1169114760 {
+label = "R(1:(2:(1:15)|(2:12|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1567662499 {
+label = "R(2:(1:15)|(2:12|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1744746752 {
+label = "IF [B:11:0x002a] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002a|if (android.os.SystemClock.elapsedRealtime() \< r8.joiningDeadlineMs) goto L_?\l}"];
+subgraph cluster_Region_755871259 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_313075252 {
+label = "R(2:12|16)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002c|r8.joiningDeadlineMs = com.google.android.exoplayer2.C1260C.TIME_UNSET\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0022}"];
+MethodNode[shape=record,label="{public boolean com.google.android.exoplayer2.video.MediaCodecVideoRenderer.isReady((r8v0 'this' com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_16;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_14;
+Node_10 -> Node_11;
+}
+

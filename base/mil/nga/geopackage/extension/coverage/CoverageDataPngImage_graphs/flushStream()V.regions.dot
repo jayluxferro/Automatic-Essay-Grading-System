@@ -1,0 +1,74 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageDataPngImage.flushStream()V" {
+subgraph cluster_Region_300737547 {
+label = "R(1:(2:(1:4)|(1:6))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1836784511 {
+label = "IF [B:1:0x0002] THEN: R(2:(1:4)|(1:6)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.outputStream != null) goto L_0x0004\l}"];
+subgraph cluster_Region_380791112 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1008597528 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r3.imageBytes == null) goto L_0x0008\l}"];
+subgraph cluster_Region_1252494636 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r3.imageBytes = r3.outputStream.toByteArray()\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_2142423012 {
+label = "Try: R(1:6) catches: R(2:7|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2052000115 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ IOException \-\> 0x0016 \}\lSplitter:B:5:0x0010\l|r3.outputStream.close()     \/\/ Catch:\{ IOException \-\> 0x0016 \}\l}"];
+}
+subgraph cluster_Region_693231896 {
+label = "R(2:7|8) | ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|android.util.Log.w(mil.nga.geopackage.extension.coverage.CoverageDataPngImage.class.getSimpleName(), \"Failed to close output stream\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1609156595 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_693231896 {
+label = "R(2:7|8) | ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|android.util.Log.w(mil.nga.geopackage.extension.coverage.CoverageDataPngImage.class.getSimpleName(), \"Failed to close output stream\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010|SYNTHETIC\lSplitter:B:5:0x0010\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.extension.coverage.CoverageDataPngImage.flushStream((r3v0 'this' mil.nga.geopackage.extension.coverage.CoverageDataPngImage A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_11;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+}
+

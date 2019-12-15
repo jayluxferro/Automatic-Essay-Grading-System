@@ -1,0 +1,80 @@
+digraph "CFG forcom.lottery.ghanalotto.Utils.InternetCheking.hasActiveInternetConnection(Landroid\/content\/Context;)Z" {
+subgraph cluster_Region_243058762 {
+label = "R(2:(1:(2:3|(2:(1:6)|(1:11))))|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1559547121 {
+label = "IF [B:1:0x0005] THEN: R(1:(2:3|(2:(1:6)|(1:11)))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (isNetworkAvailable(r7) == true) goto L_0x0007\l}"];
+subgraph cluster_Region_979491647 {
+label = "R(1:(2:3|(2:(1:6)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1243497788 {
+label = "Try: R(2:3|(2:(1:6)|(1:11))) catches: R(2:8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_846773069 {
+label = "R(2:3|(2:(1:6)|(1:11)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ IOException \-\> 0x003a \}\lSplitter:B:2:0x0007\l|java.net.HttpURLConnection r2 = (java.net.HttpURLConnection) new java.net.URL(\"http:\/\/www.google.com\").openConnection()     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr2.setRequestProperty(\"User\-Agent\", \"Test\")     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr2.setRequestProperty(\"Connection\", \"close\")     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr2.setConnectTimeout(com.google.android.gms.common.ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED)     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr2.connect()     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+subgraph cluster_Region_575204013 {
+label = "R(2:(1:6)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_694723975 {
+label = "IF [B:5:0x0034] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|if (r2.getResponseCode() == 200) goto L_0x0036\l}"];
+subgraph cluster_Region_1486960977 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0036|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1814931801 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1419916869 {
+label = "R(2:8|9) | ExcHandler: IOException (r1v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|ExcHandler: IOException (r1v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0007\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003b|com.lottery.ghanalotto.Utils.Message.showErrorDialog(r1.getMessage(), r7)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1419916869 {
+label = "R(2:8|9) | ExcHandler: IOException (r1v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|ExcHandler: IOException (r1v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0007\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003b|com.lottery.ghanalotto.Utils.Message.showErrorDialog(r1.getMessage(), r7)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007|SYNTHETIC\lSplitter:B:2:0x0007\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0031}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0038}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0042}"];
+MethodNode[shape=record,label="{public boolean com.lottery.ghanalotto.Utils.InternetCheking.hasActiveInternetConnection((r6v0 'this' com.lottery.ghanalotto.Utils.InternetCheking A[IMMUTABLE_TYPE, THIS]), (r7v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_4 -> Node_5;
+Node_7 -> Node_11;
+Node_10 -> Node_12;
+}
+

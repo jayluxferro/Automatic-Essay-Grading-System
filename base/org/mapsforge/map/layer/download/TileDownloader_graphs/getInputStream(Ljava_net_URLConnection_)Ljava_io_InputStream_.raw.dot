@@ -1,0 +1,16 @@
+digraph "CFG fororg.mapsforge.map.layer.download.TileDownloader.getInputStream(Ljava\/net\/URLConnection;)Ljava\/io\/InputStream;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"gzip\" \l0x0002: INVOKE  (r1 I:java.lang.String) = (r2 I:java.net.URLConnection) java.net.URLConnection.getContentEncoding():java.lang.String type: VIRTUAL \l0x0006: INVOKE  (r0 I:boolean) = (r0 I:java.lang.String), (r1 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0016 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: NEW_INSTANCE  (r0 I:java.util.zip.GZIPInputStream) =  java.util.zip.GZIPInputStream \l0x000e: INVOKE  (r2 I:java.io.InputStream) = (r2 I:java.net.URLConnection) java.net.URLConnection.getInputStream():java.io.InputStream type: VIRTUAL \l0x0012: INVOKE  \l  (r0 I:java.util.zip.GZIPInputStream)\l  (r2 I:java.io.InputStream)\l java.util.zip.GZIPInputStream.\<init\>(java.io.InputStream):void type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|0x0015: RETURN  (r0 I:java.io.InputStream) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: INVOKE  (r2 I:java.io.InputStream) = (r2 I:java.net.URLConnection) java.net.URLConnection.getInputStream():java.io.InputStream type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: RETURN  (r2 I:java.io.InputStream) \l}"];
+MethodNode[shape=record,label="{private static java.io.InputStream org.mapsforge.map.layer.download.TileDownloader.getInputStream((r2 I:java.net.URLConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forretrofit2.converter.gson.GsonResponseBodyConverter.convert(Lokhttp3\/ResponseBody;)Ljava\/lang\/Object;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.stream.JsonReader r0 = r3.gson.newJsonReader(r4.charStream())\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|SYNTHETIC\lSplitter:B:1:0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x0024 \}\lSplitter:B:1:0x000a\l|java.lang.Object r1 = r3.adapter.read(r0)     \/\/ Catch:\{ all \-\> 0x0024 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r0.peek() != com.google.gson.stream.JsonToken.END_DOCUMENT) goto L_0x001c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|DONT_GENERATE\l|r4.close()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|RETURN\l|return r1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|SYNTHETIC\lSplitter:B:6:0x001c\l}"];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ all \-\> 0x0024 \}\lSplitter:B:6:0x001c\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|Catch:\{ all \-\> 0x0024 \}\l|throw new com.google.gson.JsonIOException(\"JSON document was not fully consumed.\")     \/\/ Catch:\{ all \-\> 0x0024 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|ExcHandler:  FINALLY\lSplitter:B:1:0x000a\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|FINALLY_INSNS\l|r4.close()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0028|throw r0\l}"];
+MethodNode[shape=record,label="{public T retrofit2.converter.gson.GsonResponseBodyConverter.convert((r3v0 'this' retrofit2.converter.gson.GsonResponseBodyConverter A[IMMUTABLE_TYPE, THIS]), (r4v0 okhttp3.ResponseBody A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lokhttp3\/ResponseBody;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_2 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

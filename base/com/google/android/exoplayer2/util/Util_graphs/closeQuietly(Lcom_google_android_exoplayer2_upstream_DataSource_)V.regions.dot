@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.android.exoplayer2.util.Util.closeQuietly(Lcom\/google\/android\/exoplayer2\/upstream\/DataSource;)V" {
+subgraph cluster_Region_24362521 {
+label = "R(1:(1:(1:2))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1646674692 {
+label = "IF [B:0:0x0000] THEN: R(1:(1:2)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_24255232 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1665284164 {
+label = "Try: R(1:2) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2136850755 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x0006 \}\lSplitter:B:1:0x0002\l|r1.close()     \/\/ Catch:\{ IOException \-\> 0x0006 \}\l}"];
+}
+subgraph cluster_Region_791905231 {
+label = "R(0) | ExcHandler: IOException (e java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1040721714 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_791905231 {
+label = "R(0) | ExcHandler: IOException (e java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006|ExcHandler: IOException (e java.io.IOException)\lSplitter:B:1:0x0002\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void com.google.android.exoplayer2.util.Util.closeQuietly((r1v0 'dataSource' com.google.android.exoplayer2.upstream.DataSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_6;
+}
+

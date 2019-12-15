@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.constraint.solver.Goal.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1501209303 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r3 = \"Goal: \"\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_2081784462 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:0:0x0000, B:2:0x000b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'representation' java.lang.String) = (r3v0 'representation' java.lang.String), (r3v2 'representation' java.lang.String) binds: [B:0:0x0000, B:2:0x000b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:2:0x000b\l|if (r2 \< r6.variables.size()) goto L_0x000b\l}"];
+subgraph cluster_Region_473880300 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|LOOP_END\lLOOP:0: B:1:0x0009\-\>B:2:0x000b\l|java.lang.String r3 = r3 + r6.variables.get(r2).strengthsToString()\lr2++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x002b|RETURN\l|return r3\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.lang.String android.support.constraint.solver.Goal.toString((r6v0 'this' android.support.constraint.solver.Goal A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

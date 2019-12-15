@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v4.provider.SelfDestructiveThread.1.handleMessage(Landroid\/os\/Message;)Z" {
+subgraph cluster_Region_1389032043 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_700989633 {
+label = "Switch: 2, default: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|switch(r4.what) \{\l    case 0: goto L_0x0011;\l    case 1: goto L_0x0007;\l    default: goto L_0x0006;\l\}\l}"];
+subgraph cluster_Region_622128920 {
+label = "R(2:4|1)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|android.support.p000v4.provider.SelfDestructiveThread.this.onDestruction()\l}"];
+Node_InsnContainer_654395949 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_584957196 {
+label = "R(2:3|1)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|android.support.p000v4.provider.SelfDestructiveThread.this.onInvokeRunnable((java.lang.Runnable) r4.obj)\l}"];
+Node_InsnContainer_1232613342 [shape=record,label="{|break\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.provider.SelfDestructiveThread.1.handleMessage((r3v0 'this' android.support.v4.provider.SelfDestructiveThread$1 A[IMMUTABLE_TYPE, THIS]), (r4v0 'msg' android.os.Message A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_1 -> Node_4;
+Node_4 -> Node_2;
+Node_3 -> Node_2;
+Node_0 -> Node_1;
+}
+

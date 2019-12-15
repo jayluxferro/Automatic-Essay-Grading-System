@@ -1,0 +1,25 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.writeRequest(Lokhttp3\/Headers;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.state != 0) goto L_0x0041\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.sink.writeUtf8(r5).writeUtf8(\"rn\")\lr5 = 0\lint r0 = r4.size()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|LOOP_START\lPHI: r5 \l  PHI: (r5v5 int) = (r5v4 int), (r5v7 int) binds: [B:2:0x0004, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0014\-\>B:4:0x0016\l|if (r5 \>= r0) goto L_0x0036\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:0: B:3:0x0014\-\>B:4:0x0016\l|r3.sink.writeUtf8(r4.name(r5)).writeUtf8(\": \").writeUtf8(r4.value(r5)).writeUtf8(\"rn\")\lint r5 = r5 + 1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0036|r3.sink.writeUtf8(\"rn\")\lr3.state = 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0040|RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0041|java.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"state: \")\lr5.append(r3.state)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0059|throw new java.lang.IllegalStateException(r5.toString())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.http1.Http1Codec.writeRequest((r3v0 'this' okhttp3.internal.http1.Http1Codec A[IMMUTABLE_TYPE, THIS]), (r4v0 okhttp3.Headers A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_5;
+}
+

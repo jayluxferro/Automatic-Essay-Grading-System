@@ -1,0 +1,64 @@
+digraph "CFG forio.fabric.sdk.android.services.common.CommonUtils.getBatteryVelocity(Landroid\/content\/Context;Z)I" {
+subgraph cluster_Region_529631800 {
+label = "R(2:0|(2:(1:11)|(1:(2:(1:5)|(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Float java.lang.Float r4 = getBatteryLevel(r4)\l}"];
+subgraph cluster_Region_1497803931 {
+label = "R(2:(1:11)|(1:(2:(1:5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_495174603 {
+label = "IF [B:1:0x0004, B:2:0x0006] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5 == false) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r4 == null) goto L_?\l}"];
+subgraph cluster_Region_1412699816 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return 1\l}"];
+}
+}
+subgraph cluster_Region_1985499275 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2114781257 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1619179768 {
+label = "IF [B:4:0x0015] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|if (((double) r4.floatValue()) \>= 99.0d) goto L_0x0017\l}"];
+subgraph cluster_Region_314792295 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|RETURN\l|return 3\l}"];
+}
+}
+subgraph cluster_Region_1713434085 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|RETURN\l|return ((double) r4.floatValue()) \< 99.0d ? 2 : 0\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return 1\l}"];
+MethodNode[shape=record,label="{public static int io.fabric.sdk.android.services.common.CommonUtils.getBatteryVelocity((r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

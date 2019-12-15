@@ -1,0 +1,22 @@
+digraph "CFG fororg.osgeo.proj4j.proj.BonneProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r17\lr3 = r22\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0.spherical == false) goto L_0x003e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|double r4 = (r0.cphi1 + r0.phi1) \- r20\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|if ((java.lang.Math.abs(r4) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(r4) == 1.0E\-10d ? 0 : \-1)) \<= 0) goto L_0x0037\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c|double r1 = (r18 * java.lang.Math.cos(r20)) \/ r4\lr3.f294x = java.lang.Math.sin(r1) * r4\lr3.f295y = r0.cphi1 \- (r4 * java.lang.Math.cos(r1))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0037|r3.f295y = 0.0d\lr3.f294x = 0.0d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x003e|double r4 = r0.am1 + r0.f324m1\ldouble r13 = java.lang.Math.sin(r20)\ldouble r15 = java.lang.Math.cos(r20)\lr6 = r20\lr8 = r13\lr10 = r15\ldouble r4 = r4 \- org.osgeo.proj4j.util.ProjectionMath.mlfn(r6, r8, r10, r0.f323en)\ldouble r15 = (r15 * r18) \/ (java.lang.Math.sqrt(1.0d \- ((r0.f424es * r13) * r13)) * r4)\lr3.f294x = java.lang.Math.sin(r15) * r4\lr3.f295y = r0.am1 \- (r4 * java.lang.Math.cos(r15))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x007b|RETURN\l|return r3\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.BonneProjection.project((r17v0 'this' org.osgeo.proj4j.proj.BonneProjection A[IMMUTABLE_TYPE, THIS]), (r18v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r20v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+}
+

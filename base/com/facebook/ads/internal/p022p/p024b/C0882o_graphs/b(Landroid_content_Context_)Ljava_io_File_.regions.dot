@@ -1,0 +1,40 @@
+digraph "CFG forcom.facebook.ads.internal.p.b.o.b(Landroid\/content\/Context;)Ljava\/io\/File;" {
+subgraph cluster_Region_536838297 {
+label = "R(2:0|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File java.io.File r0 = new java.io.File(new java.io.File(new java.io.File(new java.io.File(android.os.Environment.getExternalStorageDirectory(), \"Android\"), \"data\"), r4.getPackageName()), \"cache\")\l}"];
+subgraph cluster_Region_555026573 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1341977919 {
+label = "IF [B:1:0x0026, B:3:0x002c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0026|if (r0.exists() == true) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002c|ADDED_TO_REGION\l|if (r0.mkdirs() == true) goto L_?\l}"];
+subgraph cluster_Region_627434052 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_761173391 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|android.util.Log.w(\"ProxyCache\", \"Unable to create external cache directory\")\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0028}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r0\l}"];
+MethodNode[shape=record,label="{private static java.io.File com.facebook.ads.internal.p.b.o.b((r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

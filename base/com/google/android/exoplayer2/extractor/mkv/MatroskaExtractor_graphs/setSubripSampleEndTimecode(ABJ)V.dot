@@ -1,0 +1,17 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.setSubripSampleEndTimecode([BJ)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|if ((r12 \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r12 == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) != 0) goto L_0x0019\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|byte[] r4 = SUBRIP_TIMECODE_EMPTY\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|PHI: r4 \l  PHI: (r4v1 'timeCodeData' byte[]) = (r4v0 'timeCodeData' byte[]), (r4v2 'timeCodeData' byte[]) binds: [B:5:0x0019, B:2:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.System.arraycopy(r4, 0, r11, 19, 12)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|RETURN\l|return\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|int r0 = (int) (r12 \/ 3600000000L)\llong r12 = r12 \- (((long) r0) * 3600000000L)\lint r2 = (int) (r12 \/ 60000000)\llong r12 = r12 \- ((long) (60000000 * r2))\lint r3 = (int) (r12 \/ com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND)\ljava.util.Locale r5 = java.util.Locale.US\ljava.lang.Object[] r7 = new java.lang.Object[]\{java.lang.Integer.valueOf(r0), java.lang.Integer.valueOf(r2), java.lang.Integer.valueOf(r3), java.lang.Integer.valueOf((int) ((r12 \- ((long) (1000000 * r3))) \/ 1000))\}\lbyte[] r4 = com.google.android.exoplayer2.util.Util.getUtf8Bytes(java.lang.String.format(r5, \"%02d:%02d:%02d,%03d\", r7))\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.setSubripSampleEndTimecode((r11v0 'subripSampleData' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG forokio.GzipSink.updateCrc(Lokio\/Buffer;J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okio.Segment r5 = r5.head\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|LOOP_START\lPHI: r5 r6 \l  PHI: (r5v2 okio.Segment) = (r5v1 okio.Segment), (r5v3 okio.Segment) binds: [B:0:0x0000, B:3:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 long) = (r6v0 long), (r6v2 long) binds: [B:0:0x0000, B:3:0x0008] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:3:0x0008\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|if ((r6 \> 0 ? 1 : (r6 == 0 ? 0 : \-1)) \<= 0) goto L_0x0021\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:3:0x0008\l|int r0 = (int) java.lang.Math.min(r6, (long) (r5.limit \- r5.pos))\lr4.crc.update(r5.data, r5.pos, r0)\llong r6 = r6 \- ((long) r0)\lokio.Segment r5 = r5.next\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|RETURN\l|return\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void okio.GzipSink.updateCrc((r4v0 'this' okio.GzipSink A[IMMUTABLE_TYPE, THIS]), (r5v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_1;
+Node_5 -> Node_4;
+}
+

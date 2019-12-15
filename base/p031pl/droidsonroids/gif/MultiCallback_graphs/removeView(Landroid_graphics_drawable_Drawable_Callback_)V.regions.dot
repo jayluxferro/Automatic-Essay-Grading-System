@@ -1,0 +1,55 @@
+digraph "CFG forpl.droidsonroids.gif.MultiCallback.removeView(Landroid\/graphics\/drawable\/Drawable$Callback;)V" {
+subgraph cluster_Region_1649977019 {
+label = "R(2:0|(3:3|(1:6)(0)|7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1827542548 {
+label = "LOOP:0: (3:3|(1:6)(0)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|if (r0 \< r3.mCallbacks.size()) goto L_0x0009\l}"];
+subgraph cluster_Region_548252910 {
+label = "R(3:3|(1:6)(0)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|pl.droidsonroids.gif.MultiCallback$CallbackWeakReference p031pl.droidsonroids.gif.MultiCallback.CallbackWeakReference r1 = r3.mCallbacks.get(r0)\landroid.graphics.drawable.Drawable$Callback android.graphics.drawable.Drawable.Callback r2 = (android.graphics.drawable.Drawable.Callback) r1.get()\l}"];
+subgraph cluster_IfRegion_1207433199 {
+label = "IF [B:4:0x0017, B:5:0x0019] THEN: R(1:6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r2 == null) goto L_0x001b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|ADDED_TO_REGION\l|if (r2 == r4) goto L_0x001b\l}"];
+subgraph cluster_Region_1614673965 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|r3.mCallbacks.remove(r1)\l}"];
+}
+subgraph cluster_Region_1759435454 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0020|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:7:0x0020\l|r0++\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:7:0x0020\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0023|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0020|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void pl.droidsonroids.gif.MultiCallback.removeView((r3v0 'this' pl.droidsonroids.gif.MultiCallback A[IMMUTABLE_TYPE, THIS]), (r4v0 android.graphics.drawable.Drawable$Callback A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_1;
+Node_1 -> Node_2;
+Node_9 -> Node_8;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+}
+

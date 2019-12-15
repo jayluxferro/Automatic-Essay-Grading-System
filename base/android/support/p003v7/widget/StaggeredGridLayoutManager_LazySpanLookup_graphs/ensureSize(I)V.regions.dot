@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.LazySpanLookup.ensureSize(I)V" {
+subgraph cluster_Region_1437242232 {
+label = "R(1:(1:2)(1:(1:5)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1100201288 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: R(1:(1:5)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r4.mData == null) goto L_0x0005\l}"];
+subgraph cluster_Region_371269457 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r4.mData = new int[(java.lang.Math.max(r5, 10) + 1)]\ljava.util.Arrays.fill(r4.mData, \-1)\l}"];
+}
+subgraph cluster_Region_2124389076 {
+label = "R(1:(1:5)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2142238508 {
+label = "IF [B:4:0x001a] THEN: R(1:5) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r5 \>= r4.mData.length) goto L_0x001c\l}"];
+subgraph cluster_Region_1925973700 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|int[] int[] r0 = r4.mData\lr4.mData = new int[sizeForPosition(r5)]\ljava.lang.System.arraycopy(r0, 0, r4.mData, 0, r0.length)\ljava.util.Arrays.fill(r4.mData, r0.length, r4.mData.length, \-1)\l}"];
+}
+subgraph cluster_Region_587889772 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.StaggeredGridLayoutManager.LazySpanLookup.ensureSize((r4v0 'this' android.support.v7.widget.StaggeredGridLayoutManager$LazySpanLookup A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

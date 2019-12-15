@@ -1,0 +1,34 @@
+digraph "CFG fororg.osmdroid.views.Projection.getLongPixelFromMercator(JZJII)J" {
+subgraph cluster_Region_537925114 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r1 = r8 + r11\l}"];
+subgraph cluster_Region_167878796 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1493240284 {
+label = "IF [B:1:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r10 != true) goto L_?\l}"];
+subgraph cluster_Region_1911085070 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_381516278 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return getCloserPixel(r1, r13, r14, r7.mMercatorMapSize)\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{private long org.osmdroid.views.Projection.getLongPixelFromMercator((r7v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS]), (r8v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,92 @@
+digraph "CFG forandroid.support.v4.widget.NestedScrollView.onGenericMotionEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1087801849 {
+label = "R(2:(2:6|(3:8|(1:10)(1:(1:12))|(2:14|15)))|16)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1442861829 {
+label = "IF [B:1:0x0007, B:3:0x000f, B:5:0x0014] THEN: R(2:6|(3:8|(1:10)(1:(1:12))|(2:14|15))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|ADDED_TO_REGION\l|if ((r4.getSource() & 2) != 0) goto L_0x0009\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r4.getAction() == 8) goto L_0x0012\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r3.mIsBeingDragged == false) goto L_0x0016\l}"];
+subgraph cluster_Region_1132569561 {
+label = "R(2:6|(3:8|(1:10)(1:(1:12))|(2:14|15)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|float float r4 = r4.getAxisValue(9)\l}"];
+subgraph cluster_IfRegion_1861865396 {
+label = "IF [B:7:0x001f] THEN: R(3:8|(1:10)(1:(1:12))|(2:14|15)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|if (r4 != 0.0f) goto L_0x0021\l}"];
+subgraph cluster_Region_1550436274 {
+label = "R(3:8|(1:10)(1:(1:12))|(2:14|15))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|int int r0 = getScrollRange()\lint int r2 = getScrollY()\lint int r4 = r2 \- ((int) (r4 * getVerticalScrollFactorCompat()))\l}"];
+subgraph cluster_IfRegion_596286997 {
+label = "IF [B:9:0x0032] THEN: R(1:10) ELSE: R(1:(1:12))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|if (r4 \< 0) goto L_0x0034\l}"];
+subgraph cluster_Region_14218312 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|r4 = 0\l}"];
+}
+subgraph cluster_Region_1011135711 {
+label = "R(1:(1:12)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2095838045 {
+label = "IF [B:11:0x0036] THEN: R(1:12) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|if (r4 \> r0) goto L_0x0038\l}"];
+subgraph cluster_Region_851052658 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0038|r4 = r0\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_312407550 {
+label = "IF [B:13:0x0039] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0039|PHI: r4 \l  PHI: (r4v5 int) = (r4v4 int), (r4v7 int), (r4v8 int) binds: [B:11:0x0036, B:12:0x0038, B:10:0x0034] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 != r2) goto L_0x003b\l}"];
+subgraph cluster_Region_1091697550 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|super.scrollTo(getScrollX(), r4)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0043|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0044|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.widget.NestedScrollView.onGenericMotionEvent((r3v0 'this' android.support.v4.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_16[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_16[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_16[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

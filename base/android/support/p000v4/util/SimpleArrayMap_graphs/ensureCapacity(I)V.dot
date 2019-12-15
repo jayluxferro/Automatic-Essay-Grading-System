@@ -1,0 +1,28 @@
+digraph "CFG forandroid.support.v4.util.SimpleArrayMap.ensureCapacity(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = r5.mSize\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r5.mHashes.length \>= r6) goto L_0x0022\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|int[] r1 = r5.mHashes\ljava.lang.Object[] r2 = r5.mArray\lallocArrays(r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r5.mSize \<= 0) goto L_0x001f\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|java.lang.System.arraycopy(r1, 0, r5.mHashes, 0, r0)\ljava.lang.System.arraycopy(r2, 0, r5.mArray, 0, r0 \<\< 1)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|freeArrays(r1, r2, r0)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|if (r5.mSize != r0) goto L_0x0027\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027}"];
+Node_10 [shape=record,label="{10\:\ 0x002c|throw new java.util.ConcurrentModificationException()\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.util.SimpleArrayMap.ensureCapacity((r5v0 'this' android.support.v4.util.SimpleArrayMap A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

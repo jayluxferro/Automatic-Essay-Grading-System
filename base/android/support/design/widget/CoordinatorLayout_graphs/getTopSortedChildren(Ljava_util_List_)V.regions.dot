@@ -1,0 +1,58 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.getTopSortedChildren(Ljava\/util\/List;)V" {
+subgraph cluster_Region_905637869 {
+label = "R(3:0|(1:5)|(1:(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.clear()\lboolean boolean r0 = isChildrenDrawingOrderEnabled()\lint int r1 = getChildCount()\lint int r2 = r1 \- 1\l}"];
+subgraph cluster_LoopRegion_1477988143 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x0017] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:5:0x0017\l|if (r2 \>= 0) goto L_0x000f\l}"];
+subgraph cluster_Region_1409276437 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|LOOP_END\lPHI: r3 \l  PHI: (r3v0 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:5:0x0017\l|r5.add(getChildAt(r0 ? getChildDrawingOrder(r1, r2) : r2))\lr2\-\-\l}"];
+}
+}
+subgraph cluster_Region_398752627 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_163873805 {
+label = "IF [B:7:0x0023] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|if (TOP_SORTED_CHILDREN_COMPARATOR != null) goto L_0x0025\l}"];
+subgraph cluster_Region_1658401580 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|java.util.Collections.sort(r5, TOP_SORTED_CHILDREN_COMPARATOR)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0011}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0021}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0017|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0017|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.design.widget.CoordinatorLayout.getTopSortedChildren((r4v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 java.util.List\<android.view.View\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Landroid\/view\/View;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_5 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_11;
+Node_4 -> Node_10;
+Node_6 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_5;
+Node_11 -> Node_5;
+}
+

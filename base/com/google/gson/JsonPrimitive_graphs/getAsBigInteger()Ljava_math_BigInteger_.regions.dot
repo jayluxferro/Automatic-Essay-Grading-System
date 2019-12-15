@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.gson.JsonPrimitive.getAsBigInteger()Ljava\/math\/BigInteger;" {
+subgraph cluster_Region_1123198697 {
+label = "R(1:(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_574735474 {
+label = "R(2:(1:5)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_930863772 {
+label = "IF [B:1:0x0004] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if ((r2.value instanceof java.math.BigInteger) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_2101414320 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return (java.math.BigInteger) r2.value\l}"];
+}
+}
+subgraph cluster_Region_718482719 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new java.math.BigInteger(r2.value.toString())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+MethodNode[shape=record,label="{public java.math.BigInteger com.google.gson.JsonPrimitive.getAsBigInteger((r2v0 'this' com.google.gson.JsonPrimitive A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

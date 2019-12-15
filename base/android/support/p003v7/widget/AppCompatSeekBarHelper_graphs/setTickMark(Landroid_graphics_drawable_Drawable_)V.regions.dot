@@ -1,0 +1,57 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatSeekBarHelper.setTickMark(Landroid\/graphics\/drawable\/Drawable;)V" {
+subgraph cluster_Region_1850397146 {
+label = "R(4:(1:2)|3|(3:5|(1:7)|8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1551980698 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mTickMark != null) goto L_0x0004\l}"];
+subgraph cluster_Region_998270557 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mTickMark.setCallback((android.graphics.drawable.Drawable.Callback) null)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000a|r2.mTickMark = r3\l}"];
+subgraph cluster_IfRegion_1690740089 {
+label = "IF [B:4:0x000c] THEN: R(3:5|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r3 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1555721274 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r3.setCallback(r2.mView)\landroid.support.p000v4.graphics.drawable.DrawableCompat.setLayoutDirection(r3, android.support.p000v4.view.ViewCompat.getLayoutDirection(r2.mView))\l}"];
+subgraph cluster_IfRegion_178895551 {
+label = "IF [B:6:0x0020] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|if (r3.isStateful() == true) goto L_0x0022\l}"];
+subgraph cluster_Region_841193273 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|r3.setState(r2.mView.getDrawableState())\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002b|applyTickMarkTint()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002e|r2.mView.invalidate()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0033}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.AppCompatSeekBarHelper.setTickMark((r2v0 'this' android.support.v7.widget.AppCompatSeekBarHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+}
+

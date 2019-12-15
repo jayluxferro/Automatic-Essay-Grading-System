@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.Span.prependToSpan(Landroid\/view\/View;)V" {
+subgraph cluster_Region_225590018 {
+label = "R(3:0|(1:2)|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v7.widget.StaggeredGridLayoutManager$LayoutParams android.support.p003v7.widget.StaggeredGridLayoutManager.LayoutParams r0 = getLayoutParams(r5)\lr0.mSpan = r4\lr4.mViews.add(0, r5)\lr4.mCachedStart = Integer.MIN_VALUE\l}"];
+subgraph cluster_IfRegion_1499301000 {
+label = "IF [B:1:0x0017] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0017|if (r4.mViews.size() == 1) goto L_0x0019\l}"];
+subgraph cluster_Region_1211674128 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0019|r4.mCachedEnd = Integer.MIN_VALUE\l}"];
+}
+}
+subgraph cluster_Region_867774558 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1900450552 {
+label = "IF [B:4:0x001f, B:6:0x0025] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|if (r0.isItemRemoved() == true) goto L_0x0027\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|ADDED_TO_REGION\l|if (r0.isItemChanged() == true) goto L_0x0027\l}"];
+subgraph cluster_Region_441636603 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|r4.mDeletedSize += android.support.p003v7.widget.StaggeredGridLayoutManager.this.mPrimaryOrientation.getDecoratedMeasurement(r5)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x001b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0021}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.StaggeredGridLayoutManager.Span.prependToSpan((r4v0 'this' android.support.v7.widget.StaggeredGridLayoutManager$Span A[IMMUTABLE_TYPE, THIS]), (r5v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

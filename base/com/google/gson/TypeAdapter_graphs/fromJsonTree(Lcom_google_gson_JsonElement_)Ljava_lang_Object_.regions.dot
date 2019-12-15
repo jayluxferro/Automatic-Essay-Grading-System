@@ -1,0 +1,39 @@
+digraph "CFG forcom.google.gson.TypeAdapter.fromJsonTree(Lcom\/google\/gson\/JsonElement;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_510894457 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1092274261 {
+label = "Try: R(1:2) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_925806996 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return read(new com.google.gson.internal.bind.JsonTreeReader(r2))\l}"];
+}
+subgraph cluster_Region_55589670 {
+label = "R(2:3|5) | ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new com.google.gson.JsonIOException((java.lang.Throwable) r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_55589670 {
+label = "R(2:3|5) | ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new com.google.gson.JsonIOException((java.lang.Throwable) r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x000a \}\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public final T com.google.gson.TypeAdapter.fromJsonTree((r1v0 'this' com.google.gson.TypeAdapter A[IMMUTABLE_TYPE, THIS]), (r2v0 com.google.gson.JsonElement A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/JsonElement;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+}
+

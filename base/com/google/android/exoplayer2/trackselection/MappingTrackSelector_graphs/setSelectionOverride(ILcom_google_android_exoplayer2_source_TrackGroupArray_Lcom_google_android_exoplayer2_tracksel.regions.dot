@@ -1,0 +1,50 @@
+digraph "CFG forcom.google.android.exoplayer2.trackselection.MappingTrackSelector.setSelectionOverride(ILcom\/google\/android\/exoplayer2\/source\/TrackGroupArray;Lcom\/google\/android\/exoplayer2\/trackselection\/MappingTrackSelector$SelectionOverride;)V" {
+subgraph cluster_Region_1368625854 {
+label = "R(3:0|(1:2)|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Map java.util.Map\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.trackselection.MappingTrackSelector.SelectionOverride\> r0 = r2.selectionOverrides.get(r3)\l}"];
+subgraph cluster_IfRegion_422590567 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_0x000a\l}"];
+subgraph cluster_Region_1588117241 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|java.util.HashMap r0 = new java.util.HashMap\<\>()\lr2.selectionOverrides.put(r3, r0)\l}"];
+}
+}
+subgraph cluster_Region_1140534098 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1384588631 {
+label = "IF [B:4:0x0018, B:6:0x0022] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r0.containsKey(r4) == false) goto L_0x0025\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|ADDED_TO_REGION\l|if (com.google.android.exoplayer2.util.Util.areEqual(r0.get(r4), r5) == false) goto L_0x0025\l}"];
+subgraph cluster_Region_533482459 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|r0.put(r4, r5)\linvalidate()\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014|PHI: r0 \l  PHI: (r0v2 'overrides' java.util.Map\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.trackselection.MappingTrackSelector$SelectionOverride\>) = (r0v1 'overrides' java.util.Map\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.trackselection.MappingTrackSelector$SelectionOverride\>), (r0v3 'overrides' java.util.Map\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.trackselection.MappingTrackSelector$SelectionOverride\>) binds: [B:1:0x0008, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.exoplayer2.trackselection.MappingTrackSelector.setSelectionOverride((r2v0 'this' com.google.android.exoplayer2.trackselection.MappingTrackSelector A[IMMUTABLE_TYPE, THIS]), (r3v0 'rendererIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'groups' com.google.android.exoplayer2.source.TrackGroupArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'override' com.google.android.exoplayer2.trackselection.MappingTrackSelector$SelectionOverride A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

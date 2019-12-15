@@ -1,0 +1,25 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.snap.SnapToRoute.snapLocationLatLng(Landroid\/location\/Location;Ljava\/util\/List;)Landroid\/location\/Location;" {
+subgraph cluster_Region_2026789477 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.location.Location android.location.Location r0 = new android.location.Location(r5)\lcom.mapbox.geojson.Point com.mapbox.geojson.Point r5 = com.mapbox.geojson.Point.fromLngLat(r5.getLongitude(), r5.getLatitude())\l}"];
+subgraph cluster_IfRegion_1193987763 {
+label = "IF [B:1:0x0016] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r6.size() \> 1) goto L_0x0018\l}"];
+subgraph cluster_Region_9738844 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|com.mapbox.geojson.Point com.mapbox.geojson.Point r5 = (com.mapbox.geojson.Point) com.mapbox.turf.TurfMisc.nearestPointOnLine(r5, r6).geometry()\lr0.setLongitude(r5.longitude())\lr0.setLatitude(r5.latitude())\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0030|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{private static android.location.Location com.mapbox.services.android.navigation.v5.snap.SnapToRoute.snapLocationLatLng((r5v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.util.List\<com.mapbox.geojson.Point\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/location\/Location;, Ljava\/util\/List\<, Lcom\/mapbox\/geojson\/Point;, \>;), Landroid\/location\/Location;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+}
+

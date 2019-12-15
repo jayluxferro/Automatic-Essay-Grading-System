@@ -1,0 +1,22 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImplInternal.resetRendererPosition(J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r1 I:com.google.android.exoplayer2.ExoPlayerImplInternal$MediaPeriodHolder) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.playingPeriodHolder com.google.android.exoplayer2.ExoPlayerImplInternal$MediaPeriodHolder \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0021 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: CONST  (r2 I:?[long, double]) = \l  (60000000(0x3938700, double:2.96439388E\-316) ?[long, double])\l \l0x0007: ARITH  (r2 I:long) = (r2 I:long) + (r8 I:long A[D('periodPositionUs' long)]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IPUT  \l  (r2 I:long)\l  (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal)\l com.google.android.exoplayer2.ExoPlayerImplInternal.rendererPositionUs long \l0x000a: IGET  (r1 I:com.google.android.exoplayer2.util.StandaloneMediaClock) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.standaloneMediaClock com.google.android.exoplayer2.util.StandaloneMediaClock \l0x000c: IGET  (r2 I:long) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.rendererPositionUs long \l0x000e: INVOKE  \l  (r1 I:com.google.android.exoplayer2.util.StandaloneMediaClock)\l  (r2 I:long)\l com.google.android.exoplayer2.util.StandaloneMediaClock.setPositionUs(long):void type: VIRTUAL \l0x0011: IGET  (r2 I:com.google.android.exoplayer2.Renderer[]) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.enabledRenderers com.google.android.exoplayer2.Renderer[] \l0x0013: ARRAY_LENGTH  (r3 I:int) = (r2 I:?[]) \l0x0014: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: IF  (r1 I:?[int, byte, short, char]) \>= (r3 I:?[int, byte, short, char])  \-\> B:7:0x0028 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|0x0017: AGET  (r0 I:?[OBJECT, ARRAY]) = (r2 I:?[OBJECT, ARRAY][]), (r1 I:?[int, short, byte, char]) \l0x0019: IGET  (r4 I:long) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.rendererPositionUs long \l0x001b: INVOKE  \l  (r0 I:com.google.android.exoplayer2.Renderer A[D('renderer' com.google.android.exoplayer2.Renderer)])\l  (r4 I:long)\l com.google.android.exoplayer2.Renderer.resetPosition(long):void type: INTERFACE \l0x001e: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0021|0x0021: IGET  (r1 I:com.google.android.exoplayer2.ExoPlayerImplInternal$MediaPeriodHolder) = (r7 I:com.google.android.exoplayer2.ExoPlayerImplInternal) com.google.android.exoplayer2.ExoPlayerImplInternal.playingPeriodHolder com.google.android.exoplayer2.ExoPlayerImplInternal$MediaPeriodHolder \l0x0023: INVOKE  (r2 I:long) = \l  (r1 I:com.google.android.exoplayer2.ExoPlayerImplInternal$MediaPeriodHolder)\l  (r8 I:long A[D('periodPositionUs' long)])\l com.google.android.exoplayer2.ExoPlayerImplInternal.MediaPeriodHolder.toRendererTime(long):long type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|0x0028: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.ExoPlayerImplInternal.resetRendererPosition((r7 'this' I:com.google.android.exoplayer2.ExoPlayerImplInternal A[IMMUTABLE_TYPE, THIS]), (r8 I:long A[D('periodPositionUs' long), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0019\-0x0021: r0 'renderer' com.google.android.exoplayer2.Renderer\l  ?\-0x0028: r8 'periodPositionUs' long\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_4;
+Node_6 -> Node_3;
+}
+

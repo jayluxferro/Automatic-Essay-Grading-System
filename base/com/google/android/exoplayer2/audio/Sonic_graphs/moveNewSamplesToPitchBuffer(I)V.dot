@@ -1,0 +1,15 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.moveNewSamplesToPitchBuffer(I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = r6.numOutputSamples \- r7\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|if ((r6.numPitchSamples + r0) \<= r6.pitchBufferSize) goto L_0x0022\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|r6.pitchBufferSize = r6.pitchBufferSize + ((r6.pitchBufferSize \/ 2) + r0)\lr6.pitchBuffer = java.util.Arrays.copyOf(r6.pitchBuffer, r6.pitchBufferSize * r6.numChannels)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|java.lang.System.arraycopy(r6.outputBuffer, r6.numChannels * r7, r6.pitchBuffer, r6.numPitchSamples * r6.numChannels, r6.numChannels * r0)\lr6.numOutputSamples = r7\lr6.numPitchSamples = r6.numPitchSamples + r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x003b|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.audio.Sonic.moveNewSamplesToPitchBuffer((r6v0 'this' com.google.android.exoplayer2.audio.Sonic A[IMMUTABLE_TYPE, THIS]), (r7v0 'originalNumOutputSamples' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

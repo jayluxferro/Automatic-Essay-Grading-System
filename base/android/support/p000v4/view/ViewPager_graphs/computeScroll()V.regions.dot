@@ -1,0 +1,72 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.computeScroll()V" {
+subgraph cluster_Region_545903136 {
+label = "R(2:0|(2:(2:12|13)|(3:4|(2:7|(1:9))|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.mIsScrollStarted = true\l}"];
+subgraph cluster_Region_497692135 {
+label = "R(2:(2:12|13)|(3:4|(2:7|(1:9))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_126656747 {
+label = "IF [B:1:0x0009, B:3:0x0011] THEN: R(2:12|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.mScroller.isFinished() == true) goto L_0x0041\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|ADDED_TO_REGION\l|if (r4.mScroller.computeScrollOffset() == false) goto L_0x0041\l}"];
+subgraph cluster_Region_1814006263 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0041|completeScroll(true)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0044|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1203981793 {
+label = "R(3:4|(2:7|(1:9))|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|int int r0 = getScrollX()\lint int r1 = getScrollY()\lint int r2 = r4.mScroller.getCurrX()\lint int r3 = r4.mScroller.getCurrY()\l}"];
+subgraph cluster_IfRegion_1891704965 {
+label = "IF [B:5:0x0027, B:6:0x0029] THEN: R(2:7|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|ADDED_TO_REGION\l|if (r0 == r2) goto L_0x0029\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|ADDED_TO_REGION\l|if (r1 == r3) goto L_0x003d\l}"];
+subgraph cluster_Region_1993123 {
+label = "R(2:7|(1:9))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|scrollTo(r2, r3)\l}"];
+subgraph cluster_IfRegion_1568581235 {
+label = "IF [B:8:0x0032] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|if (pageScrolled(r2) == false) goto L_0x0034\l}"];
+subgraph cluster_Region_1000568 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0034|r4.mScroller.abortAnimation()\lscrollTo(0, r3)\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x003d|android.support.p000v4.view.ViewCompat.postInvalidateOnAnimation(r4)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0040}"];
+MethodNode[shape=record,label="{public void android.support.v4.view.ViewPager.computeScroll((r4v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_12;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_12 -> Node_13;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+}
+

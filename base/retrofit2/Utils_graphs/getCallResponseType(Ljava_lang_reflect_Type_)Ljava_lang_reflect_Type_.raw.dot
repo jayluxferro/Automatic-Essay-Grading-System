@@ -1,0 +1,16 @@
+digraph "CFG forretrofit2.Utils.getCallResponseType(Ljava\/lang\/reflect\/Type;)Ljava\/lang\/reflect\/Type;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INSTANCE_OF  (r0 I:boolean) = (r1 I:?[OBJECT, ARRAY]) java.lang.reflect.ParameterizedType \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0005: CHECK_CAST  (r1 I:java.lang.reflect.ParameterizedType) = (java.lang.reflect.ParameterizedType) (r1 I:?[OBJECT, ARRAY]) \l0x0007: INVOKE  (r1 I:java.lang.reflect.Type) = (r0 I:int), (r1 I:java.lang.reflect.ParameterizedType) retrofit2.Utils.getParameterUpperBound(int, java.lang.reflect.ParameterizedType):java.lang.reflect.Type type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: RETURN  (r1 I:java.lang.reflect.Type) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x000e: CONST_STR  (r0 I:java.lang.String) =  \"Call return type must be parameterized as Call\<Foo\> or Call\<? extends Foo\>\" \l0x0010: INVOKE  \l  (r1 I:java.lang.IllegalArgumentException)\l  (r0 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|0x0013: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{static java.lang.reflect.Type retrofit2.Utils.getCallResponseType((r1 I:java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

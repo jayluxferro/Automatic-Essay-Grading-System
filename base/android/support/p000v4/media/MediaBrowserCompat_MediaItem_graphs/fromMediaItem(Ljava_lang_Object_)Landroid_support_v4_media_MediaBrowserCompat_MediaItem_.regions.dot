@@ -1,0 +1,38 @@
+digraph "CFG forandroid.support.v4.media.MediaBrowserCompat.MediaItem.fromMediaItem(Ljava\/lang\/Object;)Landroid\/support\/v4\/media\/MediaBrowserCompat$MediaItem;" {
+subgraph cluster_Region_1933091823 {
+label = "R(1:(2:(1:6)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1926147182 {
+label = "R(2:(1:6)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_204040319 {
+label = "IF [B:0:0x0000, B:2:0x0006] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 21) goto L_?\l}"];
+subgraph cluster_Region_418064080 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_788187641 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|RETURN\l|return new android.support.p000v4.media.MediaBrowserCompat.MediaItem(android.support.p000v4.media.MediaDescriptionCompat.fromMediaDescription(android.support.p000v4.media.MediaBrowserCompatApi21.MediaItem.getDescription(r2)), android.support.p000v4.media.MediaBrowserCompatApi21.MediaItem.getFlags(r2))\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public static android.support.v4.media.MediaBrowserCompat$MediaItem android.support.v4.media.MediaBrowserCompat.MediaItem.fromMediaItem((r2v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_1 -> Node_2;
+}
+

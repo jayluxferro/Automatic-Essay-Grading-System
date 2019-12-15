@@ -1,0 +1,73 @@
+digraph "CFG forcom.facebook.ads.internal.g.a.a(Ljava\/util\/Map;)V" {
+subgraph cluster_Region_346564138 {
+label = "R(3:0|(2:2|(1:4))|(1:(2:6|(1:8))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\lfloat[] float[] r2 = f857d\lfloat[] float[] r3 = f858e\l}"];
+subgraph cluster_IfRegion_1960412969 {
+label = "IF [B:1:0x0005] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r2 != null) goto L_0x0007\l}"];
+subgraph cluster_Region_563443438 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|int int r4 = java.lang.Math.min(f860g.length, r2.length)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_993237880 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_START\lPHI: r1 \l  PHI: (r1v6 int) = (r1v5 int), (r1v7 int) binds: [B:2:0x0007, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0010\-\>B:4:0x0012\l|if (r1 \< r4) goto L_0x0012\l}"];
+subgraph cluster_Region_1649546325 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:0: B:3:0x0010\-\>B:4:0x0012\l|r7.put(\"accelerometer_\" + f860g[r1], java.lang.String.valueOf(r2[r1]))\lr1++\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_107054814 {
+label = "R(1:(2:6|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_155424621 {
+label = "IF [B:5:0x0035] THEN: R(2:6|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (r3 != null) goto L_0x0037\l}"];
+subgraph cluster_Region_832289187 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|int int r1 = java.lang.Math.min(f860g.length, r3.length)\l}"];
+subgraph cluster_LoopRegion_2119678571 {
+label = "LOOP:1: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003f|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:6:0x0037, B:8:0x0041] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:7:0x003f\-\>B:8:0x0041\l|if (r0 \< r1) goto L_0x0041\l}"];
+subgraph cluster_Region_1561775495 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0041|LOOP_END\lLOOP:1: B:7:0x003f\-\>B:8:0x0041\l|r7.put(\"rotation_\" + f860g[r0], java.lang.String.valueOf(r3[r0]))\lr0++\l}"];
+}
+}
+}
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x0035|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0064|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.facebook.ads.internal.g.a.a((r7v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map, \<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_5;
+Node_10 -> Node_12;
+}
+

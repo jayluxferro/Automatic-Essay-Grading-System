@@ -1,0 +1,87 @@
+digraph "CFG forokhttp3.internal.http2.Hpack.Reader.insertIntoDynamicTable(ILokhttp3\/internal\/http2\/Header;)V" {
+subgraph cluster_Region_1131357424 {
+label = "R(3:0|(1:2)|(2:(2:5|6)|(3:7|(2:(1:11)|12)(1:13)|14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.headerList.add(r7)\lint int r0 = r7.hpackSize\l}"];
+subgraph cluster_IfRegion_427547768 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r6 != \-1) goto L_0x000a\l}"];
+subgraph cluster_Region_1008873850 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r0 \-= r5.dynamicTable[dynamicTableIndex(r6)].hpackSize\l}"];
+}
+}
+subgraph cluster_Region_2078597755 {
+label = "R(2:(2:5|6)|(3:7|(2:(1:11)|12)(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1170670796 {
+label = "IF [B:4:0x0017] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r0 \> r5.maxDynamicTableByteCount) goto L_0x0019\l}"];
+subgraph cluster_Region_274275846 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|clearDynamicTable()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_111205343 {
+label = "R(3:7|(2:(1:11)|12)(1:13)|14)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|int int r2 = evictToRecoverBytes((r5.dynamicTableByteCount + r0) \- r5.maxDynamicTableByteCount)\l}"];
+subgraph cluster_IfRegion_752508031 {
+label = "IF [B:8:0x0027] THEN: R(2:(1:11)|12) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|if (r6 == \-1) goto L_0x0029\l}"];
+subgraph cluster_Region_290875470 {
+label = "R(2:(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1803931008 {
+label = "IF [B:10:0x0030] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0030|if ((r5.headerCount + 1) \> r5.dynamicTable.length) goto L_0x0032\l}"];
+subgraph cluster_Region_1816854476 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0032|okhttp3.internal.http2.Header[] okhttp3.internal.http2.Header[] r6 = new okhttp3.internal.http2.Header[(r5.dynamicTable.length * 2)]\ljava.lang.System.arraycopy(r5.dynamicTable, 0, r6, r5.dynamicTable.length, r5.dynamicTable.length)\lr5.nextHeaderIndex = r5.dynamicTable.length \- 1\lr5.dynamicTable = r6\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004e|int int r6 = r5.nextHeaderIndex\lr5.nextHeaderIndex = r6 \- 1\lr5.dynamicTable[r6] = r7\lr5.headerCount++\l}"];
+}
+subgraph cluster_Region_1012016991 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x005f|r5.dynamicTable[r6 + dynamicTableIndex(r6) + r2] = r7\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0069|r5.dynamicTableByteCount += r0\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015|PHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v3 int) binds: [B:1:0x0008, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x006e}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http2.Hpack.Reader.insertIntoDynamicTable((r5v0 'this' okhttp3.internal.http2.Hpack$Reader A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 okhttp3.internal.http2.Header A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_3 -> Node_4;
+Node_9 -> Node_10;
+}
+

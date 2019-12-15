@@ -1,0 +1,70 @@
+digraph "CFG forandroid.support.v7.recyclerview.extensions.AsyncListDiffer.submitList(Ljava\/util\/List;)V" {
+subgraph cluster_Region_443434276 {
+label = "R(2:0|(1:(1:5)(1:(1:9)(1:11)))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int final int r0 = r4.mMaxScheduledGeneration + 1\lr4.mMaxScheduledGeneration = r0\l}"];
+subgraph cluster_IfRegion_822449491 {
+label = "IF [B:1:0x0008] THEN: R(1:(1:5)(1:(1:9)(1:11))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r5 != r4.mList) goto L_0x000b\l}"];
+subgraph cluster_Region_1100947137 {
+label = "R(1:(1:5)(1:(1:9)(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1534532043 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: R(1:(1:9)(1:11))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r5 == null) goto L_0x000e\l}"];
+subgraph cluster_Region_1558780278 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|int int r5 = r4.mList.size()\lr4.mList = null\lr4.mReadOnlyList = java.util.Collections.emptyList()\lr4.mUpdateCallback.onRemoved(0, r5)\l}"];
+}
+subgraph cluster_Region_2117767879 {
+label = "R(1:(1:9)(1:11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1669873502 {
+label = "IF [B:8:0x0025] THEN: R(1:9) ELSE: R(1:11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|if (r4.mList == null) goto L_0x0027\l}"];
+subgraph cluster_Region_1515736312 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|r4.mList = r5\lr4.mReadOnlyList = java.util.Collections.unmodifiableList(r5)\lr4.mUpdateCallback.onInserted(0, r5.size())\l}"];
+}
+subgraph cluster_Region_1990796030 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0039|java.util.List\<T\> final java.util.List\<T\> r1 = r4.mList\lr4.mConfig.getBackgroundThreadExecutor().execute(new android.support.p003v7.recyclerview.extensions.AsyncListDiffer.C04341())\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_956477241 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0022}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0023}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0038}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0049}"];
+MethodNode[shape=record,label="{public void android.support.v7.recyclerview.extensions.AsyncListDiffer.submitList((r4v0 'this' android.support.v7.recyclerview.extensions.AsyncListDiffer A[IMMUTABLE_TYPE, THIS]), (r5v0 java.util.List\<T\> A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, TT;\>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

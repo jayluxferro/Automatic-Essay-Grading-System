@@ -1,0 +1,42 @@
+digraph "CFG formil.nga.geopackage.io.GeoPackageIOUtils.copyStream(Ljava\/io\/InputStream;Ljava\/io\/File;Lmil\/nga\/geopackage\/io\/GeoPackageProgress;)V" {
+subgraph cluster_Region_737624971 {
+label = "R(2:0|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|copyStream(r1, (java.io.OutputStream) new java.io.FileOutputStream(r2), r3)\l}"];
+subgraph cluster_Region_943855703 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_956821382 {
+label = "IF [B:1:0x0008, B:3:0x000e, B:5:0x0014] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r3 != null) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if (r3.isActive() != true) goto L_0x0010\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r3.cleanupOnCancel() != false) goto L_0x0016\l}"];
+subgraph cluster_Region_406205351 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|r2.delete()\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void mil.nga.geopackage.io.GeoPackageIOUtils.copyStream((r1v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 mil.nga.geopackage.io.GeoPackageProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

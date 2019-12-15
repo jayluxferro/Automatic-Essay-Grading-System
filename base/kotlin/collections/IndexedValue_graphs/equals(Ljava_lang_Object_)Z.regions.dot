@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.collections.IndexedValue.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_399225541 {
+label = "R(2:(2:(2:4|(1:11))|11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2126556297 {
+label = "IF [B:1:0x0001] THEN: R(2:(2:4|(1:11))|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 != r5) goto L_0x0003\l}"];
+subgraph cluster_Region_1500703353 {
+label = "R(2:(2:4|(1:11))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1174099336 {
+label = "IF [B:3:0x0006] THEN: R(2:4|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if ((r5 instanceof kotlin.collections.IndexedValue) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_804144063 {
+label = "R(2:4|(1:11))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|kotlin.collections.IndexedValue kotlin.collections.IndexedValue r5 = (kotlin.collections.IndexedValue) r5\l}"];
+subgraph cluster_IfRegion_700738637 {
+label = "IF [B:8:0x0013, B:10:0x001d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|PHI: r1 \l  PHI: (r1v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r4.index == r5.index) == false) goto L_0x0020\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001d|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual((java.lang.Object) r4.value, (java.lang.Object) r5.value) == false) goto L_0x0020\l}"];
+subgraph cluster_Region_267164264 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0020|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0020|RETURN\l|return false\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0021|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0015}"];
+MethodNode[shape=record,label="{public boolean kotlin.collections.IndexedValue.equals((r4v0 'this' kotlin.collections.IndexedValue A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+}
+

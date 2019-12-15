@@ -1,0 +1,100 @@
+digraph "CFG forpl.droidsonroids.gif.RenderTask.doWork()V" {
+subgraph cluster_Region_767873017 {
+label = "R(3:0|(3:2|(1:8)|(1:13))(1:14)|(1:(1:19)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = r7.mGifDrawable.mNativeInfoHandle.renderFrame(r7.mGifDrawable.mBuffer)\l}"];
+subgraph cluster_IfRegion_616968463 {
+label = "IF [B:1:0x0010] THEN: R(3:2|(1:8)|(1:13)) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r0 \>= 0) goto L_0x0012\l}"];
+subgraph cluster_Region_1087863179 {
+label = "R(3:2|(1:8)|(1:13))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|r7.mGifDrawable.mNextFrameRenderTime = android.os.SystemClock.uptimeMillis() + r0\l}"];
+subgraph cluster_IfRegion_1276484239 {
+label = "IF [B:3:0x0021, B:5:0x0027, B:7:0x002d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|ADDED_TO_REGION\l|if (r7.mGifDrawable.isVisible() == true) goto L_0x0023\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0027|ADDED_TO_REGION\l|if (r7.mGifDrawable.mIsRunning == true) goto L_0x0029\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|ADDED_TO_REGION\l|if (r7.mGifDrawable.mIsRenderingTriggeredOnDraw == false) goto L_0x002f\l}"];
+subgraph cluster_Region_1384001617 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002f|r7.mGifDrawable.mExecutor.remove(r7)\lr7.mGifDrawable.mRenderTaskSchedule = r7.mGifDrawable.mExecutor.schedule(r7, r0, java.util.concurrent.TimeUnit.MILLISECONDS)\l}"];
+}
+}
+subgraph cluster_IfRegion_938850727 {
+label = "IF [B:10:0x004c, B:12:0x005e] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004c|ADDED_TO_REGION\l|if (r7.mGifDrawable.mListeners.isEmpty() == false) goto L_0x004e\l}"];
+Node_12 [shape=record,label="{12\:\ 0x005e|ADDED_TO_REGION\l|if (r7.mGifDrawable.getCurrentFrameIndex() == (r7.mGifDrawable.mNativeInfoHandle.getNumberOfFrames() \- 1)) goto L_0x0060\l}"];
+subgraph cluster_Region_346749872 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0060|r7.mGifDrawable.mInvalidationHandler.sendEmptyMessageAtTime(r7.mGifDrawable.getCurrentLoop(), r7.mGifDrawable.mNextFrameRenderTime)\l}"];
+}
+}
+}
+subgraph cluster_Region_964564547 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0072|r7.mGifDrawable.mNextFrameRenderTime = Long.MIN_VALUE\lr7.mGifDrawable.mIsRunning = false\l}"];
+}
+}
+subgraph cluster_Region_1507799553 {
+label = "R(1:(1:19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1132298268 {
+label = "IF [B:16:0x0083, B:18:0x008e] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0083|if (r7.mGifDrawable.isVisible() != false) goto L_0x0085\l}"];
+Node_18 [shape=record,label="{18\:\ 0x008e|ADDED_TO_REGION\l|if (r7.mGifDrawable.mInvalidationHandler.hasMessages(\-1) != true) goto L_0x0090\l}"];
+subgraph cluster_Region_13210808 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0090|r7.mGifDrawable.mInvalidationHandler.sendEmptyMessageAtTime(\-1, 0)\l}"];
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0023}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0029}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0044}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004e}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x007d}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0085}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void pl.droidsonroids.gif.RenderTask.doWork((r7v0 'this' pl.droidsonroids.gif.RenderTask A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

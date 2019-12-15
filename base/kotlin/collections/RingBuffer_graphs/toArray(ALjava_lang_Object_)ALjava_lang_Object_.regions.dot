@@ -1,0 +1,103 @@
+digraph "CFG forkotlin.collections.RingBuffer.toArray([Ljava\/lang\/Object;)[Ljava\/lang\/Object;" {
+subgraph cluster_Region_665095894 {
+label = "R(7:0|(1:2)|3|(1:7)|(1:9)|(1:12)|(2:(1:14)|(1:16)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r6, \"array\")\l}"];
+subgraph cluster_IfRegion_178346777 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r6.length \< size()) goto L_0x000c\l}"];
+subgraph cluster_Region_1159318599 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|java.lang.Object[] r6 = java.util.Arrays.copyOf(r6, size())\lkotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r6, \"java.util.Arrays.copyOf(this, newSize)\")\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0019|PHI: r6 \l  PHI: (r6v1 T[]) = (r6v0 T[]), (r6v3 T[]) binds: [B:1:0x000a, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = size()\lint r2 = 0\lint r3 = r5.startIndex\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1864787012 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|LOOP_START\lPHI: r1 r3 \l  PHI: (r1v3 int) = (r1v2 int), (r1v8 int) binds: [B:3:0x0019, B:7:0x0028] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v4 int) binds: [B:3:0x0019, B:7:0x0028] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0022\-\>B:7:0x0028\l|if (r1 \< r0) goto L_0x0024\l}"];
+subgraph cluster_Region_259670198 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|LOOP_END\lLOOP:0: B:4:0x0022\-\>B:7:0x0028\l|r6[r1] = r5.buffer[r3]\lr1++\lr3++\l}"];
+}
+}
+subgraph cluster_LoopRegion_921178581 {
+label = "LOOP:1: (1:9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|LOOP_START\lPHI: r1 r2 \l  PHI: (r1v4 int) = (r1v3 int), (r1v7 int) binds: [B:20:0x0033, B:9:0x0035] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:20:0x0033, B:9:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x0033\-\>B:9:0x0035\l|if (r1 \< r0) goto L_0x0035\l}"];
+subgraph cluster_Region_212581835 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|LOOP_END\lLOOP:1: B:8:0x0033\-\>B:9:0x0035\l|r6[r1] = r5.buffer[r2]\lr1++\lr2++\l}"];
+}
+}
+subgraph cluster_IfRegion_1879533884 {
+label = "IF [B:11:0x0045] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0045|if (r6.length \> size()) goto L_0x0047\l}"];
+subgraph cluster_Region_741961300 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0047|r6[size()] = null\l}"];
+}
+}
+subgraph cluster_Region_742424921 {
+label = "R(2:(1:14)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_665848674 {
+label = "IF [B:13:0x004e] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x004e|if (r6 != null) goto L_0x0050\l}"];
+subgraph cluster_Region_1823856673 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0050|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_186204205 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0058|throw new kotlin.TypeCastException(\"null cannot be cast to non\-null type kotlin.Array\<T\>\")\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026|ADDED_TO_REGION\l|if (r3 \< r5.capacity) goto L_0x0028\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0040}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0051}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0033|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0033|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0040|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0033|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public T[] kotlin.collections.RingBuffer.toArray((r5v0 'this' kotlin.collections.RingBuffer A[IMMUTABLE_TYPE, THIS]), (r6v0 T[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>([TT;)[TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_17[style=dashed];
+Node_7 -> Node_4;
+Node_8 -> Node_9;
+Node_8 -> Node_19[style=dashed];
+Node_9 -> Node_8;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_17 -> Node_20;
+Node_18 -> Node_20;
+Node_19 -> Node_10;
+Node_20 -> Node_8;
+}
+

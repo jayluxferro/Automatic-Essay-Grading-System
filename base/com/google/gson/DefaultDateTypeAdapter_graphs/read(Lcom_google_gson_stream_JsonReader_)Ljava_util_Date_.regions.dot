@@ -1,0 +1,106 @@
+digraph "CFG forcom.google.gson.DefaultDateTypeAdapter.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/util\/Date;" {
+subgraph cluster_Region_593102846 {
+label = "R(1:(2:(2:2|3)|(2:4|(2:(1:6)|(1:(2:(1:10)|(1:(2:(1:14)|(1:16)))))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1550687181 {
+label = "R(2:(2:2|3)|(2:4|(2:(1:6)|(1:(2:(1:10)|(1:(2:(1:14)|(1:16))))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1224670132 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.peek() == com.google.gson.stream.JsonToken.NULL) goto L_0x0008\l}"];
+subgraph cluster_Region_1467729863 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r4.nextNull()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_670932593 {
+label = "R(2:4|(2:(1:6)|(1:(2:(1:10)|(1:(2:(1:14)|(1:16)))))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|java.util.Date java.util.Date r4 = deserializeToDate(r4.nextString())\l}"];
+subgraph cluster_Region_611147553 {
+label = "R(2:(1:6)|(1:(2:(1:10)|(1:(2:(1:14)|(1:16))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_351148946 {
+label = "IF [B:5:0x0019] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|if (r3.dateType == java.util.Date.class) goto L_0x001b\l}"];
+subgraph cluster_Region_319533679 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_728916448 {
+label = "R(1:(2:(1:10)|(1:(2:(1:14)|(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_582930102 {
+label = "R(2:(1:10)|(1:(2:(1:14)|(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1818495383 {
+label = "IF [B:8:0x0020] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|if (r3.dateType == java.sql.Timestamp.class) goto L_0x0022\l}"];
+subgraph cluster_Region_1875002326 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|RETURN\l|return new java.sql.Timestamp(r4.getTime())\l}"];
+}
+}
+subgraph cluster_Region_137542914 {
+label = "R(1:(2:(1:14)|(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_813146245 {
+label = "R(2:(1:14)|(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1684542275 {
+label = "IF [B:12:0x0030] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0030|if (r3.dateType == java.sql.Date.class) goto L_0x0032\l}"];
+subgraph cluster_Region_1508958185 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|RETURN\l|return new java.sql.Date(r4.getTime())\l}"];
+}
+}
+subgraph cluster_Region_671913704 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0041|throw new java.lang.AssertionError()\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0022}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0032}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003c}"];
+MethodNode[shape=record,label="{public java.util.Date com.google.gson.DefaultDateTypeAdapter.read((r3v0 'this' com.google.gson.DefaultDateTypeAdapter A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

@@ -1,0 +1,21 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.sendSessionReports(Lio\/fabric\/sdk\/android\/services\/settings\/SettingsData;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 != null) goto L_0x000e\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|p018io.fabric.sdk.android.Fabric.getLogger().mo22234w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Cannot send reports. Settings are unavailable.\")\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|android.content.Context r0 = r7.crashlyticsCore.getContext()\lcom.crashlytics.android.core.CreateReportSpiCall r8 = getCreateReportSpiCall(r8.appData.reportsUrl, r8.appData.ndkReportsUrl)\lcom.crashlytics.android.core.ReportUploader r1 = new com.crashlytics.android.core.ReportUploader(r7.appData.apiKey, r8, r7.reportFilesProvider, r7.handlingExceptionCheck)\ljava.io.File[] r8 = listCompleteSessionFiles()\lint r2 = r8.length\lr3 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0033|LOOP_START\lPHI: r3 \l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:3:0x000e, B:5:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0033\-\>B:5:0x0035\l|if (r3 \>= r2) goto L_0x004b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0035|LOOP_END\lLOOP:0: B:4:0x0033\-\>B:5:0x0035\l|com.crashlytics.android.core.SessionReport r5 = new com.crashlytics.android.core.SessionReport(r8[r3], SEND_AT_CRASHTIME_HEADER)\lr7.backgroundWorker.submit((java.lang.Runnable) new com.crashlytics.android.core.CrashlyticsController.SendReportRunnable(r0, r5, r1))\lint r3 = r3 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004b|RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.sendSessionReports((r7v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r8v0 io.fabric.sdk.android.services.settings.SettingsData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_4;
+Node_7 -> Node_6;
+}
+

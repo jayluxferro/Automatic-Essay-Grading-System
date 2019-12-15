@@ -1,0 +1,50 @@
+digraph "CFG forcom.facebook.ads.RewardedVideoAd.show(I)Z" {
+subgraph cluster_Region_1047830669 {
+label = "R(1:(2:5|8)(1:(1:7)(2:4|6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1639376096 {
+label = "IF [B:1:0x0003] THEN: R(2:5|8) ELSE: R(1:(1:7)(2:4|6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r3.f221e != false) goto L_0x0011\l}"];
+subgraph cluster_Region_1300523661 {
+label = "R(2:5|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|r3.f220d.mo10192a(r4)\lr3.f220d.mo10199b()\lr3.f221e = false\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+subgraph cluster_Region_422696139 {
+label = "R(1:(1:7)(2:4|6)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_47873960 {
+label = "IF [B:3:0x0007] THEN: R(1:7) ELSE: R(2:4|6) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r3.f222f == null) goto L_?\l}"];
+subgraph cluster_Region_1419578103 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_975422187 {
+label = "R(2:4|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|r3.f222f.onError(r3, com.facebook.ads.AdError.INTERNAL_ERROR)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+MethodNode[shape=record,label="{public boolean com.facebook.ads.RewardedVideoAd.show((r3v0 'this' com.facebook.ads.RewardedVideoAd A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_8;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

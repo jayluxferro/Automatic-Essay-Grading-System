@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.getActiveFragments()Ljava\/util\/List;" {
+subgraph cluster_Region_1216099935 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1798658522 {
+label = "R(2:(1:2)|(3:3|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_802184584 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mActive == null) goto L_0x0004\l}"];
+subgraph cluster_Region_638012799 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_643821509 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|int int r0 = r4.mActive.size()\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r0)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_616401444 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:3:0x0006, B:5:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0012\-\>B:5:0x0014\l|if (r2 \< r0) goto L_0x0014\l}"];
+subgraph cluster_Region_1149164242 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_END\lLOOP:0: B:4:0x0012\-\>B:5:0x0014\l|r1.add(r4.mActive.valueAt(r2))\lr2++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0020|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{java.util.List\<android.support.v4.app.Fragment\> android.support.v4.app.FragmentManagerImpl.getActiveFragments((r4v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Landroid\/support\/v4\/app\/Fragment;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_4;
+Node_0 -> Node_1;
+Node_7 -> Node_6;
+}
+

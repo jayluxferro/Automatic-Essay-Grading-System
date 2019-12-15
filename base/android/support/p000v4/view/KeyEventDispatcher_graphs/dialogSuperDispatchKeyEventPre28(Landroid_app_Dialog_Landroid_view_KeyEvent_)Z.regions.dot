@@ -1,0 +1,90 @@
+digraph "CFG forandroid.support.v4.view.KeyEventDispatcher.dialogSuperDispatchKeyEventPre28(Landroid\/app\/Dialog;Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1312527173 {
+label = "R(2:0|(2:(1:4)|(2:5|(2:(1:7)|(2:8|(2:(1:10)|(1:15)))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.DialogInterface$OnKeyListener android.content.DialogInterface.OnKeyListener r0 = getDialogKeyListenerPre28(r3)\l}"];
+subgraph cluster_Region_319353824 {
+label = "R(2:(1:4)|(2:5|(2:(1:7)|(2:8|(2:(1:10)|(1:15))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_83264997 {
+label = "IF [B:1:0x0005, B:3:0x000f] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 != null) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r0.onKey(r3, r4.getKeyCode(), r4) != false) goto L_0x0011\l}"];
+subgraph cluster_Region_1905025023 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1937401696 {
+label = "R(2:5|(2:(1:7)|(2:8|(2:(1:10)|(1:15)))))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|android.view.Window android.view.Window r0 = r3.getWindow()\l}"];
+subgraph cluster_Region_286395420 {
+label = "R(2:(1:7)|(2:8|(2:(1:10)|(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1040530865 {
+label = "IF [B:6:0x001a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|if (r0.superDispatchKeyEvent(r4) == true) goto L_0x001c\l}"];
+subgraph cluster_Region_575918713 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_741744783 {
+label = "R(2:8|(2:(1:10)|(1:15)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|android.view.View android.view.View r0 = r0.getDecorView()\l}"];
+subgraph cluster_Region_1989194272 {
+label = "R(2:(1:10)|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_476004673 {
+label = "IF [B:9:0x0025] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|if (android.support.p000v4.view.ViewCompat.dispatchUnhandledKeyEventBeforeCallback(r0, r4) == true) goto L_0x0027\l}"];
+subgraph cluster_Region_1710254250 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1019110605 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0034|RETURN\l|return r4.dispatch(r3, r0 != null ? r0.getKeyDispatcherState() : null, r3)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0028}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002f}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0030|PHI: r0 \l  PHI: (r0v3 android.view.KeyEvent$DispatcherState) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static boolean android.support.v4.view.KeyEventDispatcher.dialogSuperDispatchKeyEventPre28((r3v0 android.app.Dialog A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.KeyEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

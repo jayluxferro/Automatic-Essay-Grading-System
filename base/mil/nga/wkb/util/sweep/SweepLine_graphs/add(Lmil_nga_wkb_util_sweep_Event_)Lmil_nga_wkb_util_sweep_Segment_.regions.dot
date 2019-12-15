@@ -1,0 +1,55 @@
+digraph "CFG formil.nga.wkb.util.sweep.SweepLine.add(Lmil\/nga\/wkb\/util\/sweep\/Event;)Lmil\/nga\/wkb\/util\/sweep\/Segment;" {
+subgraph cluster_Region_1126734896 {
+label = "R(7:0|(1:2)|(1:4)|5|(1:7)|8|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.wkb.util.sweep.Segment mil.nga.wkb.util.sweep.Segment r0 = createSegment(r5)\lr4.comparator.setX(r5.getPoint().getX())\lr4.tree.add(r0)\lmil.nga.wkb.util.sweep.Segment mil.nga.wkb.util.sweep.Segment r5 = r4.tree.higher(r0)\lmil.nga.wkb.util.sweep.Segment mil.nga.wkb.util.sweep.Segment r1 = r4.tree.lower(r0)\l}"];
+subgraph cluster_IfRegion_1180644926 {
+label = "IF [B:1:0x0026] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0026|if (r5 != null) goto L_0x0028\l}"];
+subgraph cluster_Region_1763602655 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0028|r0.setAbove(r5)\lr5.setBelow(r0)\l}"];
+}
+}
+subgraph cluster_IfRegion_1549610658 {
+label = "IF [B:3:0x002e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002e|if (r1 != null) goto L_0x0030\l}"];
+subgraph cluster_Region_163530012 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0030|r0.setBelow(r1)\lr1.setAbove(r0)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0036|java.util.Map java.util.Map r5 = r4.segments.get(java.lang.Integer.valueOf(r0.getRing()))\l}"];
+subgraph cluster_IfRegion_792266640 {
+label = "IF [B:6:0x0046] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0046|if (r5 == null) goto L_0x0048\l}"];
+subgraph cluster_Region_1100081952 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0048|java.util.HashMap r5 = new java.util.HashMap()\lr4.segments.put(java.lang.Integer.valueOf(r0.getRing()), r5)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x005a|PHI: r5 \l  PHI: (r5v9 java.util.Map) = (r5v8 java.util.Map), (r5v10 java.util.Map) binds: [B:6:0x0046, B:7:0x0048] A[DONT_GENERATE, DONT_INLINE]\l|r5.put(java.lang.Integer.valueOf(r0.getEdge()), r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0065|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{public mil.nga.wkb.util.sweep.Segment mil.nga.wkb.util.sweep.SweepLine.add((r4v0 'this' mil.nga.wkb.util.sweep.SweepLine A[IMMUTABLE_TYPE, THIS]), (r5v0 mil.nga.wkb.util.sweep.Event A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

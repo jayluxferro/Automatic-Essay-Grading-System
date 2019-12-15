@@ -1,0 +1,42 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.MapTileModuleProviderBase.1.removeEldestEntry(Ljava\/util\/Map$Entry;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (size() \> r5) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return false\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|java.util.Iterator r6 = r5.this$0.mPending.keySet().iterator()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_START\lLOOP:0: B:4:0x0016\-\>B:13:0x0016\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (r6.hasNext() == false) goto L_0x0051\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|long r2 = r6.next().longValue()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|if (r5.this$0.mWorking.containsKey(java.lang.Long.valueOf(r2)) != false) goto L_0x0016\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0034|org.osmdroid.tileprovider.MapTileRequestState r0 = r5.this$0.mPending.get(java.lang.Long.valueOf(r2))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0042|if (r0 == null) goto L_0x0016\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0044|r5.this$0.removeTileFromQueues(r2)\lr0.getCallback().mapTileRequestFailedExceedsMaxQueueSize(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0050|RETURN\l|return false\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0051|RETURN\l|return false\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0016|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x0016\-\>B:13:0x0016\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0044|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0051|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0016|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected boolean org.osmdroid.tileprovider.modules.MapTileModuleProviderBase.1.removeEldestEntry((r5v0 'this' org.osmdroid.tileprovider.modules.MapTileModuleProviderBase$1 A[IMMUTABLE_TYPE, THIS]), (r6v0 java.util.Map$Entry\<java.lang.Long, org.osmdroid.tileprovider.MapTileRequestState\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map$Entry\<, Ljava\/lang\/Long;, Lorg\/osmdroid\/tileprovider\/MapTileRequestState;, \>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_15;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_16;
+Node_8 -> Node_9;
+Node_9 -> Node_14[style=dashed];
+Node_9 -> Node_17;
+Node_10 -> Node_11;
+Node_13 -> Node_4;
+Node_14 -> Node_10;
+Node_15 -> Node_12;
+Node_16 -> Node_13;
+Node_17 -> Node_13;
+}
+

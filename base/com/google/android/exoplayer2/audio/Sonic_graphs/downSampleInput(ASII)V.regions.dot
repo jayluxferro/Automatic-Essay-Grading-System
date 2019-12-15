@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.downSampleInput([SII)V" {
+subgraph cluster_Region_864495225 {
+label = "R(2:0|(3:2|(1:4)|5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r2 = r7.maxRequired \/ r10\lint int r3 = r7.numChannels * r10\lint int r9 = r9 * r7.numChannels\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_470206231 {
+label = "LOOP:0: (3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|LOOP_START\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:0:0x0000, B:5:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000c\-\>B:5:0x001c\l|if (r0 \< r2) goto L_0x000e\l}"];
+subgraph cluster_Region_160521077 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|int r4 = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1639591277 {
+label = "LOOP:1: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_START\lPHI: r1 r4 \l  PHI: (r1v1 'j' int) = (r1v0 'j' int), (r1v2 'j' int) binds: [B:2:0x000e, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'value' int) = (r4v0 'value' int), (r4v3 'value' int) binds: [B:2:0x000e, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:3:0x0010\-\>B:4:0x0012\l|if (r1 \< r3) goto L_0x0012\l}"];
+subgraph cluster_Region_53416327 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:1: B:3:0x0010\-\>B:4:0x0012\l|r4 += r8[(r0 * r3) + r9 + r1]\lr1++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001c|LOOP_END\lLOOP:0: B:1:0x000c\-\>B:5:0x001c\l|r7.downSampleBuffer[r0] = (short) (r4 \/ r3)\lr0++\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.audio.Sonic.downSampleInput((r7v0 'this' com.google.android.exoplayer2.audio.Sonic A[IMMUTABLE_TYPE, THIS]), (r8v0 'samples' short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'position' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'skip' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+}
+

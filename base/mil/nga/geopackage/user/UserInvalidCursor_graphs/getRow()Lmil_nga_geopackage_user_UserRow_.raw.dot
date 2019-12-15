@@ -1,0 +1,20 @@
+digraph "CFG formil.nga.geopackage.user.UserInvalidCursor.getRow()Lmil\/nga\/geopackage\/user\/UserRow;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:TCursor) = (r3 I:mil.nga.geopackage.user.UserInvalidCursor) mil.nga.geopackage.user.UserInvalidCursor.cursor mil.nga.geopackage.user.UserCursor \l0x0002: INVOKE  (r0 I:mil.nga.geopackage.user.UserRow) = (r0 I:mil.nga.geopackage.user.UserCursor) mil.nga.geopackage.user.UserCursor.getRow():mil.nga.geopackage.user.UserRow type: VIRTUAL \l0x0006: INVOKE  (r1 I:boolean) = (r0 I:mil.nga.geopackage.user.UserRow) mil.nga.geopackage.user.UserRow.hasId():boolean type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0022 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: IGET  (r1 I:java.util.List\<TColumn\>) = (r3 I:mil.nga.geopackage.user.UserInvalidCursor) mil.nga.geopackage.user.UserInvalidCursor.blobColumns java.util.List \l0x000e: INVOKE  (r1 I:java.util.Iterator) = (r1 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|0x0012: INVOKE  (r2 I:boolean) = (r1 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0022 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|0x0018: INVOKE  (r2 I:java.lang.Object) = (r1 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x001c: CHECK_CAST  (r2 I:mil.nga.geopackage.user.UserColumn) = (mil.nga.geopackage.user.UserColumn) (r2 I:?[OBJECT, ARRAY]) \l0x001e: INVOKE  \l  (r3 I:mil.nga.geopackage.user.UserInvalidCursor)\l  (r0 I:mil.nga.geopackage.user.UserRow)\l  (r2 I:mil.nga.geopackage.user.UserColumn)\l mil.nga.geopackage.user.UserInvalidCursor.readBlobValue(mil.nga.geopackage.user.UserRow, mil.nga.geopackage.user.UserColumn):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|0x0022: RETURN  (r0 I:TRow) \l}"];
+MethodNode[shape=record,label="{public TRow mil.nga.geopackage.user.UserInvalidCursor.getRow((r3 'this' I:mil.nga.geopackage.user.UserInvalidCursor A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TTRow;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_3;
+}
+

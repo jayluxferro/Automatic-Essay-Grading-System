@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.foldIndexed([Ljava\/lang\/Object;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function3;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1905747618 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"operation\")\lint int r0 = r5.length\lint r1 = 0\lR r2 = r6\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1939908482 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|LOOP_START\lPHI: r1 r2 r6 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 R) = (r2v0 R), (r2v2 R) binds: [B:0:0x0000, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v2 int) = (r6v1 int), (r6v3 int) binds: [B:0:0x0000, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:2:0x0010\l|if (r1 \< r0) goto L_0x0010\l}"];
+subgraph cluster_Region_1581626285 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:2:0x0010\l|java.lang.Integer java.lang.Integer r4 = java.lang.Integer.valueOf(r6)\lr6++\ljava.lang.Object r2 = r7.invoke(r4, r2, r3)\lr1++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001f|RETURN\l|return r2\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final R kotlin.collections.ArraysKt___ArraysKt.foldIndexed((r5v0 T[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 R A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 ? I:kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super R, ? super T, ? extends R\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], , Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lJADX WARNING: type inference failed for: r7v0, types: [kotlin.jvm.functions.Function3\<? super java.lang.Integer, ? super R, ? super T, ? extends R\>, kotlin.jvm.functions.Function3, java.lang.Object]\lUnknown variable types count: 1\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, R:, Ljava\/lang\/Object;, \>([TT;TR;, Lkotlin\/jvm\/functions\/Function3\<, \-, Ljava\/lang\/Integer;, \-TR;\-TT;+TR;\>;)TR;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

@@ -1,0 +1,94 @@
+digraph "CFG forcom.google.android.exoplayer2.util.SlidingPercentile.addSample(IF)V" {
+subgraph cluster_Region_950448999 {
+label = "R(4:0|(1:2)(1:11)|3|(2:6|(2:8|(1:10)(0))(1:12))) | DECL_VAR: com.google.android.exoplayer2.util.SlidingPercentile$Sample newSample\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|ensureSortedByIndex()\l}"];
+subgraph cluster_IfRegion_1224899102 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r7.recycledSampleCount \> 0) goto L_0x0008\l}"];
+subgraph cluster_Region_1812729543 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|com.google.android.exoplayer2.util.SlidingPercentile$Sample[] com.google.android.exoplayer2.util.SlidingPercentile.Sample[] r3 = r7.recycledSamples\lint int r4 = r7.recycledSampleCount \- 1\lr7.recycledSampleCount = r4\lr1 = r3[r4]\l}"];
+}
+subgraph cluster_Region_1322321039 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005c|com.google.android.exoplayer2.util.SlidingPercentile$Sample r1 = new com.google.android.exoplayer2.util.SlidingPercentile.Sample()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0012|PHI: r1 \l  PHI: (r1v1 'newSample' com.google.android.exoplayer2.util.SlidingPercentile$Sample) = (r1v0 'newSample' com.google.android.exoplayer2.util.SlidingPercentile$Sample), (r1v2 'newSample' com.google.android.exoplayer2.util.SlidingPercentile$Sample) binds: [B:11:0x005c, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r7.nextSampleIndex\lr7.nextSampleIndex = r3 + 1\lr1.index = r3\lr1.weight = r8\lr1.value = r9\lr7.samples.add(r1)\lr7.totalWeight += r8\l}"];
+subgraph cluster_LoopRegion_1476405885 {
+label = "LOOP:0: (2:6|(2:8|(1:10)(0))(1:12))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002c|if (r7.totalWeight \> r7.maxWeight) goto L_0x002e\l}"];
+subgraph cluster_Region_898311377 {
+label = "R(2:6|(2:8|(1:10)(0))(1:12))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002e|int int r0 = r7.totalWeight \- r7.maxWeight\lcom.google.android.exoplayer2.util.SlidingPercentile$Sample com.google.android.exoplayer2.util.SlidingPercentile.Sample r2 = r7.samples.get(0)\l}"];
+subgraph cluster_IfRegion_1933097875 {
+label = "IF [B:7:0x003e] THEN: R(2:8|(1:10)(0)) ELSE: R(1:12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003e|if (r2.weight \<= r0) goto L_0x0040\l}"];
+subgraph cluster_Region_1920880656 {
+label = "R(2:8|(1:10)(0))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0040|r7.totalWeight \-= r2.weight\lr7.samples.remove(0)\l}"];
+subgraph cluster_IfRegion_443216710 {
+label = "IF [B:9:0x004f] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004f|if (r7.recycledSampleCount \< 5) goto L_0x0051\l}"];
+subgraph cluster_Region_507465506 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0051|com.google.android.exoplayer2.util.SlidingPercentile$Sample[] com.google.android.exoplayer2.util.SlidingPercentile.Sample[] r3 = r7.recycledSamples\lint int r4 = r7.recycledSampleCount\lr7.recycledSampleCount = r4 + 1\lr3[r4] = r2\l}"];
+}
+subgraph cluster_Region_1260126127 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_2144266501 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0063|r2.weight \-= r0\lr7.totalWeight \-= r0\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0028|LOOP_START\lLOOP:0: B:4:0x0028\-\>B:14:0x0028\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x006e}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0028|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x0028\-\>B:14:0x0028\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x006e|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0028|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0028|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0028|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.util.SlidingPercentile.addSample((r7v0 'this' com.google.android.exoplayer2.util.SlidingPercentile A[IMMUTABLE_TYPE, THIS]), (r8v0 'weight' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'value' float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_11 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_17;
+Node_12 -> Node_18;
+Node_4 -> Node_5;
+Node_14 -> Node_4;
+Node_15 -> Node_13;
+Node_16 -> Node_14;
+Node_17 -> Node_14;
+Node_18 -> Node_14;
+}
+

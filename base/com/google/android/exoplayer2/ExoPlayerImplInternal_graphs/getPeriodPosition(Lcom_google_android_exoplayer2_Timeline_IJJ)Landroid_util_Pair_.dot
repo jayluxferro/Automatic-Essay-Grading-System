@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImplInternal.getPeriodPosition(Lcom\/google\/android\/exoplayer2\/Timeline;IJJ)Landroid\/util\/Pair;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.util.Assertions.checkIndex(r15, 0, r14.getWindowCount())\lr0 = r14\lr1 = r15\lr0.getWindow(r1, r13.window, false, r18)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0019|if ((r16 \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r16 == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) != 0) goto L_0x002c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x001b|long r16 = r13.window.getDefaultPositionUs()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0028|if ((r16 \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r16 == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) != 0) goto L_0x002c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002c|PHI: r16 \l  PHI: (r16v1 'windowPositionUs' long) = (r16v0 'windowPositionUs' long), (r16v2 'windowPositionUs' long) binds: [B:1:0x0019, B:3:0x0028] A[DONT_GENERATE, DONT_INLINE]\l|int r8 = r13.window.firstPeriodIndex\llong r10 = r13.window.getPositionInFirstPeriodUs() + r16\llong r6 = r14.getPeriod(r8, r13.period).getDurationUs()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0042|LOOP_START\lPHI: r6 r8 r10 \l  PHI: (r6v1 'periodDurationUs' long) = (r6v0 'periodDurationUs' long), (r6v2 'periodDurationUs' long) binds: [B:5:0x002c, B:12:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'periodIndex' int) = (r8v0 'periodIndex' int), (r8v2 'periodIndex' int) binds: [B:5:0x002c, B:12:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r10v1 'periodPositionUs' long) = (r10v0 'periodPositionUs' long), (r10v2 'periodPositionUs' long) binds: [B:5:0x002c, B:12:0x0055] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x0042\-\>B:12:0x0055\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0049|if ((r6 \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r6 == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) == 0) goto L_0x0063\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004b}"];
+Node_9 [shape=record,label="{9\:\ 0x004d|if ((r10 \> r6 ? 1 : (r10 == r6 ? 0 : \-1)) \< 0) goto L_0x0063\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004f}"];
+Node_11 [shape=record,label="{11\:\ 0x0053|if (r8 \>= r13.window.lastPeriodIndex) goto L_0x0063\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0055|LOOP_END\lLOOP:0: B:6:0x0042\-\>B:12:0x0055\l|long r10 = r10 \- r6\lint r8 = r8 + 1\llong r6 = r14.getPeriod(r8, r13.period).getDurationUs()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0063}"];
+Node_14 [shape=record,label="{14\:\ 0x0063|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0063|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0063|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return android.util.Pair.create(java.lang.Integer.valueOf(r8), java.lang.Long.valueOf(r10))\l}"];
+MethodNode[shape=record,label="{private android.util.Pair\<java.lang.Integer, java.lang.Long\> com.google.android.exoplayer2.ExoPlayerImplInternal.getPeriodPosition((r13v0 'this' com.google.android.exoplayer2.ExoPlayerImplInternal A[IMMUTABLE_TYPE, THIS]), (r14v0 'timeline' com.google.android.exoplayer2.Timeline A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'windowIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'windowPositionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 'defaultPositionProjectionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/Timeline;, IJJ), Landroid\/util\/Pair, \<, Ljava\/lang\/Integer;, Ljava\/lang\/Long;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_15;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_6;
+Node_13 -> Node_17;
+Node_14 -> Node_13;
+Node_15 -> Node_13;
+Node_16 -> Node_13;
+}
+

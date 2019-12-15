@@ -1,0 +1,30 @@
+digraph "CFG forcom.android.volley.toolbox.PoolingByteArrayOutputStream.expand(I)V" {
+subgraph cluster_Region_507084265 {
+label = "R(1:(1:(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1658929610 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_369718420 {
+label = "IF [B:1:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r3.count + r4) \> r3.buf.length) goto L_0x0009\l}"];
+subgraph cluster_Region_1252357729 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|byte[] byte[] r4 = r3.mPool.getBuf((r3.count + r4) * 2)\ljava.lang.System.arraycopy(r3.buf, 0, r4, 0, r3.count)\lr3.mPool.returnBuf(r3.buf)\lr3.buf = r4\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0025}"];
+MethodNode[shape=record,label="{private void com.android.volley.toolbox.PoolingByteArrayOutputStream.expand((r3v0 'this' com.android.volley.toolbox.PoolingByteArrayOutputStream A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

@@ -1,0 +1,94 @@
+digraph "CFG forokhttp3.internal.ws.WebSocketWriter.writeControlFrame(ILokio\/ByteString;)V" {
+subgraph cluster_Region_1773274239 {
+label = "R(1:(2:(2:2|(2:(4:4|(2:6|(1:8))(1:9)|10|11)|(1:13)))|(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_124805546 {
+label = "R(2:(2:2|(2:(4:4|(2:6|(1:8))(1:9)|10|11)|(1:13)))|(1:15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2031370385 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(2:(4:4|(2:6|(1:8))(1:9)|10|11)|(1:13))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.writerClosed == false) goto L_0x0004\l}"];
+subgraph cluster_Region_593373121 {
+label = "R(2:2|(2:(4:4|(2:6|(1:8))(1:9)|10|11)|(1:13)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int int r0 = r7.size()\l}"];
+subgraph cluster_Region_1446273215 {
+label = "R(2:(4:4|(2:6|(1:8))(1:9)|10|11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_52220164 {
+label = "IF [B:3:0x000d] THEN: R(4:4|(2:6|(1:8))(1:9)|10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (((long) r0) \<= 125) goto L_0x000f\l}"];
+subgraph cluster_Region_802949114 {
+label = "R(4:4|(2:6|(1:8))(1:9)|10|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|r5.sinkBuffer.writeByte(r6 \| 128)\l}"];
+subgraph cluster_IfRegion_732253850 {
+label = "IF [B:5:0x0018] THEN: R(2:6|(1:8)) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|if (r5.isClient == true) goto L_0x001a\l}"];
+subgraph cluster_Region_1561086489 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|r5.sinkBuffer.writeByte(r0 \| 128)\lr5.random.nextBytes(r5.maskKey)\lr5.sinkBuffer.write(r5.maskKey)\l}"];
+subgraph cluster_IfRegion_563456201 {
+label = "IF [B:7:0x002f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|if (r0 \> 0) goto L_0x0031\l}"];
+subgraph cluster_Region_383162500 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|long long r0 = r5.sinkBuffer.size()\lr5.sinkBuffer.write(r7)\lr5.sinkBuffer.readAndWriteUnsafe(r5.maskCursor)\lr5.maskCursor.seek(r0)\lokhttp3.internal.p026ws.WebSocketProtocol.toggleMask(r5.maskCursor, r5.maskKey)\lr5.maskCursor.close()\l}"];
+}
+}
+}
+subgraph cluster_Region_1931997973 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0055|r5.sinkBuffer.writeByte(r0)\lr5.sinkBuffer.write(r7)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x005f|r5.sink.flush()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0064|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1886294967 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006c|throw new java.lang.IllegalArgumentException(\"Payload size must be less than or equal to 125\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_95036573 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0074|throw new java.io.IOException(\"closed\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0065}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x006d}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.ws.WebSocketWriter.writeControlFrame((r5v0 'this' okhttp3.internal.ws.WebSocketWriter A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 okio.ByteString A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

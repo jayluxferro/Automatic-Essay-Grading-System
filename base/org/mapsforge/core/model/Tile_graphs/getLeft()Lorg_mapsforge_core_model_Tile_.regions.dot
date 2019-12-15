@@ -1,0 +1,27 @@
+digraph "CFG fororg.mapsforge.core.model.Tile.getLeft()Lorg\/mapsforge\/core\/model\/Tile;" {
+subgraph cluster_Region_749032922 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r5.tileX \- 1\l}"];
+subgraph cluster_IfRegion_217066968 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \< 0) goto L_0x0006\l}"];
+subgraph cluster_Region_2129397613 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int r0 = getMaxTileNumber(r5.zoomLevel)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0017|RETURN\l|return new org.mapsforge.core.model.Tile(r0, r5.tileY, r5.zoomLevel, r5.tileSize)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c|PHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v4 int) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.Tile org.mapsforge.core.model.Tile.getLeft((r5v0 'this' org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

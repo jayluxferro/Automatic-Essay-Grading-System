@@ -1,0 +1,72 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcelStream.closeField()V" {
+subgraph cluster_Region_1295665673 {
+label = "R(1:(1:(2:(1:5)|6))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1572964890 {
+label = "IF [B:1:0x0002] THEN: R(1:(2:(1:5)|6)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mFieldBuffer != null) goto L_0x0004\l}"];
+subgraph cluster_Region_959805926 {
+label = "R(1:(2:(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_405366530 {
+label = "Try: R(2:(1:5)|6) catches: R(2:7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_123477004 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1444726695 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|Catch:\{ IOException \-\> 0x0017 \}\l|if (r2.mFieldBuffer.mOutput.size() != 0) goto L_0x000e     \/\/ Catch:\{ IOException \-\> 0x0017 \}\l}"];
+subgraph cluster_Region_1156873931 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|Catch:\{ IOException \-\> 0x0017 \}\l|r2.mFieldBuffer.flushField()     \/\/ Catch:\{ IOException \-\> 0x0017 \}\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0013|r2.mFieldBuffer = null\l}"];
+}
+subgraph cluster_Region_389419040 {
+label = "R(2:7|9) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|throw new androidx.versionedparcelable.VersionedParcel.ParcelException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1894630070 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_389419040 {
+label = "R(2:7|9) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0004\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|throw new androidx.versionedparcelable.VersionedParcel.ParcelException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|SYNTHETIC\lSplitter:B:2:0x0004\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?|Catch:\{ IOException \-\> 0x0017 \}\lSplitter:B:2:0x0004\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void androidx.versionedparcelable.VersionedParcelStream.closeField((r2v0 'this' androidx.versionedparcelable.VersionedParcelStream A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_11;
+Node_7 -> Node_8;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+}
+

@@ -1,0 +1,161 @@
+digraph "CFG forandroid.support.v4.app.ShareCompat.IntentBuilder.getIntent()Landroid\/content\/Intent;" {
+subgraph cluster_Region_591125250 {
+label = "R(9:(1:2)|(1:5)|(1:8)|9|(1:13)|14|(3:17|(1:22)(1:21)|23)|(2:26|(1:31)(1:30))|33)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_165628228 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r7.mToAddresses != null) goto L_0x0005\l}"];
+subgraph cluster_Region_641441041 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|combineArrayExtra(\"android.intent.extra.EMAIL\", r7.mToAddresses)\lr7.mToAddresses = null\l}"];
+}
+}
+subgraph cluster_IfRegion_591148095 {
+label = "IF [B:4:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r7.mCcAddresses != null) goto L_0x0012\l}"];
+subgraph cluster_Region_903711977 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|combineArrayExtra(\"android.intent.extra.CC\", r7.mCcAddresses)\lr7.mCcAddresses = null\l}"];
+}
+}
+subgraph cluster_IfRegion_1178297983 {
+label = "IF [B:7:0x001d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r7.mBccAddresses != null) goto L_0x001f\l}"];
+subgraph cluster_Region_1016248508 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|combineArrayExtra(\"android.intent.extra.BCC\", r7.mBccAddresses)\lr7.mBccAddresses = null\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0028|boolean r3 = true\l}"];
+subgraph cluster_IfRegion_2119040733 {
+label = "IF [B:10:0x002c, B:12:0x0034] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|ADDED_TO_REGION\l|if (r7.mStreams == null) goto L_0x0037\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0034|ADDED_TO_REGION\l|if (r7.mStreams.size() \<= 1) goto L_0x0037\l}"];
+subgraph cluster_Region_2142689057 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0037|r3 = false\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0038|PHI: r3 \l  PHI: (r3v1 boolean) = (r3v2 boolean), (r3v0 boolean) binds: [B:13:0x0037, B:12:0x0034] A[DONT_GENERATE, DONT_INLINE]\l|boolean boolean r0 = r7.mIntent.getAction().equals(\"android.intent.action.SEND_MULTIPLE\")\l}"];
+subgraph cluster_IfRegion_1404542175 {
+label = "IF [B:15:0x0044, B:16:0x0046] THEN: R(3:17|(1:22)(1:21)|23) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0044|ADDED_TO_REGION\l|if (r3 == false) goto L_0x0046\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0046|ADDED_TO_REGION\l|if (r0 == true) goto L_0x0048\l}"];
+subgraph cluster_Region_665755449 {
+label = "R(3:17|(1:22)(1:21)|23)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0048|r7.mIntent.setAction(\"android.intent.action.SEND\")\l}"];
+subgraph cluster_IfRegion_985341229 {
+label = "IF [B:18:0x0051, B:20:0x0059] THEN: R(1:22) ELSE: R(1:21)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0051|if (r7.mStreams == null) goto L_0x006b\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0059|ADDED_TO_REGION\l|if (r7.mStreams.isEmpty() == true) goto L_0x006b\l}"];
+subgraph cluster_Region_331679134 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x006b|r7.mIntent.removeExtra(\"android.intent.extra.STREAM\")\l}"];
+}
+subgraph cluster_Region_49265197 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x005b|r7.mIntent.putExtra(\"android.intent.extra.STREAM\", r7.mStreams.get(0))\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0072|r7.mStreams = null\l}"];
+}
+}
+subgraph cluster_IfRegion_243597031 {
+label = "IF [B:24:0x0074, B:25:0x0076] THEN: R(2:26|(1:31)(1:30)) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0074|ADDED_TO_REGION\l|if (r3 == true) goto L_0x0076\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0076|ADDED_TO_REGION\l|if (r0 == false) goto L_0x0078\l}"];
+subgraph cluster_Region_1366014494 {
+label = "R(2:26|(1:31)(1:30))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0078|r7.mIntent.setAction(\"android.intent.action.SEND_MULTIPLE\")\l}"];
+subgraph cluster_IfRegion_861636459 {
+label = "IF [B:27:0x0081, B:29:0x0089] THEN: R(1:31) ELSE: R(1:30)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0081|if (r7.mStreams == null) goto L_0x0095\l}"];
+Node_29 [shape=record,label="{29\:\ 0x0089|ADDED_TO_REGION\l|if (r7.mStreams.isEmpty() == true) goto L_0x0095\l}"];
+subgraph cluster_Region_134843755 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0095|r7.mIntent.removeExtra(\"android.intent.extra.STREAM\")\l}"];
+}
+subgraph cluster_Region_2001232021 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x008b|r7.mIntent.putParcelableArrayListExtra(\"android.intent.extra.STREAM\", r7.mStreams)\l}"];
+}
+}
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x009e|RETURN\l|return r7.mIntent\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0053}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0083}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x009c}"];
+MethodNode[shape=record,label="{public android.content.Intent android.support.v4.app.ShareCompat.IntentBuilder.getIntent((r7v0 'this' android.support.v4.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_24[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_24[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_22;
+Node_20 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_21 -> Node_23;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_32[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_32[style=dashed];
+Node_26 -> Node_27;
+Node_27 -> Node_28[style=dashed];
+Node_27 -> Node_31;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_31;
+Node_31 -> Node_32;
+Node_30 -> Node_32;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_19 -> Node_20;
+Node_28 -> Node_29;
+Node_32 -> Node_33;
+}
+

@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.v4.widget.ExploreByTouchHelper.requestKeyboardFocusForVirtualView(I)Z" {
+subgraph cluster_Region_572387167 {
+label = "R(1:(2:(1:7)|(3:(1:10)|11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1787275105 {
+label = "R(2:(1:7)|(3:(1:10)|11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_756367019 {
+label = "IF [B:1:0x0007, B:3:0x000f, B:6:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r2.mHost.isFocused() != true) goto L_0x0009\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\l|if (r2.mHost.requestFocus() != true) goto L_0x0011\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|ADDED_TO_REGION\l|if (r2.mKeyboardFocusedVirtualViewId == r3) goto L_0x0016\l}"];
+subgraph cluster_Region_596183657 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1847819856 {
+label = "R(3:(1:10)|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_969437274 {
+label = "IF [B:9:0x001b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|if (r2.mKeyboardFocusedVirtualViewId != Integer.MIN_VALUE) goto L_0x001d\l}"];
+subgraph cluster_Region_1034740142 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|clearKeyboardFocusForVirtualView(r2.mKeyboardFocusedVirtualViewId)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0022|r2.mKeyboardFocusedVirtualViewId = r3\lonVirtualViewKeyboardFocusChanged(r3, true)\lsendEventForVirtualView(r3, 8)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002d|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017}"];
+MethodNode[shape=record,label="{public final boolean android.support.v4.widget.ExploreByTouchHelper.requestKeyboardFocusForVirtualView((r2v0 'this' android.support.v4.widget.ExploreByTouchHelper A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

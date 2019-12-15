@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v4.media.session.MediaControllerCompatApi21.getQueue(Ljava\/lang\/Object;)Ljava\/util\/List;" {
+subgraph cluster_Region_687219657 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<android.media.session.MediaSession.QueueItem\> r1 = ((android.media.session.MediaController) r1).getQueue()\l}"];
+subgraph cluster_Region_210929632 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1701116010 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r1 == null) goto L_0x0008\l}"];
+subgraph cluster_Region_443139960 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1145303062 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|RETURN\l|return new java.util.ArrayList(r1)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{public static java.util.List\<java.lang.Object\> android.support.v4.media.session.MediaControllerCompatApi21.getQueue((r1v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/Object;, ), Ljava\/util\/List\<, Ljava\/lang\/Object;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

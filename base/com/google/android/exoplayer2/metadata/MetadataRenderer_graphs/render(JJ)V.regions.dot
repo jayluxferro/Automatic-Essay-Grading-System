@@ -1,0 +1,131 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.MetadataRenderer.render(JJ)V" {
+subgraph cluster_Region_458576118 {
+label = "R(2:(2:4|(1:(1:8)(1:(2:16|(1:18)))))|(1:(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_333129836 {
+label = "IF [B:1:0x0002, B:3:0x0007] THEN: R(2:4|(1:(1:8)(1:(2:16|(1:18))))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r7.inputStreamEnded == false) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r7.pendingMetadataCount \< 5) goto L_0x0009\l}"];
+subgraph cluster_Region_1081956741 {
+label = "R(2:4|(1:(1:8)(1:(2:16|(1:18)))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|r7.buffer.clear()\l}"];
+subgraph cluster_IfRegion_2068659825 {
+label = "IF [B:5:0x0018] THEN: R(1:(1:8)(1:(2:16|(1:18)))) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|if (readSource(r7.formatHolder, r7.buffer, false) == \-4) goto L_0x001a\l}"];
+subgraph cluster_Region_1252922126 {
+label = "R(1:(1:8)(1:(2:16|(1:18))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_16571007 {
+label = "IF [B:7:0x0020] THEN: R(1:8) ELSE: R(1:(2:16|(1:18)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|if (r7.buffer.isEndOfStream() == true) goto L_0x0022\l}"];
+subgraph cluster_Region_711400084 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0022|r7.inputStreamEnded = true\l}"];
+}
+subgraph cluster_Region_944445215 {
+label = "R(1:(2:16|(1:18))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_46617979 {
+label = "IF [B:15:0x0058] THEN: R(2:16|(1:18)) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0058|if (r7.buffer.isDecodeOnly() == false) goto L_0x005a\l}"];
+subgraph cluster_Region_1678661758 {
+label = "R(2:16|(1:18))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x005a|r7.buffer.subsampleOffsetUs = r7.formatHolder.format.subsampleOffsetUs\lr7.buffer.flip()\l}"];
+subgraph cluster_TryCatchRegion_1991200209 {
+label = "Try: R(1:18) catches: R(2:19|21)";
+node [shape=record,color=blue];
+subgraph cluster_Region_140549530 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|Catch:\{ MetadataDecoderException \-\> 0x008b \}\lSplitter:B:17:0x0069\l|int int r1 = (r7.pendingMetadataIndex + r7.pendingMetadataCount) % 5     \/\/ Catch:\{ MetadataDecoderException \-\> 0x008b \}\lr7.pendingMetadata[r1] = r7.decoder.decode(r7.buffer)     \/\/ Catch:\{ MetadataDecoderException \-\> 0x008b \}\lr7.pendingMetadataTimestamps[r1] = r7.buffer.timeUs     \/\/ Catch:\{ MetadataDecoderException \-\> 0x008b \}\lr7.pendingMetadataCount++\l}"];
+}
+subgraph cluster_Region_381439988 {
+label = "R(2:19|21) | ExcHandler: MetadataDecoderException (r0v0 'e' com.google.android.exoplayer2.metadata.MetadataDecoderException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x008b|ExcHandler: MetadataDecoderException (r0v0 'e' com.google.android.exoplayer2.metadata.MetadataDecoderException A[CUSTOM_DECLARE])\lSplitter:B:17:0x0069\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0094|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_787000533 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_951307486 {
+label = "IF [B:10:0x0027, B:12:0x0031] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|if (r7.pendingMetadataCount \> 0) goto L_0x0029\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0031|ADDED_TO_REGION\l|if (r7.pendingMetadataTimestamps[r7.pendingMetadataIndex] \<= r8) goto L_0x0033\l}"];
+subgraph cluster_Region_889118684 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0033|invokeRenderer(r7.pendingMetadata[r7.pendingMetadataIndex])\lr7.pendingMetadata[r7.pendingMetadataIndex] = null\lr7.pendingMetadataIndex = (r7.pendingMetadataIndex + 1) % 5\lr7.pendingMetadataCount\-\-\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_381439988 {
+label = "R(2:19|21) | ExcHandler: MetadataDecoderException (r0v0 'e' com.google.android.exoplayer2.metadata.MetadataDecoderException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x008b|ExcHandler: MetadataDecoderException (r0v0 'e' com.google.android.exoplayer2.metadata.MetadataDecoderException A[CUSTOM_DECLARE])\lSplitter:B:17:0x0069\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0094|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0025}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0052}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0069|SYNTHETIC\lSplitter:B:17:0x0069\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x008c}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.metadata.MetadataRenderer.render((r7v0 'this' com.google.android.exoplayer2.metadata.MetadataRenderer A[IMMUTABLE_TYPE, THIS]), (r8v0 'positionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'elapsedRealtimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_15 -> Node_9[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_9;
+Node_19 -> Node_20;
+Node_10 -> Node_11;
+Node_10 -> Node_23[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_24[style=dashed];
+Node_13 -> Node_22;
+Node_19 -> Node_20;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_20 -> Node_21;
+}
+

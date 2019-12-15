@@ -1,0 +1,79 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.TileRendererLayer.setDisplayModel(Lorg\/mapsforge\/map\/model\/DisplayModel;)V" {
+subgraph cluster_Region_1641068628 {
+label = "R(1:(1:(2:2|(3:4|(1:6)|7)(1:(1:10)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1448854602 {
+label = "R(1:(2:2|(3:4|(1:6)|7)(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2132119846 {
+label = "R(2:2|(3:4|(1:6)|7)(1:(1:10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|super.setDisplayModel(r4)\l}"];
+subgraph cluster_IfRegion_520363888 {
+label = "IF [B:3:0x0004] THEN: R(3:4|(1:6)|7) ELSE: R(1:(1:10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r4 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_2079463132 {
+label = "R(3:4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|compileRenderTheme()\l}"];
+subgraph cluster_IfRegion_1938023548 {
+label = "IF [B:5:0x000b] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|if (r3.mapWorkerPool == null) goto L_0x000d\l}"];
+subgraph cluster_Region_550291339 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|r3.mapWorkerPool = new org.mapsforge.map.layer.renderer.MapWorkerPool(r3.tileCache, r3.jobQueue, r3.databaseRenderer, r3)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001a|r3.mapWorkerPool.start()\l}"];
+}
+subgraph cluster_Region_520921981 {
+label = "R(1:(1:10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1948455606 {
+label = "IF [B:9:0x0022] THEN: R(1:10) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|if (r3.mapWorkerPool != null) goto L_0x0024\l}"];
+subgraph cluster_Region_409974858 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|r3.mapWorkerPool.stop()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029|DONT_GENERATE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002b|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002c|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public synchronized void org.mapsforge.map.layer.renderer.TileRendererLayer.setDisplayModel((r3v0 'this' org.mapsforge.map.layer.renderer.TileRendererLayer A[IMMUTABLE_TYPE, THIS]), (r4v0 org.mapsforge.map.model.DisplayModel A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_11;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

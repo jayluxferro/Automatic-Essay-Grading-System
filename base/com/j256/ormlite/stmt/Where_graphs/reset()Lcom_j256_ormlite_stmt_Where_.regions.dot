@@ -1,0 +1,31 @@
+digraph "CFG forcom.j256.ormlite.stmt.Where.reset()Lcom\/j256\/ormlite\/stmt\/Where;" {
+subgraph cluster_Region_49333165 {
+label = "R(4:0|(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1131757537 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r1 \< r4.clauseStackLevel) goto L_0x0006\l}"];
+subgraph cluster_Region_1034442345 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:3:0x0006\l|r4.clauseStack[r1] = null\lr1++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x000e|r4.clauseStackLevel = 0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:3:0x0006] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:3:0x0006\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.j256.ormlite.stmt.Where\<T, ID\> com.j256.ormlite.stmt.Where.reset((r4v0 'this' com.j256.ormlite.stmt.Where A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Lcom\/j256\/ormlite\/stmt\/Where\<, TT;TID;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

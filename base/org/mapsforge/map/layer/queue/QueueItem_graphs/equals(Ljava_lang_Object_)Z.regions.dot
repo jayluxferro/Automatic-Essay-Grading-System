@@ -1,0 +1,54 @@
+digraph "CFG fororg.mapsforge.map.layer.queue.QueueItem.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_714146847 {
+label = "R(1:(2:(1:1)|(1:(2:(1:4)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1549803648 {
+label = "R(2:(1:1)|(1:(2:(1:4)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1033820875 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 == r2) goto L_0x0002\l}"];
+subgraph cluster_Region_1393162739 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1905962609 {
+label = "R(1:(2:(1:4)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_740553954 {
+label = "R(2:(1:4)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1730165551 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if ((r2 instanceof org.mapsforge.map.layer.queue.QueueItem) == false) goto L_0x0008\l}"];
+subgraph cluster_Region_2071629913 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1605845089 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\l|return r1.object.equals(((org.mapsforge.map.layer.queue.QueueItem) r2).object)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a}"];
+MethodNode[shape=record,label="{public boolean org.mapsforge.map.layer.queue.QueueItem.equals((r1v0 'this' org.mapsforge.map.layer.queue.QueueItem A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

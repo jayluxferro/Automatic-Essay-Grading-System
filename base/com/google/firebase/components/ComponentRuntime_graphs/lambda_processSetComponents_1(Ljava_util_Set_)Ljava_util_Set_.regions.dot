@@ -1,0 +1,31 @@
+digraph "CFG forcom.google.firebase.components.ComponentRuntime.lambda$processSetComponents$1(Ljava\/util\/Set;)Ljava\/util\/Set;" {
+subgraph cluster_Region_1168114409 {
+label = "R(3:0|(1:3)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashSet java.util.HashSet r0 = new java.util.HashSet()\ljava.util.Iterator java.util.Iterator r2 = r2.iterator()\l}"];
+subgraph cluster_LoopRegion_625551638 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|if (r2.hasNext() != false) goto L_0x000f\l}"];
+subgraph cluster_Region_2000843861 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|LOOP_END\lLOOP:0: B:1:0x0009\-\>B:3:0x000f\l|r0.add(((com.google.firebase.components.Lazy) r2.next()).get())\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0021|RETURN\l|return java.util.Collections.unmodifiableSet(r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009|LOOP_START\lLOOP:0: B:1:0x0009\-\>B:3:0x000f\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static \/* synthetic *\/ java.util.Set com.google.firebase.components.ComponentRuntime.lambda$processSetComponents$1((r2v0 java.util.Set A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

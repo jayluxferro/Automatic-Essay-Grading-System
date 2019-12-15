@@ -1,0 +1,96 @@
+digraph "CFG forcom.google.android.exoplayer2.text.ttml.TtmlDecoder.parseFrameAndTickRates(Lorg\/xmlpull\/v1\/XmlPullParser;)Lcom\/google\/android\/exoplayer2\/text\/ttml\/TtmlDecoder$FrameAndTickRate;" {
+subgraph cluster_Region_162482916 {
+label = "R(9:0|(1:2)|3|(2:5|(2:(1:8)|(1:9)))|10|(1:12)|13|(1:15)|17)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 30\ljava.lang.String java.lang.String r4 = r14.getAttributeValue(TTP, \"frameRate\")\l}"];
+subgraph cluster_IfRegion_189451832 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r4 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_105051132 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|int r1 = java.lang.Integer.parseInt(r4)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0010|PHI: r1 \l  PHI: (r1v1 'frameRate' int) = (r1v0 'frameRate' int), (r1v2 'frameRate' int) binds: [B:1:0x000a, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|float r2 = 1.0f\ljava.lang.String java.lang.String r3 = r14.getAttributeValue(TTP, \"frameRateMultiplier\")\l}"];
+subgraph cluster_IfRegion_900647522 {
+label = "IF [B:4:0x001a] THEN: R(2:5|(2:(1:8)|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r3 != null) goto L_0x001c\l}"];
+subgraph cluster_Region_610406968 {
+label = "R(2:5|(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|java.lang.String[] java.lang.String[] r6 = r3.split(\" \")\l}"];
+subgraph cluster_Region_2089713051 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_980754760 {
+label = "IF [B:6:0x0024] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|if (r6.length != 2) goto L_0x0026\l}"];
+subgraph cluster_Region_1946683293 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|throw new com.google.android.exoplayer2.text.SubtitleDecoderException(\"frameRateMultiplier doesn't have 2 parts\")\l}"];
+}
+}
+subgraph cluster_Region_1176846376 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002e|float r2 = ((float) java.lang.Integer.parseInt(r6[0])) \/ ((float) java.lang.Integer.parseInt(r6[1]))\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0040|PHI: r2 \l  PHI: (r2v1 'frameRateMultiplier' float) = (r2v0 'frameRateMultiplier' float), (r2v2 'frameRateMultiplier' float) binds: [B:4:0x001a, B:9:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|int int r7 = DEFAULT_FRAME_AND_TICK_RATE.subFrameRate\ljava.lang.String java.lang.String r8 = r14.getAttributeValue(TTP, \"subFrameRate\")\l}"];
+subgraph cluster_IfRegion_357308570 {
+label = "IF [B:11:0x004c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004c|if (r8 != null) goto L_0x004e\l}"];
+subgraph cluster_Region_2038707074 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004e|int r7 = java.lang.Integer.parseInt(r8)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0052|PHI: r7 \l  PHI: (r7v1 'subFrameRate' int) = (r7v0 'subFrameRate' int), (r7v2 'subFrameRate' int) binds: [B:11:0x004c, B:12:0x004e] A[DONT_GENERATE, DONT_INLINE]\l|int int r9 = DEFAULT_FRAME_AND_TICK_RATE.tickRate\ljava.lang.String java.lang.String r10 = r14.getAttributeValue(TTP, \"tickRate\")\l}"];
+subgraph cluster_IfRegion_1647642287 {
+label = "IF [B:14:0x005e] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005e|if (r10 != null) goto L_0x0060\l}"];
+subgraph cluster_Region_1450323339 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0060|int r9 = java.lang.Integer.parseInt(r10)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x006b|RETURN\l|return new com.google.android.exoplayer2.text.ttml.TtmlDecoder.FrameAndTickRate(((float) r1) * r2, r7, r9)\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0026}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0064|PHI: r9 \l  PHI: (r9v1 'tickRate' int) = (r9v0 'tickRate' int), (r9v2 'tickRate' int) binds: [B:14:0x005e, B:15:0x0060] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private com.google.android.exoplayer2.text.ttml.TtmlDecoder$FrameAndTickRate com.google.android.exoplayer2.text.ttml.TtmlDecoder.parseFrameAndTickRates((r13v0 'this' com.google.android.exoplayer2.text.ttml.TtmlDecoder A[IMMUTABLE_TYPE, THIS]), (r14v0 'xmlParser' org.xmlpull.v1.XmlPullParser A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.text.SubtitleDecoderException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_7 -> Node_8;
+Node_16 -> Node_17;
+}
+

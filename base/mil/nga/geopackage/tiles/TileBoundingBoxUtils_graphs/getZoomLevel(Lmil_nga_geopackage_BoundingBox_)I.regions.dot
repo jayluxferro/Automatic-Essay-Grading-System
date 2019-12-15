@@ -1,0 +1,42 @@
+digraph "CFG formil.nga.geopackage.tiles.TileBoundingBoxUtils.getZoomLevel(Lmil\/nga\/geopackage\/BoundingBox;)I" {
+subgraph cluster_Region_1248593436 {
+label = "R(4:0|(1:2)|(1:5)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = mil.nga.geopackage.projection.ProjectionConstants.WEB_MERCATOR_HALF_WORLD_WIDTH * 2.0d\ldouble double r2 = r10.getMaxLongitude() \- r10.getMinLongitude()\ldouble double r4 = r10.getMaxLatitude() \- r10.getMinLatitude()\l}"];
+subgraph cluster_IfRegion_2041544925 {
+label = "IF [B:1:0x001e] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001e|if (r2 \<= 0.0d) goto L_0x0020\l}"];
+subgraph cluster_Region_1665534760 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0020|r2 = Double.MIN_VALUE\l}"];
+}
+}
+subgraph cluster_IfRegion_1466052876 {
+label = "IF [B:4:0x0023] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|if (r4 \<= 0.0d) goto L_0x0025\l}"];
+subgraph cluster_Region_2106885188 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|r4 = Double.MIN_VALUE\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0038|RETURN\l|return zoomFromTilesPerSide(java.lang.Math.max(java.lang.Math.min((int) (r0 \/ r2), (int) (r0 \/ r4)), 1))\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0021|PHI: r2 \l  PHI: (r2v3 double) = (r2v2 double), (r2v5 double) binds: [B:1:0x001e, B:2:0x0020] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026|PHI: r4 \l  PHI: (r4v3 double) = (r4v2 double), (r4v4 double) binds: [B:4:0x0023, B:5:0x0025] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static int mil.nga.geopackage.tiles.TileBoundingBoxUtils.getZoomLevel((r10v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

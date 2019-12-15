@@ -1,0 +1,95 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageManagerImpl.createFile(Ljava\/lang\/String;Ljava\/io\/File;)Z" {
+subgraph cluster_Region_1811441384 {
+label = "R(1:(2:(2:(1:(1:6)(2:7|8))|(2:(2:11|12)|(2:13|14)))|(2:15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_788500019 {
+label = "R(2:(2:(1:(1:6)(2:7|8))|(2:(2:11|12)|(2:13|14)))|(2:15|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_546464986 {
+label = "IF [B:1:0x0004] THEN: R(2:(1:(1:6)(2:7|8))|(2:(2:11|12)|(2:13|14))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (exists(r4) == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1736122734 {
+label = "R(2:(1:(1:6)(2:7|8))|(2:(2:11|12)|(2:13|14)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1335673935 {
+label = "IF [B:3:0x000a] THEN: R(1:(1:6)(2:7|8)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (mil.nga.geopackage.validate.GeoPackageValidate.hasGeoPackageExtension(r5) == false) goto L_0x000c\l}"];
+subgraph cluster_Region_490755481 {
+label = "R(1:(1:6)(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_776427103 {
+label = "IF [B:5:0x0010] THEN: R(1:6) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (mil.nga.geopackage.p022io.GeoPackageIOUtils.getFileExtension(r5) == null) goto L_0x0012\l}"];
+subgraph cluster_Region_1936839301 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|java.io.File java.io.File r1 = r5.getParentFile()\lr5 = new java.io.File(r1, r5.getName() + mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER + \"gpkg\")\l}"];
+}
+subgraph cluster_Region_277439144 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0037}"];
+Node_8 [shape=record,label="{8\:\ 0x0051|throw new mil.nga.geopackage.GeoPackageException(\"File can not have a non GeoPackage extension. Invalid File: \" + r5.getAbsolutePath())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_966681162 {
+label = "R(2:(2:11|12)|(2:13|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_644678781 {
+label = "IF [B:10:0x0056] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0056|if (r5.exists() == false) goto L_0x0058\l}"];
+subgraph cluster_Region_839666497 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0058|createAndCloseGeoPackage(new mil.nga.geopackage.p021db.GeoPackageDatabase(android.database.sqlite.SQLiteDatabase.openOrCreateDatabase(r5, (android.database.sqlite.SQLiteDatabase.CursorFactory) null)))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0069|RETURN\l|return importGeoPackageAsExternalLink(r5, r4)\l}"];
+}
+}
+subgraph cluster_Region_1774973834 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006a}"];
+Node_14 [shape=record,label="{14\:\ 0x0084|throw new mil.nga.geopackage.GeoPackageException(\"GeoPackage file already exists: \" + r5.getAbsolutePath())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_588071115 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0085}"];
+Node_16 [shape=record,label="{16\:\ 0x009b|throw new mil.nga.geopackage.GeoPackageException(\"GeoPackage already exists: \" + r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0052|PHI: r5 \l  PHI: (r5v2 java.io.File) = (r5v0 java.io.File), (r5v11 java.io.File) binds: [B:3:0x000a, B:6:0x0012] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public boolean mil.nga.geopackage.factory.GeoPackageManagerImpl.createFile((r3v0 'this' mil.nga.geopackage.factory.GeoPackageManagerImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_15[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+}
+

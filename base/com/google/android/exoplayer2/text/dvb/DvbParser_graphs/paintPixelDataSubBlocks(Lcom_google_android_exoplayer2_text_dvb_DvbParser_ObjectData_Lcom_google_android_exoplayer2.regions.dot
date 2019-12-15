@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.android.exoplayer2.text.dvb.DvbParser.paintPixelDataSubBlocks(Lcom\/google\/android\/exoplayer2\/text\/dvb\/DvbParser$ObjectData;Lcom\/google\/android\/exoplayer2\/text\/dvb\/DvbParser$ClutDefinition;IIILandroid\/graphics\/Paint;Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_1837302556 {
+label = "R(2:(1:2)(1:(1:7)(1:8))|3) | DECL_VAR: int[] clutEntries\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1402465901 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: R(1:(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r9 == 3) goto L_0x0003\l}"];
+subgraph cluster_Region_1435096057 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int[] r1 = r8.clutEntries8Bit\l}"];
+}
+subgraph cluster_Region_1048872223 {
+label = "R(1:(1:7)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2077848097 {
+label = "IF [B:6:0x001c] THEN: R(1:7) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|if (r9 == 2) goto L_0x001e\l}"];
+subgraph cluster_Region_567522795 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|int[] r1 = r8.clutEntries4Bit\l}"];
+}
+subgraph cluster_Region_1110522600 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|int[] r1 = r8.clutEntries2Bit\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0005|PHI: r1 \l  PHI: (r1v2 'clutEntries' int[]) = (r1v0 'clutEntries' int[]), (r1v1 'clutEntries' int[]), (r1v3 'clutEntries' int[]) binds: [B:8:0x0021, B:7:0x001e, B:2:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|paintPixelDataSubBlock(r7.topFieldData, r1, r9, r10, r11, r12, r13)\lpaintPixelDataSubBlock(r7.bottomFieldData, r1, r9, r10, r11 + 1, r12, r13)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{private static void com.google.android.exoplayer2.text.dvb.DvbParser.paintPixelDataSubBlocks((r7v0 'objectData' com.google.android.exoplayer2.text.dvb.DvbParser$ObjectData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'clutDefinition' com.google.android.exoplayer2.text.dvb.DvbParser$ClutDefinition A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'regionDepth' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'horizontalAddress' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'verticalAddress' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'paint' android.graphics.Paint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'canvas' android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_3;
+Node_8 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

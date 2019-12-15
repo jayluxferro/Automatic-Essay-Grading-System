@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.dispatchMultiWindowModeChanged(Z)V" {
+subgraph cluster_Region_2131288949 {
+label = "R(2:0|(3:2|(1:4)(0)|5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r2.mAdded.size() \- 1\l}"];
+subgraph cluster_LoopRegion_1411230368 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:5:0x0017] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:5:0x0017\l|if (r0 \>= 0) goto L_0x000a\l}"];
+subgraph cluster_Region_1379527145 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.support.v4.app.Fragment android.support.p000v4.app.Fragment r1 = r2.mAdded.get(r0)\l}"];
+subgraph cluster_IfRegion_990479202 {
+label = "IF [B:3:0x0012] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r1 != null) goto L_0x0014\l}"];
+subgraph cluster_Region_61004861 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r1.performMultiWindowModeChanged(r3)\l}"];
+}
+subgraph cluster_Region_898330260 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0017|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:5:0x0017\l|r0\-\-\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.FragmentManagerImpl.dispatchMultiWindowModeChanged((r2v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+Node_9 -> Node_5;
+}
+

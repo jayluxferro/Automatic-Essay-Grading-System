@@ -1,0 +1,58 @@
+digraph "CFG forio.fabric.sdk.android.services.common.QueueFile.usedBytes()I" {
+subgraph cluster_Region_2078361199 {
+label = "R(1:(2:(1:2)|(1:(2:(1:6)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_360473374 {
+label = "R(2:(1:2)|(1:(2:(1:6)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1180100036 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.elementCount == 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1812997405 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return 16\l}"];
+}
+}
+subgraph cluster_Region_489936078 {
+label = "R(1:(2:(1:6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1805721829 {
+label = "R(2:(1:6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_438861968 {
+label = "IF [B:4:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|if (r3.last.position \>= r3.first.position) goto L_0x0011\l}"];
+subgraph cluster_Region_2004710917 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|RETURN\l|return (r3.last.position \- r3.first.position) + 4 + r3.last.length + 16\l}"];
+}
+}
+subgraph cluster_Region_1953188224 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0036|RETURN\l|return (((r3.last.position + 4) + r3.last.length) + r3.fileLength) \- r3.first.position\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0023}"];
+MethodNode[shape=record,label="{public int io.fabric.sdk.android.services.common.QueueFile.usedBytes((r3v0 'this' io.fabric.sdk.android.services.common.QueueFile A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

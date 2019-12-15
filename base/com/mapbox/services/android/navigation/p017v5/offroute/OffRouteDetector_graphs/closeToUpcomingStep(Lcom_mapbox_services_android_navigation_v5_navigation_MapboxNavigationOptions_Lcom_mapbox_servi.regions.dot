@@ -1,0 +1,50 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.offroute.OffRouteDetector.closeToUpcomingStep(Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/MapboxNavigationOptions;Lcom\/mapbox\/services\/android\/navigation\/v5\/offroute\/OffRouteCallback;Lcom\/mapbox\/geojson\/Point;Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;)Z" {
+subgraph cluster_Region_266790662 {
+label = "R(2:(1:(2:9|10))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1842219536 {
+label = "IF [B:1:0x0001, B:3:0x0004] THEN: R(1:(2:9|10)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|ADDED_TO_REGION\l|if (r4 == null) goto L_0x0003\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|ADDED_TO_REGION\l|if (r6 == null) goto L_0x001c\l}"];
+subgraph cluster_Region_774580893 {
+label = "R(1:(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1610503354 {
+label = "IF [B:8:0x0016] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|PHI: r5 \l  PHI: (r5v3 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((com.mapbox.services.android.navigation.p017v5.utils.MeasurementUtils.userTrueDistanceFromStep(r5, r6) \< r3.maneuverZoneRadius()) == true) goto L_0x0018\l}"];
+subgraph cluster_Region_1729644180 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0018|r4.onShouldIncreaseIndex()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0013}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0015}"];
+MethodNode[shape=record,label="{private static boolean com.mapbox.services.android.navigation.v5.offroute.OffRouteDetector.closeToUpcomingStep((r3v0 com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationOptions A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.mapbox.services.android.navigation.v5.offroute.OffRouteCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 com.mapbox.api.directions.v5.models.LegStep A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+}
+

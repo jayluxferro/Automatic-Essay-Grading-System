@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.onDraw(Landroid\/graphics\/Canvas;)V" {
+subgraph cluster_Region_345856050 {
+label = "R(2:0|(1:(2:5|(1:(1:9)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.onDraw(r5)\l}"];
+subgraph cluster_Region_338734523 {
+label = "R(1:(2:5|(1:(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_991543129 {
+label = "IF [B:1:0x0005, B:3:0x0009] THEN: R(2:5|(1:(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.mDrawStatusBarBackground != false) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (r4.mStatusBarBackground != null) goto L_0x000b\l}"];
+subgraph cluster_Region_374582007 {
+label = "R(2:5|(1:(1:9)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|int r0 = r4.mLastInsets != null ? r4.mLastInsets.getSystemWindowInsetTop() : 0\l}"];
+subgraph cluster_Region_1942934771 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1819244469 {
+label = "IF [B:8:0x0018] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|PHI: r0 \l  PHI: (r0v3 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \> 0) goto L_0x001a\l}"];
+subgraph cluster_Region_4187947 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|r4.mStatusBarBackground.setBounds(0, 0, getWidth(), r0)\lr4.mStatusBarBackground.draw(r5)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.CoordinatorLayout.onDraw((r4v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+}
+

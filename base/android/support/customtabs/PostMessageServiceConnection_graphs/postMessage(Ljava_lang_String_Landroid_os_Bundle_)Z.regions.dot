@@ -1,0 +1,87 @@
+digraph "CFG forandroid.support.customtabs.PostMessageServiceConnection.postMessage(Ljava\/lang\/String;Landroid\/os\/Bundle;)Z" {
+subgraph cluster_Region_52439467 {
+label = "R(1:(2:(1:15)|(3:2|8|16)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_887863921 {
+label = "R(2:(1:15)|(3:2|8|16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_888871859 {
+label = "IF [B:1:0x0003] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r5.mService == null) goto L_?\l}"];
+subgraph cluster_Region_538442856 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_578352304 {
+label = "R(3:2|8|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+subgraph cluster_SynchronizedRegion_1269426876 {
+label = "Synchronized:R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008}"];
+subgraph cluster_Region_669206265 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_940051153 {
+label = "Try: R(1:5) catches: R(1:17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1571857428 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ RemoteException \-\> 0x0013 \}\lSplitter:B:4:0x0009\l|r5.mService.onPostMessage(r5.mSessionBinder, r6, r7)     \/\/ Catch:\{ RemoteException \-\> 0x0013 \}\l}"];
+}
+subgraph cluster_Region_1497913620 {
+label = "R(1:17) | ExcHandler: RemoteException (e android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_1497913620 {
+label = "R(1:17) | ExcHandler: RemoteException (e android.os.RemoteException)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009|SYNTHETIC\lSplitter:B:4:0x0009\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|DONT_GENERATE\lCatch:\{ RemoteException \-\> 0x0013 \}\l|monitor\-exit(\l\/\/ error: 0x0010: MONITOR_EXIT  \l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0011|Catch:\{ RemoteException \-\> 0x0013 \}\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0013|Catch:\{ RemoteException \-\> 0x0013 \}\lExcHandler: RemoteException (e android.os.RemoteException)\lSplitter:B:4:0x0009\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0014}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0015|Catch:\{ RemoteException \-\> 0x0013 \}\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0016|REMOVE\lCatch:\{ RemoteException \-\> 0x0013 \}\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0017|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0018|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public final boolean android.support.customtabs.PostMessageServiceConnection.postMessage((r5v0 'this' android.support.customtabs.PostMessageServiceConnection A[IMMUTABLE_TYPE, THIS]), (r6v0 'message' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'extras' android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_9;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_4 -> Node_12;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_16;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_17;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+}
+

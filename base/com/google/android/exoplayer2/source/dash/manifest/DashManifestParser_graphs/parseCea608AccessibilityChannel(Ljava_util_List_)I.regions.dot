@@ -1,0 +1,81 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseCea608AccessibilityChannel(Ljava\/util\/List;)I" {
+subgraph cluster_Region_986264958 {
+label = "R(3:0|(3:3|(2:7|(2:(1:18)|(1:10)))|11)|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r2 = 0\l}"];
+subgraph cluster_LoopRegion_1359661278 {
+label = "LOOP:0: (3:3|(2:7|(2:(1:18)|(1:10)))|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|if (r2 \< r6.size()) goto L_0x0007\l}"];
+subgraph cluster_Region_957774169 {
+label = "R(3:3|(2:7|(2:(1:18)|(1:10)))|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair r1 = r6.get(r2)\l}"];
+subgraph cluster_IfRegion_1526031346 {
+label = "IF [B:4:0x0015, B:6:0x0019] THEN: R(2:7|(2:(1:18)|(1:10))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|ADDED_TO_REGION\l|if (\"urn:scte:dash:cc:cea\-608:2015\".equals(r1.schemeIdUri) == true) goto L_0x0017\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|ADDED_TO_REGION\l|if (r1.value != null) goto L_0x001b\l}"];
+subgraph cluster_Region_702865175 {
+label = "R(2:7|(2:(1:18)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|java.util.regex.Matcher java.util.regex.Matcher r0 = CEA_608_ACCESSIBILITY_PATTERN.matcher(r1.value)\l}"];
+subgraph cluster_Region_581200427 {
+label = "R(2:(1:18)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_620349168 {
+label = "IF [B:8:0x0027] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|if (r0.matches() == true) goto L_0x0029\l}"];
+subgraph cluster_Region_1432542062 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.lang.Integer.parseInt(r0.group(1))\l}"];
+}
+}
+subgraph cluster_Region_783269581 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0033|android.util.Log.w(TAG, \"Unable to parse CEA\-608 channel number from: \" + r1.value)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x004d|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:11:0x004d\l|r2++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0050|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:0:0x0000, B:11:0x004d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:11:0x004d\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0029}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0050|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0029|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004d|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x004d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected static int com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.parseCea608AccessibilityChannel((r6v0 'accessibilityDescriptors' java.util.List\<com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/SchemeValuePair;, \>;)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_13[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_16[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_17[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10[style=dashed];
+Node_8 -> Node_14;
+Node_10 -> Node_15;
+Node_11 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_18;
+Node_13 -> Node_12;
+Node_14 -> Node_9;
+Node_15 -> Node_11;
+Node_16 -> Node_11;
+Node_17 -> Node_11;
+}
+

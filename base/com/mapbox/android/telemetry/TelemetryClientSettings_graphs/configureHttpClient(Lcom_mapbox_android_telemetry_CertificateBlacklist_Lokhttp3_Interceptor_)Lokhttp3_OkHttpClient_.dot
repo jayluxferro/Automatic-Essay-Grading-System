@@ -1,0 +1,22 @@
+digraph "CFG forcom.mapbox.android.telemetry.TelemetryClientSettings.configureHttpClient(Lcom\/mapbox\/android\/telemetry\/CertificateBlacklist;Lokhttp3\/Interceptor;)Lokhttp3\/OkHttpClient;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.android.telemetry.CertificatePinnerFactory r0 = new com.mapbox.android.telemetry.CertificatePinnerFactory()\lokhttp3.OkHttpClient$Builder r5 = r4.client.newBuilder().retryOnConnectionFailure(true).certificatePinner(r0.provideCertificatePinnerFor(r4.environment, r5))\lokhttp3.ConnectionSpec[] r0 = new okhttp3.ConnectionSpec[]\{okhttp3.ConnectionSpec.MODERN_TLS, okhttp3.ConnectionSpec.COMPATIBLE_TLS\}\lokhttp3.OkHttpClient$Builder r5 = r5.connectionSpecs(java.util.Arrays.asList(r0))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x002e|if (r6 == null) goto L_0x0033\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0030|r5.addInterceptor(r6)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0033}"];
+Node_4 [shape=record,label="{4\:\ 0x003b|if (isSocketFactoryUnset(r4.sslSocketFactory, r4.x509TrustManager) == false) goto L_0x0049\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003d|r5.sslSocketFactory(r4.sslSocketFactory, r4.x509TrustManager)\lr5.hostnameVerifier(r4.hostnameVerifier)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0049}"];
+Node_7 [shape=record,label="{7\:\ 0x004d|RETURN\l|return r5.build()\l}"];
+MethodNode[shape=record,label="{private okhttp3.OkHttpClient com.mapbox.android.telemetry.TelemetryClientSettings.configureHttpClient((r4v0 'this' com.mapbox.android.telemetry.TelemetryClientSettings A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.android.telemetry.CertificateBlacklist A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 okhttp3.Interceptor A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

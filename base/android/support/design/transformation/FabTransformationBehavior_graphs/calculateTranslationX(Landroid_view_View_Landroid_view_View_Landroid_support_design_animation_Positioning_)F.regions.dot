@@ -1,0 +1,59 @@
+digraph "CFG forandroid.support.design.transformation.FabTransformationBehavior.calculateTranslationX(Landroid\/view\/View;Landroid\/view\/View;Landroid\/support\/design\/animation\/Positioning;)F" {
+subgraph cluster_Region_1184572204 {
+label = "R(3:0|(1:9)(1:(1:5)(1:8))|11) | DECL_VAR: float null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.RectF android.graphics.RectF r0 = r2.tmpRectF1\landroid.graphics.RectF android.graphics.RectF r1 = r2.tmpRectF2\lcalculateWindowBounds(r3, r0)\lcalculateWindowBounds(r4, r1)\lint r3 = r5.gravity & 7\l}"];
+subgraph cluster_IfRegion_884782957 {
+label = "IF [B:1:0x000f] THEN: R(1:9) ELSE: R(1:(1:5)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r3 == 1) goto L_0x0025\l}"];
+subgraph cluster_Region_475015681 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|float r3 = r1.centerX() \- r0.centerX()\l}"];
+}
+subgraph cluster_Region_2121877761 {
+label = "R(1:(1:5)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_690066393 {
+label = "IF [B:3:0x0012] THEN: R(1:5) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r3 != 3) goto L_0x0014\l}"];
+subgraph cluster_Region_402047101 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|r3 = r3 != 5 ? 0.0f : r1.right \- r0.right\l}"];
+}
+subgraph cluster_Region_723612518 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|float r3 = r1.left \- r0.left\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0031|RETURN\l|return r3 + r5.xAdjustment\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0011}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0014}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002e|PHI: r3 \l  PHI: (r3v3 float) = (r3v6 float), (r3v8 float), (r3v11 float) binds: [B:9:0x0025, B:8:0x001f, B:6:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private float android.support.design.transformation.FabTransformationBehavior.calculateTranslationX((r2v0 'this' android.support.design.transformation.FabTransformationBehavior A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.support.design.animation.Positioning A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_9 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_10;
+Node_7 -> Node_10;
+Node_10 -> Node_11;
+}
+

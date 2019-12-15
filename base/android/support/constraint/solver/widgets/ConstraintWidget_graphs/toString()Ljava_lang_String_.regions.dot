@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.constraint.solver.widgets.ConstraintWidget.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1689455960 {
+label = "R(6:0|(1:2)(1:3)|4|(1:6)(1:7)|8|9) | DECL_VAR: java.lang.String null, java.lang.String null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\l}"];
+subgraph cluster_IfRegion_1422913336 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r3.mType != null) goto L_0x0009\l}"];
+subgraph cluster_Region_1353000598 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|java.lang.String r1 = \"type: \" + r3.mType + \" \"\l}"];
+}
+subgraph cluster_Region_51780894 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|java.lang.String r1 = \"\"\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0024|PHI: r1 \l  PHI: (r1v1 java.lang.String) = (r1v20 java.lang.String), (r1v22 java.lang.String) binds: [B:3:0x0022, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l|r0.append(r1)\l}"];
+subgraph cluster_IfRegion_830459730 {
+label = "IF [B:5:0x0029] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|if (r3.mDebugName != null) goto L_0x002b\l}"];
+subgraph cluster_Region_1746784141 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002b|java.lang.String r1 = \"id: \" + r3.mDebugName + \" \"\l}"];
+}
+subgraph cluster_Region_347654543 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0044|java.lang.String r1 = \"\"\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0046|PHI: r1 \l  PHI: (r1v3 java.lang.String) = (r1v17 java.lang.String), (r1v19 java.lang.String) binds: [B:7:0x0044, B:6:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|r0.append(r1)\lr0.append(\"(\")\lr0.append(r3.f5mX)\lr0.append(\", \")\lr0.append(r3.f6mY)\lr0.append(\") \- (\")\lr0.append(r3.mWidth)\lr0.append(\" x \")\lr0.append(r3.mHeight)\lr0.append(\") wrap: (\")\lr0.append(r3.mWrapWidth)\lr0.append(\" x \")\lr0.append(r3.mWrapHeight)\lr0.append(\")\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x008e|RETURN\l|return r0.toString()\l}"];
+}
+MethodNode[shape=record,label="{public java.lang.String android.support.constraint.solver.widgets.ConstraintWidget.toString((r3v0 'this' android.support.constraint.solver.widgets.ConstraintWidget A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

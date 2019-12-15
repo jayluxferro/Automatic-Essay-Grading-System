@@ -1,0 +1,52 @@
+digraph "CFG fororg.mapsforge.map.scalebar.MapScaleBar.calculateScaleBarLengthAndValue(Lorg\/mapsforge\/map\/scalebar\/DistanceUnitAdapter;)Lorg\/mapsforge\/map\/scalebar\/MapScaleBar$ScaleBarLengthAndValue;" {
+subgraph cluster_Region_1140069141 {
+label = "R(3:0|(2:2|(2:(1:7)|(1:4)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.prevMapPosition = r8.mapViewPosition.getMapPosition()\ldouble double r0 = org.mapsforge.core.util.MercatorProjection.calculateGroundResolution(r8.prevMapPosition.latLong.latitude, org.mapsforge.core.util.MercatorProjection.getMapSize(r8.prevMapPosition.zoomLevel, r8.displayModel.getTileSize())) \/ r9.getMeterRatio()\lint[] int[] r9 = r9.getScaleBarValues()\lint int r2 = r9.length\lint r3 = 0\lint r4 = 0\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_522446350 {
+label = "LOOP:0: (2:2|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002d|LOOP_START\lPHI: r3 r4 r5 \l  PHI: (r3v3 int) = (r3v2 int), (r3v4 int) binds: [B:0:0x0000, B:4:0x003f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v3 int) binds: [B:0:0x0000, B:4:0x003f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v3 int) binds: [B:0:0x0000, B:4:0x003f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x002d\-\>B:4:0x003f\l|if (r3 \< r2) goto L_0x002f\l}"];
+subgraph cluster_Region_632914523 {
+label = "R(2:2|(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002f|r5 = r9[r3]\lint r4 = (int) (((double) r5) \/ r0)\l}"];
+subgraph cluster_Region_784615308 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1899366797 {
+label = "IF [B:3:0x003c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003c|if (r4 \< (r8.mapScaleBitmap.getWidth() \- 10)) goto L_0x0042\l}"];
+subgraph cluster_Region_559921666 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0042|SYNTHETIC\lEDGE_INSN: B:7:0x0042\-\>B:5:0x0042 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_314170484 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003f|LOOP_END\lLOOP:0: B:1:0x002d\-\>B:4:0x003f\l|r3++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0047|RETURN\l|return new org.mapsforge.map.scalebar.MapScaleBar.ScaleBarLengthAndValue(r4, r5)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0042|EDGE_INSN: B:7:0x0042\-\>B:5:0x0042 ?: BREAK  \lPHI: r4 r5 \l  PHI: (r4v2 int) = (r4v1 int), (r4v3 int) binds: [B:8:0x0042, B:7:0x0042] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 int) = (r5v1 int), (r5v3 int) binds: [B:8:0x0042, B:7:0x0042] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0042|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected org.mapsforge.map.scalebar.MapScaleBar$ScaleBarLengthAndValue org.mapsforge.map.scalebar.MapScaleBar.calculateScaleBarLengthAndValue((r8v0 'this' org.mapsforge.map.scalebar.MapScaleBar A[IMMUTABLE_TYPE, THIS]), (r9v0 org.mapsforge.map.scalebar.DistanceUnitAdapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_7 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_8 -> Node_5;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v4.graphics.PathParser.copyOfRange([FII)[F" {
+subgraph cluster_Region_575593073 {
+label = "R(1:(2:(2:1|(2:(1:7)|(2:4|5)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1766572540 {
+label = "R(2:(2:1|(2:(1:7)|(2:4|5)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_851664349 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(2:(1:7)|(2:4|5))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 \<= r4) goto L_0x0002\l}"];
+subgraph cluster_Region_1910866514 {
+label = "R(2:1|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|int int r0 = r2.length\l}"];
+subgraph cluster_Region_1691472181 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1475918598 {
+label = "IF [B:2:0x0003, B:3:0x0005] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|if (r3 \< 0) goto L_0x0014\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|ADDED_TO_REGION\l|if (r3 \> r0) goto L_0x0014\l}"];
+subgraph cluster_Region_806879884 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|throw new java.lang.ArrayIndexOutOfBoundsException()\l}"];
+}
+}
+subgraph cluster_Region_1625218191 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|int int r4 = r4 \- r3\lint int r0 = java.lang.Math.min(r4, r0 \- r3)\lfloat[] float[] r4 = new float[r4]\ljava.lang.System.arraycopy(r2, r3, r4, 0, r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|return r4\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_132870482 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a}"];
+MethodNode[shape=record,label="{static float[] android.support.v4.graphics.PathParser.copyOfRange((r2v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_8[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

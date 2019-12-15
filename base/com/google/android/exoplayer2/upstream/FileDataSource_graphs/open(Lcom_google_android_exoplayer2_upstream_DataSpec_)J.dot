@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.FileDataSource.open(Lcom\/google\/android\/exoplayer2\/upstream\/DataSpec;)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x003b \}\lSplitter:B:0:0x0000\l|r6.uri = r7.uri     \/\/ Catch:\{ IOException \-\> 0x003b \}\lr6.file = new java.io.RandomAccessFile(r7.uri.getPath(), \"r\")     \/\/ Catch:\{ IOException \-\> 0x003b \}\lr6.file.seek(r7.position)     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0020|Catch:\{ IOException \-\> 0x003b \}\l|if ((r7.length \> \-1 ? 1 : (r7.length == \-1 ? 0 : \-1)) != 0) goto L_0x0042     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|Catch:\{ IOException \-\> 0x003b \}\l|long r2 = r6.file.length() \- r7.position     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002b|Catch:\{ IOException \-\> 0x003b \}\lPHI: r2 \l  PHI: (r2v5 long) = (r2v4 long), (r2v9 long) binds: [B:12:?, B:3:0x0022] A[DONT_GENERATE, DONT_INLINE]\l|r6.bytesRemaining = r2     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0033|Catch:\{ IOException \-\> 0x003b \}\l|if ((r6.bytesRemaining \> 0 ? 1 : (r6.bytesRemaining == 0 ? 0 : \-1)) \>= 0) goto L_0x0045     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0035|Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003a|Catch:\{ IOException \-\> 0x003b \}\l|throw new java.io.EOFException()     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l|java.io.IOException r0 = move\-exception\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003c}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|throw new com.google.android.exoplayer2.upstream.FileDataSource.FileDataSourceException(r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0042|SYNTHETIC\lSplitter:B:11:0x0042\l}"];
+Node_12 [shape=record,label="{12\:\ ?|Catch:\{ IOException \-\> 0x003b \}\lSplitter:B:11:0x0042\l|long r2 = r7.length     \/\/ Catch:\{ IOException \-\> 0x003b \}\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0045|r6.opened = true\l}"];
+Node_14 [shape=record,label="{14\:\ 0x004a|if (r6.listener == null) goto L_0x0051\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004c|r6.listener.onTransferStart(r6, r7)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0051}"];
+Node_17 [shape=record,label="{17\:\ 0x0053|RETURN\l|return r6.bytesRemaining\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.upstream.FileDataSource.open((r6v0 'this' com.google.android.exoplayer2.upstream.FileDataSource A[IMMUTABLE_TYPE, THIS]), (r7v0 'dataSpec' com.google.android.exoplayer2.upstream.DataSpec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.upstream.FileDataSource$FileDataSourceException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_8;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_13;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_12 -> Node_4;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+}
+

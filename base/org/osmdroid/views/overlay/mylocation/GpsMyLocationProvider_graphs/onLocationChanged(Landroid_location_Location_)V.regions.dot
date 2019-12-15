@@ -1,0 +1,84 @@
+digraph "CFG fororg.osmdroid.views.overlay.mylocation.GpsMyLocationProvider.onLocationChanged(Landroid\/location\/Location;)V" {
+subgraph cluster_Region_487208587 {
+label = "R(1:(1:2)(1:(2:10|(1:(1:14)))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1836426345 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:(2:10|(1:(1:14)))(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mIgnorer == null) goto L_0x0004\l}"];
+subgraph cluster_Region_672127524 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.util.Log.w(org.osmdroid.api.IMapView.LOGTAG, \"GpsMyLocation provider, mIgnore is null, unexpected. Location update will be ignored\")\l}"];
+}
+subgraph cluster_Region_10216515 {
+label = "R(1:(2:10|(1:(1:14)))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1290347701 {
+label = "IF [B:4:0x000c, B:6:0x0012, B:8:0x0023] THEN: R(2:10|(1:(1:14))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r5 != null) goto L_0x000e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|ADDED_TO_REGION\l|if (r5.getProvider() != null) goto L_0x0015\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|ADDED_TO_REGION\l|if (r4.mIgnorer.shouldIgnore(r5.getProvider(), java.lang.System.currentTimeMillis()) != true) goto L_0x0026\l}"];
+subgraph cluster_Region_209688493 {
+label = "R(2:10|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0026|r4.mLocation = r5\l}"];
+subgraph cluster_Region_1517789948 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_93449229 {
+label = "IF [B:11:0x002a, B:13:0x002e] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002a|if (r4.mMyLocationConsumer != null) goto L_0x002c\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002e|ADDED_TO_REGION\l|if (r4.mLocation != null) goto L_0x0030\l}"];
+subgraph cluster_Region_5811334 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0030|r4.mMyLocationConsumer.onLocationChanged(r4.mLocation, r4)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1894420959 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0015}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0025}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider.onLocationChanged((r4v0 'this' org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider A[IMMUTABLE_TYPE, THIS]), (r5v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_18[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_19[style=dashed];
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_12 -> Node_13;
+}
+

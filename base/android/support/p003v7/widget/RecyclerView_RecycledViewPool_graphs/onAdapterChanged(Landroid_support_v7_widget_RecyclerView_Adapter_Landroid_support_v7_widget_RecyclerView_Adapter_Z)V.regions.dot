@@ -1,0 +1,59 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.RecycledViewPool.onAdapterChanged(Landroid\/support\/v7\/widget\/RecyclerView$Adapter;Landroid\/support\/v7\/widget\/RecyclerView$Adapter;Z)V" {
+subgraph cluster_Region_1135596327 {
+label = "R(3:(1:1)|(1:5)|(1:(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1243057560 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_511410624 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|detach()\l}"];
+}
+}
+subgraph cluster_IfRegion_1458143920 {
+label = "IF [B:2:0x0005, B:4:0x0009] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|ADDED_TO_REGION\l|if (r3 == false) goto L_0x0007\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|ADDED_TO_REGION\l|if (r0.mAttachCount == 0) goto L_0x000b\l}"];
+subgraph cluster_Region_1809995169 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|clear()\l}"];
+}
+}
+subgraph cluster_Region_493841928 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1608026596 {
+label = "IF [B:6:0x000e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if (r2 != null) goto L_0x0010\l}"];
+subgraph cluster_Region_1161723053 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0010|attach()\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.RecyclerView.RecycledViewPool.onAdapterChanged((r0v0 'this' android.support.v7.widget.RecyclerView$RecycledViewPool A[IMMUTABLE_TYPE, THIS]), (r1v0 android.support.v7.widget.RecyclerView$Adapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 android.support.v7.widget.RecyclerView$Adapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_3 -> Node_4;
+}
+

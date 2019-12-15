@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseStandardGenreAttribute(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/TextInformationFrame;" {
+subgraph cluster_Region_255169021 {
+label = "R(3:0|(1:7)(1:4)|(2:(1:9)|(2:8|10))) | DECL_VAR: java.lang.String genreString\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = parseUint8AttributeValue(r5)\l}"];
+subgraph cluster_IfRegion_745451097 {
+label = "IF [B:1:0x0005, B:3:0x000a] THEN: R(1:7) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 \<= 0) goto L_0x001c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r0 \> STANDARD_GENRES.length) goto L_0x001c\l}"];
+subgraph cluster_Region_186981343 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|r1 = null\l}"];
+}
+subgraph cluster_Region_1843020479 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r1 = STANDARD_GENRES[r0 \- 1]\l}"];
+}
+}
+subgraph cluster_Region_839148895 {
+label = "R(2:(1:9)|(2:8|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_311510755 {
+label = "IF [B:5:0x0012] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|PHI: r1 \l  PHI: (r1v1 'genreString' java.lang.String) = (r1v0 'genreString' java.lang.String), (r1v2 'genreString' java.lang.String) binds: [B:7:0x001c, B:4:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 != null) goto L_0x0014\l}"];
+subgraph cluster_Region_1033251468 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new com.google.android.exoplayer2.metadata.id3.TextInformationFrame(\"TCON\", (java.lang.String) null, r1)\l}"];
+}
+}
+subgraph cluster_Region_1150961331 {
+label = "R(2:8|10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|android.util.Log.w(TAG, \"Failed to parse standard genre code\")\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.TextInformationFrame com.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseStandardGenreAttribute((r5v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_7 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_8 -> Node_10;
+Node_2 -> Node_3;
+Node_6 -> Node_9;
+}
+

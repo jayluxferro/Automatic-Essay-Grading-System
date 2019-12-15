@@ -1,0 +1,68 @@
+digraph "CFG forio.fabric.sdk.android.services.events.EnabledEventsStrategy.scheduleTimeBasedFileRollOver(JJ)V" {
+subgraph cluster_Region_282158863 {
+label = "R(1:(2:5|(1:7))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2034099155 {
+label = "IF [B:4:0x000b] THEN: R(2:5|(1:7)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|PHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r8.scheduledRolloverFutureRef.get() == null) == true) goto L_0x000d\l}"];
+subgraph cluster_Region_1910757732 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable p018io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable r2 = new p018io.fabric.sdk.android.services.events.TimeBasedFileRollOverRunnable(r8.context, r8)\landroid.content.Context android.content.Context r0 = r8.context\lp018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r0, \"Scheduling time based file roll over every \" + r11 + \" seconds\")\l}"];
+subgraph cluster_TryCatchRegion_553629 {
+label = "Try: R(1:7) catches: R(2:8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1744298012 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ RejectedExecutionException \-\> 0x003f \}\lSplitter:B:6:0x002f\l|r8.scheduledRolloverFutureRef.set(r8.executorService.scheduleAtFixedRate(r2, r9, r11, java.util.concurrent.TimeUnit.SECONDS))     \/\/ Catch:\{ RejectedExecutionException \-\> 0x003f \}\l}"];
+}
+subgraph cluster_Region_1029908484 {
+label = "R(2:8|9) | ExcHandler: RejectedExecutionException (r9v1 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|ExcHandler: RejectedExecutionException (r9v1 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0040|p018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r8.context, \"Failed to schedule time based file roll over\", r9)\l}"];
+}
+}
+}
+subgraph cluster_Region_647088568 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1029908484 {
+label = "R(2:8|9) | ExcHandler: RejectedExecutionException (r9v1 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|ExcHandler: RejectedExecutionException (r9v1 'e' java.util.concurrent.RejectedExecutionException A[CUSTOM_DECLARE])\lSplitter:B:6:0x002f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0040|p018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r8.context, \"Failed to schedule time based file roll over\", r9)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002f|SYNTHETIC\lSplitter:B:6:0x002f\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void io.fabric.sdk.android.services.events.EnabledEventsStrategy.scheduleTimeBasedFileRollOver((r8v0 'this' io.fabric.sdk.android.services.events.EnabledEventsStrategy A[IMMUTABLE_TYPE, THIS]), (r9v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+}
+

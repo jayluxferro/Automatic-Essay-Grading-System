@@ -1,0 +1,68 @@
+digraph "CFG forcom.google.android.exoplayer2.mediacodec.MediaCodecUtil.maxH264DecodableFrameSize()I" {
+subgraph cluster_Region_955540846 {
+label = "R(3:0|(3:2|(3:4|(1:6)|10)|11)|13)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r3 = 0\l}"];
+subgraph cluster_IfRegion_1050403818 {
+label = "IF [B:1:0x0004] THEN: R(3:2|(3:4|(1:6)|10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (maxH264DecodableFrameSize == \-1) goto L_0x0006\l}"];
+subgraph cluster_Region_1181354376 {
+label = "R(3:2|(3:4|(1:6)|10)|11)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int r2 = 0\lcom.google.android.exoplayer2.mediacodec.MediaCodecInfo com.google.android.exoplayer2.mediacodec.MediaCodecInfo r0 = getDecoderInfo(com.google.android.exoplayer2.util.MimeTypes.VIDEO_H264, false)\l}"];
+subgraph cluster_IfRegion_490177342 {
+label = "IF [B:3:0x000d] THEN: R(3:4|(1:6)|10) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r0 != null) goto L_0x000f\l}"];
+subgraph cluster_Region_108218763 {
+label = "R(3:4|(1:6)|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|int int r5 = r0.getProfileLevels().length\l}"];
+subgraph cluster_LoopRegion_909615823 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v2 'result' int) = (r2v0 'result' int), (r2v4 'result' int) binds: [B:4:0x000f, B:6:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 int) = (r3v0 int), (r3v7 int) binds: [B:4:0x000f, B:6:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0014\-\>B:6:0x0016\l|if (r3 \< r5) goto L_0x0016\l}"];
+subgraph cluster_Region_1196840198 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:6:0x0016\l|int r2 = java.lang.Math.max(avcLevelToMaxFrameSize(r1.level), r2)\lr3++\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002e|PHI: r3 \l  PHI: (r3v5 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int r2 = java.lang.Math.max(r2, com.google.android.exoplayer2.util.Util.SDK_INT \>= 21 ? 345600 : 172800)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0032|PHI: r2 \l  PHI: (r2v1 'result' int) = (r2v0 'result' int), (r2v3 'result' int) binds: [B:3:0x000d, B:10:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|maxH264DecodableFrameSize = r2\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0036|RETURN\l|return maxH264DecodableFrameSize\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0029}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0034}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0037}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static int com.google.android.exoplayer2.mediacodec.MediaCodecUtil.maxH264DecodableFrameSize()  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_6 -> Node_5;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_14;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_14 -> Node_10;
+Node_15 -> Node_7;
+}
+

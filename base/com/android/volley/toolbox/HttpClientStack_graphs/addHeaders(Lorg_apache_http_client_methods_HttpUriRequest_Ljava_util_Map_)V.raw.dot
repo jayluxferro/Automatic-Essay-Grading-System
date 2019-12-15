@@ -1,0 +1,15 @@
+digraph "CFG forcom.android.volley.toolbox.HttpClientStack.addHeaders(Lorg\/apache\/http\/client\/methods\/HttpUriRequest;Ljava\/util\/Map;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r2 I:java.util.Set) = \l  (r4 I:java.util.Map A[D('headers' java.util.Map\<java.lang.String, java.lang.String\>)])\l java.util.Map.keySet():java.util.Set type: INTERFACE \l0x0004: INVOKE  (r0 I:java.util.Iterator) = (r2 I:java.util.Set) java.util.Set.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: INVOKE  (r2 I:boolean) = (r0 I:java.util.Iterator A[D('i$' java.util.Iterator)]) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x001e \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator A[D('i$' java.util.Iterator)]) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0012: CHECK_CAST  (r1 I:java.lang.String) = (java.lang.String) (r1 I:?[OBJECT, ARRAY]) \l0x0014: INVOKE  (r2 I:java.lang.Object) = \l  (r4 I:java.util.Map A[D('headers' java.util.Map\<java.lang.String, java.lang.String\>)])\l  (r1 I:java.lang.Object A[D('key' java.lang.String)])\l java.util.Map.get(java.lang.Object):java.lang.Object type: INTERFACE \l0x0018: CHECK_CAST  (r2 I:java.lang.String) = (java.lang.String) (r2 I:?[OBJECT, ARRAY]) \l0x001a: INVOKE  \l  (r3 I:org.apache.http.client.methods.HttpUriRequest A[D('httpRequest' org.apache.http.client.methods.HttpUriRequest)])\l  (r1 I:java.lang.String A[D('key' java.lang.String)])\l  (r2 I:java.lang.String)\l org.apache.http.client.methods.HttpUriRequest.setHeader(java.lang.String, java.lang.String):void type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|0x001e: RETURN   \l}"];
+MethodNode[shape=record,label="{private static void com.android.volley.toolbox.HttpClientStack.addHeaders((r3 I:org.apache.http.client.methods.HttpUriRequest A[D('httpRequest' org.apache.http.client.methods.HttpUriRequest), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0014\-0x001e: r1 'key' java.lang.String\l  0x0008\-0x001e: r0 'i$' java.util.Iterator\l  ?\-0x001e: r3 'httpRequest' org.apache.http.client.methods.HttpUriRequest\l  0x0000\-0x001e: r4 'headers' java.util.Map\<java.lang.String, java.lang.String\>\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/apache\/http\/client\/methods\/HttpUriRequest;, Ljava\/util\/Map, \<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+}
+

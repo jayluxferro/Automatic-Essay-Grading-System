@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.exoplayer2.mediacodec.MediaCodecRenderer.supportsFormat(Lcom\/google\/android\/exoplayer2\/Format;)I" {
+subgraph cluster_Region_708558748 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1424253497 {
+label = "Try: R(1:2) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_366727968 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return supportsFormat(r2.mediaCodecSelector, r3)\l}"];
+}
+subgraph cluster_Region_303992234 {
+label = "R(2:3|5) | ExcHandler: DecoderQueryException (r0v0 'e' com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: DecoderQueryException (r0v0 'e' com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+}
+}
+subgraph cluster_Region_303992234 {
+label = "R(2:3|5) | ExcHandler: DecoderQueryException (r0v0 'e' com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|ExcHandler: DecoderQueryException (r0v0 'e' com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ DecoderQueryException \-\> 0x0007 \}\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+MethodNode[shape=record,label="{public final int com.google.android.exoplayer2.mediacodec.MediaCodecRenderer.supportsFormat((r2v0 'this' com.google.android.exoplayer2.mediacodec.MediaCodecRenderer A[IMMUTABLE_TYPE, THIS]), (r3v0 'format' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_3;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+}
+

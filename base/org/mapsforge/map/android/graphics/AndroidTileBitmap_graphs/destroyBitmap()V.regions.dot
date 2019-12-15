@@ -1,0 +1,90 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidTileBitmap.destroyBitmap()V" {
+subgraph cluster_Region_2108071201 {
+label = "R(1:(1:(2:(2:4|10)(1:16)|17)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1007712740 {
+label = "R(1:(2:(2:4|10)(1:16)|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1883822740 {
+label = "IF [B:1:0x0002] THEN: R(2:(2:4|10)(1:16)|17) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.bitmap != null) goto L_0x0004\l}"];
+subgraph cluster_Region_706796588 {
+label = "R(2:(2:4|10)(1:16)|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1663435740 {
+label = "IF [B:3:0x0008] THEN: R(2:4|10) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (android.os.Build.VERSION.SDK_INT \>= 11) goto L_0x000a\l}"];
+subgraph cluster_Region_1561273106 {
+label = "R(2:4|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|int int r0 = getHeight()\l}"];
+subgraph cluster_SynchronizedRegion_1548126469 {
+label = "Synchronized:R(2:5|(3:7|(1:9)|10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010}"];
+subgraph cluster_Region_634000933 {
+label = "R(3:7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|int int r0 = composeHash(r0, r5.bitmap.hasAlpha())\l}"];
+subgraph cluster_IfRegion_1686504885 {
+label = "IF [B:8:0x0025] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|if (reusableTileBitmaps.containsKey(java.lang.Integer.valueOf(r0)) == false) goto L_0x0027\l}"];
+subgraph cluster_Region_1539771287 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|reusableTileBitmaps.put(java.lang.Integer.valueOf(r0), new java.util.HashSet())\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0035|reusableTileBitmaps.get(java.lang.Integer.valueOf(r0)).add(new java.lang.ref.SoftReference(r5.bitmap))\l}"];
+}
+}
+}
+subgraph cluster_Region_1793881187 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0050|r5.bitmap.recycle()\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0055|r5.bitmap = null\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004b|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x004b: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004d|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x004e|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004f|REMOVE\l|throw r0\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.mapsforge.map.android.graphics.AndroidTileBitmap.destroyBitmap((r5v0 'this' org.mapsforge.map.android.graphics.AndroidTileBitmap A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=11\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_19[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_16[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

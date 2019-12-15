@@ -1,0 +1,42 @@
+digraph "CFG forcom.facebook.ads.internal.g.b.g()Ljava\/lang\/String;" {
+subgraph cluster_Region_1373446883 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_179799901 {
+label = "Try: R(1:4) catches: R(3:2|3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1139945117 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r3.f864b.getPackageManager().getPackageInfo(mo10599f(), 0).versionName\l}"];
+}
+subgraph cluster_Region_2003080615 {
+label = "R(3:2|3|5) | ExcHandler: NameNotFoundException (r0v0 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|ExcHandler: NameNotFoundException (r0v0 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|r0.printStackTrace()\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return \"\"\l}"];
+}
+}
+}
+subgraph cluster_Region_2003080615 {
+label = "R(3:2|3|5) | ExcHandler: NameNotFoundException (r0v0 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|ExcHandler: NameNotFoundException (r0v0 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|r0.printStackTrace()\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return \"\"\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ NameNotFoundException \-\> 0x0012 \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public java.lang.String com.facebook.ads.internal.g.b.g((r3v0 'this' com.facebook.ads.internal.g.b A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_2;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+}
+

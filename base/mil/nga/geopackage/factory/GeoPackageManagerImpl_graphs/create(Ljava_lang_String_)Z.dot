@@ -1,0 +1,29 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageManagerImpl.create(Ljava\/lang\/String;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (exists(r5) != false) goto L_0x003a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|createAndCloseGeoPackage(new mil.nga.geopackage.p021db.GeoPackageDatabase(r4.context.openOrCreateDatabase(r5, 0, (android.database.sqlite.SQLiteDatabase.CursorFactory) null)))\lmil.nga.geopackage.db.metadata.GeoPackageMetadataDb r0 = new mil.nga.geopackage.p021db.metadata.GeoPackageMetadataDb(r4.context)\lr0.open()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|SYNTHETIC\lSplitter:B:3:0x0020\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ all \-\> 0x0035 \}\lSplitter:B:3:0x0020\l|mil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource r1 = new mil.nga.geopackage.p021db.metadata.GeoPackageMetadataDataSource(r0)     \/\/ Catch:\{ all \-\> 0x0035 \}\lmil.nga.geopackage.db.metadata.GeoPackageMetadata r2 = new mil.nga.geopackage.p021db.metadata.GeoPackageMetadata()     \/\/ Catch:\{ all \-\> 0x0035 \}\lr2.setName(r5)     \/\/ Catch:\{ all \-\> 0x0035 \}\lr1.create(r2)     \/\/ Catch:\{ all \-\> 0x0035 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0030|r0.close()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0034|RETURN\l|return true\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0035|ExcHandler: all (r5v2 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:3:0x0020\l|java.lang.Throwable r5 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0036|r0.close()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0039|throw r5\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"GeoPackage already exists: \")\lr1.append(r5)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0050|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+MethodNode[shape=record,label="{public boolean mil.nga.geopackage.factory.GeoPackageManagerImpl.create((r4v0 'this' mil.nga.geopackage.factory.GeoPackageManagerImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | JADX INFO: finally extract failed\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+}
+

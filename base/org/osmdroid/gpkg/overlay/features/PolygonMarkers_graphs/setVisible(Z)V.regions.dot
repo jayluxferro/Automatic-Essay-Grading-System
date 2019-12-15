@@ -1,0 +1,63 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.PolygonMarkers.setVisible(Z)V" {
+subgraph cluster_Region_1224323022 {
+label = "R(5:(1:2)|3|(1:6)|7|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1286097889 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.polygon != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1171341687 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.polygon.setVisible(r3)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|java.util.Iterator r0 = r2.markers.iterator()\l}"];
+subgraph cluster_LoopRegion_1374473989 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r0.hasNext() != false) goto L_0x0015\l}"];
+subgraph cluster_Region_1424923945 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|LOOP_END\lLOOP:0: B:4:0x000f\-\>B:6:0x0015\l|r1.setVisible(r3)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001f|java.util.Iterator r0 = r2.holes.iterator()\l}"];
+subgraph cluster_LoopRegion_1511469846 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0029|if (r0.hasNext() != false) goto L_0x002b\l}"];
+subgraph cluster_Region_360844250 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002b|LOOP_END\lLOOP:1: B:8:0x0025\-\>B:10:0x002b\l|r1.setVisible(r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f|LOOP_START\lLOOP:0: B:4:0x000f\-\>B:6:0x0015\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025|LOOP_START\lLOOP:1: B:8:0x0025\-\>B:10:0x002b\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0035}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001f|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0035|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.gpkg.overlay.features.PolygonMarkers.setVisible((r2v0 'this' org.osmdroid.gpkg.overlay.features.PolygonMarkers A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_8;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_12 -> Node_7;
+Node_13 -> Node_11;
+}
+

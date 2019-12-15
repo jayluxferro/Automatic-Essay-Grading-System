@@ -1,0 +1,20 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.AnnotationContainer.removeBy(Ljava\/util\/List;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r7 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0004: NEW_ARRAY  (r1 I:long[]) = (r0 I:int A[IMMUTABLE_TYPE]) type: long[] \l0x0006: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0007: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r3 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:3:0x0019 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: INVOKE  (r4 I:java.lang.Object) = (r7 I:java.util.List), (r3 I:int) java.util.List.get(int):java.lang.Object type: INTERFACE \l0x000e: CHECK_CAST  (r4 I:com.mapbox.mapboxsdk.annotations.Annotation) = (com.mapbox.mapboxsdk.annotations.Annotation) (r4 I:?[OBJECT, ARRAY]) \l0x0010: INVOKE  (r4 I:long) = (r4 I:com.mapbox.mapboxsdk.annotations.Annotation) com.mapbox.mapboxsdk.annotations.Annotation.getId():long type: VIRTUAL \l0x0014: APUT  \l  (r1 I:?[long, double][])\l  (r3 I:?[int, short, byte, char])\l  (r4 I:?[long, double])\l \l0x0016: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0019|0x0019: INVOKE  \l  (r6 I:com.mapbox.mapboxsdk.maps.AnnotationContainer)\l  (r1 I:long[])\l com.mapbox.mapboxsdk.maps.AnnotationContainer.removeNativeAnnotations(long[]):void type: DIRECT \l0x001c: ARRAY_LENGTH  (r7 I:int) = (r1 I:?[]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d|0x001d: IF  (r2 I:?[int, byte, short, char]) \>= (r7 I:?[int, byte, short, char])  \-\> B:6:0x0029 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|0x001f: AGET  (r3 I:?[long, double]) = (r1 I:?[long, double][]), (r2 I:?[int, short, byte, char]) \l0x0021: IGET  (r0 I:android.support.v4.util.LongSparseArray\<com.mapbox.mapboxsdk.annotations.Annotation\>) = (r6 I:com.mapbox.mapboxsdk.maps.AnnotationContainer) com.mapbox.mapboxsdk.maps.AnnotationContainer.annotations android.support.v4.util.LongSparseArray \l0x0023: INVOKE  (r0 I:android.support.v4.util.LongSparseArray), (r3 I:long) android.support.v4.util.LongSparseArray.remove(long):void type: VIRTUAL \l0x0026: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|0x0029: RETURN   \l}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.maps.AnnotationContainer.removeBy((r6 'this' I:com.mapbox.mapboxsdk.maps.AnnotationContainer A[IMMUTABLE_TYPE, THIS]), (r7 I:java.util.List\<? extends com.mapbox.mapboxsdk.annotations.Annotation\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, +, Lcom\/mapbox\/mapboxsdk\/annotations\/Annotation;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_4;
+}
+

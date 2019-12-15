@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatDrawableManager.setPorterDuffColorFilter(Landroid\/graphics\/drawable\/Drawable;ILandroid\/graphics\/PorterDuff$Mode;)V" {
+subgraph cluster_Region_1559932063 {
+label = "R(3:(1:2)|(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_795189508 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.support.p003v7.widget.DrawableUtils.canSafelyMutateDrawable(r1) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1198389977 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.graphics.drawable.Drawable r1 = r1.mutate()\l}"];
+}
+}
+subgraph cluster_IfRegion_1064335434 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|PHI: r1 \l  PHI: (r1v1 android.graphics.drawable.Drawable) = (r1v0 android.graphics.drawable.Drawable), (r1v2 android.graphics.drawable.Drawable) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == null) goto L_0x000c\l}"];
+subgraph cluster_Region_912766319 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.graphics.PorterDuff$Mode r3 = DEFAULT_MODE\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000e|PHI: r3 \l  PHI: (r3v1 android.graphics.PorterDuff$Mode) = (r3v0 android.graphics.PorterDuff$Mode), (r3v2 android.graphics.PorterDuff$Mode) binds: [B:3:0x000a, B:4:0x000c] A[DONT_GENERATE, DONT_INLINE]\l|r1.setColorFilter(getPorterDuffColorFilter(r2, r3))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+MethodNode[shape=record,label="{private static void android.support.v7.widget.AppCompatDrawableManager.setPorterDuffColorFilter((r1v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.graphics.PorterDuff$Mode A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

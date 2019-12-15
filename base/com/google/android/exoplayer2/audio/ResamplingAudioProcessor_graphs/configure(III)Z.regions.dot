@@ -1,0 +1,86 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.ResamplingAudioProcessor.configure(III)Z" {
+subgraph cluster_Region_924911809 {
+label = "R(1:(1:8)(1:(1:15)(3:16|(1:18)|19)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_468717840 {
+label = "IF [B:1:0x0002, B:2:0x0004, B:4:0x0008, B:6:0x000c] THEN: R(1:8) ELSE: R(1:(1:15)(3:16|(1:18)|19))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5 != 3) goto L_0x0004\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|ADDED_TO_REGION\l|if (r5 != 2) goto L_0x0006\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|ADDED_TO_REGION\l|if (r5 != Integer.MIN_VALUE) goto L_0x000a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000c|ADDED_TO_REGION\l|if (r5 != 1073741824) goto L_0x000e\l}"];
+subgraph cluster_Region_1247876323 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|throw new com.google.android.exoplayer2.audio.AudioProcessor.UnhandledFormatException(r3, r4, r5)\l}"];
+}
+subgraph cluster_Region_189533600 {
+label = "R(1:(1:15)(3:16|(1:18)|19)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_882141960 {
+label = "IF [B:10:0x0016, B:12:0x001a, B:14:0x001e] THEN: R(1:15) ELSE: R(3:16|(1:18)|19) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0016|if (r2.sampleRateHz == r3) goto L_0x0018\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001a|ADDED_TO_REGION\l|if (r2.channelCount == r4) goto L_0x001c\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001e|ADDED_TO_REGION\l|if (r2.encoding == r5) goto L_0x0020\l}"];
+subgraph cluster_Region_804754459 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0020|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1836272394 {
+label = "R(3:16|(1:18)|19)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0022|r2.sampleRateHz = r3\lr2.channelCount = r4\lr2.encoding = r5\l}"];
+subgraph cluster_IfRegion_104430089 {
+label = "IF [B:17:0x0028] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0028|if (r5 == 2) goto L_0x002a\l}"];
+subgraph cluster_Region_300060141 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x002a|r2.buffer = EMPTY_BUFFER\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x002e|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0018}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c}"];
+MethodNode[shape=record,label="{public boolean com.google.android.exoplayer2.audio.ResamplingAudioProcessor.configure((r2v0 'this' com.google.android.exoplayer2.audio.ResamplingAudioProcessor A[IMMUTABLE_TYPE, THIS]), (r3v0 'sampleRateHz' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'channelCount' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'encoding' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.audio.AudioProcessor$UnhandledFormatException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

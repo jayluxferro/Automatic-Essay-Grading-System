@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImplInternal.maybeContinueLoading()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r11.loadingPeriodHolder.prepared != false) goto L_0x0013\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|r6 = 0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|PHI: r6 \l  PHI: (r6v1 'nextLoadPositionUs' long) = (r6v0 'nextLoadPositionUs' long), (r6v2 'nextLoadPositionUs' long) binds: [B:6:0x0013, B:2:0x0007] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|if ((r6 \> Long.MIN_VALUE ? 1 : (r6 == Long.MIN_VALUE ? 0 : \-1)) != 0) goto L_0x001c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|setIsLoading(false)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|long r6 = r11.loadingPeriodHolder.mediaPeriod.getNextLoadPositionUs()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c|long r4 = r11.loadingPeriodHolder.toPeriodTime(r11.rendererPositionUs)\lcom.google.android.exoplayer2.LoadControl r3 = r11.loadControl\lboolean r2 = r3.shouldContinueLoading(r6 \- r4)\lsetIsLoading(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002f|if (r2 == false) goto L_0x003d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0031|r11.loadingPeriodHolder.needsContinueLoading = false\lr11.loadingPeriodHolder.mediaPeriod.continueLoading(r4)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|r11.loadingPeriodHolder.needsContinueLoading = true\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.ExoPlayerImplInternal.maybeContinueLoading((r11v0 'this' com.google.android.exoplayer2.ExoPlayerImplInternal A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_11;
+Node_6 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_12;
+Node_10 -> Node_13;
+}
+

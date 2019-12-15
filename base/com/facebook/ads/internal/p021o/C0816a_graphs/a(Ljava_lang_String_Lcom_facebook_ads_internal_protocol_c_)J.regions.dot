@@ -1,0 +1,52 @@
+digraph "CFG forcom.facebook.ads.internal.o.a.a(Ljava\/lang\/String;Lcom\/facebook\/ads\/internal\/protocol\/c;)J" {
+subgraph cluster_Region_755864130 {
+label = "R(1:(2:(1:6)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2062077471 {
+label = "R(2:(1:6)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_531626419 {
+label = "IF [B:1:0x0008] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (f1103a.containsKey(r4) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_1659042096 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return f1103a.get(r4).longValue()\l}"];
+}
+}
+subgraph cluster_Region_599586988 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_521687794 {
+label = "Switch: 1, default: R(1:7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|switch(r5) \{\l    case com.facebook.ads.internal.protocol.c.b :com.facebook.ads.internal.protocol.c: goto L_0x0023;\l    case com.facebook.ads.internal.protocol.c.c :com.facebook.ads.internal.protocol.c: goto L_0x0016;\l    case com.facebook.ads.internal.protocol.c.d :com.facebook.ads.internal.protocol.c: goto L_0x0016;\l    default: goto L_0x0022;\l\}\l}"];
+subgraph cluster_Region_2132431555 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|SYNTHETIC\lRETURN\l|return 15000\l}"];
+}
+subgraph cluster_Region_180621161 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return \-1000\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017}"];
+MethodNode[shape=record,label="{private static long com.facebook.ads.internal.o.a.a((r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.facebook.ads.internal.protocol.c A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+}
+

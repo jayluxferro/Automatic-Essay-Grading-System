@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.gms.common.util.ArrayUtils.appendToArray([Ljava\/lang\/Object;Ljava\/lang\/Object;)[Ljava\/lang\/Object;" {
+subgraph cluster_Region_1794151687 {
+label = "R(1:(2:(1:3)|(3:(1:6)(1:7)|8|9))) | DECL_VAR: T[] null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1863288179 {
+label = "R(2:(1:3)|(3:(1:6)(1:7)|8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_721107724 {
+label = "IF [B:0:0x0000, B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x0002\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r3 == null) goto L_0x0005\l}"];
+subgraph cluster_Region_543281657 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|throw new java.lang.IllegalArgumentException(\"Cannot generate array of generic type w\/o class info\")\l}"];
+}
+}
+subgraph cluster_Region_1322725471 {
+label = "R(3:(1:6)(1:7)|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1574961387 {
+label = "IF [B:5:0x000e] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|if (r2 == null) goto L_0x0010\l}"];
+subgraph cluster_Region_2074265573 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|java.lang.Object[] r2 = (java.lang.Object[]) java.lang.reflect.Array.newInstance(r3.getClass(), 1)\l}"];
+}
+subgraph cluster_Region_645272576 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|java.lang.Object[] r2 = java.util.Arrays.copyOf(r2, r2.length + 1)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0021|PHI: r2 \l  PHI: (r2v1 T[]) = (r2v2 T[]), (r2v5 T[]) binds: [B:7:0x001b, B:6:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|r2[r2.length \- 1] = r3\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|RETURN\l|return r2\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+MethodNode[shape=record,label="{public static T[] com.google.android.gms.common.util.ArrayUtils.appendToArray((r2v0 T[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>([TT;TT;)[TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

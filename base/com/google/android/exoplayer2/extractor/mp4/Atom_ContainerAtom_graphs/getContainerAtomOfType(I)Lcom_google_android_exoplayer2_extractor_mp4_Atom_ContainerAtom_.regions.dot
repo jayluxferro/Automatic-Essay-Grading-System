@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom.getContainerAtomOfType(I)Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$ContainerAtom;" {
+subgraph cluster_Region_647525226 {
+label = "R(3:0|(2:2|(2:(1:8)|(1:4)))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r4.containerChildren.size()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1582503048 {
+label = "LOOP:0: (2:2|(2:(1:8)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:0:0x0000, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:4:0x0016\l|if (r2 \< r1) goto L_0x0009\l}"];
+subgraph cluster_Region_353672330 {
+label = "R(2:2|(2:(1:8)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom r0 = r4.containerChildren.get(r2)\l}"];
+subgraph cluster_Region_1308325506 {
+label = "R(2:(1:8)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1886563937 {
+label = "IF [B:3:0x0013] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (r0.type == r5) goto L_0x0015\l}"];
+subgraph cluster_Region_910365619 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1466872953 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:4:0x0016\l|r2++\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0019|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom.getContainerAtomOfType((r4v0 'this' com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom A[IMMUTABLE_TYPE, THIS]), (r5v0 'type' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_1;
+Node_6 -> Node_8;
+Node_7 -> Node_5;
+}
+

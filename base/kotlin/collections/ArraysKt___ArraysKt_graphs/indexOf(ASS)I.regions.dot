@@ -1,0 +1,51 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.indexOf([SS)I" {
+subgraph cluster_Region_1287705071 {
+label = "R(3:0|(1:(2:(1:4)|(1:5)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"$receiver\")\lint int r0 = r3.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_940629581 {
+label = "LOOP:0: (1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:5:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:5:0x000e\l|if (r1 \< r0) goto L_0x0009\l}"];
+subgraph cluster_Region_1354466031 {
+label = "R(1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_414522921 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_86918727 {
+label = "IF [B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r4 == r3[r1]) goto L_0x000d\l}"];
+subgraph cluster_Region_1336651940 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1330577045 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:5:0x000e\l|r1++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return \-1\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final int kotlin.collections.ArraysKt___ArraysKt.indexOf((r3v0 short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 short A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_6;
+Node_8 -> Node_4;
+}
+

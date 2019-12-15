@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ConcatenatingMediaSource.ConcatenatedTimeline.\<init\>([Lcom\/google\/android\/exoplayer2\/Timeline;)V" {
+subgraph cluster_Region_545080486 {
+label = "R(3:0|(2:3|6)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int[] int[] r1 = new int[r11.length]\lint[] int[] r4 = new int[r11.length]\llong r2 = 0\lint r6 = 0\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_1021125993 {
+label = "LOOP:0: (2:3|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|if (r0 \< r11.length) goto L_0x0010\l}"];
+subgraph cluster_Region_1321255579 {
+label = "R(2:3|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|com.google.android.exoplayer2.Timeline r5 = r11[r0]\lr2 += (long) r5.getPeriodCount()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|LOOP_END\lPHI: r7 \l  PHI: (r7v6 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:6:0x0020\l|com.google.android.exoplayer2.util.Assertions.checkState(r2 \<= 2147483647L, \"ConcatenatingMediaSource children contain too many periods\")\lr1[r0] = (int) r2\lr6 += r5.getWindowCount()\lr4[r0] = r6\lr0++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0034|r10.timelines = r11\lr10.sourcePeriodOffsets = r1\lr10.sourceWindowOffsets = r4\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000d|LOOP_START\lPHI: r0 r2 r6 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:0:0x0000, B:6:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'periodCount' long) = (r2v0 'periodCount' long), (r2v2 'periodCount' long) binds: [B:0:0x0000, B:6:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'windowCount' int) = (r6v0 'windowCount' int), (r6v2 'windowCount' int) binds: [B:0:0x0000, B:6:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:6:0x0020\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0032}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.ConcatenatingMediaSource.ConcatenatedTimeline.\<init\>((r10v0 'this' com.google.android.exoplayer2.source.ConcatenatingMediaSource$ConcatenatedTimeline A[IMMUTABLE_TYPE, THIS]), (r11v0 'timelines' com.google.android.exoplayer2.Timeline[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_6 -> Node_1;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_11;
+Node_7 -> Node_12;
+Node_10 -> Node_8;
+Node_11 -> Node_6;
+Node_12 -> Node_6;
+}
+

@@ -1,0 +1,43 @@
+digraph "CFG forcom.android.volley.toolbox.ImageRequest.doParse(Lcom\/android\/volley\/NetworkResponse;)Lcom\/android\/volley\/Response;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] r0 = r11.data\landroid.graphics.BitmapFactory$Options r1 = new android.graphics.BitmapFactory.Options()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r10.mMaxWidth != 0) goto L_0x001a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r10.mMaxHeight != 0) goto L_0x001a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|r1.inPreferredConfig = r10.mDecodeConfig\landroid.graphics.Bitmap r0 = android.graphics.BitmapFactory.decodeByteArray(r0, 0, r0.length, r1)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|r1.inJustDecodeBounds = true\landroid.graphics.BitmapFactory.decodeByteArray(r0, 0, r0.length, r1)\lint r4 = r1.outWidth\lint r5 = r1.outHeight\lint r6 = getResizedDimension(r10.mMaxWidth, r10.mMaxHeight, r4, r5, r10.mScaleType)\lint r7 = getResizedDimension(r10.mMaxHeight, r10.mMaxWidth, r5, r4, r10.mScaleType)\lr1.inJustDecodeBounds = false\lr1.inSampleSize = findBestSampleSize(r4, r5, r6, r7)\landroid.graphics.Bitmap r0 = android.graphics.BitmapFactory.decodeByteArray(r0, 0, r0.length, r1)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0046|if (r0 == null) goto L_0x005c\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0048}"];
+Node_8 [shape=record,label="{8\:\ 0x004c|if (r0.getWidth() \> r6) goto L_0x0054\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004e}"];
+Node_10 [shape=record,label="{10\:\ 0x0052|if (r0.getHeight() \<= r7) goto L_0x005c\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0054|android.graphics.Bitmap r1 = android.graphics.Bitmap.createScaledBitmap(r0, r6, r7, true)\lr0.recycle()\lr0 = r1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x005c|PHI: r0 \l  PHI: (r0v1 android.graphics.Bitmap) = (r0v3 android.graphics.Bitmap), (r0v4 android.graphics.Bitmap), (r0v3 android.graphics.Bitmap), (r0v5 android.graphics.Bitmap) binds: [B:6:0x0046, B:11:0x0054, B:10:0x0052, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L_0x0068\l}"];
+Node_13 [shape=record,label="{13\:\ 0x005e}"];
+Node_14 [shape=record,label="{14\:\ 0x0067|RETURN\l|return com.android.volley.Response.error(new com.android.volley.ParseError(r11))\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0068}"];
+Node_16 [shape=record,label="{16\:\ 0x0070|RETURN\l|return com.android.volley.Response.success(r0, com.android.volley.toolbox.HttpHeaderParser.parseCacheHeaders(r11))\l}"];
+MethodNode[shape=record,label="{private com.android.volley.Response\<android.graphics.Bitmap\> com.android.volley.toolbox.ImageRequest.doParse((r10v0 'this' com.android.volley.toolbox.ImageRequest A[IMMUTABLE_TYPE, THIS]), (r11v0 com.android.volley.NetworkResponse A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/android\/volley\/NetworkResponse;, ), Lcom\/android\/volley\/Response\<, Landroid\/graphics\/Bitmap;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_12;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

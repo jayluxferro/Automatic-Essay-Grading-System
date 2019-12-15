@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultTrackOutput.getAdjustedSampleFormat(Lcom\/google\/android\/exoplayer2\/Format;J)Lcom\/google\/android\/exoplayer2\/Format;" {
+subgraph cluster_Region_958315419 {
+label = "R(1:(2:(1:1)|(1:(2:(1:8)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1422191642 {
+label = "R(2:(1:1)|(1:(2:(1:8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1689789100 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_689989790 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1697565762 {
+label = "R(1:(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_377047233 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_871474656 {
+label = "IF [B:3:0x0008, B:5:0x0013] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r6 == 0) goto L_?\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|ADDED_TO_REGION\l|if (r5.subsampleOffsetUs == Long.MAX_VALUE) goto L_?\l}"];
+subgraph cluster_Region_431972248 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_174115889 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r5.copyWithSubsampleOffsetUs(r5.subsampleOffsetUs + r6)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r5\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.Format com.google.android.exoplayer2.extractor.DefaultTrackOutput.getAdjustedSampleFormat((r5v0 'format' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'sampleOffsetUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_9;
+}
+

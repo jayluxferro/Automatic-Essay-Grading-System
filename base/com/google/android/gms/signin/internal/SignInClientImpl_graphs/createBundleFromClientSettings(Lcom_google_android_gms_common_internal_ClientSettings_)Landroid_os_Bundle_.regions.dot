@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.gms.signin.internal.SignInClientImpl.createBundleFromClientSettings(Lcom\/google\/android\/gms\/common\/internal\/ClientSettings;)Landroid\/os\/Bundle;" {
+subgraph cluster_Region_1436517609 {
+label = "R(4:0|(1:2)|(3:4|(1:6)|(1:9))|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.gms.signin.SignInOptions com.google.android.gms.signin.SignInOptions r0 = r5.getSignInOptions()\ljava.lang.Integer java.lang.Integer r1 = r5.getClientSessionId()\landroid.os.Bundle android.os.Bundle r2 = new android.os.Bundle()\lr2.putParcelable(\"com.google.android.gms.signin.internal.clientRequestedAccount\", r5.getAccount())\l}"];
+subgraph cluster_IfRegion_67041566 {
+label = "IF [B:1:0x0016] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r1 != null) goto L_0x0018\l}"];
+subgraph cluster_Region_25491849 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|r2.putInt(com.google.android.gms.common.internal.ClientSettings.KEY_CLIENT_SESSION_ID, r1.intValue())\l}"];
+}
+}
+subgraph cluster_IfRegion_681889422 {
+label = "IF [B:3:0x0021] THEN: R(3:4|(1:6)|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0021|if (r0 != null) goto L_0x0023\l}"];
+subgraph cluster_Region_221035280 {
+label = "R(3:4|(1:6)|(1:9))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|r2.putBoolean(\"com.google.android.gms.signin.internal.offlineAccessRequested\", r0.isOfflineAccessRequested())\lr2.putBoolean(\"com.google.android.gms.signin.internal.idTokenRequested\", r0.isIdTokenRequested())\lr2.putString(\"com.google.android.gms.signin.internal.serverClientId\", r0.getServerClientId())\lr2.putBoolean(\"com.google.android.gms.signin.internal.usePromptModeForAuthCode\", true)\lr2.putBoolean(\"com.google.android.gms.signin.internal.forceCodeForRefreshToken\", r0.isForceCodeForRefreshToken())\lr2.putString(\"com.google.android.gms.signin.internal.hostedDomain\", r0.getHostedDomain())\lr2.putBoolean(\"com.google.android.gms.signin.internal.waitForAccessTokenRefresh\", r0.waitForAccessTokenRefresh())\l}"];
+subgraph cluster_IfRegion_1823048112 {
+label = "IF [B:5:0x0063] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0063|if (r0.getAuthApiSignInModuleVersion() != null) goto L_0x0065\l}"];
+subgraph cluster_Region_1169745920 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0065|r2.putLong(\"com.google.android.gms.signin.internal.authApiSignInModuleVersion\", r0.getAuthApiSignInModuleVersion().longValue())\l}"];
+}
+}
+subgraph cluster_IfRegion_1273400967 {
+label = "IF [B:8:0x0076] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0076|if (r0.getRealClientLibraryVersion() != null) goto L_0x0078\l}"];
+subgraph cluster_Region_603609296 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0078|r2.putLong(\"com.google.android.gms.signin.internal.realClientLibraryVersion\", r0.getRealClientLibraryVersion().longValue())\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0085|RETURN\l|return r2\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0072}"];
+MethodNode[shape=record,label="{public static android.os.Bundle com.google.android.gms.signin.internal.SignInClientImpl.createBundleFromClientSettings((r5v0 com.google.android.gms.common.internal.ClientSettings A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_7 -> Node_8;
+}
+

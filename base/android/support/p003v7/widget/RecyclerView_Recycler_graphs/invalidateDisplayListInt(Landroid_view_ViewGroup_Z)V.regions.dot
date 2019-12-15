@@ -1,0 +1,92 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.Recycler.invalidateDisplayListInt(Landroid\/view\/ViewGroup;Z)V" {
+subgraph cluster_Region_449371884 {
+label = "R(3:0|(3:2|(1:4)(0)|5)|(1:(1:(2:(2:10|16)|(1:11)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r5.getChildCount() \- 1\l}"];
+subgraph cluster_LoopRegion_1302848317 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v4 int) binds: [B:0:0x0000, B:5:0x0015] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:5:0x0015\l|if (r0 \>= 0) goto L_0x0008\l}"];
+subgraph cluster_Region_78915928 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|android.view.View android.view.View r2 = r5.getChildAt(r0)\l}"];
+subgraph cluster_IfRegion_990416863 {
+label = "IF [B:3:0x000e] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if ((r2 instanceof android.view.ViewGroup) == true) goto L_0x0010\l}"];
+subgraph cluster_Region_1237597576 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|invalidateDisplayListInt((android.view.ViewGroup) r2, true)\l}"];
+}
+subgraph cluster_Region_1400436398 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0015|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:5:0x0015\l|r0\-\-\l}"];
+}
+}
+subgraph cluster_Region_439572029 {
+label = "R(1:(1:(2:(2:10|16)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_723416481 {
+label = "IF [B:6:0x0018] THEN: R(1:(2:(2:10|16)|(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r6 != false) goto L_0x001b\l}"];
+subgraph cluster_Region_542120714 {
+label = "R(1:(2:(2:10|16)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_881415208 {
+label = "R(2:(2:10|16)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_873164346 {
+label = "IF [B:9:0x0020] THEN: R(2:10|16) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0020|if (r5.getVisibility() == 4) goto L_0x0022\l}"];
+subgraph cluster_Region_1818273383 {
+label = "R(2:10|16)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|r5.setVisibility(0)\lr5.setVisibility(4)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1735066208 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002a|int int r6 = r5.getVisibility()\lr5.setVisibility(4)\lr5.setVisibility(r6)\l}"];
+}
+}
+}
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0018|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0015|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0015|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.RecyclerView.Recycler.invalidateDisplayListInt((r4v0 'this' android.support.v7.widget.RecyclerView$Recycler A[IMMUTABLE_TYPE, THIS]), (r5v0 android.view.ViewGroup A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_14[style=dashed];
+Node_4 -> Node_13;
+Node_5 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_15;
+Node_8 -> Node_9;
+Node_12 -> Node_6;
+Node_13 -> Node_5;
+Node_14 -> Node_5;
+}
+

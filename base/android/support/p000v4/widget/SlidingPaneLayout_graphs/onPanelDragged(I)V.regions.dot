@@ -1,0 +1,95 @@
+digraph "CFG forandroid.support.v4.widget.SlidingPaneLayout.onPanelDragged(I)V" {
+subgraph cluster_Region_1439875791 {
+label = "R(1:(2:(2:2|3)|(6:4|(1:6)|13|(1:15)|(1:18)|19)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1921201735 {
+label = "R(2:(2:2|3)|(6:4|(1:6)|13|(1:15)|(1:18)|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_857198046 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mSlideableView == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1418931222 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r4.mSlideOffset = 0.0f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_245932142 {
+label = "R(6:4|(1:6)|13|(1:15)|(1:18)|19)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|boolean boolean r0 = isLayoutRtlSupport()\landroid.support.v4.widget.SlidingPaneLayout$LayoutParams android.support.p000v4.widget.SlidingPaneLayout.LayoutParams r1 = (android.support.p000v4.widget.SlidingPaneLayout.LayoutParams) r4.mSlideableView.getLayoutParams()\lint int r2 = r4.mSlideableView.getWidth()\l}"];
+subgraph cluster_IfRegion_1652719461 {
+label = "IF [B:5:0x001a] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|if (r0 == true) goto L_0x001c\l}"];
+subgraph cluster_Region_1956905379 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|int r5 = (getWidth() \- r5) \- r2\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0035|PHI: r0 \l  PHI: (r0v2 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r4.mSlideOffset = ((float) (r5 \- ((r0 ? getPaddingRight() : getPaddingLeft()) + (r0 ? r1.rightMargin : r1.leftMargin)))) \/ ((float) r4.mSlideRange)\l}"];
+subgraph cluster_IfRegion_395598065 {
+label = "IF [B:14:0x0040] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0040|if (r4.mParallaxBy != 0) goto L_0x0042\l}"];
+subgraph cluster_Region_2085516618 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0042|parallaxOtherViews(r4.mSlideOffset)\l}"];
+}
+}
+subgraph cluster_IfRegion_568430571 {
+label = "IF [B:17:0x0049] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0049|if (r1.dimWhenOffset == true) goto L_0x004b\l}"];
+subgraph cluster_Region_1899642400 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004b|dimChildView(r4.mSlideableView, r4.mSlideOffset, r4.mSliderFadeColor)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0054|dispatchOnPanelSlide(r4.mSlideableView)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0023|PHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v10 int) binds: [B:5:0x001a, B:6:0x001c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002e|PHI: r2 \l  PHI: (r2v2 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0030}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0033}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0047}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0059}"];
+MethodNode[shape=record,label="{void android.support.v4.widget.SlidingPaneLayout.onPanelDragged((r4v0 'this' android.support.v4.widget.SlidingPaneLayout A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19[style=dashed];
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+}
+

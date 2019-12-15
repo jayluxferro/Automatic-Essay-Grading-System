@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.findLast([Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1552233950 {
+label = "R(3:0|(2:3|(1:8))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = kotlin.collections.CollectionsKt.reversed(kotlin.collections.ArraysKt.getIndices(r3)).iterator()\l}"];
+subgraph cluster_LoopRegion_1630458254 {
+label = "LOOP:0: (2:3|(1:8))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r0.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_1466601840 {
+label = "R(2:3|(1:8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|T r1 = r3[r1.intValue()]\l}"];
+subgraph cluster_IfRegion_835161173 {
+label = "IF [B:4:0x002a] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:4:0x002a\l|if (r4.invoke(r1).booleanValue() == true) goto L_0x002e\l}"];
+subgraph cluster_Region_100465136 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x002d|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lLOOP:0: B:1:0x000e\-\>B:4:0x002a\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final T kotlin.collections.ArraysKt___ArraysKt.findLast((r3v0 T[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[BUILD, kotlin.internal.InlineOnly, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>([TT;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;, Ljava\/lang\/Boolean;, \>;)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_1 -> Node_2;
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.findLast([JLkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/Long;" {
+subgraph cluster_Region_271520596 {
+label = "R(3:0|(2:3|(1:9))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = kotlin.collections.CollectionsKt.reversed(kotlin.collections.ArraysKt.getIndices(r4)).iterator()\l}"];
+subgraph cluster_LoopRegion_1775940811 {
+label = "LOOP:0: (2:3|(1:9))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r0.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_566138888 {
+label = "R(2:3|(1:9))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|long r1 = r4[r1.intValue()]\l}"];
+subgraph cluster_IfRegion_685266598 {
+label = "IF [B:4:0x002e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:4:0x002e\l|if (r5.invoke(java.lang.Long.valueOf(r1)).booleanValue() == true) goto L_0x0030\l}"];
+subgraph cluster_Region_1313871261 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Long.valueOf(r1)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0035|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lLOOP:0: B:1:0x000e\-\>B:4:0x002e\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0030}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0035|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0030|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final java.lang.Long kotlin.collections.ArraysKt___ArraysKt.findLast((r4v0 long[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super java.lang.Long, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[BUILD, kotlin.internal.InlineOnly, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([J, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Long;, Ljava\/lang\/Boolean;, \>;), Ljava\/lang\/Long;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_8;
+Node_1 -> Node_2;
+Node_5 -> Node_9;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+}
+

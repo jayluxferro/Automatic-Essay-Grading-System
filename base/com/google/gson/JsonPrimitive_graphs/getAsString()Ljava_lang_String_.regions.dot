@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.gson.JsonPrimitive.getAsString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1071179297 {
+label = "R(1:(2:(1:3)|(1:(2:(1:7)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_16290895 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1278981501 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isNumber() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1463090965 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return getAsNumber().toString()\l}"];
+}
+}
+subgraph cluster_Region_791015996 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1799049595 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2059043132 {
+label = "IF [B:5:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (isBoolean() == true) goto L_0x0015\l}"];
+subgraph cluster_Region_176555305 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return getAsBooleanWrapper().toString()\l}"];
+}
+}
+subgraph cluster_Region_179479127 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|RETURN\l|return (java.lang.String) r1.value\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001e}"];
+MethodNode[shape=record,label="{public java.lang.String com.google.gson.JsonPrimitive.getAsString((r1v0 'this' com.google.gson.JsonPrimitive A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

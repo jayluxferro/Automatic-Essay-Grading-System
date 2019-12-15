@@ -1,0 +1,117 @@
+digraph "CFG forcom.squareup.picasso.Picasso.1.handleMessage(Landroid\/os\/Message;)V" {
+subgraph cluster_Region_2044412756 {
+label = "R(2:0|(2:2|(2:11|(1:13))(1:(2:6|(1:8))(2:9|10)))(3:14|(1:16)|17))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r5.what\l}"];
+subgraph cluster_IfRegion_1555952979 {
+label = "IF [B:1:0x0003] THEN: R(2:2|(2:11|(1:13))(1:(2:6|(1:8))(2:9|10))) ELSE: R(3:14|(1:16)|17)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r0 != 3) goto L_0x0005\l}"];
+subgraph cluster_Region_676744862 {
+label = "R(2:2|(2:11|(1:13))(1:(2:6|(1:8))(2:9|10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|int r2 = 0\l}"];
+subgraph cluster_IfRegion_747644622 {
+label = "IF [B:3:0x0008] THEN: R(2:11|(1:13)) ELSE: R(1:(2:6|(1:8))(2:9|10))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r0 == 8) goto L_0x003f\l}"];
+subgraph cluster_Region_1669896126 {
+label = "R(2:11|(1:13))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|java.util.List java.util.List r5 = (java.util.List) r5.obj\lint int r0 = r5.size()\l}"];
+subgraph cluster_LoopRegion_1727503140 {
+label = "LOOP:1: (1:13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0047|LOOP_START\lPHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v4 int) binds: [B:11:0x003f, B:13:0x0049] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:12:0x0047\-\>B:13:0x0049\l|if (r2 \< r0) goto L_0x0049\l}"];
+subgraph cluster_Region_335637302 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0049|LOOP_END\lLOOP:1: B:12:0x0047\-\>B:13:0x0049\l|com.squareup.picasso.BitmapHunter com.squareup.picasso.BitmapHunter r1 = (com.squareup.picasso.BitmapHunter) r5.get(r2)\lr1.picasso.complete(r1)\lr2++\l}"];
+}
+}
+}
+subgraph cluster_Region_1950398149 {
+label = "R(1:(2:6|(1:8))(2:9|10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_454206140 {
+label = "IF [B:5:0x000c] THEN: R(2:6|(1:8)) ELSE: R(2:9|10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 == 13) goto L_0x000e\l}"];
+subgraph cluster_Region_11168679 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|java.util.List java.util.List r5 = (java.util.List) r5.obj\lint int r0 = r5.size()\l}"];
+subgraph cluster_LoopRegion_2085559258 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|LOOP_START\lPHI: r2 \l  PHI: (r2v6 int) = (r2v2 int), (r2v7 int) binds: [B:6:0x000e, B:8:0x0018] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0016\-\>B:8:0x0018\l|if (r2 \< r0) goto L_0x0018\l}"];
+subgraph cluster_Region_948660553 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|LOOP_END\lLOOP:0: B:7:0x0016\-\>B:8:0x0018\l|com.squareup.picasso.Action com.squareup.picasso.Action r1 = (com.squareup.picasso.Action) r5.get(r2)\lr1.picasso.resumeAction(r1)\lr2++\l}"];
+}
+}
+}
+subgraph cluster_Region_886908287 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026}"];
+Node_10 [shape=record,label="{10\:\ 0x003e|throw new java.lang.AssertionError(\"Unknown handler message received: \" + r5.what)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_955286377 {
+label = "R(3:14|(1:16)|17)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0057|com.squareup.picasso.Action com.squareup.picasso.Action r5 = (com.squareup.picasso.Action) r5.obj\l}"];
+subgraph cluster_IfRegion_190119497 {
+label = "IF [B:15:0x0061] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0061|if (r5.getPicasso().loggingEnabled == true) goto L_0x0063\l}"];
+subgraph cluster_Region_652156859 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0063|com.squareup.picasso.Utils.log(\"Main\", \"canceled\", r5.request.logId(), \"target got garbage collected\")\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0072|r5.picasso.cancelExistingRequest(r5.getTarget())\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x007b|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x007b|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.squareup.picasso.Picasso.1.handleMessage((r4v0 'this' com.squareup.picasso.Picasso$1 A[IMMUTABLE_TYPE, THIS]), (r5v0 android.os.Message A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_19[style=dashed];
+Node_13 -> Node_12;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_18[style=dashed];
+Node_8 -> Node_7;
+Node_9 -> Node_10;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_20;
+Node_4 -> Node_5;
+Node_18 -> Node_21;
+Node_19 -> Node_22;
+}
+

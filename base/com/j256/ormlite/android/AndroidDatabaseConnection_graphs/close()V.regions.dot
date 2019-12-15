@@ -1,0 +1,40 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidDatabaseConnection.close()V" {
+subgraph cluster_Region_1794508940 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_690179412 {
+label = "Try: R(1:1) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_664069415 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x000f \}\lSplitter:B:0:0x0000\l|r3.f183db.close()     \/\/ Catch:\{ SQLException \-\> 0x000f \}\llogger.trace(\"\{\}: db \{\} closed\", (java.lang.Object) r3, (java.lang.Object) r3.f183db)     \/\/ Catch:\{ SQLException \-\> 0x000f \}\l}"];
+}
+subgraph cluster_Region_1514038265 {
+label = "R(2:3|5) | ExcHandler: SQLException (r0v0 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ExcHandler: SQLException (r0v0 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|throw new java.io.IOException(\"problems closing the database connection\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1514038265 {
+label = "R(2:3|5) | ExcHandler: SQLException (r0v0 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ExcHandler: SQLException (r0v0 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|throw new java.io.IOException(\"problems closing the database connection\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+MethodNode[shape=record,label="{public void com.j256.ormlite.android.AndroidDatabaseConnection.close((r3v0 'this' com.j256.ormlite.android.AndroidDatabaseConnection A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ExtractorMediaPeriod.getExtractedSamplesCount()I" {
+subgraph cluster_Region_457372491 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\lint int r2 = r4.sampleQueues.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1846645941 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|LOOP_START\lPHI: r0 r1 \l  PHI: (r0v1 'extractedSamplesCount' int) = (r0v0 'extractedSamplesCount' int), (r0v2 'extractedSamplesCount' int) binds: [B:0:0x0000, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:0:0x0000, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:2:0x000a\l|if (r1 \< r2) goto L_0x000a\l}"];
+subgraph cluster_Region_863263625 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:2:0x000a\l|r0 += r4.sampleQueues.valueAt(r1).getWriteIndex()\lr1++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001a|RETURN\l|return r0\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.source.ExtractorMediaPeriod.getExtractedSamplesCount((r4v0 'this' com.google.android.exoplayer2.source.ExtractorMediaPeriod A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

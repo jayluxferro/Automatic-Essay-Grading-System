@@ -1,0 +1,103 @@
+digraph "CFG forcom.google.android.gms.common.util.IOUtils.copyStream(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;ZI)J" {
+subgraph cluster_Region_866577294 {
+label = "R(3:0|(1:(2:3|(2:(1:13)|(1:5))))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[r10]\llong r1 = 0\l}"];
+subgraph cluster_LoopRegion_464023177 {
+label = "LOOP:0: (1:(2:3|(2:(1:13)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_401862149 {
+label = "R(1:(2:3|(2:(1:13)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_2104530329 {
+label = "Try: R(2:3|(2:(1:13)|(1:5))) finally: R(3:9|(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1713597646 {
+label = "R(2:3|(2:(1:13)|(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ all \-\> 0x001b \}\lSplitter:B:2:0x0005\l|int int r4 = r7.read(r0, 0, r10)     \/\/ Catch:\{ all \-\> 0x001b \}\l}"];
+subgraph cluster_Region_1253568142 {
+label = "R(2:(1:13)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_380132756 {
+label = "IF [B:4:0x000a] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|Catch:\{ all \-\> 0x001b \}\l|if (r4 == \-1) goto L_0x0012     \/\/ Catch:\{ all \-\> 0x001b \}\l}"];
+subgraph cluster_Region_305339767 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0012|SYNTHETIC\lEDGE_INSN: B:13:0x0012\-\>B:6:0x0012 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_729079760 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|LOOP_END\lCatch:\{ all \-\> 0x001b \}\lLOOP:0: B:1:0x0004\-\>B:5:0x000c\l|r1 += (long) r4     \/\/ Catch:\{ all \-\> 0x001b \}\lr8.write(r0, 0, r4)     \/\/ Catch:\{ all \-\> 0x001b \}\l}"];
+}
+}
+}
+subgraph cluster_Region_448289522 {
+label = "R(3:9|(1:11)|12) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|ExcHandler:  FINALLY\lSplitter:B:2:0x0005\l}"];
+subgraph cluster_IfRegion_1671288929 {
+label = "IF [B:10:0x001c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|FINALLY_INSNS\l|if (r9 == true) goto L_0x001e\l}"];
+subgraph cluster_Region_380344578 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|FINALLY_INSNS\l|closeQuietly((java.io.Closeable) r7)\lcloseQuietly((java.io.Closeable) r8)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0024|throw r10\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x001a|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_448289522 {
+label = "R(3:9|(1:11)|12) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|ExcHandler:  FINALLY\lSplitter:B:2:0x0005\l}"];
+subgraph cluster_IfRegion_1671288929 {
+label = "IF [B:10:0x001c] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|FINALLY_INSNS\l|if (r9 == true) goto L_0x001e\l}"];
+subgraph cluster_Region_380344578 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|FINALLY_INSNS\l|closeQuietly((java.io.Closeable) r7)\lcloseQuietly((java.io.Closeable) r8)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0024|throw r10\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|LOOP_START\lPHI: r1 \l  PHI: (r1v1 long) = (r1v0 long), (r1v2 long) binds: [B:0:0x0000, B:5:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:5:0x000c\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005|SYNTHETIC\lSplitter:B:2:0x0005\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012|DONT_GENERATE\lEDGE_INSN: B:13:0x0012\-\>B:6:0x0012 ?: BREAK  \l|if (r9 != false) goto L_0x0014\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0014|DONT_GENERATE\l|closeQuietly((java.io.Closeable) r7)\lcloseQuietly((java.io.Closeable) r8)\l}"];
+MethodNode[shape=record,label="{public static long com.google.android.gms.common.util.IOUtils.copyStream((r7v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[RUNTIME, java.lang.Deprecated, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_13;
+Node_13 -> Node_6;
+Node_5 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+}
+

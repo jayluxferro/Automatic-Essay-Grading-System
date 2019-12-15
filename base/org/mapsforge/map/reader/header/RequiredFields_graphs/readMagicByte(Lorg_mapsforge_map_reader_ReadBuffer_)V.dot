@@ -1,0 +1,22 @@
+digraph "CFG fororg.mapsforge.map.reader.header.RequiredFields.readMagicByte(Lorg\/mapsforge\/map\/reader\/ReadBuffer;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = BINARY_OSM_MAGIC_BYTE.length()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r3.readFromFile(r0 + 4) == false) goto L_0x0032\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|java.lang.String r3 = r3.readUTF8EncodedString(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|if (BINARY_OSM_MAGIC_BYTE.equals(r3) == false) goto L_0x001b\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|RETURN\l|return\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"invalid magic byte: \")\lr1.append(r3)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0031|throw new org.mapsforge.map.reader.header.MapFileException(r1.toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032}"];
+Node_8 [shape=record,label="{8\:\ 0x0039|throw new org.mapsforge.map.reader.header.MapFileException(\"reading magic byte has failed\")\l}"];
+MethodNode[shape=record,label="{static void org.mapsforge.map.reader.header.RequiredFields.readMagicByte((r3v0 org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

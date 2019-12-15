@@ -1,0 +1,62 @@
+digraph "CFG fororg.mapsforge.map.rendertheme.rule.RuleOptimizer.optimizeValueMatcher(Lorg\/mapsforge\/map\/rendertheme\/rule\/AttributeMatcher;Ljava\/util\/Stack;)Lorg\/mapsforge\/map\/rendertheme\/rule\/AttributeMatcher;" {
+subgraph cluster_Region_834674159 {
+label = "R(3:0|(1:(2:(1:7)|(1:8)))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r4.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1876443696 {
+label = "LOOP:0: (1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:8:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0005\-\>B:8:0x0020\l|if (r1 \< r0) goto L_0x0007\l}"];
+subgraph cluster_Region_729564808 {
+label = "R(1:(2:(1:7)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_299475521 {
+label = "R(2:(1:7)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2139774206 {
+label = "IF [B:3:0x000d, B:5:0x001b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if ((r4.get(r1) instanceof org.mapsforge.map.rendertheme.rule.PositiveRule) != false) goto L_0x000f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|ADDED_TO_REGION\l|if (((org.mapsforge.map.rendertheme.rule.PositiveRule) r4.get(r1)).valueMatcher.isCoveredBy(r3) != false) goto L_0x001d\l}"];
+subgraph cluster_Region_1845427684 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|RETURN\l|return org.mapsforge.map.rendertheme.rule.AnyMatcher.INSTANCE\l}"];
+}
+}
+subgraph cluster_Region_1776037239 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|LOOP_END\lLOOP:0: B:1:0x0005\-\>B:8:0x0020\l|r1++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0023|RETURN\l|return r3\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0023|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001d|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0020|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static org.mapsforge.map.rendertheme.rule.AttributeMatcher org.mapsforge.map.rendertheme.rule.RuleOptimizer.optimizeValueMatcher((r3v0 org.mapsforge.map.rendertheme.rule.AttributeMatcher A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.util.Stack\<org.mapsforge.map.rendertheme.rule.Rule\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/mapsforge\/map\/rendertheme\/rule\/AttributeMatcher;, Ljava\/util\/Stack\<, Lorg\/mapsforge\/map\/rendertheme\/rule\/Rule;, \>;), Lorg\/mapsforge\/map\/rendertheme\/rule\/AttributeMatcher;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_11;
+Node_5 -> Node_13[style=dashed];
+Node_8 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_10 -> Node_9;
+Node_11 -> Node_6;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+}
+

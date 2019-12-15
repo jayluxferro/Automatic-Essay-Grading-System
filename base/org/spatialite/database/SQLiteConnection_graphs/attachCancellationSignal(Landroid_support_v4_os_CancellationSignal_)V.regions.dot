@@ -1,0 +1,46 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.attachCancellationSignal(Landroid\/support\/v4\/os\/CancellationSignal;)V" {
+subgraph cluster_Region_1645389470 {
+label = "R(1:(1:(2:1|(1:(1:3)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2107129802 {
+label = "R(1:(2:1|(1:(1:3))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1580555060 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(1:(1:3))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_331159622 {
+label = "R(2:1|(1:(1:3)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r5.throwIfCanceled()\lr4.mCancellationSignalAttachCount++\l}"];
+subgraph cluster_Region_1684830969 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1479966673 {
+label = "IF [B:2:0x000d] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|if (r4.mCancellationSignalAttachCount == 1) goto L_0x000f\l}"];
+subgraph cluster_Region_741237528 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|nativeResetCancel(r4.mConnectionPtr, true)\lr5.setOnCancelListener(r4)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.attachCancellationSignal((r4v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r5v0 android.support.v4.os.CancellationSignal A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+}
+

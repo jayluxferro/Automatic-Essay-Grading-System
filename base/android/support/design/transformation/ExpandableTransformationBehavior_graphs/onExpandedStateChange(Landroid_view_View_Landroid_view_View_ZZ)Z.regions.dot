@@ -1,0 +1,47 @@
+digraph "CFG forandroid.support.design.transformation.ExpandableTransformationBehavior.onExpandedStateChange(Landroid\/view\/View;Landroid\/view\/View;ZZ)Z" {
+subgraph cluster_Region_213932657 {
+label = "R(5:1|(1:5)|6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|boolean r0 = r3.currentAnimation != null\l}"];
+subgraph cluster_IfRegion_328174082 {
+label = "IF [B:4:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|PHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L_0x000a\l}"];
+subgraph cluster_Region_1047468139 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|r3.currentAnimation.cancel()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000f|r3.currentAnimation = onCreateExpandedStateChangeAnimation(r4, r5, r6, r0)\lr3.currentAnimation.addListener(new android.support.design.transformation.ExpandableTransformationBehavior.C00901())\lr3.currentAnimation.start()\l}"];
+subgraph cluster_IfRegion_1182139035 {
+label = "IF [B:7:0x0024] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|if (r7 == false) goto L_0x0026\l}"];
+subgraph cluster_Region_1406763461 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|r3.currentAnimation.end()\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002b|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+MethodNode[shape=record,label="{protected boolean android.support.design.transformation.ExpandableTransformationBehavior.onExpandedStateChange((r3v0 'this' android.support.design.transformation.ExpandableTransformationBehavior A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.CallSuper, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

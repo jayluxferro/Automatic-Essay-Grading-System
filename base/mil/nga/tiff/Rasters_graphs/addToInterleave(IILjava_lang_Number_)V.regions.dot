@@ -1,0 +1,29 @@
+digraph "CFG formil.nga.tiff.Rasters.addToInterleave(IILjava\/lang\/Number;)V" {
+subgraph cluster_Region_809283858 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r4 = r4 * sizePixel()\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_2031563129 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r0 r4 \l  PHI: (r0v2 int) = (r0v1 int), (r0v4 int) binds: [B:0:0x0000, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v2 int) = (r4v1 int), (r4v3 int) binds: [B:0:0x0000, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:2:0x0009\l|if (r0 \< r3) goto L_0x0009\l}"];
+subgraph cluster_Region_190163595 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:2:0x0009\l|r4 += r2.fieldTypes[r0].getBytes()\lr0++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0015|updateSampleInByteBuffer(r2.interleaveValues, r4, r3, r5)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void mil.nga.tiff.Rasters.addToInterleave((r2v0 'this' mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.Number A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

@@ -1,0 +1,22 @@
+digraph "CFG fororg.mapsforge.core.model.Tile.getBoundingBox()Lorg\/mapsforge\/core\/model\/BoundingBox;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r13.boundingBox != null) goto L_0x005e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|double r5 = java.lang.Math.max(\-85.05112877980659d, org.mapsforge.core.util.MercatorProjection.tileYToLatitude((long) (r13.tileY + 1), r13.zoomLevel))\ldouble r7 = java.lang.Math.max(\-180.0d, org.mapsforge.core.util.MercatorProjection.tileXToLongitude((long) r13.tileX, r13.zoomLevel))\ldouble r9 = java.lang.Math.min(85.05112877980659d, org.mapsforge.core.util.MercatorProjection.tileYToLatitude((long) r13.tileY, r13.zoomLevel))\lr11 = 180.0d\ldouble r0 = java.lang.Math.min(180.0d, org.mapsforge.core.util.MercatorProjection.tileXToLongitude((long) (r13.tileX + 1), r13.zoomLevel))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0052|if ((r0 \> \-180.0d ? 1 : (r0 == \-180.0d ? 0 : \-1)) != 0) goto L_0x0055\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0055|r11 = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0056|PHI: r11 \l  PHI: (r11v1 double) = (r11v0 double), (r11v2 double) binds: [B:3:0x0052, B:4:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|r13.boundingBox = new org.mapsforge.core.model.BoundingBox(r5, r7, r9, r11)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005e}"];
+Node_7 [shape=record,label="{7\:\ 0x0060|RETURN\l|return r13.boundingBox\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.BoundingBox org.mapsforge.core.model.Tile.getBoundingBox((r13v0 'this' org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

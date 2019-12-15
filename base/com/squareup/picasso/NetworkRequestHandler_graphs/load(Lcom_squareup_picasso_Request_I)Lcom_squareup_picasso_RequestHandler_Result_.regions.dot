@@ -1,0 +1,94 @@
+digraph "CFG forcom.squareup.picasso.NetworkRequestHandler.load(Lcom\/squareup\/picasso\/Request;I)Lcom\/squareup\/picasso\/RequestHandler$Result;" {
+subgraph cluster_Region_127523820 {
+label = "R(2:0|(2:(2:3|(2:(2:10|11)|(2:(1:16)|18)))|(2:19|20)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.Response okhttp3.Response r7 = r5.downloader.load(createRequest(r6, r7))\lokhttp3.ResponseBody okhttp3.ResponseBody r0 = r7.body()\l}"];
+subgraph cluster_Region_1218357214 {
+label = "R(2:(2:3|(2:(2:10|11)|(2:(1:16)|18)))|(2:19|20))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1500133412 {
+label = "IF [B:1:0x0012] THEN: R(2:3|(2:(2:10|11)|(2:(1:16)|18))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r7.isSuccessful() == true) goto L_0x0014\l}"];
+subgraph cluster_Region_1848918402 {
+label = "R(2:3|(2:(2:10|11)|(2:(1:16)|18)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|com.squareup.picasso.Picasso.LoadedFrom r6 = r7.cacheResponse() == null ? com.squareup.picasso.Picasso.LoadedFrom.NETWORK : com.squareup.picasso.Picasso.LoadedFrom.DISK\l}"];
+subgraph cluster_Region_651624793 {
+label = "R(2:(2:10|11)|(2:(1:16)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1957574784 {
+label = "IF [B:7:0x0023, B:9:0x002b] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|if (r6 == com.squareup.picasso.Picasso.LoadedFrom.DISK) goto L_0x0025\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002b|ADDED_TO_REGION\l|if (r0.contentLength() == 0) goto L_0x002e\l}"];
+subgraph cluster_Region_2089649449 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002e|r0.close()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0038|throw new com.squareup.picasso.NetworkRequestHandler.ContentLengthException(\"Received response with 0 content\-length header.\")\l}"];
+}
+}
+subgraph cluster_Region_102223642 {
+label = "R(2:(1:16)|18)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_821687147 {
+label = "IF [B:13:0x003b, B:15:0x0043] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003b|ADDED_TO_REGION\l|if (r6 == com.squareup.picasso.Picasso.LoadedFrom.NETWORK) goto L_0x003d\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0043|ADDED_TO_REGION\l|if (r0.contentLength() \> 0) goto L_0x0045\l}"];
+subgraph cluster_Region_58232269 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0045|r5.stats.dispatchDownloadFinished(r0.contentLength())\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0057|RETURN\l|return new com.squareup.picasso.RequestHandler.Result((okio.Source) r0.source(), r6)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1034011235 {
+label = "R(2:19|20)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0058|r0.close()\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0066|throw new com.squareup.picasso.NetworkRequestHandler.ResponseException(r7.code(), r6.networkPolicy)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f|PHI: r6 \l  PHI: (r6v3 com.squareup.picasso.Picasso$LoadedFrom) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0039}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003d}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004e}"];
+MethodNode[shape=record,label="{public com.squareup.picasso.RequestHandler$Result com.squareup.picasso.NetworkRequestHandler.load((r5v0 'this' com.squareup.picasso.NetworkRequestHandler A[IMMUTABLE_TYPE, THIS]), (r6v0 com.squareup.picasso.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_19[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_17 -> Node_18;
+}
+

@@ -1,0 +1,267 @@
+digraph "CFG forcom.google.android.exoplayer2.metadata.id3.Id3Decoder.decodeHeader(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/Id3Decoder$Id3Header;" {
+subgraph cluster_Region_1658375004 {
+label = "R(2:0|(2:(2:2|41)|(2:3|(2:(2:5|42)|(4:6|(2:(1:10)(1:13)|(2:12|43))(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))|(1:40)|44))))) | DECL_VAR: boolean hasExtendedHeader, boolean hasFooter, boolean hasExtendedHeader, boolean isCompressed\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r7 = true\l}"];
+subgraph cluster_Region_1696228724 {
+label = "R(2:(2:2|41)|(2:3|(2:(2:5|42)|(4:6|(2:(1:10)(1:13)|(2:12|43))(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))|(1:40)|44))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_74366725 {
+label = "IF [B:1:0x000a] THEN: R(2:2|41) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r14.bytesLeft() \< 10) goto L_0x000c\l}"];
+subgraph cluster_Region_1819936914 {
+label = "R(2:2|41)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|android.util.Log.w(TAG, \"Data too short to be an ID3 tag\")\l}"];
+Node_41 [shape=record,label="{41\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_394394301 {
+label = "R(2:3|(2:(2:5|42)|(4:6|(2:(1:10)(1:13)|(2:12|43))(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))|(1:40)|44)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|int int r5 = r14.readUnsignedInt24()\l}"];
+subgraph cluster_Region_1474117943 {
+label = "R(2:(2:5|42)|(4:6|(2:(1:10)(1:13)|(2:12|43))(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))|(1:40)|44))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_866599226 {
+label = "IF [B:4:0x001b] THEN: R(2:5|42) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|if (r5 != ID3_TAG) goto L_0x001d\l}"];
+subgraph cluster_Region_1317593607 {
+label = "R(2:5|42)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|android.util.Log.w(TAG, \"Unexpected first three bytes of ID3 tag header: \" + r5)\l}"];
+Node_42 [shape=record,label="{42\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_41086051 {
+label = "R(4:6|(2:(1:10)(1:13)|(2:12|43))(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))|(1:40)|44)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|int int r8 = r14.readUnsignedByte()\lr14.skipBytes(1)\lint int r1 = r14.readUnsignedByte()\lint int r2 = r14.readSynchSafeInt()\l}"];
+subgraph cluster_IfRegion_1527520833 {
+label = "IF [B:7:0x0047] THEN: R(2:(1:10)(1:13)|(2:12|43)) ELSE: R(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0047|if (r8 == 2) goto L_0x0049\l}"];
+subgraph cluster_Region_1633337213 {
+label = "R(2:(1:10)(1:13)|(2:12|43))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_959362886 {
+label = "IF [B:9:0x004b] THEN: R(1:10) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004b|if ((r1 & 64) != 0) goto L_0x004d\l}"];
+subgraph cluster_Region_2122093439 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004d|r6 = true\l}"];
+}
+subgraph cluster_Region_886577456 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0059|r6 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_272474820 {
+label = "IF [B:11:0x004e] THEN: R(2:12|43) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004e|PHI: r6 \l  PHI: (r6v1 'isCompressed' boolean) = (r6v0 'isCompressed' boolean), (r6v2 'isCompressed' boolean) binds: [B:13:0x0059, B:10:0x004d] A[DONT_GENERATE, DONT_INLINE]\l|if (r6 == true) goto L_0x0050\l}"];
+subgraph cluster_Region_742328009 {
+label = "R(2:12|43)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0050|android.util.Log.w(TAG, \"Skipped ID3 tag with majorVersion=2 and undefined compression scheme\")\l}"];
+Node_43 [shape=record,label="{43\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_290860672 {
+label = "R(1:(2:(1:18)(1:25)|(1:20))(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1136677775 {
+label = "IF [B:15:0x005c] THEN: R(2:(1:18)(1:25)|(1:20)) ELSE: R(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x005c|if (r8 == 3) goto L_0x005e\l}"];
+subgraph cluster_Region_633588352 {
+label = "R(2:(1:18)(1:25)|(1:20))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1209725355 {
+label = "IF [B:17:0x0060] THEN: R(1:18) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0060|if ((r1 & 64) != 0) goto L_0x0062\l}"];
+subgraph cluster_Region_1226029601 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0062|r3 = true\l}"];
+}
+subgraph cluster_Region_558862659 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x007b|r3 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_1477801854 {
+label = "IF [B:19:0x0063] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0063|PHI: r3 \l  PHI: (r3v4 'hasExtendedHeader' boolean) = (r3v3 'hasExtendedHeader' boolean), (r3v5 'hasExtendedHeader' boolean) binds: [B:25:0x007b, B:18:0x0062] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == true) goto L_0x0065\l}"];
+subgraph cluster_Region_813484251 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0065|int int r0 = r14.readInt()\lr14.skipBytes(r0)\lr2 \-= r0 + 4\l}"];
+}
+}
+}
+subgraph cluster_Region_214449147 {
+label = "R(1:(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))(2:39|45)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1248293980 {
+label = "IF [B:26:0x007d] THEN: R(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36)) ELSE: R(2:39|45) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x007d|if (r8 == 4) goto L_0x007f\l}"];
+subgraph cluster_Region_751445708 {
+label = "R(4:(1:29)(1:37)|(1:31)|(1:34)(1:38)|(1:36))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_987805474 {
+label = "IF [B:28:0x0081] THEN: R(1:29) ELSE: R(1:37)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0081|if ((r1 & 64) != 0) goto L_0x0083\l}"];
+subgraph cluster_Region_1022004160 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0083|r3 = true\l}"];
+}
+subgraph cluster_Region_1017454618 {
+label = "R(1:37)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x009a|r3 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_400977439 {
+label = "IF [B:30:0x0084] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0084|PHI: r3 \l  PHI: (r3v1 'hasExtendedHeader' boolean) = (r3v0 'hasExtendedHeader' boolean), (r3v2 'hasExtendedHeader' boolean) binds: [B:37:0x009a, B:29:0x0083] A[DONT_GENERATE, DONT_INLINE]\l|if (r3 == true) goto L_0x0086\l}"];
+subgraph cluster_Region_261765037 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0086|int int r0 = r14.readSynchSafeInt()\lr14.skipBytes(r0 \- 4)\lr2 \-= r0\l}"];
+}
+}
+subgraph cluster_IfRegion_1556743141 {
+label = "IF [B:33:0x0092] THEN: R(1:34) ELSE: R(1:38)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0092|if ((r1 & 16) != 0) goto L_0x0094\l}"];
+subgraph cluster_Region_880788006 {
+label = "R(1:34)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0094|r4 = true\l}"];
+}
+subgraph cluster_Region_1645470895 {
+label = "R(1:38)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x009c|r4 = false\l}"];
+}
+}
+subgraph cluster_IfRegion_1689994522 {
+label = "IF [B:35:0x0095] THEN: R(1:36) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0095|PHI: r4 \l  PHI: (r4v1 'hasFooter' boolean) = (r4v0 'hasFooter' boolean), (r4v2 'hasFooter' boolean) binds: [B:38:0x009c, B:34:0x0094] A[DONT_GENERATE, DONT_INLINE]\l|if (r4 == true) goto L_0x0097\l}"];
+subgraph cluster_Region_278010813 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0097|r2 \-= 10\l}"];
+}
+}
+}
+subgraph cluster_Region_1131818957 {
+label = "R(2:39|45)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x009e|android.util.Log.w(TAG, \"Skipped ID3 tag with unsupported majorVersion=\" + r8)\l}"];
+Node_45 [shape=record,label="{45\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_2025050100 {
+label = "IF [B:21:0x006f, B:23:0x0073] THEN: R(1:40) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006f|ADDED_TO_REGION\lPHI: r2 \l  PHI: (r2v1 'framesSize' int) = (r2v2 'framesSize' int), (r2v3 'framesSize' int), (r2v0 'framesSize' int), (r2v5 'framesSize' int), (r2v0 'framesSize' int) binds: [B:35:0x0095, B:36:0x0097, B:19:0x0063, B:20:0x0065, B:11:0x004e] A[DONT_GENERATE, DONT_INLINE]\l|if (r8 \>= 4) goto L_0x00b9\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0073|ADDED_TO_REGION\l|if ((r1 & 128) == 0) goto L_0x00b9\l}"];
+subgraph cluster_Region_569083710 {
+label = "R(1:40)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x00b9|r7 = false\l}"];
+}
+}
+Node_44 [shape=record,label="{44\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.metadata.id3.Id3Decoder.Id3Header(r8, r7, r2)\l}"];
+}
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0049}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x005b}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x005e}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0071}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0075|PHI: r7 \l  PHI: (r7v2 'isUnsynchronized' boolean) = (r7v1 'isUnsynchronized' boolean), (r7v0 'isUnsynchronized' boolean) binds: [B:40:0x00b9, B:23:0x0073] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x007f}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0090|PHI: r2 \l  PHI: (r2v2 'framesSize' int) = (r2v0 'framesSize' int), (r2v4 'framesSize' int) binds: [B:30:0x0084, B:31:0x0086] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.Id3Decoder$Id3Header com.google.android.exoplayer2.metadata.id3.Id3Decoder.decodeHeader((r14v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_41;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_42;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_21[style=dashed];
+Node_12 -> Node_43;
+Node_15 -> Node_16;
+Node_15 -> Node_26[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_25[style=dashed];
+Node_18 -> Node_19;
+Node_25 -> Node_19;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_26 -> Node_27;
+Node_26 -> Node_39[style=dashed];
+Node_28 -> Node_29;
+Node_28 -> Node_37[style=dashed];
+Node_29 -> Node_30;
+Node_37 -> Node_30;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_32;
+Node_33 -> Node_34;
+Node_33 -> Node_38[style=dashed];
+Node_34 -> Node_35;
+Node_38 -> Node_35;
+Node_35 -> Node_21[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_21;
+Node_39 -> Node_45;
+Node_21 -> Node_22[style=dashed];
+Node_21 -> Node_40;
+Node_23 -> Node_24[style=dashed];
+Node_23 -> Node_40;
+Node_40 -> Node_24;
+Node_8 -> Node_9;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_22 -> Node_23;
+Node_24 -> Node_44;
+Node_27 -> Node_28;
+Node_32 -> Node_33;
+}
+

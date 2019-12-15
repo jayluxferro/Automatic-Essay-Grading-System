@@ -1,0 +1,88 @@
+digraph "CFG forandroid.support.v4.os.CancellationSignal.setOnCancelListener(Landroid\/support\/v4\/os\/CancellationSignal$OnCancelListener;)V" {
+subgraph cluster_Region_1656571489 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_354607101 {
+label = "Synchronized:R(2:0|(2:2|(1:(2:6|(1:(1:(1:11)))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_2112473576 {
+label = "R(2:2|(1:(2:6|(1:(1:(1:11))))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|waitForCancelFinishedLocked()\l}"];
+subgraph cluster_Region_299726867 {
+label = "R(1:(2:6|(1:(1:(1:11)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_433826311 {
+label = "IF [B:3:0x0006] THEN: R(2:6|(1:(1:(1:11)))) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r1.mOnCancelListener != r2) goto L_0x000a\l}"];
+subgraph cluster_Region_436552694 {
+label = "R(2:6|(1:(1:(1:11))))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|r1.mOnCancelListener = r2\l}"];
+subgraph cluster_IfRegion_697331671 {
+label = "IF [B:7:0x000e] THEN: R(1:(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|if (r1.mIsCanceled == true) goto L_0x0010\l}"];
+subgraph cluster_Region_1408734998 {
+label = "R(1:(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_397968637 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_663912207 {
+label = "IF [B:8:0x0010] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0010|if (r2 != null) goto L_0x0013\l}"];
+subgraph cluster_Region_232149757 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0014|r2.onCancel()\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0008: MONITOR_EXIT  \l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0012}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0013|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0013: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0017}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0018|SYNTHETIC\lSplitter:B:13:0x0018\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|DONT_GENERATE\lSplitter:B:13:0x0018\l|monitor\-exit(\l\/\/ error: 0x0018: MONITOR_EXIT  \l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0019}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001a|REMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001b|REMOVE\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x001c|REMOVE\l|throw r2\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.os.CancellationSignal.setOnCancelListener((r1v0 'this' android.support.v4.os.CancellationSignal A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.v4.os.CancellationSignal$OnCancelListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_11 -> Node_12;
+Node_1 -> Node_2;
+Node_1 -> Node_16;
+Node_4 -> Node_5;
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_13 -> Node_16;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+}
+

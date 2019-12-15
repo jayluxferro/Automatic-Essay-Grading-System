@@ -1,0 +1,66 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.writeSerializable(Ljava\/io\/Serializable;)V" {
+subgraph cluster_Region_490034800 {
+label = "R(1:(2:(2:1|2)|(2:3|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_538196506 {
+label = "R(2:(2:1|2)|(2:3|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_120825901 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_116473804 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|writeString((java.lang.String) null)\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1281688434 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.lang.String java.lang.String r0 = r5.getClass().getName()\lwriteString(r0)\ljava.io.ByteArrayOutputStream java.io.ByteArrayOutputStream r1 = new java.io.ByteArrayOutputStream()\l}"];
+subgraph cluster_TryCatchRegion_834695092 {
+label = "Try: R(1:5) catches: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_498849484 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ IOException \-\> 0x002a \}\lSplitter:B:4:0x0017\l|java.io.ObjectOutputStream java.io.ObjectOutputStream r2 = new java.io.ObjectOutputStream(r1)     \/\/ Catch:\{ IOException \-\> 0x002a \}\lr2.writeObject(r5)     \/\/ Catch:\{ IOException \-\> 0x002a \}\lr2.close()     \/\/ Catch:\{ IOException \-\> 0x002a \}\lwriteByteArray(r1.toByteArray())     \/\/ Catch:\{ IOException \-\> 0x002a \}\l}"];
+}
+subgraph cluster_Region_1707010837 {
+label = "R(3:7|8|9) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0017\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b}"];
+Node_9 [shape=record,label="{9\:\ 0x0046|throw new java.lang.RuntimeException(\"VersionedParcelable encountered IOException writing serializable object (name = \" + r0 + \")\", r5)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1707010837 {
+label = "R(3:7|8|9) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0017\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b}"];
+Node_9 [shape=record,label="{9\:\ 0x0046|throw new java.lang.RuntimeException(\"VersionedParcelable encountered IOException writing serializable object (name = \" + r0 + \")\", r5)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0017|SYNTHETIC\lSplitter:B:4:0x0017\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0029}"];
+MethodNode[shape=record,label="{private void androidx.versionedparcelable.VersionedParcel.writeSerializable((r4v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r5v0 java.io.Serializable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+}
+

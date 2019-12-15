@@ -1,0 +1,81 @@
+digraph "CFG forcom.facebook.ads.internal.r.d.a(Landroid\/graphics\/Rect;Landroid\/graphics\/Rect;)Ljava\/util\/Set;" {
+subgraph cluster_Region_1256996748 {
+label = "R(2:0|(2:(2:2|17)|(3:3|(2:6|(1:10))|18)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashSet java.util.HashSet\<android.graphics.Rect\> r0 = new java.util.HashSet\<\>()\l}"];
+subgraph cluster_Region_118022888 {
+label = "R(2:(2:2|17)|(3:3|(2:6|(1:10))|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1241153102 {
+label = "IF [B:1:0x0009] THEN: R(2:2|17) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r7.intersect(r6) == false) goto L_0x000b\l}"];
+subgraph cluster_Region_140507526 {
+label = "R(2:2|17)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|r0.add(r6)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1164561562 {
+label = "R(3:3|(2:6|(1:10))|18)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|r0.add(new android.graphics.Rect(r6.left, r6.top, r7.left, r6.bottom))\lr0.add(new android.graphics.Rect(r7.left, r6.top, r7.right, r7.top))\lr0.add(new android.graphics.Rect(r7.right, r6.top, r6.right, r6.bottom))\lr0.add(new android.graphics.Rect(r7.left, r7.bottom, r7.right, r6.bottom))\ljava.util.HashSet java.util.HashSet r1 = new java.util.HashSet()\ljava.util.Iterator r2 = r0.iterator()\l}"];
+subgraph cluster_LoopRegion_1547704754 {
+label = "LOOP:0: (2:6|(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x005c|if (r2.hasNext() != false) goto L_0x005e\l}"];
+subgraph cluster_Region_375119894 {
+label = "R(2:6|(1:10))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x005e|android.graphics.Rect r0 = (android.graphics.Rect) r2.next()\l}"];
+subgraph cluster_IfRegion_1451515799 {
+label = "IF [B:7:0x0068, B:9:0x006e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0068|ADDED_TO_REGION\l|if (r0.width() \> 0) goto L_0x006a\l}"];
+Node_9 [shape=record,label="{9\:\ 0x006e|ADDED_TO_REGION\l|if (r0.height() \> 0) goto L_0x0070\l}"];
+subgraph cluster_Region_194959005 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0070|r1.add(r0)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return r1\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0058|LOOP_START\lLOOP:0: B:4:0x0058\-\>B:12:0x0058\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x006a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0074}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0058|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x0058\-\>B:12:0x0058\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0074|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0058|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0058|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0058|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static java.util.Set\<android.graphics.Rect\> com.facebook.ads.internal.r.d.a((r6v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/graphics\/Rect;, Landroid\/graphics\/Rect;, ), Ljava\/util\/Set, \<, Landroid\/graphics\/Rect;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_16;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_11 -> Node_18;
+Node_12 -> Node_4;
+Node_13 -> Node_11;
+Node_14 -> Node_12;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+}
+

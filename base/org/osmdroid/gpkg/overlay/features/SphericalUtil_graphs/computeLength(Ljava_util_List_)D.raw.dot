@@ -1,0 +1,23 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.SphericalUtil.computeLength(Ljava\/util\/List;)D" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r15 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0004: CONST  (r1 I:?[long, double]) = (0 ?[long, double]) \l0x0006: CONST  (r3 I:?[int, float, short, byte, char]) = (2 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IF  (r0 I:?[int, byte, short, char]) \>= (r3 I:?[int, byte, short, char])  \-\> B:3:0x000a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|0x0009: RETURN  (r1 I:double) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000b: INVOKE  (r0 I:java.lang.Object) = (r15 I:java.util.List), (r0 I:int) java.util.List.get(int):java.lang.Object type: INTERFACE \l0x000f: CHECK_CAST  (r0 I:org.osmdroid.api.IGeoPoint) = (org.osmdroid.api.IGeoPoint) (r0 I:?[OBJECT, ARRAY]) \l0x0011: INVOKE  (r3 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLatitude():double type: INTERFACE \l0x0015: INVOKE  (r3 I:double) = (r3 I:double) java.lang.Math.toRadians(double):double type: STATIC \l0x0019: INVOKE  (r5 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLongitude():double type: INTERFACE \l0x001d: INVOKE  (r5 I:double) = (r5 I:double) java.lang.Math.toRadians(double):double type: STATIC \l0x0021: INVOKE  (r15 I:java.util.Iterator) = (r15 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0025|0x0025: INVOKE  (r0 I:boolean) = (r15 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|0x0029: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x004b \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|0x002b: INVOKE  (r0 I:java.lang.Object) = (r15 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x002f: CHECK_CAST  (r0 I:org.osmdroid.api.IGeoPoint) = (org.osmdroid.api.IGeoPoint) (r0 I:?[OBJECT, ARRAY]) \l0x0031: INVOKE  (r7 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLatitude():double type: INTERFACE \l0x0035: INVOKE  (r11 I:double) = (r7 I:double) java.lang.Math.toRadians(double):double type: STATIC \l0x0039: INVOKE  (r7 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLongitude():double type: INTERFACE \l0x003d: INVOKE  (r13 I:double) = (r7 I:double) java.lang.Math.toRadians(double):double type: STATIC \l0x0041: MOVE  (r7 I:?[long, double]) = (r11 I:?[long, double]) \l0x0042: MOVE  (r9 I:?[long, double]) = (r13 I:?[long, double]) \l0x0043: INVOKE  (r3 I:double) = (r3 I:double), (r5 I:double), (r7 I:double), (r9 I:double) org.osmdroid.gpkg.overlay.features.SphericalUtil.distanceRadians(double, double, double, double):double type: STATIC \l0x0047: ARITH  (r1 I:double) = (r1 I:double) + (r3 I:double) \l0x0048: MOVE  (r3 I:?[long, double]) = (r11 I:?[long, double]) \l0x0049: MOVE  (r5 I:?[long, double]) = (r13 I:?[long, double]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x004b|0x004b: CONST  (r3 I:?[long, double]) = \l  (4708598829799178240(0x41584db040000000, double:6371009.0) ?[long, double])\l \l0x0050: ARITH  (r1 I:double) = (r1 I:double) * (r3 I:double) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0052|0x0052: RETURN  (r1 I:double) \l}"];
+MethodNode[shape=record,label="{public static double org.osmdroid.gpkg.overlay.features.SphericalUtil.computeLength((r15 I:java.util.List\<org.osmdroid.api.IGeoPoint\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lorg\/osmdroid\/api\/IGeoPoint;, \>;)D]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+}
+

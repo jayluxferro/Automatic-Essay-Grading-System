@@ -1,0 +1,30 @@
+digraph "CFG forokhttp3.RequestBody.3.writeTo(Lokio\/BufferedSink;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0001\l|0x0001: IGET  (r1 I:java.io.File) = (r2 I:okhttp3.RequestBody$3) okhttp3.RequestBody.3.val$file java.io.File A[Catch:\{ all \-\> 0x0011 \}, TRY_ENTER]\l0x0003: INVOKE  (r1 I:okio.Source) = (r1 I:java.io.File) okio.Okio.source(java.io.File):okio.Source type: STATIC A[Catch:\{ all \-\> 0x0011 \}]\l0x0006: NOP   A[TRY_LEAVE]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|SYNTHETIC\lSplitter:B:3:0x0007\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Splitter:B:3:0x0007\l|0x0007: INVOKE  (r3 I:okio.BufferedSink), (r1 I:okio.Source) okio.BufferedSink.writeAll(okio.Source):long type: INTERFACE A[Catch:\{ all \-\> 0x000e \}, TRY_ENTER, TRY_LEAVE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|0x000a: INVOKE  (r1 I:java.io.Closeable) okhttp3.internal.Util.closeQuietly(java.io.Closeable):void type: STATIC \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|0x000d: RETURN   \l}"];
+Node_7 [shape=record,label="{7\:\ 0x000e|ExcHandler: all null\lSplitter:B:3:0x0007\l|0x000e: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+Node_8 [shape=record,label="{8\:\ 0x000f|0x000f: MOVE  (r0 I:?[OBJECT, ARRAY]) = (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0011|ExcHandler: all null\lSplitter:B:1:0x0001\l|0x0011: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0012|0x0012: INVOKE  (r0 I:java.io.Closeable) okhttp3.internal.Util.closeQuietly(java.io.Closeable):void type: STATIC \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0015|0x0015: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okhttp3.RequestBody.3.writeTo((r2 'this' I:okhttp3.RequestBody$3 A[IMMUTABLE_TYPE, THIS]), (r3 I:okio.BufferedSink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.readDoubleArray()[D" {
+subgraph cluster_Region_1262647861 {
+label = "R(2:0|(2:(1:2)|(3:3|(1:5)|6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = readInt()\l}"];
+subgraph cluster_Region_886470552 {
+label = "R(2:(1:2)|(3:3|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1362145581 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \< 0) goto L_0x0006\l}"];
+subgraph cluster_Region_719980546 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1934775142 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|double[] double[] r1 = new double[r0]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_427695981 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:3:0x0008, B:5:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000b\-\>B:5:0x000d\l|if (r2 \< r0) goto L_0x000d\l}"];
+subgraph cluster_Region_1102405029 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|LOOP_END\lLOOP:0: B:4:0x000b\-\>B:5:0x000d\l|r1[r2] = readDouble()\lr2++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0016|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected double[] androidx.versionedparcelable.VersionedParcel.readDoubleArray((r5v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_4;
+Node_7 -> Node_6;
+}
+

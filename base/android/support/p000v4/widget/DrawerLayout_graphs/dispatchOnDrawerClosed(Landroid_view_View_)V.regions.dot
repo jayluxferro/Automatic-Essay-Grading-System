@@ -1,0 +1,84 @@
+digraph "CFG forandroid.support.v4.widget.DrawerLayout.dispatchOnDrawerClosed(Landroid\/view\/View;)V" {
+subgraph cluster_Region_710208305 {
+label = "R(2:0|(1:(4:2|(2:4|(1:6))|7|(1:(1:11))))) | DECL_VAR: android.view.View null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.v4.widget.DrawerLayout$LayoutParams android.support.p000v4.widget.DrawerLayout.LayoutParams r0 = (android.support.p000v4.widget.DrawerLayout.LayoutParams) r4.getLayoutParams()\l}"];
+subgraph cluster_Region_269113666 {
+label = "R(1:(4:2|(2:4|(1:6))|7|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_920786870 {
+label = "IF [B:1:0x000a] THEN: R(4:2|(2:4|(1:6))|7|(1:(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if ((r0.openState & 1) == 1) goto L_0x000c\l}"];
+subgraph cluster_Region_1576760438 {
+label = "R(4:2|(2:4|(1:6))|7|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|r0.openState = 0\l}"];
+subgraph cluster_IfRegion_905261398 {
+label = "IF [B:3:0x0011] THEN: R(2:4|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|if (r3.mListeners != null) goto L_0x0013\l}"];
+subgraph cluster_Region_553294227 {
+label = "R(2:4|(1:6))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|int int r0 = r3.mListeners.size() \- 1\l}"];
+subgraph cluster_LoopRegion_771417054 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|LOOP_START\lPHI: r0 \l  PHI: (r0v7 int) = (r0v6 int), (r0v8 int) binds: [B:4:0x0013, B:6:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x001a\-\>B:6:0x001c\l|if (r0 \>= 0) goto L_0x001c\l}"];
+subgraph cluster_Region_184749680 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|LOOP_END\lLOOP:0: B:5:0x001a\-\>B:6:0x001c\l|r3.mListeners.get(r0).onDrawerClosed(r4)\lr0\-\-\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002a|updateChildrenImportantForAccessibility(r4, false)\l}"];
+subgraph cluster_Region_1272524816 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_705973280 {
+label = "IF [B:8:0x0031, B:10:0x0037] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|if (hasWindowFocus() != false) goto L_0x0033\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0037|ADDED_TO_REGION\l|if ((r4 = getRootView()) != null) goto L_0x0039\l}"];
+subgraph cluster_Region_1746325609 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0039|r4.sendAccessibilityEvent(32)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x0033}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.widget.DrawerLayout.dispatchOnDrawerClosed((r3v0 'this' android.support.v4.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_11 -> Node_13;
+Node_9 -> Node_10;
+Node_12 -> Node_7;
+}
+

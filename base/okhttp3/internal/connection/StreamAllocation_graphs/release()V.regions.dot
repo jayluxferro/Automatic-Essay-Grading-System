@@ -1,0 +1,77 @@
+digraph "CFG forokhttp3.internal.connection.StreamAllocation.release()V" {
+subgraph cluster_Region_2111245152 {
+label = "R(4:0|2|7|(1:(1:9))) | DECL_VAR: okhttp3.internal.connection.RealConnection null, java.net.Socket null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_737875501 {
+label = "Synchronized:R(2:1|(2:3|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_2079296703 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|okhttp3.internal.connection.RealConnection r1 = r4.connection\ljava.net.Socket r2 = deallocate(false, true, false)\l}"];
+subgraph cluster_IfRegion_372911962 {
+label = "IF [B:4:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|if (r4.connection != null) goto L_0x000f\l}"];
+subgraph cluster_Region_1738147 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|r1 = null\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0011|okhttp3.internal.Util.closeQuietly(r2)\l}"];
+subgraph cluster_Region_2095041081 {
+label = "R(1:(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1396112984 {
+label = "IF [B:8:0x0014] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|if (r1 != null) goto L_0x0016\l}"];
+subgraph cluster_Region_2061171440 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|r4.eventListener.connectionReleased(r4.call, r1)\lr4.eventListener.callEnd(r4.call)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010|DONT_GENERATE\lPHI: r1 \l  PHI: (r1v2 okhttp3.internal.connection.RealConnection) = (r1v1 okhttp3.internal.connection.RealConnection), (r1v4 okhttp3.internal.connection.RealConnection) binds: [B:4:0x000d, B:5:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x0010: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0025|LOOP_START\lREMOVE\lLOOP:0: B:10:0x0025\-\>B:14:0x0025\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0026|SYNTHETIC\lREMOVE\lSplitter:B:11:0x0026\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|REMOVE\lSplitter:B:11:0x0026\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0027|REMOVE\l|throw r1\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0025|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:10:0x0025\-\>B:14:0x0025\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0027|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0025|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.connection.StreamAllocation.release((r4v0 'this' okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_18[style=dashed];
+Node_9 -> Node_17;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_12 -> Node_15;
+Node_12 -> Node_16;
+Node_14 -> Node_10;
+Node_15 -> Node_13;
+Node_16 -> Node_14;
+}
+

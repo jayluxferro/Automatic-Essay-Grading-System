@@ -1,0 +1,56 @@
+digraph "CFG forcom.caverock.androidsvg.SVGAndroidRenderer.MarkerVector.add(FF)V" {
+subgraph cluster_Region_406782389 {
+label = "R(3:0|(1:2)|(2:(2:7|10)|(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r5 = r5 \- r4.f138x\lfloat float r6 = r6 \- r4.f139y\ldouble double r0 = java.lang.Math.sqrt((double) ((r5 * r5) + (r6 * r6)))\l}"];
+subgraph cluster_IfRegion_1536341234 {
+label = "IF [B:1:0x0014] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|if (r0 != 0.0d) goto L_0x0016\l}"];
+subgraph cluster_Region_142336962 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|float r5 = (float) (((double) r5) \/ r0)\lfloat r6 = (float) (((double) r6) \/ r0)\l}"];
+}
+}
+subgraph cluster_Region_1258531989 {
+label = "R(2:(2:7|10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1232487152 {
+label = "IF [B:4:0x0021, B:6:0x0028] THEN: R(2:7|10) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (r5 == (\-r4.f136dx)) goto L_0x0023\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|ADDED_TO_REGION\l|if (r6 == (\-r4.f137dy)) goto L_0x002a\l}"];
+subgraph cluster_Region_1827845589 {
+label = "R(2:7|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|r4.isAmbiguous = true\lr4.f136dx = \-r6\lr4.f137dy = r5\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_211821399 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0033|r4.f136dx += r5\lr4.f137dy += r6\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x001c|PHI: r5 r6 \l  PHI: (r5v2 float) = (r5v1 float), (r5v5 float) binds: [B:1:0x0014, B:2:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v2 float) = (r6v1 float), (r6v4 float) binds: [B:1:0x0014, B:2:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void com.caverock.androidsvg.SVGAndroidRenderer.MarkerVector.add((r4v0 'this' com.caverock.androidsvg.SVGAndroidRenderer$MarkerVector A[IMMUTABLE_TYPE, THIS]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

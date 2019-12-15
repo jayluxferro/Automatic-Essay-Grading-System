@@ -1,0 +1,79 @@
+digraph "CFG forcom.google.firebase.components.ComponentDiscovery.MetadataRegistrarNameRetriever.retrieve(Landroid\/content\/Context;)Ljava\/util\/List;" {
+subgraph cluster_Region_1065396204 {
+label = "R(2:0|(2:(2:2|3)|(3:4|(2:7|(1:11))|12)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Bundle android.os.Bundle r6 = getMetadata(r6)\l}"];
+subgraph cluster_Region_585478221 {
+label = "R(2:(2:2|3)|(3:4|(2:7|(1:11))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_45035308 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6 == null) goto L_0x0006\l}"];
+subgraph cluster_Region_1200740192 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|android.util.Log.w(com.google.firebase.components.ComponentDiscovery.TAG, \"Could not retrieve metadata, returning empty list of registrars.\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+subgraph cluster_Region_901011711 {
+label = "R(3:4|(2:7|(1:11))|12)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\ljava.util.Iterator r1 = r6.keySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1747888509 {
+label = "LOOP:0: (2:7|(1:11))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0023|if (r1.hasNext() != false) goto L_0x0025\l}"];
+subgraph cluster_Region_1779247429 {
+label = "R(2:7|(1:11))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|java.lang.String r2 = (java.lang.String) r1.next()\l}"];
+subgraph cluster_IfRegion_1354413673 {
+label = "IF [B:8:0x0035, B:10:0x003d] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0035|ADDED_TO_REGION\l|if (com.google.firebase.components.ComponentDiscovery.COMPONENT_SENTINEL_VALUE.equals(r6.get(r2)) == true) goto L_0x0037\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|ADDED_TO_REGION\l|if (r2.startsWith(com.google.firebase.components.ComponentDiscovery.COMPONENT_KEY_PREFIX) == true) goto L_0x003f\l}"];
+subgraph cluster_Region_1790956629 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|r0.add(r2.substring(com.google.firebase.components.ComponentDiscovery.COMPONENT_KEY_PREFIX.length()))\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004d|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x001f|LOOP_START\lLOOP:0: B:5:0x001f\-\>B:13:0x001f\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0037}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f|LOOP_END\lSYNTHETIC\lLOOP:0: B:5:0x001f\-\>B:13:0x001f\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x004d|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001f|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<java.lang.String\> com.google.firebase.components.ComponentDiscovery.MetadataRegistrarNameRetriever.retrieve((r5v0 'this' com.google.firebase.components.ComponentDiscovery$MetadataRegistrarNameRetriever A[IMMUTABLE_TYPE, THIS]), (r6v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/content\/Context;, ), Ljava\/util\/List\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_15[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_11 -> Node_17;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_13 -> Node_5;
+Node_14 -> Node_12;
+Node_15 -> Node_13;
+Node_16 -> Node_13;
+Node_17 -> Node_13;
+}
+

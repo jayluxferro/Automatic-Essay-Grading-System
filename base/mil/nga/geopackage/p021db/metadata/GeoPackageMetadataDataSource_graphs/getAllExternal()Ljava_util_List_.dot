@@ -1,0 +1,27 @@
+digraph "CFG formil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource.getAllExternal()Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList r0 = new java.util.ArrayList()\landroid.database.Cursor r1 = r9.f234db.query(\"geopackage\", mil.nga.geopackage.p021db.metadata.GeoPackageMetadata.COLUMNS, \"external_path IS NOT NULL\", (java.lang.String[]) null, (java.lang.String) null, (java.lang.String) null, (java.lang.String) null)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0015|LOOP_START\lSYNTHETIC\lSplitter:B:1:0x0015\lLOOP:0: B:1:0x0015\-\>B:4:0x001b\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x0027 \}\lSplitter:B:1:0x0015\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0019|Catch:\{ all \-\> 0x0027 \}\l|if (r1.moveToNext() == false) goto L_0x0023     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001b|LOOP_END\lCatch:\{ all \-\> 0x0027 \}\lLOOP:0: B:1:0x0015\-\>B:4:0x001b\l|r0.add(createGeoPackageMetadata(r1))     \/\/ Catch:\{ all \-\> 0x0027 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|DONT_GENERATE\l|r1.close()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|RETURN\l|return r0\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|ExcHandler:  FINALLY\lSplitter:B:1:0x0015\l|java.lang.Throwable r0 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|FINALLY_INSNS\l|r1.close()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002b|throw r0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<mil.nga.geopackage.db.metadata.GeoPackageMetadata\> mil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource.getAllExternal((r9v0 'this' mil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, Lmil\/nga\/geopackage\/db\/metadata\/GeoPackageMetadata;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_5;
+}
+

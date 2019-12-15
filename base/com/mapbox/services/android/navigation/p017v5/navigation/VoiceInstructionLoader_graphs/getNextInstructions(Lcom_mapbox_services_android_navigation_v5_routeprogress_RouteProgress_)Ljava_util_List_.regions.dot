@@ -1,0 +1,61 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.VoiceInstructionLoader.getNextInstructions(Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)Ljava\/util\/List;" {
+subgraph cluster_Region_952916502 {
+label = "R(3:0|(3:5|(1:7)(1:8)|9)|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r6.currentLegProgress().stepIndex()\ljava.util.List java.util.List\<com.mapbox.api.directions.p008v5.models.LegStep\> r6 = r6.currentLeg().steps()\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()\l}"];
+subgraph cluster_LoopRegion_824158329 {
+label = "LOOP:0: (3:5|(1:7)(1:8)|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001a|if (r1.size() \< 3) goto L_0x001c\l}"];
+subgraph cluster_Region_686174748 {
+label = "R(3:5|(1:7)(1:8)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|int int r2 = r0 + 1\ljava.util.List java.util.List\<com.mapbox.api.directions.p008v5.models.VoiceInstructions\> r0 = r6.get(r0).voiceInstructions()\l}"];
+subgraph cluster_IfRegion_2104863012 {
+label = "IF [B:6:0x0032] THEN: R(1:7) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0032|if (r0.size() \<= 3) goto L_0x0034\l}"];
+subgraph cluster_Region_1054666846 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|r1.addAll(r0)\l}"];
+}
+subgraph cluster_Region_1687814521 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0038|r1.addAll(r0.subList(0, 3))\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0040|LOOP_END\lLOOP:0: B:1:0x0015\-\>B:9:0x0040\l|r0 = r2\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0042|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0015|LOOP_START\lPHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v6 int) binds: [B:0:0x0000, B:9:0x0040] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0015\-\>B:9:0x0040\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0020|ADDED_TO_REGION\l|if (r0 \< r6.size()) goto L_0x0022\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0042|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0042|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0040|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0040|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private java.util.List\<com.mapbox.api.directions.v5.models.VoiceInstructions\> com.mapbox.services.android.navigation.v5.navigation.VoiceInstructionLoader.getNextInstructions((r5v0 'this' com.mapbox.services.android.navigation.v5.navigation.VoiceInstructionLoader A[IMMUTABLE_TYPE, THIS]), (r6v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;, ), Ljava\/util\/List\<, Lcom\/mapbox\/api\/directions\/v5\/models\/VoiceInstructions;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_8 -> Node_13;
+Node_9 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_11 -> Node_10;
+Node_12 -> Node_10;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+}
+

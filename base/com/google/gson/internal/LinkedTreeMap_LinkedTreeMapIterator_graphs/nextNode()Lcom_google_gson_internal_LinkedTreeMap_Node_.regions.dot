@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.gson.internal.LinkedTreeMap.LinkedTreeMapIterator.nextNode()Lcom\/google\/gson\/internal\/LinkedTreeMap$Node;" {
+subgraph cluster_Region_345565592 {
+label = "R(2:0|(1:9)(1:(2:4|5)(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.internal.LinkedTreeMap$Node\<K, V\> com.google.gson.internal.LinkedTreeMap.Node\<K, V\> r0 = r3.next\l}"];
+subgraph cluster_IfRegion_1883222106 {
+label = "IF [B:1:0x0006] THEN: R(1:9) ELSE: R(1:(2:4|5)(1:7))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 == com.google.gson.internal.LinkedTreeMap.this.header) goto L_0x001d\l}"];
+subgraph cluster_Region_784979436 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|throw new java.util.NoSuchElementException()\l}"];
+}
+subgraph cluster_Region_253627310 {
+label = "R(1:(2:4|5)(1:7)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_804031824 {
+label = "IF [B:3:0x000e] THEN: R(2:4|5) ELSE: R(1:7) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (com.google.gson.internal.LinkedTreeMap.this.modCount == r3.expectedModCount) goto L_0x0010\l}"];
+subgraph cluster_Region_2051868789 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r3.next = r0.next\lr3.lastReturned = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1782844434 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|throw new java.util.ConcurrentModificationException()\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001d}"];
+MethodNode[shape=record,label="{final com.google.gson.internal.LinkedTreeMap$Node\<K, V\> com.google.gson.internal.LinkedTreeMap.LinkedTreeMapIterator.nextNode((r3v0 'this' com.google.gson.internal.LinkedTreeMap$LinkedTreeMapIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Lcom\/google\/gson\/internal\/LinkedTreeMap$Node\<, TK;TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

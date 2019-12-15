@@ -1,0 +1,30 @@
+digraph "CFG forcom.crashlytics.android.Crashlytics.checkInitialized()V" {
+subgraph cluster_Region_1488369610 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1826010116 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1237696340 {
+label = "IF [B:1:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (getInstance() == null) goto L_0x0007\l}"];
+subgraph cluster_Region_489212212 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|throw new java.lang.IllegalStateException(\"Crashlytics must be initialized by calling Fabric.with(Context) prior to calling Crashlytics.getInstance()\")\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+MethodNode[shape=record,label="{private static void com.crashlytics.android.Crashlytics.checkInitialized() }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

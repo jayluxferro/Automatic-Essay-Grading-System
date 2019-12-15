@@ -1,0 +1,34 @@
+digraph "CFG forkotlin.text.CharCategory.Companion.valueOf(I)Lkotlin\/text\/CharCategory;" {
+subgraph cluster_Region_358763411 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.text.CharCategory kotlin.text.CharCategory r0 = getCategoryMap().get(java.lang.Integer.valueOf(r4))\l}"];
+subgraph cluster_Region_1353046322 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1956740058 {
+label = "IF [B:1:0x0011] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (r0 != null) goto L_0x0013\l}"];
+subgraph cluster_Region_1894762780 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1508683096 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014}"];
+Node_4 [shape=record,label="{4\:\ 0x0031|throw new java.lang.IllegalArgumentException(\"Category #\" + r4 + \" is not defined.\")\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public final kotlin.text.CharCategory kotlin.text.CharCategory.Companion.valueOf((r3v0 'this' kotlin.text.CharCategory$Companion A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

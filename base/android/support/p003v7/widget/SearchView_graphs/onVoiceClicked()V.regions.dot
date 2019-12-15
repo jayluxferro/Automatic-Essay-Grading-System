@@ -1,0 +1,96 @@
+digraph "CFG forandroid.support.v7.widget.SearchView.onVoiceClicked()V" {
+subgraph cluster_Region_126725901 {
+label = "R(1:(2:3|(1:(1:7)(1:(1:10)(0))))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_856806124 {
+label = "IF [B:1:0x0002] THEN: R(2:3|(1:(1:7)(1:(1:10)(0)))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mSearchable != null) goto L_0x0005\l}"];
+subgraph cluster_Region_1232646491 {
+label = "R(2:3|(1:(1:7)(1:(1:10)(0))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|android.app.SearchableInfo android.app.SearchableInfo r0 = r2.mSearchable\l}"];
+subgraph cluster_TryCatchRegion_1178391189 {
+label = "Try: R(1:(1:7)(1:(1:10)(0))) catches: R(1:11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2113272568 {
+label = "R(1:(1:7)(1:(1:10)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1757709339 {
+label = "IF [B:6:0x000b] THEN: R(1:7) ELSE: R(1:(1:10)(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l|if (r0.getVoiceSearchLaunchWebSearch() == true) goto L_0x000d     \/\/ Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l}"];
+subgraph cluster_Region_263421616 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000d|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l|getContext().startActivity(createVoiceWebSearchIntent(r2.mVoiceWebSearchIntent, r0))     \/\/ Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l}"];
+}
+subgraph cluster_Region_392873868 {
+label = "R(1:(1:10)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1155277423 {
+label = "IF [B:9:0x001f] THEN: R(1:10) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l|if (r0.getVoiceSearchLaunchRecognizer() == true) goto L_0x0021     \/\/ Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l}"];
+subgraph cluster_Region_1210229190 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l|getContext().startActivity(createVoiceAppSearchIntent(r2.mVoiceAppSearchIntent, r0))     \/\/ Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l}"];
+}
+subgraph cluster_Region_710013247 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+subgraph cluster_Region_173618842 {
+label = "R(1:11) | ExcHandler: ActivityNotFoundException (unused android.content.ActivityNotFoundException)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|android.util.Log.w(LOG_TAG, \"Could not find voice search activity\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1487482643 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_173618842 {
+label = "R(1:11) | ExcHandler: ActivityNotFoundException (unused android.content.ActivityNotFoundException)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|android.util.Log.w(LOG_TAG, \"Could not find voice search activity\")\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007|SYNTHETIC\lSplitter:B:4:0x0007\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\lSplitter:B:4:0x0007\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001b|Catch:\{ ActivityNotFoundException \-\> 0x002f \}\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lExcHandler: ActivityNotFoundException (unused android.content.ActivityNotFoundException)\lSplitter:B:4:0x0007\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.SearchView.onVoiceClicked((r2v0 'this' android.support.v7.widget.SearchView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_13;
+Node_11 -> Node_13;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_12;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_12 -> Node_11;
+}
+

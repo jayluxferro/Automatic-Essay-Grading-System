@@ -1,0 +1,35 @@
+digraph "CFG forokhttp3.internal.Util.discard(Lokio\/Source;ILjava\/util\/concurrent\/TimeUnit;)Z" {
+subgraph cluster_Region_328400440 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_481831531 {
+label = "Try: R(1:2) catches: R(1:3)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1696692760 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return skipAll(r0, r1, r2)\l}"];
+}
+subgraph cluster_Region_908124394 {
+label = "R(1:3) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_908124394 {
+label = "R(1:3) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0005 \}\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public static boolean okhttp3.internal.Util.discard((r0v0 okio.Source A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 java.util.concurrent.TimeUnit A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_4 -> Node_3;
+}
+

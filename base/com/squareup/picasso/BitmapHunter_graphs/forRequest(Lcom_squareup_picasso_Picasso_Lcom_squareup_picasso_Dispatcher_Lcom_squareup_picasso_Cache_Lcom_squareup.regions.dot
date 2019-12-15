@@ -1,0 +1,55 @@
+digraph "CFG forcom.squareup.picasso.BitmapHunter.forRequest(Lcom\/squareup\/picasso\/Picasso;Lcom\/squareup\/picasso\/Dispatcher;Lcom\/squareup\/picasso\/Cache;Lcom\/squareup\/picasso\/Stats;Lcom\/squareup\/picasso\/Action;)Lcom\/squareup\/picasso\/BitmapHunter;" {
+subgraph cluster_Region_1167880535 {
+label = "R(4:0|(2:2|(2:(1:5)|(1:6)))|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.squareup.picasso.Request com.squareup.picasso.Request r0 = r16.getRequest()\ljava.util.List java.util.List\<com.squareup.picasso.RequestHandler\> r1 = r12.getRequestHandlers()\lint int r2 = r1.size()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_452981646 {
+label = "LOOP:0: (2:2|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:6:0x0029] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000d\-\>B:6:0x0029\l|if (r3 \< r2) goto L_0x000f\l}"];
+subgraph cluster_Region_9242149 {
+label = "R(2:2|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|com.squareup.picasso.RequestHandler com.squareup.picasso.RequestHandler r11 = r1.get(r3)\l}"];
+subgraph cluster_Region_399088570 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_437875628 {
+label = "IF [B:3:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (r11.canHandleRequest(r0) == true) goto L_0x001c\l}"];
+subgraph cluster_Region_1830469481 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0028|RETURN\l|return new com.squareup.picasso.BitmapHunter(r12, r13, r14, r15, r16, r11)\l}"];
+}
+}
+subgraph cluster_Region_1020215119 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|LOOP_END\lLOOP:0: B:1:0x000d\-\>B:6:0x0029\l|r3++\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002c}"];
+Node_8 [shape=record,label="{8\:\ 0x003a|RETURN\l|return new com.squareup.picasso.BitmapHunter(r12, r13, r14, r15, r16, ERRORING_HANDLER)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static com.squareup.picasso.BitmapHunter com.squareup.picasso.BitmapHunter.forRequest((r12v0 com.squareup.picasso.Picasso A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 com.squareup.picasso.Dispatcher A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 com.squareup.picasso.Cache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 com.squareup.picasso.Stats A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 com.squareup.picasso.Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_6[style=dashed];
+Node_3 -> Node_9;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_4 -> Node_5;
+Node_9 -> Node_4;
+Node_10 -> Node_7;
+}
+

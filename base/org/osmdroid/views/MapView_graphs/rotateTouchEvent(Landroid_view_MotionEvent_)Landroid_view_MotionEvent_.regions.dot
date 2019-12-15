@@ -1,0 +1,53 @@
+digraph "CFG fororg.osmdroid.views.MapView.rotateTouchEvent(Landroid\/view\/MotionEvent;)Landroid\/view\/MotionEvent;" {
+subgraph cluster_Region_1097411764 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)(1:6)|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1090632109 {
+label = "R(2:(1:2)|(3:3|(1:5)(1:6)|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_698331621 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (getMapOrientation() == 0.0f) goto L_0x0009\l}"];
+subgraph cluster_Region_1980978330 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_2051001205 {
+label = "R(3:3|(1:5)(1:6)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|android.view.MotionEvent android.view.MotionEvent r0 = android.view.MotionEvent.obtain(r5)\l}"];
+subgraph cluster_IfRegion_2123881056 {
+label = "IF [B:4:0x0012] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (android.os.Build.VERSION.SDK_INT \< 11) goto L_0x0014\l}"];
+subgraph cluster_Region_395439884 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|getProjection().unrotateAndScalePoint((int) r5.getX(), (int) r5.getY(), r4.mRotateScalePoint)\lr0.setLocation((float) r4.mRotateScalePoint.x, (float) r4.mRotateScalePoint.y)\l}"];
+}
+subgraph cluster_Region_1049103468 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|r0.transform(getProjection().getInvertedScaleRotateCanvasMatrix())\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0040|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{private android.view.MotionEvent org.osmdroid.views.MapView.rotateTouchEvent((r4v0 'this' org.osmdroid.views.MapView A[IMMUTABLE_TYPE, THIS]), (r5v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forretrofit2.RequestBuilder.addQueryParam(Ljava\/lang\/String;Ljava\/lang\/String;Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.relativeUrl == null) goto L_0x0039\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.urlBuilder = r2.baseUrl.newBuilder(r2.relativeUrl)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r2.urlBuilder == null) goto L_0x0016\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|r2.relativeUrl = null\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|java.lang.StringBuilder r4 = new java.lang.StringBuilder()\lr4.append(\"Malformed URL. Base: \")\lr4.append(r2.baseUrl)\lr4.append(\", Relative: \")\lr4.append(r2.relativeUrl)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0038|throw new java.lang.IllegalArgumentException(r4.toString())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|if (r5 == false) goto L_0x0041\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b|r2.urlBuilder.addEncodedQueryParameter(r3, r4)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0041|r2.urlBuilder.addQueryParameter(r3, r4)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{void retrofit2.RequestBuilder.addQueryParam((r2v0 'this' retrofit2.RequestBuilder A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[RUNTIME, javax.annotation.Nullable, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+}
+

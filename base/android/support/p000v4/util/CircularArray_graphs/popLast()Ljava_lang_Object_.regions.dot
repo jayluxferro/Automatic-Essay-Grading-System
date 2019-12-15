@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.util.CircularArray.popLast()Ljava\/lang\/Object;" {
+subgraph cluster_Region_590160141 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1089644960 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1168368852 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4.mHead != r4.mTail) goto L_0x0006\l}"];
+subgraph cluster_Region_772857163 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int r0 = (r4.mTail \- 1) & r4.mCapacityBitmask\lE r1 = r4.mElements[r0]\lr4.mElements[r0] = null\lr4.mTail = r0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1562530258 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|throw new java.lang.ArrayIndexOutOfBoundsException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0019}"];
+MethodNode[shape=record,label="{public E android.support.v4.util.CircularArray.popLast((r4v0 'this' android.support.v4.util.CircularArray A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TE;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

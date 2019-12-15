@@ -1,0 +1,57 @@
+digraph "CFG forandroid.support.v4.app.Fragment.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_123343983 {
+label = "R(6:0|(1:2)|(1:5)|(1:8)|9|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder(128)\landroid.support.p000v4.util.DebugUtils.buildShortClassTag(r2, r0)\l}"];
+subgraph cluster_IfRegion_203314270 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r2.mIndex \>= 0) goto L_0x000e\l}"];
+subgraph cluster_Region_68688087 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r0.append(\" #\")\lr0.append(r2.mIndex)\l}"];
+}
+}
+subgraph cluster_IfRegion_438600373 {
+label = "IF [B:4:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r2.mFragmentId != 0) goto L_0x001c\l}"];
+subgraph cluster_Region_675717475 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|r0.append(\" id=0x\")\lr0.append(java.lang.Integer.toHexString(r2.mFragmentId))\l}"];
+}
+}
+subgraph cluster_IfRegion_673242091 {
+label = "IF [B:7:0x002c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|if (r2.mTag != null) goto L_0x002e\l}"];
+subgraph cluster_Region_419303231 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|r0.append(\" \")\lr0.append(r2.mTag)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0038|r0.append('\}')\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0041|RETURN\l|return r0.toString()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a}"];
+MethodNode[shape=record,label="{public java.lang.String android.support.v4.app.Fragment.toString((r2v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.ranges.RangesKt___RangesKt.step(Lkotlin\/ranges\/IntProgression;I)Lkotlin\/ranges\/IntProgression;" {
+subgraph cluster_Region_498155537 {
+label = "R(4:0|4|(1:6)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"$receiver\")\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|PHI: r0 \l  PHI: (r0v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|kotlin.ranges.RangesKt.checkStepIsPositive(r4 \> 0, java.lang.Integer.valueOf(r4))\lkotlin.ranges.IntProgression$Companion kotlin.ranges.IntProgression.Companion r0 = kotlin.ranges.IntProgression.Companion\lint int r1 = r3.getFirst()\lint int r2 = r3.getLast()\l}"];
+subgraph cluster_IfRegion_29885691 {
+label = "IF [B:5:0x0021] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|if (r3.getStep() \<= 0) goto L_0x0024\l}"];
+subgraph cluster_Region_941262919 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|int r4 = \-r4\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0029|RETURN\l|return r0.fromClosedRange(r1, r2, r4)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025|PHI: r4 \l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:5:0x0021, B:6:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static final kotlin.ranges.IntProgression kotlin.ranges.RangesKt___RangesKt.step((r3v0 kotlin.ranges.IntProgression A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

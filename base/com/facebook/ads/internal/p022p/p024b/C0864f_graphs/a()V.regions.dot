@@ -1,0 +1,60 @@
+digraph "CFG forcom.facebook.ads.internal.p.b.f.a()V" {
+subgraph cluster_Region_837118864 {
+label = "R(2:0|(1:(1:(1:4))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.Log.i(\"ProxyCache\", \"Shutdown proxy server\")\lm1603d()\lr3.f1204f.interrupt()\l}"];
+subgraph cluster_TryCatchRegion_842709303 {
+label = "Try: R(1:(1:(1:4))) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1364985086 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1843984528 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2009839446 {
+label = "IF [B:3:0x0015] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|Catch:\{ IOException \-\> 0x001d \}\l|if (r3.f1202d.isClosed() == false) goto L_0x0017     \/\/ Catch:\{ IOException \-\> 0x001d \}\l}"];
+subgraph cluster_Region_283069337 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|Catch:\{ IOException \-\> 0x001d \}\l|r3.f1202d.close()     \/\/ Catch:\{ IOException \-\> 0x001d \}\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_563467912 {
+label = "R(2:5|6) | ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x000f\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|m1593a((java.lang.Throwable) new com.facebook.ads.internal.p022p.p024b.C0879l(\"Error shutting down proxy server\", r0))\l}"];
+}
+}
+}
+subgraph cluster_Region_563467912 {
+label = "R(2:5|6) | ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|ExcHandler: IOException (r0v2 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x000f\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|m1593a((java.lang.Throwable) new com.facebook.ads.internal.p022p.p024b.C0879l(\"Error shutting down proxy server\", r0))\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000f|SYNTHETIC\lSplitter:B:1:0x000f\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ IOException \-\> 0x001d \}\lSplitter:B:1:0x000f\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.facebook.ads.internal.p.b.f.a((r3v0 'this' com.facebook.ads.internal.p.b.f A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_9;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+}
+

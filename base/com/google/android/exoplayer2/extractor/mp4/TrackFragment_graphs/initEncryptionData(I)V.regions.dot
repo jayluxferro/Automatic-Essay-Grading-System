@@ -1,0 +1,32 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.TrackFragment.initEncryptionData(I)V" {
+subgraph cluster_Region_1035294774 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_154194659 {
+label = "IF [B:1:0x0003, B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|ADDED_TO_REGION\l|if (r2.sampleEncryptionData == null) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ADDED_TO_REGION\l|if (r2.sampleEncryptionData.limit() \< r3) goto L_0x000d\l}"];
+subgraph cluster_Region_815360504 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|r2.sampleEncryptionData = new com.google.android.exoplayer2.util.ParsableByteArray(r3)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0014|r2.sampleEncryptionDataLength = r3\lr2.definesEncryptionData = true\lr2.sampleEncryptionDataNeedsFill = true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.extractor.mp4.TrackFragment.initEncryptionData((r2v0 'this' com.google.android.exoplayer2.extractor.mp4.TrackFragment A[IMMUTABLE_TYPE, THIS]), (r3v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

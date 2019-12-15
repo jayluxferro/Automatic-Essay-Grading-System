@@ -1,0 +1,45 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.TileWriter.1.run()V" {
+subgraph cluster_Region_2078470746 {
+label = "R(3:0|(1:2)|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long unused = org.osmdroid.tileprovider.modules.TileWriter.mUsedCacheSpace = 0\lorg.osmdroid.tileprovider.modules.TileWriter.this.calculateDirectorySize(org.osmdroid.config.Configuration.getInstance().getOsmdroidTileCache())\l}"];
+subgraph cluster_IfRegion_1452578079 {
+label = "IF [B:1:0x0020] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0020|if (org.osmdroid.tileprovider.modules.TileWriter.mUsedCacheSpace \> org.osmdroid.config.Configuration.getInstance().getTileFileSystemCacheMaxBytes()) goto L_0x0022\l}"];
+subgraph cluster_Region_1279494541 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0022|org.osmdroid.tileprovider.modules.TileWriter.this.cutCurrentCache()\l}"];
+}
+}
+subgraph cluster_Region_902750427 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1498588186 {
+label = "IF [B:4:0x002f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002f|if (org.osmdroid.config.Configuration.getInstance().isDebugMode() == true) goto L_0x0031\l}"];
+subgraph cluster_Region_723320386 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0031|android.util.Log.d(org.osmdroid.api.IMapView.LOGTAG, \"Finished init thread\")\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0027}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.tileprovider.modules.TileWriter.1.run((r4v0 'this' org.osmdroid.tileprovider.modules.TileWriter$1 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+}
+

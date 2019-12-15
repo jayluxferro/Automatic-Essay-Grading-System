@@ -1,0 +1,52 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.parseAttributesTransform(Lcom\/caverock\/androidsvg\/SVG$HasTransform;Lorg\/xml\/sax\/Attributes;)V" {
+subgraph cluster_Region_695511844 {
+label = "R(2:0|(2:(1:5)(0)|6))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1234852728 {
+label = "LOOP:0: (2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|if (r0 \< r5.getLength()) goto L_0x0007\l}"];
+subgraph cluster_Region_1374723227 {
+label = "R(2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_186077762 {
+label = "IF [B:4:0x0011] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (com.caverock.androidsvg.SVGParser.SVGAttr.fromString(r5.getLocalName(r0)) == com.caverock.androidsvg.SVGParser.SVGAttr.transform) goto L_0x0013\l}"];
+subgraph cluster_Region_129430927 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|r4.setTransform(parseTransformList(r5.getValue(r0)))\l}"];
+}
+subgraph cluster_Region_372960163 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001e|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:6:0x001e\l|r0++\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:6:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:6:0x001e\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0021|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGParser.parseAttributesTransform((r3v0 'this' com.caverock.androidsvg.SVGParser A[IMMUTABLE_TYPE, THIS]), (r4v0 com.caverock.androidsvg.SVG$HasTransform A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 org.xml.sax.Attributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.SVGParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

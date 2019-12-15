@@ -1,0 +1,59 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsCore.checkForPreviousCrash()V" {
+subgraph cluster_Region_595628219 {
+label = "R(2:0|(1:(1:4))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_IfRegion_201672930 {
+label = "IF [B:1:0x0015] THEN: R(1:(1:4)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (java.lang.Boolean.TRUE.equals((java.lang.Boolean) r4.backgroundWorker.submitAndWait(new com.crashlytics.android.core.CrashlyticsCore.CrashMarkerCheck(r4.crashMarker))) != false) goto L_0x0018\l}"];
+subgraph cluster_Region_1303668663 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1757444713 {
+label = "Try: R(1:4) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1340226178 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ Exception \-\> 0x001e \}\lSplitter:B:3:0x0018\l|r4.listener.crashlyticsDidDetectCrashDuringPreviousExecution()     \/\/ Catch:\{ Exception \-\> 0x001e \}\l}"];
+}
+subgraph cluster_Region_1762011588 {
+label = "R(2:5|6) | ExcHandler: Exception (r0v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|ExcHandler: Exception (r0v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:3:0x0018\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Exception thrown by CrashlyticsListener while notifying of previous crash.\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_132211340 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1762011588 {
+label = "R(2:5|6) | ExcHandler: Exception (r0v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|ExcHandler: Exception (r0v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:3:0x0018\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Exception thrown by CrashlyticsListener while notifying of previous crash.\", r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0017}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018|SYNTHETIC\lSplitter:B:3:0x0018\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsCore.checkForPreviousCrash((r4v0 'this' com.crashlytics.android.core.CrashlyticsCore A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+}
+

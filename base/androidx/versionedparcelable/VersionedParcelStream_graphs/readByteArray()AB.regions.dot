@@ -1,0 +1,61 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcelStream.readByteArray()[B" {
+subgraph cluster_Region_1672076731 {
+label = "R(1:(2:1|(2:(1:5)|(2:3|4))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_774480179 {
+label = "Try: R(2:1|(2:(1:5)|(2:3|4))) catches: R(2:6|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1409599560 {
+label = "R(2:1|(2:(1:5)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0012 \}\lSplitter:B:0:0x0000\l|int int r0 = r2.mCurrentInput.readInt()     \/\/ Catch:\{ IOException \-\> 0x0012 \}\l}"];
+subgraph cluster_Region_1888961016 {
+label = "R(2:(1:5)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1470001876 {
+label = "IF [B:2:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|Catch:\{ IOException \-\> 0x0012 \}\l|if (r0 \<= 0) goto L_0x0010     \/\/ Catch:\{ IOException \-\> 0x0012 \}\l}"];
+subgraph cluster_Region_1202217326 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_918352266 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|Catch:\{ IOException \-\> 0x0012 \}\l|byte[] byte[] r0 = new byte[r0]     \/\/ Catch:\{ IOException \-\> 0x0012 \}\lr2.mCurrentInput.readFully(r0)     \/\/ Catch:\{ IOException \-\> 0x0012 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1782659109 {
+label = "R(2:6|8) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|throw new androidx.versionedparcelable.VersionedParcel.ParcelException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1782659109 {
+label = "R(2:6|8) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|throw new androidx.versionedparcelable.VersionedParcel.ParcelException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+MethodNode[shape=record,label="{public byte[] androidx.versionedparcelable.VersionedParcelStream.readByteArray((r2v0 'this' androidx.versionedparcelable.VersionedParcelStream A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_0 -> Node_6;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,24 @@
+digraph "CFG forcom.android.volley.toolbox.BaseHttpStack.performRequest(Lcom\/android\/volley\/Request;Ljava\/util\/Map;)Lorg\/apache\/http\/HttpResponse;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.android.volley.toolbox.HttpResponse r6 = executeRequest(r6, r7)\lorg.apache.http.message.BasicHttpResponse r7 = new org.apache.http.message.BasicHttpResponse(new org.apache.http.message.BasicStatusLine(new org.apache.http.ProtocolVersion(\"HTTP\", 1, 1), r6.getStatusCode(), \"\"))\ljava.util.ArrayList r0 = new java.util.ArrayList()\ljava.util.Iterator r1 = r6.getHeaders().iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0029|LOOP_START\lLOOP:0: B:1:0x0029\-\>B:3:0x002f\l}"];
+Node_2 [shape=record,label="{2\:\ 0x002d|if (r1.hasNext() == false) goto L_0x0046\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002f|LOOP_END\lLOOP:0: B:1:0x0029\-\>B:3:0x002f\l|com.android.volley.Header r2 = r1.next()\lr0.add(new org.apache.http.message.BasicHeader(r2.getName(), r2.getValue()))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0046|r7.setHeaders((org.apache.http.Header[]) r0.toArray(new org.apache.http.Header[r0.size()]))\ljava.io.InputStream r0 = r6.getContent()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0059|if (r0 == null) goto L_0x006e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x005b|org.apache.http.entity.BasicHttpEntity r1 = new org.apache.http.entity.BasicHttpEntity()\lr1.setContent(r0)\lr1.setContentLength((long) r6.getContentLength())\lr7.setEntity(r1)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006e|RETURN\l|return r7\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0046|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final org.apache.http.HttpResponse com.android.volley.toolbox.BaseHttpStack.performRequest((r5v0 'this' com.android.volley.toolbox.BaseHttpStack A[IMMUTABLE_TYPE, THIS]), (r6v0 com.android.volley.Request\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, com.android.volley.AuthFailureError]\}], Annotation[RUNTIME, java.lang.Deprecated, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/android\/volley\/Request\<, *\>;, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;), Lorg\/apache\/http\/HttpResponse;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_4;
+}
+

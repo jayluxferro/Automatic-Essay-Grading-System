@@ -1,0 +1,72 @@
+digraph "CFG fororg.osmdroid.tileprovider.MapTileProviderBase.rescaleCache(Lorg\/osmdroid\/views\/Projection;DDLandroid\/graphics\/Rect;)V" {
+subgraph cluster_Region_1878989585 {
+label = "R(2:0|(1:(6:3|(1:5)|6|7|10|(1:(1:12)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r25\lorg.osmdroid.views.Projection r1 = r26\ldouble r2 = r27\ldouble r5 = r29\landroid.graphics.Rect r4 = r31\l}"];
+subgraph cluster_Region_198175454 {
+label = "R(1:(6:3|(1:5)|6|7|10|(1:(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2745981 {
+label = "IF [B:1:0x0012] THEN: R(6:3|(1:5)|6|7|10|(1:(1:12))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (org.osmdroid.util.TileSystem.getInputTileZoomLevel(r27) != org.osmdroid.util.TileSystem.getInputTileZoomLevel(r29)) goto L_0x0015\l}"];
+subgraph cluster_Region_1671647217 {
+label = "R(6:3|(1:5)|6|7|10|(1:(1:12)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|long long r8 = java.lang.System.currentTimeMillis()\l}"];
+subgraph cluster_IfRegion_1630253554 {
+label = "IF [B:4:0x0021] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (org.osmdroid.config.Configuration.getInstance().isDebugTileProviders() == true) goto L_0x0023\l}"];
+subgraph cluster_Region_1781242678 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|android.util.Log.i(org.osmdroid.api.IMapView.LOGTAG, \"rescale tile cache from \" + r5 + \" to \" + r2)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0041|org.osmdroid.util.PointL org.osmdroid.util.PointL r7 = r1.toMercatorPixels(r4.left, r4.top, (org.osmdroid.util.PointL) null)\lorg.osmdroid.util.PointL org.osmdroid.util.PointL r1 = r1.toMercatorPixels(r4.right, r4.bottom, (org.osmdroid.util.PointL) null)\llong r23 = r8\lorg.osmdroid.util.RectL org.osmdroid.util.RectL r12 = new org.osmdroid.util.RectL(r7.f444x, r7.f445y, r1.f444x, r1.f445y)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x006c}"];
+Node_10 [shape=record,label="{10\:\ 0x007b|PHI: r1 \l  PHI: (r1v3 org.osmdroid.tileprovider.MapTileProviderBase$ScaleTileLooper) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|(r2 \> r5 ? new org.osmdroid.tileprovider.MapTileProviderBase.ZoomInTileLooper() : new org.osmdroid.tileprovider.MapTileProviderBase.ZoomOutTileLooper()).loop(r27, r12, r29, getTileSource().getTileSizePixels())\llong long r1 = java.lang.System.currentTimeMillis()\l}"];
+subgraph cluster_Region_777609394 {
+label = "R(1:(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1521809085 {
+label = "IF [B:11:0x0096] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0096|if (org.osmdroid.config.Configuration.getInstance().isDebugTileProviders() == true) goto L_0x0098\l}"];
+subgraph cluster_Region_1175217595 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0098|android.util.Log.i(org.osmdroid.api.IMapView.LOGTAG, \"Finished rescale in \" + (r1 \- r23) + \"ms\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x006e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0075}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.tileprovider.MapTileProviderBase.rescaleCache((r25v0 'this' org.osmdroid.tileprovider.MapTileProviderBase A[IMMUTABLE_TYPE, THIS]), (r26v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+}
+

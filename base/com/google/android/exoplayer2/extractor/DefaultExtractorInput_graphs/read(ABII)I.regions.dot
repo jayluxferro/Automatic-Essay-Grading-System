@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.DefaultExtractorInput.read([BII)I" {
+subgraph cluster_Region_1802539150 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r6 = readFromPeekBuffer(r8, r9, r10)\l}"];
+subgraph cluster_IfRegion_459352815 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6 == 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1439535882 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int r6 = readFromDataSource(r8, r9, r10, 0, true)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0010|PHI: r6 \l  PHI: (r6v1 'bytesRead' int) = (r6v0 'bytesRead' int), (r6v2 'bytesRead' int) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|commitBytesRead(r6)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|RETURN\l|return r6\l}"];
+}
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.extractor.DefaultExtractorInput.read((r7v0 'this' com.google.android.exoplayer2.extractor.DefaultExtractorInput A[IMMUTABLE_TYPE, THIS]), (r8v0 'target' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

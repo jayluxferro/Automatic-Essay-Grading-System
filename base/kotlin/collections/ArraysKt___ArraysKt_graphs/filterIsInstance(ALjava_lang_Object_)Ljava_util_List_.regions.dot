@@ -1,0 +1,52 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterIsInstance([Ljava\/lang\/Object;)Ljava\/util\/List;" {
+subgraph cluster_Region_219991396 {
+label = "R(3:0|(3:2|(1:4)(0)|5)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Collection java.util.Collection r0 = new java.util.ArrayList()\lint int r1 = r6.length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1748418103 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:5:0x001a\l|if (r2 \< r1) goto L_0x000b\l}"];
+subgraph cluster_Region_867791428 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|r3 = r6[r2]\lkotlin.jvm.internal.Intrinsics.reifiedOperationMarker(3, org.osgeo.proj4j.parser.Proj4Keyword.f304R)\l}"];
+subgraph cluster_IfRegion_1864600812 {
+label = "IF [B:3:0x0015] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|if ((r3 instanceof java.lang.Object) == true) goto L_0x0017\l}"];
+subgraph cluster_Region_1365252085 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r0.add(r3)\l}"];
+}
+subgraph cluster_Region_1156435751 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001a|LOOP_END\lLOOP:0: B:1:0x0009\-\>B:5:0x001a\l|r2++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001f|RETURN\l|return (java.util.List) r0\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x001d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001d|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static final java.util.List\<R\> kotlin.collections.ArraysKt___ArraysKt.filterIsInstance((r6v0 java.lang.Object[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<R:, Ljava\/lang\/Object;, \>([, Ljava\/lang\/Object;, ), Ljava\/util\/List\<, TR;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_6;
+Node_9 -> Node_5;
+Node_10 -> Node_5;
+}
+

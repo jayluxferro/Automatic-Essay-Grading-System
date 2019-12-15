@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.gson.Gson.FutureTypeAdapter.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1318801694 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_933684988 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2042333659 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.delegate != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1818532789 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r1.delegate.read(r2)\l}"];
+}
+}
+subgraph cluster_Region_2019763334 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new java.lang.IllegalStateException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public T com.google.gson.Gson.FutureTypeAdapter.read((r1v0 'this' com.google.gson.Gson$FutureTypeAdapter A[IMMUTABLE_TYPE, THIS]), (r2v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/stream\/JsonReader;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

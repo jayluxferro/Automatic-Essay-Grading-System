@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v7.widget.LinearLayoutManager.computeScrollOffset(Landroid\/support\/v7\/widget\/RecyclerView$State;)I" {
+subgraph cluster_Region_1996039202 {
+label = "R(1:(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_80480870 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_763411 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (getChildCount() == 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1252120260 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_292037008 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|ensureLayoutState()\landroid.support.v7.widget.OrientationHelper android.support.p003v7.widget.OrientationHelper r1 = r7.mOrientationHelper\landroid.view.View android.view.View r3 = findFirstVisibleChildClosestToStart(!r7.mSmoothScrollbarEnabled, true)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0028|RETURN\l|return android.support.p003v7.widget.ScrollbarHelper.computeScrollOffset(r8, r1, r3, findFirstVisibleChildClosestToEnd(!r7.mSmoothScrollbarEnabled, true), r7, r7.mSmoothScrollbarEnabled, r7.mShouldReverseLayout)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{private int android.support.v7.widget.LinearLayoutManager.computeScrollOffset((r7v0 'this' android.support.v7.widget.LinearLayoutManager A[IMMUTABLE_TYPE, THIS]), (r8v0 android.support.v7.widget.RecyclerView$State A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

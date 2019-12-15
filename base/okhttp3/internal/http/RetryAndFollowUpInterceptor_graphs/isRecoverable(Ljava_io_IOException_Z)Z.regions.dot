@@ -1,0 +1,105 @@
+digraph "CFG forokhttp3.internal.http.RetryAndFollowUpInterceptor.isRecoverable(Ljava\/io\/IOException;Z)Z" {
+subgraph cluster_Region_851417086 {
+label = "R(1:(2:(1:2)|(1:(1:(2:(1:19)|(1:8)))(1:(1:17)(1:16)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1020576473 {
+label = "R(2:(1:2)|(1:(1:(2:(1:19)|(1:8)))(1:(1:17)(1:16))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1212225572 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if ((r4 instanceof java.net.ProtocolException) == true) goto L_0x0005\l}"];
+subgraph cluster_Region_233654105 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1126379901 {
+label = "R(1:(1:(2:(1:19)|(1:8)))(1:(1:17)(1:16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1509683658 {
+label = "IF [B:4:0x0009] THEN: R(1:(2:(1:19)|(1:8))) ELSE: R(1:(1:17)(1:16))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if ((r4 instanceof java.io.InterruptedIOException) == true) goto L_0x000b\l}"];
+subgraph cluster_Region_431702761 {
+label = "R(1:(2:(1:19)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2123041032 {
+label = "R(2:(1:19)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_611940221 {
+label = "IF [B:6:0x000d, B:7:0x000f] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|if ((r4 instanceof java.net.SocketTimeoutException) == false) goto L_?\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000f|ADDED_TO_REGION\l|if (r5 == true) goto L_?\l}"];
+subgraph cluster_Region_579512217 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1634014507 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0011|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_1199604550 {
+label = "R(1:(1:17)(1:16)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_682477140 {
+label = "IF [B:10:0x0015, B:12:0x001d, B:15:0x0022] THEN: R(1:17) ELSE: R(1:16) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0015|if ((r4 instanceof javax.net.ssl.SSLHandshakeException) == false) goto L_0x0020\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001d|ADDED_TO_REGION\l|if ((r4.getCause() instanceof java.security.cert.CertificateException) == false) goto L_0x0020\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0022|ADDED_TO_REGION\l|if ((r4 instanceof javax.net.ssl.SSLPeerUnverifiedException) == false) goto L_0x0025\l}"];
+subgraph cluster_Region_1609308855 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0025|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_384401452 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0024|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0013}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0017}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0020}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{private boolean okhttp3.internal.http.RetryAndFollowUpInterceptor.isRecoverable((r3v0 'this' okhttp3.internal.http.RetryAndFollowUpInterceptor A[IMMUTABLE_TYPE, THIS]), (r4v0 java.io.IOException A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_18;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_19;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+}
+

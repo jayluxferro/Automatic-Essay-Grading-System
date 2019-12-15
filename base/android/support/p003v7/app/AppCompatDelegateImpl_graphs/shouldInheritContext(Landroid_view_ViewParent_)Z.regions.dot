@@ -1,0 +1,85 @@
+digraph "CFG forandroid.support.v7.app.AppCompatDelegateImpl.shouldInheritContext(Landroid\/view\/ViewParent;)Z" {
+subgraph cluster_Region_62210167 {
+label = "R(1:(2:(1:2)|(3:3|(1:(2:(1:12)|(1:11)))|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1081925043 {
+label = "R(2:(1:2)|(3:3|(1:(2:(1:12)|(1:11)))|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_750319489 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_2041431572 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_664028555 {
+label = "R(3:3|(1:(2:(1:12)|(1:11)))|5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|android.view.View android.view.View r1 = r3.mWindow.getDecorView()\l}"];
+subgraph cluster_LoopRegion_1345488814 {
+label = "LOOP:0: (1:(2:(1:12)|(1:11)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|LOOP_START\lPHI: r4 \l  PHI: (r4v1 android.view.ViewParent) = (r4v0 android.view.ViewParent), (r4v3 android.view.ViewParent) binds: [B:3:0x0004, B:11:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000a\-\>B:11:0x001e\l|if (r4 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1988450654 {
+label = "R(1:(2:(1:12)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_493530352 {
+label = "R(2:(1:12)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_325725067 {
+label = "IF [B:6:0x000e, B:8:0x0012, B:10:0x001b] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|if (r4 == r1) goto L_0x0023\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0012|ADDED_TO_REGION\l|if ((r4 instanceof android.view.View) == false) goto L_0x0023\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|ADDED_TO_REGION\l|if (android.support.p000v4.view.ViewCompat.isAttachedToWindow((android.view.View) r4) == true) goto L_0x0023\l}"];
+subgraph cluster_Region_182469679 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0023|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1311485226 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|LOOP_END\lLOOP:0: B:4:0x000a\-\>B:11:0x001e\l|android.view.ViewParent r4 = r4.getParent()\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0010}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0014}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0023|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000c|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0023|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.app.AppCompatDelegateImpl.shouldInheritContext((r3v0 'this' android.support.v7.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.ViewParent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_4 -> Node_14[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_16;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_13;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_11 -> Node_4;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_13 -> Node_12;
+Node_14 -> Node_5;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+}
+

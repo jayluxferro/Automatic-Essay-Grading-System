@@ -1,0 +1,32 @@
+digraph "CFG forokhttp3.internal.http.HttpHeaders.varyFields(Lokhttp3\/Headers;)Ljava\/util\/Set;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.util.Set) =  java.util.Collections.emptySet():java.util.Set type: STATIC \l0x0004: INVOKE  (r1 I:int) = (r8 I:okhttp3.Headers) okhttp3.Headers.size():int type: VIRTUAL \l0x0008: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0009: MOVE  (r3 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY]) \l0x000a: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|0x000b: IF  (r0 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:12:0x0044 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|0x000d: CONST_STR  (r4 I:java.lang.String) =  \"Vary\" \l0x000f: INVOKE  (r5 I:java.lang.String) = (r8 I:okhttp3.Headers), (r0 I:int) okhttp3.Headers.name(int):java.lang.String type: VIRTUAL \l0x0013: INVOKE  (r4 I:boolean) = (r4 I:java.lang.String), (r5 I:java.lang.String) java.lang.String.equalsIgnoreCase(java.lang.String):boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|0x0017: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x001a \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: INVOKE  (r4 I:java.lang.String) = (r8 I:okhttp3.Headers), (r0 I:int) okhttp3.Headers.value(int):java.lang.String type: VIRTUAL \l0x001e: INVOKE  (r5 I:boolean) = (r3 I:java.util.Set) java.util.Set.isEmpty():boolean type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|0x0022: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x002b \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|0x0024: NEW_INSTANCE  (r3 I:java.util.TreeSet) =  java.util.TreeSet \l0x0026: SGET  (r5 I:java.util.Comparator) =  java.lang.String.CASE_INSENSITIVE_ORDER java.util.Comparator \l0x0028: INVOKE  (r3 I:java.util.TreeSet), (r5 I:java.util.Comparator) java.util.TreeSet.\<init\>(java.util.Comparator):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b|0x002b: CONST_STR  (r5 I:java.lang.String) =  \",\" \l0x002d: INVOKE  (r4 I:java.lang.String[]) = (r4 I:java.lang.String), (r5 I:java.lang.String) java.lang.String.split(java.lang.String):java.lang.String[] type: VIRTUAL \l0x0031: ARRAY_LENGTH  (r5 I:int) = (r4 I:?[]) \l0x0032: CONST  (r6 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0033|0x0033: IF  (r6 I:?[int, byte, short, char]) \>= (r5 I:?[int, byte, short, char])  \-\> B:11:0x0041 \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0035|0x0035: AGET  (r7 I:?[OBJECT, ARRAY]) = (r4 I:?[OBJECT, ARRAY][]), (r6 I:?[int, short, byte, char]) \l0x0037: INVOKE  (r7 I:java.lang.String) = (r7 I:java.lang.String) java.lang.String.trim():java.lang.String type: VIRTUAL \l0x003b: INVOKE  (r3 I:java.util.Set), (r7 I:java.lang.Object) java.util.Set.add(java.lang.Object):boolean type: INTERFACE \l0x003e: ARITH  (r6 I:int) = (r6 I:int) + (1 int) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0041|0x0041: ARITH  (r0 I:int) = (r0 I:int) + (1 int) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0044|0x0044: RETURN  (r3 I:java.util.Set\<java.lang.String\>) \l}"];
+MethodNode[shape=record,label="{public static java.util.Set\<java.lang.String\> okhttp3.internal.http.HttpHeaders.varyFields((r8 I:okhttp3.Headers A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lokhttp3\/Headers;, ), Ljava\/util\/Set\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_12;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_9;
+Node_11 -> Node_1;
+}
+

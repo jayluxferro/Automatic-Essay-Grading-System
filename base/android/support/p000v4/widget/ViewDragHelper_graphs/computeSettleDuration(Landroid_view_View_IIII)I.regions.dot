@@ -1,0 +1,56 @@
+digraph "CFG forandroid.support.v4.widget.ViewDragHelper.computeSettleDuration(Landroid\/view\/View;IIII)I" {
+subgraph cluster_Region_1046343833 {
+label = "R(7:0|(1:2)(1:4)|3|(1:6)(1:8)|7|9|10) | DECL_VAR: float null, float null, float null, float null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r10 = clampMag(r10, (int) r6.mMinVelocity, (int) r6.mMaxVelocity)\lint int r11 = clampMag(r11, (int) r6.mMinVelocity, (int) r6.mMaxVelocity)\lint int r0 = java.lang.Math.abs(r8)\lint int r1 = java.lang.Math.abs(r9)\lint int r2 = java.lang.Math.abs(r10)\lint int r3 = java.lang.Math.abs(r11)\lint int r4 = r2 + r3\lint int r5 = r0 + r1\l}"];
+subgraph cluster_IfRegion_1288515676 {
+label = "IF [B:1:0x0028] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0028|if (r10 != 0) goto L_0x002a\l}"];
+subgraph cluster_Region_2028190992 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002a|float r0 = (float) r2\lfloat r2 = (float) r4\l}"];
+}
+subgraph cluster_Region_209836316 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|float r0 = (float) r0\lfloat r2 = (float) r5\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x002c|PHI: r0 r2 \l  PHI: (r0v6 float) = (r0v5 float), (r0v8 float) binds: [B:4:0x002e, B:2:0x002a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 float) = (r2v1 float), (r2v8 float) binds: [B:4:0x002e, B:2:0x002a] A[DONT_GENERATE, DONT_INLINE]\l|float float r0 = r0 \/ r2\l}"];
+subgraph cluster_IfRegion_2064191792 {
+label = "IF [B:5:0x0031] THEN: R(1:6) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0031|if (r11 != 0) goto L_0x0033\l}"];
+subgraph cluster_Region_1263580077 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0033|float r1 = (float) r3\lfloat r2 = (float) r4\l}"];
+}
+subgraph cluster_Region_1569274157 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0037|float r1 = (float) r1\lfloat r2 = (float) r5\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0035|PHI: r1 r2 \l  PHI: (r1v6 float) = (r1v5 float), (r1v8 float) binds: [B:8:0x0037, B:6:0x0033] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 float) = (r2v3 float), (r2v7 float) binds: [B:8:0x0037, B:6:0x0033] A[DONT_GENERATE, DONT_INLINE]\l|float float r1 = r1 \/ r2\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003a}"];
+Node_10 [shape=record,label="{10\:\ 0x0056|RETURN\l|return (int) ((((float) computeAxisDuration(r8, r10, r6.mCallback.getViewHorizontalDragRange(r7))) * r0) + (((float) computeAxisDuration(r9, r11, r6.mCallback.getViewVerticalDragRange(r7))) * r1))\l}"];
+}
+MethodNode[shape=record,label="{private int android.support.v4.widget.ViewDragHelper.computeSettleDuration((r6v0 'this' android.support.v4.widget.ViewDragHelper A[IMMUTABLE_TYPE, THIS]), (r7v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_3;
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_7;
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+}
+

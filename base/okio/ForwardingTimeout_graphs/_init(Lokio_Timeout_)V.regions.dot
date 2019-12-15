@@ -1,0 +1,36 @@
+digraph "CFG forokio.ForwardingTimeout.\<init\>(Lokio\/Timeout;)V" {
+subgraph cluster_Region_444781056 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1351801508 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1786341770 {
+label = "IF [B:1:0x0003] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2 != null) goto L_0x0005\l}"];
+subgraph cluster_Region_878848311 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r1.delegate = r2\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_947715945 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|throw new java.lang.IllegalArgumentException(\"delegate == null\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+MethodNode[shape=record,label="{public void okio.ForwardingTimeout.\<init\>((r1v0 'this' okio.ForwardingTimeout A[IMMUTABLE_TYPE, THIS]), (r2v0 okio.Timeout A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

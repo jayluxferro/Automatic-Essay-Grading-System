@@ -1,0 +1,59 @@
+digraph "CFG forandroid.support.v7.widget.ActionBarOverlayLayout.onNestedFling(Landroid\/view\/View;FFZ)Z" {
+subgraph cluster_Region_1045283080 {
+label = "R(1:(2:(1:10)|(3:(1:5)(1:6)|7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1577481909 {
+label = "R(2:(1:10)|(3:(1:5)(1:6)|7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1918725397 {
+label = "IF [B:1:0x0002, B:2:0x0004] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0.mHideOnContentScroll == false) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|ADDED_TO_REGION\l|if (r4 == false) goto L_?\l}"];
+subgraph cluster_Region_1487448619 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_138241463 {
+label = "R(3:(1:5)(1:6)|7|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1709382107 {
+label = "IF [B:4:0x000b] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (shouldHideActionBarOnFling(r2, r3) == true) goto L_0x000d\l}"];
+subgraph cluster_Region_2094003639 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|addActionBarHideOffset()\l}"];
+}
+subgraph cluster_Region_1630265847 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|removeActionBarHideOffset()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0014|r0.mAnimatingForFling = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.widget.ActionBarOverlayLayout.onNestedFling((r0v0 'this' android.support.v7.widget.ActionBarOverlayLayout A[IMMUTABLE_TYPE, THIS]), (r1v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_10;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

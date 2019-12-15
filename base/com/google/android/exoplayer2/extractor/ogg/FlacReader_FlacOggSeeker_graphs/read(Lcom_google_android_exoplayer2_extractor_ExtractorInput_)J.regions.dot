@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.FlacReader.FlacOggSeeker.read(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)J" {
+subgraph cluster_Region_985439872 {
+label = "R(1:(2:(1:5)|(2:2|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_948028681 {
+label = "R(2:(1:5)|(2:2|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2045400588 {
+label = "IF [B:1:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r8.pendingSeekGranule \< 0) goto L_0x0013\l}"];
+subgraph cluster_Region_787513542 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_77656343 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|long long r0 = \-(r8.pendingSeekGranule + 2)\lr8.pendingSeekGranule = \-1\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0013}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.ogg.FlacReader.FlacOggSeeker.read((r8v0 'this' com.google.android.exoplayer2.extractor.ogg.FlacReader$FlacOggSeeker A[IMMUTABLE_TYPE, THIS]), (r9v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_0 -> Node_1;
+Node_3 -> Node_5;
+}
+

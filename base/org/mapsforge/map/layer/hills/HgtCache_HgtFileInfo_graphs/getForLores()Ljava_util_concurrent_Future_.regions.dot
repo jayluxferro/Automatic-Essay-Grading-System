@@ -1,0 +1,59 @@
+digraph "CFG fororg.mapsforge.map.layer.hills.HgtCache.HgtFileInfo.getForLores()Ljava\/util\/concurrent\/Future;" {
+subgraph cluster_Region_1651870006 {
+label = "R(6:0|(1:2)(1:3)|(1:5)|6|(1:8)|9) | DECL_VAR: java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\> null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.ref.WeakReference\<java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>\> java.lang.ref.WeakReference\<java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>\> r0 = r3.weakRef\l}"];
+subgraph cluster_IfRegion_400115322 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 == null) goto L_0x0004\l}"];
+subgraph cluster_Region_174377098 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r0 = null\l}"];
+}
+subgraph cluster_Region_1891238852 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|java.util.concurrent.Future r0 = (java.util.concurrent.Future) r0.get()\l}"];
+}
+}
+subgraph cluster_IfRegion_1265909534 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|PHI: r0 \l  PHI: (r0v1 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>) = (r0v5 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>), (r0v6 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>) binds: [B:3:0x0006, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L_0x000e\l}"];
+subgraph cluster_Region_1142342919 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|org.mapsforge.map.layer.hills.HgtCache$LoadUnmergedFuture r0 = new org.mapsforge.map.layer.hills.HgtCache.LoadUnmergedFuture(r3)\lr3.weakRef = new java.lang.ref.WeakReference\<\>(r0)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|PHI: r0 \l  PHI: (r0v2 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>) = (r0v1 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>), (r0v3 java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\>) binds: [B:4:0x000c, B:5:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|java.util.concurrent.Future java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\> r1 = r3.this$0.mainLru.markUsed(r0)\l}"];
+subgraph cluster_IfRegion_884661472 {
+label = "IF [B:7:0x002c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|if (r3.this$0.secondaryLru != null) goto L_0x002e\l}"];
+subgraph cluster_Region_1465103658 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|r3.this$0.secondaryLru.markUsed(r1)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0037|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{private java.util.concurrent.Future\<org.mapsforge.core.graphics.HillshadingBitmap\> org.mapsforge.map.layer.hills.HgtCache.HgtFileInfo.getForLores((r3v0 'this' org.mapsforge.map.layer.hills.HgtCache$HgtFileInfo A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/concurrent\/Future\<, Lorg\/mapsforge\/core\/graphics\/HillshadingBitmap;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+}
+

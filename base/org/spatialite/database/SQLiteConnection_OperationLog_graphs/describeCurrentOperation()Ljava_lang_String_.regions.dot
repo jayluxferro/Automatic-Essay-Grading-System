@@ -1,0 +1,65 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.OperationLog.describeCurrentOperation()Ljava\/lang\/String;" {
+subgraph cluster_Region_298653684 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_251239553 {
+label = "Synchronized:R(2:1|(2:3|(2:(1:12)|(2:7|9))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_1286510932 {
+label = "R(2:3|(2:(1:12)|(2:7|9)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|org.spatialite.database.SQLiteConnection.Operation r1 = r4.mOperations[r4.mIndex]\l}"];
+subgraph cluster_Region_1708091669 {
+label = "R(2:(1:12)|(2:7|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_222057504 {
+label = "IF [B:4:0x0009, B:6:0x000d] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r1 == null) goto L_0x001e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|ADDED_TO_REGION\l|if (r1.mFinished == true) goto L_0x001e\l}"];
+subgraph cluster_Region_1784877982 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0020|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_921013650 {
+label = "R(2:7|9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder()     \/\/ Catch:\{  \}\lr1.describe(r2, false)\ljava.lang.String java.lang.String r1 = r2.toString()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|RETURN\l|return r1\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001c: MONITOR_EXIT  \l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001e}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001f|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001f: MONITOR_EXIT  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0022|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public java.lang.String org.spatialite.database.SQLiteConnection.OperationLog.describeCurrentOperation((r4v0 'this' org.spatialite.database.SQLiteConnection$OperationLog A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_13;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

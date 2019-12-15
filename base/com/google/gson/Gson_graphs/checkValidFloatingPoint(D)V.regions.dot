@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.gson.Gson.checkValidFloatingPoint(D)V" {
+subgraph cluster_Region_715916952 {
+label = "R(1:(1:(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_901517693 {
+label = "R(1:(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1204681507 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (java.lang.Double.isNaN(r2) == true) goto L_0x000d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (java.lang.Double.isInfinite(r2) == true) goto L_0x000d\l}"];
+subgraph cluster_Region_459045588 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|throw new java.lang.IllegalArgumentException(r2 + \" is not a valid double value as per JSON specification. To override this behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.\")\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+MethodNode[shape=record,label="{static void com.google.gson.Gson.checkValidFloatingPoint((r2v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

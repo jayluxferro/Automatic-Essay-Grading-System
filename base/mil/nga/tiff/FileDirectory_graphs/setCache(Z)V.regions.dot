@@ -1,0 +1,48 @@
+digraph "CFG formil.nga.tiff.FileDirectory.setCache(Z)V" {
+subgraph cluster_Region_775238617 {
+label = "R(1:(1:4)(1:(1:3)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1518290593 {
+label = "IF [B:0:0x0000] THEN: R(1:4) ELSE: R(1:(1:3)(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 != true) goto L_0x000e\l}"];
+subgraph cluster_Region_1056127129 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|r0.cache = null\l}"];
+}
+subgraph cluster_Region_546029541 {
+label = "R(1:(1:3)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_656931798 {
+label = "IF [B:2:0x0004] THEN: R(1:3) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r0.cache == null) goto L_0x0006\l}"];
+subgraph cluster_Region_130935773 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r0.cache = new java.util.HashMap()\l}"];
+}
+subgraph cluster_Region_542977101 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void mil.nga.tiff.FileDirectory.setCache((r0v0 'this' mil.nga.tiff.FileDirectory A[IMMUTABLE_TYPE, THIS]), (r1v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_7;
+Node_1 -> Node_2;
+}
+

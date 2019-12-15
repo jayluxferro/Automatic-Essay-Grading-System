@@ -1,0 +1,25 @@
+digraph "CFG forokhttp3.internal.connection.RealConnection.connectTunnel(IIILokhttp3\/Call;Lokhttp3\/EventListener;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.Request r0 = createTunnelRequest()\lokhttp3.HttpUrl r1 = r0.url()\lr2 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r0 r2 \l  PHI: (r0v1 okhttp3.Request) = (r0v0 okhttp3.Request), (r0v2 okhttp3.Request) binds: [B:0:0x0000, B:5:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x0017] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:5:0x0017\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|if (r2 \>= 21) goto L_0x0035\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|connectSocket(r7, r8, r10, r11)\lokhttp3.Request r0 = createTunnel(r8, r9, r0, r1)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r0 != null) goto L_0x0017\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|LOOP_END\lLOOP:0: B:1:0x0009\-\>B:5:0x0017\l|okhttp3.internal.Util.closeQuietly(r6.rawSocket)\lr6.rawSocket = null\lr6.sink = null\lr6.source = null\lr11.connectEnd(r10, r6.route.socketAddress(), r6.route.proxy(), (okhttp3.Protocol) null)\lint r2 = r2 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0035|SYNTHETIC\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0035|SYNTHETIC\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.connection.RealConnection.connectTunnel((r6v0 'this' okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, THIS]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 okhttp3.Call A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 okhttp3.EventListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+}
+

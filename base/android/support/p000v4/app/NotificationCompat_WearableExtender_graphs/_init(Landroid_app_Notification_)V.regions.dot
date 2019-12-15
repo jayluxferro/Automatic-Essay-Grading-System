@@ -1,0 +1,133 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.WearableExtender.\<init\>(Landroid\/app\/Notification;)V" {
+subgraph cluster_Region_1724301183 {
+label = "R(3:0|1|(1:(5:5|(3:8|(2:(1:13)(1:(1:16)(0))|17)|18)|19|(1:21)|22)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Bundle android.os.Bundle r12 = android.support.p000v4.app.NotificationCompat.getExtras(r12)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0027|android.os.Bundle r12 = r12 != null ? r12.getBundle(EXTRA_WEARABLE_EXTENSIONS) : null\l}"];
+subgraph cluster_Region_1787648721 {
+label = "R(1:(5:5|(3:8|(2:(1:13)(1:(1:16)(0))|17)|18)|19|(1:21)|22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_236420215 {
+label = "IF [B:4:0x0031] THEN: R(5:5|(3:8|(2:(1:13)(1:(1:16)(0))|17)|18)|19|(1:21)|22) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0031|PHI: r12 \l  PHI: (r12v2 android.os.Bundle) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r12 != null) goto L_0x0033\l}"];
+subgraph cluster_Region_1751769675 {
+label = "R(5:5|(3:8|(2:(1:13)(1:(1:16)(0))|17)|18)|19|(1:21)|22)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0033|java.util.ArrayList java.util.ArrayList r5 = r12.getParcelableArrayList(KEY_ACTIONS)\l}"];
+subgraph cluster_IfRegion_811033383 {
+label = "IF [B:6:0x003d, B:7:0x003f] THEN: R(3:8|(2:(1:13)(1:(1:16)(0))|17)|18) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003d|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x003f\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003f|ADDED_TO_REGION\l|if (r5 != null) goto L_0x0041\l}"];
+subgraph cluster_Region_1673072405 {
+label = "R(3:8|(2:(1:13)(1:(1:16)(0))|17)|18)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0041|android.support.v4.app.NotificationCompat$Action[] android.support.p000v4.app.NotificationCompat.Action[] r6 = new android.support.p000v4.app.NotificationCompat.Action[r5.size()]\lint r8 = 0\l}"];
+subgraph cluster_LoopRegion_1182452994 {
+label = "LOOP:0: (2:(1:13)(1:(1:16)(0))|17)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|if (r8 \< r6.length) goto L_0x004b\l}"];
+subgraph cluster_Region_282044066 {
+label = "R(2:(1:13)(1:(1:16)(0))|17)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_592076930 {
+label = "IF [B:12:0x004f] THEN: R(1:13) ELSE: R(1:(1:16)(0))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004f|if (android.os.Build.VERSION.SDK_INT \>= 20) goto L_0x0051\l}"];
+subgraph cluster_Region_1450718161 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0051|r6[r8] = android.support.p000v4.app.NotificationCompat.getActionCompatFromAction((android.app.Notification.Action) r5.get(r8))\l}"];
+}
+subgraph cluster_Region_97118938 {
+label = "R(1:(1:16)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_713265558 {
+label = "IF [B:15:0x0060] THEN: R(1:16) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0060|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0062\l}"];
+subgraph cluster_Region_1898248431 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0062|r6[r8] = android.support.p000v4.app.NotificationCompatJellybean.getActionFromBundle((android.os.Bundle) r5.get(r8))\l}"];
+}
+subgraph cluster_Region_718806469 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x006e|LOOP_END\lLOOP:0: B:9:0x0048\-\>B:17:0x006e\l|r8++\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0071|java.util.Collections.addAll(r11.mActions, r6)\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0078|r11.mFlags = r12.getInt(KEY_FLAGS, 1)\lr11.mDisplayIntent = (android.app.PendingIntent) r12.getParcelable(KEY_DISPLAY_INTENT)\landroid.app.Notification[] android.app.Notification[] r0 = android.support.p000v4.app.NotificationCompat.getNotificationArrayFromBundle(r12, KEY_PAGES)\l}"];
+subgraph cluster_IfRegion_2053235639 {
+label = "IF [B:20:0x0090] THEN: R(1:21) ELSE: null";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0090|if (r0 != null) goto L_0x0092\l}"];
+subgraph cluster_Region_1359710793 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0092|java.util.Collections.addAll(r11.mPages, r0)\l}"];
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x0097|r11.mBackground = (android.graphics.Bitmap) r12.getParcelable(KEY_BACKGROUND)\lr11.mContentIcon = r12.getInt(KEY_CONTENT_ICON)\lr11.mContentIconGravity = r12.getInt(KEY_CONTENT_ICON_GRAVITY, 8388613)\lr11.mContentActionIndex = r12.getInt(KEY_CONTENT_ACTION_INDEX, \-1)\lr11.mCustomSizePreset = r12.getInt(KEY_CUSTOM_SIZE_PRESET, 0)\lr11.mCustomContentHeight = r12.getInt(KEY_CUSTOM_CONTENT_HEIGHT)\lr11.mGravity = r12.getInt(KEY_GRAVITY, 80)\lr11.mHintScreenTimeout = r12.getInt(KEY_HINT_SCREEN_TIMEOUT)\lr11.mDismissalId = r12.getString(KEY_DISMISSAL_ID)\lr11.mBridgeTag = r12.getString(KEY_BRIDGE_TAG)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0029}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0030}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0048|LOOP_START\lPHI: r8 \l  PHI: (r8v1 int) = (r8v0 int), (r8v2 int) binds: [B:8:0x0041, B:17:0x006e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0048\-\>B:17:0x006e\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004b}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x005e}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0071|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x006e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x006e|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x006e|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.NotificationCompat.WearableExtender.\<init\>((r11v0 'this' android.support.v4.app.NotificationCompat$WearableExtender A[IMMUTABLE_TYPE, THIS]), (r12v0 android.app.Notification A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_28[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_19[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_19[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_23[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_25;
+Node_15 -> Node_16;
+Node_15 -> Node_26[style=dashed];
+Node_16 -> Node_24;
+Node_17 -> Node_9;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_22;
+Node_22 -> Node_27;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+Node_23 -> Node_18;
+Node_24 -> Node_17;
+Node_25 -> Node_17;
+Node_26 -> Node_17;
+}
+

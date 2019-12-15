@@ -1,0 +1,67 @@
+digraph "CFG forcom.squareup.picasso.MarkableInputStream.setLimit(J)V" {
+subgraph cluster_Region_2081634404 {
+label = "R(1:(2:(1:6)(1:5)|7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1824465893 {
+label = "Try: R(2:(1:6)(1:5)|7) catches: R(3:9|10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1631870087 {
+label = "R(2:(1:6)(1:5)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1269266752 {
+label = "IF [B:2:0x0006, B:4:0x000e] THEN: R(1:6) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|Catch:\{ IOException \-\> 0x003a \}\l|if (r4.reset \>= r4.offset) goto L_0x0028     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|ADDED_TO_REGION\lCatch:\{ IOException \-\> 0x003a \}\l|if (r4.offset \> r4.limit) goto L_0x0028     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+subgraph cluster_Region_781367368 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|Catch:\{ IOException \-\> 0x003a \}\l|r4.reset = r4.offset     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr4.f218in.mark((int) (r5 \- r4.offset))     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+}
+subgraph cluster_Region_992413300 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|Catch:\{ IOException \-\> 0x003a \}\l|r4.f218in.reset()     \/\/ Catch:\{ IOException \-\> 0x003a \}\lr4.f218in.mark((int) (r5 \- r4.reset))     \/\/ Catch:\{ IOException \-\> 0x003a \}\lskip(r4.reset, r4.offset)     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0037|Catch:\{ IOException \-\> 0x003a \}\l|r4.limit = r5     \/\/ Catch:\{ IOException \-\> 0x003a \}\l}"];
+}
+subgraph cluster_Region_2026165747 {
+label = "R(3:9|10|11) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003a|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003b}"];
+Node_11 [shape=record,label="{11\:\ 0x0051|throw new java.lang.IllegalStateException(\"Unable to mark: \" + r5)\l}"];
+}
+}
+}
+subgraph cluster_Region_2026165747 {
+label = "R(3:9|10|11) | ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003a|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003b}"];
+Node_11 [shape=record,label="{11\:\ 0x0051|throw new java.lang.IllegalStateException(\"Unable to mark: \" + r5)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x003a \}\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|Catch:\{ IOException \-\> 0x003a \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0039}"];
+MethodNode[shape=record,label="{private void com.squareup.picasso.MarkableInputStream.setLimit((r4v0 'this' com.squareup.picasso.MarkableInputStream A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_0 -> Node_9;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

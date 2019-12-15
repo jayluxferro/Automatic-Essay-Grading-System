@@ -1,0 +1,29 @@
+digraph "CFG forcom.google.android.exoplayer2.text.webvtt.WebvttParserUtil.parseTimestampUs(Ljava\/lang\/String;)J" {
+subgraph cluster_Region_767677475 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r3 = 0\llong r4 = 0\ljava.lang.String[] java.lang.String[] r0 = r14.split(\".\", 2)\lint int r6 = r0[0].split(\":\").length\l}"];
+subgraph cluster_LoopRegion_1798496300 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|LOOP_START\lPHI: r3 r4 \l  PHI: (r3v1 int) = (r3v0 int), (r3v4 int) binds: [B:0:0x0000, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'value' long) = (r4v0 'value' long), (r4v2 'value' long) binds: [B:0:0x0000, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0015\-\>B:2:0x0017\l|if (r3 \< r6) goto L_0x0017\l}"];
+subgraph cluster_Region_1287339025 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|LOOP_END\lLOOP:0: B:1:0x0015\-\>B:2:0x0017\l|long r4 = (60 * r4) + java.lang.Long.parseLong(r1)\lr3++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0030|RETURN\l|return ((r4 * 1000) + java.lang.Long.parseLong(r0[1])) * 1000\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0025}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static long com.google.android.exoplayer2.text.webvtt.WebvttParserUtil.parseTimestampUs((r14v0 'timestamp' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.NumberFormatException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

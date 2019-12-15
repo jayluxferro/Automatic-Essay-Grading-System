@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfObject(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Ljava\/util\/HashMap;" {
+subgraph cluster_Region_1944761736 {
+label = "R(2:0|(2:1|(2:(1:3)|(1:4))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashMap java.util.HashMap\<java.lang.String, java.lang.Object\> r0 = new java.util.HashMap\<\>()\l}"];
+subgraph cluster_LoopRegion_518949902 {
+label = "LOOP:0: (2:1|(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1078730038 {
+label = "R(2:1|(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|LOOP_START\lLOOP:0: B:1:0x0005\-\>B:4:0x0012\l|java.lang.String java.lang.String r1 = readAmfString(r4)\lint int r2 = readAmfType(r4)\l}"];
+subgraph cluster_Region_81692567 {
+label = "R(2:(1:3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1714206274 {
+label = "IF [B:2:0x000f] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r2 == 9) goto L_0x0011\l}"];
+subgraph cluster_Region_1110857179 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1508381335 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:0: B:1:0x0005\-\>B:4:0x0012\l|r0.put(r1, readAmfData(r4, r2))\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.HashMap\<java.lang.String, java.lang.Object\> com.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfObject((r4v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;, ), Ljava\/util\/HashMap, \<, Ljava\/lang\/String;, Ljava\/lang\/Object;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_4[style=dashed];
+Node_2 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_3;
+}
+

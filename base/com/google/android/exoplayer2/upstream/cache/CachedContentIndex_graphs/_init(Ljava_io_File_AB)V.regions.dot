@@ -1,0 +1,72 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CachedContentIndex.\<init\>(Ljava\/io\/File;[B)V" {
+subgraph cluster_Region_89173399 {
+label = "R(2:(2:5|(1:7))(1:14)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1940208009 {
+label = "IF [B:1:0x0004] THEN: R(2:5|(1:7)) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1991230771 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|PHI: r1 \l  PHI: (r1v6 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkArgument(r6.length == 16)\l}"];
+subgraph cluster_TryCatchRegion_1898832510 {
+label = "Try: R(1:7) catches: R(2:11|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1896990169 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ NoSuchAlgorithmException \| NoSuchPaddingException \-\> 0x003f \}\lSplitter:B:6:0x0011\l|r4.cipher = javax.crypto.Cipher.getInstance(\"AES\/CBC\/PKCS5PADDING\")     \/\/ Catch:\{ NoSuchAlgorithmException \| NoSuchPaddingException \-\> 0x003f \}\lr4.secretKeySpec = new javax.crypto.spec.SecretKeySpec(r6, \"AES\")     \/\/ Catch:\{ NoSuchAlgorithmException \| NoSuchPaddingException \-\> 0x003f \}\l}"];
+}
+subgraph cluster_Region_732091139 {
+label = "R(2:11|13) | ExcHandler: NoSuchAlgorithmException \| NoSuchPaddingException (r0v0 'e' java.security.GeneralSecurityException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|ExcHandler: NoSuchAlgorithmException \| NoSuchPaddingException (r0v0 'e' java.security.GeneralSecurityException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0011\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0045|throw new java.lang.IllegalStateException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_598482201 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0046|r4.cipher = null\lr4.secretKeySpec = null\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0020|r4.keyToContent = new java.util.HashMap\<\>()\lr4.idToKey = new android.util.SparseArray\<\>()\lr4.atomicFile = new com.google.android.exoplayer2.util.AtomicFile(new java.io.File(r5, FILE_NAME))\l}"];
+}
+subgraph cluster_Region_732091139 {
+label = "R(2:11|13) | ExcHandler: NoSuchAlgorithmException \| NoSuchPaddingException (r0v0 'e' java.security.GeneralSecurityException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003f|ExcHandler: NoSuchAlgorithmException \| NoSuchPaddingException (r0v0 'e' java.security.GeneralSecurityException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0011\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0045|throw new java.lang.IllegalStateException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011|SYNTHETIC\lSplitter:B:6:0x0011\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003c}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003d}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0040}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.upstream.cache.CachedContentIndex.\<init\>((r4v0 'this' com.google.android.exoplayer2.upstream.cache.CachedContentIndex A[IMMUTABLE_TYPE, THIS]), (r5v0 'cacheDir' java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'secretKey' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_11 -> Node_12;
+Node_14 -> Node_8;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_11;
+Node_10 -> Node_5;
+Node_12 -> Node_13;
+}
+

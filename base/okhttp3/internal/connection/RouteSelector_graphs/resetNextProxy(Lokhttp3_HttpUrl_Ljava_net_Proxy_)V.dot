@@ -1,0 +1,31 @@
+digraph "CFG forokhttp3.internal.connection.RouteSelector.resetNextProxy(Lokhttp3\/HttpUrl;Ljava\/net\/Proxy;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r3 == null) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|r1.proxies = java.util.Collections.singletonList(r3)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|java.util.List r2 = r1.address.proxySelector().select(r2.uri())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r2 == null) goto L_0x0025\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (r2.isEmpty() != false) goto L_0x0025\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0020|java.util.List r2 = okhttp3.internal.Util.immutableList(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|java.net.Proxy[] r2 = new java.net.Proxy[]\{java.net.Proxy.NO_PROXY\}\ljava.util.List r2 = okhttp3.internal.Util.immutableList((T[]) r2)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0030|PHI: r2 \l  PHI: (r2v3 java.util.List\<java.net.Proxy\>) = (r2v6 java.util.List\<java.net.Proxy\>), (r2v7 java.util.List\<java.net.Proxy\>) binds: [B:8:0x0025, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|r1.proxies = r2\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0032|r1.nextProxyIndex = 0\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0034|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.connection.RouteSelector.resetNextProxy((r1v0 'this' okhttp3.internal.connection.RouteSelector A[IMMUTABLE_TYPE, THIS]), (r2v0 okhttp3.HttpUrl A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.net.Proxy A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_10;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

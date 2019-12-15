@@ -1,0 +1,42 @@
+digraph "CFG forkotlin.io.FilePathComponents.subPath(II)Ljava\/io\/File;" {
+subgraph cluster_Region_716043469 {
+label = "R(1:(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1237777017 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1597570528 {
+label = "IF [B:0:0x0000, B:1:0x0002, B:3:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r11 \< 0) goto L_0x002f\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r11 \> r12) goto L_0x002f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r12 \> getSize()) goto L_0x002f\l}"];
+subgraph cluster_Region_813719028 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|throw new java.lang.IllegalArgumentException()\l}"];
+}
+}
+subgraph cluster_Region_1551812114 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|java.lang.String java.lang.String r11 = java.io.File.separator\lkotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r11, \"File.separator\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002e|RETURN\l|return new java.io.File(kotlin.collections.CollectionsKt.joinToString$default(r10.segments.subList(r11, r12), r11, (java.lang.CharSequence) null, (java.lang.CharSequence) null, 0, (java.lang.CharSequence) null, (kotlin.jvm.functions.Function1) null, 62, (java.lang.Object) null))\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002f}"];
+MethodNode[shape=record,label="{public final java.io.File kotlin.io.FilePathComponents.subPath((r10v0 'this' kotlin.io.FilePathComponents A[IMMUTABLE_TYPE, THIS]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_6;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

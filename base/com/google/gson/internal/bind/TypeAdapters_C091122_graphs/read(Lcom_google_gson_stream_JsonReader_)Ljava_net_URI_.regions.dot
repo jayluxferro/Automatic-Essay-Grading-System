@@ -1,0 +1,87 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapters.22.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/net\/URI;" {
+subgraph cluster_Region_476572460 {
+label = "R(1:(2:(2:2|3)|(1:(2:5|(2:(1:13)|(1:12))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1128952034 {
+label = "R(2:(2:2|3)|(1:(2:5|(2:(1:13)|(1:12)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1174389375 {
+label = "IF [B:1:0x0007] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r4.peek() == com.google.gson.stream.JsonToken.NULL) goto L_0x0009\l}"];
+subgraph cluster_Region_885410628 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|r4.nextNull()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_391899259 {
+label = "R(1:(2:5|(2:(1:13)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_126240530 {
+label = "Try: R(2:5|(2:(1:13)|(1:12))) catches: R(2:9|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1822208442 {
+label = "R(2:5|(2:(1:13)|(1:12)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ URISyntaxException \-\> 0x0020 \}\lSplitter:B:4:0x000d\l|java.lang.String java.lang.String r4 = r4.nextString()     \/\/ Catch:\{ URISyntaxException \-\> 0x0020 \}\l}"];
+subgraph cluster_Region_1020367271 {
+label = "R(2:(1:13)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_666094037 {
+label = "IF [B:6:0x0017] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|Catch:\{ URISyntaxException \-\> 0x0020 \}\l|if (\"null\".equals(r4) == true) goto L_0x0019     \/\/ Catch:\{ URISyntaxException \-\> 0x0020 \}\l}"];
+subgraph cluster_Region_986411282 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_995254106 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new java.net.URI(r4)\l}"];
+}
+}
+}
+subgraph cluster_Region_1914396160 {
+label = "R(2:9|11) | ExcHandler: URISyntaxException (r4v1 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0020|ExcHandler: URISyntaxException (r4v1 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000d\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|throw new com.google.gson.JsonIOException((java.lang.Throwable) r4)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1914396160 {
+label = "R(2:9|11) | ExcHandler: URISyntaxException (r4v1 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0020|ExcHandler: URISyntaxException (r4v1 'e' java.net.URISyntaxException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000d\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0026|throw new com.google.gson.JsonIOException((java.lang.Throwable) r4)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d|SYNTHETIC\lSplitter:B:4:0x000d\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019|Catch:\{ URISyntaxException \-\> 0x0020 \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001a|Catch:\{ URISyntaxException \-\> 0x0020 \}\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0021}"];
+MethodNode[shape=record,label="{public java.net.URI com.google.gson.internal.bind.TypeAdapters.22.read((r3v0 'this' com.google.gson.internal.bind.TypeAdapters$22 A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_9;
+Node_7 -> Node_13;
+Node_8 -> Node_12;
+Node_10 -> Node_11;
+}
+

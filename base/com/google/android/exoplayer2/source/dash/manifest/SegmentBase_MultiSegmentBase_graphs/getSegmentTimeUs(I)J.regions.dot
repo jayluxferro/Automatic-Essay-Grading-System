@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.SegmentBase.MultiSegmentBase.getSegmentTimeUs(I)J" {
+subgraph cluster_Region_953927331 {
+label = "R(2:(1:2)(1:5)|4) | DECL_VAR: long unscaledSegmentTime\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_733082740 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r6.segmentTimeline != null) goto L_0x0004\l}"];
+subgraph cluster_Region_829403721 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|long r0 = r6.segmentTimeline.get(r7 \- r6.startNumber).startTime \- r6.presentationTimeOffset\l}"];
+}
+subgraph cluster_Region_1923690560 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|long r0 = ((long) (r7 \- r6.startNumber)) * r6.duration\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001f|RETURN\l|return com.google.android.exoplayer2.util.Util.scaleLargeTimestamp(r0, com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND, r6.timescale)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0016|PHI: r0 \l  PHI: (r0v1 'unscaledSegmentTime' long) = (r0v0 'unscaledSegmentTime' long), (r0v2 'unscaledSegmentTime' long) binds: [B:5:0x0020, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public final long com.google.android.exoplayer2.source.dash.manifest.SegmentBase.MultiSegmentBase.getSegmentTimeUs((r6v0 'this' com.google.android.exoplayer2.source.dash.manifest.SegmentBase$MultiSegmentBase A[IMMUTABLE_TYPE, THIS]), (r7v0 'sequenceNumber' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,94 @@
+digraph "CFG forandroid.support.multidex.ZipUtil.findCentralDirectory(Ljava\/io\/RandomAccessFile;)Landroid\/support\/multidex\/ZipUtil$CentralDirectory;" {
+subgraph cluster_Region_2014222699 {
+label = "R(2:0|(2:(1:3)|(5:4|(1:6)|7|(2:8|(2:(2:10|11)|(1:12)))|15)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r2 = r10.length() \- 22\l}"];
+subgraph cluster_Region_2145529299 {
+label = "R(2:(1:3)|(5:4|(1:6)|7|(2:8|(2:(2:10|11)|(1:12)))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1604243582 {
+label = "IF [B:1:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r2 \< 0) goto L_0x000e\l}"];
+subgraph cluster_Region_1149310970 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002a|throw new java.util.zip.ZipException(\"File too short to be a zip file: \" + r10.length())\l}"];
+}
+}
+subgraph cluster_Region_1678356590 {
+label = "R(5:4|(1:6)|7|(2:8|(2:(2:10|11)|(1:12)))|15)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002b|long long r4 = r2 \- android.support.p000v4.media.session.PlaybackStateCompat.ACTION_PREPARE_FROM_SEARCH\l}"];
+subgraph cluster_IfRegion_1656742390 {
+label = "IF [B:5:0x0034] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|if (r4 \< 0) goto L_0x0036\l}"];
+subgraph cluster_Region_1260171835 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0036|r4 = 0\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0038|PHI: r4 \l  PHI: (r4v1 'stopOffset' long) = (r4v0 'stopOffset' long), (r4v2 'stopOffset' long) binds: [B:5:0x0034, B:6:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|int int r1 = java.lang.Integer.reverseBytes(ENDSIG)\l}"];
+subgraph cluster_LoopRegion_1646826272 {
+label = "LOOP:0: (2:8|(2:(2:10|11)|(1:12)))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0085|LOOP_END\lLOOP:0: B:8:0x003f\-\>B:13:0x0085\l|if (r2 \>= r4) goto L_0x003f\l}"];
+subgraph cluster_Region_1757460549 {
+label = "R(2:8|(2:(2:10|11)|(1:12)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'scanOffset' long) = (r2v0 'scanOffset' long), (r2v2 'scanOffset' long) binds: [B:7:0x0038, B:13:0x0085] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x003f\-\>B:13:0x0085\l|r10.seek(r2)\l}"];
+subgraph cluster_Region_531291232 {
+label = "R(2:(2:10|11)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_265318260 {
+label = "IF [B:9:0x0046] THEN: R(2:10|11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0046|if (r10.readInt() == r1) goto L_0x0048\l}"];
+subgraph cluster_Region_700931133 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0048|r10.skipBytes(2)\lr10.skipBytes(2)\lr10.skipBytes(2)\lr10.skipBytes(2)\landroid.support.multidex.ZipUtil$CentralDirectory android.support.multidex.ZipUtil.CentralDirectory r0 = new android.support.multidex.ZipUtil.CentralDirectory()\lr0.size = ((long) java.lang.Integer.reverseBytes(r10.readInt())) & 4294967295L\lr0.offset = ((long) java.lang.Integer.reverseBytes(r10.readInt())) & 4294967295L\l}"];
+Node_11 [shape=record,label="{11\:\ 0x007f|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_369331257 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0080|r2\-\-\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x008e|throw new java.util.zip.ZipException(\"End Of Central Directory signature not found\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0087}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0087|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0048|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static android.support.multidex.ZipUtil$CentralDirectory android.support.multidex.ZipUtil.findCentralDirectory((r10v0 'raf' java.io.RandomAccessFile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.util.zip.ZipException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_13 -> Node_8;
+Node_13 -> Node_16[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_12[style=dashed];
+Node_9 -> Node_17;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_2 -> Node_3;
+Node_14 -> Node_15;
+Node_16 -> Node_14;
+Node_17 -> Node_10;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.route.RouteFetcher.calculateRemainingApproaches(Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)[Ljava\/lang\/String;" {
+subgraph cluster_Region_1932829040 {
+label = "R(2:0|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.api.directions.v5.models.RouteOptions com.mapbox.api.directions.p008v5.models.RouteOptions r0 = r5.directionsRoute().routeOptions()\l}"];
+subgraph cluster_Region_988911013 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1322590824 {
+label = "IF [B:1:0x0008, B:3:0x0012] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if (com.mapbox.core.utils.TextUtils.isEmpty(r0.approaches()) == true) goto L_?\l}"];
+subgraph cluster_Region_38526497 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_243736181 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|java.lang.String[] java.lang.String[] r0 = r0.approaches().split(SEMICOLON)\lint int r1 = r5.directionsRoute().routeOptions().coordinates().size()\ljava.lang.String[] java.lang.String[] r5 = (java.lang.String[]) java.util.Arrays.copyOfRange(r0, r1 \- r5.remainingWaypoints(), r1)\ljava.lang.String[] java.lang.String[] r1 = new java.lang.String[(r5.length + 1)]\lr1[0] = r0[0]\ljava.lang.System.arraycopy(r5, 0, r1, 1, r5.length)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0049|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{private java.lang.String[] com.mapbox.services.android.navigation.v5.route.RouteFetcher.calculateRemainingApproaches((r4v0 'this' com.mapbox.services.android.navigation.v5.route.RouteFetcher A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

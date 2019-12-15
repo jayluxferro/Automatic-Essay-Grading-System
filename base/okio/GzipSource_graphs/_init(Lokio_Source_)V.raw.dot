@@ -1,0 +1,16 @@
+digraph "CFG forokio.GzipSource.\<init\>(Lokio\/Source;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r2 I:java.lang.Object) java.lang.Object.\<init\>():void type: DIRECT \l0x0003: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0004: IPUT  (r0 I:int), (r2 I:okio.GzipSource) okio.GzipSource.section int \l0x0006: NEW_INSTANCE  (r0 I:java.util.zip.CRC32) =  java.util.zip.CRC32 \l0x0008: INVOKE  (r0 I:java.util.zip.CRC32) java.util.zip.CRC32.\<init\>():void type: DIRECT \l0x000b: IPUT  (r0 I:java.util.zip.CRC32), (r2 I:okio.GzipSource) okio.GzipSource.crc java.util.zip.CRC32 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0029 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|0x000f: NEW_INSTANCE  (r0 I:java.util.zip.Inflater) =  java.util.zip.Inflater \l0x0011: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0012: INVOKE  (r0 I:java.util.zip.Inflater), (r1 I:boolean) java.util.zip.Inflater.\<init\>(boolean):void type: DIRECT \l0x0015: IPUT  (r0 I:java.util.zip.Inflater), (r2 I:okio.GzipSource) okio.GzipSource.inflater java.util.zip.Inflater \l0x0017: INVOKE  (r3 I:okio.BufferedSource) = (r3 I:okio.Source) okio.Okio.buffer(okio.Source):okio.BufferedSource type: STATIC \l0x001b: IPUT  (r3 I:okio.BufferedSource), (r2 I:okio.GzipSource) okio.GzipSource.source okio.BufferedSource \l0x001d: NEW_INSTANCE  (r3 I:okio.InflaterSource) =  okio.InflaterSource \l0x001f: IGET  (r0 I:okio.BufferedSource) = (r2 I:okio.GzipSource) okio.GzipSource.source okio.BufferedSource \l0x0021: IGET  (r1 I:java.util.zip.Inflater) = (r2 I:okio.GzipSource) okio.GzipSource.inflater java.util.zip.Inflater \l0x0023: INVOKE  \l  (r3 I:okio.InflaterSource)\l  (r0 I:okio.BufferedSource)\l  (r1 I:java.util.zip.Inflater)\l okio.InflaterSource.\<init\>(okio.BufferedSource, java.util.zip.Inflater):void type: DIRECT \l0x0026: IPUT  (r3 I:okio.InflaterSource), (r2 I:okio.GzipSource) okio.GzipSource.inflaterSource okio.InflaterSource \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0028|0x0028: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0029|0x0029: NEW_INSTANCE  (r3 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x002b: CONST_STR  (r0 I:java.lang.String) =  \"source == null\" \l0x002d: INVOKE  \l  (r3 I:java.lang.IllegalArgumentException)\l  (r0 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0030|0x0030: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okio.GzipSource.\<init\>((r2 'this' I:okio.GzipSource A[IMMUTABLE_TYPE, THIS]), (r3 I:okio.Source A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

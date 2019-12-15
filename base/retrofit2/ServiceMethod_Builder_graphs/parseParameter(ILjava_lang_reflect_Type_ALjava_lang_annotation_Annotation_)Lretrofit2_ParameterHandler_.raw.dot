@@ -1,0 +1,32 @@
+digraph "CFG forretrofit2.ServiceMethod.Builder.parseParameter(ILjava\/lang\/reflect\/Type;[Ljava\/lang\/annotation\/Annotation;)Lretrofit2\/ParameterHandler;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r0 I:int) = (r8 I:?[]) \l0x0001: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0002: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0003: MOVE  (r3 I:?[OBJECT, ARRAY]) = (r2 I:?[OBJECT, ARRAY]) \l0x0004: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r2 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:10:0x001f \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: AGET  (r4 I:?[OBJECT, ARRAY]) = (r8 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x0009: INVOKE  (r4 I:retrofit2.ParameterHandler) = \l  (r5 I:retrofit2.ServiceMethod$Builder)\l  (r6 I:int)\l  (r7 I:java.lang.reflect.Type)\l  (r8 I:java.lang.annotation.Annotation[])\l  (r4 I:java.lang.annotation.Annotation)\l retrofit2.ServiceMethod.Builder.parseParameterAnnotation(int, java.lang.reflect.Type, java.lang.annotation.Annotation[], java.lang.annotation.Annotation):retrofit2.ParameterHandler type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0010 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0016 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: MOVE  (r3 I:?[OBJECT, ARRAY]) = (r4 I:?[OBJECT, ARRAY]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0013|0x0013: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0016|0x0016: NEW_ARRAY  (r7 I:java.lang.Object[]) = (r1 I:int A[IMMUTABLE_TYPE]) type: java.lang.Object[] \l0x0018: CONST_STR  (r8 I:java.lang.String) =  \"Multiple Retrofit annotations found, only one allowed.\" \l0x001a: INVOKE  (r6 I:java.lang.RuntimeException) = \l  (r5 I:retrofit2.ServiceMethod$Builder)\l  (r6 I:int)\l  (r8 I:java.lang.String)\l  (r7 I:java.lang.Object[])\l retrofit2.ServiceMethod.Builder.parameterError(int, java.lang.String, java.lang.Object[]):java.lang.RuntimeException type: DIRECT \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001e|0x001e: THROW  (r6 I:java.lang.Throwable) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001f|0x001f: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:0x0022 \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0021|0x0021: RETURN  (r3 I:retrofit2.ParameterHandler\<?\>) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0022|0x0022: NEW_ARRAY  (r7 I:java.lang.Object[]) = (r1 I:int A[IMMUTABLE_TYPE]) type: java.lang.Object[] \l0x0024: CONST_STR  (r8 I:java.lang.String) =  \"No Retrofit annotation found.\" \l0x0026: INVOKE  (r6 I:java.lang.RuntimeException) = \l  (r5 I:retrofit2.ServiceMethod$Builder)\l  (r6 I:int)\l  (r8 I:java.lang.String)\l  (r7 I:java.lang.Object[])\l retrofit2.ServiceMethod.Builder.parameterError(int, java.lang.String, java.lang.Object[]):java.lang.RuntimeException type: DIRECT \l}"];
+Node_13 [shape=record,label="{13\:\ 0x002a|0x002a: THROW  (r6 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private retrofit2.ParameterHandler\<?\> retrofit2.ServiceMethod.Builder.parseParameter((r5 'this' I:retrofit2.ServiceMethod$Builder A[IMMUTABLE_TYPE, THIS]), (r6 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7 I:java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:java.lang.annotation.Annotation[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I, Ljava\/lang\/reflect\/Type;, [, Ljava\/lang\/annotation\/Annotation;, ), Lretrofit2\/ParameterHandler\<, *\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+}
+

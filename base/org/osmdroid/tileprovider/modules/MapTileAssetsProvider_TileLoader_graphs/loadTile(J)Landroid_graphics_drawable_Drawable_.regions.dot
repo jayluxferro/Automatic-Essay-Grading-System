@@ -1,0 +1,74 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.MapTileAssetsProvider.TileLoader.loadTile(J)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_1532675077 {
+label = "R(2:0|(2:(1:2)|(1:(1:5))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.osmdroid.tileprovider.tilesource.ITileSource org.osmdroid.tileprovider.tilesource.ITileSource r0 = (org.osmdroid.tileprovider.tilesource.ITileSource) org.osmdroid.tileprovider.modules.MapTileAssetsProvider.this.mTileSource.get()\l}"];
+subgraph cluster_Region_162060859 {
+label = "R(2:(1:2)|(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_747591580 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0 == null) goto L_0x000f\l}"];
+subgraph cluster_Region_640516190 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_183189432 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1062331631 {
+label = "Try: R(1:5) catches: R(1:9), R(2:6|8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1424340259 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|RETURN\l|return r0.getDrawable(r3.mAssets.open(r0.getTileRelativeFilenameString(r4)))\l}"];
+}
+subgraph cluster_Region_1885837372 {
+label = "R(1:9) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_981649694 {
+label = "R(2:6|8) | ExcHandler: LowMemoryException (r4v1 'e' org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase$LowMemoryException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|ExcHandler: LowMemoryException (r4v1 'e' org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase$LowMemoryException A[CUSTOM_DECLARE])\lSplitter:B:3:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|throw new org.osmdroid.tileprovider.modules.CantContinueException((java.lang.Throwable) r4)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1885837372 {
+label = "R(1:9) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_981649694 {
+label = "R(2:6|8) | ExcHandler: LowMemoryException (r4v1 'e' org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase$LowMemoryException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|ExcHandler: LowMemoryException (r4v1 'e' org.osmdroid.tileprovider.tilesource.BitmapTileSourceBase$LowMemoryException A[CUSTOM_DECLARE])\lSplitter:B:3:0x0010\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|throw new org.osmdroid.tileprovider.modules.CantContinueException((java.lang.Throwable) r4)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010|SYNTHETIC\lSplitter:B:3:0x0010\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|Catch:\{ IOException \-\> 0x0026, LowMemoryException \-\> 0x001f \}\lSplitter:B:3:0x0010\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0020}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:3:0x0010\l}"];
+MethodNode[shape=record,label="{public android.graphics.drawable.Drawable org.osmdroid.tileprovider.modules.MapTileAssetsProvider.TileLoader.loadTile((r3v0 'this' org.osmdroid.tileprovider.modules.MapTileAssetsProvider$TileLoader A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.osmdroid.tileprovider.modules.CantContinueException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_9;
+}
+

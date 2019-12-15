@@ -1,0 +1,151 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatProgressBarHelper.tileify(Landroid\/graphics\/drawable\/Drawable;Z)Landroid\/graphics\/drawable\/Drawable;" {
+subgraph cluster_Region_1759555704 {
+label = "R(2:(2:2|(1:4))(1:(5:7|(2:9|15)|16|(1:18)|19)(1:(4:22|(1:24)|25|26)))|29)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2133761657 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(1:4)) ELSE: R(1:(5:7|(2:9|15)|16|(1:18)|19)(1:(4:22|(1:24)|25|26)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r8 instanceof android.support.p000v4.graphics.drawable.WrappedDrawable) == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1788756494 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.support.v4.graphics.drawable.WrappedDrawable android.support.p000v4.graphics.drawable.WrappedDrawable r0 = (android.support.p000v4.graphics.drawable.WrappedDrawable) r8\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r1 = r0.getWrappedDrawable()\l}"];
+subgraph cluster_IfRegion_937188096 {
+label = "IF [B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r1 != null) goto L_0x000d\l}"];
+subgraph cluster_Region_1737354883 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|r0.setWrappedDrawable(tileify(r1, r9))\l}"];
+}
+}
+}
+subgraph cluster_Region_822036425 {
+label = "R(1:(5:7|(2:9|15)|16|(1:18)|19)(1:(4:22|(1:24)|25|26))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_572281556 {
+label = "IF [B:6:0x0019] THEN: R(5:7|(2:9|15)|16|(1:18)|19) ELSE: R(1:(4:22|(1:24)|25|26)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|if ((r8 instanceof android.graphics.drawable.LayerDrawable) == true) goto L_0x001b\l}"];
+subgraph cluster_Region_1522214558 {
+label = "R(5:7|(2:9|15)|16|(1:18)|19)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|android.graphics.drawable.LayerDrawable android.graphics.drawable.LayerDrawable r8 = (android.graphics.drawable.LayerDrawable) r8\lint int r9 = r8.getNumberOfLayers()\landroid.graphics.drawable.Drawable[] android.graphics.drawable.Drawable[] r0 = new android.graphics.drawable.Drawable[r9]\lint r2 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1808234714 {
+label = "LOOP:0: (2:9|15)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|LOOP_START\lPHI: r3 \l  PHI: (r3v3 int) = (r3v2 int), (r3v4 int) binds: [B:7:0x001b, B:15:0x003d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x0025\-\>B:15:0x003d\l|if (r3 \< r9) goto L_0x0027\l}"];
+subgraph cluster_Region_691371097 {
+label = "R(2:9|15)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0027|int int r4 = r8.getId(r3)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003d|LOOP_END\lPHI: r4 \l  PHI: (r4v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x0025\-\>B:15:0x003d\l|r0[r3] = tileify(r8.getDrawable(r3), r4 == 16908301 \|\| r4 == 16908303)\lr3++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0046|android.graphics.drawable.LayerDrawable android.graphics.drawable.LayerDrawable r1 = new android.graphics.drawable.LayerDrawable(r0)\l}"];
+subgraph cluster_LoopRegion_1749757162 {
+label = "LOOP:1: (1:18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004b|LOOP_START\lPHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v4 int) binds: [B:16:0x0046, B:18:0x004d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:17:0x004b\-\>B:18:0x004d\l|if (r2 \< r9) goto L_0x004d\l}"];
+subgraph cluster_Region_69285857 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004d|LOOP_END\lLOOP:1: B:17:0x004b\-\>B:18:0x004d\l|r1.setId(r2, r8.getId(r2))\lr2++\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0057|RETURN\l|return r1\l}"];
+}
+subgraph cluster_Region_1326601631 {
+label = "R(1:(4:22|(1:24)|25|26)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1153746770 {
+label = "IF [B:21:0x005a] THEN: R(4:22|(1:24)|25|26) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x005a|if ((r8 instanceof android.graphics.drawable.BitmapDrawable) == true) goto L_0x005c\l}"];
+subgraph cluster_Region_407285753 {
+label = "R(4:22|(1:24)|25|26)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x005c|android.graphics.drawable.BitmapDrawable android.graphics.drawable.BitmapDrawable r8 = (android.graphics.drawable.BitmapDrawable) r8\landroid.graphics.Bitmap android.graphics.Bitmap r0 = r8.getBitmap()\l}"];
+subgraph cluster_IfRegion_248451340 {
+label = "IF [B:23:0x0064] THEN: R(1:24) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0064|if (r7.mSampleTile == null) goto L_0x0066\l}"];
+subgraph cluster_Region_536747753 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0066|r7.mSampleTile = r0\l}"];
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x0068|android.graphics.drawable.ShapeDrawable android.graphics.drawable.ShapeDrawable r2 = new android.graphics.drawable.ShapeDrawable(getDrawableShape())\lr2.getPaint().setShader(new android.graphics.BitmapShader(r0, android.graphics.Shader.TileMode.REPEAT, android.graphics.Shader.TileMode.CLAMP))\lr2.getPaint().setColorFilter(r8.getPaint().getColorFilter())\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0090|RETURN\l|return r9 ? new android.graphics.drawable.ClipDrawable(r2, 3, 1) : r2\l}"];
+}
+}
+}
+}
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x009b|RETURN\l|return r8\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0032}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0037|REMOVE\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0058}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0092}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0099}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0046|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x003d|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x003d|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0057|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.graphics.drawable.Drawable android.support.v7.widget.AppCompatProgressBarHelper.tileify((r7v0 'this' android.support.v7.widget.AppCompatProgressBarHelper A[IMMUTABLE_TYPE, THIS]), (r8v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_29[style=dashed];
+Node_4 -> Node_29;
+Node_6 -> Node_7;
+Node_6 -> Node_20[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_30[style=dashed];
+Node_9 -> Node_10;
+Node_15 -> Node_8;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_33[style=dashed];
+Node_18 -> Node_17;
+Node_21 -> Node_22;
+Node_21 -> Node_29[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_32;
+Node_14 -> Node_31;
+Node_20 -> Node_21;
+Node_27 -> Node_35;
+Node_28 -> Node_34;
+Node_30 -> Node_16;
+Node_31 -> Node_15;
+Node_32 -> Node_15;
+Node_33 -> Node_19;
+}
+

@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.transition.TransitionManager.getTransition(Landroid\/support\/transition\/Scene;)Landroid\/support\/transition\/Transition;" {
+subgraph cluster_Region_675273307 {
+label = "R(2:0|(2:(1:8)|(2:9|10))) | DECL_VAR: android.support.transition.Scene null, android.support.v4.util.ArrayMap null, android.support.transition.Transition null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.ViewGroup android.view.ViewGroup r0 = r3.getSceneRoot()\l}"];
+subgraph cluster_Region_1783325768 {
+label = "R(2:(1:8)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1162870156 {
+label = "IF [B:1:0x0004, B:3:0x000a, B:5:0x0014, B:7:0x001c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if ((r0 = android.support.transition.Scene.getCurrentScene(r0)) != null) goto L_0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if ((r1 = r2.mScenePairTransitions.get(r3)) != null) goto L_0x0016\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c|ADDED_TO_REGION\l|if ((r0 = (android.support.transition.Transition) r1.get(r0)) != null) goto L_0x001e\l}"];
+subgraph cluster_Region_48852195 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_34271946 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|android.support.transition.Transition android.support.transition.Transition r3 = r2.mSceneTransitions.get(r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|RETURN\l|return r3 != null ? r3 : sDefaultTransition\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002a}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private android.support.transition.Transition android.support.transition.TransitionManager.getTransition((r2v0 'this' android.support.transition.TransitionManager A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.transition.Scene A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+}
+

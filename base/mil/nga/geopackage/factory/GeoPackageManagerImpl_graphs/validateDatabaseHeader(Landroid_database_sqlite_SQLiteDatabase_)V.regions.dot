@@ -1,0 +1,30 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageManagerImpl.validateDatabaseHeader(Landroid\/database\/sqlite\/SQLiteDatabase;)V" {
+subgraph cluster_Region_682960184 {
+label = "R(1:(1:(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_357275816 {
+label = "R(1:(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_660561505 {
+label = "IF [B:1:0x0004] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isDatabaseHeaderValid(r4) != true) goto L_0x0007\l}"];
+subgraph cluster_Region_1208663900 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|throw new mil.nga.geopackage.GeoPackageException(\"GeoPackage SQLite header is not valid: \" + r4.getPath())\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{private void mil.nga.geopackage.factory.GeoPackageManagerImpl.validateDatabaseHeader((r3v0 'this' mil.nga.geopackage.factory.GeoPackageManagerImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 android.database.sqlite.SQLiteDatabase A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

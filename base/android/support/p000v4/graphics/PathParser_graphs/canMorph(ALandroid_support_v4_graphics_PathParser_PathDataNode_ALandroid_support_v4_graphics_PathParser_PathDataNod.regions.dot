@@ -1,0 +1,91 @@
+digraph "CFG forandroid.support.v4.graphics.PathParser.canMorph([Landroid\/support\/v4\/graphics\/PathParser$PathDataNode;[Landroid\/support\/v4\/graphics\/PathParser$PathDataNode;)Z" {
+subgraph cluster_Region_1185023299 {
+label = "R(1:(2:(1:5)|(3:6|(1:(2:(1:14)|(1:13)))|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1928279267 {
+label = "R(2:(1:5)|(3:6|(1:(2:(1:14)|(1:13)))|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1135569952 {
+label = "IF [B:1:0x0001, B:2:0x0003, B:4:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x002c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|ADDED_TO_REGION\l|if (r5 == null) goto L_0x002c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|ADDED_TO_REGION\l|if (r4.length != r5.length) goto L_0x000a\l}"];
+subgraph cluster_Region_785971600 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1276006203 {
+label = "R(3:6|(1:(2:(1:14)|(1:13)))|15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1155180846 {
+label = "LOOP:0: (1:(2:(1:14)|(1:13)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000d|if (r1 \< r4.length) goto L_0x000f\l}"];
+subgraph cluster_Region_2013690133 {
+label = "R(1:(2:(1:14)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1933902554 {
+label = "R(2:(1:14)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1178184011 {
+label = "IF [B:10:0x0017, B:12:0x0023] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|if (r4[r1].mType != r5[r1].mType) goto L_0x0029\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0023|ADDED_TO_REGION\l|if (r4[r1].mParams.length != r5[r1].mParams.length) goto L_0x0029\l}"];
+subgraph cluster_Region_1261682430 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0029|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_669977763 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|LOOP_END\lLOOP:0: B:7:0x000c\-\>B:13:0x0026\l|r1++\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x002a|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000c|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:6:0x000b, B:13:0x0026] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x000c\-\>B:13:0x0026\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0019}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002c|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0029|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0029|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static boolean android.support.v4.graphics.PathParser.canMorph((r4v0 android.support.v4.graphics.PathParser$PathDataNode[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.support.v4.graphics.PathParser$PathDataNode[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_16;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_19[style=dashed];
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_18;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_13 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_17 -> Node_14;
+Node_18 -> Node_14;
+Node_19 -> Node_15;
+}
+

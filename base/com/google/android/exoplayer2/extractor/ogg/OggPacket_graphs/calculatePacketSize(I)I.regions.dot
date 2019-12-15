@@ -1,0 +1,42 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.OggPacket.calculatePacketSize(I)I" {
+subgraph cluster_Region_1670089744 {
+label = "R(3:0|(2:3|(1:7))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.segmentCount = 0\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1963819478 {
+label = "LOOP:0: (2:3|(1:7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|if ((r5.segmentCount + r6) \< r5.pageHeader.pageSegmentCount) goto L_0x000d\l}"];
+subgraph cluster_Region_1627484823 {
+label = "R(2:3|(1:7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|int[] int[] r2 = r5.pageHeader.laces\lint int r3 = r5.segmentCount\lr5.segmentCount = r3 + 1\lint r0 = r2[r3 + r6]\lr1 += r0\l}"];
+subgraph cluster_IfRegion_1556094034 {
+label = "IF [B:4:0x001d] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:4:0x001d\l|if (r0 != 255) goto L_0x001f\l}"];
+subgraph cluster_Region_621272934 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|SYNTHETIC\lEDGE_INSN: B:7:0x001f\-\>B:5:0x001f ?: BREAK  \l|break\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\lEDGE_INSN: B:7:0x001f\-\>B:5:0x001f ?: BREAK  \lPHI: r1 \l  PHI: (r1v2 'size' int) = (r1v1 'size' int), (r1v3 'size' int) binds: [B:6:0x001f, B:7:0x001f] A[DONT_GENERATE, DONT_INLINE]\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'size' int) = (r1v0 'size' int), (r1v3 'size' int) binds: [B:0:0x0000, B:4:0x001d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:4:0x001d\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.extractor.ogg.OggPacket.calculatePacketSize((r5v0 'this' com.google.android.exoplayer2.extractor.ogg.OggPacket A[IMMUTABLE_TYPE, THIS]), (r6v0 'startSegmentIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_7 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_5;
+}
+

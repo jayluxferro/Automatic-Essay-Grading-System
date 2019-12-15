@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifest.copy(Ljava\/util\/List;)Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifest;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.LinkedList r0 = new java.util.LinkedList(r29)\ljava.util.Collections.sort(r0)\lr0 = r0\lr0.add(new com.google.android.exoplayer2.source.dash.manifest.RepresentationKey(\-1, \-1, \-1))\ljava.util.ArrayList r18 = new java.util.ArrayList\<\>()\lr26 = 0\lr24 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0022|LOOP_START\lPHI: r24 r26 \l  PHI: (r24v1 'periodIndex' int) = (r24v0 'periodIndex' int), (r24v2 'periodIndex' int) binds: [B:0:0x0000, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r26v1 'shiftMs' long) = (r26v0 'shiftMs' long), (r26v2 'shiftMs' long) binds: [B:0:0x0000, B:8:0x0049] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0022\-\>B:8:0x0049\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0028|if (r24 \>= getPeriodCount()) goto L_0x0075\l}"];
+Node_3 [shape=record,label="{3\:\ 0x002a}"];
+Node_4 [shape=record,label="{4\:\ 0x0034|if (((com.google.android.exoplayer2.source.dash.manifest.RepresentationKey) r0.peek()).periodIndex == r24) goto L_0x004c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0036|long r22 = getPeriodDurationMs(r24)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0045|if ((r22 \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r22 == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) == 0) goto L_0x0049\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0047|long r26 = r26 + r22\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0049|LOOP_END\lPHI: r26 \l  PHI: (r26v2 'shiftMs' long) = (r26v1 'shiftMs' long), (r26v1 'shiftMs' long), (r26v3 'shiftMs' long) binds: [B:19:0x0049, B:18:0x0049, B:17:0x0049] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0022\-\>B:8:0x0049\l|int r24 = r24 + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004c|com.google.android.exoplayer2.source.dash.manifest.Period r21 = getPeriod(r24)\ljava.util.ArrayList r19 = copyAdaptationSets(r21.adaptationSets, r0)\lcom.google.android.exoplayer2.source.dash.manifest.Period r2 = new com.google.android.exoplayer2.source.dash.manifest.Period(r21.f2462id, r21.startMs \- r26, r19)\lr18.add(r2)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0075}"];
+Node_11 [shape=record,label="{11\:\ 0x0080|if ((r28.duration \> com.google.android.exoplayer2.C1260C.TIME_UNSET ? 1 : (r28.duration == com.google.android.exoplayer2.C1260C.TIME_UNSET ? 0 : \-1)) == 0) goto L_0x00b2\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0082|long r5 = r28.duration \- r26\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0088|PHI: r5 \l  PHI: (r5v1 'newDuration' long) = (r5v0 'newDuration' long), (r5v2 'newDuration' long) binds: [B:15:0x00b2, B:12:0x0082] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00b1|RETURN\l|return new com.google.android.exoplayer2.source.dash.manifest.DashManifest(r28.availabilityStartTime, r5, r28.minBufferTime, r28.dynamic, r28.minUpdatePeriod, r28.timeShiftBufferDepth, r28.suggestedPresentationDelay, r28.utcTiming, r28.location, r18)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00b2|r5 = com.google.android.exoplayer2.C1260C.TIME_UNSET\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0075|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0049|SYNTHETIC\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0049|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0049|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final com.google.android.exoplayer2.source.dash.manifest.DashManifest com.google.android.exoplayer2.source.dash.manifest.DashManifest.copy((r28v0 'this' com.google.android.exoplayer2.source.dash.manifest.DashManifest A[IMMUTABLE_TYPE, THIS]), (r29v0 'representationKeys' java.util.List\<com.google.android.exoplayer2.source.dash.manifest.RepresentationKey\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/RepresentationKey;, \>;), Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifest;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_18;
+Node_7 -> Node_17;
+Node_8 -> Node_1;
+Node_9 -> Node_19;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_15;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_13;
+Node_16 -> Node_10;
+Node_17 -> Node_8;
+Node_18 -> Node_8;
+Node_19 -> Node_8;
+}
+

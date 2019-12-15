@@ -1,0 +1,83 @@
+digraph "CFG forcom.squareup.picasso.Picasso.resumeAction(Lcom\/squareup\/picasso\/Action;)V" {
+subgraph cluster_Region_1863246127 {
+label = "R(2:1|(2:(2:5|(2:(2:7|13)|(1:12)))|(2:8|(1:(1:10)))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|android.graphics.Bitmap r0 = com.squareup.picasso.MemoryPolicy.shouldReadFromMemoryCache(r5.memoryPolicy) ? quickMemoryCacheCheck(r5.getKey()) : null\l}"];
+subgraph cluster_Region_436113779 {
+label = "R(2:(2:5|(2:(2:7|13)|(1:12)))|(2:8|(1:(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2106605662 {
+label = "IF [B:4:0x0013] THEN: R(2:5|(2:(2:7|13)|(1:12))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|PHI: r0 \l  PHI: (r0v2 android.graphics.Bitmap) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L_0x0015\l}"];
+subgraph cluster_Region_819945063 {
+label = "R(2:5|(2:(2:7|13)|(1:12)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|deliverAction(r0, com.squareup.picasso.Picasso.LoadedFrom.MEMORY, r5, (java.lang.Exception) null)\l}"];
+subgraph cluster_Region_201107595 {
+label = "R(2:(2:7|13)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_16518785 {
+label = "IF [B:6:0x001c] THEN: R(2:7|13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001c|if (r4.loggingEnabled == true) goto L_0x001e\l}"];
+subgraph cluster_Region_426710785 {
+label = "R(2:7|13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|java.lang.String java.lang.String r5 = r5.request.logId()\lcom.squareup.picasso.Utils.log(\"Main\", \"completed\", r5, \"from \" + com.squareup.picasso.Picasso.LoadedFrom.MEMORY)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_596733213 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1317606677 {
+label = "R(2:8|(1:(1:10)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003f|enqueueAndSubmit(r5)\l}"];
+subgraph cluster_Region_551507135 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1077399075 {
+label = "IF [B:9:0x0044] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0044|if (r4.loggingEnabled == true) goto L_0x0046\l}"];
+subgraph cluster_Region_1751558845 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0046|com.squareup.picasso.Utils.log(\"Main\", \"resumed\", r5.request.logId())\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.Picasso.resumeAction((r4v0 'this' com.squareup.picasso.Picasso A[IMMUTABLE_TYPE, THIS]), (r5v0 com.squareup.picasso.Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_13;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

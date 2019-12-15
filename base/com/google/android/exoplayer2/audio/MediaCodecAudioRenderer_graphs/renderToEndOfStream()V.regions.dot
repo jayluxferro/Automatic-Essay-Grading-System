@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.MediaCodecAudioRenderer.renderToEndOfStream()V" {
+subgraph cluster_Region_840495261 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1455839005 {
+label = "Try: R(1:1) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1421702384 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ WriteException \-\> 0x0006 \}\lSplitter:B:0:0x0000\l|r2.audioTrack.playToEndOfStream()     \/\/ Catch:\{ WriteException \-\> 0x0006 \}\l}"];
+}
+subgraph cluster_Region_1156480172 {
+label = "R(2:3|5) | ExcHandler: WriteException (r0v0 'e' com.google.android.exoplayer2.audio.AudioTrack$WriteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|ExcHandler: WriteException (r0v0 'e' com.google.android.exoplayer2.audio.AudioTrack$WriteException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+}
+}
+subgraph cluster_Region_1156480172 {
+label = "R(2:3|5) | ExcHandler: WriteException (r0v0 'e' com.google.android.exoplayer2.audio.AudioTrack$WriteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|ExcHandler: WriteException (r0v0 'e' com.google.android.exoplayer2.audio.AudioTrack$WriteException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(r0, getIndex())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.audio.MediaCodecAudioRenderer.renderToEndOfStream((r2v0 'this' com.google.android.exoplayer2.audio.MediaCodecAudioRenderer A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_4 -> Node_5;
+}
+

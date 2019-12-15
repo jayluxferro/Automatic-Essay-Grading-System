@@ -1,0 +1,51 @@
+digraph "CFG forokhttp3.internal.http2.Http2Reader.readPushPromise(Lokhttp3\/internal\/http2\/Http2Reader$Handler;IBI)V" {
+subgraph cluster_Region_1734935422 {
+label = "R(2:0|(2:(3:(1:4)|5|6)|(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|short r0 = 0\l}"];
+subgraph cluster_Region_517298610 {
+label = "R(2:(3:(1:4)|5|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1762461016 {
+label = "IF [B:1:0x0001] THEN: R(3:(1:4)|5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r7 != 0) goto L_0x0003\l}"];
+subgraph cluster_Region_1118872819 {
+label = "R(3:(1:4)|5|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1854470973 {
+label = "IF [B:3:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if ((r6 & 8) != 0) goto L_0x0007\l}"];
+subgraph cluster_Region_1423454080 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|short r0 = (short) (r3.source.readByte() & 255)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0010|PHI: r0 \l  PHI: (r0v1 short) = (r0v0 short), (r0v5 short) binds: [B:3:0x0005, B:4:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|r4.pushPromise(r7, r3.source.readInt() & Integer.MAX_VALUE, readHeaderBlock(lengthWithoutPadding(r5 \- 4, r6, r0), r0, r6, r7))\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1800693167 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0030|throw okhttp3.internal.http2.Http2.ioException(\"PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0\", new java.lang.Object[0])\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0028}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.http2.Http2Reader.readPushPromise((r3v0 'this' okhttp3.internal.http2.Http2Reader A[IMMUTABLE_TYPE, THIS]), (r4v0 okhttp3.internal.http2.Http2Reader$Handler A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

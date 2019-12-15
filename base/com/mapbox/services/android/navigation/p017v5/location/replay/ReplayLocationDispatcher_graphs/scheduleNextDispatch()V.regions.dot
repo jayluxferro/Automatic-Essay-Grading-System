@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.location.replay.ReplayLocationDispatcher.scheduleNextDispatch()V" {
+subgraph cluster_Region_1948105518 {
+label = "R(1:(2:(2:2|3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1026507083 {
+label = "R(2:(2:2|3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_683341528 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.locationsToReplay.isEmpty() == true) goto L_0x0008\l}"];
+subgraph cluster_Region_522211971 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|stopDispatching()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1651177517 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|long long r0 = r4.current.getTime()\lr4.current = r4.locationsToReplay.remove(0)\lr4.handler.postDelayed(r4, r4.current.getTime() \- r0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0029}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.location.replay.ReplayLocationDispatcher.scheduleNextDispatch((r4v0 'this' com.mapbox.services.android.navigation.v5.location.replay.ReplayLocationDispatcher A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

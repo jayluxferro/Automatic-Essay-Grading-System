@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.AtomParsers.parseProjFromParent(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;II)[B" {
+subgraph cluster_Region_725777975 {
+label = "R(3:0|(2:3|(2:(1:10)|(1:6)))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r2 = r6 + 8\l}"];
+subgraph cluster_LoopRegion_5890052 {
+label = "LOOP:0: (2:3|(2:(1:10)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if ((r2 \- r6) \< r7) goto L_0x0006\l}"];
+subgraph cluster_Region_958325882 {
+label = "R(2:3|(2:(1:10)|(1:6)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r5.setPosition(r2)\lint int r0 = r5.readInt()\l}"];
+subgraph cluster_Region_671212402 {
+label = "R(2:(1:10)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_183936562 {
+label = "IF [B:4:0x0013] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r5.readInt() == com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_proj) goto L_0x0015\l}"];
+subgraph cluster_Region_18192040 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.util.Arrays.copyOfRange(r5.data, r2, r2 + r0)\l}"];
+}
+}
+subgraph cluster_Region_1479296681 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:6:0x001e\l|r2 += r0\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0020|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'childPosition' int) = (r2v0 'childPosition' int), (r2v2 'childPosition' int) binds: [B:0:0x0000, B:6:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:6:0x001e\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0015|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static byte[] com.google.android.exoplayer2.extractor.mp4.AtomParsers.parseProjFromParent((r5v0 'parent' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'position' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'size' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_8;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_10;
+Node_8 -> Node_5;
+Node_9 -> Node_7;
+}
+

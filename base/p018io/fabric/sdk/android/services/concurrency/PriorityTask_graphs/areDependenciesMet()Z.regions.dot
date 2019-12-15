@@ -1,0 +1,43 @@
+digraph "CFG forio.fabric.sdk.android.services.concurrency.PriorityTask.areDependenciesMet()Z" {
+subgraph cluster_Region_1913025325 {
+label = "R(3:0|(1:(1:5))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r0 = getDependencies().iterator()\l}"];
+subgraph cluster_LoopRegion_221019476 {
+label = "LOOP:0: (1:(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r0.hasNext() != false) goto L_0x000e\l}"];
+subgraph cluster_Region_1185512881 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1833432435 {
+label = "IF [B:4:0x0018] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:4:0x0018\l|if (r1.isFinished() == false) goto L_0x001a\l}"];
+subgraph cluster_Region_739867885 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return true\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|LOOP_START\lLOOP:0: B:1:0x0008\-\>B:4:0x0018\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean io.fabric.sdk.android.services.concurrency.PriorityTask.areDependenciesMet((r2v0 'this' io.fabric.sdk.android.services.concurrency.PriorityTask A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_5;
+Node_8 -> Node_6;
+}
+

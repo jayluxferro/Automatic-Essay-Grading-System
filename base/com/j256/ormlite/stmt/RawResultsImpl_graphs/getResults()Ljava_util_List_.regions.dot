@@ -1,0 +1,60 @@
+digraph "CFG forcom.j256.ormlite.stmt.RawResultsImpl.getResults()Ljava\/util\/List;" {
+subgraph cluster_Region_606167852 {
+label = "R(3:0|(1:(1:4))|6) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\l}"];
+subgraph cluster_LoopRegion_1222516698 {
+label = "LOOP:0: (1:(1:4))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|Catch:\{ all \-\> 0x001d \}\l|if (r2.iterator.hasNext() != false) goto L_0x000d     \/\/ Catch:\{ all \-\> 0x001d \}\l}"];
+subgraph cluster_Region_1724368609 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1891443545 {
+label = "Try: R(1:4) finally: R(3:7|8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_35651012 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|LOOP_END\lCatch:\{ all \-\> 0x001d \}\lLOOP:0: B:1:0x0005\-\>B:4:0x000d\l|r0.add(r2.iterator.next())     \/\/ Catch:\{ all \-\> 0x001d \}\l}"];
+}
+subgraph cluster_Region_1862936940 {
+label = "R(3:7|8|9) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|FINALLY_INSNS\l|java.lang.String r1 = \"raw results iterator\"\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r2, r1)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|throw r0\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1862936940 {
+label = "R(3:7|8|9) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|ExcHandler:  FINALLY\lSplitter:B:1:0x0005\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|FINALLY_INSNS\l|java.lang.String r1 = \"raw results iterator\"\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r2, r1)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|throw r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005|LOOP_START\lSYNTHETIC\lSplitter:B:1:0x0005\lLOOP:0: B:1:0x0005\-\>B:4:0x000d\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x001d \}\lSplitter:B:1:0x0005\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017|DONT_GENERATE\l|java.lang.String r1 = \"raw results iterator\"\lcom.j256.ormlite.misc.IOUtils.closeThrowSqlException(r2, r1)\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<T\> com.j256.ormlite.stmt.RawResultsImpl.getResults((r2v0 'this' com.j256.ormlite.stmt.RawResultsImpl A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/List\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_5;
+}
+

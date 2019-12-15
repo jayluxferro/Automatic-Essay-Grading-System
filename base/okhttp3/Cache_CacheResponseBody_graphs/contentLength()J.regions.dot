@@ -1,0 +1,61 @@
+digraph "CFG forokhttp3.Cache.CacheResponseBody.contentLength()J" {
+subgraph cluster_Region_1558314718 {
+label = "R(1:(1:(2:(1:8)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1203211649 {
+label = "Try: R(1:(2:(1:8)|(1:9))) catches: R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_859729562 {
+label = "R(1:(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1058186163 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1826008449 {
+label = "IF [B:3:0x0004] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|Catch:\{ NumberFormatException \-\> 0x000e \}\l|if (r4.contentLength != null) goto L_0x0006     \/\/ Catch:\{ NumberFormatException \-\> 0x000e \}\l}"];
+subgraph cluster_Region_402062879 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.lang.Long.parseLong(r4.contentLength)\l}"];
+}
+}
+subgraph cluster_Region_1467750597 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+}
+subgraph cluster_Region_2102994594 {
+label = "R(1:6) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|RETURN\l|return \-1\l}"];
+}
+}
+}
+subgraph cluster_Region_2102994594 {
+label = "R(1:6) | ExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|RETURN\l|return \-1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ NumberFormatException \-\> 0x000e \}\lSplitter:B:1:0x0002\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006|Catch:\{ NumberFormatException \-\> 0x000e \}\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lExcHandler: NumberFormatException (unused java.lang.NumberFormatException)\lSplitter:B:1:0x0002\l}"];
+MethodNode[shape=record,label="{public long okhttp3.Cache.CacheResponseBody.contentLength((r4v0 'this' okhttp3.Cache$CacheResponseBody A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_8;
+Node_7 -> Node_6;
+}
+

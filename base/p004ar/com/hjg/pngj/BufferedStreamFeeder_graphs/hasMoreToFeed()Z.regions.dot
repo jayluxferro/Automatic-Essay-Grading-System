@@ -1,0 +1,68 @@
+digraph "CFG forar.com.hjg.pngj.BufferedStreamFeeder.hasMoreToFeed()Z" {
+subgraph cluster_Region_1354995794 {
+label = "R(1:(2:5|(2:(1:7)|(1:9)))(1:(1:4)(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_46772715 {
+label = "IF [B:1:0x0004] THEN: R(2:5|(2:(1:7)|(1:9))) ELSE: R(1:(1:4)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.eof != true) goto L_0x000c\l}"];
+subgraph cluster_Region_810832917 {
+label = "R(2:5|(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|refillBuffer()\l}"];
+subgraph cluster_Region_1948257951 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_946669889 {
+label = "IF [B:6:0x0011] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|if (r3.pendinglen \> 0) goto L_0x0013\l}"];
+subgraph cluster_Region_2003083598 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1694672715 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_287447426 {
+label = "R(1:(1:4)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1096101350 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.pendinglen \> 0) goto L_0x000a\l}"];
+subgraph cluster_Region_325683795 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1671520138 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{public boolean ar.com.hjg.pngj.BufferedStreamFeeder.hasMoreToFeed((r3v0 'this' ar.com.hjg.pngj.BufferedStreamFeeder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

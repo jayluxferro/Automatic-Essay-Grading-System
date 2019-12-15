@@ -1,0 +1,76 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.PreparedStatementCache.dump(Landroid\/util\/Printer;)V" {
+subgraph cluster_Region_2030561847 {
+label = "R(2:0|(2:(3:2|(3:5|(1:7)(0)|8)|14)|(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.println(\"  Prepared statement cache:\")\ljava.util.Map java.util.Map r0 = snapshot()\l}"];
+subgraph cluster_Region_879259179 {
+label = "R(2:(3:2|(3:5|(1:7)(0)|8)|14)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_535344738 {
+label = "IF [B:1:0x000d] THEN: R(3:2|(3:5|(1:7)(0)|8)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0.isEmpty() == false) goto L_0x000f\l}"];
+subgraph cluster_Region_1501278156 {
+label = "R(3:2|(3:5|(1:7)(0)|8)|14)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|int r1 = 0\ljava.util.Iterator r0 = r0.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1305259657 {
+label = "LOOP:0: (3:5|(1:7)(0)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r0.hasNext() != false) goto L_0x001e\l}"];
+subgraph cluster_Region_394494307 {
+label = "R(3:5|(1:7)(0)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|java.util.Map$Entry r2 = (java.util.Map.Entry) r0.next()\lorg.spatialite.database.SQLiteConnection$PreparedStatement org.spatialite.database.SQLiteConnection.PreparedStatement r3 = (org.spatialite.database.SQLiteConnection.PreparedStatement) r2.getValue()\l}"];
+subgraph cluster_IfRegion_185757696 {
+label = "IF [B:6:0x002c] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|if (r3.mInCache == true) goto L_0x002e\l}"];
+subgraph cluster_Region_1368627190 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|r8.println(\"    \" + r1 + \": statementPtr=0x\" + java.lang.Long.toHexString(r3.mStatementPtr) + \", numParameters=\" + r3.mNumParameters + \", type=\" + r3.mType + \", readOnly=\" + r3.mReadOnly + \", sql=\"\" + org.spatialite.database.SQLiteConnection.trimSqlForDisplay((java.lang.String) r2.getKey()) + org.osgeo.proj4j.units.AngleFormat.STR_SEC_SYMBOL)\l}"];
+}
+subgraph cluster_Region_62374443 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0085|LOOP_END\lLOOP:0: B:3:0x0018\-\>B:8:0x0085\l|r1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_785166834 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0088|r8.println(\"    \<none\>\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int) binds: [B:2:0x000f, B:8:0x0085] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0018\-\>B:8:0x0085\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x008d|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0085|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0085|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void org.spatialite.database.SQLiteConnection.PreparedStatementCache.dump((r7v0 'this' org.spatialite.database.SQLiteConnection$PreparedStatementCache A[IMMUTABLE_TYPE, THIS]), (r8v0 android.util.Printer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_3;
+Node_9 -> Node_13;
+Node_3 -> Node_4;
+Node_10 -> Node_14;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+}
+

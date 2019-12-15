@@ -1,0 +1,44 @@
+digraph "CFG forcom.facebook.ads.internal.b.a.a(DD)V" {
+subgraph cluster_Region_1775275504 {
+label = "R(3:(1:2)|3|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1258594251 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r8 \>= 0.0d) goto L_0x0006\l}"];
+subgraph cluster_Region_1304822547 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r5.f711c.mo10503b(r6, r8)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000b|double double r2 = (double) com.facebook.ads.internal.p032r.C0948a.m1836a(r5.f709a, 0).mo10991c()\lr5.f711c.mo10501a(r6, r2)\ljava.util.Iterator r1 = r5.f710b.iterator()\l}"];
+subgraph cluster_LoopRegion_124993659 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|if (r1.hasNext() != false) goto L_0x0028\l}"];
+subgraph cluster_Region_1690756472 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|LOOP_END\lLOOP:0: B:4:0x0022\-\>B:6:0x0028\l|r0.mo10516a(r6, r2)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0022|LOOP_START\lLOOP:0: B:4:0x0022\-\>B:6:0x0028\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0032}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0032|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.facebook.ads.internal.b.a.a((r5v0 'this' com.facebook.ads.internal.b.a A[IMMUTABLE_TYPE, THIS]), (r6v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_4;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_7;
+}
+

@@ -1,0 +1,21 @@
+digraph "CFG forretrofit2.Retrofit.stringConverter(Ljava\/lang\/reflect\/Type;[Ljava\/lang\/annotation\/Annotation;)Lretrofit2\/Converter;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"type == null\" \l0x0002: INVOKE  (r4 I:java.lang.Object), (r0 I:java.lang.String) retrofit2.Utils.checkNotNull(java.lang.Object, java.lang.String):java.lang.Object type: STATIC \l0x0005: CONST_STR  (r0 I:java.lang.String) =  \"annotations == null\" \l0x0007: INVOKE  (r5 I:java.lang.Object), (r0 I:java.lang.String) retrofit2.Utils.checkNotNull(java.lang.Object, java.lang.String):java.lang.Object type: STATIC \l0x000a: IGET  (r0 I:java.util.List\<retrofit2.Converter$Factory\>) = (r3 I:retrofit2.Retrofit) retrofit2.Retrofit.converterFactories java.util.List \l0x000c: INVOKE  (r0 I:int) = (r0 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0010: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0011|0x0011: IF  (r1 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:6:0x0025 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0013|0x0013: IGET  (r2 I:java.util.List\<retrofit2.Converter$Factory\>) = (r3 I:retrofit2.Retrofit) retrofit2.Retrofit.converterFactories java.util.List \l0x0015: INVOKE  (r2 I:java.lang.Object) = (r2 I:java.util.List), (r1 I:int) java.util.List.get(int):java.lang.Object type: INTERFACE \l0x0019: CHECK_CAST  (r2 I:retrofit2.Converter$Factory) = (retrofit2.Converter$Factory) (r2 I:?[OBJECT, ARRAY]) \l0x001b: INVOKE  (r2 I:retrofit2.Converter) = \l  (r2 I:retrofit2.Converter$Factory)\l  (r4 I:java.lang.reflect.Type)\l  (r5 I:java.lang.annotation.Annotation[])\l  (r3 I:retrofit2.Retrofit)\l retrofit2.Converter.Factory.stringConverter(java.lang.reflect.Type, java.lang.annotation.Annotation[], retrofit2.Retrofit):retrofit2.Converter type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001f|0x001f: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0022 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: RETURN  (r2 I:retrofit2.Converter\<T, java.lang.String\>) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|0x0022: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|0x0025: SGET  (r4 I:retrofit2.BuiltInConverters$ToStringConverter) =  retrofit2.BuiltInConverters.ToStringConverter.INSTANCE retrofit2.BuiltInConverters$ToStringConverter \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0027|0x0027: RETURN  (r4 I:retrofit2.Converter\<T, java.lang.String\>) \l}"];
+MethodNode[shape=record,label="{public retrofit2.Converter\<T, java.lang.String\> retrofit2.Retrofit.stringConverter((r3 'this' I:retrofit2.Retrofit A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.lang.annotation.Annotation[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/lang\/reflect\/Type;, [, Ljava\/lang\/annotation\/Annotation;, ), Lretrofit2\/Converter\<, TT;, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+}
+

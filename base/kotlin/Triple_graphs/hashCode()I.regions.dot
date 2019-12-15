@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.Triple.hashCode()I" {
+subgraph cluster_Region_41226665 {
+label = "R(5:0|4|8|(1:10)|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|A A r0 = r3.first\lint r1 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|PHI: r0 \l  PHI: (r0v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = (r0 != null ? r0.hashCode() : 0) * 31\lB B r2 = r3.second\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0017|PHI: r2 \l  PHI: (r2v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = (r0 + (r2 != null ? r2.hashCode() : 0)) * 31\lC C r2 = r3.third\l}"];
+subgraph cluster_IfRegion_1975579640 {
+label = "IF [B:9:0x001c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001c|if (r2 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_1485185957 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|int r1 = r2.hashCode()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0023|RETURN\l|return r0 + r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0003}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|PHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:9:0x001c, B:10:0x001e] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public int kotlin.Triple.hashCode((r3v0 'this' kotlin.Triple A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+}
+

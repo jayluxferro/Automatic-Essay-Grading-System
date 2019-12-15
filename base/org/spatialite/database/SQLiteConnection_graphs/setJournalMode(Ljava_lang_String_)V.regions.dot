@@ -1,0 +1,93 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.setJournalMode(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1342049291 {
+label = "R(2:0|(1:(2:(2:3|(1:5))|9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = executeForString(\"PRAGMA journal_mode\", (java.lang.Object[]) null, (android.support.p000v4.p002os.CancellationSignal) null)\l}"];
+subgraph cluster_Region_311105730 {
+label = "R(1:(2:(2:3|(1:5))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1680344877 {
+label = "IF [B:1:0x000b] THEN: R(2:(2:3|(1:5))|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r0.equalsIgnoreCase(r5) == false) goto L_0x000d\l}"];
+subgraph cluster_Region_460433551 {
+label = "R(2:(2:3|(1:5))|9)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_427722605 {
+label = "Try: R(2:3|(1:5)) catches: R(2:6|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1888158921 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ SQLiteException \-\> 0x0029 \}\lSplitter:B:2:0x000d\l}"];
+subgraph cluster_IfRegion_929612998 {
+label = "IF [B:4:0x0026] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0026|if (executeForString(\"PRAGMA journal_mode=\" + r5, (java.lang.Object[]) null, (android.support.p000v4.p002os.CancellationSignal) null).equalsIgnoreCase(r5) == true) goto L_0x0028\l}"];
+subgraph cluster_Region_2104461281 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0028|RETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_273097422 {
+label = "R(2:6|(1:10)) | ExcHandler: SQLiteException (r1v2 'e' android.database.sqlite.SQLiteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|ExcHandler: SQLiteException (r1v2 'e' android.database.sqlite.SQLiteException A[CUSTOM_DECLARE])\lSplitter:B:2:0x000d\l}"];
+subgraph cluster_IfRegion_952287555 {
+label = "IF [B:8:0x002c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|if ((r1 instanceof android.database.sqlite.SQLiteDatabaseLockedException) == false) goto L_0x005e\l}"];
+subgraph cluster_Region_1241349225 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x005e|throw r1\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002e|android.util.Log.w(TAG, \"Could not change the database journal mode of '\" + r4.mConfiguration.label + \"' from '\" + r0 + \"' to '\" + r5 + \"' because the database is locked.  This usually means that there are other open connections to the database which prevents the database from enabling or disabling write\-ahead logging mode.  Proceeding without changing the journal mode.\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_273097422 {
+label = "R(2:6|(1:10)) | ExcHandler: SQLiteException (r1v2 'e' android.database.sqlite.SQLiteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|ExcHandler: SQLiteException (r1v2 'e' android.database.sqlite.SQLiteException A[CUSTOM_DECLARE])\lSplitter:B:2:0x000d\l}"];
+subgraph cluster_IfRegion_952287555 {
+label = "IF [B:8:0x002c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|if ((r1 instanceof android.database.sqlite.SQLiteDatabaseLockedException) == false) goto L_0x005e\l}"];
+subgraph cluster_Region_1241349225 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x005e|throw r1\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d|SYNTHETIC\lSplitter:B:2:0x000d\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.setJournalMode((r4v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_12;
+Node_6 -> Node_7;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_2 -> Node_3;
+Node_2 -> Node_6;
+Node_7 -> Node_8;
+}
+

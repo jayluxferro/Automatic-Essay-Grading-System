@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.mapboxsdk.plugins.locationlayer.Utils.calculateZoomLevelRadius(Lcom\/mapbox\/mapboxsdk\/maps\/MapboxMap;Landroid\/location\/Location;)F" {
+subgraph cluster_Region_718878721 {
+label = "R(1:(2:(1:1)|(2:2|3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_241682046 {
+label = "R(2:(1:1)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_276646419 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_687432825 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return 0.0f\l}"];
+}
+}
+subgraph cluster_Region_1258510423 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|RETURN\l|return (float) (((double) r5.getAccuracy()) * (1.0d \/ r4.getProjection().getMetersPerPixelAtLatitude(r5.getLatitude())))\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{static float com.mapbox.mapboxsdk.plugins.locationlayer.Utils.calculateZoomLevelRadius((r4v0 com.mapbox.mapboxsdk.maps.MapboxMap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+}
+

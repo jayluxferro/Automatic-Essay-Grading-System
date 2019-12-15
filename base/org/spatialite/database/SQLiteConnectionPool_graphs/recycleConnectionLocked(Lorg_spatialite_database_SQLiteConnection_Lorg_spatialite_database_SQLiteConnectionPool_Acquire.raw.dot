@@ -1,0 +1,31 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnectionPool.recycleConnectionLocked(Lorg\/spatialite\/database\/SQLiteConnection;Lorg\/spatialite\/database\/SQLiteConnectionPool$AcquiredConnectionStatus;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: SGET  (r0 I:org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus) =  org.spatialite.database.SQLiteConnectionPool.AcquiredConnectionStatus.RECONFIGURE org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0023 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|SYNTHETIC\lSplitter:B:2:0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0004\l|0x0004: IGET  (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration) = (r3 I:org.spatialite.database.SQLiteConnectionPool) org.spatialite.database.SQLiteConnectionPool.mConfiguration org.spatialite.database.SQLiteDatabaseConfiguration A[Catch:\{ RuntimeException \-\> 0x000a \}, TRY_ENTER]\l0x0006: INVOKE  \l  (r4 I:org.spatialite.database.SQLiteConnection)\l  (r0 I:org.spatialite.database.SQLiteDatabaseConfiguration)\l org.spatialite.database.SQLiteConnection.reconfigure(org.spatialite.database.SQLiteDatabaseConfiguration):void type: VIRTUAL A[Catch:\{ RuntimeException \-\> 0x000a \}, TRY_LEAVE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000a|ExcHandler: RuntimeException null\lSplitter:B:2:0x0004\l|0x000a: MOVE_EXCEPTION  (r5 I:?[OBJECT]) =  \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|0x000b: CONST_STR  (r0 I:java.lang.String) =  \"SQLiteConnectionPool\" \l0x000d: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x000f: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0012: CONST_STR  (r2 I:java.lang.String) =  \"Failed to reconfigure released connection, closing it: \" \l0x0014: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0017: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x001a: INVOKE  (r1 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x001e: INVOKE  \l  (r0 I:java.lang.String)\l  (r1 I:java.lang.String)\l  (r5 I:java.lang.Throwable)\l android.util.Log.e(java.lang.String, java.lang.String, java.lang.Throwable):int type: STATIC \l0x0021: SGET  (r5 I:org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus) =  org.spatialite.database.SQLiteConnectionPool.AcquiredConnectionStatus.DISCARD org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: SGET  (r0 I:org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus) =  org.spatialite.database.SQLiteConnectionPool.AcquiredConnectionStatus.DISCARD org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|0x0025: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x002c \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|0x0027: INVOKE  \l  (r3 I:org.spatialite.database.SQLiteConnectionPool)\l  (r4 I:org.spatialite.database.SQLiteConnection)\l org.spatialite.database.SQLiteConnectionPool.closeConnectionAndLogExceptionsLocked(org.spatialite.database.SQLiteConnection):void type: DIRECT \l0x002a: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_10 [shape=record,label="{10\:\ 0x002b|0x002b: RETURN  (r4 I:boolean) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x002c|0x002c: CONST  (r4 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x002d|0x002d: RETURN  (r4 I:boolean) \l}"];
+MethodNode[shape=record,label="{private boolean org.spatialite.database.SQLiteConnectionPool.recycleConnectionLocked((r3 'this' I:org.spatialite.database.SQLiteConnectionPool A[IMMUTABLE_TYPE, THIS]), (r4 I:org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:org.spatialite.database.SQLiteConnectionPool$AcquiredConnectionStatus A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_3 -> Node_5;
+Node_3 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

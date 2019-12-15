@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.gms.common.util.IOUtils.copyStream(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;ZI)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_ARRAY  (r0 I:byte[]) = (r10 I:int A[IMMUTABLE_TYPE]) type: byte[] \l0x0002: CONST  (r1 I:?[long, double]) = (0 ?[long, double]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|SYNTHETIC\lSplitter:B:2:0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0005\l|0x0005: INVOKE  (r4 I:int) = \l  (r7 I:java.io.InputStream)\l  (r0 I:byte[])\l  (r3 I:int)\l  (r10 I:int)\l java.io.InputStream.read(byte[], int, int):int type: VIRTUAL A[Catch:\{ all \-\> 0x001b \}, TRY_ENTER]\l0x0009: CONST  (r5 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) A[Catch:\{ all \-\> 0x001b \}]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0012 A[Catch:\{ all \-\> 0x001b \}]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|0x000c: CAST  (r5 I:long) = (long) (r4 I:int) A[Catch:\{ all \-\> 0x001b \}]\l0x000d: ARITH  (r1 I:long) = (r1 I:long) + (r5 I:long) A[Catch:\{ all \-\> 0x001b \}]\l0x000e: INVOKE  \l  (r8 I:java.io.OutputStream)\l  (r0 I:byte[])\l  (r3 I:int)\l  (r4 I:int)\l java.io.OutputStream.write(byte[], int, int):void type: VIRTUAL A[Catch:\{ all \-\> 0x001b \}, TRY_LEAVE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|0x0012: IF  (r9 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x001a \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|0x0014: INVOKE  (r7 I:java.io.Closeable) com.google.android.gms.common.util.IOUtils.closeQuietly(java.io.Closeable):void type: STATIC \l0x0017: INVOKE  (r8 I:java.io.Closeable) com.google.android.gms.common.util.IOUtils.closeQuietly(java.io.Closeable):void type: STATIC \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001a|0x001a: RETURN  (r1 I:long) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|ExcHandler: all null\lSplitter:B:2:0x0005\l|0x001b: MOVE_EXCEPTION  (r10 I:?[OBJECT]) =  \l}"];
+Node_11 [shape=record,label="{11\:\ 0x001c|0x001c: IF  (r9 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:13:0x0024 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x001e|0x001e: INVOKE  (r7 I:java.io.Closeable) com.google.android.gms.common.util.IOUtils.closeQuietly(java.io.Closeable):void type: STATIC \l0x0021: INVOKE  (r8 I:java.io.Closeable) com.google.android.gms.common.util.IOUtils.closeQuietly(java.io.Closeable):void type: STATIC \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0024|0x0024: THROW  (r10 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static long com.google.android.gms.common.util.IOUtils.copyStream((r7 I:java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[RUNTIME, java.lang.Deprecated, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_1;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+}
+

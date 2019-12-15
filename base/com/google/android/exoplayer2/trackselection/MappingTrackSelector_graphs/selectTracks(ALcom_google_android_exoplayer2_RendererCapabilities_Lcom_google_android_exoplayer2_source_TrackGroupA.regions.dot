@@ -1,0 +1,196 @@
+digraph "CFG forcom.google.android.exoplayer2.trackselection.MappingTrackSelector.selectTracks([Lcom\/google\/android\/exoplayer2\/RendererCapabilities;Lcom\/google\/android\/exoplayer2\/source\/TrackGroupArray;)Lcom\/google\/android\/exoplayer2\/trackselection\/TrackSelectorResult;" {
+subgraph cluster_Region_517780818 {
+label = "R(12:0|(1:3)|4|(3:7|(1:9)(1:11)|10)|12|(1:15)|16|(2:(1:21)(3:23|24|(1:27)(0))|22)|29|(1:35)|37|38) | DECL_VAR: int[] rendererFormatSupport\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int[] r23 = new int[(r27.length + 1)]\lcom.google.android.exoplayer2.source.TrackGroup[][] r24 = new com.google.android.exoplayer2.source.TrackGroup[(r27.length + 1)][]\lint[][][] int[][][] r6 = new int[(r27.length + 1)][][]\lint r16 = 0\l}"];
+subgraph cluster_LoopRegion_982193285 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0020|if (r16 \< r24.length) goto L_0x0022\l}"];
+subgraph cluster_Region_1090932899 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|LOOP_END\lLOOP:0: B:1:0x001b\-\>B:3:0x0022\l|r24[r16] = new com.google.android.exoplayer2.source.TrackGroup[r28.length]\lr6[r16] = new int[r28.length][]\lr16++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0035|int[] int[] r5 = getMixedMimeTypeAdaptationSupport(r27)\lint r15 = 0\l}"];
+subgraph cluster_LoopRegion_500659943 {
+label = "LOOP:1: (3:7|(1:9)(1:11)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003e|if (r15 \< r28.length) goto L_0x0040\l}"];
+subgraph cluster_Region_1691818823 {
+label = "R(3:7|(1:9)(1:11)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0040|com.google.android.exoplayer2.source.TrackGroup com.google.android.exoplayer2.source.TrackGroup r14 = r28.get(r15)\lint int r20 = findRenderer(r27, r14)\l}"];
+subgraph cluster_IfRegion_477393975 {
+label = "IF [B:8:0x0051] THEN: R(1:9) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0051|if (r20 == r27.length) goto L_0x0053\l}"];
+subgraph cluster_Region_749235008 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0053|r19 = new int[r14.length]\l}"];
+}
+subgraph cluster_Region_1035995902 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x006c|int[] r19 = getFormatSupport(r27[r20], r14)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0059|LOOP_END\lPHI: r19 \l  PHI: (r19v1 'rendererFormatSupport' int[]) = (r19v0 'rendererFormatSupport' int[]), (r19v2 'rendererFormatSupport' int[]) binds: [B:42:0x0059, B:41:0x0059] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x003a\-\>B:10:0x0059\l|int r22 = r23[r20]\lr24[r20][r22] = r14\lr6[r20][r22] = r19\lr23[r20] = r23[r20] + 1\lr15++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0073|com.google.android.exoplayer2.source.TrackGroupArray[] com.google.android.exoplayer2.source.TrackGroupArray[] r4 = new com.google.android.exoplayer2.source.TrackGroupArray[r27.length]\lint[] int[] r3 = new int[r27.length]\lint r16 = 0\l}"];
+subgraph cluster_LoopRegion_2018356422 {
+label = "LOOP:2: (1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0084|if (r16 \< r27.length) goto L_0x0086\l}"];
+subgraph cluster_Region_1499189627 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0086|LOOP_END\lLOOP:2: B:13:0x007f\-\>B:15:0x0086\l|int r22 = r23[r16]\lr4[r16] = new com.google.android.exoplayer2.source.TrackGroupArray((com.google.android.exoplayer2.source.TrackGroup[]) java.util.Arrays.copyOf(r24[r16], r22))\lr6[r16] = (int[][]) java.util.Arrays.copyOf(r6[r16], r22)\lr3[r16] = r27[r16].getTrackType()\lr16++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x00b0|com.google.android.exoplayer2.source.TrackGroupArray com.google.android.exoplayer2.source.TrackGroupArray r7 = new com.google.android.exoplayer2.source.TrackGroupArray((com.google.android.exoplayer2.source.TrackGroup[]) java.util.Arrays.copyOf(r24[r27.length], r23[r27.length]))\lcom.google.android.exoplayer2.trackselection.TrackSelection[] com.google.android.exoplayer2.trackselection.TrackSelection[] r12 = selectTracks(r27, r4, r6)\lint r16 = 0\l}"];
+subgraph cluster_LoopRegion_658200228 {
+label = "LOOP:3: (2:(1:21)(3:23|24|(1:27)(0))|22)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00d6|if (r16 \< r27.length) goto L_0x00d8\l}"];
+subgraph cluster_Region_1193768511 {
+label = "R(2:(1:21)(3:23|24|(1:27)(0))|22)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_815017398 {
+label = "IF [B:20:0x00e2] THEN: R(1:21) ELSE: R(3:23|24|(1:27)(0))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00e2|if (r26.rendererDisabledFlags.get(r16) == true) goto L_0x00e4\l}"];
+subgraph cluster_Region_196966436 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00e4|r12[r16] = null\l}"];
+}
+subgraph cluster_Region_444644399 {
+label = "R(3:23|24|(1:27)(0))";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00ea|com.google.android.exoplayer2.source.TrackGroupArray r21 = r4[r16]\ljava.util.Map java.util.Map\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.trackselection.MappingTrackSelector.SelectionOverride\> r18 = r26.selectionOverrides.get(r16)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x00f8|com.google.android.exoplayer2.trackselection.MappingTrackSelector.SelectionOverride r17 = r18 == null ? null : r18.get(r21)\l}"];
+subgraph cluster_IfRegion_1346533881 {
+label = "IF [B:26:0x00fc] THEN: R(1:27) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00fc|PHI: r17 \l  PHI: (r17v1 'override' com.google.android.exoplayer2.trackselection.MappingTrackSelector$SelectionOverride) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r17 != null) goto L_0x00fe\l}"];
+subgraph cluster_Region_771442682 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00fe|r12[r16] = r17.createTrackSelection(r21)\l}"];
+}
+subgraph cluster_Region_925891550 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_22 [shape=record,label="{22\:\ 0x00e7|LOOP_END\lLOOP:3: B:17:0x00d1\-\>B:22:0x00e7\l|r16++\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0116|com.google.android.exoplayer2.trackselection.MappingTrackSelector$MappedTrackInfo com.google.android.exoplayer2.trackselection.MappingTrackSelector.MappedTrackInfo r2 = new com.google.android.exoplayer2.trackselection.MappingTrackSelector.MappedTrackInfo(r3, r4, r5, r6, r7)\lcom.google.android.exoplayer2.RendererConfiguration[] com.google.android.exoplayer2.RendererConfiguration[] r11 = new com.google.android.exoplayer2.RendererConfiguration[r27.length]\lint r16 = 0\l}"];
+subgraph cluster_LoopRegion_758224013 {
+label = "LOOP:4: (1:35)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0127|if (r16 \< r27.length) goto L_0x0129\l}"];
+subgraph cluster_Region_847640494 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x012f|LOOP_END\lPHI: r8 \l  PHI: (r8v23 com.google.android.exoplayer2.RendererConfiguration) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:4: B:30:0x0122\-\>B:35:0x012f\l|r11[r16] = r12[r16] != null ? com.google.android.exoplayer2.RendererConfiguration.DEFAULT : null\lr16++\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x0136|maybeConfigureRenderersForTunneling(r27, r4, r6, r11, r12, r26.tunnelingAudioSessionId)\l}"];
+Node_38 [shape=record,label="{38\:\ 0x014d|RETURN\l|return new com.google.android.exoplayer2.trackselection.TrackSelectorResult(r28, new com.google.android.exoplayer2.trackselection.TrackSelectionArray(r12), r2, r11)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001b|LOOP_START\lPHI: r16 \l  PHI: (r16v1 'i' int) = (r16v0 'i' int), (r16v11 'i' int) binds: [B:0:0x0000, B:3:0x0022] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001b\-\>B:3:0x0022\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x003a|LOOP_START\lPHI: r15 \l  PHI: (r15v1 'groupIndex' int) = (r15v0 'groupIndex' int), (r15v2 'groupIndex' int) binds: [B:4:0x0035, B:10:0x0059] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:5:0x003a\-\>B:10:0x0059\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x007f|LOOP_START\lPHI: r16 \l  PHI: (r16v3 'i' int) = (r16v2 'i' int), (r16v10 'i' int) binds: [B:12:0x0073, B:15:0x0086] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:13:0x007f\-\>B:15:0x0086\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x00d1|LOOP_START\lPHI: r16 \l  PHI: (r16v5 'i' int) = (r16v4 'i' int), (r16v9 'i' int) binds: [B:16:0x00b0, B:22:0x00e7] A[DONT_GENERATE, DONT_INLINE]\lLOOP:3: B:17:0x00d1\-\>B:22:0x00e7\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x00d8}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x00fa}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0109}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0122|LOOP_START\lPHI: r16 \l  PHI: (r16v7 'i' int) = (r16v6 'i' int), (r16v8 'i' int) binds: [B:29:0x0116, B:35:0x012f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:4: B:30:0x0122\-\>B:35:0x012f\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0129}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x012b}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x012d}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x0134}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x0035|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x0073|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x0059|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x0059|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x00b0|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x0116|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x00e7|SYNTHETIC\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x00e7|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x00e7|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x0136|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x012f|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ 0x012f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final com.google.android.exoplayer2.trackselection.TrackSelectorResult com.google.android.exoplayer2.trackselection.MappingTrackSelector.selectTracks((r26v0 'this' com.google.android.exoplayer2.trackselection.MappingTrackSelector A[IMMUTABLE_TYPE, THIS]), (r27v0 'rendererCapabilities' com.google.android.exoplayer2.RendererCapabilities[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r28v0 'trackGroups' com.google.android.exoplayer2.source.TrackGroupArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_39[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_40[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_41;
+Node_11 -> Node_42;
+Node_10 -> Node_5;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_43[style=dashed];
+Node_15 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_44[style=dashed];
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_45;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_24 -> Node_28;
+Node_26 -> Node_27;
+Node_26 -> Node_46[style=dashed];
+Node_27 -> Node_47;
+Node_22 -> Node_17;
+Node_29 -> Node_30;
+Node_31 -> Node_32;
+Node_31 -> Node_48[style=dashed];
+Node_35 -> Node_30;
+Node_37 -> Node_38;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_25 -> Node_26;
+Node_28 -> Node_26;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_33 -> Node_36;
+Node_34 -> Node_49;
+Node_36 -> Node_50;
+Node_39 -> Node_4;
+Node_40 -> Node_12;
+Node_41 -> Node_10;
+Node_42 -> Node_10;
+Node_43 -> Node_16;
+Node_44 -> Node_29;
+Node_45 -> Node_22;
+Node_46 -> Node_22;
+Node_47 -> Node_22;
+Node_48 -> Node_37;
+Node_49 -> Node_35;
+Node_50 -> Node_35;
+}
+

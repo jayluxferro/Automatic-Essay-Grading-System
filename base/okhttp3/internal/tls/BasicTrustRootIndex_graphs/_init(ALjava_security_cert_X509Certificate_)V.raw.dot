@@ -1,0 +1,20 @@
+digraph "CFG forokhttp3.internal.tls.BasicTrustRootIndex.\<init\>([Ljava\/security\/cert\/X509Certificate;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r6 I:java.lang.Object) java.lang.Object.\<init\>():void type: DIRECT \l0x0003: NEW_INSTANCE  (r0 I:java.util.LinkedHashMap) =  java.util.LinkedHashMap \l0x0005: INVOKE  (r0 I:java.util.LinkedHashMap) java.util.LinkedHashMap.\<init\>():void type: DIRECT \l0x0008: IPUT  \l  (r0 I:java.util.Map\<javax.security.auth.x500.X500Principal, java.util.Set\<java.security.cert.X509Certificate\>\>)\l  (r6 I:okhttp3.internal.tls.BasicTrustRootIndex)\l okhttp3.internal.tls.BasicTrustRootIndex.subjectToCaCerts java.util.Map \l0x000a: ARRAY_LENGTH  (r0 I:int) = (r7 I:?[]) \l0x000b: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r1 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:6:0x002f \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: AGET  (r2 I:?[OBJECT, ARRAY]) = (r7 I:?[OBJECT, ARRAY][]), (r1 I:?[int, short, byte, char]) \l0x0010: INVOKE  (r3 I:javax.security.auth.x500.X500Principal) = (r2 I:java.security.cert.X509Certificate) java.security.cert.X509Certificate.getSubjectX500Principal():javax.security.auth.x500.X500Principal type: VIRTUAL \l0x0014: IGET  (r4 I:java.util.Map\<javax.security.auth.x500.X500Principal, java.util.Set\<java.security.cert.X509Certificate\>\>) = (r6 I:okhttp3.internal.tls.BasicTrustRootIndex) okhttp3.internal.tls.BasicTrustRootIndex.subjectToCaCerts java.util.Map \l0x0016: INVOKE  (r4 I:java.lang.Object) = (r4 I:java.util.Map), (r3 I:java.lang.Object) java.util.Map.get(java.lang.Object):java.lang.Object type: INTERFACE \l0x001a: CHECK_CAST  (r4 I:java.util.Set) = (java.util.Set) (r4 I:?[OBJECT, ARRAY]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001c|0x001c: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0029 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|0x001e: NEW_INSTANCE  (r4 I:java.util.LinkedHashSet) =  java.util.LinkedHashSet \l0x0020: CONST  (r5 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0021: INVOKE  (r4 I:java.util.LinkedHashSet), (r5 I:int) java.util.LinkedHashSet.\<init\>(int):void type: DIRECT \l0x0024: IGET  (r5 I:java.util.Map\<javax.security.auth.x500.X500Principal, java.util.Set\<java.security.cert.X509Certificate\>\>) = (r6 I:okhttp3.internal.tls.BasicTrustRootIndex) okhttp3.internal.tls.BasicTrustRootIndex.subjectToCaCerts java.util.Map \l0x0026: INVOKE  \l  (r5 I:java.util.Map)\l  (r3 I:java.lang.Object)\l  (r4 I:java.lang.Object)\l java.util.Map.put(java.lang.Object, java.lang.Object):java.lang.Object type: INTERFACE \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|0x0029: INVOKE  (r4 I:java.util.Set), (r2 I:java.lang.Object) java.util.Set.add(java.lang.Object):boolean type: INTERFACE \l0x002c: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002f|0x002f: RETURN   \l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.tls.BasicTrustRootIndex.\<init\>((r6 'this' I:okhttp3.internal.tls.BasicTrustRootIndex A[IMMUTABLE_TYPE, THIS]), (r7 I:java.security.cert.X509Certificate[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+}
+

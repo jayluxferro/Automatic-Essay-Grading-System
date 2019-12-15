@@ -1,0 +1,45 @@
+digraph "CFG forcom.facebook.ads.internal.q.c.g.a(Landroid\/content\/Context;)Z" {
+subgraph cluster_Region_1199553924 {
+label = "R(3:0|(1:(1:5))|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Iterator r2 = r5.getPackageManager().queryIntentActivities(new android.content.Intent(\"android.intent.action.VIEW\", android.net.Uri.parse(\"http:\/\/play.google.com\/store\/apps\/\")), 0).iterator()\l}"];
+subgraph cluster_LoopRegion_1988811376 {
+label = "LOOP:0: (1:(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001e|if (r2.hasNext() != false) goto L_0x0020\l}"];
+subgraph cluster_Region_166338853 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_659914295 {
+label = "IF [B:4:0x0032] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0032|LOOP_END\lLOOP:0: B:1:0x001a\-\>B:4:0x0032\l|if (r0.activityInfo.applicationInfo.packageName.equals(\"com.android.vending\") == true) goto L_0x0034\l}"];
+subgraph cluster_Region_494691524 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001a|LOOP_START\lLOOP:0: B:1:0x001a\-\>B:4:0x0032\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0020}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0036}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0034|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0036|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean com.facebook.ads.internal.q.c.g.a((r4v0 'this' com.facebook.ads.internal.q.c.g A[IMMUTABLE_TYPE, THIS]), (r5v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_6 -> Node_9;
+Node_7 -> Node_5;
+Node_8 -> Node_6;
+}
+

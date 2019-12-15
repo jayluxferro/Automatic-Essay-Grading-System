@@ -1,0 +1,61 @@
+digraph "CFG forcom.j256.ormlite.field.types.BooleanCharType.makeConfigObject(Lcom\/j256\/ormlite\/field\/FieldType;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1079893564 {
+label = "R(2:0|(2:(1:2)|(1:(2:(1:7)|(2:8|9)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r4 = r4.getFormat()\l}"];
+subgraph cluster_Region_1656258418 {
+label = "R(2:(1:2)|(1:(2:(1:7)|(2:8|9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1670468548 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4 == null) goto L_0x0006\l}"];
+subgraph cluster_Region_1978117553 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return DEFAULT_TRUE_FALSE_FORMAT\l}"];
+}
+}
+subgraph cluster_Region_2016406057 {
+label = "R(1:(2:(1:7)|(2:8|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1529513701 {
+label = "R(2:(1:7)|(2:8|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_676934458 {
+label = "IF [B:4:0x000e, B:6:0x001a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r4.length() == 2) goto L_0x0010\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|ADDED_TO_REGION\l|if (r4.charAt(0) != r4.charAt(1)) goto L_0x001c\l}"];
+subgraph cluster_Region_95563751 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_724614483 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d}"];
+Node_9 [shape=record,label="{9\:\ 0x0033|throw new java.sql.SQLException(\"Invalid boolean format must have 2 different characters that represent true\/false like \"10\" or \"tf\": \" + r4)\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+MethodNode[shape=record,label="{public java.lang.Object com.j256.ormlite.field.types.BooleanCharType.makeConfigObject((r3v0 'this' com.j256.ormlite.field.types.BooleanCharType A[IMMUTABLE_TYPE, THIS]), (r4v0 com.j256.ormlite.field.FieldType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

@@ -1,0 +1,38 @@
+digraph "CFG formil.nga.wkb.io.WkbGeometryReader.readPoint(Lmil\/nga\/wkb\/io\/ByteReader;ZZ)Lmil\/nga\/wkb\/geom\/Point;" {
+subgraph cluster_Region_152742981 {
+label = "R(4:0|(1:2)|(1:4)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.wkb.geom.Point mil.nga.wkb.geom.Point r0 = new mil.nga.wkb.geom.Point(r9, r10, r8.readDouble(), r8.readDouble())\l}"];
+subgraph cluster_IfRegion_1543778153 {
+label = "IF [B:1:0x0010] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r9 == true) goto L_0x0012\l}"];
+subgraph cluster_Region_566566899 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|r0.setZ(java.lang.Double.valueOf(r8.readDouble()))\l}"];
+}
+}
+subgraph cluster_IfRegion_2108949925 {
+label = "IF [B:3:0x001d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001d|if (r10 == true) goto L_0x001f\l}"];
+subgraph cluster_Region_442790076 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|r0.setM(java.lang.Double.valueOf(r8.readDouble()))\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x002a|RETURN\l|return r0\l}"];
+}
+MethodNode[shape=record,label="{public static mil.nga.wkb.geom.Point mil.nga.wkb.io.WkbGeometryReader.readPoint((r8v0 mil.nga.wkb.io.ByteReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+}
+

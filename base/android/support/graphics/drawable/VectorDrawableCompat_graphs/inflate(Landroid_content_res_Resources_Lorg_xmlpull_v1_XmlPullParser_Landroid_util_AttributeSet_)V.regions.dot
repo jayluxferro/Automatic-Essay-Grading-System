@@ -1,0 +1,32 @@
+digraph "CFG forandroid.support.graphics.drawable.VectorDrawableCompat.inflate(Landroid\/content\/res\/Resources;Lorg\/xmlpull\/v1\/XmlPullParser;Landroid\/util\/AttributeSet;)V" {
+subgraph cluster_Region_831507789 {
+label = "R(1:(1:2)(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1723273047 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mDelegateDrawable != null) goto L_0x0004\l}"];
+subgraph cluster_Region_693830152 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.mDelegateDrawable.inflate(r2, r3, r4)\l}"];
+}
+subgraph cluster_Region_643205389 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|inflate(r2, r3, r4, (android.content.res.Resources.Theme) null)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+MethodNode[shape=record,label="{public void android.support.graphics.drawable.VectorDrawableCompat.inflate((r1v0 'this' android.support.graphics.drawable.VectorDrawableCompat A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.res.Resources A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 org.xmlpull.v1.XmlPullParser A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.util.AttributeSet A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException, java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

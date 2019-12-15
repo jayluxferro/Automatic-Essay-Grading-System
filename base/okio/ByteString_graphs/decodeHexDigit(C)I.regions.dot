@@ -1,0 +1,99 @@
+digraph "CFG forokio.ByteString.decodeHexDigit(C)I" {
+subgraph cluster_Region_896335509 {
+label = "R(1:(2:(1:5)|(1:(2:(1:11)|(1:(2:(1:17)|(2:18|19)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1772380224 {
+label = "R(2:(1:5)|(1:(2:(1:11)|(1:(2:(1:17)|(2:18|19))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1011784314 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3 \>= '0') goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r3 \<= '9') goto L_0x0008\l}"];
+subgraph cluster_Region_1398228507 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|RETURN\l|return r3 \- '0'\l}"];
+}
+}
+subgraph cluster_Region_18715314 {
+label = "R(1:(2:(1:11)|(1:(2:(1:17)|(2:18|19)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1265718449 {
+label = "R(2:(1:11)|(1:(2:(1:17)|(2:18|19))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_61119215 {
+label = "IF [B:7:0x000c, B:9:0x0010] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|if (r3 \>= 'a') goto L_0x000e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0010|ADDED_TO_REGION\l|if (r3 \<= 'f') goto L_0x0012\l}"];
+subgraph cluster_Region_1789555486 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|RETURN\l|return (r3 \- 'a') + 10\l}"];
+}
+}
+subgraph cluster_Region_131065083 {
+label = "R(1:(2:(1:17)|(2:18|19)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1180363887 {
+label = "R(2:(1:17)|(2:18|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1636726185 {
+label = "IF [B:13:0x0018, B:15:0x001c] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0018|if (r3 \>= 'A') goto L_0x001a\l}"];
+Node_15 [shape=record,label="{15\:\ 0x001c|ADDED_TO_REGION\l|if (r3 \<= 'F') goto L_0x001e\l}"];
+subgraph cluster_Region_1476777989 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0021|RETURN\l|return (r3 \- 'A') + 10\l}"];
+}
+}
+subgraph cluster_Region_546637762 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0022}"];
+Node_19 [shape=record,label="{19\:\ 0x0038|throw new java.lang.IllegalArgumentException(\"Unexpected hex digit: \" + r3)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0012}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0016}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001e}"];
+MethodNode[shape=record,label="{private static int okio.ByteString.decodeHexDigit((r3v0 char A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_18[style=dashed];
+Node_18 -> Node_19;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

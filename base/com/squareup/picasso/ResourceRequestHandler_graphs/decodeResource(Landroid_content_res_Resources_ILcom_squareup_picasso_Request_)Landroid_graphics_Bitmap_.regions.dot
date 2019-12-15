@@ -1,0 +1,27 @@
+digraph "CFG forcom.squareup.picasso.ResourceRequestHandler.decodeResource(Landroid\/content\/res\/Resources;ILcom\/squareup\/picasso\/Request;)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_871472564 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.BitmapFactory$Options android.graphics.BitmapFactory.Options r0 = createBitmapOptions(r5)\l}"];
+subgraph cluster_IfRegion_490694478 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (requiresInSampleSize(r0) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_221115489 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.graphics.BitmapFactory.decodeResource(r3, r4, r0)\lcalculateInSampleSize(r5.targetWidth, r5.targetHeight, r0, r5)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0018|RETURN\l|return android.graphics.BitmapFactory.decodeResource(r3, r4, r0)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014}"];
+MethodNode[shape=record,label="{private static android.graphics.Bitmap com.squareup.picasso.ResourceRequestHandler.decodeResource((r3v0 android.content.res.Resources A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.squareup.picasso.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

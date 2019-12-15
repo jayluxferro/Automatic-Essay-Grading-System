@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress.upComingStep()Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;" {
+subgraph cluster_Region_1763684414 {
+label = "R(1:(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_581361899 {
+label = "R(2:(1:3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2128244780 {
+label = "IF [B:1:0x0012] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if ((routeLeg().steps().size() \- 1) \> stepIndex()) goto L_0x0014\l}"];
+subgraph cluster_Region_1096244334 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0028|RETURN\l|return routeLeg().steps().get(stepIndex() + 1)\l}"];
+}
+}
+subgraph cluster_Region_1440586298 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0029|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+MethodNode[shape=record,label="{public com.mapbox.api.directions.v5.models.LegStep com.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress.upComingStep((r2v0 'this' com.mapbox.services.android.navigation.v5.routeprogress.RouteLegProgress A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

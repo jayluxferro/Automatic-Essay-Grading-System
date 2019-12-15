@@ -1,0 +1,30 @@
+digraph "CFG fororg.osmdroid.views.overlay.gestures.RotationGestureOverlay.onRotate(F)V" {
+subgraph cluster_Region_1455138467 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.currentAngle += r5\l}"];
+subgraph cluster_Region_1394461314 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1707739379 {
+label = "IF [B:1:0x0010] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if ((java.lang.System.currentTimeMillis() \- 25) \> r4.timeLastSet) goto L_0x0012\l}"];
+subgraph cluster_Region_1359676906 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|r4.timeLastSet = java.lang.System.currentTimeMillis()\lr4.mMapView.setMapOrientation(r4.mMapView.getMapOrientation() + r4.currentAngle)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.gestures.RotationGestureOverlay.onRotate((r4v0 'this' org.osmdroid.views.overlay.gestures.RotationGestureOverlay A[IMMUTABLE_TYPE, THIS]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,95 @@
+digraph "CFG forandroid.support.design.widget.BottomSheetBehavior.findScrollingChild(Landroid\/view\/View;)Landroid\/view\/View;" {
+subgraph cluster_Region_2073292528 {
+label = "R(1:(2:(1:2)|(1:(2:(1:13)|(3:5|(2:7|(2:(1:9)|(1:10)))|14)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1947716776 {
+label = "R(2:(1:2)|(1:(2:(1:13)|(3:5|(2:7|(2:(1:9)|(1:10)))|14))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1629645163 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.support.p000v4.view.ViewCompat.isNestedScrollingEnabled(r4) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1476708476 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1006914018 {
+label = "R(1:(2:(1:13)|(3:5|(2:7|(2:(1:9)|(1:10)))|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1992073286 {
+label = "R(2:(1:13)|(3:5|(2:7|(2:(1:9)|(1:10)))|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_78116555 {
+label = "IF [B:4:0x0009] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if ((r4 instanceof android.view.ViewGroup) != true) goto L_?\l}"];
+subgraph cluster_Region_2057214219 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1215739768 {
+label = "R(3:5|(2:7|(2:(1:9)|(1:10)))|14)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|android.view.ViewGroup android.view.ViewGroup r4 = (android.view.ViewGroup) r4\lint r0 = 0\lint int r1 = r4.getChildCount()\l}"];
+subgraph cluster_LoopRegion_1859724299 {
+label = "LOOP:0: (2:7|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:5:0x000b, B:10:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x0012\-\>B:10:0x001f\l|if (r0 \< r1) goto L_0x0014\l}"];
+subgraph cluster_Region_607319301 {
+label = "R(2:7|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|android.view.View android.view.View r2 = findScrollingChild(r4.getChildAt(r0))\l}"];
+subgraph cluster_Region_1682670819 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_159326316 {
+label = "IF [B:8:0x001c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|if (r2 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_987133595 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001e|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1959757050 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|LOOP_END\lLOOP:0: B:6:0x0012\-\>B:10:0x001f\l|r0++\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{android.view.View android.support.design.widget.BottomSheetBehavior.findScrollingChild((r3v0 'this' android.support.design.widget.BottomSheetBehavior A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_13;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_10[style=dashed];
+Node_8 -> Node_12;
+Node_10 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_11 -> Node_14;
+Node_12 -> Node_9;
+}
+

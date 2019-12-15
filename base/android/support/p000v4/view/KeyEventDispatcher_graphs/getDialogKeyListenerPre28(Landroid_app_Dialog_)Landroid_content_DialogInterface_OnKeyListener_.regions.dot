@@ -1,0 +1,99 @@
+digraph "CFG forandroid.support.v4.view.KeyEventDispatcher.getDialogKeyListenerPre28(Landroid\/app\/Dialog;)Landroid\/content\/DialogInterface$OnKeyListener;" {
+subgraph cluster_Region_489398935 {
+label = "R(2:(2:(1:4)|5)|(2:(1:14)|(1:(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_374314081 {
+label = "IF [B:1:0x0002] THEN: R(2:(1:4)|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (sDialogFieldsFetched == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1835313190 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_667871017 {
+label = "Try: R(1:4) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1731319389 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ NoSuchFieldException \-\> 0x0014 \}\lSplitter:B:3:0x0009\l|sDialogKeyListenerField = android.app.Dialog.class.getDeclaredField(\"mOnKeyListener\")     \/\/ Catch:\{ NoSuchFieldException \-\> 0x0014 \}\lsDialogKeyListenerField.setAccessible(true)     \/\/ Catch:\{ NoSuchFieldException \-\> 0x0014 \}\l}"];
+}
+subgraph cluster_Region_230140486 {
+label = "R(0) | ExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\l";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0014|sDialogFieldsFetched = true\l}"];
+}
+}
+subgraph cluster_Region_1163531854 {
+label = "R(2:(1:14)|(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_360535651 {
+label = "IF [B:8:0x0018] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|if (sDialogKeyListenerField == null) goto L_?\l}"];
+subgraph cluster_Region_2081941935 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1279429105 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1505693265 {
+label = "Try: R(1:11) catches: R(1:13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_646874443 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0022|RETURN\l|return (android.content.DialogInterface.OnKeyListener) sDialogKeyListenerField.get(r3)\l}"];
+}
+subgraph cluster_Region_1704417956 {
+label = "R(1:13) | ExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_230140486 {
+label = "R(0) | ExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\l";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1704417956 {
+label = "R(1:13) | ExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009|SYNTHETIC\lSplitter:B:3:0x0009\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lExcHandler: NoSuchFieldException (unused java.lang.NoSuchFieldException)\lSplitter:B:3:0x0009\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a|SYNTHETIC\lSplitter:B:9:0x001a\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|Catch:\{ IllegalAccessException \-\> 0x0023 \}\lSplitter:B:9:0x001a\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lExcHandler: IllegalAccessException (unused java.lang.IllegalAccessException)\lSplitter:B:9:0x001a\l}"];
+MethodNode[shape=record,label="{private static android.content.DialogInterface$OnKeyListener android.support.v4.view.KeyEventDispatcher.getDialogKeyListenerPre28((r3v0 android.app.Dialog A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_6 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_12 -> Node_13;
+}
+

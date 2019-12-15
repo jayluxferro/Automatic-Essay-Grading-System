@@ -1,0 +1,34 @@
+digraph "CFG forcom.j256.ormlite.dao.EagerForeignCollection.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_944814346 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_740291199 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_823334620 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r2 instanceof com.j256.ormlite.dao.EagerForeignCollection) == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1447433075 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1810065496 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|RETURN\l|return r1.results.equals(((com.j256.ormlite.dao.EagerForeignCollection) r2).results)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.dao.EagerForeignCollection.equals((r1v0 'this' com.j256.ormlite.dao.EagerForeignCollection A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

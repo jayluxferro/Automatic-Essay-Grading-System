@@ -1,0 +1,59 @@
+digraph "CFG forokhttp3.internal.cache.DiskLruCache.removeEntry(Lokhttp3\/internal\/cache\/DiskLruCache$Entry;)Z" {
+subgraph cluster_Region_1510897508 {
+label = "R(6:(1:2)|3|(1:6)|7|(1:9)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_456552666 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.currentEditor != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1958908897 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r7.currentEditor.detach()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_2036309378 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r0 \< r6.valueCount) goto L_0x000e\l}"];
+subgraph cluster_Region_1127154152 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|LOOP_END\lLOOP:0: B:4:0x000a\-\>B:6:0x000e\l|r6.fileSystem.delete(r7.cleanFiles[r0])\lr6.size \-= r7.lengths[r0]\lr7.lengths[r0] = 0\lr0++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0029|r6.redundantOpCount++\lr6.journalWriter.writeUtf8(REMOVE).writeByte(32).writeUtf8(r7.key).writeByte(10)\lr6.lruEntries.remove(r7.key)\l}"];
+subgraph cluster_IfRegion_885042974 {
+label = "IF [B:8:0x0053] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0053|if (journalRebuildRequired() == true) goto L_0x0055\l}"];
+subgraph cluster_Region_300415341 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0055|r6.executor.execute(r6.cleanupRunnable)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x005c|RETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a|LOOP_START\lPHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v11 int) binds: [B:3:0x0009, B:6:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000a\-\>B:6:0x000e\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean okhttp3.internal.cache.DiskLruCache.removeEntry((r6v0 'this' okhttp3.internal.cache.DiskLruCache A[IMMUTABLE_TYPE, THIS]), (r7v0 okhttp3.internal.cache.DiskLruCache$Entry A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_11 -> Node_7;
+}
+

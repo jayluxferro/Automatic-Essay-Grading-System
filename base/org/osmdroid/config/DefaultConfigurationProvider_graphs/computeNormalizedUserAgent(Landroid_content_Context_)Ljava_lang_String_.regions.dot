@@ -1,0 +1,57 @@
+digraph "CFG fororg.osmdroid.config.DefaultConfigurationProvider.computeNormalizedUserAgent(Landroid\/content\/Context;)Ljava\/lang\/String;" {
+subgraph cluster_Region_506721510 {
+label = "R(1:(2:(1:1)|(2:2|(2:4|5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_93186839 {
+label = "R(2:(1:1)|(2:2|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_287248665 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_717931126 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_304580315 {
+label = "R(2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|java.lang.String java.lang.String r0 = r4.getPackageName()\l}"];
+subgraph cluster_TryCatchRegion_736069389 {
+label = "Try: R(2:4|5) catches: R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_882593018 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ NameNotFoundException \-\> 0x0029 \}\lSplitter:B:3:0x0008\l|int int r4 = r4.getPackageManager().getPackageInfo(r0, 128).versionCode     \/\/ Catch:\{ NameNotFoundException \-\> 0x0029 \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|RETURN\l|return r0 + \"\/\" + r4\l}"];
+}
+subgraph cluster_Region_634211965 {
+label = "R(1:6) | ExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_634211965 {
+label = "R(1:6) | ExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|SYNTHETIC\lSplitter:B:3:0x0008\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lExcHandler: NameNotFoundException (unused android.content.pm.PackageManager$NameNotFoundException)\lSplitter:B:3:0x0008\l}"];
+MethodNode[shape=record,label="{private java.lang.String org.osmdroid.config.DefaultConfigurationProvider.computeNormalizedUserAgent((r3v0 'this' org.osmdroid.config.DefaultConfigurationProvider A[IMMUTABLE_TYPE, THIS]), (r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_3 -> Node_7;
+Node_7 -> Node_6;
+}
+

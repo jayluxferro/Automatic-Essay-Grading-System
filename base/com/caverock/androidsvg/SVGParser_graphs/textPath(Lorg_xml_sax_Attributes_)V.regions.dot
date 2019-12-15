@@ -1,0 +1,52 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.textPath(Lorg\/xml\/sax\/Attributes;)V" {
+subgraph cluster_Region_1484574805 {
+label = "R(2:0|(2:2|(1:4)(1:5))(1:7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|debug(\"\<textPath\>\", new java.lang.Object[0])\l}"];
+subgraph cluster_IfRegion_1516940601 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(1:4)(1:5)) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.currentElement != null) goto L_0x000c\l}"];
+subgraph cluster_Region_1702479692 {
+label = "R(2:2|(1:4)(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|com.caverock.androidsvg.SVG$TextPath com.caverock.androidsvg.SVG.TextPath r0 = new com.caverock.androidsvg.SVG.TextPath()\lr0.document = r2.svgDocument\lr0.parent = r2.currentElement\lparseAttributesCore(r0, r3)\lparseAttributesStyle(r0, r3)\lparseAttributesConditional(r0, r3)\lparseAttributesTextPath(r0, r3)\lr2.currentElement.addChild(r0)\lr2.currentElement = r0\l}"];
+subgraph cluster_IfRegion_635872847 {
+label = "IF [B:3:0x0030] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0030|if ((r0.parent instanceof com.caverock.androidsvg.SVG.TextRoot) == true) goto L_0x0032\l}"];
+subgraph cluster_Region_1201615830 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0032|r0.setTextRoot((com.caverock.androidsvg.SVG.TextRoot) r0.parent)\l}"];
+}
+subgraph cluster_Region_1362941186 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x003a|r0.setTextRoot(((com.caverock.androidsvg.SVG.TextChild) r0.parent).getTextRoot())\l}"];
+}
+}
+}
+subgraph cluster_Region_7289718 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004d|throw new com.caverock.androidsvg.SVGParseException(\"Invalid document. Root element must be \<svg\>\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0046}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.caverock.androidsvg.SVGParser.textPath((r2v0 'this' com.caverock.androidsvg.SVGParser A[IMMUTABLE_TYPE, THIS]), (r3v0 org.xml.sax.Attributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.caverock.androidsvg.SVGParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+}
+

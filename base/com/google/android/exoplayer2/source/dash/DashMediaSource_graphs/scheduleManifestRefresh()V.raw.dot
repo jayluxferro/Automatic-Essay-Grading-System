@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.scheduleManifestRefresh()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r8 I:?[long, double]) = (0 ?[long, double]) \l0x0002: IGET  (r6 I:com.google.android.exoplayer2.source.dash.manifest.DashManifest) = \l  (r10 I:com.google.android.exoplayer2.source.dash.DashMediaSource)\l com.google.android.exoplayer2.source.dash.DashMediaSource.manifest com.google.android.exoplayer2.source.dash.manifest.DashManifest \l0x0004: IGET  (r6 I:boolean) = \l  (r6 I:com.google.android.exoplayer2.source.dash.manifest.DashManifest)\l com.google.android.exoplayer2.source.dash.manifest.DashManifest.dynamic boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0009 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: RETURN   \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: IGET  (r6 I:com.google.android.exoplayer2.source.dash.manifest.DashManifest) = \l  (r10 I:com.google.android.exoplayer2.source.dash.DashMediaSource)\l com.google.android.exoplayer2.source.dash.DashMediaSource.manifest com.google.android.exoplayer2.source.dash.manifest.DashManifest \l0x000b: IGET  (r2 I:long) = \l  (r6 I:com.google.android.exoplayer2.source.dash.manifest.DashManifest)\l com.google.android.exoplayer2.source.dash.manifest.DashManifest.minUpdatePeriod long \l0x000d: CMP_L  (r6 I:int) = (r2 I:long A[D('minUpdatePeriod' long)]), (r8 I:long) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0013 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|0x0011: CONST  (r2 I:?[long, double] A[D('minUpdatePeriod' long)]) = (5000(0x1388, double:2.4703E\-320) ?[long, double]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|0x0013: IGET  (r6 I:long) = \l  (r10 I:com.google.android.exoplayer2.source.dash.DashMediaSource)\l com.google.android.exoplayer2.source.dash.DashMediaSource.manifestLoadStartTimestamp long \l0x0015: ARITH  (r4 I:long) = (r6 I:long) + (r2 I:long A[D('minUpdatePeriod' long)]) \l0x0017: INVOKE  (r6 I:long) =  android.os.SystemClock.elapsedRealtime():long type: STATIC \l0x001b: ARITH  (r6 I:long) = (r4 I:long A[D('nextLoadTimestamp' long)]) \- (r6 I:long) \l0x001d: INVOKE  (r0 I:long) = (r8 I:long), (r6 I:long) java.lang.Math.max(long, long):long type: STATIC \l0x0021: IGET  (r6 I:android.os.Handler) = \l  (r10 I:com.google.android.exoplayer2.source.dash.DashMediaSource)\l com.google.android.exoplayer2.source.dash.DashMediaSource.handler android.os.Handler \l0x0023: IGET  (r7 I:java.lang.Runnable) = \l  (r10 I:com.google.android.exoplayer2.source.dash.DashMediaSource)\l com.google.android.exoplayer2.source.dash.DashMediaSource.refreshManifestRunnable java.lang.Runnable \l0x0025: INVOKE  \l  (r6 I:android.os.Handler)\l  (r7 I:java.lang.Runnable)\l  (r0 I:long A[D('delayUntilNextLoad' long)])\l android.os.Handler.postDelayed(java.lang.Runnable, long):boolean type: VIRTUAL \l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.source.dash.DashMediaSource.scheduleManifestRefresh((r10 'this' I:com.google.android.exoplayer2.source.dash.DashMediaSource A[IMMUTABLE_TYPE, THIS]))  | Debug Info:\l  0x0021\-0x0028: r0 'delayUntilNextLoad' long\l  0x000d\-0x0028: r2 'minUpdatePeriod' long\l  0x0017\-0x0028: r4 'nextLoadTimestamp' long\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_2;
+}
+

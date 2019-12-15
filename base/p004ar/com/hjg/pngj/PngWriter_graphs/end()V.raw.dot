@@ -1,0 +1,35 @@
+digraph "CFG forar.com.hjg.pngj.PngWriter.end()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:int) = (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.rowNum int \l0x0002: IGET  (r1 I:ar.com.hjg.pngj.ImageInfo) = (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.imgInfo ar.com.hjg.pngj.ImageInfo \l0x0004: IGET  (r1 I:int) = (r1 I:ar.com.hjg.pngj.ImageInfo) ar.com.hjg.pngj.ImageInfo.rows int \l0x0006: ARITH  (r1 I:int) = (r1 I:int) + (\-1 int) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0026 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|SYNTHETIC\lSplitter:B:2:0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x000a\l|0x000a: IGET  (r0 I:ar.com.hjg.pngj.PngIDatChunkOutputStream) = (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.datStream ar.com.hjg.pngj.PngIDatChunkOutputStream A[Catch:\{ IOException \-\> 0x001b \}, TRY_ENTER]\l0x000c: INVOKE  (r0 I:ar.com.hjg.pngj.PngIDatChunkOutputStream) ar.com.hjg.pngj.PngIDatChunkOutputStream.flush():void type: VIRTUAL A[Catch:\{ IOException \-\> 0x001b \}]\l0x000f: INVOKE  (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.writeLastChunks():void type: DIRECT A[Catch:\{ IOException \-\> 0x001b \}]\l0x0012: INVOKE  (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.writeEndChunk():void type: DIRECT A[Catch:\{ IOException \-\> 0x001b \}, TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: INVOKE  (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.close():void type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|0x0018: RETURN   \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|ExcHandler: all null\lSplitter:B:9:0x001c\l|0x0019: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|ExcHandler: IOException null\lSplitter:B:2:0x000a\l|0x001b: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|SYNTHETIC\lSplitter:B:9:0x001c\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Splitter:B:9:0x001c\l|0x001c: NEW_INSTANCE  (r1 I:ar.com.hjg.pngj.PngjOutputException) =  ar.com.hjg.pngj.PngjOutputException A[Catch:\{ all \-\> 0x0019 \}, TRY_ENTER]\l0x001e: INVOKE  \l  (r1 I:ar.com.hjg.pngj.PngjOutputException)\l  (r0 I:java.lang.Throwable)\l ar.com.hjg.pngj.PngjOutputException.\<init\>(java.lang.Throwable):void type: DIRECT A[Catch:\{ all \-\> 0x0019 \}]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0021|0x0021: THROW  (r1 I:java.lang.Throwable) A[Catch:\{ all \-\> 0x0019 \}, TRY_LEAVE]\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0022|0x0022: INVOKE  (r2 I:ar.com.hjg.pngj.PngWriter) ar.com.hjg.pngj.PngWriter.close():void type: VIRTUAL \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0025|0x0025: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0026|0x0026: NEW_INSTANCE  (r0 I:ar.com.hjg.pngj.PngjOutputException) =  ar.com.hjg.pngj.PngjOutputException \l0x0028: CONST_STR  (r1 I:java.lang.String) =  \"all rows have not been written\" \l0x002a: INVOKE  \l  (r0 I:ar.com.hjg.pngj.PngjOutputException)\l  (r1 I:java.lang.String)\l ar.com.hjg.pngj.PngjOutputException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|0x002d: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void ar.com.hjg.pngj.PngWriter.end((r2 'this' I:ar.com.hjg.pngj.PngWriter A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_2 -> Node_3;
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_6 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_6;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+}
+

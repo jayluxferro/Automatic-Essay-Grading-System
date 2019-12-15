@@ -1,0 +1,63 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.writeNonFatalEventsTo(Lcom\/crashlytics\/android\/core\/CodedOutputStream;[Ljava\/io\/File;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1771724266 {
+label = "R(2:0|(3:2|(1:4)|7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Arrays.sort(r12, p018io.fabric.sdk.android.services.common.CommonUtils.FILE_MODIFIED_COMPARATOR)\lint int r0 = r12.length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1219865801 {
+label = "LOOP:0: (3:2|(1:4)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:7:0x0039] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:7:0x0039\l|if (r2 \< r0) goto L_0x000a\l}"];
+subgraph cluster_Region_1539615479 {
+label = "R(3:2|(1:4)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|r3 = r12[r2]\l}"];
+subgraph cluster_TryCatchRegion_912264561 {
+label = "Try: R(1:4) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_331593790 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ Exception \-\> 0x002d \}\lSplitter:B:3:0x000c\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, java.lang.String.format(java.util.Locale.US, \"Found Non Fatal for session ID %s in %s \", new java.lang.Object[]\{r13, r3.getName()\}))     \/\/ Catch:\{ Exception \-\> 0x002d \}\lwriteToCosFromFile(r11, r3)     \/\/ Catch:\{ Exception \-\> 0x002d \}\l}"];
+}
+subgraph cluster_Region_2049153257 {
+label = "R(2:5|6) | ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002d|ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:3:0x000c\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002e|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Error writting non\-fatal to session.\", r3)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0039|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:7:0x0039\l|r2++\l}"];
+}
+}
+}
+subgraph cluster_Region_2049153257 {
+label = "R(2:5|6) | ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002d|ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:3:0x000c\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002e|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Error writting non\-fatal to session.\", r3)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c|SYNTHETIC\lSplitter:B:3:0x000c\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x003c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003c|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0039|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0039|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.crashlytics.android.core.CrashlyticsController.writeNonFatalEventsTo((r11v0 com.crashlytics.android.core.CodedOutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 java.io.File[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_10;
+Node_7 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_10;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_9 -> Node_8;
+Node_10 -> Node_7;
+Node_11 -> Node_7;
+}
+

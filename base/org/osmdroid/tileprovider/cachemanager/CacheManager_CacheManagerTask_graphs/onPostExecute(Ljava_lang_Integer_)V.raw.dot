@@ -1,0 +1,31 @@
+digraph "CFG fororg.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask.onPostExecute(Ljava\/lang\/Integer;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:org.osmdroid.tileprovider.cachemanager.CacheManager) = \l  (r3 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerTask)\l org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask.mManager org.osmdroid.tileprovider.cachemanager.CacheManager \l0x0002: IGET  (r0 I:java.util.Set\<org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerTask\>) = (r0 I:org.osmdroid.tileprovider.cachemanager.CacheManager) org.osmdroid.tileprovider.cachemanager.CacheManager.mPendingTasks java.util.Set \l0x0004: INVOKE  (r0 I:java.util.Set), (r3 I:java.lang.Object) java.util.Set.remove(java.lang.Object):boolean type: INTERFACE \l0x0007: IGET  (r0 I:java.util.ArrayList\<org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerCallback\>) = \l  (r3 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerTask)\l org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask.mCallbacks java.util.ArrayList \l0x0009: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.ArrayList) java.util.ArrayList.iterator():java.util.Iterator type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:12:0x0030 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0017: CHECK_CAST  (r1 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerCallback) = (org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerCallback) (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|SYNTHETIC\lSplitter:B:4:0x0019\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Splitter:B:4:0x0019\l|0x0019: INVOKE  (r2 I:int) = (r4 I:java.lang.Integer) java.lang.Integer.intValue():int type: VIRTUAL A[Catch:\{ Throwable \-\> 0x002b \}, TRY_ENTER]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001d|0x001d: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0023 A[Catch:\{ Throwable \-\> 0x002b \}]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001f|0x001f: INVOKE  \l  (r1 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerCallback)\l org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerCallback.onTaskComplete():void type: INTERFACE A[Catch:\{ Throwable \-\> 0x002b \}]\l0x0022: GOTO  \-\> 0x000d A[Catch:\{ Throwable \-\> 0x002b \}]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|0x0023: INVOKE  (r2 I:int) = (r4 I:java.lang.Integer) java.lang.Integer.intValue():int type: VIRTUAL A[Catch:\{ Throwable \-\> 0x002b \}]\l0x0027: INVOKE  \l  (r1 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerCallback)\l  (r2 I:int)\l org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerCallback.onTaskFailed(int):void type: INTERFACE A[Catch:\{ Throwable \-\> 0x002b \}, TRY_LEAVE]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002b|ExcHandler: Throwable null\lSplitter:B:4:0x0019\l|0x002b: MOVE_EXCEPTION  (r1 I:?[OBJECT]) =  \l}"];
+Node_11 [shape=record,label="{11\:\ 0x002c|0x002c: INVOKE  \l  (r3 I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerTask)\l  (r1 I:java.lang.Throwable)\l org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask.logFaultyCallback(java.lang.Throwable):void type: DIRECT \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0030|0x0030: RETURN   \l}"];
+MethodNode[shape=record,label="{protected void org.osmdroid.tileprovider.cachemanager.CacheManager.CacheManagerTask.onPostExecute((r3 'this' I:org.osmdroid.tileprovider.cachemanager.CacheManager$CacheManagerTask A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.Integer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_12;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_1;
+Node_8 -> Node_1;
+Node_10 -> Node_11;
+Node_11 -> Node_1;
+}
+

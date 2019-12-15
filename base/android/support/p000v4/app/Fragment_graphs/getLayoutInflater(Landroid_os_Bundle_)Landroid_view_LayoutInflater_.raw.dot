@@ -1,0 +1,16 @@
+digraph "CFG forandroid.support.v4.app.Fragment.getLayoutInflater(Landroid\/os\/Bundle;)Landroid\/view\/LayoutInflater;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r2 I:android.support.v4.app.FragmentHostCallback) = (r1 I:android.support.v4.app.Fragment) android.support.v4.app.Fragment.mHost android.support.v4.app.FragmentHostCallback \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0017 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r2 I:android.support.v4.app.FragmentHostCallback) = (r1 I:android.support.v4.app.Fragment) android.support.v4.app.Fragment.mHost android.support.v4.app.FragmentHostCallback \l0x0006: INVOKE  (r2 I:android.view.LayoutInflater) = (r2 I:android.support.v4.app.FragmentHostCallback) android.support.v4.app.FragmentHostCallback.onGetLayoutInflater():android.view.LayoutInflater type: VIRTUAL \l0x000a: INVOKE  (r1 I:android.support.v4.app.Fragment) android.support.v4.app.Fragment.getChildFragmentManager():android.support.v4.app.FragmentManager type: VIRTUAL \l0x000d: IGET  (r0 I:android.support.v4.app.FragmentManagerImpl) = (r1 I:android.support.v4.app.Fragment) android.support.v4.app.Fragment.mChildFragmentManager android.support.v4.app.FragmentManagerImpl \l0x000f: INVOKE  (r0 I:android.view.LayoutInflater$Factory2) = (r0 I:android.support.v4.app.FragmentManagerImpl) android.support.v4.app.FragmentManagerImpl.getLayoutInflaterFactory():android.view.LayoutInflater$Factory2 type: VIRTUAL \l0x0013: INVOKE  \l  (r2 I:android.view.LayoutInflater)\l  (r0 I:android.view.LayoutInflater$Factory2)\l android.support.v4.view.LayoutInflaterCompat.setFactory2(android.view.LayoutInflater, android.view.LayoutInflater$Factory2):void type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|0x0016: RETURN  (r2 I:android.view.LayoutInflater) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|0x0017: NEW_INSTANCE  (r2 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException \l0x0019: CONST_STR  (r0 I:java.lang.String) =  \"onGetLayoutInflater() cannot be executed until the Fragment is attached to the FragmentManager.\" \l0x001b: INVOKE  \l  (r2 I:java.lang.IllegalStateException)\l  (r0 I:java.lang.String)\l java.lang.IllegalStateException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|0x001e: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public android.view.LayoutInflater android.support.v4.app.Fragment.getLayoutInflater((r1 'this' I:android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2 I:android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[BUILD, android.support.annotation.RestrictTo, \{value=[android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP android.support.annotation.RestrictTo$Scope]\}], Annotation[RUNTIME, java.lang.Deprecated, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

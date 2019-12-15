@@ -1,0 +1,179 @@
+digraph "CFG forio.fabric.sdk.android.services.settings.DefaultCachedSettingsIo.writeCachedSettings(JLorg\/json\/JSONObject;)V" {
+subgraph cluster_Region_1722840810 {
+label = "R(2:0|(2:2|(2:4|(2:6|7)))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Writing settings to cache file...\")\l}"];
+subgraph cluster_IfRegion_1522115245 {
+label = "IF [B:1:0x000b] THEN: R(2:2|(2:4|(2:6|7))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r6 != null) goto L_0x000d\l}"];
+subgraph cluster_Region_1657191848 {
+label = "R(2:2|(2:4|(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|java.io.FileWriter r0 = null\l}"];
+subgraph cluster_TryCatchRegion_236882182 {
+label = "Try: R(2:4|(2:6|7)) catches: R(3:13|15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_602996975 {
+label = "R(2:4|(2:6|7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ Exception \-\> 0x0042 \}\lSplitter:B:3:0x0010\l|r6.put(p018io.fabric.sdk.android.services.settings.SettingsJsonConstants.EXPIRES_AT_KEY, r4)     \/\/ Catch:\{ Exception \-\> 0x0042 \}\ljava.io.FileWriter java.io.FileWriter r4 = new java.io.FileWriter(new java.io.File(new p018io.fabric.sdk.android.services.persistence.FileStoreImpl(r3.kit).getFilesDir(), p018io.fabric.sdk.android.services.settings.Settings.SETTINGS_CACHE_FILENAME))     \/\/ Catch:\{ Exception \-\> 0x0042 \}\l}"];
+subgraph cluster_TryCatchRegion_316575464 {
+label = "Try: R(2:6|7) catches: R(3:10|11|(2:15|16)), R(4:8|9|17|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_955350773 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ Exception \-\> 0x003d, all \-\> 0x003a \}\lSplitter:B:5:0x002a\l|r4.write(r6.toString())     \/\/ Catch:\{ Exception \-\> 0x003d, all \-\> 0x003a \}\lr4.flush()     \/\/ Catch:\{ Exception \-\> 0x003d, all \-\> 0x003a \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0034|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r4, \"Failed to close settings writer.\")\l}"];
+}
+subgraph cluster_Region_751224014 {
+label = "R(3:10|11|(2:15|16)) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:5:0x002a\l|java.lang.Exception r5 = e\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003e|r0 = r4\l}"];
+subgraph cluster_TryCatchRegion_2000465279 {
+label = "Try: R(2:15|16) catches: R(3:12|17|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1378820090 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ all \-\> 0x0040 \}\lSplitter:B:14:0x0043\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to cache settings\", r5)     \/\/ Catch:\{ all \-\> 0x0040 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+}
+subgraph cluster_Region_97769749 {
+label = "R(3:12|17|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0040|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:14:0x0043\l|java.lang.Throwable r5 = th\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r0 r5 \l  PHI: (r0v2 java.io.FileWriter) = (r0v3 java.io.FileWriter), (r0v5 java.io.FileWriter) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v0 'th' java.lang.Throwable) = (r5v2 'th' java.lang.Throwable), (r5v6 'th' java.lang.Throwable) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0059|throw r5\l}"];
+}
+}
+}
+subgraph cluster_Region_2050113463 {
+label = "R(4:8|9|17|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x002a\l|java.lang.Throwable r5 = th\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003b|r0 = r4\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r0 r5 \l  PHI: (r0v2 java.io.FileWriter) = (r0v3 java.io.FileWriter), (r0v5 java.io.FileWriter) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v0 'th' java.lang.Throwable) = (r5v2 'th' java.lang.Throwable), (r5v6 'th' java.lang.Throwable) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0059|throw r5\l}"];
+}
+}
+}
+subgraph cluster_Region_1221935557 {
+label = "R(3:13|15|16) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0042|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:3:0x0010\l|java.lang.Exception r5 = e\l}"];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ all \-\> 0x0040 \}\lSplitter:B:14:0x0043\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to cache settings\", r5)     \/\/ Catch:\{ all \-\> 0x0040 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1619514879 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1221935557 {
+label = "R(3:13|15|16) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0042|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:3:0x0010\l|java.lang.Exception r5 = e\l}"];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ all \-\> 0x0040 \}\lSplitter:B:14:0x0043\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to cache settings\", r5)     \/\/ Catch:\{ all \-\> 0x0040 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+}
+subgraph cluster_Region_97769749 {
+label = "R(3:12|17|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0040|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:14:0x0043\l|java.lang.Throwable r5 = th\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r0 r5 \l  PHI: (r0v2 java.io.FileWriter) = (r0v3 java.io.FileWriter), (r0v5 java.io.FileWriter) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v0 'th' java.lang.Throwable) = (r5v2 'th' java.lang.Throwable), (r5v6 'th' java.lang.Throwable) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0059|throw r5\l}"];
+}
+subgraph cluster_Region_751224014 {
+label = "R(3:10|11|(2:15|16)) | ExcHandler: Exception (e java.lang.Exception)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d|ExcHandler: Exception (e java.lang.Exception)\lSplitter:B:5:0x002a\l|java.lang.Exception r5 = e\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003e|r0 = r4\l}"];
+subgraph cluster_TryCatchRegion_2000465279 {
+label = "Try: R(2:15|16) catches: R(3:12|17|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1378820090 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ all \-\> 0x0040 \}\lSplitter:B:14:0x0043\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to cache settings\", r5)     \/\/ Catch:\{ all \-\> 0x0040 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+}
+subgraph cluster_Region_97769749 {
+label = "R(3:12|17|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0040|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:14:0x0043\l|java.lang.Throwable r5 = th\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r0 r5 \l  PHI: (r0v2 java.io.FileWriter) = (r0v3 java.io.FileWriter), (r0v5 java.io.FileWriter) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v0 'th' java.lang.Throwable) = (r5v2 'th' java.lang.Throwable), (r5v6 'th' java.lang.Throwable) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0059|throw r5\l}"];
+}
+}
+}
+subgraph cluster_Region_2050113463 {
+label = "R(4:8|9|17|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x002a\l|java.lang.Throwable r5 = th\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003b|r0 = r4\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0054|PHI: r0 r5 \l  PHI: (r0v2 java.io.FileWriter) = (r0v3 java.io.FileWriter), (r0v5 java.io.FileWriter) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v0 'th' java.lang.Throwable) = (r5v2 'th' java.lang.Throwable), (r5v6 'th' java.lang.Throwable) binds: [B:12:0x0040, B:9:0x003b] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close settings writer.\")\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0059|throw r5\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010|SYNTHETIC\lSplitter:B:3:0x0010\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002a|SYNTHETIC\lSplitter:B:5:0x002a\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0043|SYNTHETIC\lPHI: r0 r5 \l  PHI: (r0v3 java.io.FileWriter) = (r0v1 java.io.FileWriter), (r0v4 java.io.FileWriter) binds: [B:13:0x0042, B:11:0x003e] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'e' java.lang.Exception) = (r5v3 'e' java.lang.Exception), (r5v5 'e' java.lang.Exception) binds: [B:13:0x0042, B:11:0x003e] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:14:0x0043\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void io.fabric.sdk.android.services.settings.DefaultCachedSettingsIo.writeCachedSettings((r3v0 'this' io.fabric.sdk.android.services.settings.DefaultCachedSettingsIo A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.json.JSONObject A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_19[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13;
+Node_6 -> Node_7;
+Node_6 -> Node_10;
+Node_6 -> Node_8;
+Node_7 -> Node_20;
+Node_10 -> Node_11;
+Node_11 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_21;
+Node_12 -> Node_17;
+Node_17 -> Node_18;
+Node_8 -> Node_9;
+Node_9 -> Node_17;
+Node_17 -> Node_18;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_21;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_21;
+Node_12 -> Node_17;
+Node_17 -> Node_18;
+Node_10 -> Node_11;
+Node_11 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_12;
+Node_16 -> Node_21;
+Node_12 -> Node_17;
+Node_17 -> Node_18;
+Node_8 -> Node_9;
+Node_9 -> Node_17;
+Node_17 -> Node_18;
+Node_3 -> Node_4;
+Node_3 -> Node_13;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+Node_5 -> Node_8;
+Node_14 -> Node_15;
+Node_14 -> Node_12;
+}
+

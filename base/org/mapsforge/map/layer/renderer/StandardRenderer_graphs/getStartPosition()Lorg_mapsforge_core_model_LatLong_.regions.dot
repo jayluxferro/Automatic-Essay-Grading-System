@@ -1,0 +1,34 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.StandardRenderer.getStartPosition()Lorg\/mapsforge\/core\/model\/LatLong;" {
+subgraph cluster_Region_487982222 {
+label = "R(1:(2:(1:3)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2129396332 {
+label = "R(2:(1:3)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1346140580 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mapDataStore != null) goto L_0x0004\l}"];
+subgraph cluster_Region_985423907 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r1.mapDataStore.startPosition()\l}"];
+}
+}
+subgraph cluster_Region_388182414 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.LatLong org.mapsforge.map.layer.renderer.StandardRenderer.getStartPosition((r1v0 'this' org.mapsforge.map.layer.renderer.StandardRenderer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

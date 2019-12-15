@@ -1,0 +1,45 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.dumpUnsafe(Landroid\/util\/Printer;Z)V" {
+subgraph cluster_Region_731440934 {
+label = "R(4:0|(1:2)|3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.println(\"Connection #\" + r3.mConnectionId + \":\")\l}"];
+subgraph cluster_IfRegion_578829891 {
+label = "IF [B:1:0x001b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001b|if (r5 == true) goto L_0x001d\l}"];
+subgraph cluster_Region_237077498 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|r4.println(\"  connectionPtr: 0x\" + java.lang.Long.toHexString(r3.mConnectionPtr))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0037|r4.println(\"  isPrimaryConnection: \" + r3.mIsPrimaryConnection)\lr4.println(\"  onlyAllowReadOnlyOperations: \" + r3.mOnlyAllowReadOnlyOperations)\lr3.mRecentOperations.dump(r4, r5)\l}"];
+subgraph cluster_Region_278278019 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2094746464 {
+label = "IF [B:4:0x0068] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0068|if (r5 == true) goto L_0x006a\l}"];
+subgraph cluster_Region_1594495134 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006a|r3.mPreparedStatementCache.dump(r4)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void org.spatialite.database.SQLiteConnection.dumpUnsafe((r3v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r4v0 android.util.Printer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+}
+

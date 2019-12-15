@@ -1,0 +1,34 @@
+digraph "CFG forcom.squareup.picasso.Picasso.invalidate(Ljava\/io\/File;)V" {
+subgraph cluster_Region_1918343460 {
+label = "R(1:(2:(2:1|2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_454609687 {
+label = "R(2:(2:1|2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1823560827 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1535647013 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|invalidate(android.net.Uri.fromFile(r2))\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_366490057 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|throw new java.lang.IllegalArgumentException(\"file == null\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void com.squareup.picasso.Picasso.invalidate((r1v0 'this' com.squareup.picasso.Picasso A[IMMUTABLE_TYPE, THIS]), (r2v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,56 @@
+digraph "CFG forandroid.support.v7.widget.ActivityChooserView.dismissPopup()Z" {
+subgraph cluster_Region_1454485152 {
+label = "R(1:(2:(1:6)|(2:2|(2:(1:7)|(2:4|5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_436403754 {
+label = "R(2:(1:6)|(2:2|(2:(1:7)|(2:4|5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1477161272 {
+label = "IF [B:1:0x0004] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isShowingPopup() != true) goto L_?\l}"];
+subgraph cluster_Region_524863631 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_9762845 {
+label = "R(2:2|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|getListPopupWindow().dismiss()\landroid.view.ViewTreeObserver android.view.ViewTreeObserver r0 = getViewTreeObserver()\l}"];
+subgraph cluster_Region_1154982248 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_533825483 {
+label = "IF [B:3:0x0015] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|if (r0.isAlive() != true) goto L_?\l}"];
+subgraph cluster_Region_1235874934 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1967433137 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|r0.removeGlobalOnLayoutListener(r2.mOnGlobalLayoutListener)\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.widget.ActivityChooserView.dismissPopup((r2v0 'this' android.support.v7.widget.ActivityChooserView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

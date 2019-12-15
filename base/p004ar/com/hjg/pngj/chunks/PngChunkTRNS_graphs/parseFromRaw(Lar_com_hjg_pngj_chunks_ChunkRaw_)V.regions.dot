@@ -1,0 +1,67 @@
+digraph "CFG forar.com.hjg.pngj.chunks.PngChunkTRNS.parseFromRaw(Lar\/com\/hjg\/pngj\/chunks\/ChunkRaw;)V" {
+subgraph cluster_Region_1830779813 {
+label = "R(2:0|(1:2)(1:(2:5|(1:7))(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_IfRegion_74081932 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: R(1:(2:5|(1:7))(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.imgInfo.greyscale == true) goto L_0x0007\l}"];
+subgraph cluster_Region_1597314598 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r4.gray = p004ar.com.hjg.pngj.PngHelperInternal.readInt2fromBytes(r5.data, 0)\l}"];
+}
+subgraph cluster_Region_483338983 {
+label = "R(1:(2:5|(1:7))(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_791192725 {
+label = "IF [B:4:0x0014] THEN: R(2:5|(1:7)) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r4.imgInfo.indexed == true) goto L_0x0016\l}"];
+subgraph cluster_Region_162548226 {
+label = "R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|int int r0 = r5.data.length\lr4.paletteAlpha = new int[r0]\l}"];
+subgraph cluster_LoopRegion_2117910975 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001d|LOOP_START\lPHI: r1 \l  PHI: (r1v2 int) = (r1v0 int), (r1v3 int) binds: [B:5:0x0016, B:7:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x001d\-\>B:7:0x001f\l|if (r1 \< r0) goto L_0x001f\l}"];
+subgraph cluster_Region_882975755 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|LOOP_END\lLOOP:0: B:6:0x001d\-\>B:7:0x001f\l|r4.paletteAlpha[r1] = r5.data[r1] & 255\lr1++\l}"];
+}
+}
+}
+subgraph cluster_Region_2023877114 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|r4.red = p004ar.com.hjg.pngj.PngHelperInternal.readInt2fromBytes(r5.data, 0)\lr4.green = p004ar.com.hjg.pngj.PngHelperInternal.readInt2fromBytes(r5.data, 2)\lr4.blue = p004ar.com.hjg.pngj.PngHelperInternal.readInt2fromBytes(r5.data, 4)\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0046|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void ar.com.hjg.pngj.chunks.PngChunkTRNS.parseFromRaw((r4v0 'this' ar.com.hjg.pngj.chunks.PngChunkTRNS A[IMMUTABLE_TYPE, THIS]), (r5v0 ar.com.hjg.pngj.chunks.ChunkRaw A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_6;
+Node_8 -> Node_10;
+Node_3 -> Node_4;
+Node_9 -> Node_12;
+}
+

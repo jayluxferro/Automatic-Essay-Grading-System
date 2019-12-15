@@ -1,0 +1,20 @@
+digraph "CFG forcom.mapbox.android.telemetry.SessionIdentifier.getSessionId()Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (((java.lang.System.currentTimeMillis() \- r4.lastSessionIdUpdate) \> ((long) (r4.rotationInterval * HOURS_TO_MILLISECONDS)) ? 1 : ((java.lang.System.currentTimeMillis() \- r4.lastSessionIdUpdate) == ((long) (r4.rotationInterval * HOURS_TO_MILLISECONDS)) ? 0 : \-1)) \>= 0) goto L_0x0017\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0013}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|if (r4.sessionId != null) goto L_0x0023\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|r4.sessionId = com.mapbox.android.telemetry.TelemetryUtils.obtainUniversalUniqueIdentifier()\lr4.lastSessionIdUpdate = java.lang.System.currentTimeMillis()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|RETURN\l|return r4.sessionId\l}"];
+MethodNode[shape=record,label="{java.lang.String com.mapbox.android.telemetry.SessionIdentifier.getSessionId((r4v0 'this' com.mapbox.android.telemetry.SessionIdentifier A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

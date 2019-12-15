@@ -1,0 +1,21 @@
+digraph "CFG forokio.Buffer.write(Ljava\/nio\/ByteBuffer;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r7 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x002b \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: INVOKE  (r0 I:int) = (r7 I:java.nio.ByteBuffer) java.nio.ByteBuffer.remaining():int type: VIRTUAL \l0x0006: MOVE  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: IF  (r1 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:4:0x0024 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|0x0009: CONST  (r2 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x000a: INVOKE  (r2 I:okio.Segment) = (r6 I:okio.Buffer), (r2 I:int) okio.Buffer.writableSegment(int):okio.Segment type: VIRTUAL \l0x000e: IGET  (r3 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l0x0010: ARITH  (r3 I:int) = (8192 int) \- (r3 I:int) \l0x0012: INVOKE  (r3 I:int) = (r1 I:int), (r3 I:int) java.lang.Math.min(int, int):int type: STATIC \l0x0016: IGET  (r4 I:byte[]) = (r2 I:okio.Segment) okio.Segment.data byte[] \l0x0018: IGET  (r5 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l0x001a: INVOKE  \l  (r7 I:java.nio.ByteBuffer)\l  (r4 I:byte[])\l  (r5 I:int)\l  (r3 I:int)\l java.nio.ByteBuffer.get(byte[], int, int):java.nio.ByteBuffer type: VIRTUAL \l0x001d: ARITH  (r1 I:int) = (r1 I:int) \- (r3 I:int) \l0x001e: IGET  (r4 I:int) = (r2 I:okio.Segment) okio.Segment.limit int \l0x0020: ARITH  (r4 I:int) = (r4 I:int) + (r3 I:int) \l0x0021: IPUT  (r4 I:int), (r2 I:okio.Segment) okio.Segment.limit int \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0024|0x0024: IGET  (r1 I:long) = (r6 I:okio.Buffer) okio.Buffer.size long \l0x0026: CAST  (r3 I:long) = (long) (r0 I:int) \l0x0027: ARITH  (r1 I:long) = (r1 I:long) + (r3 I:long) \l0x0028: IPUT  (r1 I:long), (r6 I:okio.Buffer) okio.Buffer.size long \l}"];
+Node_5 [shape=record,label="{5\:\ 0x002a|0x002a: RETURN  (r0 I:int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|0x002b: NEW_INSTANCE  (r7 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x002d: CONST_STR  (r0 I:java.lang.String) =  \"source == null\" \l0x002f: INVOKE  \l  (r7 I:java.lang.IllegalArgumentException)\l  (r0 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|0x0032: THROW  (r7 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.write((r6 'this' I:okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r7 I:java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_6;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,64 @@
+digraph "CFG fororg.spatialite.database.SQLiteDirectCursorDriver.query(Lorg\/spatialite\/database\/SQLiteDatabase$CursorFactory;[Ljava\/lang\/Object;)Landroid\/database\/Cursor;" {
+subgraph cluster_Region_752203072 {
+label = "R(4:0|(1:(1:3))(1:6)|7|8) | DECL_VAR: android.database.Cursor null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.spatialite.database.SQLiteQuery org.spatialite.database.SQLiteQuery r0 = new org.spatialite.database.SQLiteQuery(r4.mDatabase, r4.mSql, r6, r4.mCancellationSignal)\l}"];
+subgraph cluster_IfRegion_609263073 {
+label = "IF [B:1:0x000b] THEN: R(1:(1:3)) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r5 == null) goto L_0x000d\l}"];
+subgraph cluster_Region_374166974 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1625326477 {
+label = "Try: R(1:3) catches: R(3:4|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1476719604 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ RuntimeException \-\> 0x0015 \}\lSplitter:B:2:0x000d\l|org.spatialite.database.SQLiteCursor r5 = new org.spatialite.database.SQLiteCursor(r4, r4.mEditTable, r0)     \/\/ Catch:\{ RuntimeException \-\> 0x0015 \}\l}"];
+}
+subgraph cluster_Region_2009307635 {
+label = "R(3:4|9|10) | ExcHandler: RuntimeException (r5v3 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0015 \}])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|Catch:\{ RuntimeException \-\> 0x0015 \}\lExcHandler: RuntimeException (r5v3 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0015 \}])\lSplitter:B:2:0x000d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|r0.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|throw r5\l}"];
+}
+}
+}
+subgraph cluster_Region_358006271 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|Catch:\{ RuntimeException \-\> 0x0015 \}\l|android.database.Cursor r5 = r5.newCursor(r4.mDatabase, r4, r4.mEditTable, r0)     \/\/ Catch:\{ RuntimeException \-\> 0x0015 \}\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001f|PHI: r5 \l  PHI: (r5v1 android.database.Cursor) = (r5v2 android.database.Cursor), (r5v4 android.database.Cursor) binds: [B:6:0x0017, B:3:?] A[DONT_GENERATE, DONT_INLINE]\l|r4.mQuery = r0\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|RETURN\l|return r5\l}"];
+}
+subgraph cluster_Region_2009307635 {
+label = "R(3:4|9|10) | ExcHandler: RuntimeException (r5v3 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0015 \}])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|Catch:\{ RuntimeException \-\> 0x0015 \}\lExcHandler: RuntimeException (r5v3 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0015 \}])\lSplitter:B:2:0x000d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|r0.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0025|throw r5\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d|SYNTHETIC\lSplitter:B:2:0x000d\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016|Catch:\{ RuntimeException \-\> 0x0015 \}\l}"];
+MethodNode[shape=record,label="{public android.database.Cursor org.spatialite.database.SQLiteDirectCursorDriver.query((r4v0 'this' org.spatialite.database.SQLiteDirectCursorDriver A[IMMUTABLE_TYPE, THIS]), (r5v0 org.spatialite.database.SQLiteDatabase$CursorFactory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.Object[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_7;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_5 -> Node_9;
+}
+

@@ -1,0 +1,42 @@
+digraph "CFG forcom.mapbox.android.telemetry.TelemetryClientSettings.configureHttpClient(Lcom\/mapbox\/android\/telemetry\/CertificateBlacklist;Lokhttp3\/Interceptor;)Lokhttp3\/OkHttpClient;" {
+subgraph cluster_Region_1180090929 {
+label = "R(4:0|(1:2)|(1:5)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.OkHttpClient$Builder okhttp3.OkHttpClient.Builder r5 = r4.client.newBuilder().retryOnConnectionFailure(true).certificatePinner(new com.mapbox.android.telemetry.CertificatePinnerFactory().provideCertificatePinnerFor(r4.environment, r5)).connectionSpecs(java.util.Arrays.asList(new okhttp3.ConnectionSpec[]\{okhttp3.ConnectionSpec.MODERN_TLS, okhttp3.ConnectionSpec.COMPATIBLE_TLS\}))\l}"];
+subgraph cluster_IfRegion_1898888551 {
+label = "IF [B:1:0x002e] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002e|if (r6 != null) goto L_0x0030\l}"];
+subgraph cluster_Region_1176430042 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0030|r5.addInterceptor(r6)\l}"];
+}
+}
+subgraph cluster_IfRegion_1102270716 {
+label = "IF [B:4:0x003b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003b|if (isSocketFactoryUnset(r4.sslSocketFactory, r4.x509TrustManager) == true) goto L_0x003d\l}"];
+subgraph cluster_Region_237897565 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x003d|r5.sslSocketFactory(r4.sslSocketFactory, r4.x509TrustManager)\lr5.hostnameVerifier(r4.hostnameVerifier)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x004d|RETURN\l|return r5.build()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0033}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0049}"];
+MethodNode[shape=record,label="{private okhttp3.OkHttpClient com.mapbox.android.telemetry.TelemetryClientSettings.configureHttpClient((r4v0 'this' com.mapbox.android.telemetry.TelemetryClientSettings A[IMMUTABLE_TYPE, THIS]), (r5v0 com.mapbox.android.telemetry.CertificateBlacklist A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 okhttp3.Interceptor A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

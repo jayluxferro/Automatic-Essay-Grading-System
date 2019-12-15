@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.CertificatePinner.withCertificateChainCleaner(Lokhttp3\/internal\/tls\/CertificateChainCleaner;)Lokhttp3\/CertificatePinner;" {
+subgraph cluster_Region_183958142 {
+label = "R(1:(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1751064962 {
+label = "R(2:(1:5)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_727760923 {
+label = "IF [B:1:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (okhttp3.internal.Util.equal(r2.certificateChainCleaner, r3) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_1755911189 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1429288564 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return new okhttp3.CertificatePinner(r2.pins, r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{okhttp3.CertificatePinner okhttp3.CertificatePinner.withCertificateChainCleaner((r2v0 'this' okhttp3.CertificatePinner A[IMMUTABLE_TYPE, THIS]), (r3v0 okhttp3.internal.tls.CertificateChainCleaner A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

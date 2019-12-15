@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.transition.Transition.ArrayListManager.remove(Ljava\/util\/ArrayList;Ljava\/lang\/Object;)Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_1344047115 {
+label = "R(1:(2:(1:4)|(2:1|(2:(1:3)|(1:5)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1819360710 {
+label = "R(2:(1:4)|(2:1|(2:(1:3)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1875057141 {
+label = "IF [B:0:0x0000] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r0 == null) goto L_?\l}"];
+subgraph cluster_Region_1740203553 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1406268941 {
+label = "R(2:1|(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r0.remove(r1)\l}"];
+subgraph cluster_Region_917208764 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1104201005 {
+label = "IF [B:2:0x0009] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|if (r0.isEmpty() == true) goto L_0x000b\l}"];
+subgraph cluster_Region_1836329816 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_826923365 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+MethodNode[shape=record,label="{static java.util.ArrayList\<T\> android.support.transition.Transition.ArrayListManager.remove((r0v0 java.util.ArrayList\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/util\/ArrayList\<, TT;\>;TT;), Ljava\/util\/ArrayList\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+}
+

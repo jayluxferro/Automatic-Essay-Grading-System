@@ -1,0 +1,146 @@
+digraph "CFG forokhttp3.Headers.of([Ljava\/lang\/String;)Lokhttp3\/Headers;" {
+subgraph cluster_Region_1952922914 {
+label = "R(1:(1:28)(1:(5:3|(1:(1:8)(1:10))|11|(2:14|(1:20)(2:21|22))|24)(1:26)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1346886773 {
+label = "IF [B:0:0x0000] THEN: R(1:28) ELSE: R(1:(5:3|(1:(1:8)(1:10))|11|(2:14|(1:20)(2:21|22))|24)(1:26))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 == null) goto L_0x0076\l}"];
+subgraph cluster_Region_1389257451 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x007d|throw new java.lang.NullPointerException(\"namesAndValues == null\")\l}"];
+}
+subgraph cluster_Region_1968603277 {
+label = "R(1:(5:3|(1:(1:8)(1:10))|11|(2:14|(1:20)(2:21|22))|24)(1:26)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_940916008 {
+label = "IF [B:2:0x0005] THEN: R(5:3|(1:(1:8)(1:10))|11|(2:14|(1:20)(2:21|22))|24) ELSE: R(1:26) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|if ((r6.length % 2) == 0) goto L_0x0007\l}"];
+subgraph cluster_Region_1956986982 {
+label = "R(5:3|(1:(1:8)(1:10))|11|(2:14|(1:20)(2:21|22))|24)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.lang.String[] java.lang.String[] r6 = (java.lang.String[]) r6.clone()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1292631839 {
+label = "LOOP:0: (1:(1:8)(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (r1 \< r6.length) goto L_0x0012\l}"];
+subgraph cluster_Region_1449126443 {
+label = "R(1:(1:8)(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_543096186 {
+label = "IF [B:7:0x0014] THEN: R(1:8) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (r6[r1] != null) goto L_0x0016\l}"];
+subgraph cluster_Region_1572782488 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|LOOP_END\lLOOP:0: B:4:0x000f\-\>B:8:0x0016\l|r6[r1] = r6[r1].trim()\lr1++\l}"];
+}
+subgraph cluster_Region_2007438129 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028|throw new java.lang.IllegalArgumentException(\"Headers cannot be null\")\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0029|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_54926393 {
+label = "LOOP:1: (2:14|(1:20)(2:21|22))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002b|if (r1 \< r6.length) goto L_0x002d\l}"];
+subgraph cluster_Region_287828041 {
+label = "R(2:14|(1:20)(2:21|22))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002d|java.lang.String r2 = r6[r1]\ljava.lang.String r3 = r6[r1 + 1]\l}"];
+subgraph cluster_IfRegion_1834801515 {
+label = "IF [B:15:0x0037, B:17:0x003e, B:19:0x0044] THEN: R(1:20) ELSE: R(2:21|22)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0037|if (r2.length() != 0) goto L_0x0039\l}"];
+Node_17 [shape=record,label="{17\:\ 0x003e|ADDED_TO_REGION\l|if (r2.indexOf(0) == \-1) goto L_0x0040\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0044|ADDED_TO_REGION\l|if (r3.indexOf(0) == \-1) goto L_0x0046\l}"];
+subgraph cluster_Region_1178952250 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0046|LOOP_END\lLOOP:1: B:12:0x002a\-\>B:20:0x0046\l|r1 += 2\l}"];
+}
+subgraph cluster_Region_1590212397 {
+label = "R(2:21|22)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0049}"];
+Node_22 [shape=record,label="{22\:\ 0x0067|throw new java.lang.IllegalArgumentException(\"Unexpected header: \" + r2 + \": \" + r3)\l}"];
+}
+}
+}
+}
+Node_24 [shape=record,label="{24\:\ 0x006d|RETURN\l|return new okhttp3.Headers(r6)\l}"];
+}
+subgraph cluster_Region_917813152 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0075|throw new java.lang.IllegalArgumentException(\"Expected alternating header names and values\")\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v7 int) binds: [B:3:0x0007, B:8:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000f\-\>B:8:0x0016\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a|LOOP_START\lPHI: r1 \l  PHI: (r1v3 int) = (r1v2 int), (r1v6 int) binds: [B:11:0x0029, B:20:0x0046] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:12:0x002a\-\>B:20:0x0046\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0039}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0040}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0068}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x006e}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0076}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0029|SYNTHETIC\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0021|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0049|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0049|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0068|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x0049|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static okhttp3.Headers okhttp3.Headers.of((r6v0 java.lang.String[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_27;
+Node_2 -> Node_3;
+Node_2 -> Node_25[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_29[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_30[style=dashed];
+Node_8 -> Node_4;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_33[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_32[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_34[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_31[style=dashed];
+Node_20 -> Node_12;
+Node_21 -> Node_22;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_27 -> Node_28;
+Node_29 -> Node_11;
+Node_30 -> Node_9;
+Node_31 -> Node_21;
+Node_32 -> Node_21;
+Node_33 -> Node_23;
+Node_34 -> Node_21;
+}
+

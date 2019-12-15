@@ -1,0 +1,66 @@
+digraph "CFG forandroid.support.v4.graphics.drawable.RoundedBitmapDrawable.updateDstRect()V" {
+subgraph cluster_Region_1787402243 {
+label = "R(1:(1:(4:(1:4)(1:5)|6|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_387625105 {
+label = "R(1:(4:(1:4)(1:5)|6|(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_560488755 {
+label = "IF [B:1:0x0002] THEN: R(4:(1:4)(1:5)|6|(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r9.mApplyGravity == true) goto L_0x0004\l}"];
+subgraph cluster_Region_227724808 {
+label = "R(4:(1:4)(1:5)|6|(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_738006585 {
+label = "IF [B:3:0x0007] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r9.mIsCircular == true) goto L_0x0009\l}"];
+subgraph cluster_Region_447009646 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|int int r6 = java.lang.Math.min(r9.mBitmapWidth, r9.mBitmapHeight)\lgravityCompatApply(r9.mGravity, r6, r6, getBounds(), r9.mDstRect)\lint int r0 = java.lang.Math.min(r9.mDstRect.width(), r9.mDstRect.height())\lr9.mDstRect.inset(java.lang.Math.max(0, (r9.mDstRect.width() \- r0) \/ 2), java.lang.Math.max(0, (r9.mDstRect.height() \- r0) \/ 2))\lr9.mCornerRadius = ((float) r0) * 0.5f\l}"];
+}
+subgraph cluster_Region_1772201455 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0055|gravityCompatApply(r9.mGravity, r9.mBitmapWidth, r9.mBitmapHeight, getBounds(), r9.mDstRect)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0065|r9.mDstRectF.set(r9.mDstRect)\l}"];
+subgraph cluster_IfRegion_186789905 {
+label = "IF [B:7:0x006e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x006e|if (r9.mBitmapShader != null) goto L_0x0070\l}"];
+subgraph cluster_Region_282807795 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0070|r9.mShaderMatrix.setTranslate(r9.mDstRectF.left, r9.mDstRectF.top)\lr9.mShaderMatrix.preScale(r9.mDstRectF.width() \/ ((float) r9.mBitmap.getWidth()), r9.mDstRectF.height() \/ ((float) r9.mBitmap.getHeight()))\lr9.mBitmapShader.setLocalMatrix(r9.mShaderMatrix)\lr9.mPaint.setShader(r9.mBitmapShader)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x00ac|r9.mApplyGravity = false\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.graphics.drawable.RoundedBitmapDrawable.updateDstRect((r9v0 'this' android.support.v4.graphics.drawable.RoundedBitmapDrawable A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

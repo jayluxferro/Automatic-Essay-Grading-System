@@ -1,0 +1,113 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader.parseHeader(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Z" {
+subgraph cluster_Region_208231461 {
+label = "R(1:(2:(4:2|(1:4)(1:(1:16)(1:(1:22)))|5|24)|(2:23|25)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_749918770 {
+label = "R(2:(4:2|(1:4)(1:(1:16)(1:(1:22)))|5|24)|(2:23|25))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_443530012 {
+label = "IF [B:1:0x0004] THEN: R(4:2|(1:4)(1:(1:16)(1:(1:22)))|5|24) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r23.hasParsedAudioDataHeader == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1321857029 {
+label = "R(4:2|(1:4)(1:(1:16)(1:(1:22)))|5|24)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int int r21 = r24.readUnsignedByte()\lr23.audioFormat = (r21 \>\> 4) & 15\l}"];
+subgraph cluster_IfRegion_1344671285 {
+label = "IF [B:3:0x0017] THEN: R(1:4) ELSE: R(1:(1:16)(1:(1:22)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0017|if (r23.audioFormat == 2) goto L_0x0019\l}"];
+subgraph cluster_Region_266018259 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|r23.output.format(com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_MPEG, (java.lang.String) null, \-1, \-1, 1, AUDIO_SAMPLING_RATE_TABLE[(r21 \>\> 2) & 3], (java.util.List\<byte[]\>) null, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null))\lr23.hasOutputFormat = true\l}"];
+}
+subgraph cluster_Region_375973984 {
+label = "R(1:(1:16)(1:(1:22))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_749847509 {
+label = "IF [B:7:0x004a, B:9:0x0052] THEN: R(1:16) ELSE: R(1:(1:22)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004a|if (r23.audioFormat == 7) goto L_0x0054\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0052|ADDED_TO_REGION\l|if (r23.audioFormat == 8) goto L_0x0054\l}"];
+subgraph cluster_Region_930909801 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0063|PHI: r15 \l  PHI: (r15v1 'pcmEncoding' int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r23.output.format(com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, r23.audioFormat == 7 ? com.google.android.exoplayer2.util.MimeTypes.AUDIO_ALAW : com.google.android.exoplayer2.util.MimeTypes.AUDIO_ULAW, (java.lang.String) null, \-1, \-1, 1, 8000, (r21 & 1) == 1 ? 2 : 3, (java.util.List\<byte[]\>) null, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null))\lr23.hasOutputFormat = true\l}"];
+}
+subgraph cluster_Region_1273051652 {
+label = "R(1:(1:22)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_727106283 {
+label = "IF [B:20:0x0090] THEN: R(1:22) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0090|if (r23.audioFormat != 10) goto L_0x0092\l}"];
+subgraph cluster_Region_2049709065 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00ae|throw new com.google.android.exoplayer2.extractor.flv.TagPayloadReader.UnsupportedFormatException(\"Audio format not supported: \" + r23.audioFormat)\l}"];
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x003e|r23.hasParsedAudioDataHeader = true\l}"];
+Node_24 [shape=record,label="{24\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1486999538 {
+label = "R(2:23|25)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00af|r24.skipBytes(1)\l}"];
+Node_25 [shape=record,label="{25\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0045}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x004c}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0054}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0059}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x005b}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x005d|PHI: r9 \l  PHI: (r9v1 'type' java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0060}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0062}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0085}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0088}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x008a}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0092}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader.parseHeader((r23v0 'this' com.google.android.exoplayer2.extractor.flv.AudioTagPayloadReader A[IMMUTABLE_TYPE, THIS]), (r24v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.extractor.flv.TagPayloadReader$UnsupportedFormatException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_23[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_9 -> Node_10;
+Node_9 -> Node_19[style=dashed];
+Node_16 -> Node_5;
+Node_20 -> Node_5[style=dashed];
+Node_20 -> Node_21;
+Node_5 -> Node_24;
+Node_23 -> Node_25;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_18;
+Node_15 -> Node_16;
+Node_17 -> Node_13;
+Node_18 -> Node_16;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+}
+

@@ -1,0 +1,17 @@
+digraph "CFG forcom.mapbox.geojson.MultiLineString.fromLineStrings(Ljava\/util\/List;Lcom\/mapbox\/geojson\/BoundingBox;)Lcom\/mapbox\/geojson\/MultiLineString;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.util.ArrayList) =  java.util.ArrayList \l0x0002: INVOKE  (r1 I:int) = (r2 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0006: INVOKE  (r0 I:java.util.ArrayList), (r1 I:int) java.util.ArrayList.\<init\>(int):void type: DIRECT \l0x0009: INVOKE  (r2 I:java.util.Iterator) = (r2 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: INVOKE  (r1 I:boolean) = (r2 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0021 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: INVOKE  (r1 I:java.lang.Object) = (r2 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0017: CHECK_CAST  (r1 I:com.mapbox.geojson.LineString) = (com.mapbox.geojson.LineString) (r1 I:?[OBJECT, ARRAY]) \l0x0019: INVOKE  (r1 I:java.util.List) = (r1 I:com.mapbox.geojson.LineString) com.mapbox.geojson.LineString.coordinates():java.util.List type: VIRTUAL \l0x001d: INVOKE  (r0 I:java.util.List), (r1 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: NEW_INSTANCE  (r2 I:com.mapbox.geojson.AutoValue_MultiLineString) =  com.mapbox.geojson.AutoValue_MultiLineString \l0x0023: CONST_STR  (r1 I:java.lang.String) =  \"MultiLineString\" \l0x0025: INVOKE  \l  (r2 I:com.mapbox.geojson.AutoValue_MultiLineString)\l  (r1 I:java.lang.String)\l  (r3 I:com.mapbox.geojson.BoundingBox)\l  (r0 I:java.util.List)\l com.mapbox.geojson.AutoValue_MultiLineString.\<init\>(java.lang.String, com.mapbox.geojson.BoundingBox, java.util.List):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|0x0028: RETURN  (r2 I:com.mapbox.geojson.MultiLineString) \l}"];
+MethodNode[shape=record,label="{public static com.mapbox.geojson.MultiLineString com.mapbox.geojson.MultiLineString.fromLineStrings((r2 I:java.util.List\<com.mapbox.geojson.LineString\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:com.mapbox.geojson.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/geojson\/LineString;, \>;, Lcom\/mapbox\/geojson\/BoundingBox;, ), Lcom\/mapbox\/geojson\/MultiLineString;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+}
+

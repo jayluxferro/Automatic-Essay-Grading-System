@@ -1,0 +1,31 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.LayoutManager.setRecyclerView(Landroid\/support\/v7\/widget\/RecyclerView;)V" {
+subgraph cluster_Region_1587730530 {
+label = "R(2:(1:1)(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_166121178 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: R(1:2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1987641295 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r1.mRecyclerView = null\lr1.mChildHelper = null\lr1.mWidth = 0\lr1.mHeight = 0\l}"];
+}
+subgraph cluster_Region_304114199 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|r1.mRecyclerView = r2\lr1.mChildHelper = r2.mChildHelper\lr1.mWidth = r2.getWidth()\lr1.mHeight = r2.getHeight()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001f|r1.mWidthMode = 1073741824\lr1.mHeightMode = 1073741824\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0025}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.RecyclerView.LayoutManager.setRecyclerView((r1v0 'this' android.support.v7.widget.RecyclerView$LayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,48 @@
+digraph "CFG fororg.osmdroid.views.overlay.LinearRing.computeDistances()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r10.mDistancesPrecomputed == false) goto L_0x0005\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|r10.mDistancesPrecomputed = true\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r10.mDistances == null) goto L_0x0017\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (r10.mDistances.length == r10.mOriginalPoints.size()) goto L_0x0021\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|r10.mDistances = new double[r10.mOriginalPoints.size()]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0021|r0 = 0\lorg.osmdroid.util.GeoPoint r1 = new org.osmdroid.util.GeoPoint(0.0d, 0.0d)\ljava.util.Iterator r4 = r10.mOriginalPoints.iterator()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|LOOP_START\lPHI: r0 \l  PHI: (r0v4 int) = (r0v3 int), (r0v5 int) binds: [B:8:0x0021, B:15:0x004a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x002f\-\>B:15:0x004a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0033|if (r4.hasNext() == false) goto L_0x0058\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0035|org.osmdroid.util.GeoPoint r5 = r4.next()\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003b|if (r0 != 0) goto L_0x0042\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003d|r10.mDistances[r0] = 0.0d\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0042|r10.mDistances[r0] = r5.distanceToAsDouble(r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x004a|LOOP_END\lLOOP:0: B:9:0x002f\-\>B:15:0x004a\l|r1.setCoords(r5.getLatitude(), r5.getLongitude())\lint r0 = r0 + 1\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0058|RETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0058|SYNTHETIC\l}"];
+Node_18 [shape=record,label="{18\:\ 0x004a|SYNTHETIC\l}"];
+Node_19 [shape=record,label="{19\:\ 0x004a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.osmdroid.views.overlay.LinearRing.computeDistances((r10v0 'this' org.osmdroid.views.overlay.LinearRing A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_17;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_19;
+Node_14 -> Node_18;
+Node_15 -> Node_9;
+Node_17 -> Node_16;
+Node_18 -> Node_15;
+Node_19 -> Node_15;
+}
+

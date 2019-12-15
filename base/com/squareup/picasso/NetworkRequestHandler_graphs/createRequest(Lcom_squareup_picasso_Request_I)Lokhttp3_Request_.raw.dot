@@ -1,0 +1,43 @@
+digraph "CFG forcom.squareup.picasso.NetworkRequestHandler.createRequest(Lcom\/squareup\/picasso\/Request;I)Lokhttp3\/Request;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0027 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: INVOKE  (r0 I:boolean) = (r3 I:int) com.squareup.picasso.NetworkPolicy.isOfflineOnly(int):boolean type: STATIC \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000b \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: SGET  (r3 I:okhttp3.CacheControl) =  okhttp3.CacheControl.FORCE_CACHE okhttp3.CacheControl \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: NEW_INSTANCE  (r0 I:okhttp3.CacheControl$Builder) =  okhttp3.CacheControl$Builder \l0x000d: INVOKE  (r0 I:okhttp3.CacheControl$Builder) okhttp3.CacheControl.Builder.\<init\>():void type: DIRECT \l0x0010: INVOKE  (r1 I:boolean) = (r3 I:int) com.squareup.picasso.NetworkPolicy.shouldReadFromDiskCache(int):boolean type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0019 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: INVOKE  (r0 I:okhttp3.CacheControl$Builder) okhttp3.CacheControl.Builder.noCache():okhttp3.CacheControl$Builder type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|0x0019: INVOKE  (r3 I:boolean) = (r3 I:int) com.squareup.picasso.NetworkPolicy.shouldWriteToDiskCache(int):boolean type: STATIC \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001d|0x001d: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0022 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001f|0x001f: INVOKE  (r0 I:okhttp3.CacheControl$Builder) okhttp3.CacheControl.Builder.noStore():okhttp3.CacheControl$Builder type: VIRTUAL \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0022|0x0022: INVOKE  (r3 I:okhttp3.CacheControl) = (r0 I:okhttp3.CacheControl$Builder) okhttp3.CacheControl.Builder.build():okhttp3.CacheControl type: VIRTUAL \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0027|0x0027: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0028|0x0028: NEW_INSTANCE  (r0 I:okhttp3.Request$Builder) =  okhttp3.Request$Builder \l0x002a: INVOKE  (r0 I:okhttp3.Request$Builder) okhttp3.Request.Builder.\<init\>():void type: DIRECT \l0x002d: IGET  (r2 I:android.net.Uri) = (r2 I:com.squareup.picasso.Request) com.squareup.picasso.Request.uri android.net.Uri \l0x002f: INVOKE  (r2 I:java.lang.String) = (r2 I:android.net.Uri) android.net.Uri.toString():java.lang.String type: VIRTUAL \l0x0033: INVOKE  (r2 I:okhttp3.Request$Builder) = (r0 I:okhttp3.Request$Builder), (r2 I:java.lang.String) okhttp3.Request.Builder.url(java.lang.String):okhttp3.Request$Builder type: VIRTUAL \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0037|0x0037: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:15:0x003c \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0039|0x0039: INVOKE  (r2 I:okhttp3.Request$Builder), (r3 I:okhttp3.CacheControl) okhttp3.Request.Builder.cacheControl(okhttp3.CacheControl):okhttp3.Request$Builder type: VIRTUAL \l}"];
+Node_15 [shape=record,label="{15\:\ 0x003c|0x003c: INVOKE  (r2 I:okhttp3.Request) = (r2 I:okhttp3.Request$Builder) okhttp3.Request.Builder.build():okhttp3.Request type: VIRTUAL \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0040|0x0040: RETURN  (r2 I:okhttp3.Request) \l}"];
+MethodNode[shape=record,label="{private static okhttp3.Request com.squareup.picasso.NetworkRequestHandler.createRequest((r2 I:com.squareup.picasso.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_11;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_12;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

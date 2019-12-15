@@ -1,0 +1,33 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.AnchorInfo.assignCoordinateFromPadding()V" {
+subgraph cluster_Region_1680526831 {
+label = "R(2:(1:2)(1:3)|4) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_844519227 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mLayoutFromEnd == true) goto L_0x0004\l}"];
+subgraph cluster_Region_612015062 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int r0 = android.support.p003v7.widget.StaggeredGridLayoutManager.this.mPrimaryOrientation.getEndAfterPadding()\l}"];
+}
+subgraph cluster_Region_1910915063 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|int r0 = android.support.p003v7.widget.StaggeredGridLayoutManager.this.mPrimaryOrientation.getStartAfterPadding()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0015|PHI: r0 \l  PHI: (r0v1 int) = (r0v4 int), (r0v7 int) binds: [B:3:0x000d, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|r1.mOffset = r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.StaggeredGridLayoutManager.AnchorInfo.assignCoordinateFromPadding((r1v0 'this' android.support.v7.widget.StaggeredGridLayoutManager$AnchorInfo A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

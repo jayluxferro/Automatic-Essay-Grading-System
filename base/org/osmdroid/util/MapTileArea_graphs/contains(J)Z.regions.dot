@@ -1,0 +1,40 @@
+digraph "CFG fororg.osmdroid.util.MapTileArea.contains(J)Z" {
+subgraph cluster_Region_616413436 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1035708886 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_190343077 {
+label = "IF [B:1:0x0007, B:4:0x0016] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (org.osmdroid.util.MapTileIndex.getZoom(r5) == r4.mZoom) goto L_0x000a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|ADDED_TO_REGION\l|if (contains(org.osmdroid.util.MapTileIndex.getX(r5), r4.mLeft, r4.mWidth) == true) goto L_0x0019\l}"];
+subgraph cluster_Region_1029427612 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025|RETURN\l|return contains(org.osmdroid.util.MapTileIndex.getY(r5), r4.mTop, r4.mHeight)\l}"];
+}
+}
+subgraph cluster_Region_1953035411 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.util.MapTileArea.contains((r4v0 'this' org.osmdroid.util.MapTileArea A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

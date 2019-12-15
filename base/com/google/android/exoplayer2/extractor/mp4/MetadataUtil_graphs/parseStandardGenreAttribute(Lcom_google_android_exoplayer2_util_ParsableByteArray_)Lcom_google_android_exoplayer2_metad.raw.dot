@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseStandardGenreAttribute(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Lcom\/google\/android\/exoplayer2\/metadata\/id3\/TextInformationFrame;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0001: INVOKE  (r0 I:int) = \l  (r5 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('data' com.google.android.exoplayer2.util.ParsableByteArray)])\l com.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseUint8AttributeValue(com.google.android.exoplayer2.util.ParsableByteArray):int type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r0 I:?[int, byte, short, char] A[D('genreCode' int)]) \<= (0 ?[int, byte, short, char])  \-\> B:8:0x001c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: SGET  (r2 I:java.lang.String[]) =  com.google.android.exoplayer2.extractor.mp4.MetadataUtil.STANDARD_GENRES java.lang.String[] \l0x0009: ARRAY_LENGTH  (r2 I:int) = (r2 I:?[]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|0x000a: IF  (r0 I:?[int, byte, short, char] A[D('genreCode' int)]) \> (r2 I:?[int, byte, short, char])  \-\> B:8:0x001c \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: SGET  (r2 I:java.lang.String[]) =  com.google.android.exoplayer2.extractor.mp4.MetadataUtil.STANDARD_GENRES java.lang.String[] \l0x000e: ARITH  (r4 I:int) = (r0 I:int A[D('genreCode' int)]) + (\-1 int) \l0x0010: AGET  (r1 I:?[OBJECT, ARRAY]) = (r2 I:?[OBJECT, ARRAY][]), (r4 I:?[int, short, byte, char]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|0x0012: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('genreString' java.lang.String)]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x001e \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|0x0014: NEW_INSTANCE  (r2 I:com.google.android.exoplayer2.metadata.id3.TextInformationFrame) =  com.google.android.exoplayer2.metadata.id3.TextInformationFrame \l0x0016: CONST_STR  (r4 I:java.lang.String) =  \"TCON\" \l0x0018: INVOKE  \l  (r2 I:com.google.android.exoplayer2.metadata.id3.TextInformationFrame)\l  (r4 I:java.lang.String)\l  (r3 I:java.lang.String)\l  (r1 I:java.lang.String A[D('genreString' java.lang.String)])\l com.google.android.exoplayer2.metadata.id3.TextInformationFrame.\<init\>(java.lang.String, java.lang.String, java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001b|0x001b: RETURN  \l  (r2 I:com.google.android.exoplayer2.metadata.id3.TextInformationFrame)\l \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001c|0x001c: MOVE  (r1 I:?[OBJECT, ARRAY] A[D('genreString' java.lang.String)]) = (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001e|0x001e: CONST_STR  (r2 I:java.lang.String) =  \"MetadataUtil\" \l0x0020: CONST_STR  (r4 I:java.lang.String) =  \"Failed to parse standard genre code\" \l0x0022: INVOKE  (r2 I:java.lang.String), (r4 I:java.lang.String) android.util.Log.w(java.lang.String, java.lang.String):int type: STATIC \l0x0025: MOVE  (r2 I:?[OBJECT, ARRAY]) = (r3 I:?[OBJECT, ARRAY]) \l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.metadata.id3.TextInformationFrame com.google.android.exoplayer2.extractor.mp4.MetadataUtil.parseStandardGenreAttribute((r5 I:com.google.android.exoplayer2.util.ParsableByteArray A[D('data' com.google.android.exoplayer2.util.ParsableByteArray), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0012\-0x001c: r1 'genreString' java.lang.String\l  0x0005\-0x0026: r0 'genreCode' int\l  0x001e\-0x0026: r1 'genreString' java.lang.String\l  ?\-0x0026: r5 'data' com.google.android.exoplayer2.util.ParsableByteArray\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_8 -> Node_5;
+Node_9 -> Node_7;
+}
+

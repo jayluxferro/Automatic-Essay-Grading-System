@@ -1,0 +1,214 @@
+digraph "CFG forcom.j256.ormlite.field.FieldType.assignDataType(Lcom\/j256\/ormlite\/db\/DatabaseType;Lcom\/j256\/ormlite\/field\/DataPersister;)V" {
+subgraph cluster_Region_862405112 {
+label = "R(2:0|(2:8|(3:12|(3:14|(1:18)|19)|21)(1:(2:26|27)(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33))))(1:(2:6|7)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.field.DataPersister com.j256.ormlite.field.DataPersister r6 = r5.getDataPersister(r6, r4)\lr4.dataPersister = r6\l}"];
+subgraph cluster_IfRegion_553840771 {
+label = "IF [B:1:0x0006] THEN: R(2:8|(3:12|(3:14|(1:18)|19)|21)(1:(2:26|27)(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33)))) ELSE: R(1:(2:6|7)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r6 != null) goto L_0x0036\l}"];
+subgraph cluster_Region_1157389427 {
+label = "R(2:8|(3:12|(3:14|(1:18)|19)|21)(1:(2:26|27)(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33))))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0036|r4.fieldConverter = r5.getFieldConverter(r6, r4)\l}"];
+subgraph cluster_IfRegion_1192151017 {
+label = "IF [B:9:0x003e, B:11:0x0044] THEN: R(3:12|(3:14|(1:18)|19)|21) ELSE: R(1:(2:26|27)(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003e|if (r4.isGeneratedId != false) goto L_0x0040\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0044|ADDED_TO_REGION\l|if (r6.isValidGeneratedType() != true) goto L_0x0046\l}"];
+subgraph cluster_Region_1315911281 {
+label = "R(3:12|(3:14|(1:18)|19)|21)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0046|java.lang.StringBuilder java.lang.StringBuilder r5 = new java.lang.StringBuilder()\lr5.append(\"Generated\-id field '\")\lr5.append(r4.field.getName())\lr5.append(\"' in \")\lr5.append(r4.field.getDeclaringClass().getSimpleName())\lr5.append(\" can't be type \")\lr5.append(r6.getSqlType())\lr5.append(\".  Must be one of: \")\lint int r0 = com.j256.ormlite.field.DataType.values().length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_2034981357 {
+label = "LOOP:0: (3:14|(1:18)|19)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0082|LOOP_START\lPHI: r1 \l  PHI: (r1v9 int) = (r1v8 int), (r1v10 int) binds: [B:12:0x0046, B:19:0x009a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:13:0x0082\-\>B:19:0x009a\l|if (r1 \< r0) goto L_0x0084\l}"];
+subgraph cluster_Region_1972813418 {
+label = "R(3:14|(1:18)|19)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0084|r2 = r6[r1]\lcom.j256.ormlite.field.DataPersister com.j256.ormlite.field.DataPersister r3 = r2.getDataPersister()\l}"];
+subgraph cluster_IfRegion_245990303 {
+label = "IF [B:15:0x008a, B:17:0x0090] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x008a|ADDED_TO_REGION\l|if (r3 != null) goto L_0x008c\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0090|ADDED_TO_REGION\l|if (r3.isValidGeneratedType() == true) goto L_0x0092\l}"];
+subgraph cluster_Region_1543969203 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0092|r5.append(r2)\lr5.append(' ')\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x009a|LOOP_END\lLOOP:0: B:13:0x0082\-\>B:19:0x009a\l|r1++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x00a6|throw new java.lang.IllegalArgumentException(r5.toString())\l}"];
+}
+subgraph cluster_Region_673361781 {
+label = "R(1:(2:26|27)(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2027897303 {
+label = "IF [B:23:0x00ad, B:25:0x00b3] THEN: R(2:26|27) ELSE: R(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00ad|if (r4.fieldConfig.isThrowIfNull() != false) goto L_0x00af\l}"];
+Node_25 [shape=record,label="{25\:\ 0x00b3|ADDED_TO_REGION\l|if (r6.isPrimitive() != true) goto L_0x00b6\l}"];
+subgraph cluster_Region_1997926239 {
+label = "R(2:26|27)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00b6}"];
+Node_27 [shape=record,label="{27\:\ 0x00d7|throw new java.sql.SQLException(\"Field \" + r4.field.getName() + \" must be a primitive if set with throwIfNull\")\l}"];
+}
+subgraph cluster_Region_387199723 {
+label = "R(1:(2:34|(1:36)(1:(1:39)(2:40|41)))(2:32|33)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1583777147 {
+label = "IF [B:29:0x00da, B:31:0x00e0] THEN: R(2:34|(1:36)(1:(1:39)(2:40|41))) ELSE: R(2:32|33) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x00da|if (r4.isId == false) goto L_0x010d\l}"];
+Node_31 [shape=record,label="{31\:\ 0x00e0|ADDED_TO_REGION\l|if (r6.isAppropriateId() == true) goto L_0x010d\l}"];
+subgraph cluster_Region_1877356753 {
+label = "R(2:34|(1:36)(1:(1:39)(2:40|41)))";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x010d|r4.dataTypeConfigObj = r6.makeConfigObject(r4)\ljava.lang.String java.lang.String r5 = r4.fieldConfig.getDefaultValue()\l}"];
+subgraph cluster_IfRegion_1516137693 {
+label = "IF [B:35:0x0119] THEN: R(1:36) ELSE: R(1:(1:39)(2:40|41))";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0119|if (r5 == null) goto L_0x011b\l}"];
+subgraph cluster_Region_884180437 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x011b|r4.defaultValue = null\l}"];
+}
+subgraph cluster_Region_165141809 {
+label = "R(1:(1:39)(2:40|41)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1373676611 {
+label = "IF [B:38:0x0121] THEN: R(1:39) ELSE: R(2:40|41) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0121|if (r4.isGeneratedId == false) goto L_0x0123\l}"];
+subgraph cluster_Region_813266864 {
+label = "R(1:39)";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x0123|r4.defaultValue = r4.fieldConverter.parseDefaultString(r4, r5)\l}"];
+}
+subgraph cluster_Region_1858578902 {
+label = "R(2:40|41)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x012c}"];
+Node_41 [shape=record,label="{41\:\ 0x0155|throw new java.sql.SQLException(\"Field '\" + r4.field.getName() + \"' cannot be a generatedId and have a default value '\" + r5 + \"'\")\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1485656034 {
+label = "R(2:32|33)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00e3}"];
+Node_33 [shape=record,label="{33\:\ 0x010c|throw new java.sql.SQLException(\"Field '\" + r4.field.getName() + \"' is of data type \" + r6 + \" which cannot be the ID field\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1742030846 {
+label = "R(1:(2:6|7)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1340140540 {
+label = "IF [B:3:0x000e, B:5:0x0016] THEN: R(2:6|7) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r4.fieldConfig.isForeign() != true) goto L_0x0010\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|ADDED_TO_REGION\l|if (r4.fieldConfig.isForeignCollection() != true) goto L_0x0019\l}"];
+subgraph cluster_Region_2020182372 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019}"];
+Node_7 [shape=record,label="{7\:\ 0x0034|throw new java.sql.SQLException(\"Data persister for field \" + r4 + \" is null but the field is not a foreign or foreignCollection\")\l}"];
+}
+subgraph cluster_Region_754968726 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0040}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x008c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x009d}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x00a7}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00af}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x00d8}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x00dc}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x011f}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x009d|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x009a|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x009a|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x009a|SYNTHETIC\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ ?|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.j256.ormlite.field.FieldType.assignDataType((r4v0 'this' com.j256.ormlite.field.FieldType A[IMMUTABLE_TYPE, THIS]), (r5v0 com.j256.ormlite.db.DatabaseType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 com.j256.ormlite.field.DataPersister A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_22[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_22[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_42[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_44[style=dashed];
+Node_17 -> Node_18;
+Node_17 -> Node_45[style=dashed];
+Node_18 -> Node_43;
+Node_19 -> Node_13;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_25 -> Node_26;
+Node_25 -> Node_28[style=dashed];
+Node_26 -> Node_27;
+Node_29 -> Node_30[style=dashed];
+Node_29 -> Node_34;
+Node_31 -> Node_32[style=dashed];
+Node_31 -> Node_34;
+Node_34 -> Node_35;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_49;
+Node_38 -> Node_39;
+Node_38 -> Node_40[style=dashed];
+Node_39 -> Node_48;
+Node_40 -> Node_41;
+Node_32 -> Node_33;
+Node_3 -> Node_4;
+Node_3 -> Node_46[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_47[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_10 -> Node_11;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_28 -> Node_29;
+Node_30 -> Node_31;
+Node_37 -> Node_38;
+Node_42 -> Node_20;
+Node_43 -> Node_19;
+Node_44 -> Node_19;
+Node_45 -> Node_19;
+}
+

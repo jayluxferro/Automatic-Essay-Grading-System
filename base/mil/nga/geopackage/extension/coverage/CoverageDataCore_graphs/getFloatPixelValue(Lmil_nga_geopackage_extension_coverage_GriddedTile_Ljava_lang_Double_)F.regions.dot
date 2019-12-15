@@ -1,0 +1,38 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageDataCore.getFloatPixelValue(Lmil\/nga\/geopackage\/extension\/coverage\/GriddedTile;Ljava\/lang\/Double;)F" {
+subgraph cluster_Region_805300527 {
+label = "R(2:(1:2)(1:5)|7) | DECL_VAR: double null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_606150003 {
+label = "IF [B:0:0x0000] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_667517736 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|double r3 = r2.griddedCoverage != null ? r2.griddedCoverage.getDataNull().doubleValue() : 0.0d\l}"];
+}
+subgraph cluster_Region_814705093 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|double r3 = valueToPixelValue(r3, r4.doubleValue())\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return (float) r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001c|PHI: r3 \l  PHI: (r3v1 double) = (r3v3 double), (r3v8 double) binds: [B:5:0x0014, B:3:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public float mil.nga.geopackage.extension.coverage.CoverageDataCore.getFloatPixelValue((r2v0 'this' mil.nga.geopackage.extension.coverage.CoverageDataCore A[IMMUTABLE_TYPE, THIS]), (r3v0 mil.nga.geopackage.extension.coverage.GriddedTile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.Double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_5 -> Node_6;
+Node_1 -> Node_2;
+Node_3 -> Node_6;
+Node_4 -> Node_6;
+Node_6 -> Node_7;
+}
+

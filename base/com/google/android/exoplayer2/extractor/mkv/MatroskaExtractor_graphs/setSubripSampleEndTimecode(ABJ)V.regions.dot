@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.setSubripSampleEndTimecode([BJ)V" {
+subgraph cluster_Region_1077161641 {
+label = "R(2:(1:2)(1:5)|3) | DECL_VAR: byte[] timeCodeData\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_837823224 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r12 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x000f\l}"];
+subgraph cluster_Region_67631872 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|byte[] r4 = SUBRIP_TIMECODE_EMPTY\l}"];
+}
+subgraph cluster_Region_1471267271 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|int int r0 = (int) (r12 \/ 3600000000L)\llong long r12 = r12 \- (((long) r0) * 3600000000L)\lint int r2 = (int) (r12 \/ 60000000)\llong long r12 = r12 \- ((long) (60000000 * r2))\lint int r3 = (int) (r12 \/ com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND)\lbyte[] r4 = com.google.android.exoplayer2.util.Util.getUtf8Bytes(java.lang.String.format(java.util.Locale.US, \"%02d:%02d:%02d,%03d\", new java.lang.Object[]\{java.lang.Integer.valueOf(r0), java.lang.Integer.valueOf(r2), java.lang.Integer.valueOf(r3), java.lang.Integer.valueOf((int) ((r12 \- ((long) (1000000 * r3))) \/ 1000))\}))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0011|PHI: r4 \l  PHI: (r4v1 'timeCodeData' byte[]) = (r4v0 'timeCodeData' byte[]), (r4v2 'timeCodeData' byte[]) binds: [B:5:0x0019, B:2:0x000f] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.System.arraycopy(r4, 0, r11, 19, 12)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0018}"];
+MethodNode[shape=record,label="{private static void com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.setSubripSampleEndTimecode((r11v0 'subripSampleData' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

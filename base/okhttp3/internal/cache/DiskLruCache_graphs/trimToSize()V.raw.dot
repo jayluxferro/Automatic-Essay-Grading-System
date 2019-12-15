@@ -1,0 +1,15 @@
+digraph "CFG forokhttp3.internal.cache.DiskLruCache.trimToSize()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:long) = (r4 I:okhttp3.internal.cache.DiskLruCache) okhttp3.internal.cache.DiskLruCache.size long \l0x0002: IGET  (r2 I:long) = (r4 I:okhttp3.internal.cache.DiskLruCache) okhttp3.internal.cache.DiskLruCache.maxSize long \l0x0004: CMP_L  (r0 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:3:0x001c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: IGET  (r0 I:java.util.LinkedHashMap\<java.lang.String, okhttp3.internal.cache.DiskLruCache$Entry\>) = (r4 I:okhttp3.internal.cache.DiskLruCache) okhttp3.internal.cache.DiskLruCache.lruEntries java.util.LinkedHashMap \l0x000a: INVOKE  (r0 I:java.util.Collection) = (r0 I:java.util.LinkedHashMap) java.util.LinkedHashMap.values():java.util.Collection type: VIRTUAL \l0x000e: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.util.Collection) java.util.Collection.iterator():java.util.Iterator type: INTERFACE \l0x0012: INVOKE  (r0 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0016: CHECK_CAST  (r0 I:okhttp3.internal.cache.DiskLruCache$Entry) = (okhttp3.internal.cache.DiskLruCache$Entry) (r0 I:?[OBJECT, ARRAY]) \l0x0018: INVOKE  \l  (r4 I:okhttp3.internal.cache.DiskLruCache)\l  (r0 I:okhttp3.internal.cache.DiskLruCache$Entry)\l okhttp3.internal.cache.DiskLruCache.removeEntry(okhttp3.internal.cache.DiskLruCache$Entry):boolean type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001c|0x001c: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x001d: IPUT  (r0 I:boolean), (r4 I:okhttp3.internal.cache.DiskLruCache) okhttp3.internal.cache.DiskLruCache.mostRecentTrimFailed boolean \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001f|0x001f: RETURN   \l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.cache.DiskLruCache.trimToSize((r4 'this' I:okhttp3.internal.cache.DiskLruCache A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_0;
+Node_3 -> Node_4;
+}
+

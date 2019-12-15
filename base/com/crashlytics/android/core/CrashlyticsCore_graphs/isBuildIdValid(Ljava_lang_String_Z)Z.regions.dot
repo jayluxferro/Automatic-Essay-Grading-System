@@ -1,0 +1,50 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsCore.isBuildIdValid(Ljava\/lang\/String;Z)Z" {
+subgraph cluster_Region_1166848856 {
+label = "R(1:(2:2|3)(1:(1:6)(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_832943104 {
+label = "IF [B:1:0x0001] THEN: R(2:2|3) ELSE: R(1:(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r3 == false) goto L_0x0003\l}"];
+subgraph cluster_Region_1645056135 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(TAG, \"Configured not to require a build ID.\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_886373522 {
+label = "R(1:(1:6)(2:7|8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_350396195 {
+label = "IF [B:5:0x0013] THEN: R(1:6) ELSE: R(2:7|8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (p018io.fabric.sdk.android.services.common.CommonUtils.isNullOrEmpty(r2) == false) goto L_0x0015\l}"];
+subgraph cluster_Region_142289931 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_117185579 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|android.util.Log.e(TAG, mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER)\landroid.util.Log.e(TAG, \".     \|  \| \")\landroid.util.Log.e(TAG, \".     \|  \|\")\landroid.util.Log.e(TAG, \".     \|  \|\")\landroid.util.Log.e(TAG, \".    \|  \| \/\")\landroid.util.Log.e(TAG, \".        \/\")\landroid.util.Log.e(TAG, \".       \/\")\landroid.util.Log.e(TAG, \".      \/\")\landroid.util.Log.e(TAG, mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER)\landroid.util.Log.e(TAG, MISSING_BUILD_ID_MSG)\landroid.util.Log.e(TAG, mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER)\landroid.util.Log.e(TAG, \".      \/\")\landroid.util.Log.e(TAG, \".     \/  \")\landroid.util.Log.e(TAG, \".    \/    \")\landroid.util.Log.e(TAG, \".   \/ \|  \| \")\landroid.util.Log.e(TAG, \".     \|  \|\")\landroid.util.Log.e(TAG, \".     \|  \|\")\landroid.util.Log.e(TAG, \".     \|  \|\")\landroid.util.Log.e(TAG, mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x009c|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+MethodNode[shape=record,label="{static boolean com.crashlytics.android.core.CrashlyticsCore.isBuildIdValid((r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

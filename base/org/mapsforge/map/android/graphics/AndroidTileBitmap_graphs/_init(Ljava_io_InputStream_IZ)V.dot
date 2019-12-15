@@ -1,0 +1,19 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidTileBitmap.\<init\>(Ljava\/io\/InputStream;IZ)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.expiration = 0\lr3.timestamp = java.lang.System.currentTimeMillis()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|SYNTHETIC\lSplitter:B:1:0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x001e \}\lSplitter:B:1:0x000e\l|r3.bitmap = android.graphics.BitmapFactory.decodeStream(r4, (android.graphics.Rect) null, createTileBitmapFactoryOptions(r5, r6))     \/\/ Catch:\{ Exception \-\> 0x001e \}\lr3.bitmap.getWidth()     \/\/ Catch:\{ Exception \-\> 0x001e \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001d|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|ExcHandler: Exception (r5v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x000e\l|java.lang.Exception r5 = move\-exception\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|java.util.logging.Logger r6 = LOGGER\ljava.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"TILEBITMAP ERROR \")\lr1.append(r5.toString())\lr6.info(r1.toString())\lr3.bitmap = null\lorg.mapsforge.core.util.IOUtils.closeQuietly(r4)\ldestroy()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0048|throw new org.mapsforge.core.graphics.CorruptedInputStreamException(\"Corrupted bitmap input stream\", r5)\l}"];
+MethodNode[shape=record,label="{void org.mapsforge.map.android.graphics.AndroidTileBitmap.\<init\>((r3v0 'this' org.mapsforge.map.android.graphics.AndroidTileBitmap A[IMMUTABLE_TYPE, THIS]), (r4v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

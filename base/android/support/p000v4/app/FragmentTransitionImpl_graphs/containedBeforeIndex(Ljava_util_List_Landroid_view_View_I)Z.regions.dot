@@ -1,0 +1,51 @@
+digraph "CFG forandroid.support.v4.app.FragmentTransitionImpl.containedBeforeIndex(Ljava\/util\/List;Landroid\/view\/View;I)Z" {
+subgraph cluster_Region_1834639371 {
+label = "R(3:0|(1:(2:(1:4)|(1:5)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_886895685 {
+label = "LOOP:0: (1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:5:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:5:0x000c\l|if (r1 \< r5) goto L_0x0004\l}"];
+subgraph cluster_Region_1202796376 {
+label = "R(1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_773649706 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2141003632 {
+label = "IF [B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.get(r1) == r4) goto L_0x000a\l}"];
+subgraph cluster_Region_1801083802 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1788206270 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:5:0x000c\l|r1++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000f|RETURN\l|return false\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000f|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static boolean android.support.v4.app.FragmentTransitionImpl.containedBeforeIndex((r3v0 java.util.List\<android.view.View\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Landroid\/view\/View;, \>;, Landroid\/view\/View;, I)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_6;
+Node_8 -> Node_4;
+}
+

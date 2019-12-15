@@ -1,0 +1,64 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.ViewFlinger.computeScrollDuration(IIII)I" {
+subgraph cluster_Region_1028732228 {
+label = "R(7:0|1|4|5|8|(1:10)(2:(1:12)|13)|15) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = java.lang.Math.abs(r5)\lint int r1 = java.lang.Math.abs(r6)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|boolean r2 = r0 \> r1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|PHI: r2 \l  PHI: (r2v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r7 = (int) java.lang.Math.sqrt((double) ((r7 * r7) + (r8 * r8)))\lint int r5 = (int) java.lang.Math.sqrt((double) ((r5 * r5) + (r6 * r6)))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|int r6 = r2 ? android.support.p003v7.widget.RecyclerView.this.getWidth() : android.support.p003v7.widget.RecyclerView.this.getHeight()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0032|PHI: r6 \l  PHI: (r6v2 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r8 = r6 \/ 2\lfloat float r6 = (float) r6\lfloat float r8 = (float) r8\lfloat float r8 = r8 + (distanceInfluenceForSnapDuration(java.lang.Math.min(1.0f, (((float) r5) * 1.0f) \/ r6)) * r8)\l}"];
+subgraph cluster_IfRegion_849627863 {
+label = "IF [B:9:0x0047] THEN: R(1:10) ELSE: R(2:(1:12)|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0047|if (r7 \> 0) goto L_0x0049\l}"];
+subgraph cluster_Region_1115885117 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|int r5 = java.lang.Math.round(java.lang.Math.abs(r8 \/ ((float) r7)) * 1000.0f) * 4\l}"];
+}
+subgraph cluster_Region_368391047 {
+label = "R(2:(1:12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_107717707 {
+label = "IF [B:11:0x005a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005a|if (r2 == false) goto L_0x005d\l}"];
+subgraph cluster_Region_574246315 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005d|r0 = r1\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x005e|PHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:11:0x005a, B:12:0x005d] A[DONT_GENERATE, DONT_INLINE]\l|int r5 = (int) (((((float) r0) \/ r6) + 1.0f) * 300.0f)\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x006c|RETURN\l|return java.lang.Math.min(r5, android.support.p003v7.widget.RecyclerView.MAX_SCROLL_DURATION)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0066|PHI: r5 \l  PHI: (r5v12 int) = (r5v18 int), (r5v21 int) binds: [B:13:0x005e, B:10:0x0049] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private int android.support.v7.widget.RecyclerView.ViewFlinger.computeScrollDuration((r4v0 'this' android.support.v7.widget.RecyclerView$ViewFlinger A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_14 -> Node_15;
+}
+

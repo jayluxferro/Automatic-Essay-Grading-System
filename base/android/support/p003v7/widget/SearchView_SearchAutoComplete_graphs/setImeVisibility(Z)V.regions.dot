@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.v7.widget.SearchView.SearchAutoComplete.setImeVisibility(Z)V" {
+subgraph cluster_Region_1663938692 {
+label = "R(2:0|(1:2)(1:(1:6)(1:8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.inputmethod.InputMethodManager android.view.inputmethod.InputMethodManager r0 = (android.view.inputmethod.InputMethodManager) getContext().getSystemService(\"input_method\")\l}"];
+subgraph cluster_IfRegion_2144273675 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: R(1:(1:6)(1:8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r3 == false) goto L_0x000f\l}"];
+subgraph cluster_Region_597218379 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|r2.mHasPendingShowSoftInputRequest = false\lremoveCallbacks(r2.mRunShowSoftInputIfNecessary)\lr0.hideSoftInputFromWindow(getWindowToken(), 0)\l}"];
+}
+subgraph cluster_Region_1929968376 {
+label = "R(1:(1:6)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_305256012 {
+label = "IF [B:5:0x0022] THEN: R(1:6) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (r0.isActive(r2) == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1200294482 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|r2.mHasPendingShowSoftInputRequest = false\lremoveCallbacks(r2.mRunShowSoftInputIfNecessary)\lr0.showSoftInput(r2, 0)\l}"];
+}
+subgraph cluster_Region_1425070202 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002f|r2.mHasPendingShowSoftInputRequest = true\l}"];
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x001d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0032}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.SearchView.SearchAutoComplete.setImeVisibility((r2v0 'this' android.support.v7.widget.SearchView$SearchAutoComplete A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_4 -> Node_5;
+}
+

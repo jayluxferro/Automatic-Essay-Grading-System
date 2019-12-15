@@ -1,0 +1,16 @@
+digraph "CFG forcom.squareup.picasso.RequestCreator.\<init\>(Lcom\/squareup\/picasso\/Picasso;Landroid\/net\/Uri;I)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r1 I:java.lang.Object) java.lang.Object.\<init\>():void type: DIRECT \l0x0003: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0004: IPUT  (r0 I:boolean), (r1 I:com.squareup.picasso.RequestCreator) com.squareup.picasso.RequestCreator.setPlaceholder boolean \l0x0006: IGET  (r0 I:boolean) = (r2 I:com.squareup.picasso.Picasso) com.squareup.picasso.Picasso.shutdown boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0016 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: IPUT  \l  (r2 I:com.squareup.picasso.Picasso)\l  (r1 I:com.squareup.picasso.RequestCreator)\l com.squareup.picasso.RequestCreator.picasso com.squareup.picasso.Picasso \l0x000c: NEW_INSTANCE  (r0 I:com.squareup.picasso.Request$Builder) =  com.squareup.picasso.Request$Builder \l0x000e: IGET  (r2 I:android.graphics.Bitmap$Config) = (r2 I:com.squareup.picasso.Picasso) com.squareup.picasso.Picasso.defaultBitmapConfig android.graphics.Bitmap$Config \l0x0010: INVOKE  \l  (r0 I:com.squareup.picasso.Request$Builder)\l  (r3 I:android.net.Uri)\l  (r4 I:int)\l  (r2 I:android.graphics.Bitmap$Config)\l com.squareup.picasso.Request.Builder.\<init\>(android.net.Uri, int, android.graphics.Bitmap$Config):void type: DIRECT \l0x0013: IPUT  \l  (r0 I:com.squareup.picasso.Request$Builder)\l  (r1 I:com.squareup.picasso.RequestCreator)\l com.squareup.picasso.RequestCreator.data com.squareup.picasso.Request$Builder \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|0x0015: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: NEW_INSTANCE  (r2 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException \l0x0018: CONST_STR  (r3 I:java.lang.String) =  \"Picasso instance already shut down. Cannot submit new requests.\" \l0x001a: INVOKE  \l  (r2 I:java.lang.IllegalStateException)\l  (r3 I:java.lang.String)\l java.lang.IllegalStateException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|0x001d: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.RequestCreator.\<init\>((r1 'this' I:com.squareup.picasso.RequestCreator A[IMMUTABLE_TYPE, THIS]), (r2 I:com.squareup.picasso.Picasso A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:android.net.Uri A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

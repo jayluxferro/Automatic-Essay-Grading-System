@@ -1,0 +1,29 @@
+digraph "CFG forcom.mapbox.android.gestures.Utils.determineFocalPoint(Landroid\/view\/MotionEvent;)Landroid\/graphics\/PointF;" {
+subgraph cluster_Region_422099844 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r5.getPointerCount()\lfloat r1 = 0.0f\lint r2 = 0\lfloat r3 = 0.0f\l}"];
+subgraph cluster_LoopRegion_77937979 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r1 r2 r3 \l  PHI: (r1v1 float) = (r1v0 float), (r1v3 float) binds: [B:0:0x0000, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 float) = (r3v0 float), (r3v3 float) binds: [B:0:0x0000, B:2:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:2:0x0009\l|if (r2 \< r0) goto L_0x0009\l}"];
+subgraph cluster_Region_1856536568 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|LOOP_END\lLOOP:0: B:1:0x0007\-\>B:2:0x0009\l|r1 += r5.getX(r2)\lr3 += r5.getY(r2)\lr2++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0016|float float r0 = (float) r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|RETURN\l|return new android.graphics.PointF(r1 \/ r0, r3 \/ r0)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static android.graphics.PointF com.mapbox.android.gestures.Utils.determineFocalPoint((r5v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

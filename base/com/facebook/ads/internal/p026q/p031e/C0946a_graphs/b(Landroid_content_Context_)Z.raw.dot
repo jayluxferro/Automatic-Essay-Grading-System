@@ -1,0 +1,31 @@
+digraph "CFG forcom.facebook.ads.internal.q.e.a.b(Landroid\/content\/Context;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|0x0001: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|0x0003: SGET  (r0 I:java.lang.String) =  com.facebook.ads.internal.q.e.a.a java.lang.String \l0x0005: CONST_STR  (r2 I:java.lang.String) =  \"Invalid context in screen interactive check, assuming interactive.\" \l0x0007: INVOKE  (r0 I:java.lang.String), (r2 I:java.lang.String) android.util.Log.v(java.lang.String, java.lang.String):int type: STATIC \l0x000a: MOVE  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: RETURN  (r0 I:boolean) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|0x000c: CONST_STR  (r0 I:java.lang.String) =  \"power\" \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000e|SYNTHETIC\lSplitter:B:5:0x000e\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Splitter:B:5:0x000e\l|0x000e: INVOKE  (r0 I:java.lang.Object) = (r4 I:android.content.Context), (r0 I:java.lang.String) android.content.Context.getSystemService(java.lang.String):java.lang.Object type: VIRTUAL A[Catch:\{ Exception \-\> 0x0024 \}, TRY_ENTER]\l0x0012: CHECK_CAST  (r0 I:android.os.PowerManager) = (android.os.PowerManager) (r0 I:?[OBJECT, ARRAY]) A[Catch:\{ Exception \-\> 0x0024 \}]\l0x0014: SGET  (r2 I:int) =  android.os.Build.VERSION.SDK_INT int A[Catch:\{ Exception \-\> 0x0024 \}]\l0x0016: CONST  (r3 I:?[int, float, short, byte, char]) = (20 ?[int, float, short, byte, char]) A[Catch:\{ Exception \-\> 0x0024 \}]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|0x0018: IF  (r2 I:?[int, byte, short, char]) \< (r3 I:?[int, byte, short, char])  \-\> B:9:0x001f A[Catch:\{ Exception \-\> 0x0024 \}]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|0x001a: INVOKE  (r0 I:boolean) = (r0 I:android.os.PowerManager) android.os.PowerManager.isInteractive():boolean type: VIRTUAL A[Catch:\{ Exception \-\> 0x0024 \}]\l0x001e: GOTO  \-\> 0x000b A[Catch:\{ Exception \-\> 0x0024 \}]\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001f|0x001f: INVOKE  (r0 I:boolean) = (r0 I:android.os.PowerManager) android.os.PowerManager.isScreenOn():boolean type: VIRTUAL A[Catch:\{ Exception \-\> 0x0024 \}, TRY_LEAVE]\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0024|ExcHandler: Exception null\lSplitter:B:5:0x000e\l|0x0024: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0025|0x0025: SGET  (r2 I:java.lang.String) =  com.facebook.ads.internal.q.e.a.a java.lang.String \l0x0027: CONST_STR  (r3 I:java.lang.String) =  \"Exception in screen interactive check, assuming interactive.\" \l0x0029: INVOKE  \l  (r2 I:java.lang.String)\l  (r3 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l android.util.Log.e(java.lang.String, java.lang.String, java.lang.Throwable):int type: STATIC \l0x002c: CONST_STR  (r2 I:java.lang.String) =  \"risky\" \l0x002e: SGET  (r3 I:int) =  com.facebook.ads.internal.q.d.b.q int \l0x0030: INVOKE  \l  (r4 I:android.content.Context)\l  (r2 I:java.lang.String)\l  (r3 I:int)\l  (r0 I:java.lang.Exception)\l com.facebook.ads.internal.q.d.a.a(android.content.Context, java.lang.String, int, java.lang.Exception):void type: STATIC \l0x0033: MOVE  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+MethodNode[shape=record,label="{public static boolean com.facebook.ads.internal.q.e.a.b((r4 I:android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_3;
+Node_9 -> Node_3;
+Node_11 -> Node_12;
+Node_12 -> Node_3;
+}
+

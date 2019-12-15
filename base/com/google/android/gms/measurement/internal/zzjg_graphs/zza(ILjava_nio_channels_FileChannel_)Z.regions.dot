@@ -1,0 +1,85 @@
+digraph "CFG forcom.google.android.gms.measurement.internal.zzjg.zza(ILjava\/nio\/channels\/FileChannel;)Z" {
+subgraph cluster_Region_487252094 {
+label = "R(2:0|(2:(2:13|14)|(2:4|(3:6|(1:8)|9))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|zzo()\l}"];
+subgraph cluster_Region_1558569822 {
+label = "R(2:(2:13|14)|(2:4|(3:6|(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_572330191 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(2:13|14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r7 == null) goto L_0x0057\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r7.isOpen() == false) goto L_0x0057\l}"];
+subgraph cluster_Region_216185206 {
+label = "R(2:13|14)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0057|r5.zzj.zzab().zzgk().zzao(\"Bad channel to read from\")\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0066|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1305667018 {
+label = "R(2:4|(3:6|(1:8)|9))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|java.nio.ByteBuffer java.nio.ByteBuffer r1 = java.nio.ByteBuffer.allocate(4)\lr1.putInt(r6)\lr1.flip()\l}"];
+subgraph cluster_TryCatchRegion_1176613252 {
+label = "Try: R(3:6|(1:8)|9) catches: R(3:10|11|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1506927106 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ IOException \-\> 0x0046 \}\lSplitter:B:5:0x001a\l|r7.truncate(0)     \/\/ Catch:\{ IOException \-\> 0x0046 \}\lr7.write(r1)     \/\/ Catch:\{ IOException \-\> 0x0046 \}\lr7.force(true)     \/\/ Catch:\{ IOException \-\> 0x0046 \}\l}"];
+subgraph cluster_IfRegion_900551949 {
+label = "IF [B:7:0x002c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002c|Catch:\{ IOException \-\> 0x0046 \}\l|if (r7.size() != 4) goto L_0x002e     \/\/ Catch:\{ IOException \-\> 0x0046 \}\l}"];
+subgraph cluster_Region_2138873887 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002e|Catch:\{ IOException \-\> 0x0046 \}\l|r5.zzj.zzab().zzgk().zza(\"Error writing to channel. Bytes written\", java.lang.Long.valueOf(r7.size()))     \/\/ Catch:\{ IOException \-\> 0x0046 \}\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0045|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_1724682127 {
+label = "R(3:10|11|12) | ExcHandler: IOException (r6v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0046|ExcHandler: IOException (r6v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:5:0x001a\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0047|r5.zzj.zzab().zzgk().zza(\"Failed to write to channel\", r6)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0056|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1724682127 {
+label = "R(3:10|11|12) | ExcHandler: IOException (r6v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0046|ExcHandler: IOException (r6v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:5:0x001a\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0047|r5.zzj.zzab().zzgk().zza(\"Failed to write to channel\", r6)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0056|RETURN\l|return false\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a|SYNTHETIC\lSplitter:B:5:0x001a\l}"];
+MethodNode[shape=record,label="{private final boolean com.google.android.gms.measurement.internal.zzjg.zza((r5v0 'this' com.google.android.gms.measurement.internal.zzjg A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.nio.channels.FileChannel A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.WorkerThread, \{\}], Annotation[BUILD, com.google.android.gms.common.util.VisibleForTesting, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_13 -> Node_14;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+}
+

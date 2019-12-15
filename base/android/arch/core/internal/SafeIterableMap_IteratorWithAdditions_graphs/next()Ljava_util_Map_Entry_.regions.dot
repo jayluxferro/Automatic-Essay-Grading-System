@@ -1,0 +1,42 @@
+digraph "CFG forandroid.arch.core.internal.SafeIterableMap.IteratorWithAdditions.next()Ljava\/util\/Map$Entry;" {
+subgraph cluster_Region_97971365 {
+label = "R(2:(1:2)(1:7)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_793035092 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mBeforeStart == true) goto L_0x0004\l}"];
+subgraph cluster_Region_292035159 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.mBeforeStart = false\lr1.mCurrent = android.arch.core.internal.SafeIterableMap.this.mStart\l}"];
+}
+subgraph cluster_Region_458341573 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|PHI: r0 \l  PHI: (r0v3 android.arch.core.internal.SafeIterableMap$Entry\<K, V\>) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1.mCurrent = r1.mCurrent != null ? r1.mCurrent.mNext : null\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001e|RETURN\l|return r1.mCurrent\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001c}"];
+MethodNode[shape=record,label="{public java.util.Map$Entry\<K, V\> android.arch.core.internal.SafeIterableMap.IteratorWithAdditions.next((r1v0 'this' android.arch.core.internal.SafeIterableMap$IteratorWithAdditions A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/Map$Entry\<, TK;TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

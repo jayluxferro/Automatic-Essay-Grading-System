@@ -1,0 +1,131 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.FirebaseNotification.onMessageReceived(Lcom\/google\/firebase\/messaging\/RemoteMessage;)V" {
+subgraph cluster_Region_1951664332 {
+label = "R(3:0|(4:2|(1:4)(1:5)|6|(1:(1:10)(1:11)))|(1:(1:18)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.context = getApplicationContext()\lr4.DBUtil = new com.ghanapostgps.ghanapost.p005db.SQLiteHandler(r4.context)\l}"];
+subgraph cluster_IfRegion_225394454 {
+label = "IF [B:1:0x0017] THEN: R(4:2|(1:4)(1:5)|6|(1:(1:10)(1:11))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0017|if (r5.getData().size() \> 0) goto L_0x0019\l}"];
+subgraph cluster_Region_1368835955 {
+label = "R(4:2|(1:4)(1:5)|6|(1:(1:10)(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0019|java.util.Map java.util.Map\<java.lang.String, java.lang.String\> r0 = r5.getData()\lr4.title = r0.get(\"title\").toString()\lr4.message = r0.get(p018io.fabric.sdk.android.services.settings.SettingsJsonConstants.PROMPT_MESSAGE_KEY).toString()\l}"];
+subgraph cluster_IfRegion_1018892292 {
+label = "IF [B:3:0x003b] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003b|if (r0.get(\"timestamp\") != null) goto L_0x003d\l}"];
+subgraph cluster_Region_227574128 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003d|r4.timestamp = r0.get(\"timestamp\").toString()\l}"];
+}
+subgraph cluster_Region_2053930214 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x004a|r4.timestamp = \"0\"\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x004e|r4.DBUtil.addMessage(r4.title, r4.message, r4.timestamp)\l}"];
+subgraph cluster_TryCatchRegion_1041635815 {
+label = "Try: R(1:(1:10)(1:11)) catches: R(2:14|15), R(2:12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1792042113 {
+label = "R(1:(1:10)(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_506683714 {
+label = "IF [B:9:0x005e] THEN: R(1:10) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x005e|Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l|if (android.os.Build.VERSION.SDK_INT \>= 26) goto L_0x0060     \/\/ Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l}"];
+subgraph cluster_Region_119649582 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0060|Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l|alertNewsO(getApplication(), r4.title, r4.message, 1)     \/\/ Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l}"];
+}
+subgraph cluster_Region_158747916 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x006c|Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l|alertNews(getApplication(), r4.title, r4.message, 1)     \/\/ Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\l}"];
+}
+}
+}
+subgraph cluster_Region_1626064079 {
+label = "R(2:14|15) | ExcHandler: ExecutionException (r0v8 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x007d|ExcHandler: ExecutionException (r0v8 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0059\l}"];
+Node_15 [shape=record,label="{15\:\ 0x007e|r0.printStackTrace()\l}"];
+}
+subgraph cluster_Region_1708626145 {
+label = "R(2:12|13) | ExcHandler: InterruptedException (r0v9 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0078|ExcHandler: InterruptedException (r0v9 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0059\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0079|r0.printStackTrace()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1867891120 {
+label = "R(1:(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1416687483 {
+label = "IF [B:17:0x0085] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0085|if (r5.getNotification() != null) goto L_0x0087\l}"];
+subgraph cluster_Region_1778615430 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0087|android.util.Log.d(TAG, \"Message Notification Body: \" + r5.getNotification().getBody())\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1626064079 {
+label = "R(2:14|15) | ExcHandler: ExecutionException (r0v8 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x007d|ExcHandler: ExecutionException (r0v8 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0059\l}"];
+Node_15 [shape=record,label="{15\:\ 0x007e|r0.printStackTrace()\l}"];
+}
+subgraph cluster_Region_1708626145 {
+label = "R(2:12|13) | ExcHandler: InterruptedException (r0v9 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0078|ExcHandler: InterruptedException (r0v9 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0059\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0079|r0.printStackTrace()\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0059|SYNTHETIC\lSplitter:B:7:0x0059\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|Catch:\{ ExecutionException \-\> 0x007d, InterruptedException \-\> 0x0078 \}\lSplitter:B:7:0x0059\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0081}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.FirebaseNotification.onMessageReceived((r4v0 'this' com.ghanapostgps.ghanapost.FirebaseNotification A[IMMUTABLE_TYPE, THIS]), (r5v0 com.google.firebase.messaging.RemoteMessage A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_16;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_12 -> Node_13;
+Node_13 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_12 -> Node_13;
+Node_13 -> Node_16;
+Node_7 -> Node_8;
+Node_7 -> Node_14;
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+Node_16 -> Node_17;
+}
+

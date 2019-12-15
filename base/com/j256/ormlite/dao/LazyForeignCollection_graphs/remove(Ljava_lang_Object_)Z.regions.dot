@@ -1,0 +1,93 @@
+digraph "CFG forcom.j256.ormlite.dao.LazyForeignCollection.remove(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1342538304 {
+label = "R(3:0|(1:(1:(1:(3:6|7|1))(2:10|1)))|9) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.dao.CloseableIterator com.j256.ormlite.dao.CloseableIterator r0 = iterator()\l}"];
+subgraph cluster_LoopRegion_233852777 {
+label = "LOOP:0: (1:(1:(1:(3:6|7|1))(2:10|1)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2106671082 {
+label = "R(1:(1:(1:(3:6|7|1))(2:10|1)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1091290076 {
+label = "Try: R(1:(1:(3:6|7|1))(2:10|1)) finally: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1594513166 {
+label = "R(1:(1:(3:6|7|1))(2:10|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1966638187 {
+label = "IF [B:3:0x0008] THEN: R(1:(3:6|7|1)) ELSE: R(2:10|1)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|Catch:\{ all \-\> 0x001e \}\l|if (r0.hasNext() == true) goto L_0x000a     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+subgraph cluster_Region_1343144065 {
+label = "R(1:(3:6|7|1))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_487300908 {
+label = "IF [B:5:0x0012] THEN: R(3:6|7|1) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|LOOP_END\lCatch:\{ all \-\> 0x001e \}\lLOOP:0: B:1:0x0004\-\>B:5:0x0012\l|if (r0.next().equals(r3) == true) goto L_0x0014     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+subgraph cluster_Region_1465017242 {
+label = "R(3:6|7|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|Catch:\{ all \-\> 0x001e \}\l|r0.remove()     \/\/ Catch:\{ all \-\> 0x001e \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|EDGE_INSN: B:7:0x0017\-\>B:8:0x0018 ?: BREAK  \l|r3 = true\l}"];
+Node_InsnContainer_605342469 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_445857378 {
+label = "R(2:10|1)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|EDGE_INSN: B:10:0x001c\-\>B:8:0x0018 ?: BREAK  \l|r3 = false\l}"];
+Node_InsnContainer_1000274296 [shape=record,label="{|break\l}"];
+}
+}
+}
+subgraph cluster_Region_725216434 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|ExcHandler:  FINALLY\lSplitter:B:1:0x0004\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001f|FINALLY_INSNS\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0022|throw r3\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001b|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_725216434 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|ExcHandler:  FINALLY\lSplitter:B:1:0x0004\l}"];
+Node_12 [shape=record,label="{12\:\ 0x001f|FINALLY_INSNS\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0022|throw r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0004|LOOP_START\lSYNTHETIC\lSplitter:B:1:0x0004\lLOOP:0: B:1:0x0004\-\>B:5:0x0012\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x001e \}\lSplitter:B:1:0x0004\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a|Catch:\{ all \-\> 0x001e \}\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018|DONT_GENERATE\lEDGE_INSN: B:7:0x0017\-\>B:8:0x0018 ?: BREAK  \lEDGE_INSN: B:10:0x001c\-\>B:8:0x0018 ?: BREAK  \lPHI: r3 \l  PHI: (r3v3 boolean) = (r3v2 boolean), (r3v4 boolean) binds: [B:10:0x001c, B:7:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|com.j256.ormlite.misc.IOUtils.closeQuietly(r0)\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0014|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.dao.LazyForeignCollection.remove((r2v0 'this' com.j256.ormlite.dao.LazyForeignCollection A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_5 -> Node_1[style=dashed];
+Node_5 -> Node_14;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_10 -> Node_8;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_1 -> Node_2;
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_14 -> Node_6;
+Node_15 -> Node_10;
+}
+

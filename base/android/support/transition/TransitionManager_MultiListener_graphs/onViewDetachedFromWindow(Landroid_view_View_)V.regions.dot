@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.transition.TransitionManager.MultiListener.onViewDetachedFromWindow(Landroid\/view\/View;)V" {
+subgraph cluster_Region_142922355 {
+label = "R(3:0|(2:4|(1:7))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|removeListeners()\landroid.support.transition.TransitionManager.sPendingTransitions.remove(r2.mSceneRoot)\ljava.util.ArrayList java.util.ArrayList r3 = android.support.transition.TransitionManager.getRunningTransitions().get(r2.mSceneRoot)\l}"];
+subgraph cluster_IfRegion_831191927 {
+label = "IF [B:1:0x0016, B:3:0x001c] THEN: R(2:4|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|ADDED_TO_REGION\l|if (r3 != null) goto L_0x0018\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001c|ADDED_TO_REGION\l|if (r3.size() \> 0) goto L_0x001e\l}"];
+subgraph cluster_Region_528897703 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|java.util.Iterator java.util.Iterator r3 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_33411862 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|if (r3.hasNext() != false) goto L_0x0028\l}"];
+subgraph cluster_Region_793026064 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|LOOP_END\lLOOP:0: B:5:0x0022\-\>B:7:0x0028\l|((android.support.transition.Transition) r3.next()).resume(r2.mSceneRoot)\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0034|r2.mTransition.clearValues(true)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0018}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022|LOOP_START\lLOOP:0: B:5:0x0022\-\>B:7:0x0028\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.transition.TransitionManager.MultiListener.onViewDetachedFromWindow((r2v0 'this' android.support.transition.TransitionManager$MultiListener A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_10 -> Node_8;
+}
+

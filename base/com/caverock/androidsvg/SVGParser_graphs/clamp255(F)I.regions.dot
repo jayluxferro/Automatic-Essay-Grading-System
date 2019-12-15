@@ -1,0 +1,56 @@
+digraph "CFG forcom.caverock.androidsvg.SVGParser.clamp255(F)I" {
+subgraph cluster_Region_1024187948 {
+label = "R(1:(2:(1:2)|(1:(2:(1:5)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_764159533 {
+label = "R(2:(1:2)|(1:(2:(1:5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1547232136 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r1 \< 0.0f) goto L_0x0005\l}"];
+subgraph cluster_Region_1246430068 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_701648559 {
+label = "R(1:(2:(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1705228534 {
+label = "R(2:(1:5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2115773289 {
+label = "IF [B:4:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r1 \> 255.0f) goto L_0x000d\l}"];
+subgraph cluster_Region_1818156925 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|SYNTHETIC\lRETURN\l|return 255\l}"];
+}
+}
+subgraph cluster_Region_1463960431 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.lang.Math.round(r1)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0007}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+MethodNode[shape=record,label="{private static int com.caverock.androidsvg.SVGParser.clamp255((r1v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

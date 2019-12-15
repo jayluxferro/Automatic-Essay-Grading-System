@@ -1,0 +1,67 @@
+digraph "CFG formil.nga.wkb.util.GeometryUtils.getDimension(Lmil\/nga\/wkb\/geom\/Geometry;)I" {
+subgraph cluster_Region_2082930116 {
+label = "R(2:0|1)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.wkb.geom.GeometryType mil.nga.wkb.geom.GeometryType r0 = r3.getGeometryType()\l}"];
+subgraph cluster_SwitchRegion_445116009 {
+label = "Switch: 4, default: R(2:2|3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|switch(r0) \{\l    case mil.nga.wkb.geom.GeometryType.POINT :mil.nga.wkb.geom.GeometryType: goto L_0x004a;\l    case mil.nga.wkb.geom.GeometryType.MULTIPOINT :mil.nga.wkb.geom.GeometryType: goto L_0x004a;\l    case mil.nga.wkb.geom.GeometryType.LINESTRING :mil.nga.wkb.geom.GeometryType: goto L_0x0048;\l    case mil.nga.wkb.geom.GeometryType.MULTILINESTRING :mil.nga.wkb.geom.GeometryType: goto L_0x0048;\l    case mil.nga.wkb.geom.GeometryType.CIRCULARSTRING :mil.nga.wkb.geom.GeometryType: goto L_0x0048;\l    case mil.nga.wkb.geom.GeometryType.COMPOUNDCURVE :mil.nga.wkb.geom.GeometryType: goto L_0x0048;\l    case mil.nga.wkb.geom.GeometryType.POLYGON :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.CURVEPOLYGON :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.MULTIPOLYGON :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.POLYHEDRALSURFACE :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.TIN :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.TRIANGLE :mil.nga.wkb.geom.GeometryType: goto L_0x0046;\l    case mil.nga.wkb.geom.GeometryType.GEOMETRYCOLLECTION :mil.nga.wkb.geom.GeometryType: goto L_0x0026;\l    default: goto L_0x000f;\l\}\l}"];
+subgraph cluster_Region_1585166937 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_2123675947 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0048|SYNTHETIC\lRETURN\l|return 1\l}"];
+}
+subgraph cluster_Region_1882523769 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0046|SYNTHETIC\lRETURN\l|return 2\l}"];
+}
+subgraph cluster_Region_1058341962 {
+label = "R(3:4|(1:7)|12)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0026|java.util.Iterator r3 = ((mil.nga.wkb.geom.GeometryCollection) r3).getGeometries().iterator()\lint r0 = \-1\l}"];
+subgraph cluster_LoopRegion_1253672577 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0035|if (r3.hasNext() != false) goto L_0x0037\l}"];
+subgraph cluster_Region_1955989169 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0037|LOOP_END\lLOOP:0: B:5:0x0031\-\>B:7:0x0037\l|int r0 = java.lang.Math.max(r0, getDimension(r1))\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_754977261 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,label="{3\:\ 0x0025|throw new mil.nga.wkb.util.WkbException(\"Unsupported Geometry Type: \" + r0)\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0031|LOOP_START\lPHI: r0 \l  PHI: (r0v5 int) = (r0v4 int), (r0v6 int) binds: [B:4:0x0026, B:7:0x0037] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0031\-\>B:7:0x0037\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static int mil.nga.wkb.util.GeometryUtils.getDimension((r3v0 mil.nga.wkb.geom.Geometry A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_1 -> Node_8;
+Node_1 -> Node_9;
+Node_1 -> Node_10;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_5;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_11 -> Node_12;
+}
+

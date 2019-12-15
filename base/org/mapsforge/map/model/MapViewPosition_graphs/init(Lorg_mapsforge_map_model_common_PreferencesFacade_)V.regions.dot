@@ -1,0 +1,55 @@
+digraph "CFG fororg.mapsforge.map.model.MapViewPosition.init(Lorg\/mapsforge\/map\/model\/common\/PreferencesFacade;)V" {
+subgraph cluster_Region_1007544887 {
+label = "R(1:(1:(3:3|(1:5)(1:6)|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_341634850 {
+label = "R(1:(3:3|(1:5)(1:6)|7))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1137346362 {
+label = "R(3:3|(1:5)(1:6)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|r12.latitude = r13.getDouble(LATITUDE, 0.0d)\lr12.longitude = r13.getDouble(LONGITUDE, 0.0d)\ldouble double r8 = r13.getDouble(LATITUDE_MAX, Double.NaN)\ldouble double r4 = r13.getDouble(LATITUDE_MIN, Double.NaN)\ldouble double r10 = r13.getDouble(LONGITUDE_MAX, Double.NaN)\ldouble double r6 = r13.getDouble(LONGITUDE_MIN, Double.NaN)\l}"];
+subgraph cluster_IfRegion_1581467515 {
+label = "IF [B:4:0x0040] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0040|if (isNan(r8, r4, r10, r6) == true) goto L_0x0042\l}"];
+subgraph cluster_Region_1253663426 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0042|r12.mapLimit = null\l}"];
+}
+subgraph cluster_Region_2033425005 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0046|r12.mapLimit = new org.mapsforge.core.model.BoundingBox(r4, r6, r8, r10)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x004e|r12.zoomLevel = r13.getByte(ZOOM_LEVEL, (byte) 0)\lr12.zoomLevelMax = r13.getByte(ZOOM_LEVEL_MAX, kotlin.jvm.internal.ByteCompanionObject.MAX_VALUE)\lr12.zoomLevelMin = r13.getByte(ZOOM_LEVEL_MIN, (byte) 0)\lr12.scaleFactor = java.lang.Math.pow(2.0d, (double) r12.zoomLevel)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0073|DONT_GENERATE\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0074}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0075|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0076|REMOVE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0077|REMOVE\l|throw r13\l}"];
+MethodNode[shape=record,label="{public synchronized void org.mapsforge.map.model.MapViewPosition.init((r12v0 'this' org.mapsforge.map.model.MapViewPosition A[IMMUTABLE_TYPE, THIS]), (r13v0 org.mapsforge.map.model.common.PreferencesFacade A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_10;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,33 @@
+digraph "CFG forkotlin.ranges.LongProgression.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_74215691 {
+label = "R(3:(1:2)(1:4)|3|5) | DECL_VAR: java.lang.StringBuilder null, long null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1434146425 {
+label = "IF [B:1:0x0006] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.step \> 0) goto L_0x0008\l}"];
+subgraph cluster_Region_512833857 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(r4.first)\lr0.append(\"..\")\lr0.append(r4.last)\lr0.append(\" step \")\llong r1 = r4.step\l}"];
+}
+subgraph cluster_Region_365409243 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002b|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(r4.first)\lr0.append(\" downTo \")\lr0.append(r4.last)\lr0.append(\" step \")\llong r1 = \-r4.step\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0023|PHI: r0 r1 \l  PHI: (r0v3 java.lang.StringBuilder) = (r0v2 java.lang.StringBuilder), (r0v5 java.lang.StringBuilder) binds: [B:4:0x002b, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v6 long) = (r1v5 long), (r1v11 long) binds: [B:4:0x002b, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|r0.append(r1)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0048|RETURN\l|return r0.toString()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String kotlin.ranges.LongProgression.toString((r4v0 'this' kotlin.ranges.LongProgression A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_3;
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+}
+

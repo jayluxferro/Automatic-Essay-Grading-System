@@ -1,0 +1,38 @@
+digraph "CFG forokhttp3.internal.cache.CacheInterceptor.1.read(Lokio\/Buffer;J)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x0030 \}\lSplitter:B:1:0x0001\l|long r10 = r1.read(r9, r10)     \/\/ Catch:\{ IOException \-\> 0x0030 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|if ((r10 \> \-1 ? 1 : (r10 == \-1 ? 0 : \-1)) != 0) goto L_0x0019\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r8.cacheRequestClosed != false) goto L_0x0018\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0011|r8.cacheRequestClosed = true\lr0.close()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|RETURN\l|return \-1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|r2 = r9\lr2.copyTo(r0.buffer(), r9.size() \- r10, r10)\lr0.emitCompleteSegments()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002f|RETURN\l|return r10\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0030|ExcHandler: IOException (r9v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l|java.io.IOException r9 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0031}"];
+Node_13 [shape=record,label="{13\:\ 0x0033|if (r8.cacheRequestClosed != false) goto L_0x003c\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0035|r8.cacheRequestClosed = true\lr5.abort()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x003c|throw r9\l}"];
+MethodNode[shape=record,label="{public long okhttp3.internal.cache.CacheInterceptor.1.read((r8v0 'this' okhttp3.internal.cache.CacheInterceptor$1 A[IMMUTABLE_TYPE, THIS]), (r9v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14[style=dashed];
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,65 @@
+digraph "CFG forandroid.arch.core.internal.SafeIterableMap.ListIterator.supportRemove(Landroid\/arch\/core\/internal\/SafeIterableMap$Entry;)V" {
+subgraph cluster_Region_226901887 {
+label = "R(3:(1:4)|(1:7)|(1:(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1811677298 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r1.mExpectedEnd == r2) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r2 == r1.mNext) goto L_0x0008\l}"];
+subgraph cluster_Region_142536222 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r1.mNext = null\lr1.mExpectedEnd = null\l}"];
+}
+}
+subgraph cluster_IfRegion_655926496 {
+label = "IF [B:6:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r1.mExpectedEnd == r2) goto L_0x0011\l}"];
+subgraph cluster_Region_467208891 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|r1.mExpectedEnd = backward(r1.mExpectedEnd)\l}"];
+}
+}
+subgraph cluster_Region_271410722 {
+label = "R(1:(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1868330023 {
+label = "IF [B:9:0x001b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|if (r1.mNext == r2) goto L_0x001d\l}"];
+subgraph cluster_Region_218227336 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|r1.mNext = nextNode()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0019}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.arch.core.internal.SafeIterableMap.ListIterator.supportRemove((r1v0 'this' android.arch.core.internal.SafeIterableMap$ListIterator A[IMMUTABLE_TYPE, THIS]), (r2v0 android.arch.core.internal.SafeIterableMap$Entry\<K, V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/arch\/core\/internal\/SafeIterableMap$Entry\<, TK;TV;\>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

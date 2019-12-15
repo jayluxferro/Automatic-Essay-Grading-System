@@ -1,0 +1,30 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.deleteIds(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/util\/Collection;Lcom\/j256\/ormlite\/dao\/ObjectCache;)I" {
+subgraph cluster_Region_1624199961 {
+label = "R(3:0|(1:4)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r3 = com.j256.ormlite.stmt.mapped.MappedDeleteCollection.deleteIds(r2.databaseType, r2.tableInfo, r3, r4, r5)\l}"];
+subgraph cluster_IfRegion_1730002837 {
+label = "IF [B:1:0x000a, B:3:0x0018] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|ADDED_TO_REGION\l|if (r2.dao != null) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|ADDED_TO_REGION\l|if (r2.localIsInBatchMode.get().booleanValue() == false) goto L_0x001a\l}"];
+subgraph cluster_Region_1854538113 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|r2.dao.notifyChanges()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\l|return r3\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+MethodNode[shape=record,label="{public int com.j256.ormlite.stmt.StatementExecutor.deleteIds((r2v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r3v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.util.Collection\<ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.j256.ormlite.dao.ObjectCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, Ljava\/util\/Collection\<, TID;\>;, Lcom\/j256\/ormlite\/dao\/ObjectCache;, )I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

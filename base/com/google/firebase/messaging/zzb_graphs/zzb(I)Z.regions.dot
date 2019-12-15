@@ -1,0 +1,85 @@
+digraph "CFG forcom.google.firebase.messaging.zzb.zzb(I)Z" {
+subgraph cluster_Region_2012532944 {
+label = "R(1:(2:(1:2)|(1:(1:(2:(1:9)|(2:7|8))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1869972926 {
+label = "R(2:(1:2)|(1:(1:(2:(1:9)|(2:7|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1417400866 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (android.os.Build.VERSION.SDK_INT != 26) goto L_0x0007\l}"];
+subgraph cluster_Region_715523015 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2063934483 {
+label = "R(1:(1:(2:(1:9)|(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_949884600 {
+label = "Try: R(1:(2:(1:9)|(2:7|8))) catches: R(2:10|12)";
+node [shape=record,color=blue];
+subgraph cluster_Region_855521611 {
+label = "R(1:(2:(1:9)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_677162216 {
+label = "R(2:(1:9)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2058035276 {
+label = "IF [B:6:0x0016] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|Catch:\{ NotFoundException \-\> 0x0032 \}\l|if ((r4.zzag.getResources().getDrawable(r5, (android.content.res.Resources.Theme) null) instanceof android.graphics.drawable.AdaptiveIconDrawable) != true) goto L_0x0031     \/\/ Catch:\{ NotFoundException \-\> 0x0032 \}\l}"];
+subgraph cluster_Region_843633271 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0031|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1915650364 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|Catch:\{ NotFoundException \-\> 0x0032 \}\l|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(77)     \/\/ Catch:\{ NotFoundException \-\> 0x0032 \}\lr2.append(\"Adaptive icons cannot be used in notifications. Ignoring icon id: \")     \/\/ Catch:\{ NotFoundException \-\> 0x0032 \}\lr2.append(r5)     \/\/ Catch:\{ NotFoundException \-\> 0x0032 \}\landroid.util.Log.e(\"FirebaseMessaging\", r2.toString())     \/\/ Catch:\{ NotFoundException \-\> 0x0032 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0030|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_1697628579 {
+label = "R(2:10|12) | ExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(66)\lr2.append(\"Couldn't find resource \")\lr2.append(r5)\lr2.append(\", treating it as an invalid icon\")\landroid.util.Log.e(\"FirebaseMessaging\", r2.toString())\l}"];
+Node_12 [shape=record,label="{12\:\ 0x004f|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1697628579 {
+label = "R(2:10|12) | ExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(66)\lr2.append(\"Couldn't find resource \")\lr2.append(r5)\lr2.append(\", treating it as an invalid icon\")\landroid.util.Log.e(\"FirebaseMessaging\", r2.toString())\l}"];
+Node_12 [shape=record,label="{12\:\ 0x004f|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010|SYNTHETIC\lSplitter:B:4:0x0010\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ NotFoundException \-\> 0x0032 \}\lSplitter:B:4:0x0010\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lExcHandler: NotFoundException (unused android.content.res.Resources$NotFoundException)\lSplitter:B:4:0x0010\l}"];
+MethodNode[shape=record,label="{private final boolean com.google.firebase.messaging.zzb.zzb((r4v0 'this' com.google.firebase.messaging.zzb A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=26\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_10 -> Node_12;
+Node_10 -> Node_12;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_11 -> Node_10;
+}
+

@@ -1,0 +1,61 @@
+digraph "CFG forcom.j256.ormlite.stmt.SelectIterator.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1904200573 {
+label = "R(1:(2:2|(2:(1:4)|(3:5|7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1791638697 {
+label = "Try: R(2:2|(2:(1:4)|(3:5|7|8))) catches: R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_800147366 {
+label = "R(2:2|(2:(1:4)|(3:5|7|8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x000a \}\lSplitter:B:1:0x0001\l|java.lang.Object T r1 = nextThrow()     \/\/ Catch:\{ SQLException \-\> 0x000a \}\l}"];
+subgraph cluster_Region_1931867260 {
+label = "R(2:(1:4)|(3:5|7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_547814529 {
+label = "IF [B:3:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if (r1 != null) goto L_0x0007\l}"];
+subgraph cluster_Region_1706130429 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_778196488 {
+label = "R(3:5|7|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0008|r1 = null\l}"];
+Node_7 [shape=record,label="{7\:\ 0x000b|PHI: r1 \l  PHI: (r1v0 'e' java.sql.SQLException) = (r1v1 'e' java.sql.SQLException), (r1v3 'e' java.sql.SQLException) binds: [B:6:0x000a, B:5:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|r4.last = null\lcloseQuietly()\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|throw new java.lang.IllegalStateException(\"Could not get next result for \" + r4.dataClass, r1)\l}"];
+}
+}
+}
+subgraph cluster_Region_566838426 {
+label = "R(1:6) | ExcHandler: SQLException (e java.sql.SQLException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|ExcHandler: SQLException (e java.sql.SQLException)\lSplitter:B:1:0x0001\l|java.sql.SQLException r1 = e\l}"];
+}
+}
+}
+subgraph cluster_Region_566838426 {
+label = "R(1:6) | ExcHandler: SQLException (e java.sql.SQLException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000a|ExcHandler: SQLException (e java.sql.SQLException)\lSplitter:B:1:0x0001\l|java.sql.SQLException r1 = e\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.stmt.SelectIterator.next((r4v0 'this' com.j256.ormlite.stmt.SelectIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_6 -> Node_7;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6;
+}
+

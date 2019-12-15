@@ -1,0 +1,44 @@
+digraph "CFG formil.nga.geopackage.schema.constraints.DataColumnConstraints.setValue(Ljava\/lang\/String;)V" {
+subgraph cluster_Region_1243621379 {
+label = "R(1:(2:(2:7|8)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_546269813 {
+label = "R(2:(2:7|8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_928277814 {
+label = "IF [B:1:0x0002, B:2:0x0004, B:4:0x0010] THEN: R(2:7|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.constraintType == null) goto L_0x0031\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|ADDED_TO_REGION\l|if (r3 == null) goto L_0x0031\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|ADDED_TO_REGION\l|if (getConstraintType().equals(mil.nga.geopackage.schema.constraints.DataColumnConstraintType.RANGE) == false) goto L_0x0031\l}"];
+subgraph cluster_Region_534418261 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|r2.value = r3\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1416741021 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013}"];
+Node_6 [shape=record,label="{6\:\ 0x0030|throw new mil.nga.geopackage.GeoPackageException(\"The value must be null for \" + mil.nga.geopackage.schema.constraints.DataColumnConstraintType.RANGE + \" constraints\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.schema.constraints.DataColumnConstraints.setValue((r2v0 'this' mil.nga.geopackage.schema.constraints.DataColumnConstraints A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_7 -> Node_8;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

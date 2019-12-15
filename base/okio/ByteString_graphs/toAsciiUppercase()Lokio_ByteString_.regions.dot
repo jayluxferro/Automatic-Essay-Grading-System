@@ -1,0 +1,103 @@
+digraph "CFG forokio.ByteString.toAsciiUppercase()Lokio\/ByteString;" {
+subgraph cluster_Region_316301067 {
+label = "R(3:0|(2:3|(1:17)(3:7|(3:10|(1:13)|14)|16))|18)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_333578797 {
+label = "LOOP:0: (2:3|(1:17)(3:7|(3:10|(1:13)|14)|16))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r0 \< r6.data.length) goto L_0x0006\l}"];
+subgraph cluster_Region_2145192199 {
+label = "R(2:3|(1:17)(3:7|(3:10|(1:13)|14)|16))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|byte byte r1 = r6.data[r0]\l}"];
+subgraph cluster_IfRegion_1718547826 {
+label = "IF [B:4:0x000c, B:6:0x0010] THEN: R(1:17) ELSE: R(3:7|(3:10|(1:13)|14)|16)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r1 \< 97) goto L_0x003a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0010|ADDED_TO_REGION\l|if (r1 \> 122) goto L_0x003a\l}"];
+subgraph cluster_Region_1208115006 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003a|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:17:0x003a\l|r0++\l}"];
+}
+subgraph cluster_Region_1069495280 {
+label = "R(3:7|(3:10|(1:13)|14)|16)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|byte[] byte[] r4 = (byte[]) r6.data.clone()\lint int r5 = r0 + 1\lr4[r0] = (byte) (r1 \- 32)\l}"];
+subgraph cluster_LoopRegion_1696493718 {
+label = "LOOP:1: (3:10|(1:13)|14)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0023|if (r5 \< r4.length) goto L_0x0025\l}"];
+subgraph cluster_Region_1911315849 {
+label = "R(3:10|(1:13)|14)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0025|byte byte r0 = r4[r5]\l}"];
+subgraph cluster_IfRegion_554081360 {
+label = "IF [B:11:0x0027, B:12:0x0029] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0027|ADDED_TO_REGION\l|if (r0 \>= 97) goto L_0x0029\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0029|ADDED_TO_REGION\l|if (r0 \<= 122) goto L_0x002c\l}"];
+subgraph cluster_Region_931840247 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002c|r4[r5] = (byte) (r0 \- 32)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0031|LOOP_END\lLOOP:1: B:8:0x0022\-\>B:14:0x0031\l|r5++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0039|RETURN\l|return new okio.ByteString(r4)\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x003d|RETURN\l|return r6\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:0:0x0000, B:17:0x003a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:17:0x003a\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022|LOOP_START\lPHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:7:0x0013, B:14:0x0031] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x0022\-\>B:14:0x0031\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0034}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0013|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x003d|SYNTHETIC\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x003a|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x003a|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0034|SYNTHETIC\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0031|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0031|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public okio.ByteString okio.ByteString.toAsciiUppercase((r6v0 'this' okio.ByteString A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_20[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_21;
+Node_6 -> Node_19[style=dashed];
+Node_6 -> Node_22;
+Node_17 -> Node_1;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_23[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_25[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_26[style=dashed];
+Node_13 -> Node_24;
+Node_14 -> Node_8;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_15 -> Node_16;
+Node_19 -> Node_7;
+Node_20 -> Node_18;
+Node_21 -> Node_17;
+Node_22 -> Node_17;
+Node_23 -> Node_15;
+Node_24 -> Node_14;
+Node_25 -> Node_14;
+Node_26 -> Node_14;
+}
+

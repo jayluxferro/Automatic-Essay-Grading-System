@@ -1,0 +1,49 @@
+digraph "CFG forandroid.support.design.widget.AppBarLayout.addOnOffsetChangedListener(Landroid\/support\/design\/widget\/AppBarLayout$BaseOnOffsetChangedListener;)V" {
+subgraph cluster_Region_1399183999 {
+label = "R(2:(1:2)|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_708617588 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.listeners == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1015087888 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.listeners = new java.util.ArrayList()\l}"];
+}
+}
+subgraph cluster_Region_2038250246 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_79077492 {
+label = "IF [B:3:0x000b, B:5:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|if (r2 != null) goto L_0x000d\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|ADDED_TO_REGION\l|if (r1.listeners.contains(r2) != true) goto L_0x0015\l}"];
+subgraph cluster_Region_1265545875 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|r1.listeners.add(r2)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.AppBarLayout.addOnOffsetChangedListener((r1v0 'this' android.support.design.widget.AppBarLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 android.support.design.widget.AppBarLayout$BaseOnOffsetChangedListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,126 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.smoothScrollTo(III)V" {
+subgraph cluster_Region_1407588432 {
+label = "R(1:(2:(2:2|3)|(3:(2:12|15)(1:16)|17|(2:(2:20|21)|(3:22|(1:24)(1:25)|26))))) | DECL_VAR: int null, int null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2066591581 {
+label = "R(2:(2:2|3)|(3:(2:12|15)(1:16)|17|(2:(2:20|21)|(3:22|(1:24)(1:25)|26))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2038149174 {
+label = "IF [B:1:0x0005] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (getChildCount() == 0) goto L_0x0007\l}"];
+subgraph cluster_Region_1664035074 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|setScrollingCacheEnabled(false)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1290111399 {
+label = "R(3:(2:12|15)(1:16)|17|(2:(2:20|21)|(3:22|(1:24)(1:25)|26)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_15239599 {
+label = "IF [B:10:0x001b] THEN: R(2:12|15) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|PHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((r9.mScroller != null && !r9.mScroller.isFinished()) == true) goto L_0x001d\l}"];
+subgraph cluster_Region_1147614771 {
+label = "R(2:12|15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001f|r0 = r9.mIsScrollStarted ? r9.mScroller.getCurrX() : r9.mScroller.getStartX()\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002e|PHI: r0 \l  PHI: (r0v13 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r9.mScroller.abortAnimation()\lsetScrollingCacheEnabled(false)\l}"];
+}
+subgraph cluster_Region_1553287778 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0037|int r0 = getScrollX()\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x003b|PHI: r0 \l  PHI: (r0v3 int) = (r0v11 int), (r0v13 int) binds: [B:16:0x0037, B:15:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|int r4 = r0\lint int r5 = getScrollY()\lint int r6 = r10 \- r4\lint int r7 = r11 \- r5\l}"];
+subgraph cluster_Region_380213672 {
+label = "R(2:(2:20|21)|(3:22|(1:24)(1:25)|26))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_449600332 {
+label = "IF [B:18:0x0044, B:19:0x0046] THEN: R(2:20|21) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0044|if (r6 == 0) goto L_0x0046\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0046|ADDED_TO_REGION\l|if (r7 == 0) goto L_0x0048\l}"];
+subgraph cluster_Region_846684491 {
+label = "R(2:20|21)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0048|completeScroll(false)\lpopulate()\lsetScrollState(0)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x0051|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1828510443 {
+label = "R(3:22|(1:24)(1:25)|26)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0052|setScrollingCacheEnabled(true)\lsetScrollState(2)\lint int r10 = getClientWidth()\lint int r11 = r10 \/ 2\lfloat float r10 = (float) r10\lfloat float r11 = (float) r11\lfloat float r11 = r11 + (distanceInfluenceForSnapDuration(java.lang.Math.min(1.0f, (((float) java.lang.Math.abs(r6)) * 1.0f) \/ r10)) * r11)\lint int r12 = java.lang.Math.abs(r12)\l}"];
+subgraph cluster_IfRegion_227446014 {
+label = "IF [B:23:0x007a] THEN: R(1:24) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x007a|if (r12 \> 0) goto L_0x007c\l}"];
+subgraph cluster_Region_128918882 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x007c|int r10 = java.lang.Math.round(java.lang.Math.abs(r11 \/ ((float) r12)) * 1000.0f) * 4\l}"];
+}
+subgraph cluster_Region_1743200392 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x008d|int r10 = (int) (((((float) java.lang.Math.abs(r6)) \/ ((r10 * r9.mAdapter.getPageWidth(r9.mCurItem)) + ((float) r9.mPageMargin))) + 1.0f) * 100.0f)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x00a7|PHI: r10 \l  PHI: (r10v4 int) = (r10v8 int), (r10v11 int) binds: [B:25:0x008d, B:24:0x007c] A[DONT_GENERATE, DONT_INLINE]\l|int int r8 = java.lang.Math.min(r10, 600)\lr9.mIsScrollStarted = false\lr9.mScroller.startScroll(r4, r5, r6, r7, r8)\landroid.support.p000v4.view.ViewCompat.postInvalidateOnAnimation(r9)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016|REMOVE\lADDED_TO_REGION\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0018}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001d}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0028}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x00b7}"];
+MethodNode[shape=record,label="{void android.support.v4.view.ViewPager.smoothScrollTo((r9v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS]), (r10v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_22[style=dashed];
+Node_19 -> Node_20;
+Node_19 -> Node_22[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25[style=dashed];
+Node_24 -> Node_26;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_15;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forokhttp3.internal.cache.DiskLruCache.trimToSize()V" {
+subgraph cluster_Region_1620354310 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1969489489 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.size \> r4.maxSize) goto L_0x0008\l}"];
+subgraph cluster_Region_1739830439 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|LOOP_END\lLOOP:0: B:0:0x0000\-\>B:2:0x0008\l|removeEntry(r4.lruEntries.values().iterator().next())\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001c|r4.mostRecentTrimFailed = false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lLOOP:0: B:0:0x0000\-\>B:2:0x0008\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001f}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.cache.DiskLruCache.trimToSize((r4v0 'this' okhttp3.internal.cache.DiskLruCache A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_0;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_5 -> Node_3;
+}
+

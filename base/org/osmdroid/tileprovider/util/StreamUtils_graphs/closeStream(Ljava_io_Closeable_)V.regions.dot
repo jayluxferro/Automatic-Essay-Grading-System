@@ -1,0 +1,57 @@
+digraph "CFG fororg.osmdroid.tileprovider.util.StreamUtils.closeStream(Ljava\/io\/Closeable;)V" {
+subgraph cluster_Region_17526483 {
+label = "R(1:(1:(1:2))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_573057865 {
+label = "IF [B:0:0x0000] THEN: R(1:(1:2)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r0 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1526166288 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_986110031 {
+label = "Try: R(1:2) catches: R(2:3|4)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1625379890 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x0006 \}\lSplitter:B:1:0x0002\l|r0.close()     \/\/ Catch:\{ IOException \-\> 0x0006 \}\l}"];
+}
+subgraph cluster_Region_57690372 {
+label = "R(2:3|4) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|r0.printStackTrace()\l}"];
+}
+}
+}
+subgraph cluster_Region_1652475273 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_57690372 {
+label = "R(2:3|4) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0007|r0.printStackTrace()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void org.osmdroid.tileprovider.util.StreamUtils.closeStream((r0v0 java.io.Closeable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+}
+

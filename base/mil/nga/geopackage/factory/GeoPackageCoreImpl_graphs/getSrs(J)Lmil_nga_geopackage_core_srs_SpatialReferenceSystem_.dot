@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageCoreImpl.getSrs(J)Lmil\/nga\/geopackage\/core\/srs\/SpatialReferenceSystem;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x0026 \}\lSplitter:B:0:0x0000\l|mil.nga.geopackage.core.srs.SpatialReferenceSystem r0 = getSpatialReferenceSystemDao().queryForId(java.lang.Long.valueOf(r4))     \/\/ Catch:\{ SQLException \-\> 0x0026 \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r0 == null) goto L_0x000f\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Spatial Reference System could not be found. SRS ID: \")\lr1.append(r4)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0025|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Failed to retrieve Spatial Reference System. SRS ID: \")\lr1.append(r4)\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lExcHandler: SQLException (unused java.sql.SQLException)\lSplitter:B:0:0x0000\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003c|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+MethodNode[shape=record,label="{private mil.nga.geopackage.core.srs.SpatialReferenceSystem mil.nga.geopackage.factory.GeoPackageCoreImpl.getSrs((r3v0 'this' mil.nga.geopackage.factory.GeoPackageCoreImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_7;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_8;
+Node_7 -> Node_6;
+}
+

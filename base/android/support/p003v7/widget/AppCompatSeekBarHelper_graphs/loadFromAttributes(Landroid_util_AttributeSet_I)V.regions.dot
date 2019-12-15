@@ -1,0 +1,57 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatSeekBarHelper.loadFromAttributes(Landroid\/util\/AttributeSet;I)V" {
+subgraph cluster_Region_125381378 {
+label = "R(6:0|(1:2)|3|(1:5)|(1:8)|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.loadFromAttributes(r4, r5)\landroid.support.v7.widget.TintTypedArray android.support.p003v7.widget.TintTypedArray r4 = android.support.p003v7.widget.TintTypedArray.obtainStyledAttributes(r3.mView.getContext(), r4, android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar, r5, 0)\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r5 = r4.getDrawableIfKnown(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_android_thumb)\l}"];
+subgraph cluster_IfRegion_1070716029 {
+label = "IF [B:1:0x0016] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r5 != null) goto L_0x0018\l}"];
+subgraph cluster_Region_280971709 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|r3.mView.setThumb(r5)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001d|setTickMark(r4.getDrawable(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_tickMark))\l}"];
+subgraph cluster_IfRegion_108929256 {
+label = "IF [B:4:0x002d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002d|if (r4.hasValue(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_tickMarkTintMode) == true) goto L_0x002f\l}"];
+subgraph cluster_Region_2044380017 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002f|r3.mTickMarkTintMode = android.support.p003v7.widget.DrawableUtils.parseTintMode(r4.getInt(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_tickMarkTintMode, \-1), r3.mTickMarkTintMode)\lr3.mHasTickMarkTintMode = true\l}"];
+}
+}
+subgraph cluster_IfRegion_112250385 {
+label = "IF [B:7:0x0046] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0046|if (r4.hasValue(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_tickMarkTint) == true) goto L_0x0048\l}"];
+subgraph cluster_Region_1214235902 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0048|r3.mTickMarkTintList = r4.getColorStateList(android.support.p003v7.appcompat.C0422R.styleable.AppCompatSeekBar_tickMarkTint)\lr3.mHasTickMarkTint = true\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0052|r4.recycle()\lapplyTickMarkTint()\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0040}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0058}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.AppCompatSeekBarHelper.loadFromAttributes((r3v0 'this' android.support.v7.widget.AppCompatSeekBarHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 android.util.AttributeSet A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_6 -> Node_7;
+}
+

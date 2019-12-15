@@ -1,0 +1,31 @@
+digraph "CFG forandroid.support.transition.TransitionSet.setupStartEndListeners()V" {
+subgraph cluster_Region_782071952 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.support.transition.TransitionSet$TransitionSetListener android.support.transition.TransitionSet.TransitionSetListener r0 = new android.support.transition.TransitionSet.TransitionSetListener(r3)\ljava.util.Iterator java.util.Iterator\<android.support.transition.Transition\> r1 = r3.mTransitions.iterator()\l}"];
+subgraph cluster_LoopRegion_1604149965 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r1.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_104352243 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|LOOP_END\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l|r1.next().addListener(r0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001b|r3.mCurrentListeners = r3.mTransitions.size()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|LOOP_START\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.transition.TransitionSet.setupStartEndListeners((r3v0 'this' android.support.transition.TransitionSet A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

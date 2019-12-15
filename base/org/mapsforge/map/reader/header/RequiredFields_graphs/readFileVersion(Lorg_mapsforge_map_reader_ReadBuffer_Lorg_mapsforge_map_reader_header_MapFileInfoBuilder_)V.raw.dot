@@ -1,0 +1,21 @@
+digraph "CFG fororg.mapsforge.map.reader.header.RequiredFields.readFileVersion(Lorg\/mapsforge\/map\/reader\/ReadBuffer;Lorg\/mapsforge\/map\/reader\/header\/MapFileInfoBuilder;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r2 I:int) = (r2 I:org.mapsforge.map.reader.ReadBuffer) org.mapsforge.map.reader.ReadBuffer.readInt():int type: VIRTUAL \l0x0004: CONST  (r0 I:?[int, float, short, byte, char]) = (3 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r2 I:?[int, byte, short, char]) \< (r0 I:?[int, byte, short, char])  \-\> B:6:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: CONST  (r0 I:?[int, float, short, byte, char]) = (5 ?[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IF  (r2 I:?[int, byte, short, char]) \> (r0 I:?[int, byte, short, char])  \-\> B:6:0x000d \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: IPUT  \l  (r2 I:int)\l  (r3 I:org.mapsforge.map.reader.header.MapFileInfoBuilder)\l org.mapsforge.map.reader.header.MapFileInfoBuilder.fileVersion int \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|0x000c: RETURN   \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|0x000d: NEW_INSTANCE  (r3 I:org.mapsforge.map.reader.header.MapFileException) =  org.mapsforge.map.reader.header.MapFileException \l0x000f: NEW_INSTANCE  (r0 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0011: INVOKE  (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0014: CONST_STR  (r1 I:java.lang.String) =  \"unsupported file version: \" \l0x0016: INVOKE  (r0 I:java.lang.StringBuilder), (r1 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0019: INVOKE  (r0 I:java.lang.StringBuilder), (r2 I:int) java.lang.StringBuilder.append(int):java.lang.StringBuilder type: VIRTUAL \l0x001c: INVOKE  (r2 I:java.lang.String) = (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0020: INVOKE  \l  (r3 I:org.mapsforge.map.reader.header.MapFileException)\l  (r2 I:java.lang.String)\l org.mapsforge.map.reader.header.MapFileException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{static void org.mapsforge.map.reader.header.RequiredFields.readFileVersion((r2 I:org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:org.mapsforge.map.reader.header.MapFileInfoBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,234 @@
+digraph "CFG forio.fabric.sdk.android.services.settings.AbstractAppSpiCall.applyMultipartDataTo(Lio\/fabric\/sdk\/android\/services\/network\/HttpRequest;Lio\/fabric\/sdk\/android\/services\/settings\/AppRequestData;)Lio\/fabric\/sdk\/android\/services\/network\/HttpRequest;" {
+subgraph cluster_Region_279951313 {
+label = "R(5:0|(1:2)|(2:(2:7|(1:10))|18)|(2:24|(1:27))|28) | DECL_VAR: java.io.InputStream null, android.content.res.Resources$NotFoundException e\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|io.fabric.sdk.android.services.network.HttpRequest p018io.fabric.sdk.android.services.network.HttpRequest r8 = r8.part(APP_IDENTIFIER_PARAM, r9.appId).part(APP_NAME_PARAM, r9.name).part(APP_DISPLAY_VERSION_PARAM, r9.displayVersion).part(APP_BUILD_VERSION_PARAM, r9.buildVersion).part(APP_SOURCE_PARAM, (java.lang.Number) java.lang.Integer.valueOf(r9.source)).part(APP_MIN_SDK_VERSION_PARAM, r9.minSdkVersion).part(APP_BUILT_SDK_VERSION_PARAM, r9.builtSdkVersion)\l}"];
+subgraph cluster_IfRegion_1163155545 {
+label = "IF [B:1:0x0042] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0042|if (p018io.fabric.sdk.android.services.common.CommonUtils.isNullOrEmpty(r9.instanceIdentifier) == false) goto L_0x0044\l}"];
+subgraph cluster_Region_315598192 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0044|r8.part(APP_INSTANCE_IDENTIFIER_PARAM, r9.instanceIdentifier)\l}"];
+}
+}
+subgraph cluster_IfRegion_743742055 {
+label = "IF [B:4:0x004d] THEN: R(2:(2:7|(1:10))|18) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x004d|if (r9.icon != null) goto L_0x004f\l}"];
+subgraph cluster_Region_1487870049 {
+label = "R(2:(2:7|(1:10))|18)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_665835497 {
+label = "Try: R(2:7|(1:10)) catches: R(3:14|15|(4:17|18|(0)|28)), R(4:12|13|20|21)";
+node [shape=record,color=blue];
+subgraph cluster_Region_832812855 {
+label = "R(2:7|(1:10))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ NotFoundException \-\> 0x0097, all \-\> 0x0094 \}\lSplitter:B:6:0x0050\l|java.io.InputStream r1 = r7.kit.getContext().getResources().openRawResource(r9.icon.iconResourceId)     \/\/ Catch:\{ NotFoundException \-\> 0x0097, all \-\> 0x0094 \}\l}"];
+subgraph cluster_TryCatchRegion_1079956949 {
+label = "Try: R(1:10) catches: R(1:11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_879865338 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ NotFoundException \-\> 0x0092 \}\lSplitter:B:9:0x0064\l|r8.part(APP_ICON_HASH_PARAM, r9.icon.hash).part(APP_ICON_DATA_PARAM, ICON_FILE_NAME, ICON_CONTENT_TYPE, r1).part(APP_ICON_WIDTH_PARAM, (java.lang.Number) java.lang.Integer.valueOf(r9.icon.width)).part(APP_ICON_HEIGHT_PARAM, (java.lang.Number) java.lang.Integer.valueOf(r9.icon.height))     \/\/ Catch:\{ NotFoundException \-\> 0x0092 \}\l}"];
+}
+subgraph cluster_Region_1314882552 {
+label = "R(1:11) | ExcHandler: NotFoundException (e android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0092|ExcHandler: NotFoundException (e android.content.res.Resources$NotFoundException)\lSplitter:B:9:0x0064\l|android.content.res.Resources$NotFoundException r0 = e\l}"];
+}
+}
+}
+subgraph cluster_Region_2072424990 {
+label = "R(3:14|15|(4:17|18|(0)|28)) | ExcHandler: NotFoundException (r1v13 'e' android.content.res.Resources$NotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0097|ExcHandler: NotFoundException (r1v13 'e' android.content.res.Resources$NotFoundException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0050\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0098|android.content.res.Resources.NotFoundException r6 = r1\lr1 = null\lr0 = r6\l}"];
+subgraph cluster_TryCatchRegion_1213331483 {
+label = "Try: R(4:17|18|(0)|28) catches: R(3:19|20|21)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2045853722 {
+label = "R(4:17|18|(0)|28)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|Catch:\{ all \-\> 0x00bf \}\lSplitter:B:16:0x009b\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to find app icon with resource ID: \" + r9.icon.iconResourceId, r0)     \/\/ Catch:\{ all \-\> 0x00bf \}\l}"];
+Node_18 [shape=record,label="{18\:\ 0x00b9|PHI: r1 \l  PHI: (r1v11 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v19 java.io.InputStream) binds: [B:17:?, B:10:?] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+subgraph cluster_IfRegion_1755159904 {
+label = "IF [B:23:0x00c8] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00c8|if (r9.sdkKits != null) goto L_0x00ca\l}"];
+subgraph cluster_Region_835985157 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x00f3|RETURN\l|return r8\l}"];
+}
+subgraph cluster_Region_127046807 {
+label = "R(3:19|20|21) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00bf|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:16:0x009b\l|java.lang.Throwable r8 = th\l}"];
+Node_20 [shape=record,label="{20\:\ 0x00c0|PHI: r1 r8 \l  PHI: (r1v10 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v15 java.io.InputStream) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v8 'th' java.lang.Throwable) = (r8v9 'th' java.lang.Throwable), (r8v10 'th' java.lang.Throwable) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00c5|throw r8\l}"];
+}
+}
+}
+subgraph cluster_Region_1117900521 {
+label = "R(4:12|13|20|21) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0094|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:6:0x0050\l|java.lang.Throwable r8 = th\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0095|r1 = null\l}"];
+Node_20 [shape=record,label="{20\:\ 0x00c0|PHI: r1 r8 \l  PHI: (r1v10 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v15 java.io.InputStream) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v8 'th' java.lang.Throwable) = (r8v9 'th' java.lang.Throwable), (r8v10 'th' java.lang.Throwable) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00c5|throw r8\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x00b9|PHI: r1 \l  PHI: (r1v11 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v19 java.io.InputStream) binds: [B:17:?, B:10:?] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+}
+}
+subgraph cluster_IfRegion_1078211934 {
+label = "IF [B:23:0x00c8] THEN: R(2:24|(1:27)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00c8|if (r9.sdkKits != null) goto L_0x00ca\l}"];
+subgraph cluster_Region_1152829099 {
+label = "R(2:24|(1:27))";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00ca|java.util.Iterator r9 = r9.sdkKits.iterator()\l}"];
+subgraph cluster_LoopRegion_1426838799 {
+label = "LOOP:0: (1:27)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00d4|if (r9.hasNext() != false) goto L_0x00d6\l}"];
+subgraph cluster_Region_336421322 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00d6|LOOP_END\lLOOP:0: B:25:0x00d0\-\>B:27:0x00d6\l|io.fabric.sdk.android.KitInfo r0 = r9.next()\lr8.part(getKitVersionKey(r0), r0.getVersion())\lr8.part(getKitBuildTypeKey(r0), r0.getBuildType())\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x00f3|RETURN\l|return r8\l}"];
+}
+subgraph cluster_Region_2072424990 {
+label = "R(3:14|15|(4:17|18|(0)|28)) | ExcHandler: NotFoundException (r1v13 'e' android.content.res.Resources$NotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0097|ExcHandler: NotFoundException (r1v13 'e' android.content.res.Resources$NotFoundException A[CUSTOM_DECLARE])\lSplitter:B:6:0x0050\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0098|android.content.res.Resources.NotFoundException r6 = r1\lr1 = null\lr0 = r6\l}"];
+subgraph cluster_TryCatchRegion_1213331483 {
+label = "Try: R(4:17|18|(0)|28) catches: R(3:19|20|21)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2045853722 {
+label = "R(4:17|18|(0)|28)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|Catch:\{ all \-\> 0x00bf \}\lSplitter:B:16:0x009b\l|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(p018io.fabric.sdk.android.Fabric.TAG, \"Failed to find app icon with resource ID: \" + r9.icon.iconResourceId, r0)     \/\/ Catch:\{ all \-\> 0x00bf \}\l}"];
+Node_18 [shape=record,label="{18\:\ 0x00b9|PHI: r1 \l  PHI: (r1v11 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v19 java.io.InputStream) binds: [B:17:?, B:10:?] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+subgraph cluster_IfRegion_1755159904 {
+label = "IF [B:23:0x00c8] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00c8|if (r9.sdkKits != null) goto L_0x00ca\l}"];
+subgraph cluster_Region_835985157 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_28 [shape=record,label="{28\:\ 0x00f3|RETURN\l|return r8\l}"];
+}
+subgraph cluster_Region_127046807 {
+label = "R(3:19|20|21) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00bf|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:16:0x009b\l|java.lang.Throwable r8 = th\l}"];
+Node_20 [shape=record,label="{20\:\ 0x00c0|PHI: r1 r8 \l  PHI: (r1v10 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v15 java.io.InputStream) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v8 'th' java.lang.Throwable) = (r8v9 'th' java.lang.Throwable), (r8v10 'th' java.lang.Throwable) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00c5|throw r8\l}"];
+}
+}
+}
+subgraph cluster_Region_1117900521 {
+label = "R(4:12|13|20|21) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0094|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:6:0x0050\l|java.lang.Throwable r8 = th\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0095|r1 = null\l}"];
+Node_20 [shape=record,label="{20\:\ 0x00c0|PHI: r1 r8 \l  PHI: (r1v10 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v15 java.io.InputStream) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v8 'th' java.lang.Throwable) = (r8v9 'th' java.lang.Throwable), (r8v10 'th' java.lang.Throwable) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00c5|throw r8\l}"];
+}
+subgraph cluster_Region_1314882552 {
+label = "R(1:11) | ExcHandler: NotFoundException (e android.content.res.Resources$NotFoundException)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0092|ExcHandler: NotFoundException (e android.content.res.Resources$NotFoundException)\lSplitter:B:9:0x0064\l|android.content.res.Resources$NotFoundException r0 = e\l}"];
+}
+subgraph cluster_Region_127046807 {
+label = "R(3:19|20|21) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00bf|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:16:0x009b\l|java.lang.Throwable r8 = th\l}"];
+Node_20 [shape=record,label="{20\:\ 0x00c0|PHI: r1 r8 \l  PHI: (r1v10 java.io.InputStream) = (r1v12 java.io.InputStream), (r1v15 java.io.InputStream) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v8 'th' java.lang.Throwable) = (r8v9 'th' java.lang.Throwable), (r8v10 'th' java.lang.Throwable) binds: [B:19:0x00bf, B:13:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r1, \"Failed to close app icon InputStream.\")\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00c5|throw r8\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x004b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x004f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0050|SYNTHETIC\lSplitter:B:6:0x0050\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0062}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0064|SYNTHETIC\lSplitter:B:9:0x0064\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x009b|SYNTHETIC\lPHI: r0 r1 \l  PHI: (r0v17 'e' android.content.res.Resources$NotFoundException) = (r0v18 'e' android.content.res.Resources$NotFoundException), (r0v20 'e' android.content.res.Resources$NotFoundException) binds: [B:15:0x0098, B:11:0x0092] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v12 java.io.InputStream) = (r1v14 java.io.InputStream), (r1v19 java.io.InputStream) binds: [B:15:0x0098, B:11:0x0092] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:16:0x009b\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x00c6}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x00d0|LOOP_START\lLOOP:0: B:25:0x00d0\-\>B:27:0x00d6\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00f3|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private io.fabric.sdk.android.services.network.HttpRequest io.fabric.sdk.android.services.settings.AbstractAppSpiCall.applyMultipartDataTo((r7v0 'this' io.fabric.sdk.android.services.settings.AbstractAppSpiCall A[IMMUTABLE_TYPE, THIS]), (r8v0 io.fabric.sdk.android.services.network.HttpRequest A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 io.fabric.sdk.android.services.settings.AppRequestData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:24:0x00ca \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_22[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_10 -> Node_18;
+Node_11 -> Node_16;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_12 -> Node_13;
+Node_13 -> Node_20;
+Node_20 -> Node_21;
+Node_18 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_29[style=dashed];
+Node_27 -> Node_25;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_12 -> Node_13;
+Node_13 -> Node_20;
+Node_20 -> Node_21;
+Node_11 -> Node_16;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_14;
+Node_6 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_16 -> Node_17;
+Node_16 -> Node_19;
+Node_22 -> Node_23;
+Node_25 -> Node_26;
+Node_29 -> Node_28;
+}
+

@@ -1,0 +1,56 @@
+digraph "CFG fororg.mapsforge.core.model.BoundingBox.extendMeters(I)Lorg\/mapsforge\/core\/model\/BoundingBox;" {
+subgraph cluster_Region_1591561050 {
+label = "R(2:0|(2:(1:2)|(1:(2:(2:4|5)|(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r19\lint r1 = r20\l}"];
+subgraph cluster_Region_1367486013 {
+label = "R(2:(1:2)|(1:(2:(2:4|5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1088573039 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1 == 0) goto L_0x0006\l}"];
+subgraph cluster_Region_1991840378 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1805667942 {
+label = "R(1:(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_238186848 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_400880572 {
+label = "IF [B:3:0x0007] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|if (r1 \>= 0) goto L_0x0009\l}"];
+subgraph cluster_Region_1883887094 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|double double r2 = org.mapsforge.core.util.LatLongUtils.latitudeDistance(r20)\ldouble double r4 = org.mapsforge.core.util.LatLongUtils.longitudeDistance(r1, java.lang.Math.max(java.lang.Math.abs(r0.minLatitude), java.lang.Math.abs(r0.maxLatitude)))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0057|RETURN\l|return new org.mapsforge.core.model.BoundingBox(java.lang.Math.max(\-85.05112877980659d, r0.minLatitude \- r2), java.lang.Math.max(\-180.0d, r0.minLongitude \- r4), java.lang.Math.min(85.05112877980659d, r0.maxLatitude + r2), java.lang.Math.min(180.0d, r0.maxLongitude + r4))\l}"];
+}
+}
+subgraph cluster_Region_1317094749 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x005f|throw new java.lang.IllegalArgumentException(\"BoundingBox extend operation does not accept negative values\")\l}"];
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0058}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.model.BoundingBox org.mapsforge.core.model.BoundingBox.extendMeters((r19v0 'this' org.mapsforge.core.model.BoundingBox A[IMMUTABLE_TYPE, THIS]), (r20v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.squareup.picasso.Request.logId()Ljava\/lang\/String;" {
+subgraph cluster_Region_1919086030 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = java.lang.System.nanoTime() \- r5.started\l}"];
+subgraph cluster_Region_2116629489 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_835637581 {
+label = "IF [B:1:0x000d] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0 \> TOO_LONG_LOG) goto L_0x000f\l}"];
+subgraph cluster_Region_598594151 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,label="{3\:\ 0x0030|RETURN\l|return plainId() + '+' + java.util.concurrent.TimeUnit.NANOSECONDS.toSeconds(r0) + 's'\l}"];
+}
+}
+subgraph cluster_Region_1811369899 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0031}"];
+Node_5 [shape=record,label="{5\:\ 0x0052|RETURN\l|return plainId() + '+' + java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(r0) + \"ms\"\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{java.lang.String com.squareup.picasso.Request.logId((r5v0 'this' com.squareup.picasso.Request A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.instruction.AbbreviationCoordinator.abbreviateAtAbbreviationPriority(Ljava\/util\/List;Ljava\/util\/List;)Z" {
+subgraph cluster_Region_1776399854 {
+label = "R(1:(2:(1:1)|(3:2|(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1622548918 {
+label = "R(2:(1:1)|(3:2|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_686515395 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1236355868 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_756799745 {
+label = "R(3:2|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|java.util.Iterator r3 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_2096232069 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r3.hasNext() != false) goto L_0x000e\l}"];
+subgraph cluster_Region_265242788 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|LOOP_END\lLOOP:0: B:3:0x0008\-\>B:5:0x000e\l|abbreviate(r2.get(r0.intValue()))\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0022|RETURN\l|return true\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|LOOP_START\lLOOP:0: B:3:0x0008\-\>B:5:0x000e\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean com.mapbox.services.android.navigation.ui.v5.instruction.AbbreviationCoordinator.abbreviateAtAbbreviationPriority((r1v0 'this' com.mapbox.services.android.navigation.ui.v5.instruction.AbbreviationCoordinator A[IMMUTABLE_TYPE, THIS]), (r2v0 java.util.List\<com.mapbox.services.android.navigation.ui.v5.instruction.InstructionLoader$BannerComponentNode\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.util.List\<java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/services\/android\/navigation\/ui\/v5\/instruction\/InstructionLoader$BannerComponentNode;, \>;, Ljava\/util\/List\<, Ljava\/lang\/Integer;, \>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_3;
+Node_3 -> Node_4;
+Node_7 -> Node_6;
+}
+

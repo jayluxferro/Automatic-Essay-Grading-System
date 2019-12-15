@@ -1,0 +1,43 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.all(Lkotlin\/sequences\/Sequence;Lkotlin\/jvm\/functions\/Function1;)Z" {
+subgraph cluster_Region_36721309 {
+label = "R(3:0|(1:(1:5))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r2, \"predicate\")\ljava.util.Iterator r1 = r1.iterator()\l}"];
+subgraph cluster_LoopRegion_1883789175 {
+label = "LOOP:0: (1:(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r1.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_1917310323 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_78572714 {
+label = "IF [B:4:0x0022] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:4:0x0022\l|if (r2.invoke(r0).booleanValue() == false) goto L_0x0024\l}"];
+subgraph cluster_Region_67822104 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0026|RETURN\l|return true\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lLOOP:0: B:1:0x000e\-\>B:4:0x0022\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0024|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.sequences.SequencesKt___SequencesKt.all((r1v0 kotlin.sequences.Sequence\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 kotlin.jvm.functions.Function1\<? super T, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Lkotlin\/sequences\/Sequence\<, +TT;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;, Ljava\/lang\/Boolean;, \>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_4 -> Node_1[style=dashed];
+Node_4 -> Node_7;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_5;
+Node_8 -> Node_6;
+}
+

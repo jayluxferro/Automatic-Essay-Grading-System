@@ -1,0 +1,111 @@
+digraph "CFG formil.nga.geopackage.geom.GeoPackageGeometryData.fromBytes([B)V" {
+subgraph cluster_Region_1582967250 {
+label = "R(2:0|(2:2|(2:(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11)))|(2:12|13))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.bytes = r4\lmil.nga.wkb.io.ByteReader mil.nga.wkb.p024io.ByteReader r0 = new mil.nga.wkb.p024io.ByteReader(r4)\l}"];
+subgraph cluster_TryCatchRegion_1866162669 {
+label = "Try: R(2:2|(2:(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11)))|(2:12|13))) catches: R(1:16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1240645025 {
+label = "R(2:2|(2:(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11)))|(2:12|13)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ UnsupportedEncodingException \-\> 0x0085 \}\lSplitter:B:1:0x0008\l|java.lang.String java.lang.String r4 = r0.readString(2)     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x0085 \}\l}"];
+subgraph cluster_Region_1224065658 {
+label = "R(2:(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11)))|(2:12|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1827575283 {
+label = "IF [B:4:0x0012] THEN: R(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r4.equals(mil.nga.geopackage.GeoPackageConstants.GEO_PACKAGE_GEOMETRY_MAGIC_NUMBER) == true) goto L_0x0014\l}"];
+subgraph cluster_Region_1185289667 {
+label = "R(2:5|(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|byte byte r4 = r0.readByte()\l}"];
+subgraph cluster_Region_836735829 {
+label = "R(2:(2:7|(2:(2:9|17)|(1:18)))|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_288803062 {
+label = "IF [B:6:0x0018] THEN: R(2:7|(2:(2:9|17)|(1:18))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r4 == 0) goto L_0x001a\l}"];
+subgraph cluster_Region_1060537215 {
+label = "R(2:7|(2:(2:9|17)|(1:18)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|int int r4 = readFlags(r0.readByte())\lr0.setByteOrder(r3.byteOrder)\lr3.srsId = r0.readInt()\lr3.envelope = readEnvelope(r4, r0)\lr3.wkbGeometryIndex = r0.getNextByte()\l}"];
+subgraph cluster_Region_682573350 {
+label = "R(2:(2:9|17)|(1:18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_472843991 {
+label = "IF [B:8:0x003b] THEN: R(2:9|17) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|if (r3.empty == false) goto L_0x003d\l}"];
+subgraph cluster_Region_816654834 {
+label = "R(2:9|17)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|r3.geometry = mil.nga.wkb.p024io.WkbGeometryReader.readGeometry(r0)\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2049958202 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1208848795 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0044}"];
+Node_11 [shape=record,label="{11\:\ 0x0063|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected GeoPackage Geometry version: \" + r4 + \", Expected: \" + 0)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_445681056 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0064}"];
+Node_13 [shape=record,label="{13\:\ 0x0084|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected GeoPackage Geometry magic number: \" + r4 + \", Expected: \" + mil.nga.geopackage.GeoPackageConstants.GEO_PACKAGE_GEOMETRY_MAGIC_NUMBER)\l}"];
+}
+}
+}
+subgraph cluster_Region_925339665 {
+label = "R(1:16) | ExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x008c|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected GeoPackage Geometry magic number character encoding: Expected: GP\")\l}"];
+}
+}
+}
+subgraph cluster_Region_925339665 {
+label = "R(1:16) | ExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x008c|throw new mil.nga.geopackage.GeoPackageException(\"Unexpected GeoPackage Geometry magic number character encoding: Expected: GP\")\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0008|SYNTHETIC\lSplitter:B:1:0x0008\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0085}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lExcHandler: UnsupportedEncodingException (unused java.io.UnsupportedEncodingException)\lSplitter:B:1:0x0008\l}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.geom.GeoPackageGeometryData.fromBytes((r3v0 'this' mil.nga.geopackage.geom.GeoPackageGeometryData A[IMMUTABLE_TYPE, THIS]), (r4v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_18[style=dashed];
+Node_9 -> Node_17;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_1 -> Node_2;
+Node_1 -> Node_15;
+Node_3 -> Node_4;
+Node_14 -> Node_16;
+Node_15 -> Node_14;
+}
+

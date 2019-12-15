@@ -1,0 +1,44 @@
+digraph "CFG forandroid.support.design.widget.FloatingActionButton.onTouchEvent(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1849149428 {
+label = "R(1:(2:(1:8)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1505916371 {
+label = "R(2:(1:8)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_946408304 {
+label = "IF [B:1:0x0004, B:3:0x000c, B:5:0x001e] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4.getAction() != 0) goto L_0x0022\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (getContentRect(r3.touchArea) == false) goto L_0x0022\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001e|ADDED_TO_REGION\l|if (r3.touchArea.contains((int) r4.getX(), (int) r4.getY()) == true) goto L_0x0022\l}"];
+subgraph cluster_Region_571905167 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|return super.onTouchEvent(r4)\l}"];
+}
+}
+subgraph cluster_Region_1917779806 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022}"];
+MethodNode[shape=record,label="{public boolean android.support.design.widget.FloatingActionButton.onTouchEvent((r3v0 'this' android.support.design.widget.FloatingActionButton A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

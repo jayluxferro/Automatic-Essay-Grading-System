@@ -1,0 +1,76 @@
+digraph "CFG forcom.lottery.ghanalotto.Utils.ErrorApiMessage.a([B)Ljava\/lang\/String;" {
+subgraph cluster_Region_797882065 {
+label = "R(3:0|(3:2|(2:7|(2:(1:15)|(1:13)))|9)|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StringBuilder java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lint int r7 = r8.length\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_710898387 {
+label = "LOOP:0: (3:2|(2:7|(2:(1:15)|(1:13)))|9)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|LOOP_START\lPHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:0:0x0000, B:9:0x0025] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:9:0x0025\l|if (r6 \< r7) goto L_0x000a\l}"];
+subgraph cluster_Region_144959677 {
+label = "R(3:2|(2:7|(2:(1:15)|(1:13)))|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|byte r0 = r8[r6]\lint r2 = (r0 \>\>\> 4) & 15\lint r4 = 0\l}"];
+subgraph cluster_LoopRegion_194018677 {
+label = "LOOP:1: (2:7|(2:(1:15)|(1:13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1103266305 {
+label = "R(2:7|(2:(1:15)|(1:13)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|PHI: r5 \l  PHI: (r5v6 char) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r1.append((r2 \< 0 \|\| r2 \> 9) ? (char) ((r2 \- 10) + 97) : (char) (r2 + 48))\lr2 = r0 & 15\lint int r3 = r4 + 1\l}"];
+subgraph cluster_Region_1870603877 {
+label = "R(2:(1:15)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_576671754 {
+label = "IF [B:8:0x0023] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|if (r4 \>= 1) goto L_0x0025\l}"];
+subgraph cluster_Region_376428533 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0025|SYNTHETIC\lEDGE_INSN: B:15:0x0025\-\>B:9:0x0025 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_2017282530 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0034|LOOP_END\lLOOP:1: B:3:0x0012\-\>B:13:0x0034\l|r4 = r3\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0025|LOOP_END\lEDGE_INSN: B:15:0x0025\-\>B:9:0x0025 ?: BREAK  \lLOOP:0: B:1:0x0008\-\>B:9:0x0025\l|r6++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0033|RETURN\l|return r1.toString()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012|LOOP_START\lPHI: r2 r4 \l  PHI: (r2v1 'halfbyte' int) = (r2v0 'halfbyte' int), (r2v2 'halfbyte' int) binds: [B:2:0x000a, B:13:0x0034] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'two_halfs' int) = (r4v0 'two_halfs' int), (r4v2 'two_halfs' int) binds: [B:2:0x000a, B:13:0x0034] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:3:0x0012\-\>B:13:0x0034\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0014}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0016|REMOVE\lADDED_TO_REGION\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0029}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002f}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.lang.String com.lottery.ghanalotto.Utils.ErrorApiMessage.a((r8v0 'data' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_13[style=dashed];
+Node_8 -> Node_15;
+Node_15 -> Node_9;
+Node_13 -> Node_3;
+Node_9 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+Node_6 -> Node_7;
+Node_10 -> Node_7;
+Node_11 -> Node_12;
+Node_14 -> Node_11;
+}
+

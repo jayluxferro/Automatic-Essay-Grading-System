@@ -1,0 +1,30 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidBitmap.\<init\>(IILandroid\/graphics\/Bitmap$Config;)V" {
+subgraph cluster_Region_1699103548 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|this()\lr1.bitmap = getBitmapFromReusableSet(r2, r3, r4)\l}"];
+subgraph cluster_Region_599562024 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_334575531 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r1.bitmap == null) goto L_0x000d\l}"];
+subgraph cluster_Region_1610431824 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|r1.bitmap = createAndroidBitmap(r2, r3, r4)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void org.mapsforge.map.android.graphics.AndroidBitmap.\<init\>((r1v0 'this' org.mapsforge.map.android.graphics.AndroidBitmap A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.graphics.Bitmap$Config A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

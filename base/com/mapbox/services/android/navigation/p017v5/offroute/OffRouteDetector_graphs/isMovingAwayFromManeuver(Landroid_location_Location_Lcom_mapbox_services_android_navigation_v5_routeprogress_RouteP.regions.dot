@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.offroute.OffRouteDetector.isMovingAwayFromManeuver(Landroid\/location\/Location;Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;Lcom\/mapbox\/services\/android\/navigation\/v5\/utils\/RingBuffer;Lcom\/mapbox\/geojson\/Point;)Z" {
+subgraph cluster_Region_227798241 {
+label = "R(1:(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_551887469 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_99417091 {
+label = "IF [B:1:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (movingAwayFromManeuver(r3, r4, r3.currentStepPoints(), r5) != true) goto L_0x000f\l}"];
+subgraph cluster_Region_622863989 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_935731924 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|updateLastReroutePoint(r2)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{private boolean com.mapbox.services.android.navigation.v5.offroute.OffRouteDetector.isMovingAwayFromManeuver((r1v0 'this' com.mapbox.services.android.navigation.v5.offroute.OffRouteDetector A[IMMUTABLE_TYPE, THIS]), (r2v0 android.location.Location A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.mapbox.services.android.navigation.v5.utils.RingBuffer\<java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/location\/Location;, Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;, Lcom\/mapbox\/services\/android\/navigation\/v5\/utils\/RingBuffer\<, Ljava\/lang\/Integer;, \>;, Lcom\/mapbox\/geojson\/Point;, )Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

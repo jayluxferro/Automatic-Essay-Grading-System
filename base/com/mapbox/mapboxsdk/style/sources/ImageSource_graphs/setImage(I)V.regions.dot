@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.mapboxsdk.style.sources.ImageSource.setImage(I)V" {
+subgraph cluster_Region_1857464952 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|checkThread()\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r2 = android.support.p000v4.content.ContextCompat.getDrawable(com.mapbox.mapboxsdk.Mapbox.getApplicationContext(), r2)\l}"];
+subgraph cluster_Region_256866662 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1053528634 {
+label = "IF [B:1:0x000d] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if ((r2 instanceof android.graphics.drawable.BitmapDrawable) == true) goto L_0x000f\l}"];
+subgraph cluster_Region_52276215 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|nativeSetImage(((android.graphics.drawable.BitmapDrawable) r2).getBitmap())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_21569580 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|throw new java.lang.IllegalArgumentException(\"Failed to decode image. The resource provided must be a Bitmap.\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0019}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.style.sources.ImageSource.setImage((r1v0 'this' com.mapbox.mapboxsdk.style.sources.ImageSource A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.DrawableRes, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.IllegalArgumentException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

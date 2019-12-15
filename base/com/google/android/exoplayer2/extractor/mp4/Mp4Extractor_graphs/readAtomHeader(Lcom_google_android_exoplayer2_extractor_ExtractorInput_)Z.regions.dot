@@ -1,0 +1,165 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.Mp4Extractor.readAtomHeader(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)Z" {
+subgraph cluster_Region_1884974782 {
+label = "R(4:(1:(2:(1:27)|(1:4)))|(1:7)|(2:10|(1:12)(1:14))(1:(4:(1:19)(1:24)|20|(1:22)(1:25)|23)(1:26))|28) | DECL_VAR: boolean null, boolean null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_832217491 {
+label = "IF [B:1:0x0006] THEN: R(1:(2:(1:27)|(1:4))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r11.atomHeaderBytesRead == 0) goto L_0x0008\l}"];
+subgraph cluster_Region_738940688 {
+label = "R(1:(2:(1:27)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1788076698 {
+label = "R(2:(1:27)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1235181288 {
+label = "IF [B:3:0x0010] THEN: R(1:27) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r12.readFully(r11.atomHeader.data, 0, 8, true) == false) goto L_?\l}"];
+subgraph cluster_Region_770570353 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1537771787 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|r11.atomHeaderBytesRead = 8\lr11.atomHeader.setPosition(0)\lr11.atomSize = r11.atomHeader.readUnsignedInt()\lr11.atomType = r11.atomHeader.readInt()\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_786053078 {
+label = "IF [B:6:0x0030] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0030|if (r11.atomSize == 1) goto L_0x0032\l}"];
+subgraph cluster_Region_486626555 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0032|r12.readFully(r11.atomHeader.data, 8, 8)\lr11.atomHeaderBytesRead += 8\lr11.atomSize = r11.atomHeader.readUnsignedLongToLong()\l}"];
+}
+}
+subgraph cluster_IfRegion_1609369946 {
+label = "IF [B:9:0x004e] THEN: R(2:10|(1:12)(1:14)) ELSE: R(1:(4:(1:19)(1:24)|20|(1:22)(1:25)|23)(1:26))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004e|if (shouldParseContainerAtom(r11.atomType) == true) goto L_0x0050\l}"];
+subgraph cluster_Region_76200881 {
+label = "R(2:10|(1:12)(1:14))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0050|long long r0 = (r12.getPosition() + r11.atomSize) \- ((long) r11.atomHeaderBytesRead)\lr11.containerAtoms.add(new com.google.android.exoplayer2.extractor.mp4.Atom.ContainerAtom(r11.atomType, r0))\l}"];
+subgraph cluster_IfRegion_1074930557 {
+label = "IF [B:11:0x006f] THEN: R(1:12) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x006f|if (r11.atomSize == ((long) r11.atomHeaderBytesRead)) goto L_0x0071\l}"];
+subgraph cluster_Region_403630730 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0071|processAtomEnded(r0)\l}"];
+}
+subgraph cluster_Region_1057609774 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0076|enterReadingAtomHeaderState()\l}"];
+}
+}
+}
+subgraph cluster_Region_683206072 {
+label = "R(1:(4:(1:19)(1:24)|20|(1:22)(1:25)|23)(1:26)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_531140140 {
+label = "IF [B:16:0x0080] THEN: R(4:(1:19)(1:24)|20|(1:22)(1:25)|23) ELSE: R(1:26) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0080|if (shouldParseLeafAtom(r11.atomType) == true) goto L_0x0082\l}"];
+subgraph cluster_Region_1324371823 {
+label = "R(4:(1:19)(1:24)|20|(1:22)(1:25)|23)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1070147127 {
+label = "IF [B:18:0x0084] THEN: R(1:19) ELSE: R(1:24)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0084|if (r11.atomHeaderBytesRead == 8) goto L_0x0086\l}"];
+subgraph cluster_Region_110313843 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0086|r3 = true\l}"];
+}
+subgraph cluster_Region_358331206 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00af|r3 = false\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0087|PHI: r3 \l  PHI: (r3v9 boolean) = (r3v8 boolean), (r3v17 boolean) binds: [B:24:0x00af, B:19:0x0086] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r3)\l}"];
+subgraph cluster_IfRegion_1345552723 {
+label = "IF [B:21:0x0091] THEN: R(1:22) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0091|if (r11.atomSize \<= 2147483647L) goto L_0x0093\l}"];
+subgraph cluster_Region_1283715300 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0093|r3 = true\l}"];
+}
+subgraph cluster_Region_1547021290 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00b1|r3 = false\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0094|PHI: r3 \l  PHI: (r3v12 boolean) = (r3v11 boolean), (r3v16 boolean) binds: [B:25:0x00b1, B:22:0x0093] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r3)\lr11.atomData = new com.google.android.exoplayer2.util.ParsableByteArray((int) r11.atomSize)\ljava.lang.System.arraycopy(r11.atomHeader.data, 0, r11.atomData.data, 0, 8)\lr11.parserState = 1\l}"];
+}
+subgraph cluster_Region_196193431 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00b3|r11.atomData = null\lr11.parserState = 1\l}"];
+}
+}
+}
+}
+Node_28 [shape=record,label="{28\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0048}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0074}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x007a}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0082}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.readAtomHeader((r11v0 'this' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor A[IMMUTABLE_TYPE, THIS]), (r12v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_27;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_14 -> Node_13;
+Node_16 -> Node_17;
+Node_16 -> Node_26[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_24[style=dashed];
+Node_19 -> Node_20;
+Node_24 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_25[style=dashed];
+Node_22 -> Node_23;
+Node_25 -> Node_23;
+Node_23 -> Node_13;
+Node_26 -> Node_13;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_13 -> Node_28;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+}
+

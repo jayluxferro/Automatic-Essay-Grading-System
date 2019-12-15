@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.v4.print.PrintHelper.copyAttributes(Landroid\/print\/PrintAttributes;)Landroid\/print\/PrintAttributes$Builder;" {
+subgraph cluster_Region_240910874 {
+label = "R(4:0|(1:2)|(1:7)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.print.PrintAttributes$Builder android.print.PrintAttributes.Builder r0 = new android.print.PrintAttributes.Builder().setMediaSize(r3.getMediaSize()).setResolution(r3.getResolution()).setMinMargins(r3.getMinMargins())\l}"];
+subgraph cluster_IfRegion_1602340671 {
+label = "IF [B:1:0x0021] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0021|if (r3.getColorMode() != 0) goto L_0x0023\l}"];
+subgraph cluster_Region_212976011 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0023|r0.setColorMode(r3.getColorMode())\l}"];
+}
+}
+subgraph cluster_IfRegion_190783470 {
+label = "IF [B:4:0x002e, B:6:0x0034] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L_0x0030\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0034|ADDED_TO_REGION\l|if (r3.getDuplexMode() != 0) goto L_0x0036\l}"];
+subgraph cluster_Region_629143317 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|r0.setDuplexMode(r3.getDuplexMode())\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x003d|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x002a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0030}"];
+MethodNode[shape=record,label="{private static android.print.PrintAttributes$Builder android.support.v4.print.PrintHelper.copyAttributes((r3v0 android.print.PrintAttributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RequiresApi, \{value=19\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

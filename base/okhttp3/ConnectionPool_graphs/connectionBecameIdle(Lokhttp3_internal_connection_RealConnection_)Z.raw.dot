@@ -1,0 +1,21 @@
+digraph "CFG forokhttp3.ConnectionPool.connectionBecameIdle(Lokhttp3\/internal\/connection\/RealConnection;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r2 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.noNewStreams boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x000e \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:int) = (r1 I:okhttp3.ConnectionPool) okhttp3.ConnectionPool.maxIdleConnections int \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0009 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|0x0009: INVOKE  (r1 I:java.lang.Object) java.lang.Object.notifyAll():void type: VIRTUAL \l0x000c: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|0x000d: RETURN  (r2 I:boolean) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x000e|0x000e: IGET  (r0 I:java.util.Deque\<okhttp3.internal.connection.RealConnection\>) = (r1 I:okhttp3.ConnectionPool) okhttp3.ConnectionPool.connections java.util.Deque \l0x0010: INVOKE  (r0 I:java.util.Deque), (r2 I:java.lang.Object) java.util.Deque.remove(java.lang.Object):boolean type: INTERFACE \l0x0013: CONST  (r2 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|0x0014: RETURN  (r2 I:boolean) \l}"];
+MethodNode[shape=record,label="{boolean okhttp3.ConnectionPool.connectionBecameIdle((r1 'this' I:okhttp3.ConnectionPool A[IMMUTABLE_TYPE, THIS]), (r2 I:okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

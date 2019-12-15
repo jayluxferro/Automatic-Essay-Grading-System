@@ -1,0 +1,77 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CacheUtil.remove(Lcom\/google\/android\/exoplayer2\/upstream\/cache\/Cache;Ljava\/lang\/String;)V" {
+subgraph cluster_Region_434279148 {
+label = "R(2:0|(1:(2:2|(1:(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.NavigableSet java.util.NavigableSet\<com.google.android.exoplayer2.upstream.cache.CacheSpan\> r1 = r4.getCachedSpans(r5)\l}"];
+subgraph cluster_Region_1203859364 {
+label = "R(1:(2:2|(1:(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1760070550 {
+label = "IF [B:1:0x0004] THEN: R(2:2|(1:(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r1 != null) goto L_0x0007\l}"];
+subgraph cluster_Region_1040111553 {
+label = "R(2:2|(1:(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|java.util.Iterator r2 = r1.iterator()\l}"];
+subgraph cluster_LoopRegion_1012940536 {
+label = "LOOP:0: (1:(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|if (r2.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_2105825051 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1185477830 {
+label = "Try: R(1:7) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_173547512 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ CacheException \-\> 0x001b \}\lSplitter:B:6:0x0017\l|r4.removeSpan(r0)     \/\/ Catch:\{ CacheException \-\> 0x001b \}\l}"];
+}
+subgraph cluster_Region_930244533 {
+label = "R(0) | ExcHandler: CacheException (e com.google.android.exoplayer2.upstream.cache.Cache$CacheException)\l";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_930244533 {
+label = "R(0) | ExcHandler: CacheException (e com.google.android.exoplayer2.upstream.cache.Cache$CacheException)\l";
+node [shape=record,color=blue];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b|LOOP_START\lLOOP:0: B:3:0x000b\-\>B:9:0x000b\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017|SYNTHETIC\lSplitter:B:6:0x0017\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001b|ExcHandler: CacheException (e com.google.android.exoplayer2.upstream.cache.Cache$CacheException)\lSplitter:B:6:0x0017\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:3:0x000b\-\>B:9:0x000b\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0006|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000b|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000b|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void com.google.android.exoplayer2.upstream.cache.CacheUtil.remove((r4v0 'cache' com.google.android.exoplayer2.upstream.cache.Cache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'key' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_8 -> Node_12;
+Node_9 -> Node_3;
+Node_10 -> Node_14;
+Node_11 -> Node_9;
+Node_12 -> Node_9;
+}
+

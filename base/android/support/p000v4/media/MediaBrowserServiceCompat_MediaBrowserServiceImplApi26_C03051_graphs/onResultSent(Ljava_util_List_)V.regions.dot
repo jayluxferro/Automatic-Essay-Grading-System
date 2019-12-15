@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.v4.media.MediaBrowserServiceCompat.MediaBrowserServiceImplApi26.1.onResultSent(Ljava\/util\/List;)V" {
+subgraph cluster_Region_1835206196 {
+label = "R(2:(2:1|(1:4))(1:5)|6) | DECL_VAR: java.util.ArrayList null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1314902536 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(1:4)) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1317793923 {
+label = "R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|java.util.ArrayList r0 = new java.util.ArrayList()\ljava.util.Iterator r5 = r5.iterator()\l}"];
+subgraph cluster_LoopRegion_1712124973 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (r5.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_665524144 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|LOOP_END\lLOOP:0: B:2:0x000b\-\>B:4:0x0011\l|android.os.Parcel android.os.Parcel r2 = android.os.Parcel.obtain()\lr1.writeToParcel(r2, 0)\lr0.add(r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_475408547 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|r0 = null\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0024|PHI: r0 \l  PHI: (r0v0 java.util.ArrayList) = (r0v1 java.util.ArrayList), (r0v2 java.util.ArrayList) binds: [B:5:0x0023, B:8:0x0024] A[DONT_GENERATE, DONT_INLINE]\l|r3.sendResult(r0, getFlags())\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b|LOOP_START\lLOOP:0: B:2:0x000b\-\>B:4:0x0011\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.media.MediaBrowserServiceCompat.MediaBrowserServiceImplApi26.1.onResultSent((r4v0 'this' android.support.v4.media.MediaBrowserServiceCompat$MediaBrowserServiceImplApi26$1 A[IMMUTABLE_TYPE, THIS]), (r5v0 java.util.List\<android.support.v4.media.MediaBrowserCompat$MediaItem\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: package\-private\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Landroid\/support\/v4\/media\/MediaBrowserCompat$MediaItem;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_5[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_2;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_8 -> Node_6;
+}
+

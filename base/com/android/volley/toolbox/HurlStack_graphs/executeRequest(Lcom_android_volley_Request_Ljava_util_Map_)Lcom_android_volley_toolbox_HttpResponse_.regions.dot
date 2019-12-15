@@ -1,0 +1,166 @@
+digraph "CFG forcom.android.volley.toolbox.HurlStack.executeRequest(Lcom\/android\/volley\/Request;Ljava\/util\/Map;)Lcom\/android\/volley\/toolbox\/HttpResponse;" {
+subgraph cluster_Region_1436940503 {
+label = "R(4:0|(2:2|(2:4|5))(1:6)|7|(4:9|(1:12)|13|(1:25)(1:(3:17|18|19)(2:20|23)))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r6.getUrl()\ljava.util.HashMap java.util.HashMap r1 = new java.util.HashMap()\lr1.putAll(r7)\lr1.putAll(r6.getHeaders())\l}"];
+subgraph cluster_IfRegion_13662495 {
+label = "IF [B:1:0x0015] THEN: R(2:2|(2:4|5)) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r5.mUrlRewriter != null) goto L_0x0017\l}"];
+subgraph cluster_Region_159478171 {
+label = "R(2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|java.lang.String r7 = r5.mUrlRewriter.rewriteUrl(r0)\l}"];
+subgraph cluster_IfRegion_1417513826 {
+label = "IF [B:3:0x001d] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001d|if (r7 == null) goto L_0x0020\l}"];
+subgraph cluster_Region_1936998513 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0020}"];
+Node_5 [shape=record,label="{5\:\ 0x0036|throw new java.io.IOException(\"URL blocked by rewriter: \" + r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1225002780 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|r7 = r0\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0038|PHI: r7 \l  PHI: (r7v3 java.lang.String) = (r7v5 java.lang.String), (r7v7 java.lang.String) binds: [B:6:0x0037, B:3:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|java.net.HttpURLConnection java.net.HttpURLConnection r7 = openConnection(new java.net.URL(r7), r6)\lboolean r0 = false\l}"];
+subgraph cluster_TryCatchRegion_716560022 {
+label = "Try: R(4:9|(1:12)|13|(1:25)(1:(3:17|18|19)(2:20|23))) catches: R(3:26|(1:28)|29)";
+node [shape=record,color=blue];
+subgraph cluster_Region_857548203 {
+label = "R(4:9|(1:12)|13|(1:25)(1:(3:17|18|19)(2:20|23)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|Catch:\{ all \-\> 0x00a5 \}\lSplitter:B:8:0x0042\l|java.util.Iterator r2 = r1.keySet().iterator()     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+subgraph cluster_LoopRegion_992749350 {
+label = "LOOP:0: (1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004e|Catch:\{ all \-\> 0x00a5 \}\l|if (r2.hasNext() != false) goto L_0x0050     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+subgraph cluster_Region_823298042 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0050|LOOP_END\lCatch:\{ all \-\> 0x00a5 \}\lLOOP:0: B:10:0x004a\-\>B:12:0x0050\l|java.lang.String r3 = (java.lang.String) r2.next()     \/\/ Catch:\{ all \-\> 0x00a5 \}\lr7.setRequestProperty(r3, (java.lang.String) r1.get(r3))     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0060|Catch:\{ all \-\> 0x00a5 \}\l|setConnectionParametersForRequest(r7, r6)     \/\/ Catch:\{ all \-\> 0x00a5 \}\lint int r1 = r7.getResponseCode()     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+subgraph cluster_IfRegion_935719469 {
+label = "IF [B:14:0x0068] THEN: R(1:25) ELSE: R(1:(3:17|18|19)(2:20|23))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0068|Catch:\{ all \-\> 0x00a5 \}\l|if (r1 == \-1) goto L_0x009d     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+subgraph cluster_Region_943176157 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00a4|Catch:\{ all \-\> 0x00a5 \}\l|throw new java.io.IOException(\"Could not retrieve response code from HttpUrlConnection.\")     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+}
+subgraph cluster_Region_11076386 {
+label = "R(1:(3:17|18|19)(2:20|23)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_862738624 {
+label = "IF [B:16:0x0072] THEN: R(3:17|18|19) ELSE: R(2:20|23) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0072|Catch:\{ all \-\> 0x00a5 \}\l|if (hasResponseBody(r6.getMethod(), r1) == false) goto L_0x0074     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+subgraph cluster_Region_1622425185 {
+label = "R(3:17|18|19)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0074|Catch:\{ all \-\> 0x00a5 \}\l|com.android.volley.toolbox.HttpResponse com.android.volley.toolbox.HttpResponse r6 = new com.android.volley.toolbox.HttpResponse(r1, convertHeaders(r7.getHeaderFields()))     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0081|r7.disconnect()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0084|RETURN\l|return r6\l}"];
+}
+subgraph cluster_Region_161591684 {
+label = "R(2:20|23)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0085|r0 = true\l}"];
+Node_23 [shape=record,label="{23\:\ 0x009c|RETURN\lCatch:\{ all \-\> 0x00a5 \}\l|return new com.android.volley.toolbox.HttpResponse(r1, convertHeaders(r7.getHeaderFields()), r7.getContentLength(), new com.android.volley.toolbox.HurlStack.UrlConnectionInputStream(r7))     \/\/ Catch:\{ all \-\> 0x00a5 \}\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_78410951 {
+label = "R(3:26|(1:28)|29) | ExcHandler: all (r6v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00a5|PHI: r0 \l  PHI: (r0v3 boolean) = (r0v2 boolean), (r0v4 boolean) binds: [B:8:0x0042, B:21:0x0086] A[DONT_GENERATE, DONT_INLINE]\lExcHandler: all (r6v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:8:0x0042\l}"];
+subgraph cluster_IfRegion_1992531362 {
+label = "IF [B:27:0x00a6] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00a6|if (r0 == false) goto L_0x00a8\l}"];
+subgraph cluster_Region_1397484902 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00a8|r7.disconnect()\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x00ab|throw r6\l}"];
+}
+}
+}
+subgraph cluster_Region_78410951 {
+label = "R(3:26|(1:28)|29) | ExcHandler: all (r6v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00a5|PHI: r0 \l  PHI: (r0v3 boolean) = (r0v2 boolean), (r0v4 boolean) binds: [B:8:0x0042, B:21:0x0086] A[DONT_GENERATE, DONT_INLINE]\lExcHandler: all (r6v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:8:0x0042\l}"];
+subgraph cluster_IfRegion_1992531362 {
+label = "IF [B:27:0x00a6] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00a6|if (r0 == false) goto L_0x00a8\l}"];
+subgraph cluster_Region_1397484902 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00a8|r7.disconnect()\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x00ab|throw r6\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0042|SYNTHETIC\lSplitter:B:8:0x0042\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x004a|LOOP_START\lCatch:\{ all \-\> 0x00a5 \}\lLOOP:0: B:10:0x004a\-\>B:12:0x0050\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x006a|Catch:\{ all \-\> 0x00a5 \}\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0086|SYNTHETIC\lSplitter:B:21:0x0086\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|Catch:\{ all \-\> 0x00a5 \}\lSplitter:B:21:0x0086\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x009d|Catch:\{ all \-\> 0x00a5 \}\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0060|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.android.volley.toolbox.HttpResponse com.android.volley.toolbox.HurlStack.executeRequest((r5v0 'this' com.android.volley.toolbox.HurlStack A[IMMUTABLE_TYPE, THIS]), (r6v0 com.android.volley.Request\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, com.android.volley.AuthFailureError]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/android\/volley\/Request\<, *\>;, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;), Lcom\/android\/volley\/toolbox\/HttpResponse;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_30[style=dashed];
+Node_12 -> Node_10;
+Node_13 -> Node_14;
+Node_14 -> Node_15[style=dashed];
+Node_14 -> Node_24;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_8 -> Node_9;
+Node_8 -> Node_26;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_21 -> Node_22;
+Node_21 -> Node_26;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_30 -> Node_13;
+}
+

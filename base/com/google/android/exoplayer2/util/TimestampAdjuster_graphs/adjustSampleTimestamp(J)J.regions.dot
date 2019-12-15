@@ -1,0 +1,92 @@
+digraph "CFG forcom.google.android.exoplayer2.util.TimestampAdjuster.adjustSampleTimestamp(J)J" {
+subgraph cluster_Region_619557080 {
+label = "R(1:(2:(1:17)|(2:(1:4)(2:(1:8)|26)|18)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_630965160 {
+label = "R(2:(1:17)|(2:(1:4)(2:(1:8)|26)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1981657284 {
+label = "IF [B:1:0x0007] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r6 == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_?\l}"];
+subgraph cluster_Region_2108582119 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return com.google.android.exoplayer2.C1260C.TIME_UNSET\l}"];
+}
+}
+subgraph cluster_Region_881618170 {
+label = "R(2:(1:4)(2:(1:8)|26)|18)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1341226816 {
+label = "IF [B:3:0x000e] THEN: R(1:4) ELSE: R(2:(1:8)|26)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r5.lastSampleTimestamp != com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0010\l}"];
+subgraph cluster_Region_1416723946 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|r5.lastSampleTimestamp = r6\l}"];
+}
+subgraph cluster_Region_1511444179 {
+label = "R(2:(1:8)|26)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_220889815 {
+label = "IF [B:7:0x001f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|if (r5.firstSampleTimestampUs != Long.MAX_VALUE) goto L_0x0021\l}"];
+subgraph cluster_Region_1239807821 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|r5.timestampOffsetUs = r5.firstSampleTimestampUs \- r6\l}"];
+}
+}
+subgraph cluster_SynchronizedRegion_379870646 {
+label = "Synchronized:R(2:9|(1:11))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0026}"];
+subgraph cluster_Region_2057857511 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|r5.lastSampleTimestamp = r6\lnotifyAll()\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return r5.timestampOffsetUs + r6\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0027|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x002c: MONITOR_EXIT  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002d}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002e|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002f|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0030|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.util.TimestampAdjuster.adjustSampleTimestamp((r5v0 'this' com.google.android.exoplayer2.util.TimestampAdjuster A[IMMUTABLE_TYPE, THIS]), (r6v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_17;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_18;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_10 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_5;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+}
+

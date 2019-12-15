@@ -1,0 +1,31 @@
+digraph "CFG forcom.google.android.exoplayer2.source.MergingMediaSource.createPeriod(ILcom\/google\/android\/exoplayer2\/upstream\/Allocator;J)Lcom\/google\/android\/exoplayer2\/source\/MediaPeriod;" {
+subgraph cluster_Region_165296750 {
+label = "R(3:0|(1:3)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.source.MediaPeriod[] com.google.android.exoplayer2.source.MediaPeriod[] r1 = new com.google.android.exoplayer2.source.MediaPeriod[r3.mediaSources.length]\lint r0 = 0\l}"];
+subgraph cluster_LoopRegion_597410778 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|if (r0 \< r1.length) goto L_0x0009\l}"];
+subgraph cluster_Region_1817308703 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:3:0x0009\l|r1[r0] = r3.mediaSources[r0].createPeriod(r4, r5, r6)\lr0++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x001b|RETURN\l|return new com.google.android.exoplayer2.source.MergingMediaPeriod(r1)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|LOOP_START\lPHI: r0 \l  PHI: (r0v1 'i' int) = (r0v0 'i' int), (r0v2 'i' int) binds: [B:0:0x0000, B:3:0x0009] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:3:0x0009\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.source.MediaPeriod com.google.android.exoplayer2.source.MergingMediaSource.createPeriod((r3v0 'this' com.google.android.exoplayer2.source.MergingMediaSource A[IMMUTABLE_TYPE, THIS]), (r4v0 'index' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'allocator' com.google.android.exoplayer2.upstream.Allocator A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'positionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

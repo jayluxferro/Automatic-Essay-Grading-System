@@ -1,0 +1,60 @@
+digraph "CFG formil.nga.tiff.TiffWriter.writeRasters(Ljava\/nio\/ByteOrder;Lmil\/nga\/tiff\/FileDirectory;J)[B" {
+subgraph cluster_Region_260223302 {
+label = "R(1:(2:(2:2|(2:(2:4|5)|(1:7)))|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1425960954 {
+label = "R(2:(2:2|(2:(2:4|5)|(1:7)))|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_665599386 {
+label = "IF [B:1:0x0004] THEN: R(2:2|(2:(2:4|5)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.getWriteRasters() != null) goto L_0x0006\l}"];
+subgraph cluster_Region_1131354743 {
+label = "R(2:2|(2:(2:4|5)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|mil.nga.tiff.compression.CompressionEncoder mil.nga.tiff.compression.CompressionEncoder r0 = getEncoder(r3)\lmil.nga.tiff.io.ByteWriter mil.nga.tiff.p023io.ByteWriter r1 = new mil.nga.tiff.p023io.ByteWriter(r2)\l}"];
+subgraph cluster_Region_1792321593 {
+label = "R(2:(2:4|5)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1883647140 {
+label = "IF [B:3:0x0013] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (r3.isTiled() == false) goto L_0x0015\l}"];
+subgraph cluster_Region_1828072075 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|writeStripRasters(r1, r3, r4, r0)\lbyte[] byte[] r2 = r1.getBytes()\lr1.close()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1465912553 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|throw new mil.nga.tiff.util.TiffException(\"Tiled images are not supported\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_300329842 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002f|throw new mil.nga.tiff.util.TiffException(\"File Directory Writer Rasters is required to create a TIFF\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0028}"];
+MethodNode[shape=record,label="{private static byte[] mil.nga.tiff.TiffWriter.writeRasters((r2v0 java.nio.ByteOrder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 mil.nga.tiff.FileDirectory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

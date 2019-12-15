@@ -1,0 +1,183 @@
+digraph "CFG forandroid.support.media.ExifInterface.saveAttributes()V" {
+subgraph cluster_Region_1023380161 {
+label = "R(1:(1:29)(1:(2:6|(2:8|(3:10|(1:12)|(2:14|15)))(2:24|25))(1:27))) | DECL_VAR: java.lang.Throwable th, java.io.FileInputStream null, java.io.FileOutputStream null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1853059974 {
+label = "IF [B:1:0x0002, B:3:0x0007] THEN: R(1:29) ELSE: R(1:(2:6|(2:8|(3:10|(1:12)|(2:14|15)))(2:24|25))(1:27))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r6.mIsSupportedFile == false) goto L_0x008b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (r6.mMimeType != 4) goto L_0x008b\l}"];
+subgraph cluster_Region_1176019479 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0092|throw new java.io.IOException(\"ExifInterface only supports saving attributes on JPEG formats.\")\l}"];
+}
+subgraph cluster_Region_1255280210 {
+label = "R(1:(2:6|(2:8|(3:10|(1:12)|(2:14|15)))(2:24|25))(1:27)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_180042827 {
+label = "IF [B:5:0x000b] THEN: R(2:6|(2:8|(3:10|(1:12)|(2:14|15)))(2:24|25)) ELSE: R(1:27) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|if (r6.mFilename != null) goto L_0x000d\l}"];
+subgraph cluster_Region_980055480 {
+label = "R(2:6|(2:8|(3:10|(1:12)|(2:14|15)))(2:24|25))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|r6.mThumbnailBytes = getThumbnail()\ljava.io.File java.io.File r0 = new java.io.File(r6.mFilename + \".tmp\")\l}"];
+subgraph cluster_IfRegion_1443318330 {
+label = "IF [B:7:0x0036] THEN: R(2:8|(3:10|(1:12)|(2:14|15))) ELSE: R(2:24|25)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|if (new java.io.File(r6.mFilename).renameTo(r0) == true) goto L_0x0038\l}"];
+subgraph cluster_Region_1176855216 {
+label = "R(2:8|(3:10|(1:12)|(2:14|15)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0038|java.io.FileOutputStream r1 = null\l}"];
+subgraph cluster_TryCatchRegion_2132906457 {
+label = "Try: R(3:10|(1:12)|(2:14|15)) catches: R(4:20|21|22|23)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1993819268 {
+label = "R(3:10|(1:12)|(2:14|15))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ all \-\> 0x005b \}\lSplitter:B:9:0x0039\l|java.io.FileInputStream r2 = new java.io.FileInputStream(r0)     \/\/ Catch:\{ all \-\> 0x005b \}\l}"];
+subgraph cluster_TryCatchRegion_2091551792 {
+label = "Try: R(1:12) catches: R(3:19|22|23)";
+node [shape=record,color=blue];
+subgraph cluster_Region_231510410 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|Catch:\{ all \-\> 0x0059 \}\lSplitter:B:11:0x003e\l|java.io.FileOutputStream r3 = new java.io.FileOutputStream(r6.mFilename)     \/\/ Catch:\{ all \-\> 0x0059 \}\l}"];
+}
+subgraph cluster_Region_364888751 {
+label = "R(3:19|22|23) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0059|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:11:0x003e\l|java.lang.Throwable r3 = th\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_642821481 {
+label = "Try: R(2:14|15) catches: R(4:17|18|22|23)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2081534485 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|Catch:\{ all \-\> 0x0054 \}\lSplitter:B:13:0x0045\l|saveJpegAttributes(r2, r3)     \/\/ Catch:\{ all \-\> 0x0054 \}\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0048|closeQuietly(r2)\lcloseQuietly(r3)\lr0.delete()\lr6.mThumbnailBytes = null\l}"];
+}
+subgraph cluster_Region_279671095 {
+label = "R(4:17|18|22|23) | ExcHandler: all (r1v10 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0054|ExcHandler: all (r1v10 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:13:0x0045\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0055|java.io.FileOutputStream r5 = r3\lr3 = r1\lr1 = r5\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_1544877250 {
+label = "R(4:20|21|22|23) | ExcHandler: all (r2v5 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005b|ExcHandler: all (r2v5 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:9:0x0039\l}"];
+Node_21 [shape=record,label="{21\:\ 0x005c|r3 = r2\lr2 = null\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_928382805 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0068}"];
+Node_25 [shape=record,label="{25\:\ 0x0082|throw new java.io.IOException(\"Could not rename to \" + r0.getAbsolutePath())\l}"];
+}
+}
+}
+subgraph cluster_Region_1977255052 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x008a|throw new java.io.IOException(\"ExifInterface does not support saving attributes for the current input.\")\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1544877250 {
+label = "R(4:20|21|22|23) | ExcHandler: all (r2v5 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x005b|ExcHandler: all (r2v5 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:9:0x0039\l}"];
+Node_21 [shape=record,label="{21\:\ 0x005c|r3 = r2\lr2 = null\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+subgraph cluster_Region_364888751 {
+label = "R(3:19|22|23) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0059|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:11:0x003e\l|java.lang.Throwable r3 = th\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+subgraph cluster_Region_279671095 {
+label = "R(4:17|18|22|23) | ExcHandler: all (r1v10 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0054|ExcHandler: all (r1v10 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:13:0x0045\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0055|java.io.FileOutputStream r5 = r3\lr3 = r1\lr1 = r5\l}"];
+Node_22 [shape=record,label="{22\:\ 0x005e|PHI: r1 r2 r3 \l  PHI: (r1v9 java.io.FileOutputStream) = (r1v8 java.io.FileOutputStream), (r1v8 java.io.FileOutputStream), (r1v11 java.io.FileOutputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v4 java.io.FileInputStream) = (r2v6 java.io.FileInputStream), (r2v7 java.io.FileInputStream), (r2v7 java.io.FileInputStream) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 'th' java.lang.Throwable) = (r3v2 'th' java.lang.Throwable), (r3v3 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:21:0x005c, B:19:0x0059, B:18:0x0055] A[DONT_GENERATE, DONT_INLINE]\l|closeQuietly(r2)\lcloseQuietly(r1)\lr0.delete()\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|throw r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0039|SYNTHETIC\lSplitter:B:9:0x0039\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003e|SYNTHETIC\lSplitter:B:11:0x003e\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0045|SYNTHETIC\lSplitter:B:13:0x0045\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0053}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0083}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x008b}"];
+MethodNode[shape=record,label="{public void android.support.media.ExifInterface.saveAttributes((r6v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_28;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_28;
+Node_5 -> Node_6;
+Node_5 -> Node_26[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_24[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_20;
+Node_12 -> Node_13;
+Node_12 -> Node_19;
+Node_19 -> Node_22;
+Node_22 -> Node_23;
+Node_14 -> Node_15;
+Node_14 -> Node_17;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_18 -> Node_22;
+Node_22 -> Node_23;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_19 -> Node_22;
+Node_22 -> Node_23;
+Node_17 -> Node_18;
+Node_18 -> Node_22;
+Node_22 -> Node_23;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_9 -> Node_20;
+Node_11 -> Node_12;
+Node_11 -> Node_19;
+Node_13 -> Node_14;
+Node_13 -> Node_17;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+}
+

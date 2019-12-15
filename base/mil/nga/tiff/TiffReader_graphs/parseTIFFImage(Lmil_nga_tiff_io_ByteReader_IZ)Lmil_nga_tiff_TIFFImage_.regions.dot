@@ -1,0 +1,44 @@
+digraph "CFG formil.nga.tiff.TiffReader.parseTIFFImage(Lmil\/nga\/tiff\/io\/ByteReader;IZ)Lmil\/nga\/tiff\/TIFFImage;" {
+subgraph cluster_Region_1222637919 {
+label = "R(3:0|(3:2|(1:4)|5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.tiff.TIFFImage mil.nga.tiff.TIFFImage r0 = new mil.nga.tiff.TIFFImage()\l}"];
+subgraph cluster_LoopRegion_948880149 {
+label = "LOOP:0: (3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|LOOP_START\lPHI: r12 \l  PHI: (r12v1 int) = (r12v0 int), (r12v3 int) binds: [B:0:0x0000, B:5:0x0044] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0005\-\>B:5:0x0044\l|if (r12 != 0) goto L_0x0007\l}"];
+subgraph cluster_Region_267795763 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r11.setNextByte(r12)\ljava.util.TreeSet java.util.TreeSet r12 = new java.util.TreeSet()\lint int r1 = r11.readUnsignedShort()\lshort r2 = 0\l}"];
+subgraph cluster_LoopRegion_100999187 {
+label = "LOOP:1: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|LOOP_START\lPHI: r2 \l  PHI: (r2v1 short) = (r2v0 short), (r2v3 short) binds: [B:2:0x0007, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:3:0x0014\-\>B:4:0x0016\l|if (r2 \< r1) goto L_0x0016\l}"];
+subgraph cluster_Region_1228294871 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|LOOP_END\lLOOP:1: B:3:0x0014\-\>B:4:0x0016\l|mil.nga.tiff.FieldTagType mil.nga.tiff.FieldTagType r5 = mil.nga.tiff.FieldTagType.getById(r11.readUnsignedShort())\lmil.nga.tiff.FieldType mil.nga.tiff.FieldType r6 = mil.nga.tiff.FieldType.getFieldType(r11.readUnsignedShort())\llong long r7 = r11.readUnsignedInt()\lint int r3 = r11.getNextByte()\lr12.add(new mil.nga.tiff.FileDirectoryEntry(r5, r6, r7, readFieldValues(r11, r5, r6, r7)))\lr11.setNextByte(r3 + 4)\lshort r2 = (short) (r2 + 1)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0044|LOOP_END\lLOOP:0: B:1:0x0005\-\>B:5:0x0044\l|r0.add(new mil.nga.tiff.FileDirectory(r12, r11, r13))\lint r12 = (int) r11.readUnsignedInt()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0052|RETURN\l|return r0\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x0052|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0044|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static mil.nga.tiff.TIFFImage mil.nga.tiff.TiffReader.parseTIFFImage((r11v0 mil.nga.tiff.io.ByteReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+}
+

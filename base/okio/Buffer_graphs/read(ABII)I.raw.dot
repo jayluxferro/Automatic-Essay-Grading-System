@@ -1,0 +1,21 @@
+digraph "CFG forokio.Buffer.read([BII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r0 I:int) = (r8 I:?[]) \l0x0001: CAST  (r1 I:long) = (long) (r0 I:int) \l0x0002: CAST  (r3 I:long) = (long) (r9 I:int) \l0x0003: CAST  (r5 I:long) = (long) (r10 I:int) \l0x0004: INVOKE  (r1 I:long), (r3 I:long), (r5 I:long) okio.Util.checkOffsetAndCount(long, long, long):void type: STATIC \l0x0007: IGET  (r0 I:okio.Segment) = (r7 I:okio.Buffer) okio.Buffer.head okio.Segment \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|0x0009: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x000d \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: CONST  (r8 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: RETURN  (r8 I:int) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: IGET  (r1 I:int) = (r0 I:okio.Segment) okio.Segment.limit int \l0x000f: IGET  (r2 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x0011: ARITH  (r1 I:int) = (r1 I:int) \- (r2 I:int) \l0x0012: INVOKE  (r10 I:int) = (r10 I:int), (r1 I:int) java.lang.Math.min(int, int):int type: STATIC \l0x0016: IGET  (r1 I:byte[]) = (r0 I:okio.Segment) okio.Segment.data byte[] \l0x0018: IGET  (r2 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x001a: INVOKE  \l  (r1 I:java.lang.Object)\l  (r2 I:int)\l  (r8 I:java.lang.Object)\l  (r9 I:int)\l  (r10 I:int)\l java.lang.System.arraycopy(java.lang.Object, int, java.lang.Object, int, int):void type: STATIC \l0x001d: IGET  (r8 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x001f: ARITH  (r8 I:int) = (r8 I:int) + (r10 I:int) \l0x0020: IPUT  (r8 I:int), (r0 I:okio.Segment) okio.Segment.pos int \l0x0022: IGET  (r8 I:long) = (r7 I:okio.Buffer) okio.Buffer.size long \l0x0024: CAST  (r1 I:long) = (long) (r10 I:int) \l0x0025: ARITH  (r8 I:long) = (r8 I:long) \- (r1 I:long) \l0x0026: IPUT  (r8 I:long), (r7 I:okio.Buffer) okio.Buffer.size long \l0x0028: IGET  (r8 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x002a: IGET  (r9 I:int) = (r0 I:okio.Segment) okio.Segment.limit int \l}"];
+Node_5 [shape=record,label="{5\:\ 0x002c|0x002c: IF  (r8 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r9 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0037 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002e|0x002e: INVOKE  (r8 I:okio.Segment) = (r0 I:okio.Segment) okio.Segment.pop():okio.Segment type: VIRTUAL \l0x0032: IPUT  (r8 I:okio.Segment), (r7 I:okio.Buffer) okio.Buffer.head okio.Segment \l0x0034: INVOKE  (r0 I:okio.Segment) okio.SegmentPool.recycle(okio.Segment):void type: STATIC \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0037|0x0037: RETURN  (r10 I:int) \l}"];
+MethodNode[shape=record,label="{public int okio.Buffer.read((r7 'this' I:okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r8 I:byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+}
+

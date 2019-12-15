@@ -1,0 +1,108 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.getActionCompatFromAction(Landroid\/app\/Notification$Action;)Landroid\/support\/v4\/app\/NotificationCompat$Action;" {
+subgraph cluster_Region_543980163 {
+label = "R(6:0|(1:2)(3:3|(1:6)|7)|(1:11)(1:16)|17|(1:19)(1:21)|23) | DECL_VAR: android.support.v4.app.RemoteInput[] null, boolean null, int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.app.RemoteInput[] android.app.RemoteInput[] r0 = r14.getRemoteInputs()\l}"];
+subgraph cluster_IfRegion_731898022 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: R(3:3|(1:6)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 == null) goto L_0x0007\l}"];
+subgraph cluster_Region_1405848665 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r9 = null\l}"];
+}
+subgraph cluster_Region_8555869 {
+label = "R(3:3|(1:6)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|android.support.v4.app.RemoteInput[] android.support.p000v4.app.RemoteInput[] r2 = new android.support.p000v4.app.RemoteInput[r0.length]\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1149109409 {
+label = "LOOP:0: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r3 \< r0.length) goto L_0x0011\l}"];
+subgraph cluster_Region_117819087 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|LOOP_END\lLOOP:0: B:4:0x000e\-\>B:6:0x0011\l|android.app.RemoteInput r4 = r0[r3]\lr2[r3] = new android.support.p000v4.app.RemoteInput(r4.getResultKey(), r4.getLabel(), r4.getChoices(), r4.getAllowFreeFormInput(), r4.getExtras(), (java.util.Set\<java.lang.String\>) null)\lr3++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0033|r9 = r2\l}"];
+}
+}
+subgraph cluster_IfRegion_192078419 {
+label = "IF [B:9:0x0039] THEN: R(1:11) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0039|if (android.os.Build.VERSION.SDK_INT \>= 24) goto L_0x003b\l}"];
+subgraph cluster_Region_1943553091 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0045|r0 = r14.getExtras().getBoolean(\"android.support.allowGeneratedReplies\") \|\| r14.getAllowGeneratedReplies()\l}"];
+}
+subgraph cluster_Region_1203178264 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0052|boolean r0 = r14.getExtras().getBoolean(\"android.support.allowGeneratedReplies\")\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x005c|PHI: r0 \l  PHI: (r0v2 boolean) = (r0v11 boolean), (r0v14 boolean) binds: [B:16:0x0052, B:15:0x0050] A[DONT_GENERATE, DONT_INLINE]\l|boolean r11 = r0\lboolean boolean r13 = r14.getExtras().getBoolean(\"android.support.action.showsUserInterface\", true)\l}"];
+subgraph cluster_IfRegion_790915578 {
+label = "IF [B:18:0x006b] THEN: R(1:19) ELSE: R(1:21)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x006b|if (android.os.Build.VERSION.SDK_INT \>= 28) goto L_0x006d\l}"];
+subgraph cluster_Region_1432625420 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x006d|int r0 = r14.getSemanticAction()\l}"];
+}
+subgraph cluster_Region_1522718537 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0073|int r0 = r14.getExtras().getInt(\"android.support.action.semanticAction\", 0)\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x008f|RETURN\l|return new android.support.p000v4.app.NotificationCompat.Action(r14.icon, r14.title, r14.actionIntent, r14.getExtras(), r9, (android.support.p000v4.app.RemoteInput[]) null, r11, r0, r13)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e|LOOP_START\lPHI: r3 \l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:3:0x000a, B:6:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000e\-\>B:6:0x0011\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0034|PHI: r9 \l  PHI: (r9v0 android.support.v4.app.RemoteInput[]) = (r9v1 android.support.v4.app.RemoteInput[]), (r9v3 android.support.v4.app.RemoteInput[]) binds: [B:7:0x0033, B:2:0x0007] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0047}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x004b|REMOVE\lADDED_TO_REGION\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x004e}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0050}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0071|PHI: r0 \l  PHI: (r0v7 int) = (r0v6 int), (r0v9 int) binds: [B:21:0x0073, B:19:0x006d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x007e}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0033|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static android.support.v4.app.NotificationCompat$Action android.support.v4.app.NotificationCompat.getActionCompatFromAction((r14v0 android.app.Notification$Action A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RequiresApi, \{value=20\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_24[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_21[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_20;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_14 -> Node_17;
+Node_15 -> Node_17;
+Node_20 -> Node_22;
+Node_22 -> Node_23;
+Node_24 -> Node_7;
+}
+

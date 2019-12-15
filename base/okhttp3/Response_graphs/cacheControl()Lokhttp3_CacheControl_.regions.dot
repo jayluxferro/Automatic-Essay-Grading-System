@@ -1,0 +1,34 @@
+digraph "CFG forokhttp3.Response.cacheControl()Lokhttp3\/CacheControl;" {
+subgraph cluster_Region_218440061 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okhttp3.CacheControl okhttp3.CacheControl r0 = r1.cacheControl\l}"];
+subgraph cluster_Region_831472783 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_943423162 {
+label = "IF [B:1:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 != null) goto L_?\l}"];
+subgraph cluster_Region_76563234 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_152414198 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|okhttp3.CacheControl okhttp3.CacheControl r0 = okhttp3.CacheControl.parse(r1.headers)\lr1.cacheControl = r0\l}"];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public okhttp3.CacheControl okhttp3.Response.cacheControl((r1v0 'this' okhttp3.Response A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

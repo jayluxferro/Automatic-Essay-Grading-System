@@ -1,0 +1,129 @@
+digraph "CFG fororg.osmdroid.views.overlay.ScaleBarOverlay.rebuildBarPath(Lorg\/osmdroid\/views\/Projection;)V" {
+subgraph cluster_Region_2045789234 {
+label = "R(9:0|1|4|5|8|(1:10)(1:11)|(1:14)|(3:17|(1:19)|20)|(1:(2:(1:25)|26))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (int) (r12.maxLength * ((float) ((int) (((double) r12.xdpi) \/ 2.54d))))\lint int r1 = (int) (r12.maxLength * ((float) ((int) (((double) r12.ydpi) \/ 2.54d))))\lint int r3 = r0 \/ 2\ldouble double r2 = ((org.osmdroid.util.GeoPoint) r13.fromPixels((r12.screenWidth \/ 2) \- r3, r12.yOffset, (org.osmdroid.util.GeoPoint) null)).distanceToAsDouble(r13.fromPixels((r12.screenWidth \/ 2) + r3, r12.yOffset, (org.osmdroid.util.GeoPoint) null))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x003c|double r6 = r12.adjustLength ? adjustScaleBarLength(r2) : r2\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0044|PHI: r6 \l  PHI: (r6v0 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r0 = (int) ((((double) r0) * r6) \/ r2)\lint int r4 = r1 \/ 2\ldouble double r2 = ((org.osmdroid.util.GeoPoint) r13.fromPixels(r12.screenWidth \/ 2, (r12.screenHeight \/ 2) \- r4, (org.osmdroid.util.GeoPoint) null)).distanceToAsDouble(r13.fromPixels(r12.screenWidth \/ 2, (r12.screenHeight \/ 2) + r4, (org.osmdroid.util.GeoPoint) null))\l}"];
+Node_5 [shape=record,label="{5\:\ 0x006d|double r4 = r12.adjustLength ? adjustScaleBarLength(r2) : r2\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0075|PHI: r4 \l  PHI: (r4v8 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|int int r13 = (int) ((((double) r1) * r4) \/ r2)\ljava.lang.String java.lang.String r1 = scaleBarLengthText(r6)\landroid.graphics.Rect android.graphics.Rect r2 = new android.graphics.Rect()\lint r7 = 0\lr12.textPaint.getTextBounds(r1, 0, r1.length(), r2)\lint int r1 = (int) (((double) r2.height()) \/ 5.0d)\ljava.lang.String java.lang.String r3 = scaleBarLengthText(r4)\landroid.graphics.Rect android.graphics.Rect r4 = new android.graphics.Rect()\lr12.textPaint.getTextBounds(r3, 0, r3.length(), r4)\lint int r3 = (int) (((double) r4.height()) \/ 5.0d)\lint int r2 = r2.height()\lint int r4 = r4.height()\lr12.barPath.rewind()\l}"];
+subgraph cluster_IfRegion_818458915 {
+label = "IF [B:9:0x00be] THEN: R(1:10) ELSE: R(1:11)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x00be|if (r12.alignBottom == true) goto L_0x00c0\l}"];
+subgraph cluster_Region_2128116737 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x00c0|r1 *= \-1\lr2 *= \-1\lint r5 = getMapHeight()\lint r13 = r5 \- r13\l}"];
+}
+subgraph cluster_Region_1998880252 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x00cb|r5 = 0\l}"];
+}
+}
+subgraph cluster_IfRegion_762159880 {
+label = "IF [B:13:0x00ce] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00ce|if (r12.alignRight == true) goto L_0x00d0\l}"];
+subgraph cluster_Region_1991853227 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x00d0|r3 *= \-1\lr4 *= \-1\lint r7 = getMapWidth()\lint r0 = r7 \- r0\l}"];
+}
+}
+subgraph cluster_IfRegion_24248117 {
+label = "IF [B:16:0x00dc] THEN: R(3:17|(1:19)|20) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00dc|if (r12.latitudeBar == true) goto L_0x00de\l}"];
+subgraph cluster_Region_517610583 {
+label = "R(3:17|(1:19)|20)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x00de|float float r8 = (float) r0\lint int r2 = r2 + r5 + (r1 * 2)\lfloat float r1 = (float) r2\lr12.barPath.moveTo(r8, r1)\lfloat float r9 = (float) r5\lr12.barPath.lineTo(r8, r9)\lfloat float r8 = (float) r7\lr12.barPath.lineTo(r8, r9)\l}"];
+subgraph cluster_IfRegion_76654877 {
+label = "IF [B:18:0x00f7] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00f7|if (r12.longitudeBar == false) goto L_0x00f9\l}"];
+subgraph cluster_Region_1252077421 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00f9|r12.barPath.lineTo(r8, r1)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x00fe|r12.latitudeBarRect.set(r7, r5, r0, r2)\l}"];
+}
+}
+subgraph cluster_Region_1898270981 {
+label = "R(1:(2:(1:25)|26))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_823183818 {
+label = "IF [B:22:0x0105] THEN: R(2:(1:25)|26) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0105|if (r12.longitudeBar == true) goto L_0x0107\l}"];
+subgraph cluster_Region_91387452 {
+label = "R(2:(1:25)|26)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1066799242 {
+label = "IF [B:24:0x0109] THEN: R(1:25) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0109|if (r12.latitudeBar == false) goto L_0x010b\l}"];
+subgraph cluster_Region_961738277 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x010b|float float r2 = (float) r5\lr12.barPath.moveTo((float) (r7 + r4 + (r3 * 2)), r2)\lr12.barPath.lineTo((float) r7, r2)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x011d|float float r2 = (float) r13\lr12.barPath.lineTo((float) r7, r2)\lint int r4 = r4 + r7 + (r3 * 2)\lr12.barPath.lineTo((float) r4, r2)\lr12.longitudeBarRect.set(r7, r5, r4, r13)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x003e}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0043}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x006f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0074}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x00cc|PHI: r1 r2 r5 r13 \l  PHI: (r1v7 int) = (r1v6 int), (r1v17 int) binds: [B:11:0x00cb, B:10:0x00c0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v18 int) = (r2v17 int), (r2v24 int) binds: [B:11:0x00cb, B:10:0x00c0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v6 int) = (r5v7 int), (r5v8 int) binds: [B:11:0x00cb, B:10:0x00c0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r13v4 int) = (r13v3 int), (r13v5 int) binds: [B:11:0x00cb, B:10:0x00c0] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x00da|PHI: r0 r3 r4 r7 \l  PHI: (r0v7 int) = (r0v6 int), (r0v15 int) binds: [B:13:0x00ce, B:14:0x00d0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v12 int) = (r3v11 int), (r3v14 int) binds: [B:13:0x00ce, B:14:0x00d0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v11 int) = (r4v10 int), (r4v14 int) binds: [B:13:0x00ce, B:14:0x00d0] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 int) = (r7v0 int), (r7v2 int) binds: [B:13:0x00ce, B:14:0x00d0] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0103}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0107}"];
+Node_27 [shape=record,color=red,label="{27\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.osmdroid.views.overlay.ScaleBarOverlay.rebuildBarPath((r12v0 'this' org.osmdroid.views.overlay.ScaleBarOverlay A[IMMUTABLE_TYPE, THIS]), (r13v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_21[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+}
+

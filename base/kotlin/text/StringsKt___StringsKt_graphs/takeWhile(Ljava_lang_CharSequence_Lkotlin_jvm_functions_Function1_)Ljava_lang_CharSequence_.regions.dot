@@ -1,0 +1,55 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.takeWhile(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1;)Ljava\/lang\/CharSequence;" {
+subgraph cluster_Region_503992805 {
+label = "R(3:0|(1:(2:(1:5)|(1:6)))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"predicate\")\lint int r0 = r4.length()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1207890504 {
+label = "LOOP:0: (1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:6:0x002b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0010\-\>B:6:0x002b\l|if (r2 \< r0) goto L_0x0012\l}"];
+subgraph cluster_Region_1326807306 {
+label = "R(1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_722401616 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_261889287 {
+label = "IF [B:3:0x0024] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0024|if (r5.invoke(java.lang.Character.valueOf(r4.charAt(r2))).booleanValue() == false) goto L_0x0026\l}"];
+subgraph cluster_Region_1129701480 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002a|RETURN\l|return r4.subSequence(0, r2)\l}"];
+}
+}
+subgraph cluster_Region_454623421 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002b|LOOP_END\lLOOP:0: B:1:0x0010\-\>B:6:0x002b\l|r2++\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0036|RETURN\l|return r4.subSequence(0, r4.length())\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0012}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0026}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002e|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0026|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.lang.CharSequence kotlin.text.StringsKt___StringsKt.takeWhile((r4v0 java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/CharSequence;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Character;, Ljava\/lang\/Boolean;, \>;), Ljava\/lang\/CharSequence;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_3 -> Node_6[style=dashed];
+Node_3 -> Node_10;
+Node_6 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_7;
+Node_10 -> Node_4;
+}
+

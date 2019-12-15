@@ -1,0 +1,71 @@
+digraph "CFG fororg.spatialite.AbstractCursor.onChange(Z)V" {
+subgraph cluster_Region_2011015752 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_2127604801 {
+label = "Synchronized:R(2:1|(2:(1:5)(1:6)|(1:10)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_227228509 {
+label = "R(2:(1:5)(1:6)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_950577888 {
+label = "IF [B:4:0x0007] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x0009\l}"];
+subgraph cluster_Region_574478423 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|r3.mContentObservable.dispatchChange(r4, (android.net.Uri) null)\l}"];
+}
+subgraph cluster_Region_1509219061 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0010|r3.mContentObservable.dispatchChange(r4)\l}"];
+}
+}
+subgraph cluster_IfRegion_233915205 {
+label = "IF [B:8:0x0017, B:9:0x0019] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|ADDED_TO_REGION\l|if (r3.mNotifyUri != null) goto L_0x0019\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|ADDED_TO_REGION\l|if (r4 == true) goto L_0x001b\l}"];
+subgraph cluster_Region_1894975409 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|r3.mContentResolver.notifyChange(r3.mNotifyUri, r3.mSelfObserver)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0015}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0024|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0024: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0025}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0026|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0027|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0028|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{protected void org.spatialite.AbstractCursor.onChange((r3v0 'this' org.spatialite.AbstractCursor A[IMMUTABLE_TYPE, THIS]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,181 @@
+digraph "CFG forcom.google.android.exoplayer2.text.ttml.TtmlNode.traverseForText(JZLjava\/lang\/String;Ljava\/util\/Map;)V" {
+subgraph cluster_Region_1220422403 {
+label = "R(3:0|(1:2)|(1:6)(1:(1:10)(1:(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))(0))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r9.nodeStartsByRegion.clear()\lr9.nodeEndsByRegion.clear()\ljava.lang.String java.lang.String r5 = r9.regionId\l}"];
+subgraph cluster_IfRegion_1252195495 {
+label = "IF [B:1:0x0012] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (\"\".equals(r5) == true) goto L_0x0014\l}"];
+subgraph cluster_Region_2035528608 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|r5 = r13\l}"];
+}
+}
+subgraph cluster_IfRegion_92836495 {
+label = "IF [B:4:0x0017, B:5:0x0019] THEN: R(1:6) ELSE: R(1:(1:10)(1:(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))(0)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|if (r9.isTextNode != false) goto L_0x0019\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0019|ADDED_TO_REGION\l|if (r12 != false) goto L_0x001b\l}"];
+subgraph cluster_Region_1757697365 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|getRegionOutput(r5, r14).append(r9.text)\l}"];
+}
+subgraph cluster_Region_1361916666 {
+label = "R(1:(1:10)(1:(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1064454804 {
+label = "IF [B:8:0x002d, B:9:0x002f] THEN: R(1:10) ELSE: R(1:(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002d|if (TAG_BR.equals(r9.tag) != false) goto L_0x002f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|ADDED_TO_REGION\l|if (r12 != false) goto L_0x0031\l}"];
+subgraph cluster_Region_1360764285 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0031|getRegionOutput(r5, r14).append(10)\l}"];
+}
+subgraph cluster_Region_19927297 {
+label = "R(1:(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1080948546 {
+label = "IF [B:12:0x0043, B:14:0x0049] THEN: R(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33)) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0043|if (TAG_METADATA.equals(r9.tag) != true) goto L_0x0045\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0049|ADDED_TO_REGION\l|if (isActive(r10) != false) goto L_0x004b\l}"];
+subgraph cluster_Region_571470133 {
+label = "R(7:15|(1:18)|19|(1:26)|(1:29)|30|(1:33))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004b|boolean boolean r8 = TAG_P.equals(r9.tag)\ljava.util.Iterator r2 = r14.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_2020587351 {
+label = "LOOP:0: (1:18)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x005f|if (r2.hasNext() != false) goto L_0x0061\l}"];
+subgraph cluster_Region_1432646692 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0061|LOOP_END\lLOOP:0: B:16:0x005b\-\>B:18:0x0061\l|java.util.Map$Entry r0 = r2.next()\lr9.nodeStartsByRegion.put(r0.getKey(), java.lang.Integer.valueOf(r0.getValue().length()))\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x007f|int r7 = 0\l}"];
+subgraph cluster_LoopRegion_363529309 {
+label = "LOOP:1: (1:26)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0084|if (r7 \< getChildCount()) goto L_0x0086\l}"];
+subgraph cluster_Region_892467789 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x008f|LOOP_END\lPHI: r4 \l  PHI: (r4v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:20:0x0080\-\>B:26:0x008f\l|getChild(r7).traverseForText(r10, r12 \|\| r8, r5, r14)\lr7++\l}"];
+}
+}
+subgraph cluster_IfRegion_804417660 {
+label = "IF [B:28:0x0099] THEN: R(1:29) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0099|if (r8 == true) goto L_0x009b\l}"];
+subgraph cluster_Region_1756069768 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x009b|com.google.android.exoplayer2.text.ttml.TtmlRenderUtil.endParagraph(getRegionOutput(r5, r14))\l}"];
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x00a2|java.util.Iterator r2 = r14.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1423826832 {
+label = "LOOP:2: (1:33)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00ae|if (r2.hasNext() != false) goto L_0x00b0\l}"];
+subgraph cluster_Region_2074469806 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x00b0|LOOP_END\lLOOP:2: B:31:0x00aa\-\>B:33:0x00b0\l|java.util.Map$Entry r0 = r2.next()\lr9.nodeEndsByRegion.put(r0.getKey(), java.lang.Integer.valueOf(r0.getValue().length()))\l}"];
+}
+}
+}
+subgraph cluster_Region_2121605250 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015|PHI: r5 \l  PHI: (r5v1 'resolvedRegionId' java.lang.String) = (r5v0 'resolvedRegionId' java.lang.String), (r5v2 'resolvedRegionId' java.lang.String) binds: [B:1:0x0012, B:2:0x0014] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0025}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0045}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x005b|LOOP_START\lLOOP:0: B:16:0x005b\-\>B:18:0x0061\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0080|LOOP_START\lPHI: r7 \l  PHI: (r7v1 'i' int) = (r7v0 'i' int), (r7v2 'i' int) binds: [B:19:0x007f, B:26:0x008f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:20:0x0080\-\>B:26:0x008f\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0086}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x008a}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x008c|REMOVE\lADDED_TO_REGION\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x008e}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0097}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x00aa|LOOP_START\lLOOP:2: B:31:0x00aa\-\>B:33:0x00b0\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x007f|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0099|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x008f|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x008f|SYNTHETIC\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x0024|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ ?|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.text.ttml.TtmlNode.traverseForText((r9v0 'this' com.google.android.exoplayer2.text.ttml.TtmlNode A[IMMUTABLE_TYPE, THIS]), (r10v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'descendsPNode' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'inheritedRegion' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'regionOutputs' java.util.Map\<java.lang.String, android.text.SpannableStringBuilder\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(JZ, Ljava\/lang\/String;, Ljava\/util\/Map, \<, Ljava\/lang\/String;, Landroid\/text\/SpannableStringBuilder;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_39;
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_40;
+Node_12 -> Node_13;
+Node_12 -> Node_41[style=dashed];
+Node_14 -> Node_15;
+Node_14 -> Node_42[style=dashed];
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_17 -> Node_34[style=dashed];
+Node_18 -> Node_16;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_35[style=dashed];
+Node_26 -> Node_20;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_30;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_32 -> Node_38[style=dashed];
+Node_33 -> Node_31;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_25;
+Node_24 -> Node_25;
+Node_24 -> Node_27;
+Node_25 -> Node_36;
+Node_27 -> Node_37;
+Node_31 -> Node_32;
+Node_34 -> Node_19;
+Node_35 -> Node_28;
+Node_36 -> Node_26;
+Node_37 -> Node_26;
+Node_38 -> Node_43;
+}
+

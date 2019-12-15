@@ -1,0 +1,67 @@
+digraph "CFG forcom.facebook.ads.internal.r.a.b(Landroid\/view\/View;)Ljava\/util\/Vector;" {
+subgraph cluster_Region_133649734 {
+label = "R(2:0|(2:(1:9)|(2:3|(2:4|(1:6)(2:7|10)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.Vector java.util.Vector\<android.graphics.Rect\> r2 = new java.util.Vector\<\>()\l}"];
+subgraph cluster_Region_2116226417 {
+label = "R(2:(1:9)|(2:3|(2:4|(1:6)(2:7|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_93749780 {
+label = "IF [B:1:0x000b] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if ((r4.getParent() instanceof android.view.ViewGroup) == false) goto L_0x000d\l}"];
+subgraph cluster_Region_1794097331 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r2\l}"];
+}
+}
+subgraph cluster_Region_1881225938 {
+label = "R(2:3|(2:4|(1:6)(2:7|10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|android.view.ViewGroup android.view.ViewGroup r0 = (android.view.ViewGroup) r4.getParent()\lint int r1 = r0.indexOfChild(r4)\l}"];
+subgraph cluster_LoopRegion_1168476947 {
+label = "LOOP:0: (2:4|(1:6)(2:7|10))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2080167297 {
+label = "R(2:4|(1:6)(2:7|10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:3:0x000f, B:6:0x0021] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x001b\-\>B:6:0x0021\l|r1++\l}"];
+subgraph cluster_IfRegion_1692370493 {
+label = "IF [B:5:0x001f] THEN: R(1:6) ELSE: R(2:7|10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|if (r1 \< r0.getChildCount()) goto L_0x0021\l}"];
+subgraph cluster_Region_161661892 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|LOOP_END\lLOOP:0: B:4:0x001b\-\>B:6:0x0021\l|r2.addAll(m1842c(r0.getChildAt(r1)))\l}"];
+}
+subgraph cluster_Region_1304501065 {
+label = "R(2:7|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|r2.addAll(m1840b((android.view.View) r0))\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return r2\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.Vector\<android.graphics.Rect\> com.facebook.ads.internal.r.a.b((r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/view\/View;, ), Ljava\/util\/Vector, \<, Landroid\/graphics\/Rect;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_10;
+Node_2 -> Node_9;
+Node_8 -> Node_7;
+}
+

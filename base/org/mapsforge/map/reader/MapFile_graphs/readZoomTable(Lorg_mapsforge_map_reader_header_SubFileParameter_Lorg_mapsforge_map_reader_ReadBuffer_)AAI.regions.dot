@@ -1,0 +1,27 @@
+digraph "CFG fororg.mapsforge.map.reader.MapFile.readZoomTable(Lorg\/mapsforge\/map\/reader\/header\/SubFileParameter;Lorg\/mapsforge\/map\/reader\/ReadBuffer;)[[I" {
+subgraph cluster_Region_1705427223 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (r8.zoomLevelMax \- r8.zoomLevelMin) + 1\lint[][] int[][] r1 = (int[][]) java.lang.reflect.Array.newInstance(int.class, new int[]\{r0, 2\})\lint r3 = 0\lint r4 = 0\lint r5 = 0\l}"];
+subgraph cluster_LoopRegion_1348126553 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0018|LOOP_START\lPHI: r3 r4 r5 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:2:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:0:0x0000, B:2:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:0:0x0000, B:2:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0018\-\>B:2:0x001a\l|if (r3 \< r0) goto L_0x001a\l}"];
+subgraph cluster_Region_740655831 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001a|LOOP_END\lLOOP:0: B:1:0x0018\-\>B:2:0x001a\l|r4 += r9.readUnsignedInt()\lr5 += r9.readUnsignedInt()\lr1[r3][0] = r4\lr1[r3][1] = r5\lr3++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x002f|RETURN\l|return r1\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x002f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int[][] org.mapsforge.map.reader.MapFile.readZoomTable((r7v0 'this' org.mapsforge.map.reader.MapFile A[IMMUTABLE_TYPE, THIS]), (r8v0 org.mapsforge.map.reader.header.SubFileParameter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 org.mapsforge.map.reader.ReadBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

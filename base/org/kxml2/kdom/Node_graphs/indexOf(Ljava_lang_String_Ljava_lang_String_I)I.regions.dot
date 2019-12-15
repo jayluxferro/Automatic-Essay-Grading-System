@@ -1,0 +1,72 @@
+digraph "CFG fororg.kxml2.kdom.Node.indexOf(Ljava\/lang\/String;Ljava\/lang\/String;I)I" {
+subgraph cluster_Region_1320163333 {
+label = "R(3:0|(2:2|(2:(1:9)|(1:10)))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getChildCount()\l}"];
+subgraph cluster_LoopRegion_1545032507 {
+label = "LOOP:0: (2:2|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lPHI: r6 \l  PHI: (r6v1 int) = (r6v0 int), (r6v2 int) binds: [B:0:0x0000, B:10:0x0023] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:10:0x0023\l|if (r6 \< r0) goto L_0x0006\l}"];
+subgraph cluster_Region_955052094 {
+label = "R(2:2|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|org.kxml2.kdom.Element org.kxml2.kdom.Element r1 = getElement(r6)\l}"];
+subgraph cluster_Region_882182646 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1912465399 {
+label = "IF [B:3:0x000a, B:5:0x0014, B:6:0x0016, B:8:0x0020] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r1 != null) goto L_0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r5.equals(r1.getName()) != false) goto L_0x0016\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|ADDED_TO_REGION\l|if (r4 == null) goto L_0x0022\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|ADDED_TO_REGION\l|if (r4.equals(r1.getNamespace()) != false) goto L_0x0022\l}"];
+subgraph cluster_Region_1992704645 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0022|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_406133038 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:10:0x0023\l|r6++\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0026|RETURN\l|return \-1\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0022|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0026|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0022|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0023|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0023|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int org.kxml2.kdom.Node.indexOf((r3v0 'this' org.kxml2.kdom.Node A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_16[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_14;
+Node_8 -> Node_12;
+Node_8 -> Node_17[style=dashed];
+Node_10 -> Node_1;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_12 -> Node_9;
+Node_13 -> Node_11;
+Node_14 -> Node_9;
+Node_15 -> Node_10;
+Node_16 -> Node_10;
+Node_17 -> Node_10;
+}
+

@@ -1,0 +1,28 @@
+digraph "CFG forcom.google.gson.FieldNamingPolicy.upperCaseFirstLetter(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0002: INVOKE  (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0005: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0006: INVOKE  (r2 I:char) = (r5 I:java.lang.String), (r1 I:int) java.lang.String.charAt(int):char type: VIRTUAL \l0x000a: INVOKE  (r3 I:int) = (r5 I:java.lang.String) java.lang.String.length():int type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|0x000e: ARITH  (r4 I:int) = (r3 I:int) + (\-1 int) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|0x0010: IF  (r1 I:?[int, byte, short, char]) \>= (r4 I:?[int, byte, short, char])  \-\> B:7:0x0023 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|0x0012: INVOKE  (r4 I:boolean) = (r2 I:char) java.lang.Character.isLetter(char):boolean type: STATIC \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0019 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: INVOKE  (r0 I:java.lang.StringBuilder), (r2 I:char) java.lang.StringBuilder.append(char):java.lang.StringBuilder type: VIRTUAL \l0x001c: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l0x001e: INVOKE  (r2 I:char) = (r5 I:java.lang.String), (r1 I:int) java.lang.String.charAt(int):char type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|0x0023: INVOKE  (r3 I:boolean) = (r2 I:char) java.lang.Character.isUpperCase(char):boolean type: STATIC \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|0x0027: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x003b \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|0x0029: INVOKE  (r2 I:char) = (r2 I:char) java.lang.Character.toUpperCase(char):char type: STATIC \l0x002d: ARITH  (r1 I:int) = (r1 I:int) + (1 int) \l0x002f: INVOKE  (r5 I:java.lang.String) = (r2 I:char), (r5 I:java.lang.String), (r1 I:int) com.google.gson.FieldNamingPolicy.modifyString(char, java.lang.String, int):java.lang.String type: STATIC \l0x0033: INVOKE  (r0 I:java.lang.StringBuilder), (r5 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0036: INVOKE  (r5 I:java.lang.String) = (r0 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l}"];
+Node_10 [shape=record,label="{10\:\ 0x003a|0x003a: RETURN  (r5 I:java.lang.String) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|0x003b: RETURN  (r5 I:java.lang.String) \l}"];
+MethodNode[shape=record,label="{static java.lang.String com.google.gson.FieldNamingPolicy.upperCaseFirstLetter((r5 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_4 -> Node_7[style=dashed];
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+}
+

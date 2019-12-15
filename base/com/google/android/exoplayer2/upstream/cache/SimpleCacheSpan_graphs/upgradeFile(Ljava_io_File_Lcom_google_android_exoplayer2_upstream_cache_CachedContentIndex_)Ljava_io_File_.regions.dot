@@ -1,0 +1,93 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.upgradeFile(Ljava\/io\/File;Lcom\/google\/android\/exoplayer2\/upstream\/cache\/CachedContentIndex;)Ljava\/io\/File;" {
+subgraph cluster_Region_1910291413 {
+label = "R(4:0|(2:2|(1:12))(2:5|(2:(1:13)|(1:8)))|9|(2:(1:15)|(1:14))) | DECL_VAR: java.lang.String key\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r6 = r11.getName()\ljava.util.regex.Matcher java.util.regex.Matcher r8 = CACHE_FILE_PATTERN_V2.matcher(r6)\l}"];
+subgraph cluster_IfRegion_253251692 {
+label = "IF [B:1:0x0010] THEN: R(2:2|(1:12)) ELSE: R(2:5|(2:(1:13)|(1:8)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r8.matches() == true) goto L_0x0012\l}"];
+subgraph cluster_Region_712735016 {
+label = "R(2:2|(1:12))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|java.lang.String r7 = com.google.android.exoplayer2.util.Util.unescapeFileName(r8.group(1))\l}"];
+subgraph cluster_IfRegion_1917272522 {
+label = "IF [B:3:0x001a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|if (r7 == null) goto L_0x001c\l}"];
+subgraph cluster_Region_610482709 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_511977301 {
+label = "R(2:5|(2:(1:13)|(1:8)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|java.util.regex.Matcher r8 = CACHE_FILE_PATTERN_V1.matcher(r6)\l}"];
+subgraph cluster_Region_431442278 {
+label = "R(2:(1:13)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1055747489 {
+label = "IF [B:6:0x0028] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|if (r8.matches() == false) goto L_0x002a\l}"];
+subgraph cluster_Region_453723341 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_23874470 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|java.lang.String r7 = r8.group(1)\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0030|PHI: r7 r8 \l  PHI: (r7v0 'key' java.lang.String) = (r7v1 'key' java.lang.String), (r7v2 'key' java.lang.String) binds: [B:8:0x002c, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v1 'matcher' java.util.regex.Matcher) = (r8v2 'matcher' java.util.regex.Matcher), (r8v0 'matcher' java.util.regex.Matcher) binds: [B:8:0x002c, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|java.io.File java.io.File r9 = getCacheFile(r11.getParentFile(), r12.assignIdForKey(r7), java.lang.Long.parseLong(r8.group(2)), java.lang.Long.parseLong(r8.group(3)))\l}"];
+subgraph cluster_Region_1401556855 {
+label = "R(2:(1:15)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1278931159 {
+label = "IF [B:10:0x0052] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0052|if (r11.renameTo(r9) == false) goto L_0x0054\l}"];
+subgraph cluster_Region_1845765249 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1031369281 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return r9\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0054}"];
+MethodNode[shape=record,label="{private static java.io.File com.google.android.exoplayer2.upstream.cache.SimpleCacheSpan.upgradeFile((r11v0 'file' java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'index' com.google.android.exoplayer2.upstream.cache.CachedContentIndex A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_4 -> Node_12;
+Node_7 -> Node_13;
+Node_11 -> Node_15;
+}
+

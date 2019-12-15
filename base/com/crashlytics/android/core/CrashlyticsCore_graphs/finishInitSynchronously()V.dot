@@ -1,0 +1,44 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsCore.finishInitSynchronously()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.crashlytics.android.core.CrashlyticsCore$1 r0 = new com.crashlytics.android.core.CrashlyticsCore.C06421(r4)\ljava.util.Iterator r1 = getDependencies().iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|LOOP_START\lLOOP:0: B:1:0x000d\-\>B:3:0x0013\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|if (r1.hasNext() == false) goto L_0x001d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|LOOP_END\lLOOP:0: B:1:0x000d\-\>B:3:0x0013\l|r0.addDependency(r1.next())\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d|java.util.concurrent.Future r0 = getFabric().getExecutorService().submit(r0)\lp018io.fabric.sdk.android.Fabric.getLogger().mo22221d(TAG, \"Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0036|SYNTHETIC\lSplitter:B:5:0x0036\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ InterruptedException \-\> 0x0056, ExecutionException \-\> 0x0049, TimeoutException \-\> 0x003c \}\lSplitter:B:5:0x0036\l|r0.get(4, java.util.concurrent.TimeUnit.SECONDS)     \/\/ Catch:\{ InterruptedException \-\> 0x0056, ExecutionException \-\> 0x0049, TimeoutException \-\> 0x003c \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003c|ExcHandler: TimeoutException (r0v4 'e' java.util.concurrent.TimeoutException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l|java.util.concurrent.TimeoutException r0 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003d|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics timed out during initialization.\", r0)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0049|ExcHandler: ExecutionException (r0v3 'e' java.util.concurrent.ExecutionException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l|java.util.concurrent.ExecutionException r0 = move\-exception\l}"];
+Node_10 [shape=record,label="{10\:\ 0x004a|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Problem encountered during Crashlytics initialization.\", r0)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0056|ExcHandler: InterruptedException (r0v2 'e' java.lang.InterruptedException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0036\l|java.lang.InterruptedException r0 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0057|p018io.fabric.sdk.android.Fabric.getLogger().mo22224e(TAG, \"Crashlytics was interrupted during initialization.\", r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x001d|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsCore.finishInitSynchronously((r4v0 'this' com.crashlytics.android.core.CrashlyticsCore A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_5 -> Node_9;
+Node_5 -> Node_7;
+Node_6 -> Node_11;
+Node_6 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_17;
+Node_7 -> Node_8;
+Node_8 -> Node_15;
+Node_9 -> Node_10;
+Node_10 -> Node_16;
+Node_11 -> Node_12;
+Node_12 -> Node_14;
+Node_13 -> Node_4;
+}
+

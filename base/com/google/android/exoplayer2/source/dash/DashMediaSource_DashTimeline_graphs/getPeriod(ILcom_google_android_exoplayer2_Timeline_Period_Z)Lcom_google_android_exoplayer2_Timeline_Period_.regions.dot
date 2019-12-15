@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.DashTimeline.getPeriod(ILcom\/google\/android\/exoplayer2\/Timeline$Period;Z)Lcom\/google\/android\/exoplayer2\/Timeline$Period;" {
+subgraph cluster_Region_1576260338 {
+label = "R(5:0|(1:2)(1:7)|(1:4)|5|6) | DECL_VAR: java.lang.String id\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Integer r2 = null\lcom.google.android.exoplayer2.util.Assertions.checkIndex(r11, 0, r10.manifest.getPeriodCount())\l}"];
+subgraph cluster_IfRegion_1824087849 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r13 == true) goto L_0x000d\l}"];
+subgraph cluster_Region_1817169886 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|java.lang.String r1 = r10.manifest.getPeriod(r11).f2462id\l}"];
+}
+subgraph cluster_Region_1806813638 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004d|r1 = null\l}"];
+}
+}
+subgraph cluster_IfRegion_665982051 {
+label = "IF [B:3:0x0015] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0015|PHI: r1 \l  PHI: (r1v1 'id' java.lang.String) = (r1v0 'id' java.lang.String), (r1v2 'id' java.lang.String) binds: [B:7:0x004d, B:2:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|if (r13 == true) goto L_0x0017\l}"];
+subgraph cluster_Region_268087597 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|java.lang.Integer r2 = java.lang.Integer.valueOf(r10.firstPeriodId + com.google.android.exoplayer2.util.Assertions.checkIndex(r11, 0, r10.manifest.getPeriodCount()))\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0028|PHI: r2 \l  PHI: (r2v1 'uid' java.lang.Integer) = (r2v0 'uid' java.lang.Integer), (r2v2 'uid' java.lang.Integer) binds: [B:3:0x0015, B:4:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004c|RETURN\l|return r12.set(r1, r2, 0, r10.manifest.getPeriodDurationUs(r11), com.google.android.exoplayer2.C1260C.msToUs(r10.manifest.getPeriod(r11).startMs \- r10.manifest.getPeriod(0).startMs) \- r10.offsetInFirstPeriodUs, false)\l}"];
+}
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.Timeline$Period com.google.android.exoplayer2.source.dash.DashMediaSource.DashTimeline.getPeriod((r10v0 'this' com.google.android.exoplayer2.source.dash.DashMediaSource$DashTimeline A[IMMUTABLE_TYPE, THIS]), (r11v0 'periodIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'period' com.google.android.exoplayer2.Timeline$Period A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'setIdentifiers' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

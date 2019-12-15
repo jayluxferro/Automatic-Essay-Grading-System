@@ -1,0 +1,118 @@
+digraph "CFG forcom.j256.ormlite.field.FieldType.resultToJava(Lcom\/j256\/ormlite\/support\/DatabaseResults;Ljava\/util\/Map;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_305802208 {
+label = "R(5:0|(1:2)|3|(1:(1:7))(1:(1:(2:14|15))(1:(1:21)(1:20)))|21)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Integer java.lang.Integer r0 = r5.get(r3.columnName)\l}"];
+subgraph cluster_IfRegion_1262272432 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == null) goto L_0x000a\l}"];
+subgraph cluster_Region_1341724087 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|java.lang.Integer r0 = java.lang.Integer.valueOf(r4.findColumn(r3.columnName))\lr5.put(r3.columnName, r0)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0019|PHI: r0 \l  PHI: (r0v3 java.lang.Integer) = (r0v2 java.lang.Integer), (r0v13 java.lang.Integer) binds: [B:1:0x0008, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.Object T r5 = r3.fieldConverter.resultToJava(r3, r4, r0.intValue())\l}"];
+subgraph cluster_IfRegion_1638587166 {
+label = "IF [B:4:0x002a] THEN: R(1:(1:7)) ELSE: R(1:(1:(2:14|15))(1:(1:21)(1:20)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a|if (r3.fieldConfig.isForeign() == true) goto L_0x002c\l}"];
+subgraph cluster_Region_977063943 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1280591827 {
+label = "IF [B:6:0x0034] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0034|if (r4.wasNull(r0.intValue()) == true) goto L_0x0036\l}"];
+subgraph cluster_Region_1703320266 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0036|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_761928569 {
+label = "R(1:(1:(2:14|15))(1:(1:21)(1:20))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_447694817 {
+label = "IF [B:9:0x003d] THEN: R(1:(2:14|15)) ELSE: R(1:(1:21)(1:20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|if (r3.dataPersister.isPrimitive() == true) goto L_0x003f\l}"];
+subgraph cluster_Region_1179582555 {
+label = "R(1:(2:14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_259129490 {
+label = "IF [B:11:0x0045, B:13:0x004f] THEN: R(2:14|15) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0045|ADDED_TO_REGION\l|if (r3.fieldConfig.isThrowIfNull() == true) goto L_0x0047\l}"];
+Node_13 [shape=record,label="{13\:\ 0x004f|ADDED_TO_REGION\l|if (r4.wasNull(r0.intValue()) == true) goto L_0x0052\l}"];
+subgraph cluster_Region_391021202 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0052}"];
+Node_15 [shape=record,label="{15\:\ 0x0073|throw new java.sql.SQLException(\"Results value for primitive field '\" + r3.field.getName() + \"' was an invalid null value\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1786966737 {
+label = "R(1:(1:21)(1:20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_136444006 {
+label = "IF [B:17:0x007a, B:19:0x0084] THEN: R(1:21) ELSE: R(1:20) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x007a|if (r3.fieldConverter.isStreamType() == true) goto L_0x0087\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0084|ADDED_TO_REGION\l|if (r4.wasNull(r0.intValue()) == false) goto L_0x0087\l}"];
+subgraph cluster_Region_651036653 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0087|RETURN\l|return r5\l}"];
+}
+subgraph cluster_Region_183644207 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0086|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0087|RETURN\l|return r5\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x002c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0037}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0047}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0074}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x007c}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.field.FieldType.resultToJava((r3v0 'this' com.j256.ormlite.field.FieldType A[IMMUTABLE_TYPE, THIS]), (r4v0 com.j256.ormlite.support.DatabaseResults A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.util.Map\<java.lang.String, java.lang.Integer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/support\/DatabaseResults;, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/Integer;, \>;)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_21[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_21[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_21[style=dashed];
+Node_14 -> Node_15;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_19 -> Node_20[style=dashed];
+Node_19 -> Node_21;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+}
+

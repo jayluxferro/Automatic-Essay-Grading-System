@@ -1,0 +1,28 @@
+digraph "CFG fororg.kxml2.kdom.Node.getElement(Ljava\/lang\/String;Ljava\/lang\/String;)Lorg\/kxml2\/kdom\/Element;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0001: INVOKE  (r0 I:int) = \l  (r5 I:org.kxml2.kdom.Node)\l  (r6 I:java.lang.String)\l  (r7 I:java.lang.String)\l  (r0 I:int)\l org.kxml2.kdom.Node.indexOf(java.lang.String, java.lang.String, int):int type: VIRTUAL \l0x0005: ARITH  (r1 I:int) = (r0 I:int) + (1 int) \l0x0007: INVOKE  (r1 I:int) = \l  (r5 I:org.kxml2.kdom.Node)\l  (r6 I:java.lang.String)\l  (r7 I:java.lang.String)\l  (r1 I:int)\l org.kxml2.kdom.Node.indexOf(java.lang.String, java.lang.String, int):int type: VIRTUAL \l0x000b: CONST  (r2 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0016 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0011 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|0x0011: INVOKE  (r6 I:org.kxml2.kdom.Element) = (r5 I:org.kxml2.kdom.Node), (r0 I:int) org.kxml2.kdom.Node.getElement(int):org.kxml2.kdom.Element type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: RETURN  (r6 I:org.kxml2.kdom.Element) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: NEW_INSTANCE  (r1 I:java.lang.RuntimeException) =  java.lang.RuntimeException \l0x0018: NEW_INSTANCE  (r3 I:java.lang.StringBuffer) =  java.lang.StringBuffer \l0x001a: INVOKE  (r3 I:java.lang.StringBuffer) java.lang.StringBuffer.\<init\>():void type: DIRECT \l0x001d: CONST_STR  (r4 I:java.lang.String) =  \"Element \{\" \l0x001f: INVOKE  (r3 I:java.lang.StringBuffer), (r4 I:java.lang.String) java.lang.StringBuffer.append(java.lang.String):java.lang.StringBuffer type: VIRTUAL \l0x0022: INVOKE  (r3 I:java.lang.StringBuffer), (r6 I:java.lang.String) java.lang.StringBuffer.append(java.lang.String):java.lang.StringBuffer type: VIRTUAL \l0x0025: CONST_STR  (r6 I:java.lang.String) =  \"\}\" \l0x0027: INVOKE  (r3 I:java.lang.StringBuffer), (r6 I:java.lang.String) java.lang.StringBuffer.append(java.lang.String):java.lang.StringBuffer type: VIRTUAL \l0x002a: INVOKE  (r3 I:java.lang.StringBuffer), (r7 I:java.lang.String) java.lang.StringBuffer.append(java.lang.String):java.lang.StringBuffer type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x002d|0x002d: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0032 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002f|0x002f: CONST_STR  (r6 I:java.lang.String) =  \" not found in \" \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|0x0032: CONST_STR  (r6 I:java.lang.String) =  \" more than once in \" \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0034|0x0034: INVOKE  (r3 I:java.lang.StringBuffer), (r6 I:java.lang.String) java.lang.StringBuffer.append(java.lang.String):java.lang.StringBuffer type: VIRTUAL \l0x0037: INVOKE  (r3 I:java.lang.StringBuffer), (r5 I:java.lang.Object) java.lang.StringBuffer.append(java.lang.Object):java.lang.StringBuffer type: VIRTUAL \l0x003a: INVOKE  (r6 I:java.lang.String) = (r3 I:java.lang.StringBuffer) java.lang.StringBuffer.toString():java.lang.String type: VIRTUAL \l0x003e: INVOKE  (r1 I:java.lang.RuntimeException), (r6 I:java.lang.String) java.lang.RuntimeException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0041|0x0041: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public org.kxml2.kdom.Element org.kxml2.kdom.Node.getElement((r5 'this' I:org.kxml2.kdom.Node A[IMMUTABLE_TYPE, THIS]), (r6 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_4;
+Node_2 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+}
+

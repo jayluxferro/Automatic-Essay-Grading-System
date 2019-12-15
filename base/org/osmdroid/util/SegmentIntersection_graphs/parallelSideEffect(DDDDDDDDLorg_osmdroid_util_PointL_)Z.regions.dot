@@ -1,0 +1,88 @@
+digraph "CFG fororg.osmdroid.util.SegmentIntersection.parallelSideEffect(DDDDDDDDLorg\/osmdroid\/util\/PointL;)Z" {
+subgraph cluster_Region_1135338005 {
+label = "R(1:(2:(1:3)|(1:(2:(1:7)|(2:8|(2:(1:13)|(2:14|15)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_815385883 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(2:8|(2:(1:13)|(2:14|15))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_530854750 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r21 == r25) goto L_0x0004\l}"];
+subgraph cluster_Region_1232221023 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|RETURN\l|return parallelSideEffectSameX(r21, r23, r25, r27, r29, r31, r33, r35, r37)\l}"];
+}
+}
+subgraph cluster_Region_1431685934 {
+label = "R(1:(2:(1:7)|(2:8|(2:(1:13)|(2:14|15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_727332234 {
+label = "R(2:(1:7)|(2:8|(2:(1:13)|(2:14|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_358272380 {
+label = "IF [B:5:0x000b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|if (r29 == r33) goto L_0x000d\l}"];
+subgraph cluster_Region_1298852931 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0023|RETURN\l|return parallelSideEffectSameX(r29, r31, r33, r35, r21, r23, r25, r27, r37)\l}"];
+}
+}
+subgraph cluster_Region_1861252112 {
+label = "R(2:8|(2:(1:13)|(2:14|15)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|double double r0 = (r27 \- r23) \/ (r25 \- r21)\ldouble double r2 = (r35 \- r31) \/ (r33 \- r29)\l}"];
+subgraph cluster_Region_907887227 {
+label = "R(2:(1:13)|(2:14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1836903009 {
+label = "IF [B:9:0x0032, B:12:0x0040] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0032|if (r0 != r2) goto L_0x0034\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0040|ADDED_TO_REGION\l|if ((r23 \- (r0 * r21)) != (r31 \- (r2 * r29))) goto L_0x0042\l}"];
+subgraph cluster_Region_1276233559 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0042|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_266588804 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0043}"];
+Node_15 [shape=record,label="{15\:\ 0x0071|RETURN\l|return check(r21, r23, r25, r27, r29, r31, r33, r35, r37, middle(r21, r25, r29, r33), middle(r23, r27, r31, r35))\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0035}"];
+MethodNode[shape=record,label="{private static boolean org.osmdroid.util.SegmentIntersection.parallelSideEffect((r21v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r33v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r35v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r37v0 org.osmdroid.util.PointL A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+}
+

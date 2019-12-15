@@ -1,0 +1,112 @@
+digraph "CFG forcom.squareup.picasso.MediaStoreRequestHandler.load(Lcom\/squareup\/picasso\/Request;I)Lcom\/squareup\/picasso\/RequestHandler$Result;" {
+subgraph cluster_Region_820030824 {
+label = "R(4:0|1|(2:8|(2:(1:13)|(3:14|(1:20)(1:21)|(1:24))))|26) | DECL_VAR: android.graphics.Bitmap null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.squareup.picasso.Request r6 = r17\landroid.content.ContentResolver android.content.ContentResolver r8 = r16.context.getContentResolver()\lint int r9 = getExifOrientation(r8, r6.uri)\ljava.lang.String java.lang.String r0 = r8.getType(r6.uri)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0017|boolean r11 = r0 != null && r0.startsWith(\"video\/\")\l}"];
+subgraph cluster_IfRegion_635892349 {
+label = "IF [B:7:0x002a] THEN: R(2:8|(2:(1:13)|(3:14|(1:20)(1:21)|(1:24)))) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|if (r17.hasSize() == true) goto L_0x002c\l}"];
+subgraph cluster_Region_1477662887 {
+label = "R(2:8|(2:(1:13)|(3:14|(1:20)(1:21)|(1:24))))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|com.squareup.picasso.MediaStoreRequestHandler$PicassoKind com.squareup.picasso.MediaStoreRequestHandler.PicassoKind r13 = getPicassoKind(r6.targetWidth, r6.targetHeight)\l}"];
+subgraph cluster_Region_1052355855 {
+label = "R(2:(1:13)|(3:14|(1:20)(1:21)|(1:24)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_72548993 {
+label = "IF [B:9:0x0034, B:11:0x0038] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0034|if (r11 != true) goto L_0x0036\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0038|ADDED_TO_REGION\l|if (r13 == com.squareup.picasso.MediaStoreRequestHandler.PicassoKind.FULL) goto L_0x003a\l}"];
+subgraph cluster_Region_493669149 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0049|RETURN\l|return new com.squareup.picasso.RequestHandler.Result((android.graphics.Bitmap) null, okio.Okio.source(getInputStream(r17)), com.squareup.picasso.Picasso.LoadedFrom.DISK, r9)\l}"];
+}
+}
+subgraph cluster_Region_618461818 {
+label = "R(3:14|(1:20)(1:21)|(1:24))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004a|long long r14 = android.content.ContentUris.parseId(r6.uri)\landroid.graphics.BitmapFactory$Options android.graphics.BitmapFactory.Options r5 = createBitmapOptions(r17)\lr5.inJustDecodeBounds = true\landroid.graphics.BitmapFactory.Options r10 = r5\lcalculateInSampleSize(r6.targetWidth, r6.targetHeight, r13.width, r13.height, r5, r17)\l}"];
+subgraph cluster_IfRegion_411436400 {
+label = "IF [B:15:0x0065] THEN: R(1:20) ELSE: R(1:21)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0065|if (r11 == true) goto L_0x0067\l}"];
+subgraph cluster_Region_1782980072 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x006f|PHI: r0 \l  PHI: (r0v14 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.graphics.Bitmap r0 = android.provider.MediaStore.Video.Thumbnails.getThumbnail(r8, r14, r13 == com.squareup.picasso.MediaStoreRequestHandler.PicassoKind.FULL ? 1 : r13.androidKind, r10)\l}"];
+}
+subgraph cluster_Region_1610118693 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0074|android.graphics.Bitmap r0 = android.provider.MediaStore.Images.Thumbnails.getThumbnail(r8, r14, r13.androidKind, r10)\l}"];
+}
+}
+subgraph cluster_IfRegion_1065997638 {
+label = "IF [B:22:0x007a] THEN: R(1:24) ELSE: null";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x007a|PHI: r0 \l  PHI: (r0v10 android.graphics.Bitmap) = (r0v12 android.graphics.Bitmap), (r0v15 android.graphics.Bitmap) binds: [B:21:0x0074, B:20:0x006f] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L_0x007c\l}"];
+subgraph cluster_Region_1587604960 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0083|RETURN\l|return new com.squareup.picasso.RequestHandler.Result(r0, (okio.Source) null, com.squareup.picasso.Picasso.LoadedFrom.DISK, r9)\l}"];
+}
+}
+}
+}
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x0093|RETURN\l|return new com.squareup.picasso.RequestHandler.Result((android.graphics.Bitmap) null, okio.Okio.source(getInputStream(r17)), com.squareup.picasso.Picasso.LoadedFrom.DISK, r9)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0019}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001f|REMOVE\lADDED_TO_REGION\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0021}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025|PHI: r11 \l  PHI: (r11v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0036}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0067}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0069}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x006b}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x006d}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x007c}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0084}"];
+MethodNode[shape=record,label="{public com.squareup.picasso.RequestHandler$Result com.squareup.picasso.MediaStoreRequestHandler.load((r16v0 'this' com.squareup.picasso.MediaStoreRequestHandler A[IMMUTABLE_TYPE, THIS]), (r17v0 com.squareup.picasso.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_25[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_14[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_21[style=dashed];
+Node_20 -> Node_22;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_22 -> Node_25[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_19;
+Node_18 -> Node_20;
+Node_19 -> Node_20;
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+}
+

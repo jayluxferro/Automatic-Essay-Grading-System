@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.transition.PatternPathMotion.setPatternPath(Landroid\/graphics\/Path;)V" {
+subgraph cluster_Region_2082056726 {
+label = "R(2:0|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.PathMeasure android.graphics.PathMeasure r0 = new android.graphics.PathMeasure(r9, false)\lfloat[] float[] r3 = new float[2]\lr0.getPosTan(r0.getLength(), r3, (float[]) null)\lfloat r2 = r3[0]\lfloat r6 = r3[1]\lr0.getPosTan(0.0f, r3, (float[]) null)\lfloat r0 = r3[0]\lfloat r1 = r3[1]\l}"];
+subgraph cluster_Region_1622800827 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_376902368 {
+label = "IF [B:1:0x0020, B:3:0x0024] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0020|if (r0 == r2) goto L_0x0022\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0024|ADDED_TO_REGION\l|if (r1 == r6) goto L_0x0027\l}"];
+subgraph cluster_Region_836205070 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x002e|throw new java.lang.IllegalArgumentException(\"pattern must not end at the starting point\")\l}"];
+}
+}
+subgraph cluster_Region_897335159 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002f|r8.mTempMatrix.setTranslate(\-r0, \-r1)\lfloat float r2 = r2 \- r0\lfloat float r6 = r6 \- r1\lfloat float r1 = 1.0f \/ distance(r2, r6)\lr8.mTempMatrix.postScale(r1, r1)\lr8.mTempMatrix.postRotate((float) java.lang.Math.toDegrees(\-java.lang.Math.atan2((double) r6, (double) r2)))\lr9.transform(r8.mTempMatrix, r8.mPatternPath)\lr8.mOriginalPatternPath = r9\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0022}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0027}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x005e}"];
+MethodNode[shape=record,label="{public void android.support.transition.PatternPathMotion.setPatternPath((r8v0 'this' android.support.transition.PatternPathMotion A[IMMUTABLE_TYPE, THIS]), (r9v0 android.graphics.Path A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

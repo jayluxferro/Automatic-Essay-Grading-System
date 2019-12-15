@@ -1,0 +1,26 @@
+digraph "CFG forokio.HashingSink.write(Lokio\/Buffer;J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:long) = (r8 I:okio.Buffer) okio.Buffer.size long \l0x0002: CONST  (r2 I:?[long, double]) = (0 ?[long, double]) \l0x0004: MOVE  (r4 I:?[long, double]) = (r9 I:?[long, double]) \l0x0005: INVOKE  (r0 I:long), (r2 I:long), (r4 I:long) okio.Util.checkOffsetAndCount(long, long, long):void type: STATIC \l0x0008: IGET  (r0 I:okio.Segment) = (r8 I:okio.Buffer) okio.Buffer.head okio.Segment \l0x000a: CONST  (r1 I:?[long, double]) = (0 ?[long, double]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: CMP_L  (r3 I:int) = (r1 I:long), (r9 I:long) \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: IF  (r3 I:?[int, byte, short, char]) \>= (0 ?[int, byte, short, char])  \-\> B:8:0x0039 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: ARITH  (r3 I:long) = (r9 I:long) \- (r1 I:long) \l0x0012: IGET  (r5 I:int) = (r0 I:okio.Segment) okio.Segment.limit int \l0x0014: IGET  (r6 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x0016: ARITH  (r5 I:int) = (r5 I:int) \- (r6 I:int) \l0x0017: CAST  (r5 I:long) = (long) (r5 I:int) \l0x0018: INVOKE  (r3 I:long) = (r3 I:long), (r5 I:long) java.lang.Math.min(long, long):long type: STATIC \l0x001c: CAST  (r3 I:int) = (int) (r3 I:long) \l0x001d: IGET  (r4 I:java.security.MessageDigest) = (r7 I:okio.HashingSink) okio.HashingSink.messageDigest java.security.MessageDigest \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001f|0x001f: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x002b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|0x0021: IGET  (r4 I:java.security.MessageDigest) = (r7 I:okio.HashingSink) okio.HashingSink.messageDigest java.security.MessageDigest \l0x0023: IGET  (r5 I:byte[]) = (r0 I:okio.Segment) okio.Segment.data byte[] \l0x0025: IGET  (r6 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x0027: INVOKE  \l  (r4 I:java.security.MessageDigest)\l  (r5 I:byte[])\l  (r6 I:int)\l  (r3 I:int)\l java.security.MessageDigest.update(byte[], int, int):void type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|0x002b: IGET  (r4 I:javax.crypto.Mac) = (r7 I:okio.HashingSink) okio.HashingSink.mac javax.crypto.Mac \l0x002d: IGET  (r5 I:byte[]) = (r0 I:okio.Segment) okio.Segment.data byte[] \l0x002f: IGET  (r6 I:int) = (r0 I:okio.Segment) okio.Segment.pos int \l0x0031: INVOKE  \l  (r4 I:javax.crypto.Mac)\l  (r5 I:byte[])\l  (r6 I:int)\l  (r3 I:int)\l javax.crypto.Mac.update(byte[], int, int):void type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0034|0x0034: CAST  (r3 I:long) = (long) (r3 I:int) \l0x0035: ARITH  (r1 I:long) = (r1 I:long) + (r3 I:long) \l0x0036: IGET  (r0 I:okio.Segment) = (r0 I:okio.Segment) okio.Segment.next okio.Segment \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0039|0x0039: INVOKE  (r7 I:okio.ForwardingSink), (r8 I:okio.Buffer), (r9 I:long) okio.ForwardingSink.write(okio.Buffer, long):void type: SUPER \l}"];
+Node_9 [shape=record,label="{9\:\ 0x003c|0x003c: RETURN   \l}"];
+MethodNode[shape=record,label="{public void okio.HashingSink.write((r7 'this' I:okio.HashingSink A[IMMUTABLE_TYPE, THIS]), (r8 I:okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+}
+

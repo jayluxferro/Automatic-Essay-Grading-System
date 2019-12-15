@@ -1,0 +1,40 @@
+digraph "CFG forcom.j256.ormlite.table.DatabaseTableConfigLoader.write(Ljava\/io\/BufferedWriter;Lcom\/j256\/ormlite\/table\/DatabaseTableConfig;)V" {
+subgraph cluster_Region_1355464164 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1772607786 {
+label = "Try: R(1:1) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1215127726 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0004 \}\lSplitter:B:0:0x0000\l|writeConfig(r0, r1)     \/\/ Catch:\{ IOException \-\> 0x0004 \}\l}"];
+}
+subgraph cluster_Region_1099101007 {
+label = "R(2:3|5) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Could not write config to writer\", r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1099101007 {
+label = "R(2:3|5) | ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|ExcHandler: IOException (r0v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000b|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Could not write config to writer\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+MethodNode[shape=record,label="{public static void com.j256.ormlite.table.DatabaseTableConfigLoader.write((r0v0 java.io.BufferedWriter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 com.j256.ormlite.table.DatabaseTableConfig\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Ljava\/io\/BufferedWriter;, Lcom\/j256\/ormlite\/table\/DatabaseTableConfig\<, TT;\>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_4 -> Node_5;
+}
+

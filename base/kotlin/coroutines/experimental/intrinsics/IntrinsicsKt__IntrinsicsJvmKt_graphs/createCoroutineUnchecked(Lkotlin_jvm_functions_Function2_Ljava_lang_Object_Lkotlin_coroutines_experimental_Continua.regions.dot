@@ -1,0 +1,60 @@
+digraph "CFG forkotlin.coroutines.experimental.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnchecked(Lkotlin\/jvm\/functions\/Function2;Ljava\/lang\/Object;Lkotlin\/coroutines\/experimental\/Continuation;)Lkotlin\/coroutines\/experimental\/Continuation;" {
+subgraph cluster_Region_1510084275 {
+label = "R(2:0|(2:(2:2|9)|(2:3|(2:(1:8)|(1:7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"completion\")\l}"];
+subgraph cluster_Region_600949063 {
+label = "R(2:(2:2|9)|(2:3|(2:(1:8)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1251278129 {
+label = "IF [B:1:0x000c] THEN: R(2:2|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if ((r1 instanceof kotlin.coroutines.experimental.jvm.internal.CoroutineImpl) == false) goto L_0x000e\l}"];
+subgraph cluster_Region_929161796 {
+label = "R(2:2|9)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.coroutines.experimental.jvm.internal.CoroutineIntrinsics.interceptContinuationIfNeeded(r3.getContext(), new kotlin.coroutines.experimental.intrinsics.C1330x6df69f97(r3, r1, r2, r3))\l}"];
+}
+}
+subgraph cluster_Region_449223841 {
+label = "R(2:3|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|kotlin.coroutines.experimental.Continuation kotlin.coroutines.experimental.Continuation\<kotlin.Unit\> r1 = ((kotlin.coroutines.experimental.jvm.internal.CoroutineImpl) r1).create(r2, r3)\l}"];
+subgraph cluster_Region_2103182733 {
+label = "R(2:(1:8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_405977313 {
+label = "IF [B:4:0x0024] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|if (r1 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1403758833 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return ((kotlin.coroutines.experimental.jvm.internal.CoroutineImpl) r1).getFacade()\l}"];
+}
+}
+subgraph cluster_Region_1353328792 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|throw new kotlin.TypeCastException(\"null cannot be cast to non\-null type kotlin.coroutines.experimental.jvm.internal.CoroutineImpl\")\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0026}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d}"];
+MethodNode[shape=record,label="{public static final kotlin.coroutines.experimental.Continuation\<kotlin.Unit\> kotlin.coroutines.experimental.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnchecked((r1v0 kotlin.jvm.functions.Function2\<? super R, ? super kotlin.coroutines.experimental.Continuation\<? super T\>, ? extends java.lang.Object\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 R A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.coroutines.experimental.Continuation\<? super T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], , Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, kotlin.SinceKotlin, \{version=1.1\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<R:, Ljava\/lang\/Object;, T:, Ljava\/lang\/Object;, \>(, Lkotlin\/jvm\/functions\/Function2\<, \-TR;\-, Lkotlin\/coroutines\/experimental\/Continuation\<, \-TT;\>;+, Ljava\/lang\/Object;, \>;TR;, Lkotlin\/coroutines\/experimental\/Continuation\<, \-TT;\>;), Lkotlin\/coroutines\/experimental\/Continuation\<, Lkotlin\/Unit;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+}
+

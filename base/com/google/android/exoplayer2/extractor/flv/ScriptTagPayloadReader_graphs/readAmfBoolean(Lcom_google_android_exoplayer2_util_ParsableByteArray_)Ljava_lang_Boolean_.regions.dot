@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfBoolean(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Ljava\/lang\/Boolean;" {
+subgraph cluster_Region_1294610545 {
+label = "R(3:0|(1:4)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r0 = true\l}"];
+subgraph cluster_IfRegion_1412974869 {
+label = "IF [B:1:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r2.readUnsignedByte() != 1) goto L_0x000c\l}"];
+subgraph cluster_Region_223851622 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r0 = false\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return java.lang.Boolean.valueOf(r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007|PHI: r0 \l  PHI: (r0v2 boolean) = (r0v0 boolean), (r0v1 boolean) binds: [B:1:0x0005, B:4:0x000c] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private static java.lang.Boolean com.google.android.exoplayer2.extractor.flv.ScriptTagPayloadReader.readAmfBoolean((r2v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_4 -> Node_2;
+Node_2 -> Node_3;
+}
+

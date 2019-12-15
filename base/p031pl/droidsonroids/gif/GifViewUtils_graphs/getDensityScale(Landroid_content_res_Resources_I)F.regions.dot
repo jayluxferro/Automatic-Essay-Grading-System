@@ -1,0 +1,72 @@
+digraph "CFG forpl.droidsonroids.gif.GifViewUtils.getDensityScale(Landroid\/content\/res\/Resources;I)F" {
+subgraph cluster_Region_36248460 {
+label = "R(4:0|(1:2)(1:(1:5))|6|(2:(1:12)|(1:10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\lr2.getValue(r3, r0, true)\lint int r3 = r0.density\l}"];
+subgraph cluster_IfRegion_1897923910 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: R(1:(1:5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r3 == 0) goto L_0x000d\l}"];
+subgraph cluster_Region_1254142438 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|r3 = 160\l}"];
+}
+subgraph cluster_Region_270169870 {
+label = "R(1:(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1000314261 {
+label = "IF [B:4:0x0013] THEN: R(1:5) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r3 == 65535) goto L_0x0016\l}"];
+subgraph cluster_Region_673318492 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|r3 = 0\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0017|PHI: r3 \l  PHI: (r3v2 int) = (r3v1 int), (r3v4 int), (r3v5 int) binds: [B:4:0x0013, B:5:0x0016, B:2:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|int int r2 = r2.getDisplayMetrics().densityDpi\l}"];
+subgraph cluster_Region_345948270 {
+label = "R(2:(1:12)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_53965916 {
+label = "IF [B:7:0x001d, B:8:0x001f] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r3 \<= 0) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001f|ADDED_TO_REGION\l|if (r2 \<= 0) goto L_?\l}"];
+subgraph cluster_Region_1197296727 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return 1.0f\l}"];
+}
+}
+subgraph cluster_Region_1278720605 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|RETURN\l|return ((float) r2) \/ ((float) r3)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return 1.0f\l}"];
+MethodNode[shape=record,label="{static float pl.droidsonroids.gif.GifViewUtils.getDensityScale((r2v0 android.content.res.Resources A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.RawRes, \{\}], Annotation[BUILD, android.support.annotation.DrawableRes, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_12;
+Node_3 -> Node_4;
+Node_9 -> Node_10;
+}
+

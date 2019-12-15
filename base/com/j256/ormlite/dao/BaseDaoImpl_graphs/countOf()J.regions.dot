@@ -1,0 +1,45 @@
+digraph "CFG forcom.j256.ormlite.dao.BaseDaoImpl.countOf()J" {
+subgraph cluster_Region_80190879 {
+label = "R(2:0|(1:4))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|checkForInitialized()\lcom.j256.ormlite.support.DatabaseConnection com.j256.ormlite.support.DatabaseConnection r0 = r4.connectionSource.getReadOnlyConnection(r4.tableInfo.getTableName())\l}"];
+subgraph cluster_TryCatchRegion_1492708780 {
+label = "Try: R(1:4) finally: R(3:5|6|7)";
+node [shape=record,color=blue];
+subgraph cluster_Region_784916292 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|RETURN\l|return r4.statementExecutor.queryForCountStar(r0)\l}"];
+}
+subgraph cluster_Region_2017795234 {
+label = "R(3:5|6|7) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|ExcHandler:  FINALLY\lSplitter:B:1:0x000f\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|FINALLY_INSNS\l|r4.connectionSource.releaseConnection(r0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_2017795234 {
+label = "R(3:5|6|7) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001b|ExcHandler:  FINALLY\lSplitter:B:1:0x000f\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|FINALLY_INSNS\l|r4.connectionSource.releaseConnection(r0)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021|throw r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000f|SYNTHETIC\lSplitter:B:1:0x000f\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x001b \}\lSplitter:B:1:0x000f\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0015|DONT_GENERATE\l|com.j256.ormlite.support.ConnectionSource r3 = r4.connectionSource\lr3.releaseConnection(r0)\l}"];
+MethodNode[shape=record,label="{public long com.j256.ormlite.dao.BaseDaoImpl.countOf((r4v0 'this' com.j256.ormlite.dao.BaseDaoImpl A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG fororg.mapsforge.map.layer.debug.TileCoordinatesLayer.drawTileCoordinates(Lorg\/mapsforge\/map\/layer\/TilePosition;Lorg\/mapsforge\/core\/graphics\/Canvas;)V" {
+subgraph cluster_Region_1926717299 {
+label = "R(2:0|(2:(2:2|5)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.mapsforge.core.model.Tile org.mapsforge.core.model.Tile r0 = r9.tile\l}"];
+subgraph cluster_Region_1837497971 {
+label = "R(2:(2:2|5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1860831854 {
+label = "IF [B:1:0x0005] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r8.drawSimple == true) goto L_0x0007\l}"];
+subgraph cluster_Region_2061785564 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r8.stringBuilder.setLength(0)\ljava.lang.StringBuilder java.lang.StringBuilder r1 = r8.stringBuilder\lr1.append(r0.zoomLevel)\lr1.append(\" \/ \")\lr1.append(r0.tileX)\lr1.append(\" \/ \")\lr1.append(r0.tileY)\ljava.lang.String java.lang.String r1 = r8.stringBuilder.toString()\lint int r2 = (int) (r9.point.f266x + ((double) ((r0.tileSize \- r8.paintBack.getTextWidth(r1)) \/ 2)))\lint int r9 = (int) (r9.point.f267y + ((double) ((r0.tileSize + r8.paintBack.getTextHeight(r1)) \/ 2)))\lr10.drawText(r1, r2, r9, r8.paintBack)\lr10.drawText(r1, r2, r9, r8.paintFront)\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_676922843 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005d|int int r1 = (int) (r9.point.f266x + ((double) (r8.displayModel.getScaleFactor() * 8.0f)))\lint int r9 = (int) (r9.point.f267y + ((double) (r8.displayModel.getScaleFactor() * 24.0f)))\lr8.stringBuilder.setLength(0)\lr8.stringBuilder.append(\"X: \")\lr8.stringBuilder.append(r0.tileX)\ljava.lang.String java.lang.String r3 = r8.stringBuilder.toString()\lr10.drawText(r3, r1, r9, r8.paintBack)\lr10.drawText(r3, r1, r9, r8.paintFront)\lr8.stringBuilder.setLength(0)\lr8.stringBuilder.append(\"Y: \")\lr8.stringBuilder.append(r0.tileY)\ljava.lang.String java.lang.String r3 = r8.stringBuilder.toString()\lfloat float r9 = (float) r9\lr10.drawText(r3, r1, (int) ((r8.displayModel.getScaleFactor() * 24.0f) + r9), r8.paintBack)\lr10.drawText(r3, r1, (int) ((r8.displayModel.getScaleFactor() * 24.0f) + r9), r8.paintFront)\lr8.stringBuilder.setLength(0)\lr8.stringBuilder.append(\"Z: \")\lr8.stringBuilder.append(r0.zoomLevel)\ljava.lang.String java.lang.String r0 = r8.stringBuilder.toString()\lr10.drawText(r0, r1, (int) ((r8.displayModel.getScaleFactor() * 48.0f) + r9), r8.paintBack)\lr10.drawText(r0, r1, (int) (r9 + (r8.displayModel.getScaleFactor() * 48.0f)), r8.paintFront)\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.layer.debug.TileCoordinatesLayer.drawTileCoordinates((r8v0 'this' org.mapsforge.map.layer.debug.TileCoordinatesLayer A[IMMUTABLE_TYPE, THIS]), (r9v0 org.mapsforge.map.layer.TilePosition A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 org.mapsforge.core.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

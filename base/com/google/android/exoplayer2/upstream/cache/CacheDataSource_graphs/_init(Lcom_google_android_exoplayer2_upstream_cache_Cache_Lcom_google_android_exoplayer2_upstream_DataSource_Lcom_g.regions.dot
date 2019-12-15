@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.cache.CacheDataSource.\<init\>(Lcom\/google\/android\/exoplayer2\/upstream\/cache\/Cache;Lcom\/google\/android\/exoplayer2\/upstream\/DataSource;Lcom\/google\/android\/exoplayer2\/upstream\/DataSource;Lcom\/google\/android\/exoplayer2\/upstream\/DataSink;ILcom\/google\/android\/exoplayer2\/upstream\/cache\/CacheDataSource$EventListener;)V" {
+subgraph cluster_Region_1134204636 {
+label = "R(7:0|3|(1:5)(1:14)|6|8|(1:10)(1:16)|11) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\lr3.cache = r4\lr3.cacheReadDataSource = r6\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|PHI: r0 \l  PHI: (r0v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.blockOnCache = (r8 & 1) != 0\l}"];
+subgraph cluster_IfRegion_621371615 {
+label = "IF [B:4:0x0012] THEN: R(1:5) ELSE: R(1:14)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if ((r8 & 2) != 0) goto L_0x0014\l}"];
+subgraph cluster_Region_1458792481 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|r0 = true\l}"];
+}
+subgraph cluster_Region_183289036 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002d|r0 = false\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0015|PHI: r0 \l  PHI: (r0v5 boolean) = (r0v4 boolean), (r0v9 boolean) binds: [B:14:0x002d, B:5:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r3.ignoreCacheOnError = r0\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|PHI: r1 \l  PHI: (r1v2 boolean) = (r1v0 boolean), (r1v1 boolean) binds: [B:7:0x0019, B:15:0x002f] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|r3.ignoreCacheForUnsetLengthRequests = (r8 & 4) == 0 ? false : r1\lr3.upstreamDataSource = r5\l}"];
+subgraph cluster_IfRegion_230704090 {
+label = "IF [B:9:0x001f] THEN: R(1:10) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001f|if (r7 != null) goto L_0x0021\l}"];
+subgraph cluster_Region_1832950366 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0021|r3.cacheWriteDataSource = new com.google.android.exoplayer2.upstream.TeeDataSource(r5, r7)\l}"];
+}
+subgraph cluster_Region_766823893 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0031|r3.cacheWriteDataSource = null\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0028|r3.eventListener = r9\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002b}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002f}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.upstream.cache.CacheDataSource.\<init\>((r3v0 'this' com.google.android.exoplayer2.upstream.cache.CacheDataSource A[IMMUTABLE_TYPE, THIS]), (r4v0 'cache' com.google.android.exoplayer2.upstream.cache.Cache A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'upstream' com.google.android.exoplayer2.upstream.DataSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'cacheReadDataSource' com.google.android.exoplayer2.upstream.DataSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'cacheWriteDataSink' com.google.android.exoplayer2.upstream.DataSink A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'flags' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'eventListener' com.google.android.exoplayer2.upstream.cache.CacheDataSource$EventListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , , , , , Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_14[style=dashed];
+Node_5 -> Node_6;
+Node_14 -> Node_6;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_11;
+Node_16 -> Node_11;
+Node_11 -> Node_12;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_7 -> Node_15;
+Node_13 -> Node_3;
+Node_15 -> Node_8;
+}
+

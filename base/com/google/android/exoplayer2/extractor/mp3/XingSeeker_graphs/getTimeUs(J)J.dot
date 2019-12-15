@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp3.XingSeeker.getTimeUs(J)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isSeekable() == false) goto L_0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|if ((r24 \> r23.firstFramePosition ? 1 : (r24 == r23.firstFramePosition ? 0 : \-1)) \>= 0) goto L_0x0013\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|double r8 = (256.0d * ((double) (r24 \- r23.firstFramePosition))) \/ ((double) r23.sizeBytes)\lint r14 = com.google.android.exoplayer2.util.Util.binarySearchFloor(r23.tableOfContents, (long) r8, true, false) + 1\llong r12 = getTimeUsForTocPosition(r14)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004e|if (r14 != 0) goto L_0x0069\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0050|r10 = 0\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0052|PHI: r10 \l  PHI: (r10v1 'previousByte' long) = (r10v0 'previousByte' long), (r10v2 'previousByte' long) binds: [B:15:0x0069, B:7:0x0050] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0054|if (r14 != 99) goto L_0x0072\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0056|r4 = 256\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0058|PHI: r4 \l  PHI: (r4v1 'nextByte' long) = (r4v0 'nextByte' long), (r4v2 'nextByte' long) binds: [B:16:0x0072, B:10:0x0056] A[DONT_GENERATE, DONT_INLINE]\l|r0 = r23\llong r6 = getTimeUsForTocPosition(r14 + 1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0062|if ((r4 \> r10 ? 1 : (r4 == r10 ? 0 : \-1)) != 0) goto L_0x0079\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0064|r16 = 0\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0066|PHI: r16 \l  PHI: (r16v1 'timeOffset' long) = (r16v0 'timeOffset' long), (r16v2 'timeOffset' long) binds: [B:17:0x0079, B:13:0x0064] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0069|r10 = r23.tableOfContents[r14 + \-1]\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0072|r4 = r23.tableOfContents[r14]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0079|r16 = (long) ((((double) (r6 \- r12)) * (r8 \- ((double) r10))) \/ ((double) (r4 \- r10)))\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return r12 + r16\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.mp3.XingSeeker.getTimeUs((r23v0 'this' com.google.android.exoplayer2.extractor.mp3.XingSeeker A[IMMUTABLE_TYPE, THIS]), (r24v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_15;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+Node_14 -> Node_18;
+Node_15 -> Node_8;
+Node_16 -> Node_11;
+Node_17 -> Node_14;
+}
+

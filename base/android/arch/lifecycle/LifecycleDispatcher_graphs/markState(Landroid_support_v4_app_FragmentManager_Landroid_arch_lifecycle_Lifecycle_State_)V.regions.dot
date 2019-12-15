@@ -1,0 +1,89 @@
+digraph "CFG forandroid.arch.lifecycle.LifecycleDispatcher.markState(Landroid\/support\/v4\/app\/FragmentManager;Landroid\/arch\/lifecycle\/Lifecycle$State;)V" {
+subgraph cluster_Region_968807861 {
+label = "R(2:0|(1:(2:3|(2:6|(2:8|(1:10)(0))(0)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<android.support.p000v4.app.Fragment\> r2 = r2.getFragments()\l}"];
+subgraph cluster_Region_130836151 {
+label = "R(1:(2:3|(2:6|(2:8|(1:10)(0))(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_221517480 {
+label = "IF [B:1:0x0004] THEN: R(2:3|(2:6|(2:8|(1:10)(0))(0))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2 != null) goto L_0x0007\l}"];
+subgraph cluster_Region_1971870461 {
+label = "R(2:3|(2:6|(2:8|(1:10)(0))(0)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.util.Iterator r2 = r2.iterator()\l}"];
+subgraph cluster_LoopRegion_1209560880 {
+label = "LOOP:0: (2:6|(2:8|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r2.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_1733426410 {
+label = "R(2:6|(2:8|(1:10)(0))(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|android.support.v4.app.Fragment r0 = r2.next()\l}"];
+subgraph cluster_IfRegion_679267034 {
+label = "IF [B:7:0x0017] THEN: R(2:8|(1:10)(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|if (r0 != null) goto L_0x001a\l}"];
+subgraph cluster_Region_1289873596 {
+label = "R(2:8|(1:10)(0))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|markStateIn(r0, r3)\l}"];
+subgraph cluster_IfRegion_1191931903 {
+label = "IF [B:9:0x0021] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|if (r0.isAdded() == true) goto L_0x0023\l}"];
+subgraph cluster_Region_802516312 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|markState(r0.getChildFragmentManager(), r3)\l}"];
+}
+subgraph cluster_Region_1630619746 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_584509680 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b|LOOP_START\lLOOP:0: B:4:0x000b\-\>B:12:0x000b\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002b}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:4:0x000b\-\>B:12:0x000b\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002b|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x000b|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x000b|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void android.arch.lifecycle.LifecycleDispatcher.markState((r2v0 android.support.v4.app.FragmentManager A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.arch.lifecycle.Lifecycle$State A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_16;
+Node_4 -> Node_5;
+Node_12 -> Node_4;
+Node_13 -> Node_11;
+Node_14 -> Node_12;
+Node_15 -> Node_12;
+Node_16 -> Node_12;
+}
+

@@ -1,0 +1,83 @@
+digraph "CFG forcom.mapbox.android.gestures.MultiFingerGesture.isSloppyGesture()Z" {
+subgraph cluster_Region_359030430 {
+label = "R(3:0|(3:3|(2:12|19)(2:11|20)|(1:14))|16) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.DisplayMetrics android.util.DisplayMetrics r0 = r8.context.getResources().getDisplayMetrics()\lfloat float r1 = ((float) r0.widthPixels) \- r8.edgeSlop\lfloat float r0 = ((float) r0.heightPixels) \- r8.edgeSlop\lfloat float r2 = r8.edgeSlop\ljava.util.Iterator r3 = r8.pointerIdList.iterator()\l}"];
+subgraph cluster_LoopRegion_50909775 {
+label = "LOOP:0: (3:3|(2:12|19)(2:11|20)|(1:14))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0022|if (r3.hasNext() != false) goto L_0x0024\l}"];
+subgraph cluster_Region_1937655920 {
+label = "R(3:3|(2:12|19)(2:11|20)|(1:14))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0024|int int r4 = getCurrentEvent().findPointerIndex(r4.intValue())\lfloat float r5 = com.mapbox.android.gestures.Utils.getRawX(getCurrentEvent(), r4)\lfloat float r4 = com.mapbox.android.gestures.Utils.getRawY(getCurrentEvent(), r4)\l}"];
+subgraph cluster_IfRegion_1413915166 {
+label = "IF [B:4:0x0049, B:6:0x004d, B:8:0x0051, B:10:0x0055] THEN: R(2:12|19) ELSE: R(2:11|20)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0049|if (r5 \< r2) goto L_0x005a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004d|ADDED_TO_REGION\l|if (r4 \< r2) goto L_0x005a\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0051|ADDED_TO_REGION\l|if (r5 \> r1) goto L_0x005a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0055|ADDED_TO_REGION\l|if (r4 \> r0) goto L_0x005a\l}"];
+subgraph cluster_Region_874825835 {
+label = "R(2:12|19)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005a|r4 = true\l}"];
+Node_19 [shape=record,label="{19\:\ 0x005b|SYNTHETIC\l|continue\l}"];
+}
+subgraph cluster_Region_328327903 {
+label = "R(2:11|20)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0058|r4 = false\l}"];
+Node_20 [shape=record,label="{20\:\ 0x005b|SYNTHETIC\l|continue\l}"];
+}
+}
+subgraph cluster_IfRegion_821091738 {
+label = "IF [B:13:0x005b] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x005b|LOOP_END\lPHI: r4 \l  PHI: (r4v6 boolean) = (r4v7 boolean), (r4v9 boolean) binds: [B:19:0x005b, B:20:0x005b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001e\-\>B:13:0x005b\l|if (r4 == true) goto L_0x005d\l}"];
+subgraph cluster_Region_1142086618 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005d|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0062|RETURN\l|return checkSpanBelowThreshold()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001e|LOOP_START\lLOOP:0: B:1:0x001e\-\>B:13:0x005b\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x004b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x004f}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0053}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x005e}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x005e|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x005d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected boolean com.mapbox.android.gestures.MultiFingerGesture.isSloppyGesture((r8v0 'this' com.mapbox.android.gestures.MultiFingerGesture A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_17[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_12;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_12;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_12 -> Node_19;
+Node_19 -> Node_13;
+Node_11 -> Node_20;
+Node_20 -> Node_13;
+Node_13 -> Node_1[style=dashed];
+Node_13 -> Node_18;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_15 -> Node_16;
+Node_17 -> Node_15;
+Node_18 -> Node_14;
+}
+

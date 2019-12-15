@@ -1,0 +1,112 @@
+digraph "CFG forandroid.support.v7.widget.ForwardingListener.onTouchObserved(Landroid\/view\/MotionEvent;)Z" {
+subgraph cluster_Region_1183626431 {
+label = "R(2:0|(2:(1:2)|(2:4|19)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.View android.view.View r0 = r5.mSrc\l}"];
+subgraph cluster_Region_1079565684 {
+label = "R(2:(1:2)|(2:4|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1172087509 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r0.isEnabled() == false) goto L_0x0009\l}"];
+subgraph cluster_Region_505235548 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1663641590 {
+label = "R(2:4|19)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1213869426 {
+label = "Switch: 3, default: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|switch(r6.getActionMasked()) \{\l    case 0: goto L_0x003a;\l    case 1: goto L_0x0036;\l    case 2: goto L_0x0012;\l    case 3: goto L_0x0036;\l    default: goto L_0x0011;\l\}\l}"];
+subgraph cluster_Region_1424884381 {
+label = "R(6:12|(1:14)|15|(1:17)|18|1)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003a|r5.mActivePointerId = r6.getPointerId(0)\l}"];
+subgraph cluster_IfRegion_1315961456 {
+label = "IF [B:13:0x0042] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0042|if (r5.mDisallowIntercept == null) goto L_0x0044\l}"];
+subgraph cluster_Region_977536073 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0044|r5.mDisallowIntercept = new android.support.p003v7.widget.ForwardingListener.DisallowIntercept()\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x004b|r0.postDelayed(r5.mDisallowIntercept, (long) r5.mTapTimeout)\l}"];
+subgraph cluster_IfRegion_276333152 {
+label = "IF [B:16:0x0055] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0055|if (r5.mTriggerLongPress == null) goto L_0x0057\l}"];
+subgraph cluster_Region_156241056 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0057|r5.mTriggerLongPress = new android.support.p003v7.widget.ForwardingListener.TriggerLongPress()\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x005e|r0.postDelayed(r5.mTriggerLongPress, (long) r5.mLongPressTimeout)\l}"];
+Node_InsnContainer_954059648 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_581035678 {
+label = "R(2:11|1)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|clearCallbacks()\l}"];
+Node_InsnContainer_1981680424 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_940910697 {
+label = "R(2:5|(2:9|10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|int int r1 = r6.findPointerIndex(r5.mActivePointerId)\l}"];
+subgraph cluster_IfRegion_997562676 {
+label = "IF [B:6:0x0018, B:8:0x0028] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|ADDED_TO_REGION\l|if (r1 \>= 0) goto L_0x001a\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0028|ADDED_TO_REGION\l|if (pointInView(r0, r6.getX(r1), r6.getY(r1), r5.mScaledTouchSlop) == false) goto L_0x002a\l}"];
+subgraph cluster_Region_419429289 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|clearCallbacks()\lr0.getParent().requestDisallowInterceptTouchEvent(true)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0035|RETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x0066|RETURN\l|return false\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.widget.ForwardingListener.onTouchObserved((r5v0 'this' android.support.v7.widget.ForwardingListener A[IMMUTABLE_TYPE, THIS]), (r6v0 android.view.MotionEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_4 -> Node_12;
+Node_4 -> Node_19;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_11 -> Node_19;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_19[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_19[style=dashed];
+Node_9 -> Node_10;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

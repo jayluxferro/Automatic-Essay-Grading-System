@@ -1,0 +1,52 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.filterIndexed([JLkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_251009523 {
+label = "R(3:0|(3:2|(1:4)(0)|5)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r8, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r9, \"predicate\")\ljava.util.Collection java.util.Collection r0 = new java.util.ArrayList()\lint int r1 = r8.length\lint r2 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_322791534 {
+label = "LOOP:0: (3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x0035] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v6 int) binds: [B:0:0x0000, B:5:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:5:0x0035\l|if (r2 \< r1) goto L_0x0016\l}"];
+subgraph cluster_Region_1547276624 {
+label = "R(3:2|(1:4)(0)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|long r4 = r8[r2]\lint int r6 = r3 + 1\l}"];
+subgraph cluster_IfRegion_1656631973 {
+label = "IF [B:3:0x002c] THEN: R(1:4) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002c|if (r9.invoke(java.lang.Integer.valueOf(r3), java.lang.Long.valueOf(r4)).booleanValue() == true) goto L_0x002e\l}"];
+subgraph cluster_Region_460214519 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002e|r0.add(java.lang.Long.valueOf(r4))\l}"];
+}
+subgraph cluster_Region_798544200 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0035|LOOP_END\lLOOP:0: B:1:0x0014\-\>B:5:0x0035\l|r2++\lr3 = r6\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x003b|RETURN\l|return (java.util.List) r0\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0039}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0039|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0035|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0035|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Long\> kotlin.collections.ArraysKt___ArraysKt.filterIndexed((r8v0 long[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 kotlin.jvm.functions.Function2\<? super java.lang.Integer, ? super java.lang.Long, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([J, Lkotlin\/jvm\/functions\/Function2\<, \-, Ljava\/lang\/Integer;, \-, Ljava\/lang\/Long;, Ljava\/lang\/Boolean;, \>;), Ljava\/util\/List\<, Ljava\/lang\/Long;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_6;
+Node_9 -> Node_5;
+Node_10 -> Node_5;
+}
+

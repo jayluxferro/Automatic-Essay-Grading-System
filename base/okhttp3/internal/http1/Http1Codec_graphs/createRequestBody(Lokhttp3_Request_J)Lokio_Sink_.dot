@@ -1,0 +1,24 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.createRequestBody(Lokhttp3\/Request;J)Lokio\/Sink;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (\"chunked\".equalsIgnoreCase(r3.header(\"Transfer\-Encoding\")) == false) goto L_0x0013\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|RETURN\l|return newChunkedSink()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|if ((r4 \> \-1 ? 1 : (r4 == \-1 ? 0 : \-1)) == 0) goto L_0x001e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019}"];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return newFixedLengthSink(r4)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|throw new java.lang.IllegalStateException(\"Cannot stream a request body without chunked encoding or a known content length!\")\l}"];
+MethodNode[shape=record,label="{public okio.Sink okhttp3.internal.http1.Http1Codec.createRequestBody((r2v0 'this' okhttp3.internal.http1.Http1Codec A[IMMUTABLE_TYPE, THIS]), (r3v0 okhttp3.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

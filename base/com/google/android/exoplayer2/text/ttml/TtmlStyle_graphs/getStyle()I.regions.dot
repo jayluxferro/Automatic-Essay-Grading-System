@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.android.exoplayer2.text.ttml.TtmlStyle.getStyle()I" {
+subgraph cluster_Region_1025940739 {
+label = "R(2:0|(2:(1:12)|(3:5|(1:9)|13)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r2 = 0\l}"];
+subgraph cluster_Region_673123138 {
+label = "R(2:(1:12)|(3:5|(1:9)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_961575646 {
+label = "IF [B:1:0x0005, B:3:0x0009] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.bold == \-1) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (r4.italic == \-1) goto L_?\l}"];
+subgraph cluster_Region_1628637034 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_306121165 {
+label = "R(3:5|(1:9)|13)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|int r0 = r4.bold == 1 ? 1 : 0\l}"];
+subgraph cluster_IfRegion_672540525 {
+label = "IF [B:8:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|if (r4.italic == 1) goto L_0x0015\l}"];
+subgraph cluster_Region_817719272 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0015|r2 = 2\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0 \| r2\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011|PHI: r0 \l  PHI: (r0v3 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0016|PHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:8:0x0013, B:9:0x0015] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0018}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.text.ttml.TtmlStyle.getStyle((r4v0 'this' com.google.android.exoplayer2.text.ttml.TtmlStyle A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_10 -> Node_13;
+Node_11 -> Node_7;
+}
+

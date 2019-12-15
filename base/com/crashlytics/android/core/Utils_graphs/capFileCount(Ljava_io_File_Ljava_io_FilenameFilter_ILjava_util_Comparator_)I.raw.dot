@@ -1,0 +1,25 @@
+digraph "CFG forcom.crashlytics.android.core.Utils.capFileCount(Ljava\/io\/File;Ljava\/io\/FilenameFilter;ILjava\/util\/Comparator;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r2 I:java.io.File[]) = (r2 I:java.io.File), (r3 I:java.io.FilenameFilter) java.io.File.listFiles(java.io.FilenameFilter):java.io.File[] type: VIRTUAL \l0x0004: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0008 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: RETURN  (r3 I:int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: ARRAY_LENGTH  (r0 I:int) = (r2 I:?[]) \l0x0009: INVOKE  (r2 I:java.lang.Object[]), (r5 I:java.util.Comparator) java.util.Arrays.sort(java.lang.Object[], java.util.Comparator):void type: STATIC \l0x000c: ARRAY_LENGTH  (r5 I:int) = (r2 I:?[]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: IF  (r3 I:?[int, byte, short, char]) \>= (r5 I:?[int, byte, short, char])  \-\> B:9:0x001c \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|0x000f: AGET  (r1 I:?[OBJECT, ARRAY]) = (r2 I:?[OBJECT, ARRAY][]), (r3 I:?[int, short, byte, char]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|0x0011: IF  (r0 I:?[int, byte, short, char]) \> (r4 I:?[int, byte, short, char])  \-\> B:8:0x0014 \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0013|0x0013: RETURN  (r0 I:int) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0014|0x0014: INVOKE  (r1 I:java.io.File) java.io.File.delete():boolean type: VIRTUAL \l0x0017: ARITH  (r0 I:int) = (r0 I:int) + (\-1 int) \l0x0019: ARITH  (r3 I:int) = (r3 I:int) + (1 int) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|0x001c: RETURN  (r0 I:int) \l}"];
+MethodNode[shape=record,label="{static int com.crashlytics.android.core.Utils.capFileCount((r2 I:java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:java.io.FilenameFilter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.util.Comparator\<java.io.File\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/io\/File;, Ljava\/io\/FilenameFilter;, I, Ljava\/util\/Comparator\<, Ljava\/io\/File;, \>;)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_4;
+}
+

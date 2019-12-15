@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.Mp4Extractor.getPosition(J)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = Long.MAX_VALUE\lcom.google.android.exoplayer2.extractor.mp4.Mp4Extractor$Mp4Track[] r8 = r11.tracks\lint r9 = r8.length\lr7 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0009|LOOP_START\lPHI: r0 r7 \l  PHI: (r0v1 'earliestSamplePosition' long) = (r0v0 'earliestSamplePosition' long), (r0v2 'earliestSamplePosition' long) binds: [B:0:0x0000, B:8:0x0023] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 int) = (r7v0 int), (r7v2 int) binds: [B:0:0x0000, B:8:0x0023] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:8:0x0023\l|if (r7 \>= r9) goto L_0x0026\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|com.google.android.exoplayer2.extractor.mp4.TrackSampleTable r5 = r8[r7].sampleTable\lint r4 = r5.getIndexOfEarlierOrEqualSynchronizationSample(r12)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r4 != \-1) goto L_0x001a\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|int r4 = r5.getIndexOfLaterOrEqualSynchronizationSample(r12)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|PHI: r4 \l  PHI: (r4v1 'sampleIndex' int) = (r4v0 'sampleIndex' int), (r4v2 'sampleIndex' int) binds: [B:3:0x0014, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|r2 = r5.offsets[r4]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0020|if ((r2 \> r0 ? 1 : (r2 == r0 ? 0 : \-1)) \>= 0) goto L_0x0023\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022|r0 = r2\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|LOOP_END\lPHI: r0 \l  PHI: (r0v2 'earliestSamplePosition' long) = (r0v1 'earliestSamplePosition' long), (r0v3 'earliestSamplePosition' long) binds: [B:12:0x0023, B:11:0x0023] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:8:0x0023\l|int r7 = r7 + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0026|RETURN\l|return r0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|SYNTHETIC\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0023|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0023|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.extractor.mp4.Mp4Extractor.getPosition((r11v0 'this' com.google.android.exoplayer2.extractor.mp4.Mp4Extractor A[IMMUTABLE_TYPE, THIS]), (r12v0 'timeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_7 -> Node_11;
+Node_8 -> Node_1;
+Node_10 -> Node_9;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+}
+

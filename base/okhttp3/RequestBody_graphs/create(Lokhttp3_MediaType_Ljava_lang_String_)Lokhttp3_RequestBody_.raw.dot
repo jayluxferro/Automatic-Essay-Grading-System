@@ -1,0 +1,20 @@
+digraph "CFG forokhttp3.RequestBody.create(Lokhttp3\/MediaType;Ljava\/lang\/String;)Lokhttp3\/RequestBody;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: SGET  (r0 I:java.nio.charset.Charset) =  okhttp3.internal.Util.UTF_8 java.nio.charset.Charset \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0021 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: INVOKE  (r0 I:java.nio.charset.Charset) = (r2 I:okhttp3.MediaType) okhttp3.MediaType.charset():java.nio.charset.Charset type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0021 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: SGET  (r0 I:java.nio.charset.Charset) =  okhttp3.internal.Util.UTF_8 java.nio.charset.Charset \l0x000c: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x000e: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0011: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x0014: CONST_STR  (r2 I:java.lang.String) =  \"; charset=utf\-8\" \l0x0016: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0019: INVOKE  (r2 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x001d: INVOKE  (r2 I:okhttp3.MediaType) = (r2 I:java.lang.String) okhttp3.MediaType.parse(java.lang.String):okhttp3.MediaType type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|0x0021: INVOKE  (r3 I:byte[]) = (r3 I:java.lang.String), (r0 I:java.nio.charset.Charset) java.lang.String.getBytes(java.nio.charset.Charset):byte[] type: VIRTUAL \l0x0025: INVOKE  (r2 I:okhttp3.RequestBody) = (r2 I:okhttp3.MediaType), (r3 I:byte[]) okhttp3.RequestBody.create(okhttp3.MediaType, byte[]):okhttp3.RequestBody type: STATIC \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|0x0029: RETURN  (r2 I:okhttp3.RequestBody) \l}"];
+MethodNode[shape=record,label="{public static okhttp3.RequestBody okhttp3.RequestBody.create((r2 I:okhttp3.MediaType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}], \l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

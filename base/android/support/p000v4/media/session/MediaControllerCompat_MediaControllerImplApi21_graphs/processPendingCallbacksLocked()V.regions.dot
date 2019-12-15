@@ -1,0 +1,81 @@
+digraph "CFG forandroid.support.v4.media.session.MediaControllerCompat.MediaControllerImplApi21.processPendingCallbacksLocked()V" {
+subgraph cluster_Region_1156951833 {
+label = "R(1:(1:(3:3|(2:6|(2:8|9))|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2047932611 {
+label = "R(1:(3:3|(2:6|(2:8|9))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_88119790 {
+label = "IF [B:1:0x0006] THEN: R(3:3|(2:6|(2:8|9))|12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.mSessionToken.getExtraBinder() != null) goto L_0x0009\l}"];
+subgraph cluster_Region_1139852409 {
+label = "R(3:3|(2:6|(2:8|9))|12)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|java.util.Iterator r0 = r4.mPendingCallbacks.iterator()\l}"];
+subgraph cluster_LoopRegion_714356345 {
+label = "LOOP:0: (2:6|(2:8|9))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r0.hasNext() != false) goto L_0x0015\l}"];
+subgraph cluster_Region_7124594 {
+label = "R(2:6|(2:8|9))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|android.support.v4.media.session.MediaControllerCompat$Callback r1 = r0.next()\landroid.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21$ExtraCallback android.support.p000v4.media.session.MediaControllerCompat.MediaControllerImplApi21.ExtraCallback r2 = new android.support.p000v4.media.session.MediaControllerCompat.MediaControllerImplApi21.ExtraCallback(r1)\lr4.mCallbackMap.put(r1, r2)\lr1.mIControllerCallback = r2\l}"];
+subgraph cluster_TryCatchRegion_1472136456 {
+label = "Try: R(2:8|9) catches: R(2:10|11)";
+node [shape=record,color=blue];
+subgraph cluster_Region_765753981 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ RemoteException \-\> 0x0037 \}\lSplitter:B:7:0x0027\l|r4.mSessionToken.getExtraBinder().registerCallbackListener(r2)     \/\/ Catch:\{ RemoteException \-\> 0x0037 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0030|LOOP_END\lLOOP:0: B:4:0x000f\-\>B:9:0x0030\l|r1.postToHandler(13, (java.lang.Object) null, (android.os.Bundle) null)\l}"];
+}
+subgraph cluster_Region_1454471672 {
+label = "R(2:10|11) | ExcHandler: RemoteException (r0v5 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|ExcHandler: RemoteException (r0v5 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0027\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0038|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in registerCallback.\", r0)\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x003f|r4.mPendingCallbacks.clear()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1454471672 {
+label = "R(2:10|11) | ExcHandler: RemoteException (r0v5 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|ExcHandler: RemoteException (r0v5 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:7:0x0027\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0038|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in registerCallback.\", r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f|LOOP_START\lLOOP:0: B:4:0x000f\-\>B:9:0x0030\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0027|SYNTHETIC\lSplitter:B:7:0x0027\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0044}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v4.media.session.MediaControllerCompat.MediaControllerImplApi21.processPendingCallbacksLocked((r4v0 'this' android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21 A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.GuardedBy, \{value=mLock\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_14[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_4;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_10;
+Node_14 -> Node_12;
+}
+

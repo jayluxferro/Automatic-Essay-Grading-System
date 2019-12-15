@@ -1,0 +1,17 @@
+digraph "CFG fororg.osmdroid.views.overlay.compass.CompassOverlay.drawCompass(Landroid\/graphics\/Canvas;FLandroid\/graphics\/Rect;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.osmdroid.views.Projection r11 = r8.mMapView.getProjection()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r8.mInCenter == false) goto L_0x0017\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|android.graphics.Rect r0 = r11.getScreenRect()\lfloat r1 = r0.exactCenterX()\lfloat r0 = r0.exactCenterY()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|float r0 = r8.mCompassCenterX\lfloat r1 = r8.mScale * r0\lfloat r0 = r8.mCompassCenterY * r8.mScale\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|PHI: r0 r1 \l  PHI: (r0v1 float) = (r0v5 float), (r0v7 float) binds: [B:3:0x0017, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v0 float) = (r1v2 float), (r1v3 float) binds: [B:3:0x0017, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|r8.mCompassMatrix.setTranslate(\-r8.mCompassFrameCenterX, \-r8.mCompassFrameCenterY)\lr8.mCompassMatrix.postTranslate(r1, r0)\lr11.save(r9, false, true)\lr9.concat(r8.mCompassMatrix)\lr9.drawBitmap(r8.mCompassFrameBitmap, 0.0f, 0.0f, r8.sSmoothPaint)\lr11.restore(r9, true)\lr8.mCompassMatrix.setRotate(\-r10, r8.mCompassRoseCenterX, r8.mCompassRoseCenterY)\lr8.mCompassMatrix.postTranslate(\-r8.mCompassRoseCenterX, \-r8.mCompassRoseCenterY)\lr8.mCompassMatrix.postTranslate(r1, r0)\lr11.save(r9, false, true)\lr9.concat(r8.mCompassMatrix)\lr9.drawBitmap(r8.mCompassRoseBitmap, 0.0f, 0.0f, r8.sSmoothPaint)\lr11.restore(r9, true)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0074|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{protected void org.osmdroid.views.overlay.compass.CompassOverlay.drawCompass((r8v0 'this' org.osmdroid.views.overlay.compass.CompassOverlay A[IMMUTABLE_TYPE, THIS]), (r9v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

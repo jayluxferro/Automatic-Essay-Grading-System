@@ -1,0 +1,34 @@
+digraph "CFG fororg.kxml2.kdom.Node.getText(I)Ljava\/lang\/String;" {
+subgraph cluster_Region_91034909 {
+label = "R(1:(2:(1:4)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2058487896 {
+label = "R(2:(1:4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_930936801 {
+label = "IF [B:1:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isText(r2) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1664361645 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return (java.lang.String) getChild(r2)\l}"];
+}
+}
+subgraph cluster_Region_236716075 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{public java.lang.String org.kxml2.kdom.Node.getText((r1v0 'this' org.kxml2.kdom.Node A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+}
+

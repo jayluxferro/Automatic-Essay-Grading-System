@@ -1,0 +1,145 @@
+digraph "CFG forokhttp3.internal.connection.RealConnection.createTunnel(IILokhttp3\/Request;Lokhttp3\/HttpUrl;)Lokhttp3\/Request;" {
+subgraph cluster_Region_1589201221 {
+label = "R(2:0|(4:1|(1:3)|4|(1:(2:8|(1:15)(1:(1:12)(1:13)))(2:16|17))(1:(1:22)(1:24))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r10 = \"CONNECT \" + okhttp3.internal.Util.hostHeader(r10, true) + \" HTTP\/1.1\"\l}"];
+subgraph cluster_LoopRegion_338150276 {
+label = "LOOP:0: (4:1|(1:3)|4|(1:(2:8|(1:15)(1:(1:12)(1:13)))(2:16|17))(1:(1:22)(1:24)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1806513246 {
+label = "R(4:1|(1:3)|4|(1:(2:8|(1:15)(1:(1:12)(1:13)))(2:16|17))(1:(1:22)(1:24)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001b|LOOP_START\lPHI: r9 \l  PHI: (r9v1 okhttp3.Request) = (r9v0 okhttp3.Request), (r9v7 okhttp3.Request) binds: [B:0:0x0000, B:13:0x009c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001b\-\>B:13:0x009c\l|okhttp3.internal.http1.Http1Codec okhttp3.internal.http1.Http1Codec r0 = new okhttp3.internal.http1.Http1Codec((okhttp3.OkHttpClient) null, (okhttp3.internal.connection.StreamAllocation) null, r6.source, r6.sink)\lr6.source.timeout().timeout((long) r7, java.util.concurrent.TimeUnit.MILLISECONDS)\lr6.sink.timeout().timeout((long) r8, java.util.concurrent.TimeUnit.MILLISECONDS)\lr0.writeRequest(r9.headers(), r10)\lr0.finishRequest()\lokhttp3.Response okhttp3.Response r9 = r0.readResponseHeaders(false).request(r9).build()\llong long r1 = okhttp3.internal.http.HttpHeaders.contentLength(r9)\l}"];
+subgraph cluster_IfRegion_834729204 {
+label = "IF [B:2:0x005c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x005c|if (r1 == \-1) goto L_0x005e\l}"];
+subgraph cluster_Region_1336905833 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005e|r1 = 0\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0060|PHI: r1 \l  PHI: (r1v11 long) = (r1v10 long), (r1v17 long) binds: [B:2:0x005c, B:3:0x005e] A[DONT_GENERATE, DONT_INLINE]\l|okio.Source okio.Source r0 = r0.newFixedLengthSource(r1)\lokhttp3.internal.Util.skipAll(r0, Integer.MAX_VALUE, java.util.concurrent.TimeUnit.MILLISECONDS)\lr0.close()\lint int r0 = r9.code()\l}"];
+subgraph cluster_IfRegion_1185443476 {
+label = "IF [B:5:0x0075] THEN: R(1:(2:8|(1:15)(1:(1:12)(1:13)))(2:16|17)) ELSE: R(1:(1:22)(1:24))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0075|if (r0 != 200) goto L_0x0077\l}"];
+subgraph cluster_Region_61093631 {
+label = "R(1:(2:8|(1:15)(1:(1:12)(1:13)))(2:16|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_424094972 {
+label = "IF [B:7:0x0079] THEN: R(2:8|(1:15)(1:(1:12)(1:13))) ELSE: R(2:16|17)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0079|if (r0 == 407) goto L_0x007b\l}"];
+subgraph cluster_Region_1358285956 {
+label = "R(2:8|(1:15)(1:(1:12)(1:13)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x007b|okhttp3.Request okhttp3.Request r0 = r6.route.address().proxyAuthenticator().authenticate(r6.route, r9)\l}"];
+subgraph cluster_IfRegion_718850917 {
+label = "IF [B:9:0x008b] THEN: R(1:15) ELSE: R(1:(1:12)(1:13))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x008b|if (r0 == null) goto L_0x009f\l}"];
+subgraph cluster_Region_1268189874 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00a6|throw new java.io.IOException(\"Failed to authenticate with proxy\")\l}"];
+}
+subgraph cluster_Region_1132305093 {
+label = "R(1:(1:12)(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1497750363 {
+label = "IF [B:11:0x0099] THEN: R(1:12) ELSE: R(1:13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0099|if (\"close\".equalsIgnoreCase(r9.header(\"Connection\")) == true) goto L_0x009b\l}"];
+subgraph cluster_Region_478805406 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x009b|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_433122389 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x009c|LOOP_END\lLOOP:0: B:1:0x001b\-\>B:13:0x009c\l|r9 = r0\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1294094935 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00a7}"];
+Node_17 [shape=record,label="{17\:\ 0x00c1|throw new java.io.IOException(\"Unexpected response code for CONNECT: \" + r9.code())\l}"];
+}
+}
+}
+subgraph cluster_Region_1777093325 {
+label = "R(1:(1:22)(1:24)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1272810177 {
+label = "IF [B:19:0x00cc, B:21:0x00d8] THEN: R(1:22) ELSE: R(1:24) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00cc|if (r6.source.buffer().exhausted() != false) goto L_0x00ce\l}"];
+Node_21 [shape=record,label="{21\:\ 0x00d8|ADDED_TO_REGION\l|if (r6.sink.buffer().exhausted() != false) goto L_0x00da\l}"];
+subgraph cluster_Region_955042706 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00da|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_401135096 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00e2|throw new java.io.IOException(\"TLS tunnel buffered too many bytes!\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0077}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x008d}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x009f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x00c2}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x00ce}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x00db}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x00c2|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x009b|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x00a7|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x009f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private okhttp3.Request okhttp3.internal.connection.RealConnection.createTunnel((r6v0 'this' okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, THIS]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 okhttp3.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 okhttp3.HttpUrl A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_25[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_27[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_28;
+Node_11 -> Node_13[style=dashed];
+Node_11 -> Node_26;
+Node_13 -> Node_1;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_19 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_25 -> Node_18;
+Node_26 -> Node_12;
+Node_27 -> Node_16;
+Node_28 -> Node_14;
+}
+

@@ -1,0 +1,129 @@
+digraph "CFG forokio.GzipSource.read(Lokio\/Buffer;J)J" {
+subgraph cluster_Region_1184135476 {
+label = "R(2:0|(2:21|22)(1:(1:3)(4:(1:6)|(2:9|(2:(2:11|12)|(1:13)))|(2:16|(1:19))|20)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r2 = (r13 \> 0 ? 1 : (r13 == 0 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_1973265707 {
+label = "IF [B:1:0x0004] THEN: R(2:21|22) ELSE: R(1:(1:3)(4:(1:6)|(2:9|(2:(2:11|12)|(1:13)))|(2:16|(1:19))|20))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2 \< 0) goto L_0x004b\l}"];
+subgraph cluster_Region_1394384075 {
+label = "R(2:21|22)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x004b}"];
+Node_22 [shape=record,label="{22\:\ 0x0061|throw new java.lang.IllegalArgumentException(\"byteCount \< 0: \" + r13)\l}"];
+}
+subgraph cluster_Region_367949420 {
+label = "R(1:(1:3)(4:(1:6)|(2:9|(2:(2:11|12)|(1:13)))|(2:16|(1:19))|20)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_875366471 {
+label = "IF [B:2:0x0006] THEN: R(1:3) ELSE: R(4:(1:6)|(2:9|(2:(2:11|12)|(1:13)))|(2:16|(1:19))|20) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r2 == 0) goto L_0x0008\l}"];
+subgraph cluster_Region_1534268747 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|RETURN\l|return 0\l}"];
+}
+subgraph cluster_Region_1738921636 {
+label = "R(4:(1:6)|(2:9|(2:(2:11|12)|(1:13)))|(2:16|(1:19))|20)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1357440095 {
+label = "IF [B:5:0x000c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|if (r11.section == 0) goto L_0x000e\l}"];
+subgraph cluster_Region_911455544 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|consumeHeader()\lr11.section = 1\l}"];
+}
+}
+subgraph cluster_IfRegion_1976117236 {
+label = "IF [B:8:0x0018] THEN: R(2:9|(2:(2:11|12)|(1:13))) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|if (r11.section == 1) goto L_0x001a\l}"];
+subgraph cluster_Region_622639675 {
+label = "R(2:9|(2:(2:11|12)|(1:13)))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|long long r7 = r12.size\llong long r13 = r11.inflaterSource.read(r12, r13)\l}"];
+subgraph cluster_Region_1016123167 {
+label = "R(2:(2:11|12)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1485339559 {
+label = "IF [B:10:0x0024] THEN: R(2:11|12) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0024|if (r13 != \-1) goto L_0x0026\l}"];
+subgraph cluster_Region_1076116085 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0026|updateCrc(r12, r7, r13)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002c|RETURN\l|return r13\l}"];
+}
+}
+subgraph cluster_Region_734863054 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002d|r11.section = 2\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_10257658 {
+label = "IF [B:15:0x0031] THEN: R(2:16|(1:19)) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0031|if (r11.section == 2) goto L_0x0033\l}"];
+subgraph cluster_Region_1012331930 {
+label = "R(2:16|(1:19))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0033|consumeTrailer()\lr11.section = 3\l}"];
+subgraph cluster_IfRegion_100937016 {
+label = "IF [B:17:0x003f] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x003f|if (r11.source.exhausted() == false) goto L_0x0042\l}"];
+subgraph cluster_Region_1174169688 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0049|throw new java.io.IOException(\"gzip finished without exhausting source\")\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x004a|RETURN\l|return \-1\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0042}"];
+MethodNode[shape=record,label="{public long okio.GzipSource.read((r11v0 'this' okio.GzipSource A[IMMUTABLE_TYPE, THIS]), (r12v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_21;
+Node_21 -> Node_22;
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_14[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_20[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_14 -> Node_15;
+Node_18 -> Node_19;
+}
+

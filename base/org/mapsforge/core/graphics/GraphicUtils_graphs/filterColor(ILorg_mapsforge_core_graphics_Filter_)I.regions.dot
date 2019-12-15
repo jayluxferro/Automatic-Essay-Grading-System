@@ -1,0 +1,68 @@
+digraph "CFG fororg.mapsforge.core.graphics.GraphicUtils.filterColor(ILorg\/mapsforge\/core\/graphics\/Filter;)I" {
+subgraph cluster_Region_2025321760 {
+label = "R(1:(2:(1:2)|(4:3|4|8|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1789545311 {
+label = "R(2:(1:2)|(4:3|4|8|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1125406072 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7 == org.mapsforge.core.graphics.Filter.NONE) goto L_0x0004\l}"];
+subgraph cluster_Region_1183749207 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_1795394906 {
+label = "R(4:3|4|8|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|int int r0 = r6 \>\>\> 24\lint r1 = (r6 \>\> 16) & 255\lint r2 = (r6 \>\> 8) & 255\lint r6 = r6 & 255\l}"];
+subgraph cluster_SwitchRegion_30893907 {
+label = "Switch: 3, default: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|switch(r7) \{\l    case org.mapsforge.core.graphics.Filter.GRAYSCALE :org.mapsforge.core.graphics.Filter: goto L_0x003c;\l    case org.mapsforge.core.graphics.Filter.GRAYSCALE_INVERT :org.mapsforge.core.graphics.Filter: goto L_0x002d;\l    case org.mapsforge.core.graphics.Filter.INVERT :org.mapsforge.core.graphics.Filter: goto L_0x0026;\l    default: goto L_0x0025;\l\}\l}"];
+subgraph cluster_Region_837336164 {
+label = "R(2:7|1)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003c|int r1 = (int) ((((float) r1) * 0.213f) + (((float) r2) * 0.715f) + (((float) r6) * 0.072f))\l}"];
+Node_InsnContainer_966734981 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1324117009 {
+label = "R(2:6|1)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002d|int r1 = 255 \- ((int) (((((float) r1) * 0.213f) + (((float) r2) * 0.715f)) + (((float) r6) * 0.072f)))\l}"];
+Node_InsnContainer_1489049947 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_110036928 {
+label = "R(2:5|1)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|int r1 = 255 \- r1\lint r2 = 255 \- r2\lint r6 = 255 \- r6\l}"];
+Node_InsnContainer_1784611384 [shape=record,label="{|break\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0048|PHI: r1 \l  PHI: (r1v3 int) = (r1v6 int), (r1v9 int) binds: [B:7:0x003c, B:6:0x002d] A[DONT_GENERATE, DONT_INLINE]\l|r6 = r1\lr2 = r6\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0053|RETURN\l|return r6 \| (r0 \<\< 24) \| (r1 \<\< 16) \| (r2 \<\< 8)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x004a|PHI: r1 r2 r6 \l  PHI: (r1v2 int) = (r1v1 int), (r1v3 int), (r1v10 int) binds: [B:4:0x0022, B:8:0x0048, B:5:0x0026] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int), (r2v4 int) binds: [B:4:0x0022, B:8:0x0048, B:5:0x0026] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v2 int) = (r6v1 int), (r6v4 int), (r6v10 int) binds: [B:4:0x0022, B:8:0x0048, B:5:0x0026] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static int org.mapsforge.core.graphics.GraphicUtils.filterColor((r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 org.mapsforge.core.graphics.Filter A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_4 -> Node_7;
+Node_4 -> Node_9;
+Node_7 -> Node_8;
+Node_6 -> Node_8;
+Node_5 -> Node_9;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+}
+

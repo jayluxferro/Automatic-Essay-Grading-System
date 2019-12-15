@@ -1,0 +1,45 @@
+digraph "CFG forkotlin.sequences.DistinctIterator.computeNext()V" {
+subgraph cluster_Region_124774950 {
+label = "R(2:(2:2|(2:4|5))|6)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1309691512 {
+label = "LOOP:0: (2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r3.source.hasNext() != false) goto L_0x0008\l}"];
+subgraph cluster_Region_1057084999 {
+label = "R(2:2|(2:4|5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|java.lang.Object T r0 = r3.source.next()\l}"];
+subgraph cluster_IfRegion_1440975537 {
+label = "IF [B:3:0x001a] THEN: R(2:4|5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|LOOP_END\lLOOP:0: B:0:0x0000\-\>B:3:0x001a\l|if (r3.observed.add(r3.keySelector.invoke(r0)) == true) goto L_0x001c\l}"];
+subgraph cluster_Region_1899199442 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|setNext(r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0020|done()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lLOOP:0: B:0:0x0000\-\>B:3:0x001a\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0023}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void kotlin.sequences.DistinctIterator.computeNext((r3v0 'this' kotlin.sequences.DistinctIterator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_0[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_8 -> Node_6;
+Node_9 -> Node_4;
+}
+

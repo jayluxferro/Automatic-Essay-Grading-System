@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.onContainerAtomRead(Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$ContainerAtom;)V" {
+subgraph cluster_Region_990441817 {
+label = "R(1:(1:2)(1:(1:5)(1:(1:8)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1086557485 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: R(1:(1:5)(1:(1:8)(0)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r3.type == com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_moov) goto L_0x0006\l}"];
+subgraph cluster_Region_771367792 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|onMoovContainerAtomRead(r3)\l}"];
+}
+subgraph cluster_Region_1672639514 {
+label = "R(1:(1:5)(1:(1:8)(0))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_525128460 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r3.type == com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_moof) goto L_0x0010\l}"];
+subgraph cluster_Region_1127911213 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|onMoofContainerAtomRead(r3)\l}"];
+}
+subgraph cluster_Region_1059571097 {
+label = "R(1:(1:8)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1329947843 {
+label = "IF [B:7:0x001a] THEN: R(1:8) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|if (r2.containerAtoms.isEmpty() == false) goto L_0x001c\l}"];
+subgraph cluster_Region_912792212 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|r2.containerAtoms.peek().add(r3)\l}"];
+}
+subgraph cluster_Region_566016147 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.onContainerAtomRead((r2v0 'this' com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor A[IMMUTABLE_TYPE, THIS]), (r3v0 'container' com.google.android.exoplayer2.extractor.mp4.Atom$ContainerAtom A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_12;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

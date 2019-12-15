@@ -1,0 +1,144 @@
+digraph "CFG fororg.xmlpull.v1.XmlPullParserFactory.newPullParser()Lorg\/xmlpull\/v1\/XmlPullParser;" {
+subgraph cluster_Region_2010837496 {
+label = "R(1:(2:24|25)(1:(4:4|(2:7|(3:9|(2:13|(1:17))|12))|20|21)(2:22|23)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1985599688 {
+label = "IF [B:1:0x0002] THEN: R(2:24|25) ELSE: R(1:(4:4|(2:7|(3:9|(2:13|(1:17))|12))|20|21)(2:22|23))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r7.parserClasses == null) goto L_0x00a8\l}"];
+subgraph cluster_Region_464316890 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00a8|java.lang.StringBuffer java.lang.StringBuffer r1 = new java.lang.StringBuffer()\lr1.append(\"Factory initialization was incomplete \- has not tried \")\lr1.append(r7.classNamesLocation)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x00c0|throw new org.xmlpull.p030v1.XmlPullParserException(r1.toString())\l}"];
+}
+subgraph cluster_Region_1379263676 {
+label = "R(1:(4:4|(2:7|(3:9|(2:13|(1:17))|12))|20|21)(2:22|23)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_81497870 {
+label = "IF [B:3:0x000a] THEN: R(4:4|(2:7|(3:9|(2:13|(1:17))|12))|20|21) ELSE: R(2:22|23) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r7.parserClasses.size() != 0) goto L_0x000c\l}"];
+subgraph cluster_Region_232541710 {
+label = "R(4:4|(2:7|(3:9|(2:13|(1:17))|12))|20|21)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|java.lang.StringBuffer java.lang.StringBuffer r0 = new java.lang.StringBuffer()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_63294977 {
+label = "LOOP:0: (2:7|(3:9|(2:13|(1:17))|12))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r1 \< r7.parserClasses.size()) goto L_0x001a\l}"];
+subgraph cluster_Region_634472819 {
+label = "R(2:7|(3:9|(2:13|(1:17))|12))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|java.lang.Class java.lang.Class r2 = (java.lang.Class) r7.parserClasses.elementAt(r1)\l}"];
+subgraph cluster_TryCatchRegion_615447388 {
+label = "Try: R(3:9|(2:13|(1:17))|12) catches: R(2:18|19)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1242746873 {
+label = "R(3:9|(2:13|(1:17))|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|Catch:\{ Exception \-\> 0x0050 \}\lSplitter:B:8:0x0022\l|org.xmlpull.v1.XmlPullParser org.xmlpull.p030v1.XmlPullParser r3 = (org.xmlpull.p030v1.XmlPullParser) r2.newInstance()     \/\/ Catch:\{ Exception \-\> 0x0050 \}\ljava.util.Enumeration java.util.Enumeration r4 = r7.features.keys()     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+subgraph cluster_LoopRegion_1084649856 {
+label = "LOOP:1: (2:13|(1:17))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0032|Catch:\{ Exception \-\> 0x0050 \}\l|if (r4.hasMoreElements() != false) goto L_0x0035     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+subgraph cluster_Region_1863529014 {
+label = "R(2:13|(1:17))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0035|Catch:\{ Exception \-\> 0x0050 \}\l|java.lang.String java.lang.String r5 = (java.lang.String) r4.nextElement()     \/\/ Catch:\{ Exception \-\> 0x0050 \}\ljava.lang.Boolean java.lang.Boolean r6 = (java.lang.Boolean) r7.features.get(r5)     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+subgraph cluster_IfRegion_857888042 {
+label = "IF [B:14:0x0043, B:16:0x0049] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0043|ADDED_TO_REGION\lCatch:\{ Exception \-\> 0x0050 \}\l|if (r6 != null) goto L_0x0045     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0049|ADDED_TO_REGION\lCatch:\{ Exception \-\> 0x0050 \}\l|if (r6.booleanValue() == true) goto L_0x004b     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+subgraph cluster_Region_1832783840 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004b|Catch:\{ Exception \-\> 0x0050 \}\l|r3.setFeature(r5, true)     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0034|RETURN\lCatch:\{ Exception \-\> 0x0050 \}\l|return r3     \/\/ Catch:\{ Exception \-\> 0x0050 \}\l}"];
+}
+subgraph cluster_Region_2136676873 {
+label = "R(2:18|19) | ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0050|ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:8:0x0022\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0051|LOOP_END\lLOOP:0: B:5:0x0012\-\>B:19:0x0051\l|java.lang.StringBuffer java.lang.StringBuffer r4 = new java.lang.StringBuffer()\lr4.append(r2.getName())\lr4.append(\": \")\lr4.append(r3.toString())\lr4.append(\"; \")\lr0.append(r4.toString())\lr1++\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0078|java.lang.StringBuffer java.lang.StringBuffer r2 = new java.lang.StringBuffer()\lr2.append(\"could not create parser: \")\lr2.append(r0)\l}"];
+Node_21 [shape=record,label="{21\:\ 0x008e|throw new org.xmlpull.p030v1.XmlPullParserException(r2.toString())\l}"];
+}
+subgraph cluster_Region_2027670847 {
+label = "R(2:22|23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x008f|java.lang.StringBuffer java.lang.StringBuffer r1 = new java.lang.StringBuffer()\lr1.append(\"No valid parser classes found in \")\lr1.append(r7.classNamesLocation)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x00a7|throw new org.xmlpull.p030v1.XmlPullParserException(r1.toString())\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_2136676873 {
+label = "R(2:18|19) | ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0050|ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:8:0x0022\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0051|LOOP_END\lLOOP:0: B:5:0x0012\-\>B:19:0x0051\l|java.lang.StringBuffer java.lang.StringBuffer r4 = new java.lang.StringBuffer()\lr4.append(r2.getName())\lr4.append(\": \")\lr4.append(r3.toString())\lr4.append(\"; \")\lr0.append(r4.toString())\lr1++\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012|LOOP_START\lPHI: r1 \l  PHI: (r1v5 int) = (r1v4 int), (r1v7 int) binds: [B:4:0x000c, B:19:0x0051] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0012\-\>B:19:0x0051\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0022|SYNTHETIC\lSplitter:B:8:0x0022\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002e|LOOP_START\lCatch:\{ Exception \-\> 0x0050 \}\lLOOP:1: B:10:0x002e\-\>B:27:0x002e\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0045|Catch:\{ Exception \-\> 0x0050 \}\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0078|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x002e|LOOP_END\lSYNTHETIC\lLOOP:1: B:10:0x002e\-\>B:27:0x002e\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0034|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x002e|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x002e|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x002e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.xmlpull.v1.XmlPullParser org.xmlpull.v1.XmlPullParserFactory.newPullParser((r7v0 'this' org.xmlpull.v1.XmlPullParserFactory A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_24;
+Node_24 -> Node_25;
+Node_3 -> Node_4;
+Node_3 -> Node_22[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_26[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_13;
+Node_11 -> Node_28[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_29[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_30[style=dashed];
+Node_17 -> Node_31;
+Node_18 -> Node_19;
+Node_19 -> Node_5;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_18 -> Node_19;
+Node_19 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_8 -> Node_18;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_26 -> Node_20;
+Node_27 -> Node_10;
+Node_28 -> Node_12;
+Node_29 -> Node_27;
+Node_30 -> Node_27;
+Node_31 -> Node_27;
+}
+

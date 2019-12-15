@@ -1,0 +1,56 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.OfflineDownload.RefreshListView()V" {
+subgraph cluster_Region_1204332841 {
+label = "R(3:0|(3:3|(1:5)(1:6)|7)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String[] java.lang.String[] r7 = \{\"listview_image\", \"listview_title\", \"listview_discription\"\}\lint[] int[] r8 = \{com.ghanapostgps.ghanapost.C0708R.C0710id.listview_image, com.ghanapostgps.ghanapost.C0708R.C0710id.listview_item_title, com.ghanapostgps.ghanapost.C0708R.C0710id.listview_item_short_description\}\ljava.util.ArrayList java.util.ArrayList r5 = new java.util.ArrayList()\ljava.lang.String java.lang.String r0 = getBaseContext().getFilesDir().getAbsolutePath()\lgetBaseContext().getFilesDir().listFiles()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1889795016 {
+label = "LOOP:0: (3:3|(1:5)(1:6)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002f|if (r1 \< 10) goto L_0x0031\l}"];
+subgraph cluster_Region_1855049526 {
+label = "R(3:3|(1:5)(1:6)|7)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0031|java.lang.String java.lang.String r2 = r9.listFileName[r1].replace(\"vok\", \"sqlite\")\ljava.util.HashMap java.util.HashMap r3 = new java.util.HashMap()\lr3.put(\"listview_title\", r9.listName[r1])\lr3.put(\"listview_discription\", r9.listFileSize[r1])\l}"];
+subgraph cluster_IfRegion_1674098156 {
+label = "IF [B:4:0x006c] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x006c|if (fileExist(r0 + \"\/\" + r2) == false) goto L_0x006e\l}"];
+subgraph cluster_Region_313007113 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006e|r3.put(\"listview_image\", java.lang.Integer.toString(com.ghanapostgps.ghanapost.C0708R.C0709drawable.archive_48))\l}"];
+}
+subgraph cluster_Region_1923126548 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x007b|r9.listFilesDownloaded.put(r9.listFileName[r1], r2)\lr3.put(\"listview_image\", java.lang.Integer.toString(com.ghanapostgps.ghanapost.C0708R.C0709drawable.ok_48))\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0090|LOOP_END\lLOOP:0: B:1:0x002d\-\>B:7:0x0090\l|r5.add(r3)\lr1++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0096|android.widget.SimpleAdapter android.widget.SimpleAdapter r3 = new android.widget.SimpleAdapter(getBaseContext(), r5, com.ghanapostgps.ghanapost.C0708R.layout.simpleimagelistview, r7, r8)\landroid.widget.ListView android.widget.ListView r1 = (android.widget.ListView) findViewById(com.ghanapostgps.ghanapost.C0708R.C0710id.offline_listview)\lr1.setAdapter(r3)\lr1.setOnItemClickListener(new com.ghanapostgps.ghanapost.OfflineDownload.C07072())\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x002d|LOOP_START\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v8 int) binds: [B:0:0x0000, B:7:0x0090] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x002d\-\>B:7:0x0090\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x00b7}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0096|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0090|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0090|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.ghanapostgps.ghanapost.OfflineDownload.RefreshListView((r9v0 'this' com.ghanapostgps.ghanapost.OfflineDownload A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_12;
+Node_6 -> Node_11;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_10 -> Node_8;
+Node_11 -> Node_7;
+Node_12 -> Node_7;
+}
+

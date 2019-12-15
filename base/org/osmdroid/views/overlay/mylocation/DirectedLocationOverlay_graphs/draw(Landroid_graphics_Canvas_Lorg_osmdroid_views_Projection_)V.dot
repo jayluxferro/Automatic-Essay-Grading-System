@@ -1,0 +1,31 @@
+digraph "CFG fororg.osmdroid.views.overlay.mylocation.DirectedLocationOverlay.draw(Landroid\/graphics\/Canvas;Lorg\/osmdroid\/views\/Projection;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r10.mLocation == null) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|r12.toPixels(r10.mLocation, r10.screenCoords)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r10.mShowAccuracy == false) goto L_0x0068\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r10.mAccuracy \<= 10) goto L_0x0068\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|float r12 = r12.metersToEquatorPixels((float) r10.mAccuracy)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0020|if ((r12 \> 8.0f ? 1 : (r12 == 8.0f ? 0 : \-1)) \<= 0) goto L_0x0068\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0022|r10.mAccuracyPaint.setAntiAlias(false)\lr10.mAccuracyPaint.setAlpha(30)\lr10.mAccuracyPaint.setStyle(android.graphics.Paint.Style.FILL)\lr11.drawCircle((float) r10.screenCoords.x, (float) r10.screenCoords.y, r12, r10.mAccuracyPaint)\lr10.mAccuracyPaint.setAntiAlias(true)\lr10.mAccuracyPaint.setAlpha(com.mapbox.mapboxsdk.constants.MapboxConstants.ANIMATION_DURATION_SHORT)\lr10.mAccuracyPaint.setStyle(android.graphics.Paint.Style.STROKE)\lr11.drawCircle((float) r10.screenCoords.x, (float) r10.screenCoords.y, r12, r10.mAccuracyPaint)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0068|r10.directionRotater.setRotate(r10.mBearing, r10.DIRECTION_ARROW_CENTER_X, r10.DIRECTION_ARROW_CENTER_Y)\landroid.graphics.Bitmap r12 = android.graphics.Bitmap.createBitmap(r10.DIRECTION_ARROW, 0, 0, r10.DIRECTION_ARROW_WIDTH, r10.DIRECTION_ARROW_HEIGHT, r10.directionRotater, false)\lr11.drawBitmap(r12, (float) (r10.screenCoords.x \- (r12.getWidth() \/ 2)), (float) (r10.screenCoords.y \- (r12.getHeight() \/ 2)), r10.mPaint)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.mylocation.DirectedLocationOverlay.draw((r10v0 'this' org.osmdroid.views.overlay.mylocation.DirectedLocationOverlay A[IMMUTABLE_TYPE, THIS]), (r11v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

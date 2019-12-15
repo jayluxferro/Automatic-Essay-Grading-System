@@ -1,0 +1,23 @@
+digraph "CFG forandroid.support.v4.app.TaskStackBuilder.addParentStack(Landroid\/content\/ComponentName;)Landroid\/support\/v4\/app\/TaskStackBuilder;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:java.util.ArrayList\<android.content.Intent\>) = (r2 I:android.support.v4.app.TaskStackBuilder) android.support.v4.app.TaskStackBuilder.mIntents java.util.ArrayList \l0x0002: INVOKE  (r0 I:int) = (r0 I:java.util.ArrayList) java.util.ArrayList.size():int type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0006\l|0x0006: IGET  (r1 I:android.content.Context) = (r2 I:android.support.v4.app.TaskStackBuilder) android.support.v4.app.TaskStackBuilder.mSourceContext android.content.Context A[Catch:\{ NameNotFoundException \-\> 0x001f \}, TRY_ENTER]\l0x0008: INVOKE  (r3 I:android.content.Intent) = \l  (r1 I:android.content.Context)\l  (r3 I:android.content.ComponentName)\l android.support.v4.app.NavUtils.getParentActivityIntent(android.content.Context, android.content.ComponentName):android.content.Intent type: STATIC A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|0x000c: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001e A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|0x000e: IGET  (r1 I:java.util.ArrayList\<android.content.Intent\>) = (r2 I:android.support.v4.app.TaskStackBuilder) android.support.v4.app.TaskStackBuilder.mIntents java.util.ArrayList A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l0x0010: INVOKE  \l  (r1 I:java.util.ArrayList)\l  (r0 I:int)\l  (r3 I:java.lang.Object)\l java.util.ArrayList.add(int, java.lang.Object):void type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l0x0013: IGET  (r1 I:android.content.Context) = (r2 I:android.support.v4.app.TaskStackBuilder) android.support.v4.app.TaskStackBuilder.mSourceContext android.content.Context A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l0x0015: INVOKE  (r3 I:android.content.ComponentName) = (r3 I:android.content.Intent) android.content.Intent.getComponent():android.content.ComponentName type: VIRTUAL A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l0x0019: INVOKE  (r3 I:android.content.Intent) = \l  (r1 I:android.content.Context)\l  (r3 I:android.content.ComponentName)\l android.support.v4.app.NavUtils.getParentActivityIntent(android.content.Context, android.content.ComponentName):android.content.Intent type: STATIC A[Catch:\{ NameNotFoundException \-\> 0x001f \}]\l0x001c: NOP   A[TRY_LEAVE]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: RETURN  (r2 I:android.support.v4.app.TaskStackBuilder) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001f|ExcHandler: NameNotFoundException null\lSplitter:B:1:0x0006\l|0x001f: MOVE_EXCEPTION  (r3 I:?[OBJECT]) =  \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|0x0020: CONST_STR  (r0 I:java.lang.String) =  \"TaskStackBuilder\" \l0x0022: CONST_STR  (r1 I:java.lang.String) =  \"Bad ComponentName while traversing activity parent metadata\" \l0x0024: INVOKE  (r0 I:java.lang.String), (r1 I:java.lang.String) android.util.Log.e(java.lang.String, java.lang.String):int type: STATIC \l0x0027: NEW_INSTANCE  (r0 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0029: INVOKE  \l  (r0 I:java.lang.IllegalArgumentException)\l  (r3 I:java.lang.Throwable)\l java.lang.IllegalArgumentException.\<init\>(java.lang.Throwable):void type: DIRECT \l}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|0x002c: THROW  (r0 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public android.support.v4.app.TaskStackBuilder android.support.v4.app.TaskStackBuilder.addParentStack((r2 'this' I:android.support.v4.app.TaskStackBuilder A[IMMUTABLE_TYPE, THIS]), (r3 I:android.content.ComponentName A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_3;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

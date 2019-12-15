@@ -1,0 +1,34 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.util.Utils.getRandomNumberInRange(II)I" {
+subgraph cluster_Region_2012186172 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1456529081 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1658877842 {
+label = "IF [B:0:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 \< r2) goto L_0x0002\l}"];
+subgraph cluster_Region_238491911 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|RETURN\l|return new java.util.Random().nextInt((r2 \- r1) + 1) + r1\l}"];
+}
+}
+subgraph cluster_Region_90349723 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|throw new java.lang.IllegalArgumentException(\"max must be greater than min\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+MethodNode[shape=record,label="{private static int com.ghanapostgps.ghanapost.util.Utils.getRandomNumberInRange((r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

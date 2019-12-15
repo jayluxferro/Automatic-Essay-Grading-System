@@ -1,0 +1,110 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaPeriod.buildTrackGroups(Ljava\/util\/List;)Landroid\/util\/Pair;" {
+subgraph cluster_Region_1734371592 {
+label = "R(2:0|(2:1|(2:(1:15)|(6:3|(1:6)|7|(1:9)(1:16)|(1:12)(0)|13))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r10 = r21.size()\lint int r11 = getEmbeddedTrackCount(r21)\lcom.google.android.exoplayer2.source.TrackGroup[] r20 = new com.google.android.exoplayer2.source.TrackGroup[(r10 + r11)]\lcom.google.android.exoplayer2.source.dash.DashMediaPeriod$EmbeddedTrackInfo[] com.google.android.exoplayer2.source.dash.DashMediaPeriod.EmbeddedTrackInfo[] r14 = new com.google.android.exoplayer2.source.dash.DashMediaPeriod.EmbeddedTrackInfo[r11]\lint r12 = 0\lint r17 = 0\l}"];
+subgraph cluster_LoopRegion_1047054825 {
+label = "LOOP:0: (2:1|(2:(1:15)|(6:3|(1:6)|7|(1:9)(1:16)|(1:12)(0)|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_277459710 {
+label = "R(2:1|(2:(1:15)|(6:3|(1:6)|7|(1:9)(1:16)|(1:12)(0)|13)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|LOOP_START\lPHI: r12 r17 \l  PHI: (r12v1 'embeddedTrackIndex' int) = (r12v0 'embeddedTrackIndex' int), (r12v4 'embeddedTrackIndex' int) binds: [B:0:0x0000, B:13:0x00d2] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r17v1 'i' int) = (r17v0 'i' int), (r17v2 'i' int) binds: [B:0:0x0000, B:13:0x00d2] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:13:0x00d2\l|int r13 = r12\l}"];
+subgraph cluster_Region_1536411008 {
+label = "R(2:(1:15)|(6:3|(1:6)|7|(1:9)(1:16)|(1:12)(0)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_883172682 {
+label = "IF [B:2:0x0016] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|if (r17 \>= r10) goto L_0x00d7\l}"];
+subgraph cluster_Region_821441680 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00e2|RETURN\l|return android.util.Pair.create(new com.google.android.exoplayer2.source.TrackGroupArray(r20), r14)\l}"];
+}
+}
+subgraph cluster_Region_636340657 {
+label = "R(6:3|(1:6)|7|(1:9)(1:16)|(1:12)(0)|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|com.google.android.exoplayer2.source.dash.manifest.AdaptationSet com.google.android.exoplayer2.source.dash.manifest.AdaptationSet r9 = r21.get(r17)\ljava.util.List\<com.google.android.exoplayer2.source.dash.manifest.Representation\> r19 = r9.representations\lcom.google.android.exoplayer2.Format[] r16 = new com.google.android.exoplayer2.Format[r19.size()]\lint r18 = 0\l}"];
+subgraph cluster_LoopRegion_1765064854 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (r18 \< r16.length) goto L_0x0037\l}"];
+subgraph cluster_Region_888642228 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|LOOP_END\lLOOP:1: B:4:0x0030\-\>B:6:0x0037\l|r16[r18] = r19.get(r18).format\lr18++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0048|r20[r17] = new com.google.android.exoplayer2.source.TrackGroup(r16)\l}"];
+subgraph cluster_IfRegion_291129035 {
+label = "IF [B:8:0x0055] THEN: R(1:9) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0055|if (hasEventMessageTrack(r9) == true) goto L_0x0057\l}"];
+subgraph cluster_Region_1908947793 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0057|r20[r10 + r13] = new com.google.android.exoplayer2.source.TrackGroup(com.google.android.exoplayer2.Format.createSampleFormat(r9.f2461id + \":emsg\", com.google.android.exoplayer2.util.MimeTypes.APPLICATION_EMSG, (java.lang.String) null, \-1, (com.google.android.exoplayer2.drm.DrmInitData) null))\lint r12 = r13 + 1\lr14[r13] = new com.google.android.exoplayer2.source.dash.DashMediaPeriod.EmbeddedTrackInfo(r17, 4)\l}"];
+}
+subgraph cluster_Region_365919470 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00e3|r12 = r13\l}"];
+}
+}
+subgraph cluster_IfRegion_1513202960 {
+label = "IF [B:11:0x0094] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0094|if (hasCea608Track(r9) == true) goto L_0x0096\l}"];
+subgraph cluster_Region_1413099318 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0096|r20[r10 + r12] = new com.google.android.exoplayer2.source.TrackGroup(com.google.android.exoplayer2.Format.createTextSampleFormat(r9.f2461id + \":cea608\", com.google.android.exoplayer2.util.MimeTypes.APPLICATION_CEA608, (java.lang.String) null, \-1, 0, (java.lang.String) null, (com.google.android.exoplayer2.drm.DrmInitData) null))\lr14[r12] = new com.google.android.exoplayer2.source.dash.DashMediaPeriod.EmbeddedTrackInfo(r17, 3)\lr12++\l}"];
+}
+subgraph cluster_Region_1495181102 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x00d2|LOOP_END\lPHI: r12 \l  PHI: (r12v4 'embeddedTrackIndex' int) = (r12v3 'embeddedTrackIndex' int), (r12v5 'embeddedTrackIndex' int) binds: [B:19:0x00d2, B:18:0x00d2] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0014\-\>B:13:0x00d2\l|r17++\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0030|LOOP_START\lPHI: r18 \l  PHI: (r18v1 'j' int) = (r18v0 'j' int), (r18v2 'j' int) binds: [B:3:0x0018, B:6:0x0037] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:4:0x0030\-\>B:6:0x0037\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0090|PHI: r12 \l  PHI: (r12v3 'embeddedTrackIndex' int) = (r12v2 'embeddedTrackIndex' int), (r12v6 'embeddedTrackIndex' int) binds: [B:16:0x00e3, B:9:0x0057] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x00d7}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x00d7|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x00d2|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x00d2|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0048|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static android.util.Pair\<com.google.android.exoplayer2.source.TrackGroupArray, com.google.android.exoplayer2.source.dash.DashMediaPeriod$EmbeddedTrackInfo[]\> com.google.android.exoplayer2.source.dash.DashMediaPeriod.buildTrackGroups((r21v0 'adaptationSets' java.util.List\<com.google.android.exoplayer2.source.dash.manifest.AdaptationSet\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/AdaptationSet;, \>;), Landroid\/util\/Pair, \<, Lcom\/google\/android\/exoplayer2\/source\/TrackGroupArray;, [, Lcom\/google\/android\/exoplayer2\/source\/dash\/DashMediaPeriod$EmbeddedTrackInfo;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_20[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_16[style=dashed];
+Node_9 -> Node_10;
+Node_16 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_19[style=dashed];
+Node_12 -> Node_18;
+Node_13 -> Node_1;
+Node_4 -> Node_5;
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+Node_17 -> Node_14;
+Node_18 -> Node_13;
+Node_19 -> Node_13;
+Node_20 -> Node_7;
+}
+

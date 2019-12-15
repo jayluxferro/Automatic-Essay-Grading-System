@@ -1,0 +1,84 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.openResponseBody(Lokhttp3\/Response;)Lokhttp3\/ResponseBody;" {
+subgraph cluster_Region_572138433 {
+label = "R(2:0|(2:(1:3)|(1:(2:(1:7)|(2:8|(2:(1:11)|(1:13)))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.streamAllocation.eventListener.responseBodyStart(r6.streamAllocation.call)\ljava.lang.String java.lang.String r0 = r7.header(p018io.fabric.sdk.android.services.network.HttpRequest.HEADER_CONTENT_TYPE)\l}"];
+subgraph cluster_Region_1146845220 {
+label = "R(2:(1:3)|(1:(2:(1:7)|(2:8|(2:(1:11)|(1:13))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1583191050 {
+label = "IF [B:1:0x0015] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (okhttp3.internal.http.HttpHeaders.hasBody(r7) == false) goto L_0x0017\l}"];
+subgraph cluster_Region_1735385011 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0026|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, 0, okio.Okio.buffer(newFixedLengthSource(0)))\l}"];
+}
+}
+subgraph cluster_Region_909659336 {
+label = "R(1:(2:(1:7)|(2:8|(2:(1:11)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1291029712 {
+label = "R(2:(1:7)|(2:8|(2:(1:11)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1408649010 {
+label = "IF [B:5:0x0035] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (\"chunked\".equalsIgnoreCase(r7.header(\"Transfer\-Encoding\")) == true) goto L_0x0037\l}"];
+subgraph cluster_Region_1656848214 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004c|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, \-1, okio.Okio.buffer(newChunkedSource(r7.request().url())))\l}"];
+}
+}
+subgraph cluster_Region_946360595 {
+label = "R(2:8|(2:(1:11)|(1:13)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004d|long long r4 = okhttp3.internal.http.HttpHeaders.contentLength(r7)\l}"];
+subgraph cluster_Region_1631151234 {
+label = "R(2:(1:11)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1362801287 {
+label = "IF [B:9:0x0053] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0053|if (r4 != \-1) goto L_0x0055\l}"];
+subgraph cluster_Region_1385473379 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0062|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, r4, okio.Okio.buffer(newFixedLengthSource(r4)))\l}"];
+}
+}
+subgraph cluster_Region_568561883 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0070|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, \-1, okio.Okio.buffer(newUnknownLengthSource()))\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0017}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0027}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0037}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0055}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0063}"];
+MethodNode[shape=record,label="{public okhttp3.ResponseBody okhttp3.internal.http1.Http1Codec.openResponseBody((r6v0 'this' okhttp3.internal.http1.Http1Codec A[IMMUTABLE_TYPE, THIS]), (r7v0 okhttp3.Response A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+}
+

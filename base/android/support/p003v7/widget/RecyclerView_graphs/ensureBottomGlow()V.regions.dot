@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.ensureBottomGlow()V" {
+subgraph cluster_Region_948946604 {
+label = "R(1:(2:3|(1:5)(1:6))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_344488862 {
+label = "IF [B:1:0x0002] THEN: R(2:3|(1:5)(1:6)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mBottomGlow == null) goto L_0x0005\l}"];
+subgraph cluster_Region_615185933 {
+label = "R(2:3|(1:5)(1:6))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|r4.mBottomGlow = r4.mEdgeEffectFactory.createEdgeEffect(r4, 3)\l}"];
+subgraph cluster_IfRegion_217211915 {
+label = "IF [B:4:0x0010] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r4.mClipToPadding == true) goto L_0x0012\l}"];
+subgraph cluster_Region_1250847135 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0012|r4.mBottomGlow.setSize((getMeasuredWidth() \- getPaddingLeft()) \- getPaddingRight(), (getMeasuredHeight() \- getPaddingTop()) \- getPaddingBottom())\l}"];
+}
+subgraph cluster_Region_495828955 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0034|r4.mBottomGlow.setSize(getMeasuredWidth(), getMeasuredHeight())\l}"];
+}
+}
+}
+subgraph cluster_Region_1856270577 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.RecyclerView.ensureBottomGlow((r4v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+}
+

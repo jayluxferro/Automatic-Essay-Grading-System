@@ -1,0 +1,52 @@
+digraph "CFG forandroid.support.v4.util.MapCollections.KeySet.hashCode()I" {
+subgraph cluster_Region_1276199575 {
+label = "R(3:0|(3:2|(1:4)(1:5)|6)|7) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = android.support.p000v4.util.MapCollections.this.colGetSize() \- 1\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_187147477 {
+label = "LOOP:0: (3:2|(1:4)(1:5)|6)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r0 r2 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:6:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:6:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:6:0x001a\l|if (r0 \>= 0) goto L_0x000c\l}"];
+subgraph cluster_Region_1438378426 {
+label = "R(3:2|(1:4)(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|java.lang.Object java.lang.Object r3 = android.support.p000v4.util.MapCollections.this.colGetEntry(r0, 0)\l}"];
+subgraph cluster_IfRegion_1172031099 {
+label = "IF [B:3:0x0012] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r3 == null) goto L_0x0014\l}"];
+subgraph cluster_Region_892283927 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r3 = 0\l}"];
+}
+subgraph cluster_Region_51917229 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|int r3 = r3.hashCode()\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001a|LOOP_END\lPHI: r3 \l  PHI: (r3v2 int) = (r3v3 int), (r3v4 int) binds: [B:9:0x001a, B:10:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:6:0x001a\l|r2 += r3\lr0\-\-\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001e|RETURN\l|return r2\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x001e|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int android.support.v4.util.MapCollections.KeySet.hashCode((r4v0 'this' android.support.v4.util.MapCollections$KeySet A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

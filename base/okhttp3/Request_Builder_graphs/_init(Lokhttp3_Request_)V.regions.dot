@@ -1,0 +1,33 @@
+digraph "CFG forokhttp3.Request.Builder.\<init\>(Lokhttp3\/Request;)V" {
+subgraph cluster_Region_953050874 {
+label = "R(3:0|(1:2)(1:3)|4) | DECL_VAR: java.util.Map\<java.lang.Class\<?\>, java.lang.Object\> null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.tags = java.util.Collections.emptyMap()\lr2.url = r3.url\lr2.method = r3.method\lr2.body = r3.body\l}"];
+subgraph cluster_IfRegion_1099124196 {
+label = "IF [B:1:0x001b] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001b|if (r3.tags.isEmpty() == true) goto L_0x001d\l}"];
+subgraph cluster_Region_821482869 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|java.util.Map r0 = java.util.Collections.emptyMap()\l}"];
+}
+subgraph cluster_Region_471916203 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|java.util.LinkedHashMap r0 = new java.util.LinkedHashMap\<\>(r3.tags)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0029|PHI: r0 \l  PHI: (r0v6 java.util.Map\<java.lang.Class\<?\>, java.lang.Object\>) = (r0v7 java.util.Map\<java.lang.Class\<?\>, java.lang.Object\>), (r0v8 java.util.Map\<java.lang.Class\<?\>, java.lang.Object\>) binds: [B:3:0x0022, B:2:0x001d] A[DONT_GENERATE, DONT_INLINE]\l|r2.tags = r0\lr2.headers = r3.headers.newBuilder()\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0033}"];
+MethodNode[shape=record,label="{void okhttp3.Request.Builder.\<init\>((r2v0 'this' okhttp3.Request$Builder A[IMMUTABLE_TYPE, THIS]), (r3v0 okhttp3.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

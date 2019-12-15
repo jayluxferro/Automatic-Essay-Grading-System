@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.AudioCapabilities.getCapabilities(Landroid\/content\/Intent;)Lcom\/google\/android\/exoplayer2\/audio\/AudioCapabilities;" {
+subgraph cluster_Region_1654716156 {
+label = "R(1:(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_457479604 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_154493131 {
+label = "IF [B:1:0x0001, B:3:0x0009] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x000b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (r4.getIntExtra(\"android.media.extra.AUDIO_PLUG_STATE\", 0) == 0) goto L_0x000b\l}"];
+subgraph cluster_Region_388389081 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return DEFAULT_AUDIO_CAPABILITIES\l}"];
+}
+}
+subgraph cluster_Region_1926515671 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.audio.AudioCapabilities(r4.getIntArrayExtra(\"android.media.extra.ENCODINGS\"), r4.getIntExtra(\"android.media.extra.MAX_CHANNEL_COUNT\", 0))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+MethodNode[shape=record,label="{static com.google.android.exoplayer2.audio.AudioCapabilities com.google.android.exoplayer2.audio.AudioCapabilities.getCapabilities((r4v0 'intent' android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.SuppressLint, \{value=[InlinedApi]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+}
+

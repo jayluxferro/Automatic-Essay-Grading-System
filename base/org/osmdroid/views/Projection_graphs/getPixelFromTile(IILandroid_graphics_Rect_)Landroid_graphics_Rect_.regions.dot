@@ -1,0 +1,25 @@
+digraph "CFG fororg.osmdroid.views.Projection.getPixelFromTile(IILandroid\/graphics\/Rect;)Landroid\/graphics\/Rect;" {
+subgraph cluster_Region_1680493292 {
+label = "R(3:(1:1)|2|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1630388692 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_889574165 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|android.graphics.Rect r6 = new android.graphics.Rect()\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0008|PHI: r6 \l  PHI: (r6v1 android.graphics.Rect) = (r6v0 android.graphics.Rect), (r6v2 android.graphics.Rect) binds: [B:0:0x0000, B:1:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|r6.left = org.osmdroid.util.TileSystem.truncateToInt(getLongPixelXFromMercator(getMercatorFromTile(r4), false))\lr6.top = org.osmdroid.util.TileSystem.truncateToInt(getLongPixelYFromMercator(getMercatorFromTile(r5), false))\lr6.right = org.osmdroid.util.TileSystem.truncateToInt(getLongPixelXFromMercator(getMercatorFromTile(r4 + 1), false))\lr6.bottom = org.osmdroid.util.TileSystem.truncateToInt(getLongPixelYFromMercator(getMercatorFromTile(r5 + 1), false))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0045|RETURN\l|return r6\l}"];
+}
+MethodNode[shape=record,label="{public android.graphics.Rect org.osmdroid.views.Projection.getPixelFromTile((r3v0 'this' org.osmdroid.views.Projection A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+}
+

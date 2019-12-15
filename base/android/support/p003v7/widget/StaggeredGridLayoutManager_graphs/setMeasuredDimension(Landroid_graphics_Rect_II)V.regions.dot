@@ -1,0 +1,33 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.setMeasuredDimension(Landroid\/graphics\/Rect;II)V" {
+subgraph cluster_Region_815523246 {
+label = "R(3:0|(1:2)(1:3)|4) | DECL_VAR: int null, int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getPaddingLeft() + getPaddingRight()\lint int r1 = getPaddingTop() + getPaddingBottom()\l}"];
+subgraph cluster_IfRegion_785552777 {
+label = "IF [B:1:0x0015] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r4.mOrientation == 1) goto L_0x0017\l}"];
+subgraph cluster_Region_1876081697 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|int r5 = chooseSize(r7, r5.height() + r1, getMinimumHeight())\lint r6 = chooseSize(r6, (r4.mSizePerSpan * r4.mSpanCount) + r0, getMinimumWidth())\l}"];
+}
+subgraph cluster_Region_1706035155 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0034|int r6 = chooseSize(r6, r5.width() + r0, getMinimumWidth())\lint r5 = chooseSize(r7, (r4.mSizePerSpan * r4.mSpanCount) + r1, getMinimumHeight())\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0050|PHI: r5 r6 \l  PHI: (r5v1 int) = (r5v7 int), (r5v10 int) binds: [B:3:0x0034, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 int) = (r6v2 int), (r6v3 int) binds: [B:3:0x0034, B:2:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|setMeasuredDimension(r6, r5)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0053}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.StaggeredGridLayoutManager.setMeasuredDimension((r4v0 'this' android.support.v7.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 android.graphics.Rect A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,20 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.Period.getAdaptationSetIndex(I)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r2 I:java.util.List\<com.google.android.exoplayer2.source.dash.manifest.AdaptationSet\>) = \l  (r3 I:com.google.android.exoplayer2.source.dash.manifest.Period)\l com.google.android.exoplayer2.source.dash.manifest.Period.adaptationSets java.util.List \l0x0002: INVOKE  (r0 I:int) = (r2 I:java.util.List) java.util.List.size():int type: INTERFACE \l0x0006: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|0x0007: IF  (r1 I:?[int, byte, short, char] A[D('i' int)]) \>= (r0 I:?[int, byte, short, char] A[D('adaptationCount' int)])  \-\> B:6:0x0019 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|0x0009: IGET  (r2 I:java.util.List\<com.google.android.exoplayer2.source.dash.manifest.AdaptationSet\>) = \l  (r3 I:com.google.android.exoplayer2.source.dash.manifest.Period)\l com.google.android.exoplayer2.source.dash.manifest.Period.adaptationSets java.util.List \l0x000b: INVOKE  (r2 I:java.lang.Object) = (r2 I:java.util.List), (r1 I:int A[D('i' int)]) java.util.List.get(int):java.lang.Object type: INTERFACE \l0x000f: CHECK_CAST  (r2 I:com.google.android.exoplayer2.source.dash.manifest.AdaptationSet) = (com.google.android.exoplayer2.source.dash.manifest.AdaptationSet) (r2 I:?[OBJECT, ARRAY]) \l0x0011: IGET  (r2 I:int) = \l  (r2 I:com.google.android.exoplayer2.source.dash.manifest.AdaptationSet)\l com.google.android.exoplayer2.source.dash.manifest.AdaptationSet.type int \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('type' int)])  \-\> B:5:0x0016 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: RETURN  (r1 I:int A[D('i' int)]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|0x0016: ARITH  (r1 I:int A[D('i' int)]) = (r1 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: CONST  (r1 I:?[int, float, short, byte, char] A[D('i' int)]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.source.dash.manifest.Period.getAdaptationSetIndex((r3 'this' I:com.google.android.exoplayer2.source.dash.manifest.Period A[IMMUTABLE_TYPE, THIS]), (r4 I:int A[D('type' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x0007\-0x0015: r1 'i' int\l  0x0006\-0x001a: r0 'adaptationCount' int\l  0x0016\-0x001a: r1 'i' int\l  ?\-0x001a: r4 'type' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_4;
+}
+

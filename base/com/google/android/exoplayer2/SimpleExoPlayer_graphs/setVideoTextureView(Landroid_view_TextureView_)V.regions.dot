@@ -1,0 +1,66 @@
+digraph "CFG forcom.google.android.exoplayer2.SimpleExoPlayer.setVideoTextureView(Landroid\/view\/TextureView;)V" {
+subgraph cluster_Region_1188105883 {
+label = "R(2:0|(2:(2:2|10)|(4:(1:5)|6|(1:9)|8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.Surface r1 = null\lremoveSurfaceCallbacks()\lr5.textureView = r6\l}"];
+subgraph cluster_Region_781428450 {
+label = "R(2:(2:2|10)|(4:(1:5)|6|(1:9)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1930952452 {
+label = "IF [B:1:0x0007] THEN: R(2:2|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r6 == null) goto L_0x0009\l}"];
+subgraph cluster_Region_42345170 {
+label = "R(2:2|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|setVideoSurfaceInternal((android.view.Surface) null, true)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1563856594 {
+label = "R(4:(1:5)|6|(1:9)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1481721533 {
+label = "IF [B:4:0x0011] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r6.getSurfaceTextureListener() != null) goto L_0x0013\l}"];
+subgraph cluster_Region_1799770083 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|android.util.Log.w(TAG, \"Replacing existing SurfaceTextureListener.\")\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001a|android.graphics.SurfaceTexture android.graphics.SurfaceTexture r0 = r6.getSurfaceTexture()\l}"];
+subgraph cluster_IfRegion_798498680 {
+label = "IF [B:7:0x001e] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|if (r0 != null) goto L_0x0029\l}"];
+subgraph cluster_Region_1665756748 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0029|android.view.Surface r1 = new android.view.Surface(r0)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0020|PHI: r1 \l  PHI: (r1v2 android.view.Surface) = (r1v0 android.view.Surface), (r1v1 android.view.Surface) binds: [B:7:0x001e, B:9:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|setVideoSurfaceInternal(r1, true)\lr6.setSurfaceTextureListener(r5.componentListener)\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.SimpleExoPlayer.setVideoTextureView((r5v0 'this' com.google.android.exoplayer2.SimpleExoPlayer A[IMMUTABLE_TYPE, THIS]), (r6v0 'textureView' android.view.TextureView A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_10;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_8;
+Node_8 -> Node_11;
+Node_3 -> Node_4;
+}
+

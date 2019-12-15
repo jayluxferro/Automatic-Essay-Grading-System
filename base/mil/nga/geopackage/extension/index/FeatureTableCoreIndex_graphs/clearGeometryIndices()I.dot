@@ -1,0 +1,18 @@
+digraph "CFG formil.nga.geopackage.extension.index.FeatureTableCoreIndex.clearGeometryIndices()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.stmt.DeleteBuilder r0 = r4.geometryIndexDao.deleteBuilder()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x001c \}\lSplitter:B:1:0x0006\l|r0.where().mo17213eq(\"table_name\", r4.tableName)     \/\/ Catch:\{ SQLException \-\> 0x001c \}\lcom.j256.ormlite.stmt.PreparedDelete r0 = r0.prepare()     \/\/ Catch:\{ SQLException \-\> 0x001c \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|RETURN\l|return r4.geometryIndexDao.delete(r0)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c|ExcHandler: SQLException (r0v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l|java.sql.SQLException r0 = move\-exception\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Failed to clear Geometry Index rows for GeoPackage: \")\lr2.append(r4.geoPackage.getName())\lr2.append(\", Table Name: \")\lr2.append(r4.tableName)\lr2.append(\", Column Name: \")\lr2.append(r4.columnName)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x004d|throw new mil.nga.geopackage.GeoPackageException(r2.toString(), r0)\l}"];
+MethodNode[shape=record,label="{private int mil.nga.geopackage.extension.index.FeatureTableCoreIndex.clearGeometryIndices((r4v0 'this' mil.nga.geopackage.extension.index.FeatureTableCoreIndex A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

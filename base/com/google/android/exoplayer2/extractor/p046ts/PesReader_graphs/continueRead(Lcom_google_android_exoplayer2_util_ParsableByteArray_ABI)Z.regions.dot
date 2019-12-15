@@ -1,0 +1,73 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.PesReader.continueRead(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;[BI)Z" {
+subgraph cluster_Region_114522794 {
+label = "R(2:0|(2:(1:8)|(3:(1:3)(1:7)|4|(2:(1:6)|(1:9)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = java.lang.Math.min(r5.bytesLeft(), r7 \- r4.bytesRead)\l}"];
+subgraph cluster_Region_1617399836 {
+label = "R(2:(1:8)|(3:(1:3)(1:7)|4|(2:(1:6)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1766554211 {
+label = "IF [B:1:0x000d] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0 \<= 0) goto L_?\l}"];
+subgraph cluster_Region_1718425317 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1859786732 {
+label = "R(3:(1:3)(1:7)|4|(2:(1:6)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_718606106 {
+label = "IF [B:2:0x0010] THEN: R(1:3) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|if (r6 == null) goto L_0x0012\l}"];
+subgraph cluster_Region_1653384906 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|r5.skipBytes(r0)\l}"];
+}
+subgraph cluster_Region_1933653252 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|r5.readBytes(r6, r4.bytesRead, r0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0015|r4.bytesRead += r0\l}"];
+subgraph cluster_Region_1060706188 {
+label = "R(2:(1:6)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1661110023 {
+label = "IF [B:5:0x001c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|if (r4.bytesRead != r7) goto L_0x001e\l}"];
+subgraph cluster_Region_1834385340 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1878589651 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.ts.PesReader.continueRead((r4v0 'this' com.google.android.exoplayer2.extractor.ts.PesReader A[IMMUTABLE_TYPE, THIS]), (r5v0 'source' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'target' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'targetLength' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_2 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_7 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+}
+

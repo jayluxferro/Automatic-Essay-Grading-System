@@ -1,0 +1,17 @@
+digraph "CFG forcom.google.android.gms.maps.model.LatLngBounds.getCenter()Lcom\/google\/android\/gms\/maps\/model\/LatLng;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r0 = (r10.southwest.latitude + r10.northeast.latitude) \/ 2.0d\ldouble r4 = r10.northeast.longitude\ldouble r6 = r10.southwest.longitude\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0016|if ((r6 \> r4 ? 1 : (r6 == r4 ? 0 : \-1)) \> 0) goto L_0x001b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0018|double r4 = (r4 + r6) \/ 2.0d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|double r4 = ((r4 + 360.0d) + r6) \/ 2.0d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|PHI: r4 \l  PHI: (r4v2 double) = (r4v5 double), (r4v7 double) binds: [B:3:0x001b, B:2:0x0018] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|RETURN\l|return new com.google.android.gms.maps.model.LatLng(r0, r4)\l}"];
+MethodNode[shape=record,label="{public final com.google.android.gms.maps.model.LatLng com.google.android.gms.maps.model.LatLngBounds.getCenter((r10v0 'this' com.google.android.gms.maps.model.LatLngBounds A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

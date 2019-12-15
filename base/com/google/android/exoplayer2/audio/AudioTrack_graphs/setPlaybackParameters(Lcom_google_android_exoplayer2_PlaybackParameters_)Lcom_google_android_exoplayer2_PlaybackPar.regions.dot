@@ -1,0 +1,98 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.AudioTrack.setPlaybackParameters(Lcom\/google\/android\/exoplayer2\/PlaybackParameters;)Lcom\/google\/android\/exoplayer2\/PlaybackParameters;" {
+subgraph cluster_Region_484254891 {
+label = "R(1:(2:(2:2|17)|(5:3|(1:5)(1:13)|(1:(1:10)(1:16))|11|18))) | DECL_VAR: com.google.android.exoplayer2.PlaybackParameters lastSetPlaybackParameters\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_506234286 {
+label = "R(2:(2:2|17)|(5:3|(1:5)(1:13)|(1:(1:10)(1:16))|11|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_80902966 {
+label = "IF [B:1:0x0002] THEN: R(2:2|17) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.passthrough == true) goto L_0x0004\l}"];
+subgraph cluster_Region_164746436 {
+label = "R(2:2|17)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r5.playbackParameters = com.google.android.exoplayer2.PlaybackParameters.DEFAULT\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r5.playbackParameters\l}"];
+}
+}
+subgraph cluster_Region_1091490135 {
+label = "R(5:3|(1:5)(1:13)|(1:(1:10)(1:16))|11|18)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|com.google.android.exoplayer2.PlaybackParameters com.google.android.exoplayer2.PlaybackParameters r1 = new com.google.android.exoplayer2.PlaybackParameters(r5.sonicAudioProcessor.setSpeed(r6.speed), r5.sonicAudioProcessor.setPitch(r6.pitch))\l}"];
+subgraph cluster_IfRegion_2086424873 {
+label = "IF [B:4:0x0022] THEN: R(1:5) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|if (r5.drainingPlaybackParameters != null) goto L_0x0024\l}"];
+subgraph cluster_Region_2085569296 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|com.google.android.exoplayer2.PlaybackParameters r0 = r5.drainingPlaybackParameters\l}"];
+}
+subgraph cluster_Region_326881684 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x003e|com.google.android.exoplayer2.PlaybackParameters r0 = !r5.playbackParametersCheckpoints.isEmpty() ? r5.playbackParametersCheckpoints.getLast().playbackParameters : r5.playbackParameters\l}"];
+}
+}
+subgraph cluster_IfRegion_1493621680 {
+label = "IF [B:7:0x002a] THEN: R(1:(1:10)(1:16)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|if (r1.equals(r0) == false) goto L_0x002c\l}"];
+subgraph cluster_Region_111651577 {
+label = "R(1:(1:10)(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_289110736 {
+label = "IF [B:9:0x0030] THEN: R(1:10) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0030|if (isInitialized() == true) goto L_0x0032\l}"];
+subgraph cluster_Region_513478113 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0032|r5.drainingPlaybackParameters = r1\l}"];
+}
+subgraph cluster_Region_617097267 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0050|r5.playbackParameters = r1\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0034|com.google.android.exoplayer2.PlaybackParameters r6 = r1\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return r5.playbackParameters\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026|PHI: r0 \l  PHI: (r0v2 'lastSetPlaybackParameters' com.google.android.exoplayer2.PlaybackParameters) = (r0v1 'lastSetPlaybackParameters' com.google.android.exoplayer2.PlaybackParameters), (r0v3 'lastSetPlaybackParameters' com.google.android.exoplayer2.PlaybackParameters) binds: [B:14:0x0040, B:5:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002c}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0038}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0040}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004d}"];
+MethodNode[shape=record,label="{public com.google.android.exoplayer2.PlaybackParameters com.google.android.exoplayer2.audio.AudioTrack.setPlaybackParameters((r5v0 'this' com.google.android.exoplayer2.audio.AudioTrack A[IMMUTABLE_TYPE, THIS]), (r6v0 'playbackParameters' com.google.android.exoplayer2.PlaybackParameters A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_17;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_11;
+Node_16 -> Node_11;
+Node_11 -> Node_18;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_14 -> Node_6;
+Node_15 -> Node_6;
+}
+

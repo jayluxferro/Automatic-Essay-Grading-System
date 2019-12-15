@@ -1,0 +1,75 @@
+digraph "CFG forcom.j256.ormlite.android.apptools.OpenHelperManager.releaseHelper()V" {
+subgraph cluster_Region_1735424447 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_1904746606 {
+label = "Synchronized:R(2:1|(2:3|(2:(1:7)|(1:10))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_447454259 {
+label = "R(2:3|(2:(1:7)|(1:10)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|instanceCount\-\-\llogger.trace(\"releasing helper \{\}, instance count = \{\}\", (java.lang.Object) helper, (java.lang.Object) java.lang.Integer.valueOf(instanceCount))\l}"];
+subgraph cluster_IfRegion_1866651511 {
+label = "IF [B:4:0x001a] THEN: R(2:(1:7)|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (instanceCount \<= 0) goto L_0x001c\l}"];
+subgraph cluster_Region_186381985 {
+label = "R(2:(1:7)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_991964412 {
+label = "IF [B:6:0x001e] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (helper != null) goto L_0x0020\l}"];
+subgraph cluster_Region_2100065711 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|logger.trace(\"zero instances, closing helper \{\}\", (java.lang.Object) helper)\lhelper.close()\lhelper = null\lwasClosed = true\l}"];
+}
+}
+subgraph cluster_IfRegion_70056978 {
+label = "IF [B:9:0x0035] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0035|if (instanceCount \< 0) goto L_0x0037\l}"];
+subgraph cluster_Region_1347857608 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0037|logger.error(\"too many calls to release helper, instance count = \{\}\", (java.lang.Object) java.lang.Integer.valueOf(instanceCount))\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0033}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0044|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0044: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0045}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0046|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0047|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0048|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public static synchronized void com.j256.ormlite.android.apptools.OpenHelperManager.releaseHelper() }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_2 -> Node_13;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

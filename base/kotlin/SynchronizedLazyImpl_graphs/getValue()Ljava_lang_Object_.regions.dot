@@ -1,0 +1,90 @@
+digraph "CFG forkotlin.SynchronizedLazyImpl.getValue()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1411184402 {
+label = "R(2:0|(2:(1:2)|(3:3|9|14))) | DECL_VAR: T null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Object T r0 = r3._value\l}"];
+subgraph cluster_Region_1419181859 {
+label = "R(2:(1:2)|(3:3|9|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_888888223 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != kotlin.UNINITIALIZED_VALUE.INSTANCE) goto L_0x0006\l}"];
+subgraph cluster_Region_633221825 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_599073174 {
+label = "R(3:3|9|14)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007}"];
+subgraph cluster_SynchronizedRegion_459682401 {
+label = "Synchronized:R(2:4|(2:6|(3:9|(1:11)|12)(0)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009}"];
+subgraph cluster_Region_706178223 {
+label = "R(2:6|(3:9|(1:11)|12)(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|java.lang.Object r1 = r3._value\l}"];
+subgraph cluster_IfRegion_2009673108 {
+label = "IF [B:7:0x000e] THEN: R(3:9|(1:11)|12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|if (r1 == kotlin.UNINITIALIZED_VALUE.INSTANCE) goto L_0x0011\l}"];
+subgraph cluster_Region_427866776 {
+label = "R(3:9|(1:11)|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0011|kotlin.jvm.functions.Function0\<? extends T\> kotlin.jvm.functions.Function0 r1 = r3.initializer\l}"];
+subgraph cluster_IfRegion_852906843 {
+label = "IF [B:10:0x0013] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0013|if (r1 == null) goto L_0x0015\l}"];
+subgraph cluster_Region_1748516171 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|kotlin.jvm.internal.Intrinsics.throwNpe()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0018|java.lang.Object r1 = r1.invoke()\lr3._value = r1\lr3.initializer = null\l}"];
+}
+subgraph cluster_Region_1421167163 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0024|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0010}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0023|DONT_GENERATE\lPHI: r1 \l  PHI: (r1v3 T) = (r1v5 T), (r1v2 T) binds: [B:12:0x0018, B:8:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x0023: MONITOR_EXIT  \l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0025|REMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0026|REMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0027|REMOVE\l|throw r1\l}"];
+MethodNode[shape=record,label="{public T kotlin.SynchronizedLazyImpl.getValue((r3v0 'this' kotlin.SynchronizedLazyImpl A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_5 -> Node_6;
+Node_5 -> Node_15;
+Node_8 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+}
+

@@ -1,0 +1,51 @@
+digraph "CFG fororg.osmdroid.views.overlay.mylocation.MyLocationNewOverlay.stopLocationProvider()V" {
+subgraph cluster_Region_1408528860 {
+label = "R(2:(1:2)|(1:(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1205463242 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mMyLocationProvider != null) goto L_0x0004\l}"];
+subgraph cluster_Region_689147301 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mMyLocationProvider.stopLocationProvider()\l}"];
+}
+}
+subgraph cluster_Region_1433048392 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_627074216 {
+label = "IF [B:4:0x000b, B:6:0x000f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r2.mHandler != null) goto L_0x000d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|ADDED_TO_REGION\l|if (r2.mHandlerToken != null) goto L_0x0011\l}"];
+subgraph cluster_Region_771184502 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|r2.mHandler.removeCallbacksAndMessages(r2.mHandlerToken)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay.stopLocationProvider((r2v0 'this' org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

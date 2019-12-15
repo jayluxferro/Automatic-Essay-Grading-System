@@ -1,0 +1,78 @@
+digraph "CFG forandroid.support.v7.widget.AdapterHelper.postponeAndUpdateViewHolders(Landroid\/support\/v7\/widget\/AdapterHelper$UpdateOp;)V" {
+subgraph cluster_Region_158092953 {
+label = "R(2:0|(1:10)(1:(1:4)(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.mPostponedList.add(r4)\lint int r0 = r4.cmd\l}"];
+subgraph cluster_IfRegion_1184932447 {
+label = "IF [B:1:0x0008] THEN: R(1:10) ELSE: R(1:(1:4)(1:9))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0 == 4) goto L_0x0046\l}"];
+subgraph cluster_Region_1202325520 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0046|r3.mCallback.markViewHoldersUpdated(r4.positionStart, r4.itemCount, r4.payload)\l}"];
+}
+subgraph cluster_Region_1199991009 {
+label = "R(1:(1:4)(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_634645835 {
+label = "IF [B:3:0x000c] THEN: R(1:4) ELSE: R(1:9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r0 != 8) goto L_0x000e\l}"];
+subgraph cluster_Region_1681797150 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1179206765 {
+label = "Switch: 2, default: R(2:5|6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|switch(r0) \{\l    case 1: goto L_0x0032;\l    case 2: goto L_0x0028;\l    default: goto L_0x0011;\l\}\l}"];
+subgraph cluster_Region_1265607620 {
+label = "R(2:8|13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|r3.mCallback.offsetPositionsForAdd(r4.positionStart, r4.itemCount)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_1553123377 {
+label = "R(2:7|12)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|r3.mCallback.offsetPositionsForRemovingLaidOutOrNewView(r4.positionStart, r4.itemCount)\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_673669666 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011}"];
+Node_6 [shape=record,label="{6\:\ 0x0027|throw new java.lang.IllegalArgumentException(\"Unknown update op type for \" + r4)\l}"];
+}
+}
+}
+subgraph cluster_Region_1024203256 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003c|r3.mCallback.offsetPositionsForMove(r4.positionStart, r4.itemCount)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.v7.widget.AdapterHelper.postponeAndUpdateViewHolders((r3v0 'this' android.support.v7.widget.AdapterHelper A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.v7.widget.AdapterHelper$UpdateOp A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_10 -> Node_11;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_4 -> Node_8;
+Node_8 -> Node_13;
+Node_7 -> Node_12;
+Node_5 -> Node_6;
+Node_9 -> Node_14;
+Node_2 -> Node_3;
+}
+

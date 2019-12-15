@@ -1,0 +1,18 @@
+digraph "CFG forcom.lottery.ghanalotto.Utils.ToAppCompatActivity.s()Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Splitter:B:1:0x0001\l|0x0001: SGET  (r4 I:android.content.Context) =  com.lottery.ghanalotto.Utils.ToAppCompatActivity.context android.content.Context A[Catch:\{ Exception \-\> 0x0025 \}, TRY_ENTER]\l0x0003: INVOKE  (r4 I:android.content.Context) = (r4 I:android.content.Context) android.content.Context.getApplicationContext():android.content.Context type: VIRTUAL A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0007: INVOKE  (r2 I:java.lang.String) = (r4 I:android.content.Context) android.content.Context.getPackageName():java.lang.String type: VIRTUAL A[Catch:\{ Exception \-\> 0x0025 \}]\l0x000b: CONST_STR  (r4 I:java.lang.String) =  \"SHA\-1\" A[Catch:\{ Exception \-\> 0x0025 \}]\l0x000d: INVOKE  (r0 I:java.security.MessageDigest) = (r4 I:java.lang.String) java.security.MessageDigest.getInstance(java.lang.String):java.security.MessageDigest type: STATIC A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0011: CONST_STR  (r4 I:java.lang.String) =  \"iso\-8859\-1\" A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0013: INVOKE  (r3 I:byte[]) = \l  (r2 I:java.lang.String A[D('text' java.lang.String)])\l  (r4 I:java.lang.String)\l java.lang.String.getBytes(java.lang.String):byte[] type: VIRTUAL A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0017: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0018: ARRAY_LENGTH  (r5 I:int) = (r3 I:?[] A[D('textBytes' byte[])]) A[Catch:\{ Exception \-\> 0x0025 \}]\l0x0019: INVOKE  \l  (r0 I:java.security.MessageDigest A[D('md' java.security.MessageDigest)])\l  (r3 I:byte[] A[D('textBytes' byte[])])\l  (r4 I:int)\l  (r5 I:int)\l java.security.MessageDigest.update(byte[], int, int):void type: VIRTUAL A[Catch:\{ Exception \-\> 0x0025 \}]\l0x001c: INVOKE  (r1 I:byte[] A[D('sha1hash' byte[])]) = \l  (r0 I:java.security.MessageDigest A[D('md' java.security.MessageDigest)])\l java.security.MessageDigest.digest():byte[] type: VIRTUAL A[Catch:\{ Exception \-\> 0x0025 \}, TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020|0x0020: INVOKE  (r4 I:java.lang.String) = (r1 I:byte[] A[D('sha1hash' byte[])]) com.lottery.ghanalotto.Utils.ToAppCompatActivity.a(byte[]):java.lang.String type: STATIC \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|0x0024: RETURN  (r4 I:java.lang.String) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|ExcHandler: Exception null\lSplitter:B:1:0x0001\l|0x0025: MOVE_EXCEPTION  (r4 I:?[OBJECT]) =  \l}"];
+MethodNode[shape=record,label="{public static java.lang.String com.lottery.ghanalotto.Utils.ToAppCompatActivity.s()  | Debug Info:\l  0x0011\-0x0020: r0 'md' java.security.MessageDigest\l  0x000b\-0x0020: r2 'text' java.lang.String\l  0x0017\-0x0020: r3 'textBytes' byte[]\l  0x0001\-0x0026: r1 'sha1hash' byte[]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6;
+Node_2 -> Node_6;
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

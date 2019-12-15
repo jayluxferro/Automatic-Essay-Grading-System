@@ -1,0 +1,62 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.setHWLayerAnimListenerIfAlpha(Landroid\/view\/View;Landroid\/support\/v4\/app\/FragmentManagerImpl$AnimationOrAnimator;)V" {
+subgraph cluster_Region_766285201 {
+label = "R(1:(1:(1:(2:(2:6|10)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_426106696 {
+label = "R(1:(1:(2:(2:6|10)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_466625164 {
+label = "IF [B:0:0x0000, B:1:0x0002, B:3:0x0009] THEN: R(1:(2:(2:6|10)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 != null) goto L_0x0002\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|ADDED_TO_REGION\l|if (r4 != null) goto L_0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|ADDED_TO_REGION\l|if (shouldRunOnHWLayer(r3, r4) != false) goto L_0x000b\l}"];
+subgraph cluster_Region_2125997310 {
+label = "R(1:(2:(2:6|10)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_930162341 {
+label = "R(2:(2:6|10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_5841052 {
+label = "IF [B:5:0x000d] THEN: R(2:6|10) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r4.animator != null) goto L_0x000f\l}"];
+subgraph cluster_Region_436713049 {
+label = "R(2:6|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|r4.animator.addListener(new android.support.p000v4.app.FragmentManagerImpl.AnimatorOnHWLayerIfNeededListener(r3))\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1077378242 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|android.view.animation.Animation$AnimationListener android.view.animation.Animation.AnimationListener r0 = getAnimationListener(r4.animation)\lr3.setLayerType(2, (android.graphics.Paint) null)\lr4.animation.setAnimationListener(new android.support.p000v4.app.FragmentManagerImpl.AnimateOnHWLayerIfNeededListener(r3, r0))\l}"];
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+MethodNode[shape=record,label="{private static void android.support.v4.app.FragmentManagerImpl.setHWLayerAnimListenerIfAlpha((r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.support.v4.app.FragmentManagerImpl$AnimationOrAnimator A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_11[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

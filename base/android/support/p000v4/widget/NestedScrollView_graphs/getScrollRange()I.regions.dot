@@ -1,0 +1,34 @@
+digraph "CFG forandroid.support.v4.widget.NestedScrollView.getScrollRange()I" {
+subgraph cluster_Region_1645504883 {
+label = "R(1:(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_974736730 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2057770501 {
+label = "IF [B:1:0x0005] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (getChildCount() \<= 0) goto L_?\l}"];
+subgraph cluster_Region_1788512402 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_843433685 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|android.view.View android.view.View r0 = getChildAt(0)\landroid.widget.FrameLayout$LayoutParams android.widget.FrameLayout.LayoutParams r2 = (android.widget.FrameLayout.LayoutParams) r0.getLayoutParams()\l}"];
+Node_3 [shape=record,label="{3\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.lang.Math.max(0, ((r0.getHeight() + r2.topMargin) + r2.bottomMargin) \- ((getHeight() \- getPaddingTop()) \- getPaddingBottom()))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{int android.support.v4.widget.NestedScrollView.getScrollRange((r4v0 'this' android.support.v4.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+}
+

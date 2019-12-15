@@ -1,0 +1,51 @@
+digraph "CFG forcom.google.gson.stream.JsonReader.nextNull()V" {
+subgraph cluster_Region_1264495558 {
+label = "R(3:0|(1:2)|(2:(2:5|6)|(2:7|8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r3.peeked\l}"];
+subgraph cluster_IfRegion_571414391 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 == 0) goto L_0x0004\l}"];
+subgraph cluster_Region_832050960 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int r0 = doPeek()\l}"];
+}
+}
+subgraph cluster_Region_1644422438 {
+label = "R(2:(2:5|6)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_232204613 {
+label = "IF [B:4:0x0009] THEN: R(2:5|6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|if (r0 == 7) goto L_0x000b\l}"];
+subgraph cluster_Region_870949794 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b|r3.peeked = 0\lint[] int[] r0 = r3.pathIndices\lint int r1 = r3.stackSize \- 1\lr0[r1] = r0[r1] + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001a|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_593345981 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b}"];
+Node_8 [shape=record,label="{8\:\ 0x003c|throw new java.lang.IllegalStateException(\"Expected null but was \" + peek() + locationString())\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|PHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v5 int) binds: [B:1:0x0002, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public void com.google.gson.stream.JsonReader.nextNull((r3v0 'this' com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_3 -> Node_4;
+}
+

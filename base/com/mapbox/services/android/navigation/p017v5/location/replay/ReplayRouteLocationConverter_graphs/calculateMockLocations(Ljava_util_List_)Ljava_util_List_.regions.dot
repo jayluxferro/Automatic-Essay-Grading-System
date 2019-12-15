@@ -1,0 +1,52 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.location.replay.ReplayRouteLocationConverter.calculateMockLocations(Ljava\/util\/List;)Ljava\/util\/List;" {
+subgraph cluster_Region_439518823 {
+label = "R(3:0|(3:3|(1:5)(0)|6)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList(r10)\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList()\ljava.util.Iterator r2 = r10.iterator()\l}"];
+subgraph cluster_LoopRegion_1084587913 {
+label = "LOOP:0: (3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r2.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_825915616 {
+label = "R(3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|com.mapbox.geojson.Point r3 = r2.next()\landroid.location.Location android.location.Location r4 = createMockLocationFrom(r3)\l}"];
+subgraph cluster_IfRegion_1440830478 {
+label = "IF [B:4:0x0023] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|if (r0.size() \>= 2) goto L_0x0025\l}"];
+subgraph cluster_Region_679834093 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|r4.setBearing((float) com.mapbox.turf.TurfMeasurement.bearing(r3, r10.get(1)))\l}"];
+}
+subgraph cluster_Region_917948516 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0034|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:6:0x0034\l|r9.time += (long) (r9.delay * 1000)\lr1.add(r4)\lr0.remove(r3)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0045|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lLOOP:0: B:1:0x000e\-\>B:6:0x0034\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0045|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0034|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{java.util.List\<android.location.Location\> com.mapbox.services.android.navigation.v5.location.replay.ReplayRouteLocationConverter.calculateMockLocations((r9v0 'this' com.mapbox.services.android.navigation.v5.location.replay.ReplayRouteLocationConverter A[IMMUTABLE_TYPE, THIS]), (r10v0 java.util.List\<com.mapbox.geojson.Point\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/geojson\/Point;, \>;), Ljava\/util\/List\<, Landroid\/location\/Location;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

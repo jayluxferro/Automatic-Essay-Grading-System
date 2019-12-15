@@ -1,0 +1,44 @@
+digraph "CFG forcom.lottery.ghanalotto.Utils.InternetCheking.isInternetAvailable()Ljava\/lang\/Boolean;" {
+subgraph cluster_Region_836416510 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1625325349 {
+label = "Try: R(1:5) catches: R(3:3|4|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1636197633 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return (java.lang.Boolean) new com.lottery.ghanalotto.Utils.InternetCheking.isInternetAvailableAsync().execute(new java.lang.Void[0]).get()\l}"];
+}
+subgraph cluster_Region_609449834 {
+label = "R(3:3|4|6) | ExcHandler: Exception (r1v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|ExcHandler: Exception (r1v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|com.lottery.ghanalotto.Utils.Message.showErrorDialog(r1.getMessage(), r5.context)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_609449834 {
+label = "R(3:3|4|6) | ExcHandler: Exception (r1v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|ExcHandler: Exception (r1v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|com.lottery.ghanalotto.Utils.Message.showErrorDialog(r1.getMessage(), r5.context)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ Exception \-\> 0x0016 \}\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{public java.lang.Boolean com.lottery.ghanalotto.Utils.InternetCheking.isInternetAvailable((r5v0 'this' com.lottery.ghanalotto.Utils.InternetCheking A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+}
+

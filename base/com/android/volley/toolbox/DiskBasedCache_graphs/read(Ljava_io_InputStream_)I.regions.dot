@@ -1,0 +1,34 @@
+digraph "CFG forcom.android.volley.toolbox.DiskBasedCache.read(Ljava\/io\/InputStream;)I" {
+subgraph cluster_Region_1623163544 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r1.read()\l}"];
+subgraph cluster_Region_607635439 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_290461426 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r1 != \-1) goto L_0x0007\l}"];
+subgraph cluster_Region_15440861 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_590673358 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|throw new java.io.EOFException()\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{private static int com.android.volley.toolbox.DiskBasedCache.read((r1v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

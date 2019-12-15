@@ -1,0 +1,37 @@
+digraph "CFG formil.nga.geopackage.db.FeatureIndexer.index(Z)I" {
+subgraph cluster_Region_806389139 {
+label = "R(1:(2:(1:5)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_878657647 {
+label = "R(2:(1:5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1920972255 {
+label = "IF [B:0:0x0000, B:2:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r1 == true) goto L_0x000b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (isIndexed() == false) goto L_0x000b\l}"];
+subgraph cluster_Region_339584202 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return indexTable()\l}"];
+}
+}
+subgraph cluster_Region_540379075 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|SYNTHETIC\lRETURN\l|return 0\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public int mil.nga.geopackage.db.FeatureIndexer.index((r0v0 'this' mil.nga.geopackage.db.FeatureIndexer A[IMMUTABLE_TYPE, THIS]), (r1v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+}
+

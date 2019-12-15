@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.gson.Gson.FutureTypeAdapter.write(Lcom\/google\/gson\/stream\/JsonWriter;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1415175630 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1563792549 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_119894618 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.delegate != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1364975110 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.delegate.write(r2, r3)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1274469966 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|throw new java.lang.IllegalStateException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+MethodNode[shape=record,label="{public void com.google.gson.Gson.FutureTypeAdapter.write((r1v0 'this' com.google.gson.Gson$FutureTypeAdapter A[IMMUTABLE_TYPE, THIS]), (r2v0 com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/stream\/JsonWriter;, TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

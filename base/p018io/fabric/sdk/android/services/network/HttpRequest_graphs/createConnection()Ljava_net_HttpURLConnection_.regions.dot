@@ -1,0 +1,60 @@
+digraph "CFG forio.fabric.sdk.android.services.network.HttpRequest.createConnection()Ljava\/net\/HttpURLConnection;" {
+subgraph cluster_Region_1311431550 {
+label = "R(1:(3:(1:3)(1:4)|5|6)) | DECL_VAR: java.net.HttpURLConnection null\l";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_2043846168 {
+label = "Try: R(3:(1:3)(1:4)|5|6) catches: R(2:7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_801415486 {
+label = "R(3:(1:3)(1:4)|5|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1247307175 {
+label = "IF [B:2:0x0002] THEN: R(1:3) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0002|Catch:\{ IOException \-\> 0x001f \}\l|if (r3.httpProxyHost != null) goto L_0x0004     \/\/ Catch:\{ IOException \-\> 0x001f \}\l}"];
+subgraph cluster_Region_1483431544 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|Catch:\{ IOException \-\> 0x001f \}\l|java.net.HttpURLConnection r0 = CONNECTION_FACTORY.create(r3.url, createProxy())     \/\/ Catch:\{ IOException \-\> 0x001f \}\l}"];
+}
+subgraph cluster_Region_185083499 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|Catch:\{ IOException \-\> 0x001f \}\l|java.net.HttpURLConnection r0 = CONNECTION_FACTORY.create(r3.url)     \/\/ Catch:\{ IOException \-\> 0x001f \}\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0019|Catch:\{ IOException \-\> 0x001f \}\lPHI: r0 \l  PHI: (r0v2 java.net.HttpURLConnection) = (r0v4 java.net.HttpURLConnection), (r0v6 java.net.HttpURLConnection) binds: [B:4:0x0011, B:3:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|r0.setRequestMethod(r3.requestMethod)     \/\/ Catch:\{ IOException \-\> 0x001f \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1378985657 {
+label = "R(2:7|9) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_1378985657 {
+label = "R(2:7|9) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0025|throw new p018io.fabric.sdk.android.services.network.HttpRequest.HttpRequestException(r0)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x001f \}\lSplitter:B:0:0x0000\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0020}"];
+MethodNode[shape=record,label="{private java.net.HttpURLConnection io.fabric.sdk.android.services.network.HttpRequest.createConnection((r3v0 'this' io.fabric.sdk.android.services.network.HttpRequest A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_2 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_0 -> Node_7;
+Node_1 -> Node_2;
+Node_8 -> Node_9;
+}
+

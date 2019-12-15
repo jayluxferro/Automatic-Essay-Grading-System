@@ -1,0 +1,75 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerView.dispatchOnScrollStateChanged(I)V" {
+subgraph cluster_Region_947344213 {
+label = "R(4:(1:2)|3|(1:5)|(1:(2:8|(1:10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1895108374 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mLayout != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1011844060 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2.mLayout.onScrollStateChanged(r3)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|onScrollStateChanged(r3)\l}"];
+subgraph cluster_IfRegion_1874528722 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r2.mScrollListener != null) goto L_0x0010\l}"];
+subgraph cluster_Region_1834222219 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|r2.mScrollListener.onScrollStateChanged(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_897658248 {
+label = "R(1:(2:8|(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1972373895 {
+label = "IF [B:7:0x0017] THEN: R(2:8|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|if (r2.mScrollListeners != null) goto L_0x0019\l}"];
+subgraph cluster_Region_476687009 {
+label = "R(2:8|(1:10))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|int int r0 = r2.mScrollListeners.size() \- 1\l}"];
+subgraph cluster_LoopRegion_2080501178 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|LOOP_START\lPHI: r0 \l  PHI: (r0v6 int) = (r0v5 int), (r0v7 int) binds: [B:8:0x0019, B:10:0x0023] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0021\-\>B:10:0x0023\l|if (r0 \>= 0) goto L_0x0023\l}"];
+subgraph cluster_Region_754721748 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|LOOP_END\lLOOP:0: B:9:0x0021\-\>B:10:0x0023\l|r2.mScrollListeners.get(r0).onScrollStateChanged(r2, r3)\lr0\-\-\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0031|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void android.support.v7.widget.RecyclerView.dispatchOnScrollStateChanged((r2v0 'this' android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_9;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_11 -> Node_13;
+}
+

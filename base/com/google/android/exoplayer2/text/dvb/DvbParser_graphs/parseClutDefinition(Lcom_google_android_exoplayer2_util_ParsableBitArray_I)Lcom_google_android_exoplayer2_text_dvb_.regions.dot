@@ -1,0 +1,111 @@
+digraph "CFG forcom.google.android.exoplayer2.text.dvb.DvbParser.parseClutDefinition(Lcom\/google\/android\/exoplayer2\/util\/ParsableBitArray;I)Lcom\/google\/android\/exoplayer2\/text\/dvb\/DvbParser$ClutDefinition;" {
+subgraph cluster_Region_899880036 {
+label = "R(3:0|(5:2|(1:4)(1:(1:13)(1:14))|(1:7)(1:15)|(1:9)(0)|10)|17) | DECL_VAR: int[] clutEntries, int y, int cr, int cb, int t\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r11 = r26.readBits(8)\lr26.skipBits(8)\lint int r17 = r27 \- 2\lint[] int[] r8 = generateDefault2BitClutEntries()\lint[] int[] r9 = generateDefault4BitClutEntries()\lint[] int[] r10 = generateDefault8BitClutEntries()\l}"];
+subgraph cluster_LoopRegion_2119629201 {
+label = "LOOP:0: (5:2|(1:4)(1:(1:13)(1:14))|(1:7)(1:15)|(1:9)(0)|10)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0021|LOOP_START\lPHI: r17 \l  PHI: (r17v1 'remainingLength' int) = (r17v0 'remainingLength' int), (r17v4 'remainingLength' int) binds: [B:0:0x0000, B:10:0x0074] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0021\-\>B:10:0x0074\l|if (r17 \> 0) goto L_0x0023\l}"];
+subgraph cluster_Region_1400619531 {
+label = "R(5:2|(1:4)(1:(1:13)(1:14))|(1:7)(1:15)|(1:9)(0)|10)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0023|int int r14 = r26.readBits(8)\lint int r13 = r26.readBits(8)\lint int r17 = r17 \- 2\l}"];
+subgraph cluster_IfRegion_958530218 {
+label = "IF [B:3:0x003d] THEN: R(1:4) ELSE: R(1:(1:13)(1:14))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x003d|if ((r13 & 128) != 0) goto L_0x003f\l}"];
+subgraph cluster_Region_234535395 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x003f|r7 = r8\l}"];
+}
+subgraph cluster_Region_246875557 {
+label = "R(1:(1:13)(1:14)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1640993228 {
+label = "IF [B:12:0x0113] THEN: R(1:13) ELSE: R(1:14) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0113|if ((r13 & 64) != 0) goto L_0x0115\l}"];
+subgraph cluster_Region_2107048433 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0115|r7 = r9\l}"];
+}
+subgraph cluster_Region_885319075 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0118|r7 = r10\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_613588109 {
+label = "IF [B:6:0x0042] THEN: R(1:7) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0042|if ((r13 & 1) != 0) goto L_0x0044\l}"];
+subgraph cluster_Region_528346121 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0044|int r19 = r26.readBits(8)\lint r12 = r26.readBits(8)\lint r6 = r26.readBits(8)\lint r18 = r26.readBits(8)\lint r17 = r17 \- 4\l}"];
+}
+subgraph cluster_Region_703522345 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x011b|int r19 = r26.readBits(6) \<\< 2\lint r12 = r26.readBits(4) \<\< 4\lint r6 = r26.readBits(4) \<\< 4\lint r18 = r26.readBits(2) \<\< 6\lint r17 = r17 \- 2\l}"];
+}
+}
+subgraph cluster_IfRegion_1648326296 {
+label = "IF [B:8:0x006e] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x006e|PHI: r6 r12 r17 r18 r19 \l  PHI: (r6v1 'cb' int) = (r6v0 'cb' int), (r6v4 'cb' int) binds: [B:15:0x011b, B:7:0x0044] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v1 'cr' int) = (r12v0 'cr' int), (r12v4 'cr' int) binds: [B:15:0x011b, B:7:0x0044] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r17v4 'remainingLength' int) = (r17v3 'remainingLength' int), (r17v5 'remainingLength' int) binds: [B:15:0x011b, B:7:0x0044] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r18v1 't' int) = (r18v0 't' int), (r18v4 't' int) binds: [B:15:0x011b, B:7:0x0044] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r19v1 'y' int) = (r19v0 'y' int), (r19v2 'y' int) binds: [B:15:0x011b, B:7:0x0044] A[DONT_GENERATE, DONT_INLINE]\l|if (r19 == 0) goto L_0x0070\l}"];
+subgraph cluster_Region_937987137 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0070|r12 = 0\lr6 = 0\lr18 = 255\l}"];
+}
+subgraph cluster_Region_2013903805 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0074|LOOP_END\lPHI: r6 r12 r18 \l  PHI: (r6v2 'cb' int) = (r6v1 'cb' int), (r6v3 'cb' int) binds: [B:20:0x0074, B:19:0x0074] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r12v2 'cr' int) = (r12v1 'cr' int), (r12v3 'cr' int) binds: [B:20:0x0074, B:19:0x0074] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r18v2 't' int) = (r18v1 't' int), (r18v3 't' int) binds: [B:20:0x0074, B:19:0x0074] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0021\-\>B:10:0x0074\l|r7[r14] = getColor((byte) (255 \- (r18 & 255)), com.google.android.exoplayer2.util.Util.constrainValue((int) (((double) r19) + (1.402d * ((double) (r12 \- 128)))), 0, 255), com.google.android.exoplayer2.util.Util.constrainValue((int) ((((double) r19) \- (0.34414d * ((double) (r6 \- 128)))) \- (0.71414d * ((double) (r12 \- 128)))), 0, 255), com.google.android.exoplayer2.util.Util.constrainValue((int) (((double) r19) + (1.772d * ((double) (r6 \- 128)))), 0, 255))\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0156|RETURN\l|return new com.google.android.exoplayer2.text.dvb.DvbParser.ClutDefinition(r11, r8, r9, r10)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0040|PHI: r7 \l  PHI: (r7v2 'clutEntries' int[]) = (r7v0 'clutEntries' int[]), (r7v1 'clutEntries' int[]), (r7v3 'clutEntries' int[]) binds: [B:14:0x0118, B:13:0x0115, B:4:0x003f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0111}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x014f}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x014f|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0074|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0074|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.text.dvb.DvbParser$ClutDefinition com.google.android.exoplayer2.text.dvb.DvbParser.parseClutDefinition((r26v0 'data' com.google.android.exoplayer2.util.ParsableBitArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r27v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_5;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_5;
+Node_14 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_15 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_20[style=dashed];
+Node_9 -> Node_19;
+Node_10 -> Node_1;
+Node_5 -> Node_6;
+Node_11 -> Node_12;
+Node_16 -> Node_17;
+Node_18 -> Node_16;
+Node_19 -> Node_10;
+Node_20 -> Node_10;
+}
+

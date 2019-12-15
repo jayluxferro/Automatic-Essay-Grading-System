@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.v4.app.ShareCompat.IntentBuilder.setStream(Landroid\/net\/Uri;)Landroid\/support\/v4\/app\/ShareCompat$IntentBuilder;" {
+subgraph cluster_Region_1530014575 {
+label = "R(3:(1:2)|3|4)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_598496166 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r2.mIntent.getAction().equals(\"android.intent.action.SEND\") == false) goto L_0x000e\l}"];
+subgraph cluster_Region_215397891 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r2.mIntent.setAction(\"android.intent.action.SEND\")\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0015|r2.mStreams = null\lr2.mIntent.putExtra(\"android.intent.extra.STREAM\", r3)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001f|RETURN\l|return r2\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public android.support.v4.app.ShareCompat$IntentBuilder android.support.v4.app.ShareCompat.IntentBuilder.setStream((r2v0 'this' android.support.v4.app.ShareCompat$IntentBuilder A[IMMUTABLE_TYPE, THIS]), (r3v0 android.net.Uri A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

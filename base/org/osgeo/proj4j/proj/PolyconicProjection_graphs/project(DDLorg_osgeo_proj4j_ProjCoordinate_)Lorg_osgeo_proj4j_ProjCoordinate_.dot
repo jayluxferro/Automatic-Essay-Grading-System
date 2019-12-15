@@ -1,0 +1,38 @@
+digraph "CFG fororg.osgeo.proj4j.proj.PolyconicProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r21\lr1 = r22\lr3 = r26\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r0.spherical == false) goto L_0x0044\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|if ((java.lang.Math.abs(r24) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(r24) == 1.0E\-10d ? 0 : \-1)) \> 0) goto L_0x0021\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|r3.f294x = r1\lr3.f295y = r0.ml0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0021|double r7 = 1.0d \/ java.lang.Math.tan(r24)\ldouble r1 = r1 * java.lang.Math.sin(r24)\lr3.f294x = java.lang.Math.sin(r1) * r7\lr3.f295y = (r24 \- r0.projectionLatitude) + (r7 * (1.0d \- java.lang.Math.cos(r1)))\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0044}"];
+Node_7 [shape=record,label="{7\:\ 0x004a|if ((java.lang.Math.abs(r24) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(r24) == 1.0E\-10d ? 0 : \-1)) \> 0) goto L_0x0054\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004c|r3.f294x = r1\lr3.f295y = \-r0.ml0\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0054|double r9 = java.lang.Math.sin(r24)\ldouble r19 = java.lang.Math.cos(r24)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0062|if ((java.lang.Math.abs(r19) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(r19) == 1.0E\-10d ? 0 : \-1)) \<= 0) goto L_0x0071\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0064|double r7 = org.osgeo.proj4j.util.ProjectionMath.msfn(r9, r19, r0.f424es) \/ r9\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0071|r7 = 0.0d\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0073|PHI: r7 \l  PHI: (r7v1 double) = (r7v3 double), (r7v6 double) binds: [B:12:0x0071, B:11:0x0064] A[DONT_GENERATE, DONT_INLINE]\l|double r13 = r3.f294x * r9\lr3.f294x = r13\lr3.f294x = java.lang.Math.sin(r13) * r7\lr3.f295y = (org.osgeo.proj4j.util.ProjectionMath.mlfn(r24, r9, r19, r0.f421en) \- r0.ml0) + (r7 * (1.0d \- java.lang.Math.cos(r22)))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x009b|RETURN\l|return r3\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.PolyconicProjection.project((r21v0 'this' org.osgeo.proj4j.proj.PolyconicProjection A[IMMUTABLE_TYPE, THIS]), (r22v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r24v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r26v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_14;
+Node_5 -> Node_14;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_14;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+}
+

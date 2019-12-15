@@ -1,0 +1,62 @@
+digraph "CFG fororg.mapsforge.map.layer.Layers.addAll(ILjava\/util\/Collection;Z)V" {
+subgraph cluster_Region_1871968385 {
+label = "R(1:(1:(3:2|(1:5)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2058639032 {
+label = "R(1:(3:2|(1:5)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1903493428 {
+label = "R(3:2|(1:5)|(1:7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|checkIsNull(r3)\lr1.layersList.addAll(r2, r3)\ljava.util.Iterator r2 = r3.iterator()\l}"];
+subgraph cluster_LoopRegion_909376432 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r2.hasNext() != false) goto L_0x0013\l}"];
+subgraph cluster_Region_1184123399 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|LOOP_END\lLOOP:0: B:3:0x000d\-\>B:5:0x0013\l|org.mapsforge.map.layer.Layer r3 = r2.next()\lr3.setDisplayModel(r1.displayModel)\lr3.assign(r1.redrawer)\l}"];
+}
+}
+subgraph cluster_IfRegion_508417531 {
+label = "IF [B:6:0x0024] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|if (r4 == true) goto L_0x0026\l}"];
+subgraph cluster_Region_1206393767 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|r1.redrawer.redrawLayers()\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|LOOP_START\lLOOP:0: B:3:0x000d\-\>B:5:0x0013\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002b|DONT_GENERATE\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002c}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002d|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e|REMOVE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002f|REMOVE\l|throw r2\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0024|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public synchronized void org.mapsforge.map.layer.Layers.addAll((r1v0 'this' org.mapsforge.map.layer.Layers A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.util.Collection\<org.mapsforge.map.layer.Layer\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I, Ljava\/util\/Collection\<, Lorg\/mapsforge\/map\/layer\/Layer;, \>;Z)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_6;
+}
+

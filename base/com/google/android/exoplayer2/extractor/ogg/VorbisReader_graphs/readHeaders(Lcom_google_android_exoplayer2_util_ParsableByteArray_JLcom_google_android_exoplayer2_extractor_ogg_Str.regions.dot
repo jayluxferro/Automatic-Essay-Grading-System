@@ -1,0 +1,56 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.VorbisReader.readHeaders(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;JLcom\/google\/android\/exoplayer2\/extractor\/ogg\/StreamReader$SetupData;)Z" {
+subgraph cluster_Region_1036128181 {
+label = "R(1:(2:(1:2)|(2:3|(2:(1:5)|(2:6|7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_372267887 {
+label = "R(2:(1:2)|(2:3|(2:(1:5)|(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_688610431 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r11.vorbisSetup != null) goto L_0x0004\l}"];
+subgraph cluster_Region_873971078 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_419803926 {
+label = "R(2:3|(2:(1:5)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r11.vorbisSetup = readSetupHeaders(r12)\l}"];
+subgraph cluster_Region_234518650 {
+label = "R(2:(1:5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2128688414 {
+label = "IF [B:4:0x000e] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r11.vorbisSetup == null) goto L_0x0010\l}"];
+subgraph cluster_Region_1997757641 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2071935642 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|java.util.ArrayList java.util.ArrayList\<byte[]\> r7 = new java.util.ArrayList\<\>()\lr7.add(r11.vorbisSetup.idHeader.data)\lr7.add(r11.vorbisSetup.setupHeaderData)\lr15.format = com.google.android.exoplayer2.Format.createAudioSampleFormat((java.lang.String) null, com.google.android.exoplayer2.util.MimeTypes.AUDIO_VORBIS, (java.lang.String) null, r11.vorbisSetup.idHeader.bitrateNominal, \-1, r11.vorbisSetup.idHeader.channels, (int) r11.vorbisSetup.idHeader.sampleRate, r7, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, (java.lang.String) null)\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.extractor.ogg.VorbisReader.readHeaders((r11v0 'this' com.google.android.exoplayer2.extractor.ogg.VorbisReader A[IMMUTABLE_TYPE, THIS]), (r12v0 'packet' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'position' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'setupData' com.google.android.exoplayer2.extractor.ogg.StreamReader$SetupData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+}
+

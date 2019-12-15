@@ -1,0 +1,40 @@
+digraph "CFG forio.fabric.sdk.android.services.settings.AbstractAppSpiCall.invoke(Lio\/fabric\/sdk\/android\/services\/settings\/AppRequestData;)Z" {
+subgraph cluster_Region_1764290061 {
+label = "R(6:0|(1:2)|3|4|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|io.fabric.sdk.android.services.network.HttpRequest p018io.fabric.sdk.android.services.network.HttpRequest r0 = applyMultipartDataTo(applyHeadersTo(getHttpRequest(), r6), r6)\lio.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r1 = p018io.fabric.sdk.android.Fabric.getLogger()\lr1.mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Sending app info to \" + getUrl())\l}"];
+subgraph cluster_IfRegion_1431371674 {
+label = "IF [B:1:0x002c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002c|if (r6.icon != null) goto L_0x002e\l}"];
+subgraph cluster_Region_1236536231 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002e|io.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r1 = p018io.fabric.sdk.android.Fabric.getLogger()\lr1.mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"App icon hash is \" + r6.icon.hash)\lio.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r1 = p018io.fabric.sdk.android.Fabric.getLogger()\lr1.mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"App icon size is \" + r6.icon.width + \"x\" + r6.icon.height)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0076|int int r6 = r0.code()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0084|java.lang.String r1 = p018io.fabric.sdk.android.services.network.HttpRequest.METHOD_POST.equals(r0.method()) ? \"Create\" : \"Update\"\l}"];
+Node_7 [shape=record,label="{7\:\ 0x008b|PHI: r1 \l  PHI: (r1v4 java.lang.String) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|io.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r2 = p018io.fabric.sdk.android.Fabric.getLogger()\lr2.mo22221d(p018io.fabric.sdk.android.Fabric.TAG, r1 + \" app request ID: \" + r0.header(p018io.fabric.sdk.android.services.common.AbstractSpiCall.HEADER_REQUEST_ID))\lio.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r0 = p018io.fabric.sdk.android.Fabric.getLogger()\lr0.mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Result was \" + r6)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x00cc|RETURN\l|return p018io.fabric.sdk.android.services.common.ResponseParser.parse(r6) == 0\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0086}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0089}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x00ce|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x00d0|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public boolean io.fabric.sdk.android.services.settings.AbstractAppSpiCall.invoke((r5v0 'this' io.fabric.sdk.android.services.settings.AbstractAppSpiCall A[IMMUTABLE_TYPE, THIS]), (r6v0 io.fabric.sdk.android.services.settings.AppRequestData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+}
+

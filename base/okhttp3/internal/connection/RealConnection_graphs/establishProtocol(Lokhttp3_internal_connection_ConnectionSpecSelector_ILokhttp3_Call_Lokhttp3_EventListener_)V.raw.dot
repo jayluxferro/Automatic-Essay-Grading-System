@@ -1,0 +1,29 @@
+digraph "CFG forokhttp3.internal.connection.RealConnection.establishProtocol(Lokhttp3\/internal\/connection\/ConnectionSpecSelector;ILokhttp3\/Call;Lokhttp3\/EventListener;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okhttp3.Route) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.route okhttp3.Route \l0x0002: INVOKE  (r0 I:okhttp3.Address) = (r0 I:okhttp3.Route) okhttp3.Route.address():okhttp3.Address type: VIRTUAL \l0x0006: INVOKE  (r0 I:javax.net.ssl.SSLSocketFactory) = (r0 I:okhttp3.Address) okhttp3.Address.sslSocketFactory():javax.net.ssl.SSLSocketFactory type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0033 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: IGET  (r2 I:okhttp3.Route) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.route okhttp3.Route \l0x000e: INVOKE  (r2 I:okhttp3.Address) = (r2 I:okhttp3.Route) okhttp3.Route.address():okhttp3.Address type: VIRTUAL \l0x0012: INVOKE  (r2 I:java.util.List) = (r2 I:okhttp3.Address) okhttp3.Address.protocols():java.util.List type: VIRTUAL \l0x0016: SGET  (r4 I:okhttp3.Protocol) =  okhttp3.Protocol.H2_PRIOR_KNOWLEDGE okhttp3.Protocol \l0x0018: INVOKE  (r2 I:boolean) = (r2 I:java.util.List), (r4 I:java.lang.Object) java.util.List.contains(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_3 [shape=record,label="{3\:\ 0x001c|0x001c: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x002a \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|0x001e: IGET  (r2 I:java.net.Socket) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.rawSocket java.net.Socket \l0x0020: IPUT  \l  (r2 I:java.net.Socket)\l  (r1 I:okhttp3.internal.connection.RealConnection)\l okhttp3.internal.connection.RealConnection.socket java.net.Socket \l0x0022: SGET  (r2 I:okhttp3.Protocol) =  okhttp3.Protocol.H2_PRIOR_KNOWLEDGE okhttp3.Protocol \l0x0024: IPUT  \l  (r2 I:okhttp3.Protocol)\l  (r1 I:okhttp3.internal.connection.RealConnection)\l okhttp3.internal.connection.RealConnection.protocol okhttp3.Protocol \l0x0026: INVOKE  \l  (r1 I:okhttp3.internal.connection.RealConnection)\l  (r3 I:int)\l okhttp3.internal.connection.RealConnection.startHttp2(int):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|0x0029: RETURN   \l}"];
+Node_6 [shape=record,label="{6\:\ 0x002a|0x002a: IGET  (r2 I:java.net.Socket) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.rawSocket java.net.Socket \l0x002c: IPUT  \l  (r2 I:java.net.Socket)\l  (r1 I:okhttp3.internal.connection.RealConnection)\l okhttp3.internal.connection.RealConnection.socket java.net.Socket \l0x002e: SGET  (r2 I:okhttp3.Protocol) =  okhttp3.Protocol.HTTP_1_1 okhttp3.Protocol \l0x0030: IPUT  \l  (r2 I:okhttp3.Protocol)\l  (r1 I:okhttp3.internal.connection.RealConnection)\l okhttp3.internal.connection.RealConnection.protocol okhttp3.Protocol \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|0x0032: RETURN   \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|0x0033: INVOKE  (r5 I:okhttp3.EventListener), (r4 I:okhttp3.Call) okhttp3.EventListener.secureConnectStart(okhttp3.Call):void type: VIRTUAL \l0x0036: INVOKE  \l  (r1 I:okhttp3.internal.connection.RealConnection)\l  (r2 I:okhttp3.internal.connection.ConnectionSpecSelector)\l okhttp3.internal.connection.RealConnection.connectTls(okhttp3.internal.connection.ConnectionSpecSelector):void type: DIRECT \l0x0039: IGET  (r2 I:okhttp3.Handshake) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.handshake okhttp3.Handshake \l0x003b: INVOKE  \l  (r5 I:okhttp3.EventListener)\l  (r4 I:okhttp3.Call)\l  (r2 I:okhttp3.Handshake)\l okhttp3.EventListener.secureConnectEnd(okhttp3.Call, okhttp3.Handshake):void type: VIRTUAL \l0x003e: IGET  (r2 I:okhttp3.Protocol) = (r1 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.protocol okhttp3.Protocol \l0x0040: SGET  (r4 I:okhttp3.Protocol) =  okhttp3.Protocol.HTTP_2 okhttp3.Protocol \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0042|0x0042: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0047 \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0044|0x0044: INVOKE  \l  (r1 I:okhttp3.internal.connection.RealConnection)\l  (r3 I:int)\l okhttp3.internal.connection.RealConnection.startHttp2(int):void type: DIRECT \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0047|0x0047: RETURN   \l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.connection.RealConnection.establishProtocol((r1 'this' I:okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, THIS]), (r2 I:okhttp3.internal.connection.ConnectionSpecSelector A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:okhttp3.Call A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:okhttp3.EventListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+}
+

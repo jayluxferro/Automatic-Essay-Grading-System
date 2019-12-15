@@ -1,0 +1,21 @@
+digraph "CFG forokio.RealBufferedSource.read(Ljava\/nio\/ByteBuffer;)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x0002: IGET  (r0 I:long) = (r0 I:okio.Buffer) okio.Buffer.size long \l0x0004: CONST  (r2 I:?[long, double]) = (0 ?[long, double]) \l0x0006: CMP_L  (r0 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001c \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|0x000a: IGET  (r0 I:okio.Source) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.source okio.Source \l0x000c: IGET  (r1 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x000e: CONST  (r2 I:?[long, double]) = (8192(0x2000, double:4.0474E\-320) ?[long, double]) \l0x0010: INVOKE  (r0 I:long) = (r0 I:okio.Source), (r1 I:okio.Buffer), (r2 I:long) okio.Source.read(okio.Buffer, long):long type: INTERFACE \l0x0014: CONST  (r2 I:?[long, double]) = (\-1 ?[long, double]) \l0x0016: CMP_L  (r0 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x001c \l}"];
+Node_4 [shape=record,label="{4\:\ 0x001a|0x001a: CONST  (r5 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|0x001b: RETURN  (r5 I:int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|0x001c: IGET  (r0 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x001e: INVOKE  (r5 I:int) = (r0 I:okio.Buffer), (r5 I:java.nio.ByteBuffer) okio.Buffer.read(java.nio.ByteBuffer):int type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022|0x0022: RETURN  (r5 I:int) \l}"];
+MethodNode[shape=record,label="{public int okio.RealBufferedSource.read((r4 'this' I:okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r5 I:java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

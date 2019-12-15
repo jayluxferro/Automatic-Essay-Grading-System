@@ -1,0 +1,13 @@
+digraph "CFG forokhttp3.internal.cache.DiskLruCache.Snapshot.close()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okio.Source[]) = (r4 I:okhttp3.internal.cache.DiskLruCache$Snapshot) okhttp3.internal.cache.DiskLruCache.Snapshot.sources okio.Source[] \l0x0002: ARRAY_LENGTH  (r1 I:int) = (r0 I:?[]) \l0x0003: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|0x0004: IF  (r2 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:3:0x000e \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|0x0006: AGET  (r3 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x0008: INVOKE  (r3 I:java.io.Closeable) okhttp3.internal.Util.closeQuietly(java.io.Closeable):void type: STATIC \l0x000b: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: RETURN   \l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.cache.DiskLruCache.Snapshot.close((r4 'this' I:okhttp3.internal.cache.DiskLruCache$Snapshot A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_1;
+}
+

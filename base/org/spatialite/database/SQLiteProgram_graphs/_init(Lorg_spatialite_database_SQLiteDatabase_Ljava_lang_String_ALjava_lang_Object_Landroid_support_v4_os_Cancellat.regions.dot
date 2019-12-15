@@ -1,0 +1,103 @@
+digraph "CFG fororg.spatialite.database.SQLiteProgram.\<init\>(Lorg\/spatialite\/database\/SQLiteDatabase;Ljava\/lang\/String;[Ljava\/lang\/Object;Landroid\/support\/v4\/os\/CancellationSignal;)V" {
+subgraph cluster_Region_1745603087 {
+label = "R(3:0|1|(2:10|11)(1:(2:14|(1:(1:16)))(1:17)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.mDatabase = r5\lr4.mSql = r6.trim()\lint int r6 = org.spatialite.database.SQLiteStatementType.getSqlStatementType(r4.mSql)\l}"];
+subgraph cluster_SwitchRegion_524073541 {
+label = "Switch: 1, default: R(3:3|6|1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|switch(r6) \{\l    case 4: goto L_0x0019;\l    case 5: goto L_0x0019;\l    case 6: goto L_0x0019;\l    default: goto L_0x0015;\l\}\l}"];
+subgraph cluster_Region_1386308855 {
+label = "R(2:4|1)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|r4.mReadOnly = false\lr4.mColumnNames = EMPTY_STRING_ARRAY\lr4.mNumParameters = 0\l}"];
+Node_InsnContainer_251840632 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_383465152 {
+label = "R(3:3|6|1)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|boolean r1 = r6 != 1 ? false : true\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:3:0x0016, B:5:0x0022] A[DONT_GENERATE, DONT_INLINE, REMOVE]\l|org.spatialite.database.SQLiteStatementInfo org.spatialite.database.SQLiteStatementInfo r6 = new org.spatialite.database.SQLiteStatementInfo()\lr5.getThreadSession().prepare(r4.mSql, r5.getThreadDefaultConnectionFlags(r1), r8, r6)\lr4.mReadOnly = r6.readOnly\lr4.mColumnNames = r6.columnNames\lr4.mNumParameters = r6.numParameters\l}"];
+Node_InsnContainer_471643397 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_IfRegion_970423844 {
+label = "IF [B:7:0x0041, B:9:0x0046] THEN: R(2:10|11) ELSE: R(1:(2:14|(1:(1:16)))(1:17))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0041|if (r7 != null) goto L_0x0043\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0046|ADDED_TO_REGION\l|if (r7.length \> r4.mNumParameters) goto L_0x0049\l}"];
+subgraph cluster_Region_1611150133 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049}"];
+Node_11 [shape=record,label="{11\:\ 0x006f|throw new java.lang.IllegalArgumentException(\"Too many bind arguments.  \" + r7.length + \" arguments were provided but the statement needs \" + r4.mNumParameters + \" arguments.\")\l}"];
+}
+subgraph cluster_Region_2043700804 {
+label = "R(1:(2:14|(1:(1:16)))(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1917158 {
+label = "IF [B:13:0x0072] THEN: R(2:14|(1:(1:16))) ELSE: R(1:17) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0072|if (r4.mNumParameters != 0) goto L_0x0074\l}"];
+subgraph cluster_Region_37304479 {
+label = "R(2:14|(1:(1:16)))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0074|r4.mBindArgs = new java.lang.Object[r4.mNumParameters]\l}"];
+subgraph cluster_Region_587805302 {
+label = "R(1:(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1494319637 {
+label = "IF [B:15:0x007a] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x007a|if (r7 != null) goto L_0x007c\l}"];
+subgraph cluster_Region_870441889 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x007c|java.lang.System.arraycopy(r7, 0, r4.mBindArgs, 0, r7.length)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_2027407490 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0083|r4.mBindArgs = null\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0015}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0043}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0070}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void org.spatialite.database.SQLiteProgram.\<init\>((r4v0 'this' org.spatialite.database.SQLiteProgram A[IMMUTABLE_TYPE, THIS]), (r5v0 org.spatialite.database.SQLiteDatabase A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.Object[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 android.support.v4.os.CancellationSignal A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_4 -> Node_7;
+Node_3 -> Node_5;
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_13 -> Node_17[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_19[style=dashed];
+Node_16 -> Node_20;
+Node_17 -> Node_18;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+}
+

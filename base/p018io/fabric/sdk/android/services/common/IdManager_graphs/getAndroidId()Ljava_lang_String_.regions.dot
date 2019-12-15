@@ -1,0 +1,42 @@
+digraph "CFG forio.fabric.sdk.android.services.common.IdManager.getAndroidId()Ljava\/lang\/String;" {
+subgraph cluster_Region_579383158 {
+label = "R(3:0|(2:3|(1:7))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean boolean r0 = java.lang.Boolean.TRUE.equals(explicitCheckLimitAdTracking())\l}"];
+subgraph cluster_IfRegion_1767515196 {
+label = "IF [B:1:0x000e, B:2:0x0010] THEN: R(2:3|(1:7)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|ADDED_TO_REGION\l|if (shouldCollectHardwareIds() == true) goto L_0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|ADDED_TO_REGION\l|if (r0 == false) goto L_0x0012\l}"];
+subgraph cluster_Region_1310505155 {
+label = "R(2:3|(1:7))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|java.lang.String java.lang.String r0 = android.provider.Settings.Secure.getString(r2.appContext.getContentResolver(), \"android_id\")\l}"];
+subgraph cluster_IfRegion_654753134 {
+label = "IF [B:4:0x0024] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|if (BAD_ANDROID_ID.equals(r0) == false) goto L_0x0026\l}"];
+subgraph cluster_Region_1083327975 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return formatId(r0)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0026}"];
+MethodNode[shape=record,label="{public java.lang.String io.fabric.sdk.android.services.common.IdManager.getAndroidId((r2v0 'this' io.fabric.sdk.android.services.common.IdManager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+}
+

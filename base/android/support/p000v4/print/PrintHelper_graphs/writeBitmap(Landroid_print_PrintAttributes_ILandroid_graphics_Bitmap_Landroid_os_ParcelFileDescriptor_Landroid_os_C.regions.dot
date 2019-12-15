@@ -1,0 +1,33 @@
+digraph "CFG forandroid.support.v4.print.PrintHelper.writeBitmap(Landroid\/print\/PrintAttributes;ILandroid\/graphics\/Bitmap;Landroid\/os\/ParcelFileDescriptor;Landroid\/os\/CancellationSignal;Landroid\/print\/PrintDocumentAdapter$WriteResultCallback;)V" {
+subgraph cluster_Region_405667315 {
+label = "R(2:(1:2)(1:3)|4) | DECL_VAR: final android.print.PrintAttributes null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1434326244 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (IS_MIN_MARGINS_HANDLING_CORRECT == true) goto L_0x0005\l}"];
+subgraph cluster_Region_1998055789 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r5 = r12\l}"];
+}
+subgraph cluster_Region_354306726 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0007|r5 = copyAttributes(r12).setMinMargins(new android.print.PrintAttributes.Margins(0, 0, 0, 0)).build()\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0019|PHI: r5 \l  PHI: (r5v0 android.print.PrintAttributes A[DONT_INLINE]) = (r5v1 android.print.PrintAttributes), (r5v2 android.print.PrintAttributes) binds: [B:3:0x0007, B:2:0x0005] A[DONT_GENERATE, DONT_INLINE]\l|final android.os.CancellationSignal r4 = r16\lfinal android.graphics.Bitmap r6 = r14\lfinal android.print.PrintAttributes r7 = r12\lfinal int r8 = r13\lfinal android.os.ParcelFileDescriptor r9 = r15\lfinal android.print.PrintDocumentAdapter.WriteResultCallback r10 = r17\lnew android.support.p000v4.print.PrintHelper.C03361().execute(new java.lang.Void[0])\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002d}"];
+MethodNode[shape=record,label="{void android.support.v4.print.PrintHelper.writeBitmap((r11v0 'this' android.support.v4.print.PrintHelper A[IMMUTABLE_TYPE, THIS]), (r12v0 android.print.PrintAttributes A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 android.os.ParcelFileDescriptor A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 android.os.CancellationSignal A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 android.print.PrintDocumentAdapter$WriteResultCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RequiresApi, \{value=19\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

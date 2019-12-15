@@ -1,0 +1,97 @@
+digraph "CFG forandroid.support.v7.util.SortedList.add(Ljava\/lang\/Object;Z)I" {
+subgraph cluster_Region_2110753849 {
+label = "R(5:0|(1:2)(1:(2:5|(1:(2:(2:9|10)|(2:11|12)))))|13|(1:15)|16)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = findIndexOf(r7, r6.mData, 0, r6.mSize, 1)\l}"];
+subgraph cluster_IfRegion_1994167177 {
+label = "IF [B:1:0x000e] THEN: R(1:2) ELSE: R(1:(2:5|(1:(2:(2:9|10)|(2:11|12)))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r0 == \-1) goto L_0x0010\l}"];
+subgraph cluster_Region_774622568 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|r0 = 0\l}"];
+}
+subgraph cluster_Region_72088595 {
+label = "R(1:(2:5|(1:(2:(2:9|10)|(2:11|12))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1022175804 {
+label = "IF [B:4:0x0014] THEN: R(2:5|(1:(2:(2:9|10)|(2:11|12)))) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r0 \< r6.mSize) goto L_0x0016\l}"];
+subgraph cluster_Region_1036179420 {
+label = "R(2:5|(1:(2:(2:9|10)|(2:11|12))))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|T r2 = r6.mData[r0]\l}"];
+subgraph cluster_IfRegion_555661517 {
+label = "IF [B:6:0x0020] THEN: R(1:(2:(2:9|10)|(2:11|12))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0020|if (r6.mCallback.areItemsTheSame(r2, r7) == true) goto L_0x0022\l}"];
+subgraph cluster_Region_1383863946 {
+label = "R(1:(2:(2:9|10)|(2:11|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1557212281 {
+label = "R(2:(2:9|10)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2094872442 {
+label = "IF [B:8:0x0028] THEN: R(2:9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0028|if (r6.mCallback.areContentsTheSame(r2, r7) == true) goto L_0x002a\l}"];
+subgraph cluster_Region_1299324289 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|r6.mData[r0] = r7\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002e|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1595973501 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002f|r6.mData[r0] = r7\lr6.mCallback.onChanged(r0, 1, r6.mCallback.getChangePayload(r2, r7))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003e|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x003f|PHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v1 int), (r0v3 int) binds: [B:4:0x0014, B:6:0x0020, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\l|addToData(r0, r7)\l}"];
+subgraph cluster_IfRegion_98139680 {
+label = "IF [B:14:0x0042] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0042|if (r8 == true) goto L_0x0044\l}"];
+subgraph cluster_Region_172618351 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0044|r6.mCallback.onInserted(r0, 1)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x0049|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0022}"];
+MethodNode[shape=record,label="{private int android.support.v7.util.SortedList.add((r6v0 'this' android.support.v7.util.SortedList A[IMMUTABLE_TYPE, THIS]), (r7v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;Z)I]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_16[style=dashed];
+Node_15 -> Node_16;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.j256.ormlite.db.BaseDatabaseType.appendStringType(Ljava\/lang\/StringBuilder;Lcom\/j256\/ormlite\/field\/FieldType;I)V" {
+subgraph cluster_Region_1108815156 {
+label = "R(1:(2:(2:2|5)|(1:3)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_144527395 {
+label = "R(2:(2:2|5)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1029982402 {
+label = "IF [B:1:0x0004] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isVarcharFieldWidthSupported() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1661467887 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1.append(\"VARCHAR(\")\lr1.append(r3)\lr1.append(')')\l}"];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_411173686 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|r1.append(\"VARCHAR\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{protected void com.j256.ormlite.db.BaseDatabaseType.appendStringType((r0v0 'this' com.j256.ormlite.db.BaseDatabaseType A[IMMUTABLE_TYPE, THIS]), (r1v0 java.lang.StringBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 com.j256.ormlite.field.FieldType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

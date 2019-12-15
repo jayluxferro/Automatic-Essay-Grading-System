@@ -1,0 +1,48 @@
+digraph "CFG fororg.osmdroid.util.TileSystem.cleanLongitude(D)D" {
+subgraph cluster_Region_444649243 {
+label = "R(4:(1:2)|3|(1:6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1686037885 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r7 \< \-180.0d) goto L_0x000e\l}"];
+subgraph cluster_Region_803120143 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|LOOP_END\lLOOP:0: B:0:0x0000\-\>B:2:0x000e\l|r7 += 360.0d\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0010|double r0 = r7\l}"];
+subgraph cluster_LoopRegion_2005228706 {
+label = "LOOP:1: (1:6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|if (r0 \> 180.0d) goto L_0x001a\l}"];
+subgraph cluster_Region_1121201351 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|LOOP_END\lLOOP:1: B:4:0x0011\-\>B:6:0x001a\l|r0 \-= 360.0d\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0028|RETURN\l|return Clip(r0, getMinLongitude(), getMaxLongitude())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lPHI: r7 \l  PHI: (r7v1 double) = (r7v0 double), (r7v5 double) binds: [B:0:0x0000, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:0:0x0000\-\>B:2:0x000e\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|LOOP_START\lPHI: r0 \l  PHI: (r0v3 double) = (r0v2 double), (r0v4 double) binds: [B:3:0x0010, B:6:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:4:0x0011\-\>B:6:0x001a\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001c}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0010|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public double org.osmdroid.util.TileSystem.cleanLongitude((r6v0 'this' org.osmdroid.util.TileSystem A[IMMUTABLE_TYPE, THIS]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_0;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_4;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_3;
+Node_10 -> Node_7;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnectionPool.throwIfClosedLocked()V" {
+subgraph cluster_Region_1218681214 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2143910235 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_9029830 {
+label = "IF [B:1:0x0002] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mIsOpen != true) goto L_0x0005\l}"];
+subgraph cluster_Region_629049597 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|throw new java.lang.IllegalStateException(\"Cannot perform this operation because the connection pool has been closed.\")\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnectionPool.throwIfClosedLocked((r2v0 'this' org.spatialite.database.SQLiteConnectionPool A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+}
+

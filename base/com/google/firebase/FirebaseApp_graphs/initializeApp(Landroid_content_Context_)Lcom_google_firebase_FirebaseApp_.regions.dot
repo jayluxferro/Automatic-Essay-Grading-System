@@ -1,0 +1,86 @@
+digraph "CFG forcom.google.firebase.FirebaseApp.initializeApp(Landroid\/content\/Context;)Lcom\/google\/firebase\/FirebaseApp;" {
+subgraph cluster_Region_2396616 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_2143368705 {
+label = "Synchronized:R(2:1|(1:(2:(2:5|7)|(2:8|(2:(2:10|12)|(2:13|15))))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_1541017504 {
+label = "R(1:(2:(2:5|7)|(2:8|(2:(2:10|12)|(2:13|15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_626919122 {
+label = "R(2:(2:5|7)|(2:8|(2:(2:10|12)|(2:13|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_22047072 {
+label = "IF [B:4:0x000b] THEN: R(2:5|7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (INSTANCES.containsKey(DEFAULT_APP_NAME) == true) goto L_0x000d\l}"];
+subgraph cluster_Region_128815593 {
+label = "R(2:5|7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|com.google.firebase.FirebaseApp com.google.firebase.FirebaseApp r3 = getInstance()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1185708784 {
+label = "R(2:8|(2:(2:10|12)|(2:13|15)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|com.google.firebase.FirebaseOptions com.google.firebase.FirebaseOptions r1 = com.google.firebase.FirebaseOptions.fromResource(r3)\l}"];
+subgraph cluster_Region_2002200181 {
+label = "R(2:(2:10|12)|(2:13|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_991878799 {
+label = "IF [B:9:0x0017] THEN: R(2:10|12) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0017|if (r1 == null) goto L_0x0019\l}"];
+subgraph cluster_Region_2088468528 {
+label = "R(2:10|12)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0019|android.util.Log.d(LOG_TAG, \"Default FirebaseApp failed to initialize because no default options were found. This usually means that com.google.gms:google\-services was not applied to your gradle project.\")\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0022|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2132256719 {
+label = "R(2:13|15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0023|com.google.firebase.FirebaseApp com.google.firebase.FirebaseApp r3 = initializeApp(r3, r1)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0028|RETURN\l|return r3\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ ?}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0011: MONITOR_EXIT  \l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0021|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0021: MONITOR_EXIT  \l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0027|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0027: MONITOR_EXIT  \l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0029|REMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x002a|REMOVE\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x002b|REMOVE\l|throw r3\l}"];
+MethodNode[shape=record,label="{public static com.google.firebase.FirebaseApp com.google.firebase.FirebaseApp.initializeApp((r3v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, com.google.firebase.annotations.PublicApi, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_2 -> Node_3;
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+}
+

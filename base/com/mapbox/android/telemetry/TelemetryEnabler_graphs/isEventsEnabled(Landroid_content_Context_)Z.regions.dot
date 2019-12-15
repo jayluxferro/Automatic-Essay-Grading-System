@@ -1,0 +1,60 @@
+digraph "CFG forcom.mapbox.android.telemetry.TelemetryEnabler.isEventsEnabled(Landroid\/content\/Context;)Z" {
+subgraph cluster_Region_1986344914 {
+label = "R(2:(2:2|(1:7))|10)";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_647784266 {
+label = "Try: R(2:2|(1:7)) catches: R(2:8|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1601711150 {
+label = "R(2:2|(1:7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ NameNotFoundException \-\> 0x001e \}\lSplitter:B:1:0x0001\l|android.content.pm.ApplicationInfo android.content.pm.ApplicationInfo r3 = r3.getPackageManager().getApplicationInfo(r3.getPackageName(), 128)     \/\/ Catch:\{ NameNotFoundException \-\> 0x001e \}\l}"];
+subgraph cluster_IfRegion_1371534217 {
+label = "IF [B:3:0x000f, B:5:0x0013] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ADDED_TO_REGION\lCatch:\{ NameNotFoundException \-\> 0x001e \}\l|if (r3 == null) goto L_0x0022     \/\/ Catch:\{ NameNotFoundException \-\> 0x001e \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|ADDED_TO_REGION\lCatch:\{ NameNotFoundException \-\> 0x001e \}\l|if (r3.metaData == null) goto L_0x0022     \/\/ Catch:\{ NameNotFoundException \-\> 0x001e \}\l}"];
+subgraph cluster_Region_1064359590 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|RETURN\l|return r3.metaData.getBoolean(KEY_META_DATA_ENABLED, true)\l}"];
+}
+}
+}
+subgraph cluster_Region_85404823 {
+label = "R(2:8|9) | ExcHandler: NameNotFoundException (r3v1 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|ExcHandler: NameNotFoundException (r3v1 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001f|r3.printStackTrace()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0022|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_85404823 {
+label = "R(2:8|9) | ExcHandler: NameNotFoundException (r3v1 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|ExcHandler: NameNotFoundException (r3v1 'e' android.content.pm.PackageManager$NameNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001f|r3.printStackTrace()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011|Catch:\{ NameNotFoundException \-\> 0x001e \}\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015|Catch:\{ NameNotFoundException \-\> 0x001e \}\l}"];
+MethodNode[shape=record,label="{static boolean com.mapbox.android.telemetry.TelemetryEnabler.isEventsEnabled((r3v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

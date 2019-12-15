@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.android.gms.common.SignInButton.setStyle(II)V" {
+subgraph cluster_Region_1948012540 {
+label = "R(4:0|(1:2)|(1:4)|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.mSize = r3\lr2.mColor = r4\landroid.content.Context android.content.Context r3 = getContext()\l}"];
+subgraph cluster_IfRegion_1777670273 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.zaas != null) goto L_0x000c\l}"];
+subgraph cluster_Region_389140202 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|removeView(r2.zaas)\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_556960541 {
+label = "Try: R(1:4) catches: R(1:5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_618916374 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ RemoteCreatorException \-\> 0x001c \}\lSplitter:B:3:0x0011\l|r2.zaas = com.google.android.gms.common.internal.SignInButtonCreator.createView(r3, r2.mSize, r2.mColor)     \/\/ Catch:\{ RemoteCreatorException \-\> 0x001c \}\l}"];
+}
+subgraph cluster_Region_1483396304 {
+label = "R(1:5) | ExcHandler: RemoteCreatorException (unused com.google.android.gms.dynamic.RemoteCreator$RemoteCreatorException)\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|android.util.Log.w(\"SignInButton\", \"Sign in button not found, using placeholder instead\")\lint int r4 = r2.mSize\lint int r0 = r2.mColor\lcom.google.android.gms.common.internal.SignInButtonImpl com.google.android.gms.common.internal.SignInButtonImpl r1 = new com.google.android.gms.common.internal.SignInButtonImpl(r3)\lr1.configure(r3.getResources(), r4, r0)\lr2.zaas = r1\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0035|addView(r2.zaas)\lr2.zaas.setEnabled(isEnabled())\lr2.zaas.setOnClickListener(r2)\l}"];
+}
+subgraph cluster_Region_1483396304 {
+label = "R(1:5) | ExcHandler: RemoteCreatorException (unused com.google.android.gms.dynamic.RemoteCreator$RemoteCreatorException)\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|android.util.Log.w(\"SignInButton\", \"Sign in button not found, using placeholder instead\")\lint int r4 = r2.mSize\lint int r0 = r2.mColor\lcom.google.android.gms.common.internal.SignInButtonImpl com.google.android.gms.common.internal.SignInButtonImpl r1 = new com.google.android.gms.common.internal.SignInButtonImpl(r3)\lr1.configure(r3.getResources(), r4, r0)\lr2.zaas = r1\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0011|SYNTHETIC\lSplitter:B:3:0x0011\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lExcHandler: RemoteCreatorException (unused com.google.android.gms.dynamic.RemoteCreator$RemoteCreatorException)\lSplitter:B:3:0x0011\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0048}"];
+MethodNode[shape=record,label="{public final void com.google.android.gms.common.SignInButton.setStyle((r2v0 'this' com.google.android.gms.common.SignInButton A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_6;
+Node_4 -> Node_7;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_5 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_6;
+Node_6 -> Node_5;
+}
+

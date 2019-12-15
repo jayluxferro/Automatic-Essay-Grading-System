@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.gms.common.GoogleApiAvailability.makeGooglePlayServicesAvailable(Landroid\/app\/Activity;)Lcom\/google\/android\/gms\/tasks\/Task;" {
+subgraph cluster_Region_1593455461 {
+label = "R(2:0|(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = GOOGLE_PLAY_SERVICES_VERSION_CODE\lcom.google.android.gms.common.internal.Preconditions.checkMainThread(\"makeGooglePlayServicesAvailable must be called from the main thread\")\lint int r0 = isGooglePlayServicesAvailable(r4, r0)\l}"];
+subgraph cluster_Region_237384767 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_564058313 {
+label = "IF [B:1:0x000c] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0 == 0) goto L_0x000e\l}"];
+subgraph cluster_Region_1336120416 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|RETURN\l|return com.google.android.gms.tasks.Tasks.forResult(null)\l}"];
+}
+}
+subgraph cluster_Region_832625501 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|com.google.android.gms.common.api.internal.zabu com.google.android.gms.common.api.internal.zabu r4 = com.google.android.gms.common.api.internal.zabu.zac(r4)\lr4.zab(new com.google.android.gms.common.ConnectionResult(r0, (android.app.PendingIntent) null), 0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|RETURN\l|return r4.getTask()\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+MethodNode[shape=record,label="{public com.google.android.gms.tasks.Task\<java.lang.Void\> com.google.android.gms.common.GoogleApiAvailability.makeGooglePlayServicesAvailable((r3v0 'this' com.google.android.gms.common.GoogleApiAvailability A[IMMUTABLE_TYPE, THIS]), (r4v0 android.app.Activity A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.MainThread, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/app\/Activity;, ), Lcom\/google\/android\/gms\/tasks\/Task\<, Ljava\/lang\/Void;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

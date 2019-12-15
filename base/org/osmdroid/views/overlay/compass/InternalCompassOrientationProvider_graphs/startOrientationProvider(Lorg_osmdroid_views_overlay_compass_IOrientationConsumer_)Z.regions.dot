@@ -1,0 +1,34 @@
+digraph "CFG fororg.osmdroid.views.overlay.compass.InternalCompassOrientationProvider.startOrientationProvider(Lorg\/osmdroid\/views\/overlay\/compass\/IOrientationConsumer;)Z" {
+subgraph cluster_Region_763876853 {
+label = "R(2:0|(2:(1:4)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.mOrientationConsumer = r3\landroid.hardware.Sensor android.hardware.Sensor r3 = r2.mSensorManager.getDefaultSensor(3)\l}"];
+subgraph cluster_Region_716368376 {
+label = "R(2:(1:4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_915980051 {
+label = "IF [B:1:0x0009] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r3 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_265848581 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\l|return r2.mSensorManager.registerListener(r2, r3, 2)\l}"];
+}
+}
+subgraph cluster_Region_295679820 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider.startOrientationProvider((r2v0 'this' org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider A[IMMUTABLE_TYPE, THIS]), (r3v0 org.osmdroid.views.overlay.compass.IOrientationConsumer A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+}
+

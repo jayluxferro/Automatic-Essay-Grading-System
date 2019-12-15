@@ -1,0 +1,23 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.submitAllReports(FLio\/fabric\/sdk\/android\/services\/settings\/SettingsData;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 != null) goto L_0x000e\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|p018io.fabric.sdk.android.Fabric.getLogger().mo22234w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not send reports. Settings are not available.\")\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|com.crashlytics.android.core.CreateReportSpiCall r0 = getCreateReportSpiCall(r7.appData.reportsUrl, r7.appData.ndkReportsUrl)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001e|if (shouldPromptUserBeforeSendingCrashReports(r7) == false) goto L_0x002c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0020|com.crashlytics.android.core.CrashlyticsController$PrivacyDialogCheck r1 = new com.crashlytics.android.core.CrashlyticsController.PrivacyDialogCheck(r5.crashlyticsCore, r5.preferenceManager, r7.promptData)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002c|com.crashlytics.android.core.ReportUploader$AlwaysSendCheck r1 = new com.crashlytics.android.core.ReportUploader.AlwaysSendCheck()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0031|PHI: r1 \l  PHI: (r1v3 com.crashlytics.android.core.ReportUploader$SendCheck) = (r1v4 com.crashlytics.android.core.ReportUploader$SendCheck), (r1v5 com.crashlytics.android.core.ReportUploader$SendCheck) binds: [B:6:0x002c, B:5:0x0020] A[DONT_GENERATE, DONT_INLINE]\l|new com.crashlytics.android.core.ReportUploader(r5.appData.apiKey, r0, r5.reportFilesProvider, r5.handlingExceptionCheck).uploadReports(r6, r1)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0041|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{void com.crashlytics.android.core.CrashlyticsController.submitAllReports((r5v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r6v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 io.fabric.sdk.android.services.settings.SettingsData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.exoplayer2.text.subrip.SubripSubtitle.getEventTime(I)J" {
+subgraph cluster_Region_192172886 {
+label = "R(6:0|(1:2)(1:7)|3|(1:8)|5|6) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\l}"];
+subgraph cluster_IfRegion_1896492197 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4 \>= 0) goto L_0x0004\l}"];
+subgraph cluster_Region_1372508800 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r0 = true\l}"];
+}
+subgraph cluster_Region_1870744641 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|r0 = false\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0005|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v6 boolean) binds: [B:7:0x0015, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkArgument(r0)\l}"];
+subgraph cluster_IfRegion_673585946 {
+label = "IF [B:4:0x000b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r4 \>= r3.cueTimesUs.length) goto L_0x0017\l}"];
+subgraph cluster_Region_1649979544 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|r1 = false\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000d|PHI: r1 \l  PHI: (r1v2 boolean) = (r1v0 boolean), (r1v1 boolean) binds: [B:4:0x000b, B:8:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkArgument(r1)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\l|return r3.cueTimesUs[r4]\l}"];
+}
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.text.subrip.SubripSubtitle.getEventTime((r3v0 'this' com.google.android.exoplayer2.text.subrip.SubripSubtitle A[IMMUTABLE_TYPE, THIS]), (r4v0 'index' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_8 -> Node_5;
+Node_5 -> Node_6;
+}
+

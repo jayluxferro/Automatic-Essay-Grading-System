@@ -1,0 +1,31 @@
+digraph "CFG forkotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.util.Set) = (r3 I:java.util.Map) java.util.Map.entrySet():java.util.Set type: INTERFACE \l0x0004: CHECK_CAST  (r0 I:java.lang.Iterable) = (java.lang.Iterable) (r0 I:?[OBJECT, ARRAY]) \l0x0006: INVOKE  (r0 I:java.util.Iterator) = (r0 I:java.lang.Iterable) java.lang.Iterable.iterator():java.util.Iterator type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: INVOKE  (r1 I:boolean) = (r0 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x002c \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: INVOKE  (r1 I:java.lang.Object) = (r0 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0014: CHECK_CAST  (r1 I:java.util.Map$Entry) = (java.util.Map$Entry) (r1 I:?[OBJECT, ARRAY]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|0x0016: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0024 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|0x0018: INVOKE  (r2 I:java.util.Map$Entry) = (r1 I:java.lang.Object) kotlin.jvm.internal.TypeIntrinsics.asMutableMapEntry(java.lang.Object):java.util.Map$Entry type: STATIC \l0x001c: INVOKE  (r1 I:java.lang.Object) = \l  (r4 I:kotlin.jvm.functions.Function1)\l  (r1 I:java.lang.Object)\l kotlin.jvm.functions.Function1.invoke(java.lang.Object):java.lang.Object type: INTERFACE \l0x0020: INVOKE  (r2 I:java.util.Map$Entry), (r1 I:java.lang.Object) java.util.Map.Entry.setValue(java.lang.Object):java.lang.Object type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|0x0024: NEW_INSTANCE  (r3 I:kotlin.TypeCastException) =  kotlin.TypeCastException \l0x0026: CONST_STR  (r4 I:java.lang.String) =  \"null cannot be cast to non\-null type kotlin.collections.MutableMap.MutableEntry\<K, R\>\" \l0x0028: INVOKE  (r3 I:kotlin.TypeCastException), (r4 I:java.lang.String) kotlin.TypeCastException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x002b|0x002b: THROW  (r3 I:java.lang.Throwable) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x002c|0x002c: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0033 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x002e|0x002e: INVOKE  (r3 I:java.util.Map) = (r3 I:java.lang.Object) kotlin.jvm.internal.TypeIntrinsics.asMutableMap(java.lang.Object):java.util.Map type: STATIC \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0032|0x0032: RETURN  (r3 I:java.util.Map\<K, R\>) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0033|0x0033: NEW_INSTANCE  (r3 I:kotlin.TypeCastException) =  kotlin.TypeCastException \l0x0035: CONST_STR  (r4 I:java.lang.String) =  \"null cannot be cast to non\-null type kotlin.collections.MutableMap\<K, R\>\" \l0x0037: INVOKE  (r3 I:kotlin.TypeCastException), (r4 I:java.lang.String) kotlin.TypeCastException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_12 [shape=record,label="{12\:\ 0x003a|0x003a: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{private static final java.util.Map\<K, R\> kotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace((r3 I:java.util.Map\<K, V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:kotlin.jvm.functions.Function1\<? super java.util.Map$Entry\<? extends K, ? extends V\>, ? extends R\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], \lAnnotation[BUILD, kotlin.PublishedApi, \{\}], Annotation[BUILD, kotlin.internal.InlineOnly, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, R:, Ljava\/lang\/Object;, \>(, Ljava\/util\/Map\<, TK;TV;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/util\/Map$Entry\<, +TK;+TV;\>;+TR;\>;), Ljava\/util\/Map\<, TK;TR;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

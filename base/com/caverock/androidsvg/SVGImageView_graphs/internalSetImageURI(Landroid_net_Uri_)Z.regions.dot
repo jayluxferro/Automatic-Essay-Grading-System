@@ -1,0 +1,38 @@
+digraph "CFG forcom.caverock.androidsvg.SVGImageView.internalSetImageURI(Landroid\/net\/Uri;)Z" {
+subgraph cluster_Region_529793611 {
+label = "R(1:(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_499228649 {
+label = "Try: R(2:2|3) catches: R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1319475099 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ FileNotFoundException \-\> 0x001c \}\lSplitter:B:1:0x0001\l|java.io.InputStream java.io.InputStream r5 = getContext().getContentResolver().openInputStream(r5)     \/\/ Catch:\{ FileNotFoundException \-\> 0x001c \}\lnew com.caverock.androidsvg.SVGImageView.LoadURITask().execute(new java.io.InputStream[]\{r5\})     \/\/ Catch:\{ FileNotFoundException \-\> 0x001c \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_863692502 {
+label = "R(1:4) | ExcHandler: FileNotFoundException (unused java.io.FileNotFoundException)\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_863692502 {
+label = "R(1:4) | ExcHandler: FileNotFoundException (unused java.io.FileNotFoundException)\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lExcHandler: FileNotFoundException (unused java.io.FileNotFoundException)\lSplitter:B:1:0x0001\l}"];
+MethodNode[shape=record,label="{private boolean com.caverock.androidsvg.SVGImageView.internalSetImageURI((r4v0 'this' com.caverock.androidsvg.SVGImageView A[IMMUTABLE_TYPE, THIS]), (r5v0 android.net.Uri A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_5 -> Node_4;
+}
+

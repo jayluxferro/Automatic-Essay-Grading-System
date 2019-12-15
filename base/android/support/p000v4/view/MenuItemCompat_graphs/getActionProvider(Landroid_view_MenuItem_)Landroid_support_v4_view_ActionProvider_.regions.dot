@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.view.MenuItemCompat.getActionProvider(Landroid\/view\/MenuItem;)Landroid\/support\/v4\/view\/ActionProvider;" {
+subgraph cluster_Region_721902124 {
+label = "R(1:(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_952218912 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_192047197 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r1 instanceof android.support.p000v4.internal.view.SupportMenuItem) == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1799636577 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return ((android.support.p000v4.internal.view.SupportMenuItem) r1).getSupportActionProvider()\l}"];
+}
+}
+subgraph cluster_Region_2047063839 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|android.util.Log.w(TAG, \"getActionProvider: item does not implement SupportMenuItem; returning null\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public static android.support.v4.view.ActionProvider android.support.v4.view.MenuItemCompat.getActionProvider((r1v0 android.view.MenuItem A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

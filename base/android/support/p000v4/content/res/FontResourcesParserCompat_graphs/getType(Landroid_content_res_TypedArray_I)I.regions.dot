@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.content.res.FontResourcesParserCompat.getType(Landroid\/content\/res\/TypedArray;I)I" {
+subgraph cluster_Region_1507459938 {
+label = "R(1:(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1452104725 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1623167360 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 21) goto L_0x0006\l}"];
+subgraph cluster_Region_1332234699 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r2.getType(r3)\l}"];
+}
+}
+subgraph cluster_Region_610570653 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\lr2.getValue(r3, r0)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|RETURN\l|return r0.type\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{private static int android.support.v4.content.res.FontResourcesParserCompat.getType((r2v0 android.content.res.TypedArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

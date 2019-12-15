@@ -1,0 +1,52 @@
+digraph "CFG forandroid.arch.lifecycle.LiveData.removeObservers(Landroid\/arch\/lifecycle\/LifecycleOwner;)V" {
+subgraph cluster_Region_1655978484 {
+label = "R(2:0|(2:3|(1:5)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|assertMainThread(\"removeObservers\")\ljava.util.Iterator java.util.Iterator\<java.util.Map.Entry\<android.arch.lifecycle.Observer\<T\>, android.arch.lifecycle.LiveData\<T\>.ObserverWrapper\>\> r0 = r3.mObservers.iterator()\l}"];
+subgraph cluster_LoopRegion_1270364962 {
+label = "LOOP:0: (2:3|(1:5)(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r0.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_284091251 {
+label = "R(2:3|(1:5)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|java.util.Map$Entry java.util.Map.Entry r1 = r0.next()\l}"];
+subgraph cluster_IfRegion_563923766 {
+label = "IF [B:4:0x0021] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (((android.arch.lifecycle.LiveData.ObserverWrapper) r1.getValue()).isAttachedTo(r4) == true) goto L_0x0023\l}"];
+subgraph cluster_Region_1654926696 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0023|removeObserver((android.arch.lifecycle.Observer) r1.getKey())\l}"];
+}
+subgraph cluster_Region_1341012718 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|LOOP_START\lLOOP:0: B:1:0x000b\-\>B:7:0x000b\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:1:0x000b\-\>B:7:0x000b\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002d|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000b|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x000b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.arch.lifecycle.LiveData.removeObservers((r3v0 'this' android.arch.lifecycle.LiveData A[IMMUTABLE_TYPE, THIS]), (r4v0 android.arch.lifecycle.LifecycleOwner A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\lAnnotation[BUILD, android.support.annotation.MainThread, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_10;
+Node_1 -> Node_2;
+Node_7 -> Node_1;
+Node_8 -> Node_6;
+Node_9 -> Node_7;
+Node_10 -> Node_7;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG fororg.osmdroid.util.GEMFFile.GEMFInputStream.read([BII)I" {
+subgraph cluster_Region_1435463550 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.RandomAccessFile java.io.RandomAccessFile r0 = r2.raf\l}"];
+subgraph cluster_IfRegion_1816816376 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r5 \> r2.remainingBytes) goto L_0x0006\l}"];
+subgraph cluster_Region_1184805633 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|int r5 = r2.remainingBytes\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0008|PHI: r5 \l  PHI: (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l|int int r3 = r0.read(r3, r4, r5)\lr2.remainingBytes \-= r3\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0011|RETURN\l|return r3\l}"];
+}
+MethodNode[shape=record,label="{public int org.osmdroid.util.GEMFFile.GEMFInputStream.read((r2v0 'this' org.osmdroid.util.GEMFFile$GEMFInputStream A[IMMUTABLE_TYPE, THIS]), (r3v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

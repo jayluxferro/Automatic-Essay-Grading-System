@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.multidex.MultiDexExtractor.clearDexDir()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File[] r0 = r8.dexDir.listFiles(new android.support.multidex.MultiDexExtractor.C01681(r8))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r0 != null) goto L_0x0032\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|android.util.Log.w(TAG, new java.lang.StringBuilder().append(\"Failed to list secondary dex dir content (\").append(r8.dexDir.getPath()).append(\").\").toString())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0032|int r3 = r0.length\lr2 = 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0034|LOOP_START\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:3:0x0032, B:8:0x0084] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0034\-\>B:8:0x0084\l|if (r2 \>= r3) goto L_0x0031\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0036|r1 = r0[r2]\landroid.util.Log.i(TAG, new java.lang.StringBuilder().append(\"Trying to delete old file \").append(r1.getPath()).append(\" of size \").append(r1.length()).toString())\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0066|if (r1.delete() != false) goto L_0x0087\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0068|android.util.Log.w(TAG, new java.lang.StringBuilder().append(\"Failed to delete old file \").append(r1.getPath()).toString())\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0084|LOOP_END\lLOOP:0: B:4:0x0034\-\>B:8:0x0084\l|int r2 = r2 + 1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0087|android.util.Log.i(TAG, new java.lang.StringBuilder().append(\"Deleted old file \").append(r1.getPath()).toString())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0031|SYNTHETIC\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0084|SYNTHETIC\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0084|SYNTHETIC\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void android.support.multidex.MultiDexExtractor.clearDexDir((r8v0 'this' android.support.multidex.MultiDexExtractor A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_11;
+Node_8 -> Node_4;
+Node_9 -> Node_12;
+Node_10 -> Node_14;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+}
+

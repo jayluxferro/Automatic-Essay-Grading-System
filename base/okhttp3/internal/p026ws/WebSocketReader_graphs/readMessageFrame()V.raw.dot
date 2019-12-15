@@ -1,0 +1,28 @@
+digraph "CFG forokhttp3.internal.ws.WebSocketReader.readMessageFrame()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:int) = (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.opcode int \l0x0002: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0024 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: CONST  (r2 I:?[int, float, short, byte, char]) = (2 ?[int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0009 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|0x0009: NEW_INSTANCE  (r1 I:java.net.ProtocolException) =  java.net.ProtocolException \l0x000b: NEW_INSTANCE  (r2 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x000d: INVOKE  (r2 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0010: CONST_STR  (r3 I:java.lang.String) =  \"Unknown opcode: \" \l0x0012: INVOKE  (r2 I:java.lang.StringBuilder), (r3 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0015: INVOKE  (r0 I:java.lang.String) = (r0 I:int) java.lang.Integer.toHexString(int):java.lang.String type: STATIC \l0x0019: INVOKE  (r2 I:java.lang.StringBuilder), (r0 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x001c: INVOKE  (r0 I:java.lang.String) = (r2 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0020: INVOKE  (r1 I:java.net.ProtocolException), (r0 I:java.lang.String) java.net.ProtocolException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|0x0023: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0024|0x0024: INVOKE  (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.readMessage():void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|0x0027: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0035 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|0x0029: IGET  (r0 I:okhttp3.internal.ws.WebSocketReader$FrameCallback) = (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.frameCallback okhttp3.internal.ws.WebSocketReader$FrameCallback \l0x002b: IGET  (r1 I:okio.Buffer) = (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.messageFrameBuffer okio.Buffer \l0x002d: INVOKE  (r1 I:java.lang.String) = (r1 I:okio.Buffer) okio.Buffer.readUtf8():java.lang.String type: VIRTUAL \l0x0031: INVOKE  \l  (r0 I:okhttp3.internal.ws.WebSocketReader$FrameCallback)\l  (r1 I:java.lang.String)\l okhttp3.internal.ws.WebSocketReader.FrameCallback.onReadMessage(java.lang.String):void type: INTERFACE \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0035|0x0035: IGET  (r0 I:okhttp3.internal.ws.WebSocketReader$FrameCallback) = (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.frameCallback okhttp3.internal.ws.WebSocketReader$FrameCallback \l0x0037: IGET  (r1 I:okio.Buffer) = (r4 I:okhttp3.internal.ws.WebSocketReader) okhttp3.internal.ws.WebSocketReader.messageFrameBuffer okio.Buffer \l0x0039: INVOKE  (r1 I:okio.ByteString) = (r1 I:okio.Buffer) okio.Buffer.readByteString():okio.ByteString type: VIRTUAL \l0x003d: INVOKE  \l  (r0 I:okhttp3.internal.ws.WebSocketReader$FrameCallback)\l  (r1 I:okio.ByteString)\l okhttp3.internal.ws.WebSocketReader.FrameCallback.onReadMessage(okio.ByteString):void type: INTERFACE \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0040|0x0040: RETURN   \l}"];
+MethodNode[shape=record,label="{private void okhttp3.internal.ws.WebSocketReader.readMessageFrame((r4 'this' I:okhttp3.internal.ws.WebSocketReader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+}
+

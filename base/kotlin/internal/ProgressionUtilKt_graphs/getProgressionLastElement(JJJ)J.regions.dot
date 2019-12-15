@@ -1,0 +1,90 @@
+digraph "CFG forkotlin.internal.ProgressionUtilKt.getProgressionLastElement(JJJ)J" {
+subgraph cluster_Region_361249410 {
+label = "R(2:0|(1:(2:(1:13)|(1:12)))(1:(1:10)(1:(1:14)(2:8|11))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = (r11 \> 0 ? 1 : (r11 == 0 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_899067731 {
+label = "IF [B:1:0x0004] THEN: R(1:(2:(1:13)|(1:12))) ELSE: R(1:(1:10)(1:(1:14)(2:8|11)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 \> 0) goto L_0x0006\l}"];
+subgraph cluster_Region_612959090 {
+label = "R(1:(2:(1:13)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_270783774 {
+label = "R(2:(1:13)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1144267956 {
+label = "IF [B:3:0x0008] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r7 \>= r9) goto L_?\l}"];
+subgraph cluster_Region_1788208622 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r9\l}"];
+}
+}
+subgraph cluster_Region_107739485 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r9 \- differenceModulo(r9, r7, r11)\l}"];
+}
+}
+}
+subgraph cluster_Region_149833643 {
+label = "R(1:(1:10)(1:(1:14)(2:8|11))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2143071622 {
+label = "IF [B:5:0x0014] THEN: R(1:10) ELSE: R(1:(1:14)(2:8|11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r0 \>= 0) goto L_0x0024\l}"];
+subgraph cluster_Region_1838859142 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002d|throw new java.lang.IllegalArgumentException(\"Step is zero.\")\l}"];
+}
+subgraph cluster_Region_677769550 {
+label = "R(1:(1:14)(2:8|11)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1897747470 {
+label = "IF [B:7:0x0018] THEN: R(1:14) ELSE: R(2:8|11) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|if (r7 \<= r9) goto L_?\l}"];
+subgraph cluster_Region_187995801 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return r9\l}"];
+}
+subgraph cluster_Region_814346890 {
+label = "R(2:8|11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r9 + differenceModulo(r7, r9, \-r11)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0024}"];
+MethodNode[shape=record,label="{public static final long kotlin.internal.ProgressionUtilKt.getProgressionLastElement((r7v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, kotlin.PublishedApi, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_14;
+Node_8 -> Node_11;
+Node_2 -> Node_3;
+Node_4 -> Node_12;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

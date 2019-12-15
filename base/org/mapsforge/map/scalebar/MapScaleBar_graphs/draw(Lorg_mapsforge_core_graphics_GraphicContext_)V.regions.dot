@@ -1,0 +1,51 @@
+digraph "CFG fororg.mapsforge.map.scalebar.MapScaleBar.draw(Lorg\/mapsforge\/core\/graphics\/GraphicContext;)V" {
+subgraph cluster_Region_1028378938 {
+label = "R(1:(1:(2:(1:8)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_834607416 {
+label = "R(1:(2:(1:8)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1835805351 {
+label = "IF [B:1:0x0002, B:4:0x000b] THEN: R(2:(1:8)|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.visible == true) goto L_0x0005\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|ADDED_TO_REGION\l|if (r4.mapViewDimension.getDimension() != null) goto L_0x000e\l}"];
+subgraph cluster_Region_1231702125 {
+label = "R(2:(1:8)|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_709595771 {
+label = "IF [B:7:0x0013] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0013|if (isRedrawNecessary() == true) goto L_0x0015\l}"];
+subgraph cluster_Region_1668561107 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0015|redraw(r4.mapScaleCanvas)\lr4.redrawNeeded = false\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001c|r5.drawBitmap(r4.mapScaleBitmap, calculatePositionLeft(0, r4.mapViewDimension.getDimension().width, r4.mapScaleBitmap.getWidth()), calculatePositionTop(0, r4.mapViewDimension.getDimension().height, r4.mapScaleBitmap.getHeight()))\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004|RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0045}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.scalebar.MapScaleBar.draw((r4v0 'this' org.mapsforge.map.scalebar.MapScaleBar A[IMMUTABLE_TYPE, THIS]), (r5v0 org.mapsforge.core.graphics.GraphicContext A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

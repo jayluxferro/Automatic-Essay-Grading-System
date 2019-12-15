@@ -1,0 +1,40 @@
+digraph "CFG fororg.osgeo.proj4j.proj.ObliqueMercatorProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r20\lr5 = r25\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0.rot != false) goto L_0x000d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|r1 = r21\lr3 = r23\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|double r6 = (r0.cosrot * r21) \- (r0.sinrot * r23)\ldouble r3 = r23 * r0.cosrot\ldouble r1 = (r21 * r0.sinrot) + r3\lr3 = r6\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020|PHI: r1 r3 \l  PHI: (r1v0 double) = (r1v11 double), (r1v12 double) binds: [B:3:0x000d, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v0 double) = (r3v25 double), (r3v26 double) binds: [B:3:0x000d, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|double r1 = r1 + r0.u_0\ldouble r3 = java.lang.Math.exp(((\-r0.f411bl) * r3) \/ r0.f410al)\ldouble r10 = 1.0d \/ r3\ldouble r12 = (r3 \- r10) * 0.5d\ldouble r6 = java.lang.Math.sin((r0.f411bl * r1) \/ r0.f410al)\ldouble r14 = (((r0.cosgam * r6) + (r0.singam * r12)) * 2.0d) \/ (r3 + r10)\lr18 = 1.5707963267948966d\l}"];
+Node_5 [shape=record,label="{5\:\ 0x006a|if ((java.lang.Math.abs(java.lang.Math.abs(r14) \- 1.0d) \> 1.0E\-10d ? 1 : (java.lang.Math.abs(java.lang.Math.abs(r14) \- 1.0d) == 1.0E\-10d ? 0 : \-1)) \>= 0) goto L_0x007e\l}"];
+Node_6 [shape=record,label="{6\:\ 0x006c|r5.f294x = 0.0d\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0072|if ((r14 \> 0.0d ? 1 : (r14 == 0.0d ? 0 : \-1)) \>= 0) goto L_0x0079\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0074|r18 = \-1.5707963267948966d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0079|PHI: r18 \l  PHI: (r18v1 double) = (r18v0 double), (r18v2 double) binds: [B:7:0x0072, B:8:0x0074] A[DONT_GENERATE, DONT_INLINE]\l|r5.f295y = r18\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007e|r5.f295y = r0.f412el \/ java.lang.Math.sqrt((r14 + 1.0d) \/ (1.0d \- r14))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0091|if (r0.spherical != false) goto L_0x00a6\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0093|r5.f295y = org.osgeo.proj4j.util.ProjectionMath.phi2(java.lang.Math.pow(r5.f295y, 1.0d \/ r0.f411bl), r0.f423e)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x00a6|r5.f295y = 1.5707963267948966d \- (java.lang.Math.atan(r5.f295y) * 2.0d)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00b2|r5.f294x = (\-java.lang.Math.atan2((r12 * r0.cosgam) \- (r6 * r0.singam), java.lang.Math.cos((r0.f411bl * r1) \/ r0.f410al))) \/ r0.f411bl\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00d0|RETURN\l|return r5\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.ObliqueMercatorProjection.projectInverse((r20v0 'this' org.osgeo.proj4j.proj.ObliqueMercatorProjection A[IMMUTABLE_TYPE, THIS]), (r21v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_15;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.flv.VideoTagPayloadReader.parseHeader(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)Z" {
+subgraph cluster_Region_2063264104 {
+label = "R(2:0|(2:(1:3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = r7.readUnsignedByte()\lint r0 = (r1 \>\> 4) & 15\lint r2 = r1 & 15\l}"];
+subgraph cluster_Region_512351177 {
+label = "R(2:(1:3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1799285577 {
+label = "IF [B:1:0x000b] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r2 != 7) goto L_0x000d\l}"];
+subgraph cluster_Region_692757175 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0025|throw new com.google.android.exoplayer2.extractor.flv.TagPayloadReader.UnsupportedFormatException(\"Video format not supported: \" + r2)\l}"];
+}
+}
+subgraph cluster_Region_552109215 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0026|r6.frameType = r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0029|RETURN\l|return r0 != 5\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002b|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.extractor.flv.VideoTagPayloadReader.parseHeader((r6v0 'this' com.google.android.exoplayer2.extractor.flv.VideoTagPayloadReader A[IMMUTABLE_TYPE, THIS]), (r7v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.extractor.flv.TagPayloadReader$UnsupportedFormatException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_2 -> Node_3;
+}
+

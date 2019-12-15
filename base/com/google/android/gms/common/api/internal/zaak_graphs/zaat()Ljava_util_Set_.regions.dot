@@ -1,0 +1,76 @@
+digraph "CFG forcom.google.android.gms.common.api.internal.zaak.zaat()Ljava\/util\/Set;" {
+subgraph cluster_Region_925026838 {
+label = "R(1:(2:(1:3)|(3:4|(2:7|(1:9)(0))|10)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1348780482 {
+label = "R(2:(1:3)|(3:4|(2:7|(1:9)(0))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2127085428 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r6.zaes == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1018575709 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|RETURN\l|return java.util.Collections.emptySet()\l}"];
+}
+}
+subgraph cluster_Region_321999105 {
+label = "R(3:4|(2:7|(1:9)(0))|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|java.util.HashSet java.util.HashSet r0 = new java.util.HashSet(r6.zaes.getRequiredScopes())\ljava.util.Map java.util.Map\<com.google.android.gms.common.api.Api\<?\>, com.google.android.gms.common.internal.ClientSettings.OptionalApiSettings\> r1 = r6.zaes.getOptionalApiSettings()\ljava.util.Iterator r2 = r1.keySet().iterator()\l}"];
+subgraph cluster_LoopRegion_501556391 {
+label = "LOOP:0: (2:7|(1:9)(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|if (r2.hasNext() != false) goto L_0x0028\l}"];
+subgraph cluster_Region_1803127816 {
+label = "R(2:7|(1:9)(0))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|com.google.android.gms.common.api.Api r3 = r2.next()\l}"];
+subgraph cluster_IfRegion_1358015756 {
+label = "IF [B:8:0x003a] THEN: R(1:9) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|if (r6.zafs.zaho.containsKey(r3.getClientKey()) == false) goto L_0x003c\l}"];
+subgraph cluster_Region_920072898 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003c|r0.addAll(r1.get(r3).mScopes)\l}"];
+}
+subgraph cluster_Region_1569720476 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0048|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0022|LOOP_START\lLOOP:0: B:5:0x0022\-\>B:11:0x0022\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022|LOOP_END\lSYNTHETIC\lLOOP:0: B:5:0x0022\-\>B:11:0x0022\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0048|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0022|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final java.util.Set\<com.google.android.gms.common.api.Scope\> com.google.android.gms.common.api.internal.zaak.zaat((r6v0 'this' com.google.android.gms.common.api.internal.zaak A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/Set\<, Lcom\/google\/android\/gms\/common\/api\/Scope;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_13[style=dashed];
+Node_9 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_11 -> Node_5;
+Node_12 -> Node_10;
+Node_13 -> Node_11;
+Node_14 -> Node_11;
+}
+

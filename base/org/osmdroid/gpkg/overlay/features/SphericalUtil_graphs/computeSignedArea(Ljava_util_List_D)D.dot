@@ -1,0 +1,25 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.SphericalUtil.computeSignedArea(Ljava\/util\/List;D)D" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = r20.size()\lr1 = 0.0d\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r0 \>= 3) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return 0.0d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|r3 = r20\lorg.osmdroid.api.IGeoPoint r0 = r3.get(r0 + \-1)\ldouble r4 = java.lang.Math.tan((1.5707963267948966d \- java.lang.Math.toRadians(r0.getLatitude())) \/ 2.0d)\ldouble r10 = java.lang.Math.toRadians(r0.getLongitude())\ljava.util.Iterator r0 = r20.iterator()\lr14 = r4\lr16 = r10\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0039|LOOP_START\lPHI: r1 r14 r16 \l  PHI: (r1v1 double) = (r1v0 double), (r1v3 double) binds: [B:3:0x000a, B:6:0x003f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r14v1 double) = (r14v0 double), (r14v2 double) binds: [B:3:0x000a, B:6:0x003f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r16v1 double) = (r16v0 double), (r16v2 double) binds: [B:3:0x000a, B:6:0x003f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0039\-\>B:6:0x003f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003d|if (r0.hasNext() == false) goto L_0x0068\l}"];
+Node_6 [shape=record,label="{6\:\ 0x003f|LOOP_END\lLOOP:0: B:4:0x0039\-\>B:6:0x003f\l|org.osmdroid.api.IGeoPoint r3 = r0.next()\ldouble r4 = java.lang.Math.tan((1.5707963267948966d \- java.lang.Math.toRadians(r3.getLatitude())) \/ 2.0d)\ldouble r18 = java.lang.Math.toRadians(r3.getLongitude())\ldouble r1 = r1 + polarTriangleArea(r4, r18, r14, r16)\lr14 = r4\lr16 = r18\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0068}"];
+Node_8 [shape=record,label="{8\:\ 0x006c|RETURN\l|return r1 * (r21 * r21)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0068|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static double org.osmdroid.gpkg.overlay.features.SphericalUtil.computeSignedArea((r20v0 java.util.List\<org.osmdroid.api.IGeoPoint\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lorg\/osmdroid\/api\/IGeoPoint;, \>;D)D]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_7;
+}
+

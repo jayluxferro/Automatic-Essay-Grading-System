@@ -1,0 +1,97 @@
+digraph "CFG forokhttp3.internal.http2.Http2Stream.closeInternal(Lokhttp3\/internal\/http2\/ErrorCode;)Z" {
+subgraph cluster_Region_1757730128 {
+label = "R(1:0)";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_2081744731 {
+label = "Synchronized:R(2:0|(1:(2:(1:5)|(1:(2:(1:11)|(3:12|14|15))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1010320495 {
+label = "R(1:(2:(1:5)|(1:(2:(1:11)|(3:12|14|15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_628137698 {
+label = "R(2:(1:5)|(1:(2:(1:11)|(3:12|14|15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1808834889 {
+label = "IF [B:3:0x0004] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0004|if (r2.errorCode != null) goto L_0x0006\l}"];
+subgraph cluster_Region_807775575 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1321241600 {
+label = "R(1:(2:(1:11)|(3:12|14|15)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1877384372 {
+label = "R(2:(1:11)|(3:12|14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_22192872 {
+label = "IF [B:7:0x000c, B:9:0x0012] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000c|if (r2.source.finished != false) goto L_0x000e\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0012|ADDED_TO_REGION\l|if (r2.sink.finished != false) goto L_0x0014\l}"];
+subgraph cluster_Region_469825664 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1449842572 {
+label = "R(3:12|14|15)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0016|r2.errorCode = r3\lnotifyAll()\l}"];
+Node_14 [shape=record,label="{14\:\ 0x001c|r2.connection.removeStream(r2.f261id)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0024|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0006: MONITOR_EXIT  \l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000e}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0014|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0014: MONITOR_EXIT  \l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001b|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001b: MONITOR_EXIT  \l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0025|LOOP_START\lREMOVE\lLOOP:0: B:16:0x0025\-\>B:20:0x0025\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0026|SYNTHETIC\lREMOVE\lSplitter:B:17:0x0026\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|REMOVE\lSplitter:B:17:0x0026\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0027|REMOVE\l|throw r3\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0025|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:16:0x0025\-\>B:20:0x0025\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0027|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0025|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{private boolean okhttp3.internal.http2.Http2Stream.closeInternal((r2v0 'this' okhttp3.internal.http2.Http2Stream A[IMMUTABLE_TYPE, THIS]), (r3v0 okhttp3.internal.http2.ErrorCode A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_12[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_12[style=dashed];
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_1 -> Node_2;
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_20;
+Node_18 -> Node_21;
+Node_18 -> Node_22;
+Node_20 -> Node_16;
+Node_21 -> Node_19;
+Node_22 -> Node_20;
+}
+

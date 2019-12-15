@@ -1,0 +1,57 @@
+digraph "CFG fororg.osmdroid.views.MapView.getProjection()Lorg\/osmdroid\/views\/Projection;" {
+subgraph cluster_Region_58027900 {
+label = "R(2:(4:2|(1:4)|(1:7)|8)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1189752497 {
+label = "IF [B:1:0x0002] THEN: R(4:2|(1:4)|(1:7)|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r8.mProjection == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1316507502 {
+label = "R(4:2|(1:4)|(1:7)|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r8.mProjection = new org.osmdroid.views.Projection(r8)\lr8.mProjection.adjustOffsets((org.osmdroid.api.IGeoPoint) r8.mMultiTouchScaleGeoPoint, r8.mMultiTouchScaleCurrentPoint)\l}"];
+subgraph cluster_IfRegion_255595556 {
+label = "IF [B:3:0x0016] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0016|if (r8.mScrollableAreaLimitLatitude == true) goto L_0x0018\l}"];
+subgraph cluster_Region_656049200 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|r8.mProjection.adjustOffsets(r8.mScrollableAreaLimitNorth, r8.mScrollableAreaLimitSouth, true, r8.mScrollableAreaLimitExtraPixelHeight)\l}"];
+}
+}
+subgraph cluster_IfRegion_806529476 {
+label = "IF [B:6:0x0026] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0026|if (r8.mScrollableAreaLimitLongitude == true) goto L_0x0028\l}"];
+subgraph cluster_Region_1016959895 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0028|r8.mProjection.adjustOffsets(r8.mScrollableAreaLimitWest, r8.mScrollableAreaLimitEast, false, r8.mScrollableAreaLimitExtraPixelWidth)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0034|r8.mImpossibleFlinging = r8.mProjection.setMapScroll(r8)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x003e|RETURN\l|return r8.mProjection\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003c}"];
+MethodNode[shape=record,label="{public org.osmdroid.views.Projection org.osmdroid.views.MapView.getProjection((r8v0 'this' org.osmdroid.views.MapView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

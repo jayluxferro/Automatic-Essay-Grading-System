@@ -1,0 +1,64 @@
+digraph "CFG forandroid.support.v4.graphics.ColorUtils.RGBToHSL(III[F)V" {
+subgraph cluster_Region_1879331801 {
+label = "R(5:0|(1:2)(2:4|10)|11|(1:13)|14) | DECL_VAR: float null, float null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|float float r7 = ((float) r7) \/ 255.0f\lfloat float r8 = ((float) r8) \/ 255.0f\lfloat float r9 = ((float) r9) \/ 255.0f\lfloat float r0 = java.lang.Math.max(r7, java.lang.Math.max(r8, r9))\lfloat float r1 = java.lang.Math.min(r7, java.lang.Math.min(r8, r9))\lfloat float r2 = r0 \- r1\lfloat float r3 = (r0 + r1) \/ 2.0f\l}"];
+subgraph cluster_IfRegion_1381281761 {
+label = "IF [B:1:0x0024] THEN: R(1:2) ELSE: R(2:4|10)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0024|if (r0 == r1) goto L_0x0026\l}"];
+subgraph cluster_Region_392268094 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0026|r7 = 0.0f\lr8 = 0.0f\l}"];
+}
+subgraph cluster_Region_836413119 {
+label = "R(2:4|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002b|r7 = r0 == r7 ? ((r8 \- r9) \/ r2) % 6.0f : r0 == r8 ? ((r9 \- r7) \/ r2) + 2.0f : ((r7 \- r8) \/ r2) + 4.0f\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0042|PHI: r7 \l  PHI: (r7v11 float) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|float r8 = r2 \/ (1.0f \- java.lang.Math.abs((2.0f * r3) \- 1.0f))\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x004d|PHI: r7 r8 \l  PHI: (r7v3 float) = (r7v11 float), (r7v18 float) binds: [B:10:0x0042, B:2:0x0026] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v3 float) = (r8v8 float), (r8v13 float) binds: [B:10:0x0042, B:2:0x0026] A[DONT_GENERATE, DONT_INLINE]\l|float float r7 = (r7 * 60.0f) % 360.0f\l}"];
+subgraph cluster_IfRegion_555889604 {
+label = "IF [B:12:0x0056] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0056|if (r7 \< 0.0f) goto L_0x0058\l}"];
+subgraph cluster_Region_1168743056 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0058|r7 += 360.0f\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0059|PHI: r7 \l  PHI: (r7v6 float) = (r7v5 float), (r7v10 float) binds: [B:12:0x0056, B:13:0x0058] A[DONT_GENERATE, DONT_INLINE]\l|r10[0] = constrain(r7, 0.0f, 360.0f)\lr10[1] = constrain(r8, 0.0f, 1.0f)\lr10[2] = constrain(r3, 0.0f, 1.0f)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0029}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002d}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0034}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0036}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0038}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003d}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x006e}"];
+MethodNode[shape=record,label="{public static void android.support.v4.graphics.ColorUtils.RGBToHSL((r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.IntRange, \{from=0, to=255\}], Annotation[BUILD, android.support.annotation.IntRange, \{from=0, to=255\}], Annotation[BUILD, android.support.annotation.IntRange, \{from=0, to=255\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_3 -> Node_4;
+Node_5 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_10;
+Node_9 -> Node_10;
+}
+

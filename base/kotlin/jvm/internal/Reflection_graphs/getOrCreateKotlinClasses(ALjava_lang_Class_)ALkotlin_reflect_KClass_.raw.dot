@@ -1,0 +1,21 @@
+digraph "CFG forkotlin.jvm.internal.Reflection.getOrCreateKotlinClasses([Ljava\/lang\/Class;)[Lkotlin\/reflect\/KClass;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r0 I:int) = (r4 I:?[]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0001|0x0001: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0006 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|0x0003: SGET  (r4 I:kotlin.reflect.KClass[]) =  kotlin.jvm.internal.Reflection.EMPTY_K_CLASS_ARRAY kotlin.reflect.KClass[] \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: RETURN  (r4 I:kotlin.reflect.KClass[]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|0x0006: NEW_ARRAY  (r1 I:kotlin.reflect.KClass[]) = (r0 I:int A[IMMUTABLE_TYPE]) type: kotlin.reflect.KClass[] \l0x0008: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0009|0x0009: IF  (r2 I:?[int, byte, short, char]) \>= (r0 I:?[int, byte, short, char])  \-\> B:7:0x0016 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x000b|0x000b: AGET  (r3 I:?[OBJECT, ARRAY]) = (r4 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x000d: INVOKE  (r3 I:kotlin.reflect.KClass) = (r3 I:java.lang.Class) kotlin.jvm.internal.Reflection.getOrCreateKotlinClass(java.lang.Class):kotlin.reflect.KClass type: STATIC \l0x0011: APUT  \l  (r1 I:?[OBJECT, ARRAY][])\l  (r2 I:?[int, short, byte, char])\l  (r3 I:?[OBJECT, ARRAY])\l \l0x0013: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|0x0016: RETURN  (r1 I:kotlin.reflect.KClass[]) \l}"];
+MethodNode[shape=record,label="{public static kotlin.reflect.KClass[] kotlin.jvm.internal.Reflection.getOrCreateKotlinClasses((r4 I:java.lang.Class[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_5;
+}
+

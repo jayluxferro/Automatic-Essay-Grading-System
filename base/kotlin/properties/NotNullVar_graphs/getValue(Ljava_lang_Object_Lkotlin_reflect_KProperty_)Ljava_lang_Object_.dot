@@ -1,0 +1,14 @@
+digraph "CFG forkotlin.properties.NotNullVar.getValue(Ljava\/lang\/Object;Lkotlin\/reflect\/KProperty;)Ljava\/lang\/Object;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"property\")\lT r3 = r2.value\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r3 == null) goto L_0x000a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return r3\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Property \")\lr0.append(r4.getName())\lr0.append(\" should be initialized before get.\")\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002b|throw new java.lang.IllegalStateException(r0.toString())\l}"];
+MethodNode[shape=record,label="{public T kotlin.properties.NotNullVar.getValue((r2v0 'this' kotlin.properties.NotNullVar A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.reflect.KProperty\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/Object;, Lkotlin\/reflect\/KProperty\<, *\>;)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+}
+

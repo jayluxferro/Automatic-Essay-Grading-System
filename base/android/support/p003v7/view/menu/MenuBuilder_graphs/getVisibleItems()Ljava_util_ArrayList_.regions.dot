@@ -1,0 +1,76 @@
+digraph "CFG forandroid.support.v7.view.menu.MenuBuilder.getVisibleItems()Ljava\/util\/ArrayList;" {
+subgraph cluster_Region_1187637734 {
+label = "R(1:(2:(1:3)|(4:4|(3:6|(1:8)(0)|9)|10|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2109395146 {
+label = "R(2:(1:3)|(4:4|(3:6|(1:8)(0)|9)|10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1099876882 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.mIsVisibleItemsStale == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1899646363 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|RETURN\l|return r5.mVisibleItems\l}"];
+}
+}
+subgraph cluster_Region_54416145 {
+label = "R(4:4|(3:6|(1:8)(0)|9)|10|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|r5.mVisibleItems.clear()\lint int r0 = r5.mItems.size()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_676507335 {
+label = "LOOP:0: (3:6|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:4:0x0007, B:9:0x0029] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0014\-\>B:9:0x0029\l|if (r2 \< r0) goto L_0x0016\l}"];
+subgraph cluster_Region_1549990280 {
+label = "R(3:6|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|android.support.v7.view.menu.MenuItemImpl android.support.p003v7.view.menu.MenuItemImpl r3 = r5.mItems.get(r2)\l}"];
+subgraph cluster_IfRegion_963827545 {
+label = "IF [B:7:0x0022] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|if (r3.isVisible() == true) goto L_0x0024\l}"];
+subgraph cluster_Region_1218817469 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|r5.mVisibleItems.add(r3)\l}"];
+}
+subgraph cluster_Region_2025131139 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0029|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:9:0x0029\l|r2++\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x002c|r5.mIsVisibleItemsStale = false\lr5.mIsActionItemsStale = true\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0033|RETURN\l|return r5.mVisibleItems\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.ArrayList\<android.support.v7.view.menu.MenuItemImpl\> android.support.v7.view.menu.MenuBuilder.getVisibleItems((r5v0 'this' android.support.v7.view.menu.MenuBuilder A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/ArrayList\<, Landroid\/support\/v7\/view\/menu\/MenuItemImpl;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_8 -> Node_13;
+Node_9 -> Node_5;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_12 -> Node_10;
+Node_13 -> Node_9;
+Node_14 -> Node_9;
+}
+

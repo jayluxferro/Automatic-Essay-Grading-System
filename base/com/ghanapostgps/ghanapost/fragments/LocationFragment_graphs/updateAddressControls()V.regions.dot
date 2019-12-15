@@ -1,0 +1,83 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.fragments.LocationFragment.updateAddressControls()V" {
+subgraph cluster_Region_1087129222 {
+label = "R(3:0|(2:2|(1:4)(1:(1:7)(1:8)))|(1:(1:11)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.labelDigitalAddress.setText(com.ghanapostgps.ghanapost.util.Utils.formatCountryAddress(r5.CodeDigitalAddress))\lr5.labelPostcode.setText(r5.CodePostCode)\lr5.labelStreet.setText(r5.CodeStreetAddress)\lr5.labelDistrict.setText(r5.CodeDistrict)\lr5.labelCountry.setText(r5.CodeCountry)\lr5.labelRegion.setText(r5.CodeRegion)\lr5.labelArea.setText(r5.CodeArea)\landroid.widget.TextView android.widget.TextView r0 = r5.labelUniversalAddress\lr0.setText(\"GH\-\" + com.ghanapostgps.ghanapost.util.Utils.formatAddress(r5.CodeUniversalAddress))\lr5.labelLatLon.setText(r5.CodeLatLon)\l}"];
+subgraph cluster_IfRegion_1974850426 {
+label = "IF [B:1:0x005a] THEN: R(2:2|(1:4)(1:(1:7)(1:8))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x005a|if (r5.CodeAccuracy \> 0) goto L_0x005c\l}"];
+subgraph cluster_Region_596208604 {
+label = "R(2:2|(1:4)(1:(1:7)(1:8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x005c|r5.labelAccurary.setText(java.lang.String.format(getString(com.ghanapostgps.ghanapost.C0708R.string.best_used_accuracy_prompt), new java.lang.Object[]\{java.lang.Integer.valueOf(getAccuracyInPercent(r5.CodeAccuracy))\}) + \"%\")\l}"];
+subgraph cluster_IfRegion_121570995 {
+label = "IF [B:3:0x0091] THEN: R(1:4) ELSE: R(1:(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0091|if (r5.CodeAccuracy \> 20) goto L_0x0093\l}"];
+subgraph cluster_Region_45774795 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0093|r5.locationAccuracyIcon.setColorFilter(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.danger))\lr5.labelDigitalAddress.setTextColor(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.danger))\l}"];
+}
+subgraph cluster_Region_1498372837 {
+label = "R(1:(1:7)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_829431195 {
+label = "IF [B:6:0x00bd] THEN: R(1:7) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x00bd|if (r5.CodeAccuracy \> 10) goto L_0x00bf\l}"];
+subgraph cluster_Region_1308987288 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x00bf|r5.locationAccuracyIcon.setColorFilter(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.warning))\lr5.labelDigitalAddress.setTextColor(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.warning))\l}"];
+}
+subgraph cluster_Region_533769660 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x00e5|r5.locationAccuracyIcon.setColorFilter(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.success))\lr5.labelDigitalAddress.setTextColor(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.success))\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1022055633 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_231082514 {
+label = "IF [B:10:0x0110] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0110|if (r5.isAddressGenerated.booleanValue() == false) goto L_0x0112\l}"];
+subgraph cluster_Region_1876766077 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0112|r5.labelAccurary.setText(\"\")\lr5.locationAccuracyIcon.setColorFilter(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.mapbox_blue))\lr5.labelDigitalAddress.setTextColor(getContext().getResources().getColor(com.ghanapostgps.ghanapost.C0708R.color.mapbox_blue))\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x00b9}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x010a}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.fragments.LocationFragment.updateAddressControls((r5v0 'this' com.ghanapostgps.ghanapost.fragments.LocationFragment A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_13[style=dashed];
+Node_11 -> Node_12;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+}
+

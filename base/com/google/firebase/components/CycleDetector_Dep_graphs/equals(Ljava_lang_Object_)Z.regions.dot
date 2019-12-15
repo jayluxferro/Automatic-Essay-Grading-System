@@ -1,0 +1,60 @@
+digraph "CFG forcom.google.firebase.components.CycleDetector.Dep.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_636423886 {
+label = "R(1:(2:(1:7)|(2:2|(2:(1:9)|(1:6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_442630977 {
+label = "R(2:(1:7)|(2:2|(2:(1:9)|(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1944446491 {
+label = "IF [B:1:0x0003] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if ((r4 instanceof com.google.firebase.components.CycleDetector.Dep) != true) goto L_0x0019\l}"];
+subgraph cluster_Region_100318115 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_711710051 {
+label = "R(2:2|(2:(1:9)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|com.google.firebase.components.CycleDetector$Dep com.google.firebase.components.CycleDetector.Dep r4 = (com.google.firebase.components.CycleDetector.Dep) r4\l}"];
+subgraph cluster_Region_1488870572 {
+label = "R(2:(1:9)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1001960537 {
+label = "IF [B:3:0x000f, B:5:0x0015] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|if (r4.anInterface.equals(r3.anInterface) == false) goto L_?\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if (r4.set != r3.set) goto L_?\l}"];
+subgraph cluster_Region_1380726001 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_247846301 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean com.google.firebase.components.CycleDetector.Dep.equals((r3v0 'this' com.google.firebase.components.CycleDetector$Dep A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

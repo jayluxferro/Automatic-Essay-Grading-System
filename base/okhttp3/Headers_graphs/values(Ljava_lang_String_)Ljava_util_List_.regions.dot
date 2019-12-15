@@ -1,0 +1,87 @@
+digraph "CFG forokhttp3.Headers.values(Ljava\/lang\/String;)Ljava\/util\/List;" {
+subgraph cluster_Region_829178592 {
+label = "R(3:0|(2:(2:(1:5)|6)(0)|7)|(2:(1:15)|(1:14)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = size()\ljava.util.ArrayList r1 = null\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1646908603 {
+label = "LOOP:0: (2:(2:(1:5)|6)(0)|7)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r1 r2 \l  PHI: (r1v1 java.util.ArrayList) = (r1v0 java.util.ArrayList), (r1v2 java.util.ArrayList) binds: [B:0:0x0000, B:7:0x0021] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:7:0x0021] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:7:0x0021\l|if (r2 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_797226336 {
+label = "R(2:(2:(1:5)|6)(0)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_42437730 {
+label = "IF [B:3:0x0010] THEN: R(2:(1:5)|6) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r5.equalsIgnoreCase(name(r2)) != false) goto L_0x0012\l}"];
+subgraph cluster_Region_283530181 {
+label = "R(2:(1:5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_370485520 {
+label = "IF [B:4:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r1 == null) goto L_0x0014\l}"];
+subgraph cluster_Region_2133902912 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|java.util.ArrayList r1 = new java.util.ArrayList(2)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001a|PHI: r1 \l  PHI: (r1v3 java.util.ArrayList) = (r1v1 java.util.ArrayList), (r1v4 java.util.ArrayList) binds: [B:4:0x0012, B:5:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|r1.add(value(r2))\l}"];
+}
+subgraph cluster_Region_738241138 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0021|LOOP_END\lPHI: r1 \l  PHI: (r1v2 java.util.ArrayList) = (r1v1 java.util.ArrayList), (r1v3 java.util.ArrayList) binds: [B:13:0x0021, B:12:0x0021] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:7:0x0021\l|r2++\l}"];
+}
+}
+subgraph cluster_Region_1799778071 {
+label = "R(2:(1:15)|(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1170014832 {
+label = "IF [B:8:0x0024] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|if (r1 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1771932272 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return java.util.Collections.unmodifiableList(r1)\l}"];
+}
+}
+subgraph cluster_Region_1071309553 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return java.util.Collections.emptyList()\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0024|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0021|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<java.lang.String\> okhttp3.Headers.values((r4v0 'this' okhttp3.Headers A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/List\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_12;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_9 -> Node_15;
+Node_10 -> Node_14;
+Node_11 -> Node_8;
+Node_12 -> Node_7;
+Node_13 -> Node_7;
+}
+

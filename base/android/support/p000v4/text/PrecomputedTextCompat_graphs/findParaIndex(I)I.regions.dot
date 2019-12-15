@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.v4.text.PrecomputedTextCompat.findParaIndex(I)I" {
+subgraph cluster_Region_345009864 {
+label = "R(4:0|(1:(2:(1:5)|(1:6)))|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_296348732 {
+label = "LOOP:0: (1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|if (r0 \< r4.mParagraphEnds.length) goto L_0x0006\l}"];
+subgraph cluster_Region_316428037 {
+label = "R(1:(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_147295304 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_222390061 {
+label = "IF [B:4:0x000a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r5 \< r4.mParagraphEnds[r0]) goto L_0x000c\l}"];
+subgraph cluster_Region_439397987 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1447151415 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:6:0x000d\l|r0++\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0010}"];
+Node_8 [shape=record,label="{8\:\ 0x0037|throw new java.lang.IndexOutOfBoundsException(\"pos must be less than \" + r4.mParagraphEnds[r4.mParagraphEnds.length \- 1] + \", gave \" + r5)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v3 int) binds: [B:0:0x0000, B:6:0x000d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:6:0x000d\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0010|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x000c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int android.support.v4.text.PrecomputedTextCompat.findParaIndex((r4v0 'this' android.support.v4.text.PrecomputedTextCompat A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.IntRange, \{from=0\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_10;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_9 -> Node_7;
+Node_10 -> Node_5;
+}
+

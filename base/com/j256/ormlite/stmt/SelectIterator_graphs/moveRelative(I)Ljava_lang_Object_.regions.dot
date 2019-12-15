@@ -1,0 +1,56 @@
+digraph "CFG forcom.j256.ormlite.stmt.SelectIterator.moveRelative(I)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1362650311 {
+label = "R(1:(2:(1:2)|(2:3|(2:(1:6)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_967640779 {
+label = "R(2:(1:2)|(2:3|(2:(1:6)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_950068682 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.closed == true) goto L_0x0005\l}"];
+subgraph cluster_Region_1266666036 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1509134784 {
+label = "R(2:3|(2:(1:6)|(1:7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r2.first = false\l}"];
+subgraph cluster_Region_137977707 {
+label = "R(2:(1:6)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_923297043 {
+label = "IF [B:4:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|if (r2.results.moveRelative(r3) == true) goto L_0x0011\l}"];
+subgraph cluster_Region_34813868 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return getCurrent()\l}"];
+}
+}
+subgraph cluster_Region_1202441151 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011}"];
+MethodNode[shape=record,label="{public T com.j256.ormlite.stmt.SelectIterator.moveRelative((r2v0 'this' com.j256.ormlite.stmt.SelectIterator A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I)TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

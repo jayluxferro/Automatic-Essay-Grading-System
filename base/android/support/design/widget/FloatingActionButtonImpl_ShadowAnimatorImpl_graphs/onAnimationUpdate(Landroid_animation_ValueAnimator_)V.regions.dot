@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.design.widget.FloatingActionButtonImpl.ShadowAnimatorImpl.onAnimationUpdate(Landroid\/animation\/ValueAnimator;)V" {
+subgraph cluster_Region_428291517 {
+label = "R(2:(1:2)|3)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_759797825 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.validValues == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1753970148 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r4.shadowSizeStart = android.support.design.widget.FloatingActionButtonImpl.this.shadowDrawable.getShadowSize()\lr4.shadowSizeEnd = getTargetShadowSize()\lr4.validValues = true\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0017|android.support.design.widget.FloatingActionButtonImpl.this.shadowDrawable.setShadowSize(r4.shadowSizeStart + ((r4.shadowSizeEnd \- r4.shadowSizeStart) * r5.getAnimatedFraction()))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x002c}"];
+MethodNode[shape=record,label="{public void android.support.design.widget.FloatingActionButtonImpl.ShadowAnimatorImpl.onAnimationUpdate((r4v0 'this' android.support.design.widget.FloatingActionButtonImpl$ShadowAnimatorImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 android.animation.ValueAnimator A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

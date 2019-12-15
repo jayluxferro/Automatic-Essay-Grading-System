@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.collections.RingBuffer.add(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_817306001 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_276803569 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_415430742 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isFull() == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1015092200 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r3.buffer[(r3.startIndex + size()) % getCapacity()] = r4\lsetSize(size() + 1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001f|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_888340088 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|throw new java.lang.IllegalStateException(\"ring buffer is full\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0020}"];
+MethodNode[shape=record,label="{public final void kotlin.collections.RingBuffer.add((r3v0 'this' kotlin.collections.RingBuffer A[IMMUTABLE_TYPE, THIS]), (r4v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

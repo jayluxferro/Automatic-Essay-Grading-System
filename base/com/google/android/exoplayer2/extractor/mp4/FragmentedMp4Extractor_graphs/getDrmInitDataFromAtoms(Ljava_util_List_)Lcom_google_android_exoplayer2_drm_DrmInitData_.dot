@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.getDrmInitDataFromAtoms(Ljava\/util\/List;)Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4 = null\lint r2 = r8.size()\lr1 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r1 r4 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:0:0x0000, B:9:0x002c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) = (r4v0 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>), (r4v2 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) binds: [B:0:0x0000, B:9:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:9:0x002c\l|if (r1 \>= r2) goto L_0x003a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom r0 = r8.get(r1)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r0.type != com.google.android.exoplayer2.extractor.mp4.Atom.TYPE_pssh) goto L_0x002c\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r4 != null) goto L_0x001b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|java.util.ArrayList r4 = new java.util.ArrayList\<\>()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|PHI: r4 \l  PHI: (r4v3 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) = (r4v1 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>), (r4v4 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) binds: [B:4:0x0014, B:5:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|byte[] r3 = r0.data.data\ljava.util.UUID r5 = com.google.android.exoplayer2.extractor.mp4.PsshAtomUtil.parseUuid(r3)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|if (r5 != null) goto L_0x002f\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0025|android.util.Log.w(TAG, \"Skipped pssh atom (failed to extract uuid)\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|LOOP_END\lPHI: r4 \l  PHI: (r4v2 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) = (r4v1 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>), (r4v3 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>), (r4v3 'schemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\>) binds: [B:16:0x002c, B:17:0x002c, B:15:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:9:0x002c\l|int r1 = r1 + 1\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002f|r4.add(new com.google.android.exoplayer2.drm.DrmInitData.SchemeData(r5, com.google.android.exoplayer2.util.MimeTypes.VIDEO_MP4, r3))\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003a|if (r4 != null) goto L_0x003e\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003c|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003e}"];
+Node_14 [shape=record,label="{14\:\ 0x003a|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x002c|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x002c|SYNTHETIC\l}"];
+Node_17 [shape=record,label="{17\:\ 0x002c|SYNTHETIC\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return new com.google.android.exoplayer2.drm.DrmInitData((java.util.List\<com.google.android.exoplayer2.drm.DrmInitData.SchemeData\>) r4)\l}"];
+MethodNode[shape=record,label="{private static com.google.android.exoplayer2.drm.DrmInitData com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor.getDrmInitDataFromAtoms((r8v0 'leafChildren' java.util.List\<com.google.android.exoplayer2.extractor.mp4.Atom$LeafAtom\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Lcom\/google\/android\/exoplayer2\/extractor\/mp4\/Atom$LeafAtom;, \>;), Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_16;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_8 -> Node_15;
+Node_9 -> Node_1;
+Node_10 -> Node_17;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_13 -> Node_18;
+Node_14 -> Node_11;
+Node_15 -> Node_9;
+Node_16 -> Node_9;
+Node_17 -> Node_9;
+}
+

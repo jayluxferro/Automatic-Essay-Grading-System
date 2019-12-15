@@ -1,0 +1,71 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.retainSessions([Ljava\/io\/File;Ljava\/util\/Set;)V" {
+subgraph cluster_Region_1002130644 {
+label = "R(2:0|(3:2|(1:4)(1:(1:7)(0))|8))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r9.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1386098665 {
+label = "LOOP:0: (3:2|(1:4)(1:(1:7)(0))|8)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:8:0x005c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:8:0x005c\l|if (r1 \< r0) goto L_0x0004\l}"];
+subgraph cluster_Region_402381815 {
+label = "R(3:2|(1:4)(1:(1:7)(0))|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r2 = r9[r1]\ljava.lang.String java.lang.String r3 = r2.getName()\ljava.util.regex.Matcher java.util.regex.Matcher r4 = SESSION_FILE_PATTERN.matcher(r3)\l}"];
+subgraph cluster_IfRegion_316765726 {
+label = "IF [B:3:0x0014] THEN: R(1:4) ELSE: R(1:(1:7)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r4.matches() == false) goto L_0x0016\l}"];
+subgraph cluster_Region_1101028913 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Deleting unknown file: \" + r3)\lr2.delete()\l}"];
+}
+subgraph cluster_Region_1786415923 {
+label = "R(1:(1:7)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1527526358 {
+label = "IF [B:6:0x003d] THEN: R(1:7) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003d|if (r10.contains(r4.group(1)) == false) goto L_0x003f\l}"];
+subgraph cluster_Region_1935493453 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003f|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Trimming session file: \" + r3)\lr2.delete()\l}"];
+}
+subgraph cluster_Region_865955058 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x005c|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:8:0x005c\l|r1++\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0034}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x005f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x005f|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x005c|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x005c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x005c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.crashlytics.android.core.CrashlyticsController.retainSessions((r8v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r9v0 java.io.File[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 java.util.Set\<java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([, Ljava\/io\/File;, Ljava\/util\/Set\<, Ljava\/lang\/String;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_12;
+Node_6 -> Node_7;
+Node_6 -> Node_13[style=dashed];
+Node_7 -> Node_11;
+Node_8 -> Node_1;
+Node_5 -> Node_6;
+Node_10 -> Node_9;
+Node_11 -> Node_8;
+Node_12 -> Node_8;
+Node_13 -> Node_8;
+}
+

@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.media.ExifInterface.ByteOrderedDataInputStream.readInt()I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.mPosition = r6.mPosition + 4\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r6.mPosition \> r6.mLength) goto L_0x0069\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|int r0 = r6.mDataInputStream.read()\lint r1 = r6.mDataInputStream.read()\lint r2 = r6.mDataInputStream.read()\lint r3 = r6.mDataInputStream.read()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0028|if ((((r0 \| r1) \| r2) \| r3) \< 0) goto L_0x0063\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002a}"];
+Node_5 [shape=record,label="{5\:\ 0x002e|if (r6.mByteOrder != LITTLE_ENDIAN) goto L_0x003a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0030}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|RETURN\l|return (((r3 \<\< 24) + (r2 \<\< 16)) + (r1 \<\< 8)) + r0\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003a}"];
+Node_9 [shape=record,label="{9\:\ 0x003e|if (r6.mByteOrder != BIG_ENDIAN) goto L_0x004a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0040}"];
+Node_11 [shape=record,label="{11\:\ 0x0049|RETURN\l|return (((r0 \<\< 24) + (r1 \<\< 16)) + (r2 \<\< 8)) + r3\l}"];
+Node_12 [shape=record,label="{12\:\ 0x004a|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Invalid byte order: \")\lr1.append(r6.mByteOrder)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0062|throw new java.io.IOException(r1.toString())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0063}"];
+Node_15 [shape=record,label="{15\:\ 0x0068|throw new java.io.EOFException()\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0069}"];
+Node_17 [shape=record,label="{17\:\ 0x006e|throw new java.io.EOFException()\l}"];
+MethodNode[shape=record,label="{public int android.support.media.ExifInterface.ByteOrderedDataInputStream.readInt((r6v0 'this' android.support.media.ExifInterface$ByteOrderedDataInputStream A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

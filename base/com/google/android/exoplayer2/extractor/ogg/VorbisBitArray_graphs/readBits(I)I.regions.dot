@@ -1,0 +1,114 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ogg.VorbisBitArray.readBits(I)I" {
+subgraph cluster_Region_1127122031 {
+label = "R(2:3|(2:(1:20)|(5:6|(2:8|(1:10))|(2:13|(1:15))|(1:17)|21)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|PHI: r6 \l  PHI: (r6v3 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(getPosition() + r14 \<= r13.limit)\l}"];
+subgraph cluster_Region_1726499844 {
+label = "R(2:(1:20)|(5:6|(2:8|(1:10))|(2:13|(1:15))|(1:17)|21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_208838972 {
+label = "IF [B:4:0x0010] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r14 == 0) goto L_?\l}"];
+subgraph cluster_Region_1537952790 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_1867484655 {
+label = "R(5:6|(2:8|(1:10))|(2:13|(1:15))|(1:17)|21)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|int r5 = 0\lint r0 = 0\l}"];
+subgraph cluster_IfRegion_1813100272 {
+label = "IF [B:7:0x0019] THEN: R(2:8|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019|if (r13.bitOffset != 0) goto L_0x001b\l}"];
+subgraph cluster_Region_2120433454 {
+label = "R(2:8|(1:10))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|int r0 = java.lang.Math.min(r14, 8 \- r13.bitOffset)\lr5 = (r13.data[r13.byteOffset] \>\>\> r13.bitOffset) & (255 \>\>\> (8 \- r0))\lr13.bitOffset += r0\l}"];
+subgraph cluster_IfRegion_1211977498 {
+label = "IF [B:9:0x003b] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003b|if (r13.bitOffset == 8) goto L_0x003d\l}"];
+subgraph cluster_Region_1365212256 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003d|r13.byteOffset++\lr13.bitOffset = 0\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1834022392 {
+label = "IF [B:12:0x0048] THEN: R(2:13|(1:15)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0048|if ((r14 \- r0) \> 7) goto L_0x004a\l}"];
+subgraph cluster_Region_1560305024 {
+label = "R(2:13|(1:15))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x004a|int int r4 = (r14 \- r0) \/ 8\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_221327268 {
+label = "LOOP:0: (1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004f|LOOP_START\lPHI: r0 r2 r5 \l  PHI: (r0v3 'bitCount' int) = (r0v1 'bitCount' int), (r0v4 'bitCount' int) binds: [B:13:0x004a, B:15:0x0051] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:13:0x004a, B:15:0x0051] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 'result' int) = (r5v1 'result' int), (r5v6 'result' int) binds: [B:13:0x004a, B:15:0x0051] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:14:0x004f\-\>B:15:0x0051\l|if (r2 \< r4) goto L_0x0051\l}"];
+subgraph cluster_Region_1948805750 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0051|LOOP_END\lLOOP:0: B:14:0x004f\-\>B:15:0x0051\l|byte[] byte[] r8 = r13.data\lint int r9 = r13.byteOffset\lr13.byteOffset = r9 + 1\lint r5 = (int) (((long) r5) \| ((((long) r8[r9]) & 255) \<\< r0))\lr0 += 8\lr2++\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1783424908 {
+label = "IF [B:16:0x0068] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0068|PHI: r0 r5 \l  PHI: (r0v2 'bitCount' int) = (r0v1 'bitCount' int), (r0v3 'bitCount' int) binds: [B:12:0x0048, B:19:0x0068] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 'result' int) = (r5v1 'result' int), (r5v5 'result' int) binds: [B:12:0x0048, B:19:0x0068] A[DONT_GENERATE, DONT_INLINE]\l|if (r14 \> r0) goto L_0x006a\l}"];
+subgraph cluster_Region_1997073671 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006a|int int r1 = r14 \- r0\lr5 \|= (r13.data[r13.byteOffset] & (255 \>\>\> (8 \- r1))) \<\< r0\lr13.bitOffset += r1\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x000a}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0045|PHI: r0 r5 \l  PHI: (r0v1 'bitCount' int) = (r0v0 'bitCount' int), (r0v5 'bitCount' int), (r0v5 'bitCount' int) binds: [B:7:0x0019, B:9:0x003b, B:10:0x003d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v1 'result' int) = (r5v0 'result' int), (r5v7 'result' int), (r5v7 'result' int) binds: [B:7:0x0019, B:9:0x003b, B:10:0x003d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x007e|PHI: r5 \l  PHI: (r5v3 'result' int) = (r5v2 'result' int), (r5v4 'result' int) binds: [B:16:0x0068, B:17:0x006a] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0068|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.extractor.ogg.VorbisBitArray.readBits((r13v0 'this' com.google.android.exoplayer2.extractor.ogg.VorbisBitArray A[IMMUTABLE_TYPE, THIS]), (r14v0 'numBits' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_6[style=dashed];
+Node_4 -> Node_20;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_19[style=dashed];
+Node_15 -> Node_14;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_5 -> Node_3;
+Node_11 -> Node_12;
+Node_18 -> Node_21;
+Node_19 -> Node_16;
+}
+

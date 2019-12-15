@@ -1,0 +1,58 @@
+digraph "CFG forcom.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.\<init\>(Landroid\/view\/WindowManager;Landroid\/hardware\/SensorManager;)V" {
+subgraph cluster_Region_1494278825 {
+label = "R(2:0|(2:(1:7)|(1:(2:(2:4|8)|(1:5)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.windowManager = r3\lr2.sensorManager = r4\lr2.compassSensor = r4.getDefaultSensor(11)\l}"];
+subgraph cluster_Region_1255777838 {
+label = "R(2:(1:7)|(1:(2:(2:4|8)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_421061701 {
+label = "IF [B:1:0x002c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002c|if (r2.compassSensor != null) goto L_?\l}"];
+subgraph cluster_Region_492679518 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1132858870 {
+label = "R(1:(2:(2:4|8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1156135806 {
+label = "R(2:(2:4|8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_445502826 {
+label = "IF [B:3:0x0033] THEN: R(2:4|8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0033|if (isGyroscopeAvailable() == true) goto L_0x0035\l}"];
+subgraph cluster_Region_1781157924 {
+label = "R(2:4|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0035|timber.log.Timber.m189d(\"Rotation vector sensor not supported on device, falling back to orientation.\", new java.lang.Object[0])\lr2.compassSensor = r4.getDefaultSensor(3)\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_430971178 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0043|timber.log.Timber.m189d(\"Rotation vector sensor not supported on device, falling back to accelerometer and magnetic field.\", new java.lang.Object[0])\lr2.gravitySensor = r4.getDefaultSensor(1)\lr2.magneticFieldSensor = r4.getDefaultSensor(2)\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x002e}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{void com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.\<init\>((r2v0 'this' com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.WindowManager A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.hardware.SensorManager A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_2 -> Node_3;
+}
+

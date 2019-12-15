@@ -1,0 +1,63 @@
+digraph "CFG forkotlin.coroutines.experimental.SequenceBuilderIterator.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_669152581 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_356996154 {
+label = "Switch: 3, default: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|switch(r2.state) \{\l    case 0: goto L_0x0022;\l    case 1: goto L_0x0022;\l    case 2: goto L_0x0013;\l    case 3: goto L_0x000a;\l    default: goto L_0x0005;\l\}\l}"];
+subgraph cluster_Region_1523320945 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0026|RETURN\l|return nextNotReady()\l}"];
+}
+subgraph cluster_Region_1619756818 {
+label = "R(3:6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|r2.state = 1\ljava.util.Iterator\<? extends T\> java.util.Iterator\<? extends T\> r0 = r2.nextIterator\l}"];
+subgraph cluster_IfRegion_430569717 {
+label = "IF [B:7:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|if (r0 == null) goto L_0x001a\l}"];
+subgraph cluster_Region_1725258760 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|kotlin.jvm.internal.Intrinsics.throwNpe()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0021|RETURN\l|return r0.next()\l}"];
+}
+subgraph cluster_Region_368049115 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r2.state = 0\lT T r0 = r2.nextValue\lr2.nextValue = null\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1386825162 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|throw exceptionalState()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0022}"];
+MethodNode[shape=record,label="{public T kotlin.coroutines.experimental.SequenceBuilderIterator.next((r2v0 'this' kotlin.coroutines.experimental.SequenceBuilderIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_1 -> Node_6;
+Node_1 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

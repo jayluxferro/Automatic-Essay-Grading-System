@@ -1,0 +1,48 @@
+digraph "CFG fororg.xmlpull.v1.XmlPullParserFactory.newSerializer()Lorg\/xmlpull\/v1\/XmlSerializer;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.serializerClasses == null) goto L_0x0081\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r5.serializerClasses.size() == 0) goto L_0x0068\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|java.lang.StringBuffer r0 = new java.lang.StringBuffer()\lr1 = 0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|LOOP_START\lPHI: r1 \l  PHI: (r1v5 int) = (r1v4 int), (r1v7 int) binds: [B:4:0x000c, B:12:0x002a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0012\-\>B:12:0x002a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r1 \>= r5.serializerClasses.size()) goto L_0x0051\l}"];
+Node_7 [shape=record,label="{7\:\ 0x001a|java.lang.Class r2 = (java.lang.Class) r5.serializerClasses.elementAt(r1)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0022|SYNTHETIC\lSplitter:B:8:0x0022\l}"];
+Node_9 [shape=record,label="{9\:\ ?|Catch:\{ Exception \-\> 0x0029 \}\lSplitter:B:8:0x0022\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|RETURN\l|return (org.xmlpull.p030v1.XmlSerializer) r2.newInstance()\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0029|ExcHandler: Exception (r3v1 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:8:0x0022\l|java.lang.Exception r3 = move\-exception\l}"];
+Node_12 [shape=record,label="{12\:\ 0x002a|LOOP_END\lLOOP:0: B:5:0x0012\-\>B:12:0x002a\l|java.lang.StringBuffer r4 = new java.lang.StringBuffer()\lr4.append(r2.getName())\lr4.append(\": \")\lr4.append(r3.toString())\lr4.append(\"; \")\lr0.append(r4.toString())\lint r1 = r1 + 1\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0051|java.lang.StringBuffer r2 = new java.lang.StringBuffer()\lr2.append(\"could not create serializer: \")\lr2.append(r0)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0067|throw new org.xmlpull.p030v1.XmlPullParserException(r2.toString())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0068|java.lang.StringBuffer r1 = new java.lang.StringBuffer()\lr1.append(\"No valid serializer classes found in \")\lr1.append(r5.classNamesLocation)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0080|throw new org.xmlpull.p030v1.XmlPullParserException(r1.toString())\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0081|java.lang.StringBuffer r1 = new java.lang.StringBuffer()\lr1.append(\"Factory initialization incomplete \- has not tried \")\lr1.append(r5.classNamesLocation)\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0099|throw new org.xmlpull.p030v1.XmlPullParserException(r1.toString())\l}"];
+Node_19 [shape=record,label="{19\:\ 0x0028|SYNTHETIC\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0051|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.xmlpull.v1.XmlSerializer org.xmlpull.v1.XmlPullParserFactory.newSerializer((r5v0 'this' org.xmlpull.v1.XmlPullParserFactory A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_17;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_15;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_20;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_11;
+Node_9 -> Node_11;
+Node_9 -> Node_19;
+Node_11 -> Node_12;
+Node_12 -> Node_5;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_19 -> Node_10;
+Node_20 -> Node_13;
+}
+

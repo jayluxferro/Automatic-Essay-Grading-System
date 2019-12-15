@@ -1,0 +1,96 @@
+digraph "CFG fororg.mapsforge.map.rendertheme.ExternalRenderTheme.\<init\>(Ljava\/io\/File;Lorg\/mapsforge\/map\/rendertheme\/XmlRenderThemeMenuCallback;)V" {
+subgraph cluster_Region_1177258384 {
+label = "R(1:(2:16|17)(1:(2:14|15)(1:(2:6|(2:(2:8|9)|(2:10|11)))(2:12|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1988978598 {
+label = "IF [B:1:0x0007] THEN: R(2:16|17) ELSE: R(1:(2:14|15)(1:(2:6|(2:(2:8|9)|(2:10|11)))(2:12|13)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5.exists() != true) goto L_0x0079\l}"];
+subgraph cluster_Region_841071498 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0079}"];
+Node_17 [shape=record,label="{17\:\ 0x0093|throw new java.io.FileNotFoundException(\"file does not exist: \" + r5.getAbsolutePath())\l}"];
+}
+subgraph cluster_Region_858352385 {
+label = "R(1:(2:14|15)(1:(2:6|(2:(2:8|9)|(2:10|11)))(2:12|13))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_693375997 {
+label = "IF [B:3:0x000d] THEN: R(2:14|15) ELSE: R(1:(2:6|(2:(2:8|9)|(2:10|11)))(2:12|13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r5.isFile() != true) goto L_0x005e\l}"];
+subgraph cluster_Region_888791334 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005e}"];
+Node_15 [shape=record,label="{15\:\ 0x0078|throw new java.io.FileNotFoundException(\"not a file: \" + r5.getAbsolutePath())\l}"];
+}
+subgraph cluster_Region_188473816 {
+label = "R(1:(2:6|(2:(2:8|9)|(2:10|11)))(2:12|13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1941103325 {
+label = "IF [B:5:0x0013] THEN: R(2:6|(2:(2:8|9)|(2:10|11))) ELSE: R(2:12|13) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r5.canRead() == true) goto L_0x0015\l}"];
+subgraph cluster_Region_2054216877 {
+label = "R(2:6|(2:(2:8|9)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|r4.lastModifiedTime = r5.lastModified()\l}"];
+subgraph cluster_Region_33288724 {
+label = "R(2:(2:8|9)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1436214994 {
+label = "IF [B:7:0x0021] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|if (r4.lastModifiedTime != 0) goto L_0x0023\l}"];
+subgraph cluster_Region_836387510 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0023|r4.renderThemeFile = r5\lr4.menuCallback = r6\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1303606676 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0028}"];
+Node_11 [shape=record,label="{11\:\ 0x0042|throw new java.io.FileNotFoundException(\"cannot read last modified time: \" + r5.getAbsolutePath())\l}"];
+}
+}
+}
+subgraph cluster_Region_319178084 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0043}"];
+Node_13 [shape=record,label="{13\:\ 0x005d|throw new java.io.FileNotFoundException(\"cannot read file: \" + r5.getAbsolutePath())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.rendertheme.ExternalRenderTheme.\<init\>((r4v0 'this' org.mapsforge.map.rendertheme.ExternalRenderTheme A[IMMUTABLE_TYPE, THIS]), (r5v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 org.mapsforge.map.rendertheme.XmlRenderThemeMenuCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.FileNotFoundException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_16 -> Node_17;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_14 -> Node_15;
+Node_5 -> Node_6;
+Node_5 -> Node_12[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

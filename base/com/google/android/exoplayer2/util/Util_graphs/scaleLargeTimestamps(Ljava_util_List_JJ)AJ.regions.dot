@@ -1,0 +1,111 @@
+digraph "CFG forcom.google.android.exoplayer2.util.Util.scaleLargeTimestamps(Ljava\/util\/List;JJ)[J" {
+subgraph cluster_Region_1635053494 {
+label = "R(3:0|(2:4|(1:7))(1:(2:16|(1:19))(2:12|(1:15)))|20)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long[] long[] r3 = new long[r11.size()]\l}"];
+subgraph cluster_IfRegion_1789193900 {
+label = "IF [B:1:0x000a, B:3:0x0010] THEN: R(2:4|(1:7)) ELSE: R(1:(2:16|(1:19))(2:12|(1:15)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r14 \>= r12) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if ((r14 % r12) == 0) goto L_0x0012\l}"];
+subgraph cluster_Region_16564267 {
+label = "R(2:4|(1:7))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|long long r0 = r14 \/ r12\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1065727217 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|if (r2 \< r3.length) goto L_0x0018\l}"];
+subgraph cluster_Region_238129032 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|LOOP_END\lLOOP:0: B:5:0x0015\-\>B:7:0x0018\l|r3[r2] = r11.get(r2).longValue() \/ r0\lr2++\l}"];
+}
+}
+}
+subgraph cluster_Region_1485257403 {
+label = "R(1:(2:16|(1:19))(2:12|(1:15))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_202006176 {
+label = "IF [B:9:0x002a, B:11:0x0030] THEN: R(2:16|(1:19)) ELSE: R(2:12|(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|if (r14 \>= r12) goto L_0x0048\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0030|ADDED_TO_REGION\l|if ((r12 % r14) != 0) goto L_0x0048\l}"];
+subgraph cluster_Region_318742720 {
+label = "R(2:16|(1:19))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0048|double double r4 = ((double) r12) \/ ((double) r14)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_289968980 {
+label = "LOOP:2: (1:19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x004e|if (r2 \< r3.length) goto L_0x0050\l}"];
+subgraph cluster_Region_1468520340 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0050|LOOP_END\lLOOP:2: B:17:0x004d\-\>B:19:0x0050\l|r3[r2] = (long) (((double) r11.get(r2).longValue()) * r4)\lr2++\l}"];
+}
+}
+}
+subgraph cluster_Region_2075000444 {
+label = "R(2:12|(1:15))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0032|long long r4 = r12 \/ r14\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1169671081 {
+label = "LOOP:1: (1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0036|if (r2 \< r3.length) goto L_0x0038\l}"];
+subgraph cluster_Region_1207454040 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0038|LOOP_END\lLOOP:1: B:13:0x0035\-\>B:15:0x0038\l|r3[r2] = r11.get(r2).longValue() * r4\lr2++\l}"];
+}
+}
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0062|RETURN\l|return r3\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015|LOOP_START\lPHI: r2 \l  PHI: (r2v7 'i' int) = (r2v6 'i' int), (r2v8 'i' int) binds: [B:4:0x0012, B:7:0x0018] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0015\-\>B:7:0x0018\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0028}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0035|LOOP_START\lPHI: r2 \l  PHI: (r2v4 'i' int) = (r2v3 'i' int), (r2v5 'i' int) binds: [B:12:0x0032, B:15:0x0038] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:13:0x0035\-\>B:15:0x0038\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004d|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'i' int) = (r2v0 'i' int), (r2v2 'i' int) binds: [B:16:0x0048, B:19:0x0050] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:17:0x004d\-\>B:19:0x0050\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0062|SYNTHETIC\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0062|SYNTHETIC\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x0062|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static long[] com.google.android.exoplayer2.util.Util.scaleLargeTimestamps((r11v0 'timestamps' java.util.List\<java.lang.Long\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'multiplier' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'divisor' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List, \<, Ljava\/lang\/Long;, \>;JJ)[J]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_21[style=dashed];
+Node_7 -> Node_5;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_16;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_23[style=dashed];
+Node_19 -> Node_17;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_22[style=dashed];
+Node_15 -> Node_13;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_17 -> Node_18;
+Node_21 -> Node_20;
+Node_22 -> Node_20;
+Node_23 -> Node_20;
+}
+

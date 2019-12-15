@@ -1,0 +1,74 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.renderer.textureview.TextureViewRenderThread.onDestroy()V" {
+subgraph cluster_Region_1722437634 {
+label = "R(2:0|2)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_1789953556 {
+label = "Synchronized:R(2:1|(2:4|(2:8|10)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_2041896545 {
+label = "R(2:4|(2:8|10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|r2.shouldExit = true\lr2.lock.notifyAll()\l}"];
+subgraph cluster_LoopRegion_602051593 {
+label = "LOOP:0: (2:8|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000d|if (r2.exited == false) goto L_0x000f\l}"];
+subgraph cluster_Region_402455095 {
+label = "R(2:8|10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ InterruptedException \-\> 0x0015 \}\lSplitter:B:7:0x000f\l|r2.lock.wait()     \/\/ Catch:\{ InterruptedException \-\> 0x0015 \}\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Splitter:B:9:0x0015\l|java.lang.Thread.currentThread().interrupt()\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_2031247098 {
+label = "R(3:9|10|19)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0015|SYNTHETIC\lSplitter:B:9:0x0015\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Splitter:B:9:0x0015\l|java.lang.Thread.currentThread().interrupt()\l}"];
+Node_19 [shape=record,label="{19\:\ 0x000b|SYNTHETIC\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b|LOOP_START\lLOOP:0: B:5:0x000b\-\>B:16:0x000b\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000f|SYNTHETIC\lSplitter:B:7:0x000f\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001d|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x001d: MONITOR_EXIT  \l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001e}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f|REMOVE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0020|REMOVE\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0021|REMOVE\l|throw r1\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x000b|LOOP_END\lSYNTHETIC\lLOOP:0: B:5:0x000b\-\>B:16:0x000b\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x001d|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x000b|SYNTHETIC\l|continue\l}"];
+MethodNode[shape=record,label="{void com.mapbox.mapboxsdk.maps.renderer.textureview.TextureViewRenderThread.onDestroy((r2v0 'this' com.mapbox.mapboxsdk.maps.renderer.textureview.TextureViewRenderThread A[IMMUTABLE_TYPE, THIS]))  | INCONSISTENT_CODE\lMissing exception handler attribute for start block: B:9:0x0015\lCan't wrap try\/catch for region: R(7:7\|8\|9\|10\|19\|16\|5)\lCode restructure failed: missing block: B:18:0x000b, code lost:\l    continue;\l\lAnnotation[BUILD, android.support.annotation.UiThread, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_17[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_18;
+Node_10 -> Node_19;
+Node_9 -> Node_10;
+Node_9 -> Node_13;
+Node_10 -> Node_19;
+Node_19 -> Node_16;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_13;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_5;
+Node_17 -> Node_11;
+Node_18 -> Node_16;
+}
+

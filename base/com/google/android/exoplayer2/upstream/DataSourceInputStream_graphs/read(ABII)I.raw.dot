@@ -1,0 +1,24 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.DataSourceInputStream.read([BII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST  (r2 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l0x0001: IGET  (r1 I:boolean) = \l  (r6 I:com.google.android.exoplayer2.upstream.DataSourceInputStream)\l com.google.android.exoplayer2.upstream.DataSourceInputStream.closed boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0016 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: INVOKE  (r1 I:boolean) com.google.android.exoplayer2.util.Assertions.checkState(boolean):void type: STATIC \l0x0009: INVOKE  \l  (r6 I:com.google.android.exoplayer2.upstream.DataSourceInputStream)\l com.google.android.exoplayer2.upstream.DataSourceInputStream.checkOpened():void type: DIRECT \l0x000c: IGET  (r1 I:com.google.android.exoplayer2.upstream.DataSource) = \l  (r6 I:com.google.android.exoplayer2.upstream.DataSourceInputStream)\l com.google.android.exoplayer2.upstream.DataSourceInputStream.dataSource com.google.android.exoplayer2.upstream.DataSource \l0x000e: INVOKE  (r0 I:int) = \l  (r1 I:com.google.android.exoplayer2.upstream.DataSource)\l  (r7 I:byte[] A[D('buffer' byte[])])\l  (r8 I:int A[D('offset' int)])\l  (r9 I:int A[D('length' int)])\l com.google.android.exoplayer2.upstream.DataSource.read(byte[], int, int):int type: INTERFACE \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('bytesRead' int)]) != (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0018 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: MOVE  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('bytesRead' int)]) = \l  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|0x0015: RETURN  (r0 I:int A[D('bytesRead' int)]) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|0x0016: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|0x0018: IGET  (r2 I:long) = \l  (r6 I:com.google.android.exoplayer2.upstream.DataSourceInputStream)\l com.google.android.exoplayer2.upstream.DataSourceInputStream.totalBytesRead long \l0x001a: CAST  (r4 I:long) = (long) (r0 I:int A[D('bytesRead' int)]) \l0x001b: ARITH  (r2 I:long) = (r2 I:long) + (r4 I:long) \l0x001c: IPUT  \l  (r2 I:long)\l  (r6 I:com.google.android.exoplayer2.upstream.DataSourceInputStream)\l com.google.android.exoplayer2.upstream.DataSourceInputStream.totalBytesRead long \l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.upstream.DataSourceInputStream.read((r6 'this' I:com.google.android.exoplayer2.upstream.DataSourceInputStream A[IMMUTABLE_TYPE, THIS]), (r7 I:byte[] A[D('buffer' byte[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8 I:int A[D('offset' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9 I:int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], , \lDebug Info:\l  0x0012\-0x0015: r0 'bytesRead' int\l  0x0018\-0x001e: r0 'bytesRead' int\l  ?\-0x001e: r7 'buffer' byte[]\l  ?\-0x001e: r8 'offset' int\l  ?\-0x001e: r9 'length' int\lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_7 -> Node_3;
+Node_8 -> Node_6;
+}
+

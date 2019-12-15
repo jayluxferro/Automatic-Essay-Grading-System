@@ -1,0 +1,69 @@
+digraph "CFG forcom.google.android.gms.common.api.internal.zaaw.connect(I)V" {
+subgraph cluster_Region_1547776864 {
+label = "R(3:0|(1:5)|(1:8))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r3.zaen.lock()\lboolean r1 = true\l}"];
+subgraph cluster_IfRegion_208960626 {
+label = "IF [B:1:0x0007, B:2:0x0009, B:4:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|ADDED_TO_REGION\l|if (r4 == 3) goto L_0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009|ADDED_TO_REGION\l|if (r4 == 1) goto L_0x0010\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r4 == 2) goto L_0x0010\l}"];
+subgraph cluster_Region_836809049 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|r1 = false\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_1754594057 {
+label = "Try: R(1:8) finally: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_208270531 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ all \-\> 0x0032 \}\lSplitter:B:7:0x0012\l|java.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(33)     \/\/ Catch:\{ all \-\> 0x0032 \}\lr2.append(\"Illegal sign\-in mode: \")     \/\/ Catch:\{ all \-\> 0x0032 \}\lr2.append(r4)     \/\/ Catch:\{ all \-\> 0x0032 \}\lcom.google.android.gms.common.internal.Preconditions.checkArgument(r1, r2.toString())     \/\/ Catch:\{ all \-\> 0x0032 \}\lzae(r4)     \/\/ Catch:\{ all \-\> 0x0032 \}\lzaau()     \/\/ Catch:\{ all \-\> 0x0032 \}\l}"];
+}
+subgraph cluster_Region_93899277 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0032|ExcHandler:  FINALLY\lSplitter:B:7:0x0012\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0033|FINALLY_INSNS\l|r3.zaen.unlock()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0038|throw r4\l}"];
+}
+}
+}
+subgraph cluster_Region_93899277 {
+label = "R(3:11|12|13) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0032|ExcHandler:  FINALLY\lSplitter:B:7:0x0012\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0033|FINALLY_INSNS\l|r3.zaen.unlock()\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0038|throw r4\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v0 boolean), (r1v0 boolean), (r1v2 boolean) binds: [B:1:0x0007, B:2:0x0009, B:4:0x000c, B:5:0x000f] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012|SYNTHETIC\lSplitter:B:7:0x0012\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002c|DONT_GENERATE\l|java.util.concurrent.locks.Lock r4 = r3.zaen\lr4.unlock()\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0031}"];
+MethodNode[shape=record,label="{public final void com.google.android.gms.common.api.internal.zaaw.connect((r3v0 'this' com.google.android.gms.common.api.internal.zaaw A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_8 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_9 -> Node_10;
+}
+

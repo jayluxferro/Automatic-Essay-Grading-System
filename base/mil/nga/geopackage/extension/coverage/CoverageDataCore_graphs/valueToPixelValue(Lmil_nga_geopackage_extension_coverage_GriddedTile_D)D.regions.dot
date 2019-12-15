@@ -1,0 +1,46 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageDataCore.valueToPixelValue(Lmil\/nga\/geopackage\/extension\/coverage\/GriddedTile;D)D" {
+subgraph cluster_Region_302132103 {
+label = "R(1:(2:(1:9)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1794994167 {
+label = "R(2:(1:9)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_164890524 {
+label = "IF [B:1:0x0002, B:3:0x000c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.griddedCoverage == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (r2.griddedCoverage.getDataType() != mil.nga.geopackage.extension.coverage.GriddedCoverageDataType.INTEGER) goto L_?\l}"];
+subgraph cluster_Region_2059979625 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return r4\l}"];
+}
+}
+subgraph cluster_Region_1837522168 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|double double r4 = (r4 \- r2.griddedCoverage.getOffset()) \/ r2.griddedCoverage.getScale()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001c|RETURN\l|return r3 != null ? (r4 \- r3.getOffset()) \/ r3.getScale() : r4\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001e}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r4\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private double mil.nga.geopackage.extension.coverage.CoverageDataCore.valueToPixelValue((r2v0 'this' mil.nga.geopackage.extension.coverage.CoverageDataCore A[IMMUTABLE_TYPE, THIS]), (r3v0 mil.nga.geopackage.extension.coverage.GriddedTile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

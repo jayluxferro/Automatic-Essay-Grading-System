@@ -1,0 +1,69 @@
+digraph "CFG forokhttp3.internal.http.RetryAndFollowUpInterceptor.recover(Ljava\/io\/IOException;Lokhttp3\/internal\/connection\/StreamAllocation;ZLokhttp3\/Request;)Z" {
+subgraph cluster_Region_1437641476 {
+label = "R(2:0|(2:(1:2)|(1:(2:(1:13)|(1:12)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.streamFailed(r3)\l}"];
+subgraph cluster_Region_325666944 {
+label = "R(2:(1:2)|(1:(2:(1:13)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_753910264 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r2.client.retryOnConnectionFailure() == false) goto L_0x000c\l}"];
+subgraph cluster_Region_1985858729 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_652583405 {
+label = "R(1:(2:(1:13)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2131869945 {
+label = "R(2:(1:13)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_765673186 {
+label = "IF [B:3:0x000d, B:5:0x0015, B:8:0x001c, B:11:0x0023] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r5 == false) goto L_0x0018\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|ADDED_TO_REGION\l|if ((r6.body() instanceof okhttp3.internal.http.UnrepeatableRequestBody) == false) goto L_0x0018\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001c|ADDED_TO_REGION\l|if (isRecoverable(r3, r5) == true) goto L_0x001f\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0023|ADDED_TO_REGION\l|if (r4.hasMoreRoutes() == true) goto L_0x0026\l}"];
+subgraph cluster_Region_889427835 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0026|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1055044351 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0025|RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0017|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001e|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001f}"];
+MethodNode[shape=record,label="{private boolean okhttp3.internal.http.RetryAndFollowUpInterceptor.recover((r2v0 'this' okhttp3.internal.http.RetryAndFollowUpInterceptor A[IMMUTABLE_TYPE, THIS]), (r3v0 java.io.IOException A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 okhttp3.Request A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+}
+

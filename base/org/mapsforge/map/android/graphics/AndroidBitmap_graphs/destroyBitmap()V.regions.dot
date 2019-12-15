@@ -1,0 +1,75 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidBitmap.destroyBitmap()V" {
+subgraph cluster_Region_1279298605 {
+label = "R(1:(1:(2:(2:4|c)(1:13)|14)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1165182367 {
+label = "R(1:(2:(2:4|c)(1:13)|14))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1364067818 {
+label = "IF [B:1:0x0002] THEN: R(2:(2:4|c)(1:13)|14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.bitmap != null) goto L_0x0004\l}"];
+subgraph cluster_Region_751113089 {
+label = "R(2:(2:4|c)(1:13)|14)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1680659408 {
+label = "IF [B:3:0x0008] THEN: R(2:4|c) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (android.os.Build.VERSION.SDK_INT \>= 11) goto L_0x000a\l}"];
+subgraph cluster_Region_1001139575 {
+label = "R(2:4|c)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a}"];
+subgraph cluster_SynchronizedRegion_451681981 {
+label = "Synchronized:R(2:5|(1:7))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c}"];
+subgraph cluster_Region_514940794 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|REUSABLE_BITMAPS.add(new java.lang.ref.SoftReference(r4.bitmap))\l}"];
+}
+}
+}
+subgraph cluster_Region_478264623 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001e|r4.bitmap.recycle()\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0023|r4.bitmap = null\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000d|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0019|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x0019: MONITOR_EXIT  \l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001a}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001b|REMOVE\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c|REMOVE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d|REMOVE\l|throw r1\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.mapsforge.map.android.graphics.AndroidBitmap.destroyBitmap((r4v0 'this' org.mapsforge.map.android.graphics.AndroidBitmap A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=11\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_16[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_14;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

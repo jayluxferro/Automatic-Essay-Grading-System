@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImplInternal.haveSufficientBuffer(Z)Z" {
+subgraph cluster_Region_1179770924 {
+label = "R(3:(1:2)(1:8)|(1:(2:(1:7)|(1:9)))|11) | DECL_VAR: long loadingPeriodBufferedPositionUs\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_858774244 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6.loadingPeriodHolder.prepared == false) goto L_0x0006\l}"];
+subgraph cluster_Region_276631065 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|long r0 = r6.loadingPeriodHolder.startPositionUs\l}"];
+}
+subgraph cluster_Region_1755543642 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|long r0 = r6.loadingPeriodHolder.mediaPeriod.getBufferedPositionUs()\l}"];
+}
+}
+subgraph cluster_IfRegion_1731610823 {
+label = "IF [B:4:0x000e] THEN: R(1:(2:(1:7)|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r0 == Long.MIN_VALUE) goto L_0x0010\l}"];
+subgraph cluster_Region_142052274 {
+label = "R(1:(2:(1:7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1097751056 {
+label = "R(2:(1:7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_207310883 {
+label = "IF [B:6:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|if (r6.loadingPeriodHolder.isLast == true) goto L_0x0016\l}"];
+subgraph cluster_Region_1509835039 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_419383019 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0021|long r0 = r6.timeline.getPeriod(r6.loadingPeriodHolder.index, r6.period).getDurationUs()\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return r6.loadControl.shouldStartPlayback(r0 \- r6.loadingPeriodHolder.toPeriodTime(r6.rendererPositionUs), r7)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|PHI: r0 \l  PHI: (r0v1 'loadingPeriodBufferedPositionUs' long) = (r0v0 'loadingPeriodBufferedPositionUs' long), (r0v4 'loadingPeriodBufferedPositionUs' long) binds: [B:8:0x0018, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0031|PHI: r0 \l  PHI: (r0v2 'loadingPeriodBufferedPositionUs' long) = (r0v1 'loadingPeriodBufferedPositionUs' long), (r0v3 'loadingPeriodBufferedPositionUs' long) binds: [B:4:0x000e, B:9:0x0021] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.ExoPlayerImplInternal.haveSufficientBuffer((r6v0 'this' com.google.android.exoplayer2.ExoPlayerImplInternal A[IMMUTABLE_TYPE, THIS]), (r7v0 'rebuffering' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_8 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_10 -> Node_11;
+}
+

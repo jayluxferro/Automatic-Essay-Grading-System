@@ -1,0 +1,18 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.ensureArrayCapacity([II)[I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('array' int[])]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0005 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: NEW_ARRAY  (r1 I:int[] A[D('array' int[])]) = (r2 I:int A[D('length' int), IMMUTABLE_TYPE]) type: int[] \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: RETURN  (r1 I:int[] A[D('array' int[])]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: ARRAY_LENGTH  (r0 I:int) = (r1 I:?[] A[D('array' int[])]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0006|0x0006: IF  (r0 I:?[int, byte, short, char]) \>= (r2 I:?[int, byte, short, char] A[D('length' int)])  \-\> B:2:0x0004 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0008|0x0008: ARRAY_LENGTH  (r0 I:int) = (r1 I:?[] A[D('array' int[])]) \l0x0009: ARITH  (r0 I:int) = (r0 I:int) * (2 int) \l0x000b: INVOKE  (r0 I:int) = (r0 I:int), (r2 I:int A[D('length' int)]) java.lang.Math.max(int, int):int type: STATIC \l0x000f: NEW_ARRAY  (r1 I:int[] A[D('array' int[])]) = (r0 I:int A[IMMUTABLE_TYPE]) type: int[] \l}"];
+MethodNode[shape=record,label="{private static int[] com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor.ensureArrayCapacity((r1 I:int[] A[D('array' int[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2 I:int A[D('length' int), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  ?\-0x0004: r1 'array' int[]\l  0x0005\-0x0011: r1 'array' int[]\l  ?\-0x0011: r2 'length' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_2;
+Node_4 -> Node_5[style=dashed];
+Node_5 -> Node_2;
+}
+

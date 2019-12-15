@@ -1,0 +1,24 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ConcatenatingMediaSource.buildDuplicateFlags([Lcom\/google\/android\/exoplayer2\/source\/MediaSource;)[Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r4 I:int) = \l  (r5 I:?[] A[D('mediaSources' com.google.android.exoplayer2.source.MediaSource[])])\l \l0x0001: NEW_ARRAY  (r0 I:boolean[]) = (r4 I:int A[IMMUTABLE_TYPE]) type: boolean[] \l0x0003: NEW_INSTANCE  (r3 I:java.util.IdentityHashMap) =  java.util.IdentityHashMap \l0x0005: ARRAY_LENGTH  (r4 I:int) = \l  (r5 I:?[] A[D('mediaSources' com.google.android.exoplayer2.source.MediaSource[])])\l \l0x0006: INVOKE  (r3 I:java.util.IdentityHashMap), (r4 I:int) java.util.IdentityHashMap.\<init\>(int):void type: DIRECT \l0x0009: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: ARRAY_LENGTH  (r4 I:int) = \l  (r5 I:?[] A[D('mediaSources' com.google.android.exoplayer2.source.MediaSource[])])\l \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000b|0x000b: IF  (r1 I:?[int, byte, short, char] A[D('i' int)]) \>= (r4 I:?[int, byte, short, char])  \-\> B:8:0x0020 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|0x000d: AGET  (r2 I:?[OBJECT, ARRAY]) = \l  (r5 I:?[OBJECT, ARRAY][] A[D('mediaSources' com.google.android.exoplayer2.source.MediaSource[])])\l  (r1 I:?[int, short, byte, char] A[D('i' int)])\l \l0x000f: INVOKE  (r4 I:boolean) = \l  (r3 I:java.util.IdentityHashMap A[D('sources' java.util.IdentityHashMap\<com.google.android.exoplayer2.source.MediaSource, java.lang.Void\>)])\l  (r2 I:java.lang.Object A[D('source' com.google.android.exoplayer2.source.MediaSource)])\l java.util.IdentityHashMap.containsKey(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x001c \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0015|0x0015: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0016: INVOKE  \l  (r3 I:java.util.IdentityHashMap A[D('sources' java.util.IdentityHashMap\<com.google.android.exoplayer2.source.MediaSource, java.lang.Void\>)])\l  (r2 I:java.lang.Object A[D('source' com.google.android.exoplayer2.source.MediaSource)])\l  (r4 I:java.lang.Object)\l java.util.IdentityHashMap.put(java.lang.Object, java.lang.Object):java.lang.Object type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|0x0019: ARITH  (r1 I:int A[D('i' int)]) = (r1 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001c|0x001c: CONST  (r4 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x001d: APUT  \l  (r0 I:boolean[] A[D('duplicateFlags' boolean[]), IMMUTABLE_TYPE])\l  (r1 I:?[int, short, byte, char] A[D('i' int)])\l  (r4 I:boolean A[IMMUTABLE_TYPE])\l \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|0x0020: RETURN  (r0 I:boolean[] A[D('duplicateFlags' boolean[])]) \l}"];
+MethodNode[shape=record,label="{private static boolean[] com.google.android.exoplayer2.source.ConcatenatingMediaSource.buildDuplicateFlags((r5 I:com.google.android.exoplayer2.source.MediaSource[] A[D('mediaSources' com.google.android.exoplayer2.source.MediaSource[]), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  0x000f\-0x0020: r2 'source' com.google.android.exoplayer2.source.MediaSource\l  0x0003\-0x0020: r0 'duplicateFlags' boolean[]\l  0x000a\-0x0020: r1 'i' int\l  0x0009\-0x0020: r3 'sources' java.util.IdentityHashMap\<com.google.android.exoplayer2.source.MediaSource, java.lang.Void\>\l  ?\-0x0020: r5 'mediaSources' com.google.android.exoplayer2.source.MediaSource[]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_7 -> Node_6;
+}
+

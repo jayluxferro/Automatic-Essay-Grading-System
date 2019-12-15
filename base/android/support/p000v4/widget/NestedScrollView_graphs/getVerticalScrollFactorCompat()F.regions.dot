@@ -1,0 +1,47 @@
+digraph "CFG forandroid.support.v4.widget.NestedScrollView.getVerticalScrollFactorCompat()F" {
+subgraph cluster_Region_362443180 {
+label = "R(2:(2:2|(1:4)(1:6))|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1956388650 {
+label = "IF [B:1:0x0005] THEN: R(2:2|(1:4)(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r5.mVerticalScrollFactor == 0.0f) goto L_0x0007\l}"];
+subgraph cluster_Region_1812243168 {
+label = "R(2:2|(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|android.util.TypedValue android.util.TypedValue r0 = new android.util.TypedValue()\landroid.content.Context android.content.Context r1 = getContext()\l}"];
+subgraph cluster_IfRegion_1954508269 {
+label = "IF [B:3:0x001c] THEN: R(1:4) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|if (r1.getTheme().resolveAttribute(16842829, r0, true) == true) goto L_0x001e\l}"];
+subgraph cluster_Region_1646011259 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|r5.mVerticalScrollFactor = r0.getDimension(r1.getResources().getDisplayMetrics())\l}"];
+}
+subgraph cluster_Region_1173728187 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0034|throw new java.lang.IllegalStateException(\"Expected theme to define listPreferredItemHeight.\")\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0037|RETURN\l|return r5.mVerticalScrollFactor\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002d}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0035}"];
+MethodNode[shape=record,label="{private float android.support.v4.widget.NestedScrollView.getVerticalScrollFactorCompat((r5v0 'this' android.support.v4.widget.NestedScrollView A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

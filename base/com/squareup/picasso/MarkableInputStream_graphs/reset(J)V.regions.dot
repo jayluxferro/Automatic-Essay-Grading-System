@@ -1,0 +1,41 @@
+digraph "CFG forcom.squareup.picasso.MarkableInputStream.reset(J)V" {
+subgraph cluster_Region_2088070844 {
+label = "R(1:(2:(1:7)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_143272071 {
+label = "R(2:(1:7)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1871569529 {
+label = "IF [B:1:0x0006, B:3:0x000c] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r4.offset \> r4.limit) goto L_0x001b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (r5 \< r4.reset) goto L_0x001b\l}"];
+subgraph cluster_Region_1489329111 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|throw new java.io.IOException(\"Cannot reset\")\l}"];
+}
+}
+subgraph cluster_Region_261279485 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|r4.f218in.reset()\lskip(r4.reset, r5)\lr4.offset = r5\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001b}"];
+MethodNode[shape=record,label="{public void com.squareup.picasso.MarkableInputStream.reset((r4v0 'this' com.squareup.picasso.MarkableInputStream A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

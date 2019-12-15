@@ -1,0 +1,65 @@
+digraph "CFG forcom.caverock.androidsvg.CSSParser.parseClassAttribute(Ljava\/lang\/String;)Ljava\/util\/List;" {
+subgraph cluster_Region_2124741051 {
+label = "R(3:0|(2:3|(2:(1:6)|7)(0))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.caverock.androidsvg.CSSParser$CSSTextScanner com.caverock.androidsvg.CSSParser.CSSTextScanner r0 = new com.caverock.androidsvg.CSSParser.CSSTextScanner(r2)\ljava.util.ArrayList r2 = null\l}"];
+subgraph cluster_LoopRegion_1286610083 {
+label = "LOOP:0: (2:3|(2:(1:6)|7)(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|if (r0.empty() == false) goto L_0x000c\l}"];
+subgraph cluster_Region_1943604573 {
+label = "R(2:3|(2:(1:6)|7)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|java.lang.String java.lang.String r1 = r0.nextToken()\l}"];
+subgraph cluster_IfRegion_951705311 {
+label = "IF [B:4:0x0010] THEN: R(2:(1:6)|7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|if (r1 != null) goto L_0x0013\l}"];
+subgraph cluster_Region_379095562 {
+label = "R(2:(1:6)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_53577729 {
+label = "IF [B:5:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r2 == null) goto L_0x0015\l}"];
+subgraph cluster_Region_1328074819 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|java.util.ArrayList r2 = new java.util.ArrayList()\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x001a|PHI: r2 \l  PHI: (r2v4 java.util.ArrayList) = (r2v2 java.util.ArrayList), (r2v5 java.util.ArrayList) binds: [B:5:0x0013, B:6:0x0015] A[DONT_GENERATE, DONT_INLINE]\l|r2.add(r1)\lr0.skipWhitespace()\l}"];
+}
+subgraph cluster_Region_1453587704 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0021|RETURN\l|return r2\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0006|LOOP_START\lPHI: r2 \l  PHI: (r2v2 java.util.ArrayList) = (r2v1 java.util.ArrayList), (r2v3 java.util.ArrayList) binds: [B:0:0x0000, B:9:0x0006] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:9:0x0006\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0006|LOOP_END\lSYNTHETIC\lPHI: r2 \l  PHI: (r2v3 java.util.ArrayList) = (r2v2 java.util.ArrayList), (r2v4 java.util.ArrayList) binds: [B:11:0x0006, B:12:0x0006] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:9:0x0006\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0021|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0006|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0006|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.util.List\<java.lang.String\> com.caverock.androidsvg.CSSParser.parseClassAttribute((r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/List\<, Ljava\/lang\/String;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_12;
+Node_1 -> Node_2;
+Node_9 -> Node_1;
+Node_10 -> Node_8;
+Node_11 -> Node_9;
+Node_12 -> Node_9;
+}
+

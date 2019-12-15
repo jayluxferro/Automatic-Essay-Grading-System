@@ -1,0 +1,72 @@
+digraph "CFG forcom.android.volley.toolbox.DiskBasedCache.streamToBytes(Ljava\/io\/InputStream;I)[B" {
+subgraph cluster_Region_659941457 {
+label = "R(3:0|(2:2|(2:(1:10)|(1:4)))|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[r7]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_2118714400 {
+label = "LOOP:0: (2:2|(2:(1:10)|(1:4)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'pos' int) = (r2v0 'pos' int), (r2v2 'pos' int) binds: [B:0:0x0000, B:4:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0003\-\>B:4:0x000e\l|if (r2 \< r7) goto L_0x0005\l}"];
+subgraph cluster_Region_419344294 {
+label = "R(2:2|(2:(1:10)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|int int r1 = r6.read(r0, r2, r7 \- r2)\l}"];
+subgraph cluster_Region_945591536 {
+label = "R(2:(1:10)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1508362609 {
+label = "IF [B:3:0x000c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (r1 == \-1) goto L_0x0010\l}"];
+subgraph cluster_Region_1755415365 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0010|SYNTHETIC\lEDGE_INSN: B:10:0x0010\-\>B:5:0x0010 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1993764299 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|LOOP_END\lLOOP:0: B:1:0x0003\-\>B:4:0x000e\l|r2 += r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1579325361 {
+label = "R(2:(1:8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_321329104 {
+label = "IF [B:5:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|EDGE_INSN: B:10:0x0010\-\>B:5:0x0010 ?: BREAK  \l|if (r2 == r7) goto L_0x003b\l}"];
+subgraph cluster_Region_708092120 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_471488268 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x003a|throw new java.io.IOException(\"Expected \" + r7 + \" bytes, read \" + r2 + \" bytes\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0010|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static byte[] com.android.volley.toolbox.DiskBasedCache.streamToBytes((r6v0 'in' java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'length' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_10 -> Node_5;
+Node_4 -> Node_1;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_9 -> Node_5;
+}
+

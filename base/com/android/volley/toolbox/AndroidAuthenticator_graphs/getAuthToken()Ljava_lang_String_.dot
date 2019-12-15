@@ -1,0 +1,45 @@
+digraph "CFG forcom.android.volley.toolbox.AndroidAuthenticator.getAuthToken()Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.accounts.AccountManagerFuture r0 = r6.mAccountManager.getAuthToken(r6.mAccount, r6.mAuthTokenType, r6.mNotifyAuthFailure, (android.accounts.AccountManagerCallback) null, (android.os.Handler) null)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|SYNTHETIC\lSplitter:B:1:0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ Exception \-\> 0x005a \}\lSplitter:B:1:0x000e\l|android.os.Bundle r1 = r0.getResult()     \/\/ Catch:\{ Exception \-\> 0x005a \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|r2 = null\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|if (r0.isDone() == false) goto L_0x003e\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b}"];
+Node_6 [shape=record,label="{6\:\ 0x001f|if (r0.isCancelled() != false) goto L_0x003e\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0021}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|if (r1.containsKey(\"intent\") != false) goto L_0x0030\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0029|java.lang.String r2 = r1.getString(\"authtoken\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0030}"];
+Node_11 [shape=record,label="{11\:\ 0x003d|throw new com.android.volley.AuthFailureError((android.content.Intent) r1.getParcelable(\"intent\"))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003e|PHI: r2 \l  PHI: (r2v3 java.lang.String) = (r2v2 java.lang.String), (r2v2 java.lang.String), (r2v6 java.lang.String) binds: [B:4:0x0019, B:6:0x001f, B:9:0x0029] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 == null) goto L_0x0041\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0040|RETURN\l|return r2\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0041|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Got null auth token for type: \")\lr1.append(r6.mAuthTokenType)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0059|throw new com.android.volley.AuthFailureError(r1.toString())\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005a|ExcHandler: Exception (r0v2 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:1:0x000e\l|java.lang.Exception r0 = move\-exception\l}"];
+Node_17 [shape=record,label="{17\:\ 0x005b}"];
+Node_18 [shape=record,label="{18\:\ 0x0062|throw new com.android.volley.AuthFailureError(\"Error while retrieving auth token\", r0)\l}"];
+MethodNode[shape=record,label="{public java.lang.String com.android.volley.toolbox.AndroidAuthenticator.getAuthToken((r6v0 'this' com.android.volley.toolbox.AndroidAuthenticator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.android.volley.AuthFailureError]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_12;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_12;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+}
+

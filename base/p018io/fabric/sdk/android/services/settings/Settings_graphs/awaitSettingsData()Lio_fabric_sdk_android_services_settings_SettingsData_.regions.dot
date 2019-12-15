@@ -1,0 +1,40 @@
+digraph "CFG forio.fabric.sdk.android.services.settings.Settings.awaitSettingsData()Lio\/fabric\/sdk\/android\/services\/settings\/SettingsData;" {
+subgraph cluster_Region_450238826 {
+label = "R(1:(2:1|2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1398931132 {
+label = "Try: R(2:1|2) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_543557953 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ InterruptedException \-\> 0x000e \}\lSplitter:B:0:0x0000\l|r3.settingsDataLatch.await()     \/\/ Catch:\{ InterruptedException \-\> 0x000e \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return r3.settingsData.get()\l}"];
+}
+subgraph cluster_Region_50956656 {
+label = "R(2:3|5) | ExcHandler: InterruptedException (unused java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|p018io.fabric.sdk.android.Fabric.getLogger().mo22223e(p018io.fabric.sdk.android.Fabric.TAG, \"Interrupted while waiting for settings data.\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_50956656 {
+label = "R(2:3|5) | ExcHandler: InterruptedException (unused java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|p018io.fabric.sdk.android.Fabric.getLogger().mo22223e(p018io.fabric.sdk.android.Fabric.TAG, \"Interrupted while waiting for settings data.\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\lExcHandler: InterruptedException (unused java.lang.InterruptedException)\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{public io.fabric.sdk.android.services.settings.SettingsData io.fabric.sdk.android.services.settings.Settings.awaitSettingsData((r3v0 'this' io.fabric.sdk.android.services.settings.Settings A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4;
+Node_3 -> Node_5;
+Node_3 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_4;
+Node_4 -> Node_3;
+}
+

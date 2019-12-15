@@ -1,0 +1,45 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.Transform.animateCamera(Lcom\/mapbox\/mapboxsdk\/maps\/MapboxMap;Lcom\/mapbox\/mapboxsdk\/camera\/CameraUpdate;ILcom\/mapbox\/mapboxsdk\/maps\/MapboxMap$CancelableCallback;)V" {
+subgraph cluster_Region_946038275 {
+label = "R(2:0|(1:(3:2|(1:4)|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.camera.CameraPosition com.mapbox.mapboxsdk.camera.CameraPosition r11 = r12.getCameraPosition(r11)\l}"];
+subgraph cluster_Region_639091693 {
+label = "R(1:(3:2|(1:4)|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1636221849 {
+label = "IF [B:1:0x0008] THEN: R(3:2|(1:4)|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (isValidCameraPosition(r11) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_611006597 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|cancelTransitions()\lr10.cameraChangeDispatcher.onCameraMoveStarted(3)\l}"];
+subgraph cluster_IfRegion_50000358 {
+label = "IF [B:3:0x0013] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (r14 != null) goto L_0x0015\l}"];
+subgraph cluster_Region_924402886 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|r10.cameraCancelableCallback = r14\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0017|r10.mapView.addOnMapChangedListener(r10)\lr10.mapView.flyTo(r11.bearing, r11.target, (long) r13, r11.tilt, r11.zoom)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{final void com.mapbox.mapboxsdk.maps.Transform.animateCamera((r10v0 'this' com.mapbox.mapboxsdk.maps.Transform A[IMMUTABLE_TYPE, THIS]), (r11v0 com.mapbox.mapboxsdk.maps.MapboxMap A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 com.mapbox.mapboxsdk.camera.CameraUpdate A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 com.mapbox.mapboxsdk.maps.MapboxMap$CancelableCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.UiThread, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

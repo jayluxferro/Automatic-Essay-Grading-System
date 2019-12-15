@@ -1,0 +1,100 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.mp3.Mp3Extractor.peekId3Data(Lcom\/google\/android\/exoplayer2\/extractor\/ExtractorInput;)V" {
+subgraph cluster_Region_511481964 {
+label = "R(2:0|(2:1|(2:(2:3|4)|(3:5|(3:7|10|(1:12)(0))(1:15)|13))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r3 = 0\l}"];
+subgraph cluster_LoopRegion_530643663 {
+label = "LOOP:0: (2:1|(2:(2:3|4)|(3:5|(3:7|10|(1:12)(0))(1:15)|13)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1055831587 {
+label = "R(2:1|(2:(2:3|4)|(3:5|(3:7|10|(1:12)(0))(1:15)|13)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lPHI: r3 \l  PHI: (r3v1 'peekedId3Bytes' int) = (r3v0 'peekedId3Bytes' int), (r3v2 'peekedId3Bytes' int) binds: [B:0:0x0000, B:13:0x005d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:13:0x005d\l|r10.peekFully(r9.scratch.data, 0, 10)\lr9.scratch.setPosition(0)\l}"];
+subgraph cluster_Region_1550726515 {
+label = "R(2:(2:3|4)|(3:5|(3:7|10|(1:12)(0))(1:15)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_984953863 {
+label = "IF [B:2:0x0018] THEN: R(2:3|4) ELSE: null";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|if (r9.scratch.readUnsignedInt24() != com.google.android.exoplayer2.metadata.id3.Id3Decoder.ID3_TAG) goto L_0x001a\l}"];
+subgraph cluster_Region_44040208 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|r10.resetPeekPosition()\lr10.advancePeekPosition(r3)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_270619157 {
+label = "R(3:5|(3:7|10|(1:12)(0))(1:15)|13)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|r9.scratch.skipBytes(3)\lint int r0 = r9.scratch.readSynchSafeInt()\lint int r4 = r0 + 10\l}"];
+subgraph cluster_IfRegion_576440092 {
+label = "IF [B:6:0x0031] THEN: R(3:7|10|(1:12)(0)) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0031|if (r9.metadata == null) goto L_0x0033\l}"];
+subgraph cluster_Region_1852742362 {
+label = "R(3:7|10|(1:12)(0))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0033|byte[] byte[] r1 = new byte[r4]\ljava.lang.System.arraycopy(r9.scratch.data, 0, r1, 0, 10)\lr10.peekFully(r1, 10, r0)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0047|PHI: r2 \l  PHI: (r2v1 'id3FramePredicate' com.google.android.exoplayer2.metadata.id3.Id3Decoder$FramePredicate) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r9.metadata = new com.google.android.exoplayer2.metadata.id3.Id3Decoder((r9.flags & 2) != 0 ? com.google.android.exoplayer2.extractor.GaplessInfoHolder.GAPLESS_INFO_ID3_FRAME_PREDICATE : null).decode(r1, r4)\l}"];
+subgraph cluster_IfRegion_1775182554 {
+label = "IF [B:11:0x0054] THEN: R(1:12) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0054|if (r9.metadata != null) goto L_0x0056\l}"];
+subgraph cluster_Region_1143424829 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0056|r9.gaplessInfoHolder.setFromMetadata(r9.metadata)\l}"];
+}
+subgraph cluster_Region_1470191282 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_338415747 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0061|r10.advancePeekPosition(r0)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x005d|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:13:0x005d\l|r3 += r4\l}"];
+}
+}
+}
+}
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0043}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0045}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x005f}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x001a|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x005d|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x005d|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x005d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.mp3.Mp3Extractor.peekId3Data((r9v0 'this' com.google.android.exoplayer2.extractor.mp3.Mp3Extractor A[IMMUTABLE_TYPE, THIS]), (r10v0 'input' com.google.android.exoplayer2.extractor.ExtractorInput A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_5[style=dashed];
+Node_2 -> Node_16;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_18[style=dashed];
+Node_12 -> Node_17;
+Node_15 -> Node_19;
+Node_13 -> Node_1;
+Node_8 -> Node_9;
+Node_8 -> Node_14;
+Node_9 -> Node_10;
+Node_14 -> Node_10;
+Node_16 -> Node_3;
+Node_17 -> Node_13;
+Node_18 -> Node_13;
+Node_19 -> Node_13;
+}
+

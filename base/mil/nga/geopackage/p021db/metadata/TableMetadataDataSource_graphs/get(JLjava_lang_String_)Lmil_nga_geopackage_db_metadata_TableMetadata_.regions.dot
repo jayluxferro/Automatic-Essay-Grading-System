@@ -1,0 +1,52 @@
+digraph "CFG formil.nga.geopackage.db.metadata.TableMetadataDataSource.get(JLjava\/lang\/String;)Lmil\/nga\/geopackage\/db\/metadata\/TableMetadata;" {
+subgraph cluster_Region_1794252800 {
+label = "R(2:0|(1:7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.database.Cursor android.database.Cursor r9 = r8.f238db.query(mil.nga.geopackage.p021db.metadata.TableMetadata.TABLE_NAME, mil.nga.geopackage.p021db.metadata.TableMetadata.COLUMNS, \"geopackage_id = ? AND table_name = ?\", new java.lang.String[]\{java.lang.String.valueOf(r9), r11\}, (java.lang.String) null, (java.lang.String) null, (java.lang.String) null)\l}"];
+subgraph cluster_TryCatchRegion_63502874 {
+label = "Try: R(1:7) finally: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_38168221 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|RETURN\l|return r9.moveToNext() ? createTableMetadata(r9) : null\l}"];
+}
+subgraph cluster_Region_620511706 {
+label = "R(3:8|9|10) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|ExcHandler:  FINALLY\lSplitter:B:1:0x001c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002d|FINALLY_INSNS\l|r9.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0030|throw r10\l}"];
+}
+}
+}
+subgraph cluster_Region_620511706 {
+label = "R(3:8|9|10) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|ExcHandler:  FINALLY\lSplitter:B:1:0x001c\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002d|FINALLY_INSNS\l|r9.close()\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0030|throw r10\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001c|SYNTHETIC\lSplitter:B:1:0x001c\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ all \-\> 0x002c \}\lSplitter:B:1:0x001c\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0020|Catch:\{ all \-\> 0x002c \}\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0022|Catch:\{ all \-\> 0x002c \}\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0027}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0028|DONT_GENERATE\lPHI: r10 \l  PHI: (r10v3 mil.nga.geopackage.db.metadata.TableMetadata) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r9.close()\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.db.metadata.TableMetadata mil.nga.geopackage.db.metadata.TableMetadataDataSource.get((r8v0 'this' mil.nga.geopackage.db.metadata.TableMetadataDataSource A[IMMUTABLE_TYPE, THIS]), (r9v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

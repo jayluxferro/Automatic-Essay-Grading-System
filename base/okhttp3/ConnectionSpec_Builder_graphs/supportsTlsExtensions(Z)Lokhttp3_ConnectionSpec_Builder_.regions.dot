@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.ConnectionSpec.Builder.supportsTlsExtensions(Z)Lokhttp3\/ConnectionSpec$Builder;" {
+subgraph cluster_Region_379336202 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1521623619 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1938486877 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.tls == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1512957185 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.supportsTlsExtensions = r2\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_762749992 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|throw new java.lang.IllegalStateException(\"no TLS extensions for cleartext connections\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+MethodNode[shape=record,label="{public okhttp3.ConnectionSpec$Builder okhttp3.ConnectionSpec.Builder.supportsTlsExtensions((r1v0 'this' okhttp3.ConnectionSpec$Builder A[IMMUTABLE_TYPE, THIS]), (r2v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

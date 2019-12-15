@@ -1,0 +1,44 @@
+digraph "CFG fororg.mapsforge.core.util.LatLongUtils.validateLatitude(D)D" {
+subgraph cluster_Region_1527706341 {
+label = "R(1:(2:(1:6)|(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_610527862 {
+label = "R(2:(1:6)|(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1344369091 {
+label = "IF [B:1:0x0004, B:3:0x000d, B:5:0x0016] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (java.lang.Double.isNaN(r3) != true) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if (r3 \>= \-90.0d) goto L_0x000f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|ADDED_TO_REGION\l|if (r3 \<= 90.0d) goto L_0x0018\l}"];
+subgraph cluster_Region_2144302968 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1400519614 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0019}"];
+Node_8 [shape=record,label="{8\:\ 0x002f|throw new java.lang.IllegalArgumentException(\"invalid latitude: \" + r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000f}"];
+MethodNode[shape=record,label="{public static double org.mapsforge.core.util.LatLongUtils.validateLatitude((r3v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

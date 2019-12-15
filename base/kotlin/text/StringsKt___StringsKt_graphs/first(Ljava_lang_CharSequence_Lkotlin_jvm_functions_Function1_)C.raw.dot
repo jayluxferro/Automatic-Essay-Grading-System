@@ -1,0 +1,23 @@
+digraph "CFG forkotlin.text.StringsKt___StringsKt.first(Ljava\/lang\/CharSequence;Lkotlin\/jvm\/functions\/Function1;)C" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CONST_STR  (r0 I:java.lang.String) =  \"$receiver\" \l0x0002: INVOKE  (r3 I:java.lang.Object), (r0 I:java.lang.String) kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(java.lang.Object, java.lang.String):void type: STATIC \l0x0005: CONST_STR  (r0 I:java.lang.String) =  \"predicate\" \l0x0007: INVOKE  (r4 I:java.lang.Object), (r0 I:java.lang.String) kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(java.lang.Object, java.lang.String):void type: STATIC \l0x000a: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|0x000b: INVOKE  (r1 I:int) = (r3 I:java.lang.CharSequence) java.lang.CharSequence.length():int type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000f|0x000f: IF  (r0 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:7:0x0029 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: INVOKE  (r1 I:char) = (r3 I:java.lang.CharSequence), (r0 I:int) java.lang.CharSequence.charAt(int):char type: INTERFACE \l0x0015: INVOKE  (r2 I:java.lang.Character) = (r1 I:char) java.lang.Character.valueOf(char):java.lang.Character type: STATIC \l0x0019: INVOKE  (r2 I:java.lang.Object) = \l  (r4 I:kotlin.jvm.functions.Function1)\l  (r2 I:java.lang.Object)\l kotlin.jvm.functions.Function1.invoke(java.lang.Object):java.lang.Object type: INTERFACE \l0x001d: CHECK_CAST  (r2 I:java.lang.Boolean) = (java.lang.Boolean) (r2 I:?[OBJECT, ARRAY]) \l0x001f: INVOKE  (r2 I:boolean) = (r2 I:java.lang.Boolean) java.lang.Boolean.booleanValue():boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|0x0023: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0026 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0025|0x0025: RETURN  (r1 I:char) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0026|0x0026: ARITH  (r0 I:int) = (r0 I:int) + (1 int) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|0x0029: NEW_INSTANCE  (r3 I:java.util.NoSuchElementException) =  java.util.NoSuchElementException \l0x002b: CONST_STR  (r4 I:java.lang.String) =  \"Char sequence contains no character matching the predicate.\" \l0x002d: INVOKE  \l  (r3 I:java.util.NoSuchElementException)\l  (r4 I:java.lang.String)\l java.util.NoSuchElementException.\<init\>(java.lang.String):void type: DIRECT \l0x0030: CHECK_CAST  (r3 I:java.lang.Throwable) = (java.lang.Throwable) (r3 I:?[OBJECT, ARRAY]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0032|0x0032: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static final char kotlin.text.StringsKt___StringsKt.first((r3 I:java.lang.CharSequence A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4 I:kotlin.jvm.functions.Function1\<? super java.lang.Character, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/CharSequence;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Character;, Ljava\/lang\/Boolean;, \>;)C]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+}
+

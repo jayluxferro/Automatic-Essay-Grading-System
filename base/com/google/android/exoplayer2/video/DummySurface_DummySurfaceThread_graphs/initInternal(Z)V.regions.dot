@@ -1,0 +1,100 @@
+digraph "CFG forcom.google.android.exoplayer2.video.DummySurface.DummySurfaceThread.initInternal(Z)V" {
+subgraph cluster_Region_2094653298 {
+label = "R(9:0|3|10|(1:12)(1:26)|13|16|(1:18)(1:28)|19|22) | DECL_VAR: int[] glAttributes, int[] pbufferAttributes\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.opengl.EGLDisplay android.opengl.EGLDisplay r2 = android.opengl.EGL14.eglGetDisplay(0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|PHI: r4 \l  PHI: (r4v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r2 != null, \"eglGetDisplay failed\")\lint[] r18 = new int[2]\lcom.google.android.exoplayer2.util.Assertions.checkState(android.opengl.EGL14.eglInitialize(r2, r18, 0, r18, 1), \"eglInitialize failed\")\landroid.opengl.EGLConfig[] android.opengl.EGLConfig[] r5 = new android.opengl.EGLConfig[1]\lint[] int[] r8 = new int[1]\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0043|PHI: r4 \l  PHI: (r4v11 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(android.opengl.EGL14.eglChooseConfig(r2, new int[]\{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12327, 12344, 12339, 4, 12344\}, 0, r5, 0, 1, r8, 0) && r8[0] \> 0 && r5[0] != null, \"eglChooseConfig failed\")\landroid.opengl.EGLConfig r10 = r5[0]\l}"];
+subgraph cluster_IfRegion_373215956 {
+label = "IF [B:11:0x004b] THEN: R(1:12) ELSE: R(1:26)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004b|if (r20 == true) goto L_0x004d\l}"];
+subgraph cluster_Region_1188818928 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x004d|int[] r15 = new int[]\{12440, 2, com.google.android.exoplayer2.video.DummySurface.EGL_PROTECTED_CONTENT_EXT, 1, 12344\}\l}"];
+}
+subgraph cluster_Region_1814606100 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00c2|int[] r15 = new int[]\{12440, 2, 12344\}\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0053|PHI: r15 \l  PHI: (r15v1 'glAttributes' int[]) = (r15v0 'glAttributes' int[]), (r15v2 'glAttributes' int[]) binds: [B:26:0x00c2, B:12:0x004d] A[DONT_GENERATE, DONT_INLINE]\l|android.opengl.EGLContext android.opengl.EGLContext r11 = android.opengl.EGL14.eglCreateContext(r2, r10, android.opengl.EGL14.EGL_NO_CONTEXT, r15, 0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x005d|PHI: r4 \l  PHI: (r4v16 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r11 != null, \"eglCreateContext failed\")\l}"];
+subgraph cluster_IfRegion_717942721 {
+label = "IF [B:17:0x0062] THEN: R(1:18) ELSE: R(1:28)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0062|if (r20 == true) goto L_0x0064\l}"];
+subgraph cluster_Region_220321272 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0064|r17 = new int[]\{12375, 1, 12374, 1, com.google.android.exoplayer2.video.DummySurface.EGL_PROTECTED_CONTENT_EXT, 1, 12344\}\l}"];
+}
+subgraph cluster_Region_1060224803 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00cb|r17 = new int[]\{12375, 1, 12374, 1, 12344\}\l}"];
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x006c|PHI: r17 \l  PHI: (r17v1 'pbufferAttributes' int[]) = (r17v0 'pbufferAttributes' int[]), (r17v2 'pbufferAttributes' int[]) binds: [B:28:0x00cb, B:18:0x0064] A[DONT_GENERATE, DONT_INLINE]\l|android.opengl.EGLSurface android.opengl.EGLSurface r16 = android.opengl.EGL14.eglCreatePbufferSurface(r2, r10, r17, 0)\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0076|PHI: r4 \l  PHI: (r4v20 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r16 != null, \"eglCreatePbufferSurface failed\")\lcom.google.android.exoplayer2.util.Assertions.checkState(android.opengl.EGL14.eglMakeCurrent(r2, r16, r16, r11), \"eglMakeCurrent failed\")\landroid.opengl.GLES20.glGenTextures(1, r19.textureIdHolder, 0)\lr19.surfaceTexture = new android.graphics.SurfaceTexture(r19.textureIdHolder[0])\lr19.surfaceTexture.setOnFrameAvailableListener(r19)\lr19.surface = new com.google.android.exoplayer2.video.DummySurface(r19, r19.surfaceTexture, r20)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0036}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0038}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x003b|REMOVE\lADDED_TO_REGION\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x003d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0040|REMOVE\lADDED_TO_REGION\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0042}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x005a}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x005c}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0073}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0075}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x00bc}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00bd}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x00c0}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x00c9}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00d4}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.video.DummySurface.DummySurfaceThread.initInternal((r19v0 'this' com.google.android.exoplayer2.video.DummySurface$DummySurfaceThread A[IMMUTABLE_TYPE, THIS]), (r20v0 'secure' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_26[style=dashed];
+Node_12 -> Node_13;
+Node_26 -> Node_13;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_17 -> Node_28[style=dashed];
+Node_18 -> Node_19;
+Node_28 -> Node_19;
+Node_19 -> Node_20;
+Node_22 -> Node_23;
+Node_1 -> Node_2;
+Node_1 -> Node_24;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_25;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_25;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_25;
+Node_9 -> Node_10;
+Node_14 -> Node_15;
+Node_14 -> Node_27;
+Node_15 -> Node_16;
+Node_20 -> Node_21;
+Node_20 -> Node_29;
+Node_21 -> Node_22;
+Node_24 -> Node_3;
+Node_25 -> Node_10;
+Node_27 -> Node_16;
+Node_29 -> Node_22;
+}
+

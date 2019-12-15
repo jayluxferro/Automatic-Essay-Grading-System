@@ -1,0 +1,28 @@
+digraph "CFG forar.com.hjg.pngj.pixels.CompressorStreamDeflater.deflate()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:java.util.zip.Deflater) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.deflater java.util.zip.Deflater \l0x0002: IGET  (r1 I:byte[]) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.buf byte[] \l0x0004: IGET  (r2 I:byte[]) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.buf byte[] \l0x0006: ARRAY_LENGTH  (r2 I:int) = (r2 I:?[]) \l0x0007: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0008: INVOKE  (r0 I:int) = \l  (r0 I:java.util.zip.Deflater)\l  (r1 I:byte[])\l  (r3 I:int)\l  (r2 I:int)\l java.util.zip.Deflater.deflate(byte[], int, int):int type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000c|0x000c: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:11:0x0027 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000e|0x000e: IGET  (r1 I:long) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.bytesOut long \l0x0010: CAST  (r4 I:long) = (long) (r0 I:int) \l0x0011: ARITH  (r1 I:long) = (r1 I:long) + (r4 I:long) \l0x0012: IPUT  \l  (r1 I:long)\l  (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater)\l ar.com.hjg.pngj.pixels.CompressorStreamDeflater.bytesOut long \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|SYNTHETIC\lSplitter:B:3:0x0014\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Splitter:B:3:0x0014\l|0x0014: IGET  (r1 I:java.io.OutputStream) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.os java.io.OutputStream A[Catch:\{ IOException \-\> 0x0020 \}, TRY_ENTER]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|0x0016: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0027 A[Catch:\{ IOException \-\> 0x0020 \}]\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0018|0x0018: IGET  (r1 I:java.io.OutputStream) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.os java.io.OutputStream A[Catch:\{ IOException \-\> 0x0020 \}]\l0x001a: IGET  (r2 I:byte[]) = (r6 I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater) ar.com.hjg.pngj.pixels.CompressorStreamDeflater.buf byte[] A[Catch:\{ IOException \-\> 0x0020 \}]\l0x001c: INVOKE  \l  (r1 I:java.io.OutputStream)\l  (r2 I:byte[])\l  (r3 I:int)\l  (r0 I:int)\l java.io.OutputStream.write(byte[], int, int):void type: VIRTUAL A[Catch:\{ IOException \-\> 0x0020 \}, TRY_LEAVE]\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0020|ExcHandler: IOException null\lSplitter:B:3:0x0014\l|0x0020: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0021|0x0021: NEW_INSTANCE  (r1 I:ar.com.hjg.pngj.PngjOutputException) =  ar.com.hjg.pngj.PngjOutputException \l0x0023: INVOKE  \l  (r1 I:ar.com.hjg.pngj.PngjOutputException)\l  (r0 I:java.lang.Throwable)\l ar.com.hjg.pngj.PngjOutputException.\<init\>(java.lang.Throwable):void type: DIRECT \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|0x0026: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0027|0x0027: RETURN   \l}"];
+MethodNode[shape=record,label="{protected void ar.com.hjg.pngj.pixels.CompressorStreamDeflater.deflate((r6 'this' I:ar.com.hjg.pngj.pixels.CompressorStreamDeflater A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

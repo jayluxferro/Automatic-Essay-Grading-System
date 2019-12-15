@@ -1,0 +1,34 @@
+digraph "CFG forokio.RealBufferedSource.skip(J)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.closed boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:13:0x003b \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: CONST  (r0 I:?[long, double]) = (0 ?[long, double]) \l0x0006: CMP_L  (r2 I:int) = (r5 I:long), (r0 I:long) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|0x0008: IF  (r2 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:12:0x003a \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|0x000a: IGET  (r2 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x000c: IGET  (r2 I:long) = (r2 I:okio.Buffer) okio.Buffer.size long \l0x000e: CMP_L  (r0 I:int) = (r2 I:long), (r0 I:long) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|0x0010: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0029 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: IGET  (r0 I:okio.Source) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.source okio.Source \l0x0014: IGET  (r1 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x0016: CONST  (r2 I:?[long, double]) = (8192(0x2000, double:4.0474E\-320) ?[long, double]) \l0x0018: INVOKE  (r0 I:long) = (r0 I:okio.Source), (r1 I:okio.Buffer), (r2 I:long) okio.Source.read(okio.Buffer, long):long type: INTERFACE \l0x001c: CONST  (r2 I:?[long, double]) = (\-1 ?[long, double]) \l0x001e: CMP_L  (r0 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0020|0x0020: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0023 \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|0x0023: NEW_INSTANCE  (r5 I:java.io.EOFException) =  java.io.EOFException \l0x0025: INVOKE  (r5 I:java.io.EOFException) java.io.EOFException.\<init\>():void type: DIRECT \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|0x0028: THROW  (r5 I:java.lang.Throwable) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0029|0x0029: IGET  (r0 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x002b: INVOKE  (r0 I:long) = (r0 I:okio.Buffer) okio.Buffer.size():long type: VIRTUAL \l0x002f: INVOKE  (r0 I:long) = (r5 I:long), (r0 I:long) java.lang.Math.min(long, long):long type: STATIC \l0x0033: IGET  (r2 I:okio.Buffer) = (r4 I:okio.RealBufferedSource) okio.RealBufferedSource.buffer okio.Buffer \l0x0035: INVOKE  (r2 I:okio.Buffer), (r0 I:long) okio.Buffer.skip(long):void type: VIRTUAL \l0x0038: ARITH  (r5 I:long) = (r5 I:long) \- (r0 I:long) \l}"];
+Node_12 [shape=record,label="{12\:\ 0x003a|0x003a: RETURN   \l}"];
+Node_13 [shape=record,label="{13\:\ 0x003b|0x003b: NEW_INSTANCE  (r5 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException \l0x003d: CONST_STR  (r6 I:java.lang.String) =  \"closed\" \l0x003f: INVOKE  \l  (r5 I:java.lang.IllegalStateException)\l  (r6 I:java.lang.String)\l java.lang.IllegalStateException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0042|0x0042: THROW  (r5 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okio.RealBufferedSource.skip((r4 'this' I:okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]), (r5 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_9;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_2;
+Node_13 -> Node_14;
+}
+

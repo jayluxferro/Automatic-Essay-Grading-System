@@ -1,0 +1,35 @@
+digraph "CFG fororg.mapsforge.map.android.graphics.AndroidBitmap.scaleTo(II)V" {
+subgraph cluster_Region_189500912 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1270853836 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1296007877 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (getWidth() != r3) goto L_0x000c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (getHeight() != r4) goto L_0x000c\l}"];
+subgraph cluster_Region_1595324369 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.graphics.Bitmap android.graphics.Bitmap r3 = android.graphics.Bitmap.createScaledBitmap(r2.bitmap, r3, r4, true)\ldestroy()\lr2.bitmap = r3\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.android.graphics.AndroidBitmap.scaleTo((r2v0 'this' org.mapsforge.map.android.graphics.AndroidBitmap A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

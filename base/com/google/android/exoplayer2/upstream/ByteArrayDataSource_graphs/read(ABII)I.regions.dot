@@ -1,0 +1,54 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.ByteArrayDataSource.read([BII)I" {
+subgraph cluster_Region_1808132720 {
+label = "R(1:(2:(1:1)|(1:(2:(1:4)|(2:5|6)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1778066470 {
+label = "R(2:(1:1)|(1:(2:(1:4)|(2:5|6))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1176056557 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == 0) goto L_0x0002\l}"];
+subgraph cluster_Region_1946797856 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+}
+}
+subgraph cluster_Region_819668411 {
+label = "R(1:(2:(1:4)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_3276178 {
+label = "R(2:(1:4)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_254818595 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r2.bytesRemaining == 0) goto L_0x0008\l}"];
+subgraph cluster_Region_901435170 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|SYNTHETIC\lRETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_466058089 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|int int r5 = java.lang.Math.min(r5, r2.bytesRemaining)\ljava.lang.System.arraycopy(r2.data, r2.readPosition, r3, r4, r5)\lr2.readPosition += r5\lr2.bytesRemaining \-= r5\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return r5\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.upstream.ByteArrayDataSource.read((r2v0 'this' com.google.android.exoplayer2.upstream.ByteArrayDataSource A[IMMUTABLE_TYPE, THIS]), (r3v0 'buffer' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'readLength' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.api.staticmap.v1.models.StaticMarkerAnnotation.Builder.build()Lcom\/mapbox\/api\/staticmap\/v1\/models\/StaticMarkerAnnotation;" {
+subgraph cluster_Region_292232276 {
+label = "R(2:0|(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.api.staticmap.v1.models.StaticMarkerAnnotation com.mapbox.api.staticmap.p014v1.models.StaticMarkerAnnotation r0 = autoBuild()\l}"];
+subgraph cluster_Region_1924122150 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_216631763 {
+label = "IF [B:1:0x0008] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0.lnglat() != null) goto L_0x000a\l}"];
+subgraph cluster_Region_931038966 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1689109820 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|throw new com.mapbox.core.exceptions.ServicesException(\"A Static map marker requires a defined longitude and latitude coordinate.\")\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+MethodNode[shape=record,label="{public com.mapbox.api.staticmap.v1.models.StaticMarkerAnnotation com.mapbox.api.staticmap.v1.models.StaticMarkerAnnotation.Builder.build((r2v0 'this' com.mapbox.api.staticmap.v1.models.StaticMarkerAnnotation$Builder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

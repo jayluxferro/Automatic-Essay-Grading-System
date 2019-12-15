@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.transition.Visibility.DisappearListener.hideViewWhenNotCanceled()V" {
+subgraph cluster_Region_1981517583 {
+label = "R(2:(2:2|(1:4))|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1006305878 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mCanceled == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1022713573 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.support.transition.ViewUtils.setTransitionVisibility(r2.mView, r2.mFinalVisibility)\l}"];
+subgraph cluster_IfRegion_1415968008 {
+label = "IF [B:3:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|if (r2.mParent != null) goto L_0x000f\l}"];
+subgraph cluster_Region_2125228924 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|r2.mParent.invalidate()\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0014|suppressLayout(false)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+MethodNode[shape=record,label="{private void android.support.transition.Visibility.DisappearListener.hideViewWhenNotCanceled((r2v0 'this' android.support.transition.Visibility$DisappearListener A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

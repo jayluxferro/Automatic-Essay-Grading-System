@@ -1,0 +1,43 @@
+digraph "CFG formil.nga.tiff.io.IOUtils.copyStream(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;)V" {
+subgraph cluster_Region_1652056491 {
+label = "R(2:0|(2:1|(1:3)(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[1024]\l}"];
+subgraph cluster_LoopRegion_1895294733 {
+label = "LOOP:0: (2:1|(1:3)(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_Region_424610056 {
+label = "R(2:1|(1:3)(2:4|5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lLOOP:0: B:1:0x0004\-\>B:3:0x000a\l|int int r1 = r3.read(r0)\l}"];
+subgraph cluster_IfRegion_19368323 {
+label = "IF [B:2:0x0008] THEN: R(1:3) ELSE: R(2:4|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|if (r1 \> 0) goto L_0x000a\l}"];
+subgraph cluster_Region_1918171466 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:3:0x000a\l|r4.write(r0, 0, r1)\l}"];
+}
+subgraph cluster_Region_71136618 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|r4.flush()\lr4.close()\lr3.close()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x000f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void mil.nga.tiff.io.IOUtils.copyStream((r3v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

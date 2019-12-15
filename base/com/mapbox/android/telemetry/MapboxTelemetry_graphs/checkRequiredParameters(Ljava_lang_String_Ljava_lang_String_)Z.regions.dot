@@ -1,0 +1,25 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.checkRequiredParameters(Ljava\/lang\/String;Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_2080662174 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean boolean r2 = areRequiredParametersValid(r2, r3)\l}"];
+subgraph cluster_IfRegion_248591691 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2 == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1594341253 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|initializeTelemetryClient()\lr1.queue.setTelemetryInitialized(true)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x000f|RETURN\l|return r2\l}"];
+}
+MethodNode[shape=record,label="{boolean com.mapbox.android.telemetry.MapboxTelemetry.checkRequiredParameters((r1v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+}
+

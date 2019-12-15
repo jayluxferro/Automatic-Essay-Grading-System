@@ -1,0 +1,151 @@
+digraph "CFG forcom.crashlytics.android.core.BinaryImagesConverter.parseProcMapsJson(Ljava\/lang\/String;)Lorg\/json\/JSONArray;" {
+subgraph cluster_Region_1898819061 {
+label = "R(2:0|(3:3|(3:6|(2:10|(1:(1:14)))|19)|20))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.json.JSONArray org.json.JSONArray r0 = new org.json.JSONArray()\l}"];
+subgraph cluster_TryCatchRegion_1830284204 {
+label = "Try: R(3:3|(3:6|(2:10|(1:(1:14)))|19)|20) catches: R(3:21|22|23)";
+node [shape=record,color=blue];
+subgraph cluster_Region_725451911 {
+label = "R(3:3|(3:6|(2:10|(1:(1:14)))|19)|20)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|java.lang.String[] java.lang.String[] r9 = joinMapsEntries(new org.json.JSONObject(r9).getJSONArray(\"maps\")).split(\"\|\")\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1982248487 {
+label = "LOOP:0: (3:6|(2:10|(1:(1:14)))|19)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|if (r1 \< r9.length) goto L_0x001e\l}"];
+subgraph cluster_Region_611859021 {
+label = "R(3:6|(2:10|(1:(1:14)))|19)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|com.crashlytics.android.core.ProcMapEntry com.crashlytics.android.core.ProcMapEntry r2 = com.crashlytics.android.core.ProcMapEntryParser.parse(r2)\l}"];
+subgraph cluster_IfRegion_1663474681 {
+label = "IF [B:7:0x0024, B:9:0x002a] THEN: R(2:10|(1:(1:14))) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0024|ADDED_TO_REGION\l|if (r2 != null) goto L_0x0026\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002a|ADDED_TO_REGION\l|if (isRelevant(r2) == true) goto L_0x002d\l}"];
+subgraph cluster_Region_568704042 {
+label = "R(2:10|(1:(1:14)))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002d}"];
+subgraph cluster_TryCatchRegion_883332026 {
+label = "Try: R(1:(1:14)) catches: R(2:17|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1082945341 {
+label = "R(1:(1:14))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_311731723 {
+label = "Try: R(1:14) catches: R(2:15|16)";
+node [shape=record,color=blue];
+subgraph cluster_Region_511286960 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|Catch:\{ JSONException \-\> 0x0041 \}\lSplitter:B:13:0x0039\l|r0.put(createBinaryImageJson(r8.fileIdStrategy.createId(getLibraryFile(r2.path)), r2))     \/\/ Catch:\{ JSONException \-\> 0x0041 \}\l}"];
+}
+subgraph cluster_Region_505171103 {
+label = "R(2:15|16) | ExcHandler: JSONException (r2v6 'e' org.json.JSONException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0041|ExcHandler: JSONException (r2v6 'e' org.json.JSONException A[CUSTOM_DECLARE])\lSplitter:B:13:0x0039\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0042|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not create a binary image json string\", r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_1310172969 {
+label = "R(2:17|18) | ExcHandler: IOException (r3v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004e|ExcHandler: IOException (r3v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:11:0x0033\l}"];
+Node_18 [shape=record,label="{18\:\ 0x004f|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not generate ID for file \" + r2.path, r3)\l}"];
+}
+}
+}
+}
+Node_19 [shape=record,label="{19\:\ 0x006b|LOOP_END\lLOOP:0: B:4:0x001b\-\>B:19:0x006b\l|r1++\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x006e|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1786309784 {
+label = "R(3:21|22|23) | ExcHandler: JSONException (r9v1 'e' org.json.JSONException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006f|ExcHandler: JSONException (r9v1 'e' org.json.JSONException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0005\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0070|p018io.fabric.sdk.android.Fabric.getLogger().mo22235w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Unable to parse proc maps string\", r9)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x007b|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1786309784 {
+label = "R(3:21|22|23) | ExcHandler: JSONException (r9v1 'e' org.json.JSONException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006f|ExcHandler: JSONException (r9v1 'e' org.json.JSONException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0005\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0070|p018io.fabric.sdk.android.Fabric.getLogger().mo22235w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Unable to parse proc maps string\", r9)\l}"];
+Node_23 [shape=record,label="{23\:\ 0x007b|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_1310172969 {
+label = "R(2:17|18) | ExcHandler: IOException (r3v4 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004e|ExcHandler: IOException (r3v4 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:11:0x0033\l}"];
+Node_18 [shape=record,label="{18\:\ 0x004f|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not generate ID for file \" + r2.path, r3)\l}"];
+}
+subgraph cluster_Region_505171103 {
+label = "R(2:15|16) | ExcHandler: JSONException (r2v6 'e' org.json.JSONException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0041|ExcHandler: JSONException (r2v6 'e' org.json.JSONException A[CUSTOM_DECLARE])\lSplitter:B:13:0x0039\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0042|p018io.fabric.sdk.android.Fabric.getLogger().mo22222d(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Could not create a binary image json string\", r2)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0005|SYNTHETIC\lSplitter:B:1:0x0005\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?|Catch:\{ JSONException \-\> 0x006f \}\lSplitter:B:1:0x0005\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001b|LOOP_START\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v5 int) binds: [B:3:0x0014, B:19:0x006b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x001b\-\>B:19:0x006b\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0033|SYNTHETIC\lSplitter:B:11:0x0033\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|Catch:\{ IOException \-\> 0x004e \}\lSplitter:B:11:0x0033\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0039|SYNTHETIC\lSplitter:B:13:0x0039\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x006e|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x006b|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x006b|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x006b|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x006b|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x006b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private org.json.JSONArray com.crashlytics.android.core.BinaryImagesConverter.parseProcMapsJson((r8v0 'this' com.crashlytics.android.core.BinaryImagesConverter A[IMMUTABLE_TYPE, THIS]), (r9v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_24[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_26[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_28[style=dashed];
+Node_10 -> Node_11;
+Node_14 -> Node_15;
+Node_14 -> Node_29;
+Node_15 -> Node_16;
+Node_16 -> Node_27;
+Node_17 -> Node_18;
+Node_18 -> Node_25;
+Node_19 -> Node_4;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_21 -> Node_22;
+Node_22 -> Node_23;
+Node_17 -> Node_18;
+Node_18 -> Node_25;
+Node_15 -> Node_16;
+Node_16 -> Node_27;
+Node_1 -> Node_2;
+Node_1 -> Node_21;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_11 -> Node_17;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15;
+Node_24 -> Node_20;
+Node_25 -> Node_19;
+Node_26 -> Node_19;
+Node_27 -> Node_19;
+Node_28 -> Node_19;
+Node_29 -> Node_19;
+}
+

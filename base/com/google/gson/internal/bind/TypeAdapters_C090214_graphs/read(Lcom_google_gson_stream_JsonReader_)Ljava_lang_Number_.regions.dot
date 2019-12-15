@@ -1,0 +1,52 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapters.14.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/lang\/Number;" {
+subgraph cluster_Region_1171294544 {
+label = "R(3:0|(1:2)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.stream.JsonToken com.google.gson.stream.JsonToken r0 = r4.peek()\lint r1 = com.google.gson.internal.bind.TypeAdapters.C092836.$SwitchMap$com$google$gson$stream$JsonToken[r0.ordinal()]\l}"];
+subgraph cluster_IfRegion_1618556959 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r1 != 1) goto L_0x000f\l}"];
+subgraph cluster_Region_807019041 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1249173369 {
+label = "Switch: 2, default: R(2:3|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|switch(r1) \{\l    case 3: goto L_0x002e;\l    case 4: goto L_0x0029;\l    default: goto L_0x0012;\l\}\l}"];
+subgraph cluster_Region_1068236361 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_645306054 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_423311669 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0029|r4.nextNull()\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002d|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_1954125853 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012}"];
+Node_4 [shape=record,label="{4\:\ 0x0028|throw new com.google.gson.JsonSyntaxException(\"Expecting number, got: \" + r0)\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0037|RETURN\l|return new com.google.gson.internal.LazilyParsedNumber(r4.nextString())\l}"];
+}
+Node_7 [shape=record,color=red,label="{7\:\ 0x002e}"];
+MethodNode[shape=record,label="{public java.lang.Number com.google.gson.internal.bind.TypeAdapters.14.read((r3v0 'this' com.google.gson.internal.bind.TypeAdapters$14 A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_2 -> Node_7;
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

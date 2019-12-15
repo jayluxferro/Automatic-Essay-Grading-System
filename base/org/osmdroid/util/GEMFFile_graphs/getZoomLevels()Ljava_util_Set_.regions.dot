@@ -1,0 +1,29 @@
+digraph "CFG fororg.osmdroid.util.GEMFFile.getZoomLevels()Ljava\/util\/Set;" {
+subgraph cluster_Region_986348151 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.TreeSet java.util.TreeSet r0 = new java.util.TreeSet()\ljava.util.Iterator r1 = r3.mRangeData.iterator()\l}"];
+subgraph cluster_LoopRegion_1706153736 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|if (r1.hasNext() != false) goto L_0x0011\l}"];
+subgraph cluster_Region_448388457 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|LOOP_END\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l|r0.add(r2.zoom)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001d|RETURN\l|return r0\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b|LOOP_START\lLOOP:0: B:1:0x000b\-\>B:3:0x0011\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.Set\<java.lang.Integer\> org.osmdroid.util.GEMFFile.getZoomLevels((r3v0 'this' org.osmdroid.util.GEMFFile A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/Set\<, Ljava\/lang\/Integer;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

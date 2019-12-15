@@ -1,0 +1,41 @@
+digraph "CFG formil.nga.geopackage.extension.index.FeatureTableIndex.indexTable(Lmil\/nga\/geopackage\/extension\/index\/TableIndex;)I" {
+subgraph cluster_Region_846985611 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_295313242 {
+label = "Try: R(1:2) catches: R(3:3|4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1233953152 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001b|RETURN\l|return ((java.lang.Integer) com.j256.ormlite.misc.TransactionManager.callInTransaction(getGeoPackage().getDatabase().getConnectionSource(), new mil.nga.geopackage.extension.index.FeatureTableIndex.C13401())).intValue()\l}"];
+}
+subgraph cluster_Region_14170462 {
+label = "R(3:3|4|5) | ExcHandler: SQLException (r4v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|ExcHandler: SQLException (r4v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d}"];
+Node_5 [shape=record,label="{5\:\ 0x0047|throw new mil.nga.geopackage.GeoPackageException(\"Failed to Index Table. GeoPackage: \" + getGeoPackage().getName() + \", Table: \" + getTableName(), r4)\l}"];
+}
+}
+}
+subgraph cluster_Region_14170462 {
+label = "R(3:3|4|5) | ExcHandler: SQLException (r4v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|ExcHandler: SQLException (r4v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001d}"];
+Node_5 [shape=record,label="{5\:\ 0x0047|throw new mil.nga.geopackage.GeoPackageException(\"Failed to Index Table. GeoPackage: \" + getGeoPackage().getName() + \", Table: \" + getTableName(), r4)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x001c \}\lSplitter:B:0:0x0000\l}"];
+MethodNode[shape=record,label="{protected int mil.nga.geopackage.extension.index.FeatureTableIndex.indexTable((r3v0 'this' mil.nga.geopackage.extension.index.FeatureTableIndex A[IMMUTABLE_TYPE, THIS]), (r4v0 mil.nga.geopackage.extension.index.TableIndex A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+}
+

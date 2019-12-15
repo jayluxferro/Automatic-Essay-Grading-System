@@ -1,0 +1,32 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.instruction.InstructionStepResources.intersectionTurnLanes(Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;)V" {
+subgraph cluster_Region_1254113567 {
+label = "R(2:0|(1:2)(1:4))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.List java.util.List\<com.mapbox.api.directions.p008v5.models.IntersectionLanes\> r2 = r2.intersections().get(0).lanes()\l}"];
+subgraph cluster_IfRegion_427711587 {
+label = "IF [B:1:0x0013] THEN: R(1:2) ELSE: R(1:4)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0013|if (checkForNoneIndications(r2) == true) goto L_0x0015\l}"];
+subgraph cluster_Region_1745599564 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0015|r1.turnLanes = null\l}"];
+}
+subgraph cluster_Region_1051555908 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0019|r1.turnLanes = r2\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001b}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.ui.v5.instruction.InstructionStepResources.intersectionTurnLanes((r1v0 'this' com.mapbox.services.android.navigation.ui.v5.instruction.InstructionStepResources A[IMMUTABLE_TYPE, THIS]), (r2v0 com.mapbox.api.directions.v5.models.LegStep A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

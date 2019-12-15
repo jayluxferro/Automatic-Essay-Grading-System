@@ -1,0 +1,48 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.UdpDataSource.open(Lcom\/google\/android\/exoplayer2\/upstream\/DataSpec;)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.uri = r7.uri\ljava.lang.String r1 = r6.uri.getHost()\lint r2 = r6.uri.getPort()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|SYNTHETIC\lSplitter:B:1:0x0010\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x005b \}\lSplitter:B:1:0x0010\l|r6.address = java.net.InetAddress.getByName(r1)     \/\/ Catch:\{ IOException \-\> 0x005b \}\lr6.socketAddress = new java.net.InetSocketAddress(r6.address, r2)     \/\/ Catch:\{ IOException \-\> 0x005b \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0025|Catch:\{ IOException \-\> 0x005b \}\l|if (r6.address.isMulticastAddress() == false) goto L_0x0051     \/\/ Catch:\{ IOException \-\> 0x005b \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0027|Catch:\{ IOException \-\> 0x005b \}\l|r6.multicastSocket = new java.net.MulticastSocket(r6.socketAddress)     \/\/ Catch:\{ IOException \-\> 0x005b \}\lr6.multicastSocket.joinGroup(r6.address)     \/\/ Catch:\{ IOException \-\> 0x005b \}\lr6.socket = r6.multicastSocket     \/\/ Catch:\{ IOException \-\> 0x005b \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003b|SYNTHETIC\lSplitter:B:5:0x003b\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ SocketException \-\> 0x0062 \}\lSplitter:B:5:0x003b\l|r6.socket.setSoTimeout(r6.socketTimeoutMillis)     \/\/ Catch:\{ SocketException \-\> 0x0062 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0042|r6.opened = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0047|if (r6.listener == null) goto L_?\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0049|r6.listener.onTransferStart(r6, r7)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0051|SYNTHETIC\lSplitter:B:10:0x0051\l}"];
+Node_11 [shape=record,label="{11\:\ ?|Catch:\{ IOException \-\> 0x005b \}\lSplitter:B:10:0x0051\l|r6.socket = new java.net.DatagramSocket(r6.socketAddress)     \/\/ Catch:\{ IOException \-\> 0x005b \}\l}"];
+Node_12 [shape=record,label="{12\:\ 0x005b|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0010\l|java.io.IOException r0 = move\-exception\l}"];
+Node_13 [shape=record,label="{13\:\ 0x005c}"];
+Node_14 [shape=record,label="{14\:\ 0x0061|throw new com.google.android.exoplayer2.upstream.UdpDataSource.UdpDataSourceException(r0)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0062|ExcHandler: SocketException (r0v1 'e' java.net.SocketException A[CUSTOM_DECLARE])\lSplitter:B:5:0x003b\l|java.net.SocketException r0 = move\-exception\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0063}"];
+Node_17 [shape=record,label="{17\:\ 0x0068|throw new com.google.android.exoplayer2.upstream.UdpDataSource.UdpDataSourceException(r0)\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+Node_19 [shape=record,label="{19\:\ ?|SYNTHETIC\lRETURN\l|return \-1\l}"];
+MethodNode[shape=record,label="{public long com.google.android.exoplayer2.upstream.UdpDataSource.open((r6v0 'this' com.google.android.exoplayer2.upstream.UdpDataSource A[IMMUTABLE_TYPE, THIS]), (r7v0 'dataSpec' com.google.android.exoplayer2.upstream.DataSpec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.upstream.UdpDataSource$UdpDataSourceException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_15;
+Node_6 -> Node_7;
+Node_6 -> Node_15;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_19;
+Node_9 -> Node_18;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_11 -> Node_5;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+}
+

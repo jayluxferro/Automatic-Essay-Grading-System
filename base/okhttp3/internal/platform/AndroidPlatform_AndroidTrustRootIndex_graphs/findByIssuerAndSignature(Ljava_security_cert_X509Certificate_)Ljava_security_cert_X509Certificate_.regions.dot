@@ -1,0 +1,78 @@
+digraph "CFG forokhttp3.internal.platform.AndroidPlatform.AndroidTrustRootIndex.findByIssuerAndSignature(Ljava\/security\/cert\/X509Certificate;)Ljava\/security\/cert\/X509Certificate;" {
+subgraph cluster_Region_1745362106 {
+label = "R(1:(2:2|(2:(1:12)|(1:11))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1700717685 {
+label = "Try: R(2:2|(2:(1:12)|(1:11))) catches: R(2:8|10), R(1:6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1181639342 {
+label = "R(2:2|(2:(1:12)|(1:11)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IllegalAccessException \-\> 0x001b, InvocationTargetException \-\> 0x001a \}\lSplitter:B:1:0x0001\l|java.security.cert.TrustAnchor java.security.cert.TrustAnchor r6 = (java.security.cert.TrustAnchor) r5.findByIssuerAndSignatureMethod.invoke(r5.trustManager, new java.lang.Object[]\{r6\})     \/\/ Catch:\{ IllegalAccessException \-\> 0x001b, InvocationTargetException \-\> 0x001a \}\l}"];
+subgraph cluster_Region_2014300451 {
+label = "R(2:(1:12)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_821467545 {
+label = "IF [B:3:0x0011] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|Catch:\{ IllegalAccessException \-\> 0x001b, InvocationTargetException \-\> 0x001a \}\l|if (r6 != null) goto L_0x0013     \/\/ Catch:\{ IllegalAccessException \-\> 0x001b, InvocationTargetException \-\> 0x001a \}\l}"];
+subgraph cluster_Region_572881742 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return r6.getTrustedCert()\l}"];
+}
+}
+subgraph cluster_Region_861810775 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_454760266 {
+label = "R(2:8|10) | ExcHandler: IllegalAccessException (r6v1 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|ExcHandler: IllegalAccessException (r6v1 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0022|throw okhttp3.internal.Util.assertionError(\"unable to get issues and signature\", r6)\l}"];
+}
+subgraph cluster_Region_166999312 {
+label = "R(1:6) | ExcHandler: InvocationTargetException (unused java.lang.reflect.InvocationTargetException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|RETURN\l|return null\l}"];
+}
+}
+}
+subgraph cluster_Region_454760266 {
+label = "R(2:8|10) | ExcHandler: IllegalAccessException (r6v1 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|ExcHandler: IllegalAccessException (r6v1 'e' java.lang.IllegalAccessException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0001\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0022|throw okhttp3.internal.Util.assertionError(\"unable to get issues and signature\", r6)\l}"];
+}
+subgraph cluster_Region_166999312 {
+label = "R(1:6) | ExcHandler: InvocationTargetException (unused java.lang.reflect.InvocationTargetException)\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001a|RETURN\l|return null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\lSplitter:B:1:0x0001\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013|Catch:\{ IllegalAccessException \-\> 0x001b, InvocationTargetException \-\> 0x001a \}\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lExcHandler: InvocationTargetException (unused java.lang.reflect.InvocationTargetException)\lSplitter:B:1:0x0001\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001c}"];
+MethodNode[shape=record,label="{public java.security.cert.X509Certificate okhttp3.internal.platform.AndroidPlatform.AndroidTrustRootIndex.findByIssuerAndSignature((r5v0 'this' okhttp3.internal.platform.AndroidPlatform$AndroidTrustRootIndex A[IMMUTABLE_TYPE, THIS]), (r6v0 java.security.cert.X509Certificate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_9;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8;
+Node_1 -> Node_7;
+Node_4 -> Node_12;
+Node_5 -> Node_11;
+Node_7 -> Node_6;
+Node_9 -> Node_10;
+}
+

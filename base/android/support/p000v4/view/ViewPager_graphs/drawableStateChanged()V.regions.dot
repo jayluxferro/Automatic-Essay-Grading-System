@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.drawableStateChanged()V" {
+subgraph cluster_Region_637704052 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.drawableStateChanged()\landroid.graphics.drawable.Drawable android.graphics.drawable.Drawable r0 = r2.mMarginDrawable\l}"];
+subgraph cluster_Region_276368108 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_196922594 {
+label = "IF [B:1:0x0005, B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0 != null) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ADDED_TO_REGION\l|if (r0.isStateful() != false) goto L_0x000d\l}"];
+subgraph cluster_Region_1104129100 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|r0.setState(getDrawableState())\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void android.support.v4.view.ViewPager.drawableStateChanged((r2v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

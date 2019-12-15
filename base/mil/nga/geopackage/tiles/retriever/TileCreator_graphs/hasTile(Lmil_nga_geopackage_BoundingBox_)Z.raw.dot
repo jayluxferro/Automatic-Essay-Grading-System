@@ -1,0 +1,28 @@
+digraph "CFG formil.nga.geopackage.tiles.retriever.TileCreator.hasTile(Lmil\/nga\/geopackage\/BoundingBox;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:mil.nga.geopackage.projection.Projection) = (r2 I:mil.nga.geopackage.tiles.retriever.TileCreator) mil.nga.geopackage.tiles.retriever.TileCreator.requestProjection mil.nga.geopackage.projection.Projection \l0x0002: IGET  (r1 I:mil.nga.geopackage.projection.Projection) = (r2 I:mil.nga.geopackage.tiles.retriever.TileCreator) mil.nga.geopackage.tiles.retriever.TileCreator.tilesProjection mil.nga.geopackage.projection.Projection \l0x0004: INVOKE  (r0 I:mil.nga.geopackage.projection.ProjectionTransform) = \l  (r0 I:mil.nga.geopackage.projection.Projection)\l  (r1 I:mil.nga.geopackage.projection.Projection)\l mil.nga.geopackage.projection.Projection.getTransformation(mil.nga.geopackage.projection.Projection):mil.nga.geopackage.projection.ProjectionTransform type: VIRTUAL \l0x0008: INVOKE  (r3 I:mil.nga.geopackage.BoundingBox) = \l  (r0 I:mil.nga.geopackage.projection.ProjectionTransform)\l  (r3 I:mil.nga.geopackage.BoundingBox)\l mil.nga.geopackage.projection.ProjectionTransform.transform(mil.nga.geopackage.BoundingBox):mil.nga.geopackage.BoundingBox type: VIRTUAL \l0x000c: INVOKE  (r0 I:mil.nga.geopackage.tiles.matrix.TileMatrix) = \l  (r2 I:mil.nga.geopackage.tiles.retriever.TileCreator)\l  (r3 I:mil.nga.geopackage.BoundingBox)\l mil.nga.geopackage.tiles.retriever.TileCreator.getTileMatrix(mil.nga.geopackage.BoundingBox):mil.nga.geopackage.tiles.matrix.TileMatrix type: DIRECT \l0x0010: INVOKE  (r3 I:mil.nga.geopackage.tiles.user.TileCursor) = \l  (r2 I:mil.nga.geopackage.tiles.retriever.TileCreator)\l  (r3 I:mil.nga.geopackage.BoundingBox)\l  (r0 I:mil.nga.geopackage.tiles.matrix.TileMatrix)\l mil.nga.geopackage.tiles.retriever.TileCreator.retrieveTileResults(mil.nga.geopackage.BoundingBox, mil.nga.geopackage.tiles.matrix.TileMatrix):mil.nga.geopackage.tiles.user.TileCursor type: DIRECT \l0x0014: CONST  (r0 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0015|0x0015: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:10:0x0027 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0017|SYNTHETIC\lSplitter:B:2:0x0017\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0017\l|0x0017: INVOKE  (r1 I:int) = (r3 I:mil.nga.geopackage.tiles.user.TileCursor) mil.nga.geopackage.tiles.user.TileCursor.getCount():int type: VIRTUAL A[Catch:\{ all \-\> 0x0022 \}, TRY_ENTER]\l0x001a: NOP   A[TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001b|0x001b: IF  (r1 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:6:0x001e \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|0x001d: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: INVOKE  (r3 I:mil.nga.geopackage.tiles.user.TileCursor) mil.nga.geopackage.tiles.user.TileCursor.close():void type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0022|ExcHandler: all null\lSplitter:B:2:0x0017\l|0x0022: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0023|0x0023: INVOKE  (r3 I:mil.nga.geopackage.tiles.user.TileCursor) mil.nga.geopackage.tiles.user.TileCursor.close():void type: VIRTUAL \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0026|0x0026: THROW  (r0 I:java.lang.Throwable) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0027|0x0027: RETURN  (r0 I:boolean) \l}"];
+MethodNode[shape=record,label="{public boolean mil.nga.geopackage.tiles.retriever.TileCreator.hasTile((r2 'this' I:mil.nga.geopackage.tiles.retriever.TileCreator A[IMMUTABLE_TYPE, THIS]), (r3 I:mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_10;
+Node_2 -> Node_3;
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

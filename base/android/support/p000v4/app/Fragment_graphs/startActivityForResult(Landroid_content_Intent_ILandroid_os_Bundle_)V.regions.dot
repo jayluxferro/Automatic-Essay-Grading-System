@@ -1,0 +1,36 @@
+digraph "CFG forandroid.support.v4.app.Fragment.startActivityForResult(Landroid\/content\/Intent;ILandroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1680578438 {
+label = "R(1:(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1184318192 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_867328255 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mHost != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1818682689 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.mHost.onStartActivityFromFragment(r1, r2, r3, r4)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1414121708 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a}"];
+Node_5 [shape=record,label="{5\:\ 0x0025|throw new java.lang.IllegalStateException(\"Fragment \" + r1 + \" not attached to Activity\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.Fragment.startActivityForResult((r1v0 'this' android.support.v4.app.Fragment A[IMMUTABLE_TYPE, THIS]), (r2v0 android.content.Intent A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | , , Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

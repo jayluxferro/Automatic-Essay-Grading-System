@@ -1,0 +1,176 @@
+digraph "CFG forcom.google.android.exoplayer2.mediacodec.MediaCodecRenderer.onInputFormatChanged(Lcom\/google\/android\/exoplayer2\/Format;)V" {
+subgraph cluster_Region_1231773227 {
+label = "R(3:0|(1:(1:32)(1:(1:12)(2:15|(1:17))))|(3:24|(1:30)(1:33)|31)(1:(1:36)(1:37))) | DECL_VAR: boolean null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.Format com.google.android.exoplayer2.Format r1 = r7.format\lr7.format = r8\l}"];
+subgraph cluster_IfRegion_34075726 {
+label = "IF [B:6:0x0015] THEN: R(1:(1:32)(1:(1:12)(2:15|(1:17)))) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|PHI: r0 \l  PHI: (r0v1 'drmInitDataChanged' boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if ((!com.google.android.exoplayer2.util.Util.areEqual(r7.format.drmInitData, r1 == null ? null : r1.drmInitData)) == true) goto L_0x0017\l}"];
+subgraph cluster_Region_1948515634 {
+label = "R(1:(1:32)(1:(1:12)(2:15|(1:17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1644878615 {
+label = "IF [B:8:0x001b] THEN: R(1:32) ELSE: R(1:(1:12)(2:15|(1:17)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001b|if (r7.format.drmInitData == null) goto L_0x0085\l}"];
+subgraph cluster_Region_1431778795 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0085|r7.pendingDrmSession = null\l}"];
+}
+subgraph cluster_Region_1754055298 {
+label = "R(1:(1:12)(2:15|(1:17))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_53307596 {
+label = "IF [B:10:0x001f] THEN: R(1:12) ELSE: R(2:15|(1:17)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001f|if (r7.drmSessionManager == null) goto L_0x0021\l}"];
+subgraph cluster_Region_936106461 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0030|throw com.google.android.exoplayer2.ExoPlaybackException.createForRenderer(new java.lang.IllegalStateException(\"Media requires a DrmSessionManager\"), getIndex())\l}"];
+}
+subgraph cluster_Region_1532971682 {
+label = "R(2:15|(1:17))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0036|r7.pendingDrmSession = r7.drmSessionManager.acquireSession(android.os.Looper.myLooper(), r7.format.drmInitData)\l}"];
+subgraph cluster_IfRegion_1439239065 {
+label = "IF [B:16:0x004a] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004a|if (r7.pendingDrmSession == r7.drmSession) goto L_0x004c\l}"];
+subgraph cluster_Region_1036673764 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004c|r7.drmSessionManager.releaseSession(r7.pendingDrmSession)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_1306152202 {
+label = "IF [B:19:0x0057, B:21:0x005b, B:23:0x0067] THEN: R(3:24|(1:30)(1:33)|31) ELSE: R(1:(1:36)(1:37))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0057|if (r7.pendingDrmSession == r7.drmSession) goto L_0x0059\l}"];
+Node_21 [shape=record,label="{21\:\ 0x005b|ADDED_TO_REGION\l|if (r7.codec != null) goto L_0x005d\l}"];
+Node_23 [shape=record,label="{23\:\ 0x0067|ADDED_TO_REGION\l|if (canReconfigureCodec(r7.codec, r7.codecIsAdaptive, r1, r7.format) != false) goto L_0x0069\l}"];
+subgraph cluster_Region_1420186033 {
+label = "R(3:24|(1:30)(1:33)|31)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0069|r7.codecReconfigured = true\lr7.codecReconfigurationState = 1\l}"];
+subgraph cluster_IfRegion_1449656576 {
+label = "IF [B:25:0x006f, B:27:0x0077, B:29:0x007f] THEN: R(1:30) ELSE: R(1:33)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x006f|if (r7.codecNeedsAdaptationWorkaround != false) goto L_0x0071\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0077|ADDED_TO_REGION\l|if (r7.format.width == r1.width) goto L_0x0079\l}"];
+Node_29 [shape=record,label="{29\:\ 0x007f|ADDED_TO_REGION\l|if (r7.format.height == r1.height) goto L_0x0081\l}"];
+subgraph cluster_Region_2021240454 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0081|r2 = true\l}"];
+}
+subgraph cluster_Region_1164019680 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0088|r2 = false\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0082|PHI: r2 \l  PHI: (r2v11 boolean) = (r2v10 boolean), (r2v16 boolean) binds: [B:33:0x0088, B:30:0x0081] A[DONT_GENERATE, DONT_INLINE]\l|r7.codecNeedsAdaptationWorkaroundBuffer = r2\l}"];
+}
+subgraph cluster_Region_1963789277 {
+label = "R(1:(1:36)(1:37)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1753563942 {
+label = "IF [B:35:0x008c] THEN: R(1:36) ELSE: R(1:37) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x008c|if (r7.codecReceivedBuffers == true) goto L_0x008e\l}"];
+subgraph cluster_Region_104251792 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x008e|r7.codecReinitializationState = 1\l}"];
+}
+subgraph cluster_Region_1618682686 {
+label = "R(1:37)";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x0091|releaseCodec()\lmaybeInitCodec()\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000b}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e|PHI: r2 \l  PHI: (r2v2 com.google.android.exoplayer2.drm.DrmInitData) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0014}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0021}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0031}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0034}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0053}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0059}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x005d}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0071}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0079}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x008a}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.mediacodec.MediaCodecRenderer.onInputFormatChanged((r7v0 'this' com.google.android.exoplayer2.mediacodec.MediaCodecRenderer A[IMMUTABLE_TYPE, THIS]), (r8v0 'newFormat' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.ExoPlaybackException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_6 -> Node_7;
+Node_6 -> Node_18[style=dashed];
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_32;
+Node_32 -> Node_18;
+Node_10 -> Node_11;
+Node_10 -> Node_15[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_34[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_34[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_34[style=dashed];
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_33[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_33[style=dashed];
+Node_29 -> Node_30;
+Node_29 -> Node_33[style=dashed];
+Node_30 -> Node_31;
+Node_33 -> Node_31;
+Node_31 -> Node_38;
+Node_35 -> Node_36;
+Node_35 -> Node_37[style=dashed];
+Node_36 -> Node_39;
+Node_37 -> Node_40;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_14;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_3;
+Node_14 -> Node_6;
+Node_18 -> Node_19;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_34 -> Node_35;
+}
+

@@ -1,0 +1,93 @@
+digraph "CFG forokhttp3.internal.http2.Http2Writer.connectionPreface()V" {
+subgraph cluster_Region_83041089 {
+label = "R(1:(1:(1:(1:17)(1:(2:(1:11)|12)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2112207380 {
+label = "R(1:(1:(1:17)(1:(2:(1:11)|12)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1358939389 {
+label = "R(1:(1:17)(1:(2:(1:11)|12)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_482934818 {
+label = "IF [B:3:0x0003] THEN: R(1:17) ELSE: R(1:(2:(1:11)|12)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0003|if (r5.closed != false) goto L_0x003e\l}"];
+subgraph cluster_Region_16525801 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0045|throw new java.io.IOException(\"closed\")\l}"];
+}
+subgraph cluster_Region_1352210168 {
+label = "R(1:(2:(1:11)|12)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2129655866 {
+label = "IF [B:5:0x0007] THEN: R(2:(1:11)|12) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|if (r5.client != false) goto L_0x000b\l}"];
+subgraph cluster_Region_720580565 {
+label = "R(2:(1:11)|12)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1260513283 {
+label = "IF [B:10:0x0013] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0013|if (logger.isLoggable(java.util.logging.Level.FINE) == true) goto L_0x0015\l}"];
+subgraph cluster_Region_1394018633 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0015|logger.fine(okhttp3.internal.Util.format(\"\>\> CONNECTION %s\", okhttp3.internal.http2.Http2.CONNECTION_PREFACE.hex()))\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x002c|r5.sink.write(okhttp3.internal.http2.Http2.CONNECTION_PREFACE.toByteArray())\lr5.sink.flush()\l}"];
+}
+subgraph cluster_Region_1379407161 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ 0x0001|SYNTHETIC\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ ?}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0005}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0009|DONT_GENERATE\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x000b|SYNTHETIC\lSplitter:B:8:0x000b\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|Splitter:B:8:0x000b\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003c|DONT_GENERATE\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x003d}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003e|SYNTHETIC\lSplitter:B:15:0x003e\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|Splitter:B:15:0x003e\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0046|REMOVE\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0047|REMOVE\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0048|REMOVE\l|throw r0\l}"];
+MethodNode[shape=record,label="{public synchronized void okhttp3.internal.http2.Http2Writer.connectionPreface((r5v0 'this' okhttp3.internal.http2.Http2Writer A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_15;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_18;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_18;
+Node_9 -> Node_10;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_18;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+}
+

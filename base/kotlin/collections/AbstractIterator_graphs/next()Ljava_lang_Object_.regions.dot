@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.collections.AbstractIterator.next()Ljava\/lang\/Object;" {
+subgraph cluster_Region_1544296705 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1080332133 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_11410844 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (hasNext() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1633520083 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r1.state = kotlin.collections.State.NotReady\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return r1.nextValue\l}"];
+}
+}
+subgraph cluster_Region_1562722536 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new java.util.NoSuchElementException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d}"];
+MethodNode[shape=record,label="{public T kotlin.collections.AbstractIterator.next((r1v0 'this' kotlin.collections.AbstractIterator A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[()TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

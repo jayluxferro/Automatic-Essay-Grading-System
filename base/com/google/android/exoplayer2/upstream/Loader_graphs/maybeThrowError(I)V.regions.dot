@@ -1,0 +1,65 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.Loader.maybeThrowError(I)V" {
+subgraph cluster_Region_1567093316 {
+label = "R(1:(1:3)(1:(3:6|(1:8)|9)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1904199389 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: R(1:(3:6|(1:8)|9)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.fatalError != null) goto L_0x0004\l}"];
+subgraph cluster_Region_909801666 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|throw r2.fatalError\l}"];
+}
+subgraph cluster_Region_61331774 {
+label = "R(1:(3:6|(1:8)|9)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1638985436 {
+label = "IF [B:5:0x0009] THEN: R(3:6|(1:8)|9) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|if (r2.currentTask != null) goto L_0x000b\l}"];
+subgraph cluster_Region_451073042 {
+label = "R(3:6|(1:8)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000b|com.google.android.exoplayer2.upstream.Loader$LoadTask\<? extends com.google.android.exoplayer2.upstream.Loader$Loadable\> com.google.android.exoplayer2.upstream.Loader.LoadTask\<? extends com.google.android.exoplayer2.upstream.Loader.Loadable\> r0 = r2.currentTask\l}"];
+subgraph cluster_IfRegion_1853261081 {
+label = "IF [B:7:0x000f] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|if (r3 == Integer.MIN_VALUE) goto L_0x0011\l}"];
+subgraph cluster_Region_191827069 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0011|int r3 = r2.currentTask.defaultMinRetryCount\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0015|PHI: r3 \l  PHI: (r3v1 'minRetryCount' int) = (r3v0 'minRetryCount' int), (r3v2 'minRetryCount' int) binds: [B:7:0x000f, B:8:0x0011] A[DONT_GENERATE, DONT_INLINE]\l|r0.maybeThrowError(r3)\l}"];
+}
+subgraph cluster_Region_918309383 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.upstream.Loader.maybeThrowError((r2v0 'this' com.google.android.exoplayer2.upstream.Loader A[IMMUTABLE_TYPE, THIS]), (r3v0 'minRetryCount' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

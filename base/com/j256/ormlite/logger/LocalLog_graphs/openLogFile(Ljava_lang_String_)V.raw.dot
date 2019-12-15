@@ -1,0 +1,22 @@
+digraph "CFG forcom.j256.ormlite.logger.LocalLog.openLogFile(Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:2:0x0007 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: SGET  (r4 I:java.io.PrintStream) =  java.lang.System.out java.io.PrintStream \l0x0004: SPUT  (r4 I:java.io.PrintStream) com.j256.ormlite.logger.LocalLog.printStream java.io.PrintStream \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|SYNTHETIC\lSplitter:B:2:0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Splitter:B:2:0x0007\l|0x0007: NEW_INSTANCE  (r0 I:java.io.PrintStream) =  java.io.PrintStream A[Catch:\{ FileNotFoundException \-\> 0x0014 \}, TRY_ENTER]\l0x0009: NEW_INSTANCE  (r1 I:java.io.File) =  java.io.File A[Catch:\{ FileNotFoundException \-\> 0x0014 \}]\l0x000b: INVOKE  (r1 I:java.io.File), (r4 I:java.lang.String) java.io.File.\<init\>(java.lang.String):void type: DIRECT A[Catch:\{ FileNotFoundException \-\> 0x0014 \}]\l0x000e: INVOKE  (r0 I:java.io.PrintStream), (r1 I:java.io.File) java.io.PrintStream.\<init\>(java.io.File):void type: DIRECT A[Catch:\{ FileNotFoundException \-\> 0x0014 \}]\l0x0011: SPUT  (r0 I:java.io.PrintStream) com.j256.ormlite.logger.LocalLog.printStream java.io.PrintStream A[Catch:\{ FileNotFoundException \-\> 0x0014 \}, TRY_LEAVE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: RETURN   \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ExcHandler: FileNotFoundException null\lSplitter:B:2:0x0007\l|0x0014: MOVE_EXCEPTION  (r0 I:?[OBJECT]) =  \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|0x0015: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0017: NEW_INSTANCE  (r2 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0019: INVOKE  (r2 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x001c: CONST_STR  (r3 I:java.lang.String) =  \"Log file \" \l0x001e: INVOKE  (r2 I:java.lang.StringBuilder), (r3 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0021: INVOKE  (r2 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0024: CONST_STR  (r4 I:java.lang.String) =  \" was not found\" \l0x0026: INVOKE  (r2 I:java.lang.StringBuilder), (r4 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0029: INVOKE  (r4 I:java.lang.String) = (r2 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x002d: INVOKE  \l  (r1 I:java.lang.IllegalArgumentException)\l  (r4 I:java.lang.String)\l  (r0 I:java.lang.Throwable)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String, java.lang.Throwable):void type: DIRECT \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0030|0x0030: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static void com.j256.ormlite.logger.LocalLog.openLogFile((r4 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_2;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

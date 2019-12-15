@@ -1,0 +1,175 @@
+digraph "CFG forkotlin.jvm.internal.SpreadBuilder.addSpread(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_2076582434 {
+label = "R(1:(1:(2:4|(1:(2:6|(1:8))))(1:(1:11)(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25)))))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_586887354 {
+label = "IF [B:0:0x0000] THEN: R(1:(2:4|(1:(2:6|(1:8))))(1:(1:11)(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25))))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 != null) goto L_0x0003\l}"];
+subgraph cluster_Region_1279437522 {
+label = "R(1:(2:4|(1:(2:6|(1:8))))(1:(1:11)(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25)))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1796238208 {
+label = "IF [B:3:0x0005] THEN: R(2:4|(1:(2:6|(1:8)))) ELSE: R(1:(1:11)(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|if ((r5 instanceof java.lang.Object[]) == true) goto L_0x0007\l}"];
+subgraph cluster_Region_1929503112 {
+label = "R(2:4|(1:(2:6|(1:8))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0007|java.lang.Object[] java.lang.Object[] r5 = (java.lang.Object[]) r5\l}"];
+subgraph cluster_Region_562922482 {
+label = "R(1:(2:6|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_203683986 {
+label = "IF [B:5:0x000a] THEN: R(2:6|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|if (r5.length \> 0) goto L_0x000c\l}"];
+subgraph cluster_Region_1397063549 {
+label = "R(2:6|(1:8))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000c|r4.list.ensureCapacity(r4.list.size() + r5.length)\lint int r0 = r5.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1518868889 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|LOOP_START\lPHI: r1 \l  PHI: (r1v7 int) = (r1v6 int), (r1v8 int) binds: [B:6:0x000c, B:8:0x001d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x001b\-\>B:8:0x001d\l|if (r1 \< r0) goto L_0x001d\l}"];
+subgraph cluster_Region_1151178147 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|LOOP_END\lLOOP:0: B:7:0x001b\-\>B:8:0x001d\l|r4.list.add(r2)\lr1++\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_63257632 {
+label = "R(1:(1:11)(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1801526195 {
+label = "IF [B:10:0x0029] THEN: R(1:11) ELSE: R(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0029|if ((r5 instanceof java.util.Collection) == true) goto L_0x002b\l}"];
+subgraph cluster_Region_650020670 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|r4.list.addAll((java.util.Collection) r5)\l}"];
+}
+subgraph cluster_Region_1021314721 {
+label = "R(1:(2:14|(1:17))(1:(2:20|(1:23))(2:24|25))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_384698657 {
+label = "IF [B:13:0x0035] THEN: R(2:14|(1:17)) ELSE: R(1:(2:20|(1:23))(2:24|25)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0035|if ((r5 instanceof java.lang.Iterable) == true) goto L_0x0037\l}"];
+subgraph cluster_Region_1974543564 {
+label = "R(2:14|(1:17))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0037|java.util.Iterator r5 = ((java.lang.Iterable) r5).iterator()\l}"];
+subgraph cluster_LoopRegion_660920883 {
+label = "LOOP:1: (1:17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0041|if (r5.hasNext() != false) goto L_0x0043\l}"];
+subgraph cluster_Region_453838192 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0043|LOOP_END\lLOOP:1: B:15:0x003d\-\>B:17:0x0043\l|r4.list.add(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_2102177841 {
+label = "R(1:(2:20|(1:23))(2:24|25)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_19360784 {
+label = "IF [B:19:0x004f] THEN: R(2:20|(1:23)) ELSE: R(2:24|25) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x004f|if ((r5 instanceof java.util.Iterator) == true) goto L_0x0051\l}"];
+subgraph cluster_Region_495737376 {
+label = "R(2:20|(1:23))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0051|java.util.Iterator java.util.Iterator r5 = (java.util.Iterator) r5\l}"];
+subgraph cluster_LoopRegion_1665634244 {
+label = "LOOP:2: (1:23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0057|if (r5.hasNext() != false) goto L_0x0059\l}"];
+subgraph cluster_Region_687339273 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0059|LOOP_END\lLOOP:2: B:21:0x0053\-\>B:23:0x0059\l|r4.list.add(r5.next())\l}"];
+}
+}
+}
+subgraph cluster_Region_9669445 {
+label = "R(2:24|25)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0064}"];
+Node_25 [shape=record,label="{25\:\ 0x007e|throw new java.lang.UnsupportedOperationException(\"Don't know how to spread \" + r5.getClass())\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1933981858 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0027}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0033}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x003d|LOOP_START\lLOOP:1: B:15:0x003d\-\>B:17:0x0043\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004d}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0053|LOOP_START\lLOOP:2: B:21:0x0053\-\>B:23:0x0059\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0063|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0063|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0063|SYNTHETIC\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ ?|SYNTHETIC\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ ?|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ ?|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void kotlin.jvm.internal.SpreadBuilder.addSpread((r4v0 'this' kotlin.jvm.internal.SpreadBuilder A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_29[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_26[style=dashed];
+Node_8 -> Node_7;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_30;
+Node_13 -> Node_14;
+Node_13 -> Node_18[style=dashed];
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_27[style=dashed];
+Node_17 -> Node_15;
+Node_19 -> Node_20;
+Node_19 -> Node_24[style=dashed];
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_28[style=dashed];
+Node_23 -> Node_21;
+Node_24 -> Node_25;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_21 -> Node_22;
+Node_26 -> Node_31;
+Node_27 -> Node_32;
+Node_28 -> Node_33;
+}
+

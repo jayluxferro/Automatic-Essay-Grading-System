@@ -1,0 +1,79 @@
+digraph "CFG forandroid.support.v7.widget.Toolbar.isTitleTruncated()Z" {
+subgraph cluster_Region_755258146 {
+label = "R(1:(2:(1:5)|(3:6|(1:(2:(1:10)|(1:11)))|12))) | DECL_VAR: android.text.Layout null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1696760595 {
+label = "R(2:(1:5)|(3:6|(1:(2:(1:10)|(1:11)))|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1734721309 {
+label = "IF [B:1:0x0003, B:4:0x000c] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r5.mTitleTextView == null) goto L_0x0005\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if ((r0 = r5.mTitleTextView.getLayout()) == null) goto L_0x000e\l}"];
+subgraph cluster_Region_513643031 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1452235879 {
+label = "R(3:6|(1:(2:(1:10)|(1:11)))|12)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|int int r2 = r0.getLineCount()\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_621346459 {
+label = "LOOP:0: (1:(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:6:0x000f, B:11:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x0014\-\>B:11:0x001e\l|if (r3 \< r2) goto L_0x0016\l}"];
+subgraph cluster_Region_294608805 {
+label = "R(1:(2:(1:10)|(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1615101084 {
+label = "R(2:(1:10)|(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_216373468 {
+label = "IF [B:9:0x001a] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|if (r0.getEllipsisCount(r3) \> 0) goto L_0x001c\l}"];
+subgraph cluster_Region_714320606 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001c|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1602060567 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001e|LOOP_END\lLOOP:0: B:7:0x0014\-\>B:11:0x001e\l|r3++\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0021|RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0016}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0021|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.widget.Toolbar.isTitleTruncated((r5v0 'this' android.support.v7.widget.Toolbar A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.RestrictTo, \{value=[android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP android.support.annotation.RestrictTo$Scope]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_9 -> Node_11[style=dashed];
+Node_9 -> Node_14;
+Node_11 -> Node_7;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_13 -> Node_12;
+Node_14 -> Node_10;
+}
+

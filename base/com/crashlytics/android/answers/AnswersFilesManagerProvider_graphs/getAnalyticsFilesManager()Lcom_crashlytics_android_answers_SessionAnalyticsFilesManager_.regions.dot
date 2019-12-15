@@ -1,0 +1,36 @@
+digraph "CFG forcom.crashlytics.android.answers.AnswersFilesManagerProvider.getAnalyticsFilesManager()Lcom\/crashlytics\/android\/answers\/SessionAnalyticsFilesManager;" {
+subgraph cluster_Region_1489834817 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1913019853 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1696215348 {
+label = "IF [B:1:0x0008] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (android.os.Looper.myLooper() != android.os.Looper.getMainLooper()) goto L_0x000a\l}"];
+subgraph cluster_Region_60075445 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a}"];
+Node_3 [shape=record,label="{3\:\ 0x002c|RETURN\l|return new com.crashlytics.android.answers.SessionAnalyticsFilesManager(r7.context, new com.crashlytics.android.answers.SessionEventTransform(), new p018io.fabric.sdk.android.services.common.SystemCurrentTimeProvider(), new p018io.fabric.sdk.android.services.events.GZIPQueueFileEventStorage(r7.context, r7.fileStore.getFilesDir(), SESSION_ANALYTICS_FILE_NAME, SESSION_ANALYTICS_TO_SEND_DIR))\l}"];
+}
+}
+subgraph cluster_Region_863232413 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0034|throw new java.lang.IllegalStateException(\"AnswersFilesManagerProvider cannot be called on the main thread\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x002d}"];
+MethodNode[shape=record,label="{public com.crashlytics.android.answers.SessionAnalyticsFilesManager com.crashlytics.android.answers.AnswersFilesManagerProvider.getAnalyticsFilesManager((r7v0 'this' com.crashlytics.android.answers.AnswersFilesManagerProvider A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

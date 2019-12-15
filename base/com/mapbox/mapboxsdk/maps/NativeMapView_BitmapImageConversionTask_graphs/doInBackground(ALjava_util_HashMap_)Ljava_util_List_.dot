@@ -1,0 +1,28 @@
+digraph "CFG forcom.mapbox.mapboxsdk.maps.NativeMapView.BitmapImageConversionTask.doInBackground([Ljava\/util\/HashMap;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r13 = r13[0]\ljava.util.ArrayList r1 = new java.util.ArrayList()\ljava.util.Iterator r13 = r13.entrySet().iterator()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0010|LOOP_START\lLOOP:0: B:1:0x0010\-\>B:6:0x0037\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0014|if (r13.hasNext() == false) goto L_0x0063\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|java.util.Map$Entry r2 = r13.next()\ljava.lang.String r7 = (java.lang.String) r2.getKey()\landroid.graphics.Bitmap r2 = (android.graphics.Bitmap) r2.getValue()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002f|if (r2.getConfig() == android.graphics.Bitmap.Config.ARGB_8888) goto L_0x0037\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|android.graphics.Bitmap r2 = r2.copy(android.graphics.Bitmap.Config.ARGB_8888, false)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037|LOOP_END\lPHI: r2 \l  PHI: (r2v5 android.graphics.Bitmap) = (r2v4 android.graphics.Bitmap), (r2v6 android.graphics.Bitmap) binds: [B:10:0x0037, B:9:0x0037] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0010\-\>B:6:0x0037\l|java.nio.ByteBuffer r3 = java.nio.ByteBuffer.allocate(r2.getByteCount())\lr2.copyPixelsToBuffer(r3)\lbyte[] r5 = r3.array()\lr1.add(new com.mapbox.mapboxsdk.maps.Image(r5, ((float) r2.getDensity()) \/ 160.0f, r7, r2.getWidth(), r2.getHeight(), r12.sdf))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0063|RETURN\l|return r1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0063|SYNTHETIC\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0037|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0037|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected java.util.List\<com.mapbox.mapboxsdk.maps.Image\> com.mapbox.mapboxsdk.maps.NativeMapView.BitmapImageConversionTask.doInBackground((r12v0 'this' com.mapbox.mapboxsdk.maps.NativeMapView$BitmapImageConversionTask A[IMMUTABLE_TYPE, THIS]), (r13v0 java.util.HashMap\<java.lang.String, android.graphics.Bitmap\>[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([, Ljava\/util\/HashMap\<, Ljava\/lang\/String;, Landroid\/graphics\/Bitmap;, \>;), Ljava\/util\/List\<, Lcom\/mapbox\/mapboxsdk\/maps\/Image;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_10;
+Node_5 -> Node_9;
+Node_6 -> Node_1;
+Node_8 -> Node_7;
+Node_9 -> Node_6;
+Node_10 -> Node_6;
+}
+

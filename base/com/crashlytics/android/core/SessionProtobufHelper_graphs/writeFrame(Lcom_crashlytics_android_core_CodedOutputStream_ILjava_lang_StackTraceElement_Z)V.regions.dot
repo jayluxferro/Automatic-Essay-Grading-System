@@ -1,0 +1,83 @@
+digraph "CFG forcom.crashlytics.android.core.SessionProtobufHelper.writeFrame(Lcom\/crashlytics\/android\/core\/CodedOutputStream;ILjava\/lang\/StackTraceElement;Z)V" {
+subgraph cluster_Region_1506010588 {
+label = "R(8:0|(1:2)(1:3)|4|(1:6)|7|(1:11)|(1:14)|15)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r5.writeTag(r6, 2)\lr5.writeRawVarint32(getFrameSize(r7, r8))\l}"];
+subgraph cluster_IfRegion_1801080702 {
+label = "IF [B:1:0x0011] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0011|if (r7.isNativeMethod() == true) goto L_0x0013\l}"];
+subgraph cluster_Region_1327722225 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0013|r5.writeUInt64(1, (long) java.lang.Math.max(r7.getLineNumber(), 0))\l}"];
+}
+subgraph cluster_Region_948319772 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0020|r5.writeUInt64(1, 0)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0025|r5.writeBytes(2, com.crashlytics.android.core.ByteString.copyFromUtf8(r7.getClassName() + mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER + r7.getMethodName()))\l}"];
+subgraph cluster_IfRegion_909289695 {
+label = "IF [B:5:0x004c] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x004c|if (r7.getFileName() != null) goto L_0x004e\l}"];
+subgraph cluster_Region_262807768 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x004e|r5.writeBytes(3, com.crashlytics.android.core.ByteString.copyFromUtf8(r7.getFileName()))\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x005a|int r0 = 4\l}"];
+subgraph cluster_IfRegion_1537905466 {
+label = "IF [B:8:0x005f, B:10:0x0065] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005f|ADDED_TO_REGION\l|if (r7.isNativeMethod() == false) goto L_0x0061\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0065|ADDED_TO_REGION\l|if (r7.getLineNumber() \> 0) goto L_0x0067\l}"];
+subgraph cluster_Region_1377138821 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0067|r5.writeUInt64(4, (long) r7.getLineNumber())\l}"];
+}
+}
+subgraph cluster_IfRegion_1900168776 {
+label = "IF [B:13:0x0070] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0070|if (r8 == false) goto L_0x0073\l}"];
+subgraph cluster_Region_888044559 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0073|r0 = 0\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0074|PHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v3 int) binds: [B:13:0x0070, B:14:0x0073] A[DONT_GENERATE, DONT_INLINE]\l|r5.writeUInt32(5, r0)\l}"];
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x0061}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x006f}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0077}"];
+MethodNode[shape=record,label="{private static void com.crashlytics.android.core.SessionProtobufHelper.writeFrame((r5v0 com.crashlytics.android.core.CodedOutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.StackTraceElement A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.lang.Exception]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_12[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.crashlytics.android.core.ReportUploader.\<init\>(Ljava\/lang\/String;Lcom\/crashlytics\/android\/core\/CreateReportSpiCall;Lcom\/crashlytics\/android\/core\/ReportUploader$ReportFilesProvider;Lcom\/crashlytics\/android\/core\/ReportUploader$HandlingExceptionCheck;)V" {
+subgraph cluster_Region_638207361 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_2017266071 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_437923916 {
+label = "IF [B:1:0x000a] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r3 != null) goto L_0x000c\l}"];
+subgraph cluster_Region_607318827 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|r1.createReportCall = r3\lr1.apiKey = r2\lr1.reportFilesProvider = r4\lr1.handlingExceptionCheck = r5\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1356893281 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|throw new java.lang.IllegalArgumentException(\"createReportCall must not be null.\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.core.ReportUploader.\<init\>((r1v0 'this' com.crashlytics.android.core.ReportUploader A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.crashlytics.android.core.CreateReportSpiCall A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.crashlytics.android.core.ReportUploader$ReportFilesProvider A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.crashlytics.android.core.ReportUploader$HandlingExceptionCheck A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,35 @@
+digraph "CFG forar.com.hjg.pngj.Deinterlacer.setRow(I)V" {
+subgraph cluster_Region_342671400 {
+label = "R(2:0|(1:(1:6)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.currRowSubimg = r2\lr1.currRowReal = (r2 * r1.f49dY) + r1.f51oY\l}"];
+subgraph cluster_Region_579185027 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_268400758 {
+label = "IF [B:1:0x000d, B:3:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r1.currRowReal \< 0) goto L_0x0018\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|ADDED_TO_REGION\l|if (r1.currRowReal \>= r1.imi.rows) goto L_0x0018\l}"];
+subgraph cluster_Region_1051346772 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|throw new p004ar.com.hjg.pngj.PngjExceptionInternal(\"bad row \- this should not happen\")\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0017}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+MethodNode[shape=record,label="{private void ar.com.hjg.pngj.Deinterlacer.setRow((r1v0 'this' ar.com.hjg.pngj.Deinterlacer A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

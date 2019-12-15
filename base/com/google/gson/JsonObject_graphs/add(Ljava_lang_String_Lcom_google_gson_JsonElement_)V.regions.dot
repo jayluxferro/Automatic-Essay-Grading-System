@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.gson.JsonObject.add(Ljava\/lang\/String;Lcom\/google\/gson\/JsonElement;)V" {
+subgraph cluster_Region_496207819 {
+label = "R(2:(1:1)|2)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1705211900 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_1308709478 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|com.google.gson.JsonNull r3 = com.google.gson.JsonNull.INSTANCE\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0004|PHI: r3 \l  PHI: (r3v1 com.google.gson.JsonElement) = (r3v0 com.google.gson.JsonElement), (r3v2 com.google.gson.JsonElement) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|r1.members.put(r2, r3)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009}"];
+MethodNode[shape=record,label="{public void com.google.gson.JsonObject.add((r1v0 'this' com.google.gson.JsonObject A[IMMUTABLE_TYPE, THIS]), (r2v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.google.gson.JsonElement A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+}
+

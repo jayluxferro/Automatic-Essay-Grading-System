@@ -1,0 +1,22 @@
+digraph "CFG forcom.mapbox.mapboxsdk.geometry.LatLngBounds.getCenter()Lcom\/mapbox\/mapboxsdk\/geometry\/LatLng;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r0 = (r8.latitudeNorth + r8.latitudeSouth) \/ 2.0d\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|if ((r8.longitudeEast \> r8.longitudeWest ? 1 : (r8.longitudeEast == r8.longitudeWest ? 0 : \-1)) \< 0) goto L_0x0017\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0010|double r4 = (r8.longitudeEast + r8.longitudeWest) \/ 2.0d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0017|double r6 = ((r8.longitudeEast + 360.0d) \- r8.longitudeWest) \/ 2.0d\ldouble r4 = r8.longitudeWest + r6\l}"];
+Node_4 [shape=record,label="{4\:\ 0x002e|if ((r4 \> 180.0d ? 1 : (r4 == 180.0d ? 0 : \-1)) \< 0) goto L_0x0034\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0030|double r4 = r8.longitudeEast \- r6\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0034|PHI: r4 \l  PHI: (r4v2 double) = (r4v5 double), (r4v6 double), (r4v9 double) binds: [B:4:0x002e, B:5:0x0030, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0039|RETURN\l|return new com.mapbox.mapboxsdk.geometry.LatLng(r0, r4)\l}"];
+MethodNode[shape=record,label="{public com.mapbox.mapboxsdk.geometry.LatLng com.mapbox.mapboxsdk.geometry.LatLngBounds.getCenter((r8v0 'this' com.mapbox.mapboxsdk.geometry.LatLngBounds A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

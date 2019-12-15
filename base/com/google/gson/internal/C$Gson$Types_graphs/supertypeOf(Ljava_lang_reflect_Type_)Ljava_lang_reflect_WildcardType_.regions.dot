@@ -1,0 +1,33 @@
+digraph "CFG forcom.google.gson.internal.$Gson$Types.supertypeOf(Ljava\/lang\/reflect\/Type;)Ljava\/lang\/reflect\/WildcardType;" {
+subgraph cluster_Region_977738526 {
+label = "R(3:(1:2)(1:3)|4|5) | DECL_VAR: java.lang.reflect.Type[] null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1466625202 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if ((r4 instanceof java.lang.reflect.WildcardType) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1237360667 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.lang.reflect.Type[] r4 = ((java.lang.reflect.WildcardType) r4).getLowerBounds()\l}"];
+}
+subgraph cluster_Region_1817379249 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|r4 = new java.lang.reflect.Type[]\{r4\}\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0012|PHI: r4 \l  PHI: (r4v1 java.lang.reflect.Type[]) = (r4v2 java.lang.reflect.Type[]), (r4v4 java.lang.reflect.Type[]) binds: [B:3:0x000d, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|RETURN\l|return new com.google.gson.internal.C$Gson$Types.WildcardTypeImpl(new java.lang.reflect.Type[]\{java.lang.Object.class\}, r4)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public static java.lang.reflect.WildcardType com.google.gson.internal.$Gson$Types.supertypeOf((r4v0 java.lang.reflect.Type A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

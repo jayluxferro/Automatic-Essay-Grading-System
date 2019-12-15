@@ -1,0 +1,13 @@
+digraph "CFG forokhttp3.ResponseBody.charStream()Ljava\/io\/Reader;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:java.io.Reader) = (r3 I:okhttp3.ResponseBody) okhttp3.ResponseBody.reader java.io.Reader \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0005 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0005|0x0005: NEW_INSTANCE  (r0 I:okhttp3.ResponseBody$BomAwareReader) =  okhttp3.ResponseBody$BomAwareReader \l0x0007: INVOKE  (r1 I:okio.BufferedSource) = (r3 I:okhttp3.ResponseBody) okhttp3.ResponseBody.source():okio.BufferedSource type: VIRTUAL \l0x000b: INVOKE  (r2 I:java.nio.charset.Charset) = (r3 I:okhttp3.ResponseBody) okhttp3.ResponseBody.charset():java.nio.charset.Charset type: DIRECT \l0x000f: INVOKE  \l  (r0 I:okhttp3.ResponseBody$BomAwareReader)\l  (r1 I:okio.BufferedSource)\l  (r2 I:java.nio.charset.Charset)\l okhttp3.ResponseBody.BomAwareReader.\<init\>(okio.BufferedSource, java.nio.charset.Charset):void type: DIRECT \l0x0012: IPUT  (r0 I:java.io.Reader), (r3 I:okhttp3.ResponseBody) okhttp3.ResponseBody.reader java.io.Reader \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0014|0x0014: RETURN  (r0 I:java.io.Reader) \l}"];
+MethodNode[shape=record,label="{public final java.io.Reader okhttp3.ResponseBody.charStream((r3 'this' I:okhttp3.ResponseBody A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_3;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.configureCodec(Lcom\/google\/android\/exoplayer2\/mediacodec\/MediaCodecInfo;Landroid\/media\/MediaCodec;Lcom\/google\/android\/exoplayer2\/Format;Landroid\/media\/MediaCrypto;)V" {
+subgraph cluster_Region_959191055 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.codecMaxValues = getCodecMaxValues(r5, r7, r4.streamFormats)\lr6.configure(getMediaFormat(r7, r4.codecMaxValues, r4.deviceNeedsAutoFrcWorkaround, r4.tunnelingAudioSessionId), r4.surface, r8, 0)\l}"];
+subgraph cluster_Region_1600978340 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2110638848 {
+label = "IF [B:1:0x001c, B:3:0x0020] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001c|if (com.google.android.exoplayer2.util.Util.SDK_INT \>= 23) goto L_0x001e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0020|ADDED_TO_REGION\l|if (r4.tunneling != false) goto L_0x0022\l}"];
+subgraph cluster_Region_1402608010 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|r4.tunnelingOnFrameRenderedListener = new com.google.android.exoplayer2.video.MediaCodecVideoRenderer.OnFrameRenderedListenerV23(r6)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x001e}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.google.android.exoplayer2.video.MediaCodecVideoRenderer.configureCodec((r4v0 'this' com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS]), (r5v0 'codecInfo' com.google.android.exoplayer2.mediacodec.MediaCodecInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'format' com.google.android.exoplayer2.Format A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'crypto' android.media.MediaCrypto A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.mediacodec.MediaCodecUtil$DecoderQueryException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

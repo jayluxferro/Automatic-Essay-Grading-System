@@ -1,0 +1,84 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.UserLoginTelephone.GetMSISDN()Ljava\/lang\/String;" {
+subgraph cluster_Region_1461645781 {
+label = "R(2:0|(2:(1:14)|(4:2|(1:4)(1:6)|9|(2:(1:13)|(2:11|12))))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = r4.telephoneTxt.getText().toString()\l}"];
+subgraph cluster_Region_1425789732 {
+label = "R(2:(1:14)|(4:2|(1:4)(1:6)|9|(2:(1:13)|(2:11|12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_42103231 {
+label = "IF [B:1:0x0010] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r0.equals(\"\") != false) goto L_0x006c\l}"];
+subgraph cluster_Region_74821005 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x006c|RETURN\l|return \"\"\l}"];
+}
+}
+subgraph cluster_Region_251492211 {
+label = "R(4:2|(1:4)(1:6)|9|(2:(1:13)|(2:11|12)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|java.lang.String java.lang.String r1 = com.ghanapostgps.ghanapost.util.Utils.getUserCountryCode(r4)\l}"];
+subgraph cluster_IfRegion_404431652 {
+label = "IF [B:3:0x001c] THEN: R(1:4) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001c|if (r1.equals(\"eq\") == true) goto L_0x001e\l}"];
+subgraph cluster_Region_699758744 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|java.lang.String r1 = \"240\"\l}"];
+}
+subgraph cluster_Region_942406059 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0027|java.lang.String r1 = r1.equals(\"lr\") ? \"231\" : \"233\"\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002e|PHI: r1 \l  PHI: (r1v3 java.lang.String) = (r1v6 java.lang.String), (r1v7 java.lang.String) binds: [B:7:0x0029, B:4:0x001e] A[DONT_GENERATE, DONT_INLINE]\l|java.lang.String java.lang.String r0 = r0.replace(\"+\", \"\").replace(\"\-\", \"\").replace(\"(\", \"\").replace(\" \", \"\")\l}"];
+subgraph cluster_Region_489040755 {
+label = "R(2:(1:13)|(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1284949042 {
+label = "IF [B:10:0x0054] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0054|if (r0.startsWith(\"0\") != true) goto L_0x006b\l}"];
+subgraph cluster_Region_232119431 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x006b|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1783925303 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0056|java.lang.String java.lang.String r0 = r0.substring(1)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|RETURN\l|return r1 + r0\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0021}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0029}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002c}"];
+MethodNode[shape=record,label="{public java.lang.String com.ghanapostgps.ghanapost.UserLoginTelephone.GetMSISDN((r4v0 'this' com.ghanapostgps.ghanapost.UserLoginTelephone A[IMMUTABLE_TYPE, THIS]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_14;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_5 -> Node_6;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+}
+

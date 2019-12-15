@@ -1,0 +1,16 @@
+digraph "CFG forokhttp3.internal.cache2.Relay.read(Ljava\/io\/File;)Lokhttp3\/internal\/cache2\/Relay;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.RandomAccessFile r1 = new java.io.RandomAccessFile(r10, \"rw\")\lokhttp3.internal.cache2.FileOperator r10 = new okhttp3.internal.cache2.FileOperator(r1.getChannel())\lokio.Buffer r0 = new okio.Buffer()\lr10.read(0, r0, 32)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x002f|if (r0.readByteString((long) PREFIX_CLEAN.size()).equals(PREFIX_CLEAN) == false) goto L_0x0056\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0031|long r8 = r0.readLong()\llong r6 = r0.readLong()\lokio.Buffer r0 = new okio.Buffer()\lr2 = r10\lr2.read(r8 + 32, r0, r6)\lr3 = r8\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0055|RETURN\l|return new okhttp3.internal.cache2.Relay(r1, (okio.Source) null, r3, r0.readByteString(), 0)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0056}"];
+Node_5 [shape=record,label="{5\:\ 0x005d|throw new java.io.IOException(\"unreadable cache file\")\l}"];
+MethodNode[shape=record,label="{public static okhttp3.internal.cache2.Relay okhttp3.internal.cache2.Relay.read((r10v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

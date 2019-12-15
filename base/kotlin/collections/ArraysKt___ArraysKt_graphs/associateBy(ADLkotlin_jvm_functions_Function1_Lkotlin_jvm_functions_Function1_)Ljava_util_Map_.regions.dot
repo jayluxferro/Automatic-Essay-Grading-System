@@ -1,0 +1,27 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.associateBy([DLkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_2002332638 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r6, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r8, \"valueTransform\")\ljava.util.Map java.util.Map\<K, V\> r1 = new java.util.LinkedHashMap\<\>(kotlin.ranges.RangesKt.coerceAtLeast(kotlin.collections.MapsKt.mapCapacity(r6.length), 16))\lint int r0 = r6.length\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_711057972 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0023|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:2:0x0025] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0023\-\>B:2:0x0025\l|if (r2 \< r0) goto L_0x0025\l}"];
+subgraph cluster_Region_400917979 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0025|LOOP_END\lLOOP:0: B:1:0x0023\-\>B:2:0x0025\l|r3 = r6[r2]\lr1.put(r7.invoke(java.lang.Double.valueOf(r3)), r8.invoke(java.lang.Double.valueOf(r3)))\lr2++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x003d|RETURN\l|return r1\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x003d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.Map\<K, V\> kotlin.collections.ArraysKt___ArraysKt.associateBy((r6v0 double[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 kotlin.jvm.functions.Function1\<? super java.lang.Double, ? extends K\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 kotlin.jvm.functions.Function1\<? super java.lang.Double, ? extends V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, \>([D, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Double;, +TK;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/lang\/Double;, +TV;\>;), Ljava\/util\/Map\<, TK;TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

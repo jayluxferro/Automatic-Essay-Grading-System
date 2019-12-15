@@ -1,0 +1,325 @@
+digraph "CFG forcom.squareup.picasso.BitmapHunter.hunt()Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_1886034670 {
+label = "R(5:(2:2|(3:4|(1:6)|7))(1:8)|13|(2:15|(2:17|(1:22)))|(3:(1:32)|33|(2:99|(1:54)))|59) | DECL_VAR: android.graphics.Bitmap null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1226882102 {
+label = "IF [B:1:0x0006] THEN: R(2:2|(3:4|(1:6)|7)) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (com.squareup.picasso.MemoryPolicy.shouldReadFromMemoryCache(r6.memoryPolicy) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_275248822 {
+label = "R(2:2|(3:4|(1:6)|7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|android.graphics.Bitmap r0 = r6.cache.get(r6.key)\l}"];
+subgraph cluster_IfRegion_1274447032 {
+label = "IF [B:3:0x0010] THEN: R(3:4|(1:6)|7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r0 != null) goto L_0x0012\l}"];
+subgraph cluster_Region_1052646734 {
+label = "R(3:4|(1:6)|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|r6.stats.dispatchCacheHit()\lr6.loadedFrom = com.squareup.picasso.Picasso.LoadedFrom.MEMORY\l}"];
+subgraph cluster_IfRegion_701516333 {
+label = "IF [B:5:0x001f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|if (r6.picasso.loggingEnabled == true) goto L_0x0021\l}"];
+subgraph cluster_Region_1709015597 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|com.squareup.picasso.Utils.log(\"Hunter\", \"decoded\", r6.data.logId(), \"from cache\")\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0030|RETURN\l|return r0\l}"];
+}
+}
+}
+subgraph cluster_Region_1095171521 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|r0 = null\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x003d|PHI: r1 \l  PHI: (r1v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r6.networkPolicy = r6.retryCount == 0 ? com.squareup.picasso.NetworkPolicy.OFFLINE.index : r6.networkPolicy\lcom.squareup.picasso.RequestHandler$Result com.squareup.picasso.RequestHandler.Result r1 = r6.requestHandler.load(r6.data, r6.networkPolicy)\l}"];
+subgraph cluster_IfRegion_1299513885 {
+label = "IF [B:14:0x0049] THEN: R(2:15|(2:17|(1:22))) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0049|if (r1 != null) goto L_0x004b\l}"];
+subgraph cluster_Region_2108926919 {
+label = "R(2:15|(2:17|(1:22)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x004b|r6.loadedFrom = r1.getLoadedFrom()\lr6.exifOrientation = r1.getExifOrientation()\landroid.graphics.Bitmap r0 = r1.getBitmap()\l}"];
+subgraph cluster_IfRegion_443615594 {
+label = "IF [B:16:0x005b] THEN: R(2:17|(1:22)) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x005b|if (r0 == null) goto L_0x005d\l}"];
+subgraph cluster_Region_1001084551 {
+label = "R(2:17|(1:22))";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x005d|okio.Source okio.Source r0 = r1.getSource()\l}"];
+subgraph cluster_TryCatchRegion_1416307463 {
+label = "Try: R(1:22) finally: R(3:24|(1:26)|27)";
+node [shape=record,color=blue];
+subgraph cluster_Region_973136970 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x006a|r0 = decodeStream(r0, r6.data)     \/\/ Catch:\{ all \-\> 0x006c \}\l}"];
+}
+subgraph cluster_Region_2135005829 {
+label = "R(3:24|(1:26)|27) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x006c|ExcHandler:  FINALLY\lSplitter:B:18:0x0061\l}"];
+subgraph cluster_TryCatchRegion_1988408234 {
+label = "Try: R(1:26) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_349619458 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|FINALLY_INSNS\lCatch:\{ IOException \-\> 0x0070 \}\lSplitter:B:25:0x006d\l|r0.close()     \/\/ Catch:\{ IOException \-\> 0x0070 \}\l}"];
+}
+subgraph cluster_Region_1689050697 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0070|throw r1\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_1767029440 {
+label = "IF [B:29:0x0071] THEN: R(3:(1:32)|33|(2:99|(1:54))) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0071|PHI: r0 \l  PHI: (r0v3 android.graphics.Bitmap) = (r0v2 android.graphics.Bitmap), (r0v12 android.graphics.Bitmap), (r0v14 android.graphics.Bitmap) binds: [B:14:0x0049, B:16:0x005b, B:22:0x006a] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 != null) goto L_0x0073\l}"];
+subgraph cluster_Region_448037085 {
+label = "R(3:(1:32)|33|(2:99|(1:54)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1241409986 {
+label = "IF [B:31:0x0077] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0077|if (r6.picasso.loggingEnabled == true) goto L_0x0079\l}"];
+subgraph cluster_Region_1268955170 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0079|com.squareup.picasso.Utils.log(\"Hunter\", \"decoded\", r6.data.logId())\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x0086|r6.stats.dispatchBitmapDecoded(r0)\l}"];
+subgraph cluster_IfRegion_928685868 {
+label = "IF [B:34:0x0091, B:36:0x0095] THEN: R(2:99|(1:54)) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0091|ADDED_TO_REGION\l|if (r6.data.needsTransformation() == true) goto L_0x0097\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0095|ADDED_TO_REGION\l|if (r6.exifOrientation != 0) goto L_0x0097\l}"];
+subgraph cluster_Region_165041010 {
+label = "R(2:99|(1:54))";
+node [shape=record,color=blue];
+subgraph cluster_SynchronizedRegion_861703155 {
+label = "Synchronized:R(2:38|(2:(2:44|(1:46))|(2:49|(1:51))))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x0099}"];
+subgraph cluster_Region_1843484178 {
+label = "R(2:(2:44|(1:46))|(2:49|(1:51)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_237045629 {
+label = "IF [B:41:0x00a0, B:43:0x00a4] THEN: R(2:44|(1:46)) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x00a0|ADDED_TO_REGION\l|if (r6.data.needsMatrixTransform() == true) goto L_0x00a6\l}"];
+Node_43 [shape=record,label="{43\:\ 0x00a4|ADDED_TO_REGION\l|if (r6.exifOrientation != 0) goto L_0x00a6\l}"];
+subgraph cluster_Region_1030591404 {
+label = "R(2:44|(1:46))";
+node [shape=record,color=blue];
+Node_44 [shape=record,label="{44\:\ 0x00a6|android.graphics.Bitmap r0 = transformResult(r6.data, r0, r6.exifOrientation)\l}"];
+subgraph cluster_IfRegion_894928904 {
+label = "IF [B:45:0x00b2] THEN: R(1:46) ELSE: null";
+node [shape=record,color=blue];
+Node_45 [shape=record,label="{45\:\ 0x00b2|if (r6.picasso.loggingEnabled == true) goto L_0x00b4\l}"];
+subgraph cluster_Region_1644404290 {
+label = "R(1:46)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ 0x00b4|com.squareup.picasso.Utils.log(\"Hunter\", \"transformed\", r6.data.logId())\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_87360982 {
+label = "IF [B:48:0x00c7] THEN: R(2:49|(1:51)) ELSE: null";
+node [shape=record,color=blue];
+Node_48 [shape=record,label="{48\:\ 0x00c7|if (r6.data.hasCustomTransformations() == true) goto L_0x00c9\l}"];
+subgraph cluster_Region_1747084264 {
+label = "R(2:49|(1:51))";
+node [shape=record,color=blue];
+Node_49 [shape=record,label="{49\:\ 0x00c9|android.graphics.Bitmap r0 = applyCustomTransformations(r6.data.transformations, r0)\l}"];
+subgraph cluster_IfRegion_53080290 {
+label = "IF [B:50:0x00d5] THEN: R(1:51) ELSE: null";
+node [shape=record,color=blue];
+Node_50 [shape=record,label="{50\:\ 0x00d5|if (r6.picasso.loggingEnabled == true) goto L_0x00d7\l}"];
+subgraph cluster_Region_179777351 {
+label = "R(1:51)";
+node [shape=record,color=blue];
+Node_51 [shape=record,label="{51\:\ 0x00d7|com.squareup.picasso.Utils.log(\"Hunter\", \"transformed\", r6.data.logId(), \"from custom transformations\")\l}"];
+}
+}
+}
+}
+}
+}
+subgraph cluster_IfRegion_1949843933 {
+label = "IF [B:53:0x00e7] THEN: R(1:54) ELSE: null";
+node [shape=record,color=blue];
+Node_53 [shape=record,label="{53\:\ 0x00e7|if (r0 != null) goto L_0x00e9\l}"];
+subgraph cluster_Region_1502540089 {
+label = "R(1:54)";
+node [shape=record,color=blue];
+Node_54 [shape=record,label="{54\:\ 0x00e9|r6.stats.dispatchBitmapTransformed(r0)\l}"];
+}
+}
+}
+}
+}
+}
+Node_59 [shape=record,label="{59\:\ 0x00f2|RETURN\lPHI: r0 \l  PHI: (r0v4 android.graphics.Bitmap) = (r0v3 android.graphics.Bitmap), (r0v7 android.graphics.Bitmap), (r0v7 android.graphics.Bitmap), (r0v3 android.graphics.Bitmap) binds: [B:29:0x0071, B:53:0x00e7, B:54:0x00e9, B:36:0x0095] A[DONT_GENERATE, DONT_INLINE]\l|return r0\l}"];
+}
+subgraph cluster_Region_2135005829 {
+label = "R(3:24|(1:26)|27) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x006c|ExcHandler:  FINALLY\lSplitter:B:18:0x0061\l}"];
+subgraph cluster_TryCatchRegion_1988408234 {
+label = "Try: R(1:26) catches: R(0)";
+node [shape=record,color=blue];
+subgraph cluster_Region_349619458 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|FINALLY_INSNS\lCatch:\{ IOException \-\> 0x0070 \}\lSplitter:B:25:0x006d\l|r0.close()     \/\/ Catch:\{ IOException \-\> 0x0070 \}\l}"];
+}
+subgraph cluster_Region_1689050697 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x0070|throw r1\l}"];
+}
+subgraph cluster_Region_359445514 {
+label = "R(1:23) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:20:0x0067\l}"];
+}
+subgraph cluster_Region_1689050697 {
+label = "R(0) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0032|PHI: r0 \l  PHI: (r0v2 android.graphics.Bitmap) = (r0v15 android.graphics.Bitmap), (r0v17 android.graphics.Bitmap) binds: [B:8:0x0031, B:3:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0034}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0036}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003b}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0061|SYNTHETIC\lSplitter:B:18:0x0061\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|Catch:\{ all \-\> 0x006c \}\lSplitter:B:18:0x0061\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0067|SYNTHETIC\lSplitter:B:20:0x0067\l}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|DONT_GENERATE\lCatch:\{ IOException \-\> 0x006a \}\lSplitter:B:20:0x0067\l|r0.close()     \/\/ Catch:\{ IOException \-\> 0x006a \}\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x006d|SYNTHETIC\lSplitter:B:25:0x006d\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:25:0x006d\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0073}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x0093}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x0097}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x009a|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x00a2}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x00c1|PHI: r0 \l  PHI: (r0v6 android.graphics.Bitmap) = (r0v9 android.graphics.Bitmap), (r0v9 android.graphics.Bitmap), (r0v3 android.graphics.Bitmap) binds: [B:45:0x00b2, B:46:0x00b4, B:43:0x00a4] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ 0x00e6|DONT_GENERATE\lPHI: r0 \l  PHI: (r0v7 android.graphics.Bitmap) = (r0v6 android.graphics.Bitmap), (r0v8 android.graphics.Bitmap), (r0v8 android.graphics.Bitmap) binds: [B:48:0x00c7, B:50:0x00d5, B:51:0x00d7] A[DONT_GENERATE, DONT_INLINE]\l|monitor\-exit(\l\/\/ error: 0x00e6: MONITOR_EXIT  \l}"];
+Node_55 [shape=record,color=red,label="{55\:\ 0x00ef|LOOP_START\lREMOVE\lLOOP:0: B:55:0x00ef\-\>B:60:0x00ef\l}"];
+Node_56 [shape=record,color=red,label="{56\:\ 0x00f0|SYNTHETIC\lREMOVE\lSplitter:B:56:0x00f0\l}"];
+Node_57 [shape=record,color=red,label="{57\:\ ?|REMOVE\lSplitter:B:56:0x00f0\l}"];
+Node_58 [shape=record,color=red,label="{58\:\ 0x00f1|REMOVE\l|throw r0\l}"];
+Node_60 [shape=record,color=red,label="{60\:\ 0x00ef|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:55:0x00ef\-\>B:60:0x00ef\l}"];
+Node_61 [shape=record,color=red,label="{61\:\ 0x00f1|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_62 [shape=record,color=red,label="{62\:\ 0x00ef|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+MethodNode[shape=record,label="{android.graphics.Bitmap com.squareup.picasso.BitmapHunter.hunt((r6v0 'this' com.squareup.picasso.BitmapHunter A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_29[style=dashed];
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_29[style=dashed];
+Node_17 -> Node_18;
+Node_22 -> Node_29;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_30;
+Node_29 -> Node_59[style=dashed];
+Node_31 -> Node_32;
+Node_31 -> Node_33[style=dashed];
+Node_32 -> Node_33;
+Node_33 -> Node_34;
+Node_34 -> Node_35[style=dashed];
+Node_34 -> Node_37;
+Node_36 -> Node_37;
+Node_36 -> Node_59[style=dashed];
+Node_38 -> Node_39;
+Node_41 -> Node_42[style=dashed];
+Node_41 -> Node_44;
+Node_43 -> Node_44;
+Node_43 -> Node_47[style=dashed];
+Node_44 -> Node_45;
+Node_45 -> Node_46;
+Node_45 -> Node_47[style=dashed];
+Node_46 -> Node_47;
+Node_48 -> Node_49;
+Node_48 -> Node_52[style=dashed];
+Node_49 -> Node_50;
+Node_50 -> Node_51;
+Node_50 -> Node_52[style=dashed];
+Node_51 -> Node_52;
+Node_53 -> Node_54;
+Node_53 -> Node_59[style=dashed];
+Node_54 -> Node_59;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_23 -> Node_22;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_13;
+Node_12 -> Node_13;
+Node_18 -> Node_19;
+Node_18 -> Node_24;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23;
+Node_21 -> Node_22;
+Node_21 -> Node_23;
+Node_25 -> Node_26;
+Node_25 -> Node_28;
+Node_28 -> Node_27;
+Node_30 -> Node_31;
+Node_35 -> Node_36;
+Node_37 -> Node_38;
+Node_39 -> Node_40;
+Node_39 -> Node_55;
+Node_40 -> Node_41;
+Node_42 -> Node_43;
+Node_47 -> Node_48;
+Node_52 -> Node_53;
+Node_55 -> Node_56;
+Node_56 -> Node_57;
+Node_56 -> Node_60;
+Node_57 -> Node_61;
+Node_57 -> Node_62;
+Node_60 -> Node_55;
+Node_61 -> Node_58;
+Node_62 -> Node_60;
+}
+

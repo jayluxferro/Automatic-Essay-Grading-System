@@ -1,0 +1,57 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.PesReader.parseHeader()Z" {
+subgraph cluster_Region_528832076 {
+label = "R(2:0|(2:(2:2|8)|(3:3|(1:5)(1:7)|9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r8.pesScratch.setPosition(0)\lint int r1 = r8.pesScratch.readBits(24)\l}"];
+subgraph cluster_Region_411828183 {
+label = "R(2:(2:2|8)|(3:3|(1:5)(1:7)|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1143956682 {
+label = "IF [B:1:0x0012] THEN: R(2:2|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|if (r1 != 1) goto L_0x0014\l}"];
+subgraph cluster_Region_1927846604 {
+label = "R(2:2|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0014|android.util.Log.w(TAG, \"Unexpected start code prefix: \" + r1)\lr8.payloadSize = \-1\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_568491357 {
+label = "R(3:3|(1:5)(1:7)|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x002f|r8.pesScratch.skipBits(8)\lint int r0 = r8.pesScratch.readBits(16)\lr8.pesScratch.skipBits(5)\lr8.dataAlignmentIndicator = r8.pesScratch.readBit()\lr8.pesScratch.skipBits(2)\lr8.ptsFlag = r8.pesScratch.readBit()\lr8.dtsFlag = r8.pesScratch.readBit()\lr8.pesScratch.skipBits(6)\lr8.extendedHeaderLength = r8.pesScratch.readBits(8)\l}"];
+subgraph cluster_IfRegion_350255131 {
+label = "IF [B:4:0x006e] THEN: R(1:5) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x006e|if (r0 == 0) goto L_0x0070\l}"];
+subgraph cluster_Region_1866885502 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0070|r8.payloadSize = \-1\l}"];
+}
+subgraph cluster_Region_727074681 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0074|r8.payloadSize = ((r0 + 6) \- 9) \- r8.extendedHeaderLength\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0072}"];
+MethodNode[shape=record,label="{private boolean com.google.android.exoplayer2.extractor.ts.PesReader.parseHeader((r8v0 'this' com.google.android.exoplayer2.extractor.ts.PesReader A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_6;
+Node_6 -> Node_9;
+}
+

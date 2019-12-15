@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.v4.widget.DrawerLayout.ViewDragCallback.onEdgeDragStarted(II)V" {
+subgraph cluster_Region_1647789220 {
+label = "R(2:(1:2)(1:3)|(1:(1:7))) | DECL_VAR: android.view.View null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1588501891 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r2 & 1) == 1) goto L_0x0004\l}"];
+subgraph cluster_Region_104708385 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.view.View r2 = android.support.p000v4.widget.DrawerLayout.this.findDrawerWithGravity(3)\l}"];
+}
+subgraph cluster_Region_1596061429 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|android.view.View r2 = android.support.p000v4.widget.DrawerLayout.this.findDrawerWithGravity(5)\l}"];
+}
+}
+subgraph cluster_Region_2128139341 {
+label = "R(1:(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1452187577 {
+label = "IF [B:4:0x0013, B:6:0x001b] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|PHI: r2 \l  PHI: (r2v2 android.view.View) = (r2v4 android.view.View), (r2v6 android.view.View) binds: [B:3:0x000c, B:2:0x0004] A[DONT_GENERATE, DONT_INLINE]\l|if (r2 != null) goto L_0x0015\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001b|ADDED_TO_REGION\l|if (android.support.p000v4.widget.DrawerLayout.this.getDrawerLockMode(r2) == 0) goto L_0x001d\l}"];
+subgraph cluster_Region_247788456 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|r1.mDragger.captureChildView(r2, r3)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.widget.DrawerLayout.ViewDragCallback.onEdgeDragStarted((r1v0 'this' android.support.v4.widget.DrawerLayout$ViewDragCallback A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+}
+

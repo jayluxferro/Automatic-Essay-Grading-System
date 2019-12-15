@@ -1,0 +1,44 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.overlapAdd(II[SI[SI[SI)V" {
+subgraph cluster_Region_1212114530 {
+label = "R(2:0|(3:2|(1:4)|5))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_132990224 {
+label = "LOOP:0: (3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|LOOP_START\lPHI: r1 \l  PHI: (r1v1 'i' int) = (r1v0 'i' int), (r1v2 'i' int) binds: [B:0:0x0000, B:5:0x0025] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0001\-\>B:5:0x0025\l|if (r1 \< r8) goto L_0x0003\l}"];
+subgraph cluster_Region_985404252 {
+label = "R(3:2|(1:4)|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int int r2 = (r10 * r8) + r1\lint int r4 = (r14 * r8) + r1\lint int r0 = (r12 * r8) + r1\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1248522556 {
+label = "LOOP:1: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|LOOP_START\lPHI: r0 r2 r3 r4 \l  PHI: (r0v1 'd' int) = (r0v0 'd' int), (r0v2 'd' int) binds: [B:2:0x0003, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 'o' int) = (r2v0 'o' int), (r2v2 'o' int) binds: [B:2:0x0003, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 't' int) = (r3v0 't' int), (r3v2 't' int) binds: [B:2:0x0003, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'u' int) = (r4v0 'u' int), (r4v2 'u' int) binds: [B:2:0x0003, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:3:0x0010\-\>B:4:0x0012\l|if (r3 \< r7) goto L_0x0012\l}"];
+subgraph cluster_Region_2044036114 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:1: B:3:0x0010\-\>B:4:0x0012\l|r9[r2] = (short) (((r11[r0] * (r7 \- r3)) + (r13[r4] * r3)) \/ r7)\lr2 += r8\lr0 += r8\lr4 += r8\lr3++\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0025|LOOP_END\lLOOP:0: B:1:0x0001\-\>B:5:0x0025\l|r1++\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0028}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0028|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0025|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void com.google.android.exoplayer2.audio.Sonic.overlapAdd((r7v0 'numSamples' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'numChannels' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'out' short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'outPos' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'rampDown' short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'rampDownPos' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'rampUp' short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'rampUpPos' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_3;
+Node_5 -> Node_1;
+Node_7 -> Node_6;
+Node_8 -> Node_5;
+}
+

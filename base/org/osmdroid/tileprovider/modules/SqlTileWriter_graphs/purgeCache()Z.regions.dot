@@ -1,0 +1,72 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.SqlTileWriter.purgeCache()Z" {
+subgraph cluster_Region_1315099060 {
+label = "R(2:0|(2:(1:12)|(1:(2:6|7))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.database.sqlite.SQLiteDatabase android.database.sqlite.SQLiteDatabase r0 = getDb()\l}"];
+subgraph cluster_Region_1056008342 {
+label = "R(2:(1:12)|(1:(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2025464075 {
+label = "IF [B:1:0x0004, B:3:0x000a] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r0.isOpen() == false) goto L_?\l}"];
+subgraph cluster_Region_1187674055 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1070255257 {
+label = "R(1:(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_408328292 {
+label = "Try: R(2:6|7) catches: R(3:8|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_211278530 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ Exception \-\> 0x0014 \}\lSplitter:B:5:0x000f\l|r0.delete(\"tiles\", (java.lang.String) null, (java.lang.String[]) null)     \/\/ Catch:\{ Exception \-\> 0x0014 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0012|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_769058336 {
+label = "R(3:8|9|10) | ExcHandler: Exception (r0v3 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|ExcHandler: Exception (r0v3 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:5:0x000f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0015|android.util.Log.w(org.osmdroid.api.IMapView.LOGTAG, \"Error purging the db\", r0)\lcatchException(r0)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_769058336 {
+label = "R(3:8|9|10) | ExcHandler: Exception (r0v3 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|ExcHandler: Exception (r0v3 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:5:0x000f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0015|android.util.Log.w(org.osmdroid.api.IMapView.LOGTAG, \"Error purging the db\", r0)\lcatchException(r0)\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f|SYNTHETIC\lSplitter:B:5:0x000f\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.tileprovider.modules.SqlTileWriter.purgeCache((r3v0 'this' org.osmdroid.tileprovider.modules.SqlTileWriter A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_8;
+}
+

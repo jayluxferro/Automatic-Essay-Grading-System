@@ -1,0 +1,78 @@
+digraph "CFG forcom.mapbox.core.utils.TextUtils.formatBearing(Ljava\/util\/List;)Ljava\/lang\/String;" {
+subgraph cluster_Region_655052159 {
+label = "R(1:(2:(1:2)|(3:3|(2:(1:8)(1:9)|10)|12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1547707416 {
+label = "R(2:(1:2)|(3:3|(2:(1:8)(1:9)|10)|12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1883980609 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r10.isEmpty() == true) goto L_0x0006\l}"];
+subgraph cluster_Region_521153091 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_526359136 {
+label = "R(3:3|(2:(1:8)(1:9)|10)|12)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|java.lang.String[] java.lang.String[] r0 = new java.lang.String[r10.size()]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_409265813 {
+label = "LOOP:0: (2:(1:8)(1:9)|10)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (r2 \< r10.size()) goto L_0x0016\l}"];
+subgraph cluster_Region_2072769379 {
+label = "R(2:(1:8)(1:9)|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_451515897 {
+label = "IF [B:7:0x001d] THEN: R(1:8) ELSE: R(1:9)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r10.get(r2).length == 0) goto L_0x001f\l}"];
+subgraph cluster_Region_1511481985 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|r0[r2] = \"\"\l}"];
+}
+subgraph cluster_Region_805975650 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0024|r0[r2] = java.lang.String.format(java.util.Locale.US, \"%s,%s\", new java.lang.Object[]\{formatCoordinate(r10.get(r2)[0].doubleValue()), formatCoordinate(r10.get(r2)[1].doubleValue())\})\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0056|LOOP_END\lLOOP:0: B:4:0x0010\-\>B:10:0x0056\l|r2++\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x005f|RETURN\l|return join(\";\", r0)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0010|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:3:0x0008, B:10:0x0056] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0010\-\>B:10:0x0056\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0059}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0059|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0056|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0056|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.lang.String com.mapbox.core.utils.TextUtils.formatBearing((r10v0 java.util.List\<java.lang.Double[]\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, [, Ljava\/lang\/Double;, \>;), Ljava\/lang\/String;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_13[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_15;
+Node_9 -> Node_14;
+Node_10 -> Node_4;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_13 -> Node_11;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+}
+

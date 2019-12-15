@@ -1,0 +1,36 @@
+digraph "CFG forar.com.hjg.pngj.ImageLineByte.getElem(I)I" {
+subgraph cluster_Region_438885892 {
+label = "R(1:(2:(1:5)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2034140001 {
+label = "R(2:(1:5)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1910899671 {
+label = "IF [B:1:0x0002] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.scanline2 == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1661034512 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return r2.scanline[r3] & 255\l}"];
+}
+}
+subgraph cluster_Region_1057311370 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return (r2.scanline2[r3] & 255) \| ((r2.scanline[r3] & 255) \<\< 8)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+MethodNode[shape=record,label="{public int ar.com.hjg.pngj.ImageLineByte.getElem((r2v0 'this' ar.com.hjg.pngj.ImageLineByte A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_2 -> Node_5;
+}
+

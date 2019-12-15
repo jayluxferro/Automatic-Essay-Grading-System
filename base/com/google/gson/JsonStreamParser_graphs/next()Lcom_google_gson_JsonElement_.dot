@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.gson.JsonStreamParser.next()Lcom\/google\/gson\/JsonElement;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (hasNext() == false) goto L_0x002e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|SYNTHETIC\lSplitter:B:2:0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ StackOverflowError \-\> 0x0025, OutOfMemoryError \-\> 0x001c, JsonParseException \-\> 0x000d \}\lSplitter:B:2:0x0006\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|RETURN\l|return com.google.gson.internal.Streams.parse(r3.parser)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|ExcHandler: JsonParseException (r0v4 'e' com.google.gson.JsonParseException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0006\l|com.google.gson.JsonParseException r0 = move\-exception\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|boolean r1 = r0.getCause() instanceof java.io.EOFException\lr0 = r0\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (r1 == false) goto L_0x001b\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0016|r0 = new java.util.NoSuchElementException()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|PHI: r0 \l  PHI: (r0v5 java.lang.Throwable) = (r0v9 java.lang.Throwable), (r0v10 java.lang.Throwable) binds: [B:7:0x0014, B:8:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|throw r0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001c|ExcHandler: OutOfMemoryError (r0v3 'e' java.lang.OutOfMemoryError A[CUSTOM_DECLARE])\lSplitter:B:2:0x0006\l|java.lang.OutOfMemoryError r0 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x001d}"];
+Node_12 [shape=record,label="{12\:\ 0x0024|throw new com.google.gson.JsonParseException(\"Failed parsing JSON source to Json\", r0)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0025|ExcHandler: StackOverflowError (r0v2 'e' java.lang.StackOverflowError A[CUSTOM_DECLARE])\lSplitter:B:2:0x0006\l|java.lang.StackOverflowError r0 = move\-exception\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0026}"];
+Node_15 [shape=record,label="{15\:\ 0x002d|throw new com.google.gson.JsonParseException(\"Failed parsing JSON source to Json\", r0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x002e}"];
+Node_17 [shape=record,label="{17\:\ 0x0033|throw new java.util.NoSuchElementException()\l}"];
+MethodNode[shape=record,label="{public com.google.gson.JsonElement com.google.gson.JsonStreamParser.next((r3v0 'this' com.google.gson.JsonStreamParser A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.gson.JsonParseException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_2 -> Node_13;
+Node_2 -> Node_10;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+}
+

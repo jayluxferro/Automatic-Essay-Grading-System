@@ -1,0 +1,248 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.processManifest(Z)V" {
+subgraph cluster_Region_458722847 {
+label = "R(10:0|(3:3|(1:5)(0)|6)|7|(3:11|(3:13|(1:17)|(1:19)(1:25))|20)|21|(1:24)|26|(4:28|(1:31)|33|(1:35))|36|(1:(3:38|(1:40)|(1:(1:42)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r20 = 0\l}"];
+subgraph cluster_LoopRegion_536389309 {
+label = "LOOP:0: (3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r20 \< r40.periodsById.size()) goto L_0x000e\l}"];
+subgraph cluster_Region_77979958 {
+label = "R(3:3|(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|int int r21 = r40.periodsById.keyAt(r20)\l}"];
+subgraph cluster_IfRegion_199573478 {
+label = "IF [B:4:0x001e] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e|if (r21 \>= r40.firstPeriodId) goto L_0x0020\l}"];
+subgraph cluster_Region_265999295 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|r40.periodsById.valueAt(r20).updateManifest(r40.manifest, r21 \- r40.firstPeriodId)\l}"];
+}
+subgraph cluster_Region_797567737 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0039|LOOP_END\lLOOP:0: B:1:0x0002\-\>B:6:0x0039\l|r20++\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x003c|boolean r31 = false\lint int r22 = r40.manifest.getPeriodCount() \- 1\lcom.google.android.exoplayer2.source.dash.DashMediaSource$PeriodSeekInfo com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo r17 = com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo.createPeriodSeekInfo(r40.manifest.getPeriod(0), r40.manifest.getPeriodDurationUs(0))\lcom.google.android.exoplayer2.source.dash.DashMediaSource$PeriodSeekInfo com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo r23 = com.google.android.exoplayer2.source.dash.DashMediaSource.PeriodSeekInfo.createPeriodSeekInfo(r40.manifest.getPeriod(r22), r40.manifest.getPeriodDurationUs(r22))\llong long r10 = r17.availableStartTimeUs\llong r18 = r23.availableEndTimeUs\l}"];
+subgraph cluster_IfRegion_13930822 {
+label = "IF [B:8:0x008a, B:10:0x0090] THEN: R(3:11|(3:13|(1:17)|(1:19)(1:25))|20) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x008a|ADDED_TO_REGION\l|if (r40.manifest.dynamic == true) goto L_0x008c\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0090|ADDED_TO_REGION\l|if (r23.isIndexExplicit == false) goto L_0x0092\l}"];
+subgraph cluster_Region_685413165 {
+label = "R(3:11|(3:13|(1:17)|(1:19)(1:25))|20)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0092|long r18 = java.lang.Math.min((getNowUnixTimeUs() \- com.google.android.exoplayer2.C1260C.msToUs(r40.manifest.availabilityStartTime)) \- com.google.android.exoplayer2.C1260C.msToUs(r40.manifest.getPeriod(r22).startMs), r18)\l}"];
+subgraph cluster_IfRegion_638900392 {
+label = "IF [B:12:0x00cf] THEN: R(3:13|(1:17)|(1:19)(1:25)) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x00cf|if (r40.manifest.timeShiftBufferDepth != com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x00d1\l}"];
+subgraph cluster_Region_1506469611 {
+label = "R(3:13|(1:17)|(1:19)(1:25))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00d1|long long r28 = r18 \- com.google.android.exoplayer2.C1260C.msToUs(r40.manifest.timeShiftBufferDepth)\lint r30 = r22\l}"];
+subgraph cluster_LoopRegion_1929098101 {
+label = "LOOP:1: (1:17)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00e5|if (r28 \< 0) goto L_0x00e7\l}"];
+subgraph cluster_Region_481709848 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x00e9|LOOP_END\lLOOP:1: B:14:0x00e1\-\>B:17:0x00e9\l|r30\-\-\lr28 += r40.manifest.getPeriodDurationUs(r30)\l}"];
+}
+}
+subgraph cluster_IfRegion_562159018 {
+label = "IF [B:18:0x00f8] THEN: R(1:19) ELSE: R(1:25)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00f8|if (r30 == 0) goto L_0x00fa\l}"];
+subgraph cluster_Region_1712482559 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00fa|long r10 = java.lang.Math.max(r10, r28)\l}"];
+}
+subgraph cluster_Region_2095790474 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0123|long r10 = r40.manifest.getPeriodDurationUs(0)\l}"];
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0100|PHI: r10 \l  PHI: (r10v2 'currentStartTimeUs' long) = (r10v0 'currentStartTimeUs' long), (r10v3 'currentStartTimeUs' long), (r10v4 'currentStartTimeUs' long) binds: [B:12:0x00cf, B:25:0x0123, B:19:0x00fa] A[DONT_GENERATE, DONT_INLINE]\l|r31 = true\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0102|PHI: r10 r18 r31 \l  PHI: (r10v1 'currentStartTimeUs' long) = (r10v0 'currentStartTimeUs' long), (r10v0 'currentStartTimeUs' long), (r10v2 'currentStartTimeUs' long) binds: [B:8:0x008a, B:10:0x0090, B:20:0x0100] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r18v1 'currentEndTimeUs' long) = (r18v0 'currentEndTimeUs' long), (r18v0 'currentEndTimeUs' long), (r18v2 'currentEndTimeUs' long) binds: [B:8:0x008a, B:10:0x0090, B:20:0x0100] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r31v1 'windowChangingImplicitly' boolean) = (r31v0 'windowChangingImplicitly' boolean), (r31v0 'windowChangingImplicitly' boolean), (r31v2 'windowChangingImplicitly' boolean) binds: [B:8:0x008a, B:10:0x0090, B:20:0x0100] A[DONT_GENERATE, DONT_INLINE]\l|long long r12 = r18 \- r10\lint r20 = 0\l}"];
+subgraph cluster_LoopRegion_473520831 {
+label = "LOOP:2: (1:24)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0112|if (r20 \< (r40.manifest.getPeriodCount() \- 1)) goto L_0x0114\l}"];
+subgraph cluster_Region_1751197544 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0114|LOOP_END\lLOOP:2: B:22:0x0106\-\>B:24:0x0114\l|r12 += r40.manifest.getPeriodDurationUs(r20)\lr20++\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x012d|long r14 = 0\l}"];
+subgraph cluster_IfRegion_227745393 {
+label = "IF [B:27:0x0135] THEN: R(4:28|(1:31)|33|(1:35)) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x0135|if (r40.manifest.dynamic == true) goto L_0x0137\l}"];
+subgraph cluster_Region_1276888451 {
+label = "R(4:28|(1:31)|33|(1:35))";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0137|long r32 = r40.livePresentationDelayMs\l}"];
+subgraph cluster_IfRegion_1242306628 {
+label = "IF [B:29:0x0141] THEN: R(1:31) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0141|if (r32 == \-1) goto L_0x0143\l}"];
+subgraph cluster_Region_1873252825 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x0152|r32 = r40.manifest.suggestedPresentationDelay != com.google.android.exoplayer2.C1260C.TIME_UNSET ? r40.manifest.suggestedPresentationDelay : DEFAULT_LIVE_PRESENTATION_DELAY_FIXED_MS\l}"];
+}
+}
+Node_33 [shape=record,label="{33\:\ 0x015c|PHI: r32 \l  PHI: (r32v1 'presentationDelayForManifestMs' long) = (r32v0 'presentationDelayForManifestMs' long), (r32v3 'presentationDelayForManifestMs' long) binds: [B:29:0x0141, B:32:0x0154] A[DONT_GENERATE, DONT_INLINE]\l|long r14 = r12 \- com.google.android.exoplayer2.C1260C.msToUs(r32)\l}"];
+subgraph cluster_IfRegion_2105701431 {
+label = "IF [B:34:0x0167] THEN: R(1:35) ELSE: null";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0167|if (r14 \< MIN_LIVE_DEFAULT_START_POSITION_US) goto L_0x0169\l}"];
+subgraph cluster_Region_1771672291 {
+label = "R(1:35)";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x0169|long r14 = java.lang.Math.min(MIN_LIVE_DEFAULT_START_POSITION_US, r12 \/ 2)\l}"];
+}
+}
+}
+}
+Node_36 [shape=record,label="{36\:\ 0x0174|PHI: r14 \l  PHI: (r14v1 'windowDefaultStartPositionUs' long) = (r14v0 'windowDefaultStartPositionUs' long), (r14v2 'windowDefaultStartPositionUs' long), (r14v3 'windowDefaultStartPositionUs' long) binds: [B:27:0x0135, B:34:0x0167, B:35:0x0169] A[DONT_GENERATE, DONT_INLINE]\l|r40.sourceListener.onSourceInfoRefreshed(new com.google.android.exoplayer2.source.dash.DashMediaSource.DashTimeline(r40.manifest.availabilityStartTime, r40.manifest.availabilityStartTime + r40.manifest.getPeriod(0).startMs + com.google.android.exoplayer2.C1260C.usToMs(r10), r40.firstPeriodId, r10, r12, r14, r40.manifest), r40.manifest)\l}"];
+subgraph cluster_Region_2071520397 {
+label = "R(1:(3:38|(1:40)|(1:(1:42))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_465966905 {
+label = "IF [B:37:0x01b5] THEN: R(3:38|(1:40)|(1:(1:42))) ELSE: null";
+node [shape=record,color=blue];
+Node_37 [shape=record,label="{37\:\ 0x01b5|if (r40.sideloadedManifest == false) goto L_0x01b7\l}"];
+subgraph cluster_Region_462904689 {
+label = "R(3:38|(1:40)|(1:(1:42)))";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x01b7|r40.handler.removeCallbacks(r40.simulateManifestRefreshRunnable)\l}"];
+subgraph cluster_IfRegion_1917650373 {
+label = "IF [B:39:0x01c2] THEN: R(1:40) ELSE: null";
+node [shape=record,color=blue];
+Node_39 [shape=record,label="{39\:\ 0x01c2|if (r31 == true) goto L_0x01c4\l}"];
+subgraph cluster_Region_249739492 {
+label = "R(1:40)";
+node [shape=record,color=blue];
+Node_40 [shape=record,label="{40\:\ 0x01c4|r40.handler.postDelayed(r40.simulateManifestRefreshRunnable, com.google.android.exoplayer2.DefaultRenderersFactory.DEFAULT_ALLOWED_VIDEO_JOINING_TIME_MS)\l}"];
+}
+}
+subgraph cluster_Region_839022905 {
+label = "R(1:(1:42))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_425123743 {
+label = "IF [B:41:0x01d3] THEN: R(1:42) ELSE: null";
+node [shape=record,color=blue];
+Node_41 [shape=record,label="{41\:\ 0x01d3|if (r41 == true) goto L_0x01d5\l}"];
+subgraph cluster_Region_940274961 {
+label = "R(1:42)";
+node [shape=record,color=blue];
+Node_42 [shape=record,label="{42\:\ 0x01d5|scheduleManifestRefresh()\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|LOOP_START\lPHI: r20 \l  PHI: (r20v1 'i' int) = (r20v0 'i' int), (r20v5 'i' int) binds: [B:0:0x0000, B:6:0x0039] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0002\-\>B:6:0x0039\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x008c}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x00e1|LOOP_START\lPHI: r28 r30 \l  PHI: (r28v1 'offsetInPeriodUs' long) = (r28v0 'offsetInPeriodUs' long), (r28v2 'offsetInPeriodUs' long) binds: [B:13:0x00d1, B:17:0x00e9] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r30v1 'periodIndex' int) = (r30v0 'periodIndex' int), (r30v2 'periodIndex' int) binds: [B:13:0x00d1, B:17:0x00e9] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:14:0x00e1\-\>B:17:0x00e9\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x00e7|ADDED_TO_REGION\l|if (r30 \> 0) goto L_0x00e9\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0106|LOOP_START\lPHI: r12 r20 \l  PHI: (r12v1 'windowDurationUs' long) = (r12v0 'windowDurationUs' long), (r12v2 'windowDurationUs' long) binds: [B:21:0x0102, B:24:0x0114] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r20v3 'i' int) = (r20v2 'i' int), (r20v4 'i' int) binds: [B:21:0x0102, B:24:0x0114] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:22:0x0106\-\>B:24:0x0114\l}"];
+Node_30 [shape=record,color=red,label="{30\:\ 0x0143}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x0154}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x01d9}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x003c|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x0039|SYNTHETIC\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x0039|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x00f8|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x00f8|SYNTHETIC\l}"];
+Node_49 [shape=record,color=red,label="{49\:\ 0x012d|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ ?|SYNTHETIC\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.dash.DashMediaSource.processManifest((r40v0 'this' com.google.android.exoplayer2.source.dash.DashMediaSource A[IMMUTABLE_TYPE, THIS]), (r41v0 'scheduleRefresh' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_44[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_46[style=dashed];
+Node_5 -> Node_45;
+Node_6 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_21[style=dashed];
+Node_10 -> Node_11;
+Node_10 -> Node_21[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_20[style=dashed];
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_47[style=dashed];
+Node_17 -> Node_14;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_25 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_49[style=dashed];
+Node_24 -> Node_22;
+Node_26 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_36[style=dashed];
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_33[style=dashed];
+Node_31 -> Node_32;
+Node_31 -> Node_43;
+Node_33 -> Node_34;
+Node_34 -> Node_35;
+Node_34 -> Node_36[style=dashed];
+Node_35 -> Node_36;
+Node_36 -> Node_37;
+Node_37 -> Node_38;
+Node_37 -> Node_51[style=dashed];
+Node_38 -> Node_39;
+Node_39 -> Node_40;
+Node_39 -> Node_41[style=dashed];
+Node_40 -> Node_41;
+Node_41 -> Node_42;
+Node_41 -> Node_52[style=dashed];
+Node_42 -> Node_50;
+Node_1 -> Node_2;
+Node_9 -> Node_10;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_48[style=dashed];
+Node_22 -> Node_23;
+Node_30 -> Node_31;
+Node_32 -> Node_33;
+Node_43 -> Node_33;
+Node_44 -> Node_7;
+Node_45 -> Node_6;
+Node_46 -> Node_6;
+Node_47 -> Node_18;
+Node_48 -> Node_18;
+Node_49 -> Node_26;
+}
+

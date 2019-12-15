@@ -1,0 +1,90 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnectionPool.cancelConnectionWaiterLocked(Lorg\/spatialite\/database\/SQLiteConnectionPool$ConnectionWaiter;)V" {
+subgraph cluster_Region_1637058458 {
+label = "R(1:(1:(4:4|(2:5|(2:(1:13)|(1:7)))|(1:9)(1:10)|11))) | DECL_VAR: org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_2006552660 {
+label = "R(1:(4:4|(2:5|(2:(1:13)|(1:7)))|(1:9)(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_547447305 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(4:4|(2:5|(2:(1:13)|(1:7)))|(1:9)(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.mAssignedConnection == null) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r4.mException == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1032736714 {
+label = "R(4:4|(2:5|(2:(1:13)|(1:7)))|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|org.spatialite.database.SQLiteConnectionPool.ConnectionWaiter r0 = null\lorg.spatialite.database.SQLiteConnectionPool$ConnectionWaiter org.spatialite.database.SQLiteConnectionPool.ConnectionWaiter r1 = r3.mConnectionWaiterQueue\l}"];
+subgraph cluster_LoopRegion_1750978282 {
+label = "LOOP:0: (2:5|(2:(1:13)|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1637201810 {
+label = "R(2:5|(2:(1:13)|(1:7)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|LOOP_START\lPHI: r0 r1 \l  PHI: (r0v3 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter) = (r0v2 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter), (r0v4 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter) binds: [B:4:0x0009, B:7:0x0011] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter) = (r1v0 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter), (r1v3 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter) binds: [B:4:0x0009, B:7:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x000c\-\>B:7:0x0011\l|org.spatialite.database.SQLiteConnectionPool.ConnectionWaiter r2 = r1\lr1 = r0\lr0 = r2\l}"];
+subgraph cluster_Region_361704236 {
+label = "R(2:(1:13)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1156604272 {
+label = "IF [B:6:0x000f] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|if (r0 == r4) goto L_0x0014\l}"];
+subgraph cluster_Region_783225593 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0014|SYNTHETIC\lEDGE_INSN: B:13:0x0014\-\>B:8:0x0014 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_927347861 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0011|LOOP_END\lLOOP:0: B:5:0x000c\-\>B:7:0x0011\l|org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter r1 = r0.mNext\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_2021252520 {
+label = "IF [B:8:0x0014] THEN: R(1:9) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0014|EDGE_INSN: B:13:0x0014\-\>B:8:0x0014 ?: BREAK  \l|if (r1 != null) goto L_0x0016\l}"];
+subgraph cluster_Region_874302482 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0016|r1.mNext = r4.mNext\l}"];
+}
+subgraph cluster_Region_95788047 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001b|r3.mConnectionWaiterQueue = r4.mNext\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001f|r4.mException = new android.support.p000v4.p002os.OperationCanceledException()\ljava.util.concurrent.locks.LockSupport.unpark(r4.mThread)\lwakeConnectionWaitersLocked()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.spatialite.database.SQLiteConnectionPool.cancelConnectionWaiterLocked((r3v0 'this' org.spatialite.database.SQLiteConnectionPool A[IMMUTABLE_TYPE, THIS]), (r4v0 org.spatialite.database.SQLiteConnectionPool$ConnectionWaiter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_13 -> Node_8;
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

@@ -1,0 +1,30 @@
+digraph "CFG forandroid.support.v4.app.LoaderManagerImpl.LoaderInfo.setValue(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_1783631840 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.setValue(r1)\l}"];
+subgraph cluster_Region_747613653 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_24379724 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r0.mPriorLoader != null) goto L_0x0007\l}"];
+subgraph cluster_Region_443392980 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r0.mPriorLoader.reset()\lr0.mPriorLoader = null\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.LoaderManagerImpl.LoaderInfo.setValue((r0v0 'this' android.support.v4.app.LoaderManagerImpl$LoaderInfo A[IMMUTABLE_TYPE, THIS]), (r1v0 D A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TD;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

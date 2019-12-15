@@ -1,0 +1,17 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Sonic.skipPitchPeriod([SIFI)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if ((r11 \> 2.0f ? 1 : (r11 == 2.0f ? 0 : \-1)) \< 0) goto L_0x0024\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|int r0 = (int) (((float) r12) \/ (r11 \- 1.0f))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|PHI: r0 \l  PHI: (r0v1 'newSamples' int) = (r0v0 'newSamples' int), (r0v2 'newSamples' int) binds: [B:5:0x0024, B:2:0x0008] A[DONT_GENERATE, DONT_INLINE]\l|enlargeOutputBufferIfNeeded(r0)\lr4 = r9\lr5 = r10\lr6 = r9\loverlapAdd(r0, r8.numChannels, r8.outputBuffer, r8.numOutputSamples, r4, r5, r6, r10 + r12)\lr8.numOutputSamples = r8.numOutputSamples + r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|RETURN\l|return r0\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|r0 = r12\lr8.remainingInputToCopy = (int) ((((float) r12) * (2.0f \- r11)) \/ (r11 \- 1.0f))\l}"];
+MethodNode[shape=record,label="{private int com.google.android.exoplayer2.audio.Sonic.skipPitchPeriod((r8v0 'this' com.google.android.exoplayer2.audio.Sonic A[IMMUTABLE_TYPE, THIS]), (r9v0 'samples' short[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'position' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'speed' float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'period' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

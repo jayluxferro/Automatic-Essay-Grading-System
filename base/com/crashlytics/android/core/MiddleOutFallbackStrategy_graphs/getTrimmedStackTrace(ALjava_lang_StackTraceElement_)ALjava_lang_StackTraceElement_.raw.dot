@@ -1,0 +1,31 @@
+digraph "CFG forcom.crashlytics.android.core.MiddleOutFallbackStrategy.getTrimmedStackTrace([Ljava\/lang\/StackTraceElement;)[Ljava\/lang\/StackTraceElement;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: ARRAY_LENGTH  (r0 I:int) = (r8 I:?[]) \l0x0001: IGET  (r1 I:int) = \l  (r7 I:com.crashlytics.android.core.MiddleOutFallbackStrategy)\l com.crashlytics.android.core.MiddleOutFallbackStrategy.maximumStackSize int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r0 I:?[int, byte, short, char]) \> (r1 I:?[int, byte, short, char])  \-\> B:3:0x0006 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: RETURN  (r8 I:java.lang.StackTraceElement[]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: IGET  (r0 I:com.crashlytics.android.core.StackTraceTrimmingStrategy[]) = \l  (r7 I:com.crashlytics.android.core.MiddleOutFallbackStrategy)\l com.crashlytics.android.core.MiddleOutFallbackStrategy.trimmingStrategies com.crashlytics.android.core.StackTraceTrimmingStrategy[] \l0x0008: ARRAY_LENGTH  (r1 I:int) = (r0 I:?[]) \l0x0009: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000a: MOVE  (r3 I:?[OBJECT, ARRAY]) = (r8 I:?[OBJECT, ARRAY]) \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: IF  (r2 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:9:0x001c \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|0x000d: AGET  (r4 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x000f: ARRAY_LENGTH  (r5 I:int) = (r3 I:?[]) \l0x0010: IGET  (r6 I:int) = \l  (r7 I:com.crashlytics.android.core.MiddleOutFallbackStrategy)\l com.crashlytics.android.core.MiddleOutFallbackStrategy.maximumStackSize int \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0012|0x0012: IF  (r5 I:?[int, byte, short, char]) \> (r6 I:?[int, byte, short, char])  \-\> B:8:0x0015 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0015|0x0015: INVOKE  (r3 I:java.lang.StackTraceElement[]) = \l  (r4 I:com.crashlytics.android.core.StackTraceTrimmingStrategy)\l  (r8 I:java.lang.StackTraceElement[])\l com.crashlytics.android.core.StackTraceTrimmingStrategy.getTrimmedStackTrace(java.lang.StackTraceElement[]):java.lang.StackTraceElement[] type: INTERFACE \l0x0019: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|0x001c: ARRAY_LENGTH  (r8 I:int) = (r3 I:?[]) \l0x001d: IGET  (r0 I:int) = \l  (r7 I:com.crashlytics.android.core.MiddleOutFallbackStrategy)\l com.crashlytics.android.core.MiddleOutFallbackStrategy.maximumStackSize int \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001f|0x001f: IF  (r8 I:?[int, byte, short, char]) \<= (r0 I:?[int, byte, short, char])  \-\> B:12:0x0027 \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0021|0x0021: IGET  (r8 I:com.crashlytics.android.core.MiddleOutStrategy) = \l  (r7 I:com.crashlytics.android.core.MiddleOutFallbackStrategy)\l com.crashlytics.android.core.MiddleOutFallbackStrategy.middleOutStrategy com.crashlytics.android.core.MiddleOutStrategy \l0x0023: INVOKE  (r3 I:java.lang.StackTraceElement[]) = \l  (r8 I:com.crashlytics.android.core.MiddleOutStrategy)\l  (r3 I:java.lang.StackTraceElement[])\l com.crashlytics.android.core.MiddleOutStrategy.getTrimmedStackTrace(java.lang.StackTraceElement[]):java.lang.StackTraceElement[] type: VIRTUAL \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0027|0x0027: RETURN  (r3 I:java.lang.StackTraceElement[]) \l}"];
+MethodNode[shape=record,label="{public java.lang.StackTraceElement[] com.crashlytics.android.core.MiddleOutFallbackStrategy.getTrimmedStackTrace((r7 'this' I:com.crashlytics.android.core.MiddleOutFallbackStrategy A[IMMUTABLE_TYPE, THIS]), (r8 I:java.lang.StackTraceElement[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_8;
+Node_6 -> Node_9[style=dashed];
+Node_8 -> Node_4;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+}
+

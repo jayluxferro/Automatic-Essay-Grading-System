@@ -1,0 +1,75 @@
+digraph "CFG forcom.google.android.exoplayer2.decoder.SimpleDecoder.release()V" {
+subgraph cluster_Region_1089708871 {
+label = "R(3:0|2|(1:7))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_SynchronizedRegion_490715357 {
+label = "Synchronized:R(2:1|(1:4))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002}"];
+subgraph cluster_Region_1167360345 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|r3.released = true\lr3.lock.notify()\l}"];
+}
+}
+subgraph cluster_TryCatchRegion_723868955 {
+label = "Try: R(1:7) catches: R(1:13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1989229219 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ InterruptedException \-\> 0x0015 \}\lSplitter:B:6:0x000c\l|r3.decodeThread.join()     \/\/ Catch:\{ InterruptedException \-\> 0x0015 \}\l}"];
+}
+subgraph cluster_Region_369659388 {
+label = "R(1:13) | ExcHandler: InterruptedException (e java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|java.lang.Thread.currentThread().interrupt()\l}"];
+}
+}
+}
+subgraph cluster_Region_369659388 {
+label = "R(1:13) | ExcHandler: InterruptedException (e java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0016|java.lang.Thread.currentThread().interrupt()\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004|SYNTHETIC\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b|DONT_GENERATE\l|monitor\-exit(\l\/\/ error: 0x000b: MONITOR_EXIT  \l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000c|SYNTHETIC\lSplitter:B:6:0x000c\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0012|LOOP_START\lREMOVE\lLOOP:0: B:8:0x0012\-\>B:14:0x0012\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0013|SYNTHETIC\lREMOVE\lSplitter:B:9:0x0013\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|REMOVE\lSplitter:B:9:0x0013\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0014|REMOVE\l|throw r1\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0015|ExcHandler: InterruptedException (e java.lang.InterruptedException)\lSplitter:B:6:0x000c\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0012|LOOP_END\lSYNTHETIC\lDONT_GENERATE\lLOOP:0: B:8:0x0012\-\>B:14:0x0012\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0014|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0012|SYNTHETIC\lDONT_GENERATE\lREMOVE\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.decoder.SimpleDecoder.release((r3v0 'this' com.google.android.exoplayer2.decoder.SimpleDecoder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_7 -> Node_12;
+Node_7 -> Node_17;
+Node_13 -> Node_18;
+Node_13 -> Node_18;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14;
+Node_10 -> Node_15;
+Node_10 -> Node_16;
+Node_12 -> Node_13;
+Node_14 -> Node_8;
+Node_15 -> Node_11;
+Node_16 -> Node_14;
+}
+

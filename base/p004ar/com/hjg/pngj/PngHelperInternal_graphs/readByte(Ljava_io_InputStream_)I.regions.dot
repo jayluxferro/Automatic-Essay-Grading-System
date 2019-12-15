@@ -1,0 +1,39 @@
+digraph "CFG forar.com.hjg.pngj.PngHelperInternal.readByte(Ljava\/io\/InputStream;)I" {
+subgraph cluster_Region_617479408 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_510386694 {
+label = "Try: R(1:2) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1828922195 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return r2.read()\l}"];
+}
+subgraph cluster_Region_1135009486 {
+label = "R(2:3|5) | ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|throw new p004ar.com.hjg.pngj.PngjInputException(\"error reading byte\", r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_1135009486 {
+label = "R(2:3|5) | ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|ExcHandler: IOException (r2v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|throw new p004ar.com.hjg.pngj.PngjInputException(\"error reading byte\", r2)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0005 \}\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0006}"];
+MethodNode[shape=record,label="{public static int ar.com.hjg.pngj.PngHelperInternal.readByte((r2v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+}
+

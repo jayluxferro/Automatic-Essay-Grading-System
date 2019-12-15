@@ -1,0 +1,42 @@
+digraph "CFG forkotlin.collections.CollectionsKt___CollectionsKt.foldRight(Ljava\/util\/List;Ljava\/lang\/Object;Lkotlin\/jvm\/functions\/Function2;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_245068254 {
+label = "R(3:0|(2:2|(1:5))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"operation\")\l}"];
+subgraph cluster_IfRegion_647989956 {
+label = "IF [B:1:0x000e] THEN: R(2:2|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r1.isEmpty() == false) goto L_0x0010\l}"];
+subgraph cluster_Region_1639636380 {
+label = "R(2:2|(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|java.util.ListIterator java.util.ListIterator\<? extends T\> r1 = r1.listIterator(r1.size())\l}"];
+subgraph cluster_LoopRegion_463285728 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|if (r1.hasPrevious() != false) goto L_0x001e\l}"];
+subgraph cluster_Region_1431040264 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|LOOP_END\lLOOP:0: B:3:0x0018\-\>B:5:0x001e\l|java.lang.Object r2 = r3.invoke(r1.previous(), r2)\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0027|RETURN\lPHI: r2 \l  PHI: (r2v1 R) = (r2v0 R), (r2v2 R) binds: [B:1:0x000e, B:7:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|return r2\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018|LOOP_START\lPHI: r2 \l  PHI: (r2v2 R) = (r2v0 R), (r2v3 R) binds: [B:2:0x0010, B:5:0x001e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0018\-\>B:5:0x001e\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0027|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final R kotlin.collections.CollectionsKt___CollectionsKt.foldRight((r1v0 java.util.List\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 R A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 ? I:kotlin.jvm.functions.Function2\<? super T, ? super R, ? extends R\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], , Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lJADX WARNING: type inference failed for: r3v0, types: [java.lang.Object, kotlin.jvm.functions.Function2, kotlin.jvm.functions.Function2\<? super T, ? super R, ? extends R\>]\lUnknown variable types count: 1\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, R:, Ljava\/lang\/Object;, \>(, Ljava\/util\/List\<, +TT;\>;TR;, Lkotlin\/jvm\/functions\/Function2\<, \-TT;\-TR;+TR;\>;)TR;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_3;
+Node_3 -> Node_4;
+Node_7 -> Node_6;
+}
+

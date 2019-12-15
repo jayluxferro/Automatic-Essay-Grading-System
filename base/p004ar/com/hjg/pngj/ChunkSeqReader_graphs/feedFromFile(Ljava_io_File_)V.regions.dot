@@ -1,0 +1,40 @@
+digraph "CFG forar.com.hjg.pngj.ChunkSeqReader.feedFromFile(Ljava\/io\/File;)V" {
+subgraph cluster_Region_1806997432 {
+label = "R(1:(1:1))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1782544599 {
+label = "Try: R(1:1) catches: R(2:3|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1039163316 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ FileNotFoundException \-\> 0x000a \}\lSplitter:B:0:0x0000\l|feedFromInputStream(new java.io.FileInputStream(r2), true)     \/\/ Catch:\{ FileNotFoundException \-\> 0x000a \}\l}"];
+}
+subgraph cluster_Region_1951571921 {
+label = "R(2:3|5) | ExcHandler: FileNotFoundException (r2v1 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|ExcHandler: FileNotFoundException (r2v1 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new p004ar.com.hjg.pngj.PngjInputException(r2.getMessage())\l}"];
+}
+}
+}
+subgraph cluster_Region_1951571921 {
+label = "R(2:3|5) | ExcHandler: FileNotFoundException (r2v1 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|ExcHandler: FileNotFoundException (r2v1 'e' java.io.FileNotFoundException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|throw new p004ar.com.hjg.pngj.PngjInputException(r2.getMessage())\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+MethodNode[shape=record,label="{public void ar.com.hjg.pngj.ChunkSeqReader.feedFromFile((r1v0 'this' ar.com.hjg.pngj.ChunkSeqReader A[IMMUTABLE_TYPE, THIS]), (r2v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_4 -> Node_5;
+}
+

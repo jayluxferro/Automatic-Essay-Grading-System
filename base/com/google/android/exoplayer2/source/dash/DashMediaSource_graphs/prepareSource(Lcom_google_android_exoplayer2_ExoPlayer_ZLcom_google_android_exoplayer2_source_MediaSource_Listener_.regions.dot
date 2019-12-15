@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.DashMediaSource.prepareSource(Lcom\/google\/android\/exoplayer2\/ExoPlayer;ZLcom\/google\/android\/exoplayer2\/source\/MediaSource$Listener;)V" {
+subgraph cluster_Region_631366381 {
+label = "R(2:0|(2:(2:2|4)|(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.sourceListener = r5\l}"];
+subgraph cluster_Region_496437911 {
+label = "R(2:(2:2|4)|(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_300291572 {
+label = "IF [B:1:0x0004] THEN: R(2:2|4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2.sideloadedManifest == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1194722481 {
+label = "R(2:2|4)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r2.loaderErrorThrower = new com.google.android.exoplayer2.upstream.LoaderErrorThrower.Dummy()\lprocessManifest(false)\l}"];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1831477296 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|r2.dataSource = r2.manifestDataSourceFactory.createDataSource()\lr2.loader = new com.google.android.exoplayer2.upstream.Loader(\"Loader:DashMediaSource\")\lr2.loaderErrorThrower = r2.loader\lr2.handler = new android.os.Handler()\lstartLoadingManifest()\l}"];
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.dash.DashMediaSource.prepareSource((r2v0 'this' com.google.android.exoplayer2.source.dash.DashMediaSource A[IMMUTABLE_TYPE, THIS]), (r3v0 'player' com.google.android.exoplayer2.ExoPlayer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 'isTopLevelSource' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'listener' com.google.android.exoplayer2.source.MediaSource$Listener A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_5;
+}
+

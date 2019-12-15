@@ -1,0 +1,14 @@
+digraph "CFG fororg.osmdroid.gpkg.overlay.features.SphericalUtil.interpolate(Lorg\/osmdroid\/api\/IGeoPoint;Lorg\/osmdroid\/api\/IGeoPoint;D)Lorg\/osmdroid\/api\/IGeoPoint;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double r2 = java.lang.Math.toRadians(r20.getLatitude())\ldouble r4 = java.lang.Math.toRadians(r20.getLongitude())\ldouble r6 = java.lang.Math.toRadians(r21.getLatitude())\ldouble r8 = java.lang.Math.toRadians(r21.getLongitude())\ldouble r10 = java.lang.Math.cos(r2)\ldouble r12 = java.lang.Math.cos(r6)\ldouble r14 = computeAngleBetween(r20, r21)\ldouble r16 = java.lang.Math.sin(r14)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0037|if ((r16 \> 1.0E\-6d ? 1 : (r16 == 1.0E\-6d ? 0 : \-1)) \>= 0) goto L_0x003a\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0039|RETURN\l|return r20\l}"];
+Node_3 [shape=record,label="{3\:\ 0x003a|double r18 = java.lang.Math.sin((1.0d \- r22) * r14) \/ r16\ldouble r0 = java.lang.Math.sin(r22 * r14) \/ r16\ldouble r10 = r10 * r18\ldouble r12 = r12 * r0\ldouble r14 = (java.lang.Math.cos(r4) * r10) + (java.lang.Math.cos(r8) * r12)\ldouble r10 = (r10 * java.lang.Math.sin(r4)) + (r12 * java.lang.Math.sin(r8))\ldouble r0 = java.lang.Math.atan2((r18 * java.lang.Math.sin(r2)) + (r0 * java.lang.Math.sin(r6)), java.lang.Math.sqrt((r14 * r14) + (r10 * r10)))\ldouble r2 = java.lang.Math.atan2(r10, r14)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0099|RETURN\l|return new org.osmdroid.util.GeoPoint(java.lang.Math.toDegrees(r0), java.lang.Math.toDegrees(r2))\l}"];
+MethodNode[shape=record,label="{public static org.osmdroid.api.IGeoPoint org.osmdroid.gpkg.overlay.features.SphericalUtil.interpolate((r20v0 org.osmdroid.api.IGeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 org.osmdroid.api.IGeoPoint A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+}
+

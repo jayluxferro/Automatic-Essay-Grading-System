@@ -1,0 +1,36 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageImpl.getFeatureDao(Ljava\/lang\/String;)Lmil\/nga\/geopackage\/features\/user\/FeatureDao;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|SYNTHETIC\lSplitter:B:1:0x0006\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ SQLException \-\> 0x006b \}\lSplitter:B:1:0x0006\l|java.util.List r0 = getGeometryColumnsDao().queryForEq(\"table_name\", r5)     \/\/ Catch:\{ SQLException \-\> 0x006b \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a}"];
+Node_4 [shape=record,label="{4\:\ 0x000e|if (r0.isEmpty() != false) goto L_0x0054\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|if (r0.size() \> 1) goto L_0x0023\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017}"];
+Node_8 [shape=record,label="{8\:\ 0x0022|RETURN\l|return getFeatureDao((mil.nga.geopackage.features.columns.GeometryColumns) r0.get(0))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0023|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Unexpected state. More than one \")\lr2.append(mil.nga.geopackage.features.columns.GeometryColumns.class.getSimpleName())\lr2.append(\" matched for table name: \")\lr2.append(r5)\lr2.append(\", count: \")\lr2.append(r0.size())\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0053|throw new mil.nga.geopackage.GeoPackageException(r2.toString())\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0054|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"No Feature Table exists for table name: \")\lr1.append(r5)\l}"];
+Node_12 [shape=record,label="{12\:\ 0x006a|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+Node_13 [shape=record,label="{13\:\ 0x006b|ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0006\l|java.sql.SQLException r0 = move\-exception\l}"];
+Node_14 [shape=record,label="{14\:\ 0x006c|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Failed to retrieve \")\lr2.append(mil.nga.geopackage.features.user.FeatureDao.class.getSimpleName())\lr2.append(\" for table name: \")\lr2.append(r5)\lr2.append(\". Exception retrieving \")\lr2.append(mil.nga.geopackage.features.columns.GeometryColumns.class.getSimpleName())\lr2.append(mil.nga.geopackage.property.PropertyConstants.PROPERTY_DIVIDER)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00a3|throw new mil.nga.geopackage.GeoPackageException(r2.toString(), r0)\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.features.user.FeatureDao mil.nga.geopackage.factory.GeoPackageImpl.getFeatureDao((r4v0 'this' mil.nga.geopackage.factory.GeoPackageImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+}
+

@@ -1,0 +1,67 @@
+digraph "CFG forcom.google.android.gms.common.api.internal.BackgroundDetector.readCurrentStateIfPossible(Z)Z" {
+subgraph cluster_Region_196319110 {
+label = "R(2:(1:(2:(1:9)|(2:4|(1:8))))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1811280174 {
+label = "IF [B:1:0x0006] THEN: R(1:(2:(1:9)|(2:4|(1:8)))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r2.zzav.get() == false) goto L_0x0008\l}"];
+subgraph cluster_Region_1009727702 {
+label = "R(1:(2:(1:9)|(2:4|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1114138753 {
+label = "R(2:(1:9)|(2:4|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1441847533 {
+label = "IF [B:3:0x000c] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000c|if (com.google.android.gms.common.util.PlatformVersion.isAtLeastJellyBean() != true) goto L_0x002b\l}"];
+subgraph cluster_Region_289943548 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_951220512 {
+label = "R(2:4|(1:8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000e|android.app.ActivityManager$RunningAppProcessInfo android.app.ActivityManager.RunningAppProcessInfo r3 = new android.app.ActivityManager.RunningAppProcessInfo()\landroid.app.ActivityManager.getMyMemoryState(r3)\l}"];
+subgraph cluster_IfRegion_1181881518 {
+label = "IF [B:5:0x001d, B:7:0x0023] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|ADDED_TO_REGION\l|if (r2.zzav.getAndSet(true) == false) goto L_0x001f\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0023|ADDED_TO_REGION\l|if (r3.importance \> 100) goto L_0x0025\l}"];
+subgraph cluster_Region_1424252043 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0025|r2.zzau.set(true)\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0030|RETURN\l|return isInBackground()\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001f}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002c}"];
+MethodNode[shape=record,label="{public final boolean com.google.android.gms.common.api.internal.BackgroundDetector.readCurrentStateIfPossible((r2v0 'this' com.google.android.gms.common.api.internal.BackgroundDetector A[IMMUTABLE_TYPE, THIS]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.annotation.TargetApi, \{value=16\}], Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_10[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+}
+

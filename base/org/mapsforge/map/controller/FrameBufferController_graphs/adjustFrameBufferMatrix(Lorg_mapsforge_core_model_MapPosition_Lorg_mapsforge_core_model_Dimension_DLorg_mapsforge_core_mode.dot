@@ -1,0 +1,17 @@
+digraph "CFG fororg.mapsforge.map.controller.FrameBufferController.adjustFrameBufferMatrix(Lorg\/mapsforge\/core\/model\/MapPosition;Lorg\/mapsforge\/core\/model\/Dimension;DLorg\/mapsforge\/core\/model\/LatLong;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r20\lr1 = r21\lr2 = r25\lorg.mapsforge.core.model.MapPosition r3 = r0.model.mapViewPosition.getMapPosition()\llong r4 = org.mapsforge.core.util.MercatorProjection.getMapSize(r1.zoomLevel, r0.model.displayModel.getTileSize())\lorg.mapsforge.core.model.Point r6 = org.mapsforge.core.util.MercatorProjection.getPixel(r1.latLong, r4)\lorg.mapsforge.core.model.Point r3 = org.mapsforge.core.util.MercatorProjection.getPixel(r3.latLong, r4)\ldouble r7 = r6.f266x \- r3.f266x\ldouble r9 = r6.f267y \- r3.f267y\lr11 = 0.0d\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0034|if (r2 == null) goto L_0x0046\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0036|org.mapsforge.core.model.Point r2 = org.mapsforge.core.util.MercatorProjection.getPixel(r2, r4)\ldouble r11 = r2.f266x \- r6.f266x\ldouble r2 = r2.f267y \- r6.f267y\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0046|r2 = 0.0d\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0047|PHI: r2 r11 \l  PHI: (r2v1 double) = (r2v3 double), (r2v6 double) binds: [B:3:0x0046, B:2:0x0036] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r11v2 double) = (r11v1 double), (r11v4 double) binds: [B:3:0x0046, B:2:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|float r1 = (float) (r23 \/ java.lang.Math.pow(2.0d, (double) r1.zoomLevel))\lr0.frameBuffer.adjustMatrix((float) r7, (float) r9, r1, r22, (float) r11, (float) r2)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0064|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void org.mapsforge.map.controller.FrameBufferController.adjustFrameBufferMatrix((r20v0 'this' org.mapsforge.map.controller.FrameBufferController A[IMMUTABLE_TYPE, THIS]), (r21v0 org.mapsforge.core.model.MapPosition A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r22v0 org.mapsforge.core.model.Dimension A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r23v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r25v0 org.mapsforge.core.model.LatLong A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

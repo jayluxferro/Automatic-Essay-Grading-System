@@ -1,0 +1,54 @@
+digraph "CFG forokhttp3.internal.ws.RealWebSocket.1.run()V" {
+subgraph cluster_Region_268685869 {
+label = "R(1:(1:(0)))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1721887561 {
+label = "LOOP:0: (1:(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|LOOP_END\lLOOP:0: B:0:0x0000\-\>B:2:0x0006\l|if (okhttp3.internal.p026ws.RealWebSocket.this.writeOneFrame() != false) goto L_0x0000\l}"];
+subgraph cluster_Region_685497394 {
+label = "R(1:(0))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_871313656 {
+label = "Try: R(0) catches: R(3:3|4|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1030954514 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+subgraph cluster_Region_1424048470 {
+label = "R(3:3|4|6) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|okhttp3.internal.p026ws.RealWebSocket.this.failWebSocket(r0, (okhttp3.Response) null)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1424048470 {
+label = "R(3:3|4|6) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000a|okhttp3.internal.p026ws.RealWebSocket.this.failWebSocket(r0, (okhttp3.Response) null)\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lLOOP_START\lSYNTHETIC\lSplitter:B:0:0x0000\lLOOP:0: B:0:0x0000\-\>B:2:0x0006\l}"];
+Node_1 [shape=record,color=red,label="{1\:\ ?|Catch:\{ IOException \-\> 0x0009 \}\lSplitter:B:0:0x0000\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0010|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.ws.RealWebSocket.1.run((r3v0 'this' okhttp3.internal.ws.RealWebSocket$1 A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_2 -> Node_0;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_5 -> Node_7;
+}
+

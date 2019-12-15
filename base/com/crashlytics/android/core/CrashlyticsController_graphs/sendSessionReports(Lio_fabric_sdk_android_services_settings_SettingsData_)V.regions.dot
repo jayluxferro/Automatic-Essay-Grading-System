@@ -1,0 +1,49 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.sendSessionReports(Lio\/fabric\/sdk\/android\/services\/settings\/SettingsData;)V" {
+subgraph cluster_Region_1493360525 {
+label = "R(1:(2:(2:1|2)|(2:3|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2051035683 {
+label = "R(2:(2:1|2)|(2:3|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1155366219 {
+label = "IF [B:0:0x0000] THEN: R(2:1|2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_478114782 {
+label = "R(2:1|2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|p018io.fabric.sdk.android.Fabric.getLogger().mo22234w(com.crashlytics.android.core.CrashlyticsCore.TAG, \"Cannot send reports. Settings are unavailable.\")\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_273904255 {
+label = "R(2:3|(1:5))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|android.content.Context android.content.Context r0 = r7.crashlyticsCore.getContext()\lcom.crashlytics.android.core.ReportUploader com.crashlytics.android.core.ReportUploader r1 = new com.crashlytics.android.core.ReportUploader(r7.appData.apiKey, getCreateReportSpiCall(r8.appData.reportsUrl, r8.appData.ndkReportsUrl), r7.reportFilesProvider, r7.handlingExceptionCheck)\lint int r2 = listCompleteSessionFiles().length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1406024043 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0033|LOOP_START\lPHI: r3 \l  PHI: (r3v2 int) = (r3v1 int), (r3v3 int) binds: [B:3:0x000e, B:5:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0033\-\>B:5:0x0035\l|if (r3 \< r2) goto L_0x0035\l}"];
+subgraph cluster_Region_821918009 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|LOOP_END\lLOOP:0: B:4:0x0033\-\>B:5:0x0035\l|r7.backgroundWorker.submit((java.lang.Runnable) new com.crashlytics.android.core.CrashlyticsController.SendReportRunnable(r0, new com.crashlytics.android.core.SessionReport(r4, SEND_AT_CRASHTIME_HEADER), r1))\lr3++\l}"];
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x004b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x004b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.core.CrashlyticsController.sendSessionReports((r7v0 'this' com.crashlytics.android.core.CrashlyticsController A[IMMUTABLE_TYPE, THIS]), (r8v0 io.fabric.sdk.android.services.settings.SettingsData A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | access modifiers changed from: private\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_4;
+Node_7 -> Node_6;
+}
+

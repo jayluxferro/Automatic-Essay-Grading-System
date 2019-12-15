@@ -1,0 +1,65 @@
+digraph "CFG forcom.crashlytics.android.core.DevicePowerStateListener.initialize()V" {
+subgraph cluster_Region_245604926 {
+label = "R(2:0|(1:(4:3|(1:5)|(1:10)|11)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r1 = true\l}"];
+subgraph cluster_Region_1832896569 {
+label = "R(1:(4:3|(1:5)|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_34646657 {
+label = "IF [B:1:0x0007] THEN: R(4:3|(1:5)|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r4.receiversRegistered.getAndSet(true) != true) goto L_0x000a\l}"];
+subgraph cluster_Region_104636862 {
+label = "R(4:3|(1:5)|(1:10)|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|android.content.Intent android.content.Intent r0 = r4.context.registerReceiver((android.content.BroadcastReceiver) null, FILTER_BATTERY_CHANGED)\lint r2 = \-1\l}"];
+subgraph cluster_IfRegion_408175529 {
+label = "IF [B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|if (r0 != null) goto L_0x0016\l}"];
+subgraph cluster_Region_200650959 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|int r2 = r0.getIntExtra(\"status\", \-1)\l}"];
+}
+}
+subgraph cluster_IfRegion_1328134723 {
+label = "IF [B:7:0x001d, B:9:0x0020] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|ADDED_TO_REGION\l|if (r2 == 2) goto L_0x0024\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0020|ADDED_TO_REGION\l|if (r2 == 5) goto L_0x0024\l}"];
+subgraph cluster_Region_1556286321 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0023|r1 = false\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0024|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v0 boolean), (r1v4 boolean) binds: [B:7:0x001d, B:9:0x0020, B:10:0x0023] A[DONT_GENERATE, DONT_INLINE]\l|r4.isPowerConnected = r1\lr4.context.registerReceiver(r4.powerConnectedReceiver, FILTER_POWER_CONNECTED)\lr4.context.registerReceiver(r4.powerDisconnectedReceiver, FILTER_POWER_DISCONNECTED)\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001c|PHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v5 int) binds: [B:4:0x0014, B:5:0x0016] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001f}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0038}"];
+MethodNode[shape=record,label="{public void com.crashlytics.android.core.DevicePowerStateListener.initialize((r4v0 'this' com.crashlytics.android.core.DevicePowerStateListener A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

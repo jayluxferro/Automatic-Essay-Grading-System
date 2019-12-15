@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.android.exoplayer2.util.Util.escapeFileName(Ljava\/lang\/String;)Ljava\/lang\/String;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r5 I:int) = (r8 I:java.lang.String A[D('fileName' java.lang.String)]) java.lang.String.length():int type: VIRTUAL \l0x0004: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0005: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r3 I:?[int, byte, short, char] A[D('i' int)]) \>= (r5 I:?[int, byte, short, char] A[D('length' int)])  \-\> B:6:0x0017 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: INVOKE  (r6 I:char) = \l  (r8 I:java.lang.String A[D('fileName' java.lang.String)])\l  (r3 I:int A[D('i' int)])\l java.lang.String.charAt(int):char type: VIRTUAL \l0x000c: INVOKE  (r6 I:boolean) = (r6 I:char) com.google.android.exoplayer2.util.Util.shouldEscapeCharacter(char):boolean type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|0x0010: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0014 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|0x0012: ARITH  (r2 I:int A[D('charactersToEscapeCount' int)]) = (r2 I:int A[D('charactersToEscapeCount' int)]) + (1 int) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: ARITH  (r3 I:int A[D('i' int)]) = (r3 I:int A[D('i' int)]) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0017|0x0017: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char] A[D('charactersToEscapeCount' int)]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x001a \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|0x0019: RETURN  (r8 I:java.lang.String A[D('fileName' java.lang.String)]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|0x001a: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('i' int)]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x001b: NEW_INSTANCE  (r0 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x001d: ARITH  (r6 I:int) = (r2 I:int A[D('charactersToEscapeCount' int)]) * (2 int) \l0x001f: ARITH  (r6 I:int) = (r6 I:int) + (r5 I:int A[D('length' int)]) \l0x0020: INVOKE  (r0 I:java.lang.StringBuilder), (r6 I:int) java.lang.StringBuilder.\<init\>(int):void type: DIRECT \l0x0023: MOVE  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('i' int)])\l \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|0x0024: IF  (r2 I:?[int, byte, short, char] A[D('charactersToEscapeCount' int)]) \<= (0 ?[int, byte, short, char])  \-\> B:15:0x0047 \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0026|0x0026: ARITH  (r3 I:int) = (r4 I:int A[D('i' int)]) + (1 int) \l0x0028: INVOKE  (r1 I:char) = \l  (r8 I:java.lang.String A[D('fileName' java.lang.String)])\l  (r4 I:int A[D('i' int)])\l java.lang.String.charAt(int):char type: VIRTUAL \l0x002c: INVOKE  (r6 I:boolean) = (r1 I:char A[D('c' char)]) com.google.android.exoplayer2.util.Util.shouldEscapeCharacter(char):boolean type: STATIC \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0030|0x0030: IF  (r6 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:14:0x0043 \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0032|0x0032: CONST  (r6 I:?[int, float, short, byte, char]) = (37 ?[int, float, short, byte, char]) \l0x0034: INVOKE  (r6 I:java.lang.StringBuilder) = \l  (r0 I:java.lang.StringBuilder A[D('builder' java.lang.StringBuilder)])\l  (r6 I:char)\l java.lang.StringBuilder.append(char):java.lang.StringBuilder type: VIRTUAL \l0x0038: INVOKE  (r7 I:java.lang.String) = (r1 I:int A[D('c' char)]) java.lang.Integer.toHexString(int):java.lang.String type: STATIC \l0x003c: INVOKE  (r6 I:java.lang.StringBuilder), (r7 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x003f: ARITH  (r2 I:int A[D('charactersToEscapeCount' int)]) = (r2 I:int A[D('charactersToEscapeCount' int)]) + (\-1 int) \l}"];
+Node_13 [shape=record,label="{13\:\ 0x0041|0x0041: MOVE  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('i' int)])\l \l}"];
+Node_14 [shape=record,label="{14\:\ 0x0043|0x0043: INVOKE  \l  (r0 I:java.lang.StringBuilder A[D('builder' java.lang.StringBuilder)])\l  (r1 I:char A[D('c' char)])\l java.lang.StringBuilder.append(char):java.lang.StringBuilder type: VIRTUAL \l}"];
+Node_15 [shape=record,label="{15\:\ 0x0047|0x0047: IF  (r4 I:?[int, byte, short, char] A[D('i' int)]) \>= (r5 I:?[int, byte, short, char] A[D('length' int)])  \-\> B:17:0x004c \l}"];
+Node_16 [shape=record,label="{16\:\ 0x0049|0x0049: INVOKE  \l  (r0 I:java.lang.StringBuilder A[D('builder' java.lang.StringBuilder)])\l  (r8 I:java.lang.CharSequence A[D('fileName' java.lang.String)])\l  (r4 I:int A[D('i' int)])\l  (r5 I:int A[D('length' int)])\l java.lang.StringBuilder.append(java.lang.CharSequence, int, int):java.lang.StringBuilder type: VIRTUAL \l}"];
+Node_17 [shape=record,label="{17\:\ 0x004c|0x004c: INVOKE  (r8 I:java.lang.String A[D('fileName' java.lang.String)]) = \l  (r0 I:java.lang.StringBuilder A[D('builder' java.lang.StringBuilder)])\l java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x0050: MOVE  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('i' int)])\l \l}"];
+MethodNode[shape=record,label="{public static java.lang.String com.google.android.exoplayer2.util.Util.escapeFileName((r8 I:java.lang.String A[D('fileName' java.lang.String), IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Debug Info:\l  ?\-0x0019: r8 'fileName' java.lang.String\l  0x0006\-0x0024: r3 'i' int\l  0x0024\-0x0028: r4 'i' int\l  0x0028\-0x0042: r3 'i' int\l  0x0042\-0x0043: r4 'i' int\l  0x002c\-0x0047: r1 'c' char\l  0x0043\-0x0047: r3 'i' int\l  0x001a\-0x0050: r8 'fileName' java.lang.String\l  0x0047\-0x0051: r4 'i' int\l  0x0023\-0x0051: r0 'builder' java.lang.StringBuilder\l  0x0005\-0x0051: r2 'charactersToEscapeCount' int\l  0x0051\-0x0051: r3 'i' int\l  0x0004\-0x0051: r5 'length' int\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_15;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_14;
+Node_12 -> Node_13;
+Node_13 -> Node_9;
+Node_14 -> Node_13;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+Node_17 -> Node_7;
+}
+

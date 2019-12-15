@@ -1,0 +1,65 @@
+digraph "CFG forokio.Buffer.clone()Lokio\/Buffer;" {
+subgraph cluster_Region_67356236 {
+label = "R(2:0|(2:(1:2)|(2:3|(2:4|(1:6)(2:7|8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|okio.Buffer okio.Buffer r0 = new okio.Buffer()\l}"];
+subgraph cluster_Region_1643335008 {
+label = "R(2:(1:2)|(2:3|(2:4|(1:6)(2:7|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1892788887 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r5.size == 0) goto L_0x000d\l}"];
+subgraph cluster_Region_624170786 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1625170494 {
+label = "R(2:3|(2:4|(1:6)(2:7|8)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|r0.head = r5.head.sharedCopy()\lokio.Segment okio.Segment r1 = r0.head\lokio.Segment okio.Segment r2 = r0.head\lokio.Segment okio.Segment r3 = r0.head\lr2.prev = r3\lr1.next = r3\lokio.Segment okio.Segment r1 = r5.head\l}"];
+subgraph cluster_LoopRegion_291258703 {
+label = "LOOP:0: (2:4|(1:6)(2:7|8))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1692844528 {
+label = "R(2:4|(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0022|LOOP_START\lPHI: r1 \l  PHI: (r1v6 okio.Segment) = (r1v5 okio.Segment), (r1v7 okio.Segment) binds: [B:3:0x000e, B:6:0x0028] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0022\-\>B:6:0x0028\l|okio.Segment r1 = r1.next\l}"];
+subgraph cluster_IfRegion_1975046272 {
+label = "IF [B:5:0x0026] THEN: R(1:6) ELSE: R(2:7|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0026|if (r1 != r5.head) goto L_0x0028\l}"];
+subgraph cluster_Region_2068176762 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|LOOP_END\lLOOP:0: B:4:0x0022\-\>B:6:0x0028\l|r0.head.prev.push(r1.sharedCopy())\l}"];
+}
+subgraph cluster_Region_1634617336 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|r0.size = r5.size\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0038|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_9 [shape=record,color=red,label="{9\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public okio.Buffer okio.Buffer.clone((r5v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_7;
+}
+

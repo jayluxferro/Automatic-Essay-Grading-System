@@ -1,0 +1,89 @@
+digraph "CFG forokio.SegmentedByteString.\<init\>(Lokio\/Buffer;I)V" {
+subgraph cluster_Region_2040149390 {
+label = "R(4:0|(1:(1:4)(1:6))|7|(3:9|(1:11)(0)|12))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super((byte[]) null)\lokio.Util.checkOffsetAndCount(r8.size, 0, (long) r9)\lint r1 = 0\lokio.Segment r2 = r8.head\lint r0 = 0\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_214997172 {
+label = "LOOP:0: (1:(1:4)(1:6))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0012|LOOP_START\lPHI: r0 r2 r3 \l  PHI: (r0v3 int) = (r0v2 int), (r0v9 int) binds: [B:0:0x0000, B:4:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 okio.Segment) = (r2v0 okio.Segment), (r2v8 okio.Segment) binds: [B:0:0x0000, B:4:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v2 int) = (r3v1 int), (r3v9 int) binds: [B:0:0x0000, B:4:0x001a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0012\-\>B:4:0x001a\l|if (r0 \< r9) goto L_0x0014\l}"];
+subgraph cluster_Region_1837064133 {
+label = "R(1:(1:4)(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1013095640 {
+label = "IF [B:3:0x0018] THEN: R(1:4) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|if (r2.limit != r2.pos) goto L_0x001a\l}"];
+subgraph cluster_Region_1528073353 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|LOOP_END\lLOOP:0: B:1:0x0012\-\>B:4:0x001a\l|r0 += r2.limit \- r2.pos\lr3++\lokio.Segment r2 = r2.next\l}"];
+}
+subgraph cluster_Region_1078565131 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|throw new java.lang.AssertionError(\"s.limit == s.pos\")\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002d|r7.segments = new byte[r3][]\lr7.directory = new int[(r3 * 2)]\lokio.Segment r0 = r8.head\lint r8 = 0\l}"];
+subgraph cluster_LoopRegion_2093582689 {
+label = "LOOP:1: (3:9|(1:11)(0)|12)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|LOOP_START\lPHI: r0 r1 r8 \l  PHI: (r0v7 okio.Segment) = (r0v6 okio.Segment), (r0v8 okio.Segment) binds: [B:7:0x002d, B:12:0x004c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v2 int) = (r1v1 int), (r1v4 int) binds: [B:7:0x002d, B:12:0x004c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r8v3 int) = (r8v2 int), (r8v4 int) binds: [B:7:0x002d, B:12:0x004c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x003b\-\>B:12:0x004c\l|if (r1 \< r9) goto L_0x003d\l}"];
+subgraph cluster_Region_703911711 {
+label = "R(3:9|(1:11)(0)|12)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003d|r7.segments[r8] = r0.data\lr1 += r0.limit \- r0.pos\l}"];
+subgraph cluster_IfRegion_1415050547 {
+label = "IF [B:10:0x0049] THEN: R(1:11) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|if (r1 \> r9) goto L_0x004b\l}"];
+subgraph cluster_Region_1090835113 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x004b|r1 = r9\l}"];
+}
+subgraph cluster_Region_146672502 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x004c|LOOP_END\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v5 int) binds: [B:18:0x004c, B:17:0x004c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:8:0x003b\-\>B:12:0x004c\l|r7.directory[r8] = r1\lr7.directory[r7.segments.length + r8] = r0.pos\lr0.shared = true\lr8++\lokio.Segment r0 = r0.next\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0025}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0062}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002d|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0025|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0062|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x004c|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void okio.SegmentedByteString.\<init\>((r7v0 'this' okio.SegmentedByteString A[IMMUTABLE_TYPE, THIS]), (r8v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_15[style=dashed];
+Node_4 -> Node_1;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_16[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_18[style=dashed];
+Node_11 -> Node_17;
+Node_12 -> Node_8;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_14 -> Node_7;
+Node_15 -> Node_5;
+Node_16 -> Node_13;
+Node_17 -> Node_12;
+Node_18 -> Node_12;
+}
+

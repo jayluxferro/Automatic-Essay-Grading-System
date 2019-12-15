@@ -1,0 +1,79 @@
+digraph "CFG forcom.google.android.gms.common.util.CollectionUtils.mapOfKeyValueArrays([Ljava\/lang\/Object;[Ljava\/lang\/Object;)Ljava\/util\/Map;" {
+subgraph cluster_Region_93140971 {
+label = "R(1:(2:2|3)(2:14|15))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1584641006 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: R(2:14|15)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.length == r5.length) goto L_0x0004\l}"];
+subgraph cluster_Region_210385531 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|int r1 = 0\l}"];
+subgraph cluster_SwitchRegion_1525552157 {
+label = "Switch: 2, default: R(3:4|(1:11)|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|switch(r4.length) \{\l    case 0: goto L_0x0018;\l    case 1: goto L_0x000f;\l    default: goto L_0x0009;\l\}\l}"];
+subgraph cluster_Region_812765208 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001c|RETURN\l|return java.util.Collections.emptyMap()\l}"];
+}
+subgraph cluster_Region_1555012498 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|RETURN\l|return java.util.Collections.singletonMap(r4[0], r5[0])\l}"];
+}
+subgraph cluster_Region_1873073381 {
+label = "R(3:4|(1:11)|13)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|java.util.Map java.util.Map r0 = zzb(r4.length, false)\l}"];
+subgraph cluster_LoopRegion_1676454411 {
+label = "LOOP:0: (1:11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|if (r1 \< r4.length) goto L_0x0020\l}"];
+subgraph cluster_Region_1623768998 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0020|LOOP_END\lLOOP:0: B:9:0x001d\-\>B:11:0x0020\l|r0.put(r4[r1], r5[r1])\lr1++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x002e|RETURN\l|return java.util.Collections.unmodifiableMap(r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_608531678 {
+label = "R(2:14|15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002f|int int r4 = r4.length\lint int r5 = r5.length\ljava.lang.StringBuilder java.lang.StringBuilder r2 = new java.lang.StringBuilder(66)\lr2.append(\"Key and values array lengths not equal: \")\lr2.append(r4)\lr2.append(\" != \")\lr2.append(r5)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0051|throw new java.lang.IllegalArgumentException(r2.toString())\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0018}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x001d|LOOP_START\lPHI: r1 \l  PHI: (r1v4 int) = (r1v3 int), (r1v5 int) binds: [B:4:0x0009, B:11:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x001d\-\>B:11:0x0020\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x002a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.util.Map\<K, V\> com.google.android.gms.common.util.CollectionUtils.mapOfKeyValueArrays((r4v0 K[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 V[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, \>([TK;[TV;), Ljava\/util\/Map\<, TK;TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_3 -> Node_7;
+Node_4 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_11 -> Node_9;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_16 -> Node_12;
+}
+

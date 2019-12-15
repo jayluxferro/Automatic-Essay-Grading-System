@@ -1,0 +1,36 @@
+digraph "CFG forcom.j256.ormlite.stmt.mapped.MappedRefresh.build(Lcom\/j256\/ormlite\/db\/DatabaseType;Lcom\/j256\/ormlite\/table\/TableInfo;)Lcom\/j256\/ormlite\/stmt\/mapped\/MappedRefresh;" {
+subgraph cluster_Region_1635369223 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.j256.ormlite.field.FieldType com.j256.ormlite.field.FieldType r0 = r5.getIdField()\l}"];
+subgraph cluster_Region_1920806724 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_764268741 {
+label = "IF [B:1:0x0004] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 != null) goto L_0x0006\l}"];
+subgraph cluster_Region_627724940 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,label="{3\:\ 0x001d|RETURN\l|return new com.j256.ormlite.stmt.mapped.MappedRefresh\<\>(r5, buildStatement(r4, r5, r0), new com.j256.ormlite.field.FieldType[]\{r5.getIdField()\}, r5.getFieldTypes())\l}"];
+}
+}
+subgraph cluster_Region_1763377424 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001e}"];
+Node_5 [shape=record,label="{5\:\ 0x003d|throw new java.sql.SQLException(\"Cannot refresh \" + r5.getDataClass() + \" because it doesn't have an id field\")\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public static com.j256.ormlite.stmt.mapped.MappedRefresh\<T, ID\> com.j256.ormlite.stmt.mapped.MappedRefresh.build((r4v0 com.j256.ormlite.db.DatabaseType A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.j256.ormlite.table.TableInfo\<T, ID\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, ID:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/db\/DatabaseType;, Lcom\/j256\/ormlite\/table\/TableInfo\<, TT;TID;\>;), Lcom\/j256\/ormlite\/stmt\/mapped\/MappedRefresh\<, TT;TID;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

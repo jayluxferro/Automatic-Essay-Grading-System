@@ -1,0 +1,58 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.findFirstReferenceChildPosition(I)I" {
+subgraph cluster_Region_1244998255 {
+label = "R(3:0|(2:2|(2:(1:5)|(1:6)))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getChildCount()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1911005885 {
+label = "LOOP:0: (2:2|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:6:0x0015] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:6:0x0015\l|if (r2 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_2103471061 {
+label = "R(2:2|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|int int r3 = getPosition(getChildAt(r2))\l}"];
+subgraph cluster_Region_1249260176 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_518344772 {
+label = "IF [B:3:0x0010, B:4:0x0012] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r3 \>= 0) goto L_0x0012\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|ADDED_TO_REGION\l|if (r3 \< r5) goto L_0x0014\l}"];
+subgraph cluster_Region_1390148463 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_1482980721 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:6:0x0015\l|r2++\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0018|RETURN\l|return 0\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x0014|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0015|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0015|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int android.support.v7.widget.StaggeredGridLayoutManager.findFirstReferenceChildPosition((r4v0 'this' android.support.v7.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r5v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_10[style=dashed];
+Node_4 -> Node_8;
+Node_4 -> Node_11[style=dashed];
+Node_6 -> Node_1;
+Node_8 -> Node_5;
+Node_9 -> Node_7;
+Node_10 -> Node_6;
+Node_11 -> Node_6;
+}
+

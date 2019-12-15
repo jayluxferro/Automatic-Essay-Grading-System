@@ -1,0 +1,15 @@
+digraph "CFG forcom.google.android.exoplayer2.audio.Ac3Util.parseEAc3AnnexFFormat(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;Ljava\/lang\/String;Ljava\/lang\/String;Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData;)Lcom\/google\/android\/exoplayer2\/Format;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r13.skipBytes(2)\lint r11 = (r13.readUnsignedByte() & com.google.android.exoplayer2.extractor.p046ts.PsExtractor.AUDIO_STREAM) \>\> 6\lr6 = SAMPLE_RATE_BY_FSCOD[r11]\lint r12 = r13.readUnsignedByte()\lr5 = CHANNEL_COUNT_BY_ACMOD[(r12 & 14) \>\> 1]\l}"];
+Node_1 [shape=record,label="{1\:\ 0x001e|if ((r12 & 1) == 0) goto L_0x0022\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0020|int r5 = r5 + 1\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|PHI: r5 \l  PHI: (r5v1 'channelCount' int) = (r5v0 'channelCount' int), (r5v2 'channelCount' int) binds: [B:1:0x001e, B:2:0x0020] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0031|RETURN\l|return com.google.android.exoplayer2.Format.createAudioSampleFormat(r14, com.google.android.exoplayer2.util.MimeTypes.AUDIO_E_AC3, (java.lang.String) null, \-1, \-1, r5, r6, (java.util.List\<byte[]\>) null, r16, 0, r15)\l}"];
+MethodNode[shape=record,label="{public static com.google.android.exoplayer2.Format com.google.android.exoplayer2.audio.Ac3Util.parseEAc3AnnexFFormat((r13v0 'data' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 'trackId' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'language' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r16v0 'drmInitData' com.google.android.exoplayer2.drm.DrmInitData A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

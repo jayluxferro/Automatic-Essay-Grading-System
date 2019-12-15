@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.design.internal.NavigationMenuPresenter.onSaveInstanceState()Landroid\/os\/Parcelable;" {
+subgraph cluster_Region_1699617933 {
+label = "R(5:0|(1:2)|(1:5)|(1:8)|9)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Bundle android.os.Bundle r0 = new android.os.Bundle()\l}"];
+subgraph cluster_IfRegion_419552348 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r3.menuView != null) goto L_0x0009\l}"];
+subgraph cluster_Region_1515398871 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|android.util.SparseArray android.util.SparseArray r1 = new android.util.SparseArray()\lr3.menuView.saveHierarchyState(r1)\lr0.putSparseParcelableArray(\"android:menu:list\", r1)\l}"];
+}
+}
+subgraph cluster_IfRegion_554888888 {
+label = "IF [B:4:0x001a] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|if (r3.adapter != null) goto L_0x001c\l}"];
+subgraph cluster_Region_1741214798 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|r0.putBundle(STATE_ADAPTER, r3.adapter.createInstanceState())\l}"];
+}
+}
+subgraph cluster_IfRegion_1399034082 {
+label = "IF [B:7:0x0029] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0029|if (r3.headerLayout != null) goto L_0x002b\l}"];
+subgraph cluster_Region_2013074053 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|android.util.SparseArray android.util.SparseArray r1 = new android.util.SparseArray()\lr3.headerLayout.saveHierarchyState(r1)\lr0.putSparseParcelableArray(STATE_HEADER, r1)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x003a|RETURN\l|return r0\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0027}"];
+MethodNode[shape=record,label="{public android.os.Parcelable android.support.design.internal.NavigationMenuPresenter.onSaveInstanceState((r3v0 'this' android.support.design.internal.NavigationMenuPresenter A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+}
+

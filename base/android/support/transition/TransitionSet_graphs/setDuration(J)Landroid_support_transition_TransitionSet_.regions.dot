@@ -1,0 +1,40 @@
+digraph "CFG forandroid.support.transition.TransitionSet.setDuration(J)Landroid\/support\/transition\/TransitionSet;" {
+subgraph cluster_Region_242383757 {
+label = "R(3:0|(2:2|(1:4))|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.setDuration(r5)\l}"];
+subgraph cluster_IfRegion_543281937 {
+label = "IF [B:1:0x0009] THEN: R(2:2|(1:4)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.mDuration \>= 0) goto L_0x000b\l}"];
+subgraph cluster_Region_834089316 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|int int r0 = r4.mTransitions.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1067563667 {
+label = "LOOP:0: (1:4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:2:0x000b, B:4:0x0014] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0012\-\>B:4:0x0014\l|if (r1 \< r0) goto L_0x0014\l}"];
+subgraph cluster_Region_56099581 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|LOOP_END\lLOOP:0: B:3:0x0012\-\>B:4:0x0014\l|r4.mTransitions.get(r1).setDuration(r5)\lr1++\l}"];
+}
+}
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0022|RETURN\l|return r4\l}"];
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0022|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.support.transition.TransitionSet android.support.transition.TransitionSet.setDuration((r4v0 'this' android.support.transition.TransitionSet A[IMMUTABLE_TYPE, THIS]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_3;
+Node_6 -> Node_5;
+}
+

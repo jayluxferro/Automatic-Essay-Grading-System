@@ -1,0 +1,35 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification.updateDistanceText(Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;)V" {
+subgraph cluster_Region_1488503498 {
+label = "R(1:(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1772218685 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_767775208 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.currentDistanceText == null) goto L_0x000a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (newDistanceText(r4) == true) goto L_0x000a\l}"];
+subgraph cluster_Region_1682658834 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r3.currentDistanceText = r3.distanceFormatter.formatDistance(r4.currentLegProgress().currentStepProgress().distanceRemaining())\lr3.collapsedNotificationRemoteViews.setTextViewText(com.mapbox.services.android.navigation.C1179R.C1181id.notificationDistanceText, r3.currentDistanceText)\lr3.expandedNotificationRemoteViews.setTextViewText(com.mapbox.services.android.navigation.C1179R.C1181id.notificationDistanceText, r3.currentDistanceText)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification.updateDistanceText((r3v0 'this' com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationNotification A[IMMUTABLE_TYPE, THIS]), (r4v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

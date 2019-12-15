@@ -1,0 +1,68 @@
+digraph "CFG forokio.SegmentedByteString.hashCode()I" {
+subgraph cluster_Region_40538128 {
+label = "R(2:0|(2:(1:2)|(4:3|(3:5|(1:7)|8)|9|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r8.hashCode\l}"];
+subgraph cluster_Region_779066579 {
+label = "R(2:(1:2)|(4:3|(3:5|(1:7)|8)|9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_10756336 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r0 != 0) goto L_0x0004\l}"];
+subgraph cluster_Region_310026055 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_401327076 {
+label = "R(4:3|(3:5|(1:7)|8)|9|10)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0005|int int r0 = r8.segments.length\lint r1 = 0\lint r2 = 0\lint r3 = 1\l}"];
+subgraph cluster_LoopRegion_1104620313 {
+label = "LOOP:0: (3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|LOOP_START\lPHI: r1 r2 r3 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:3:0x0005, B:8:0x0029] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 int) = (r2v1 int), (r2v5 int) binds: [B:3:0x0005, B:8:0x0029] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:3:0x0005, B:8:0x0029] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x000c\-\>B:8:0x0029\l|if (r1 \< r0) goto L_0x000e\l}"];
+subgraph cluster_Region_1616191603 {
+label = "R(3:5|(1:7)|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|byte[] r4 = r8.segments[r1]\lint r5 = r8.directory[r0 + r1]\lint r6 = r8.directory[r1]\lint int r2 = (r6 \- r2) + r5\l}"];
+subgraph cluster_LoopRegion_1873680460 {
+label = "LOOP:1: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|LOOP_START\lPHI: r3 r5 \l  PHI: (r3v2 int) = (r3v1 int), (r3v4 int) binds: [B:5:0x000e, B:7:0x0021] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v2 int) = (r5v1 int), (r5v3 int) binds: [B:5:0x000e, B:7:0x0021] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:6:0x001f\-\>B:7:0x0021\l|if (r5 \< r2) goto L_0x0021\l}"];
+subgraph cluster_Region_647170969 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|LOOP_END\lLOOP:1: B:6:0x001f\-\>B:7:0x0021\l|int r3 = (r3 * 31) + r4[r5]\lr5++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0029|LOOP_END\lLOOP:0: B:4:0x000c\-\>B:8:0x0029\l|r1++\lr2 = r6\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x002d|r8.hashCode = r3\l}"];
+Node_10 [shape=record,label="{10\:\ 0x002f|RETURN\l|return r3\l}"];
+}
+}
+}
+Node_11 [shape=record,color=red,label="{11\:\ 0x002d|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0029|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int okio.SegmentedByteString.hashCode((r8v0 'this' okio.SegmentedByteString A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_6;
+Node_8 -> Node_4;
+Node_9 -> Node_10;
+Node_11 -> Node_9;
+Node_12 -> Node_8;
+}
+

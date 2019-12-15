@@ -1,0 +1,31 @@
+digraph "CFG formil.nga.geopackage.extension.link.FeatureTileTableCoreLinker.link(Ljava\/lang\/String;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isLinked(r5, r6) != false) goto L_?\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|getOrCreateExtension()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0009|SYNTHETIC\lSplitter:B:3:0x0009\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ SQLException \-\> 0x0027 \}\lSplitter:B:3:0x0009\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000f|Catch:\{ SQLException \-\> 0x0027 \}\l|if (r4.featureTileLinkDao.isTableExists() != false) goto L_0x0016     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0011|Catch:\{ SQLException \-\> 0x0027 \}\l|r4.geoPackage.createFeatureTileLinkTable()     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0016|Catch:\{ SQLException \-\> 0x0027 \}\l|mil.nga.geopackage.extension.link.FeatureTileLink r0 = new mil.nga.geopackage.extension.link.FeatureTileLink()     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\lr0.setFeatureTableName(r5)     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\lr0.setTileTableName(r6)     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\lr4.featureTileLinkDao.create(r0)     \/\/ Catch:\{ SQLException \-\> 0x0027 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0027|ExcHandler: SQLException (r0v1 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:3:0x0009\l|java.sql.SQLException r0 = move\-exception\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0028|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Failed to create feature tile link for GeoPackage: \")\lr2.append(r4.geoPackage.getName())\lr2.append(\", Feature Table: \")\lr2.append(r5)\lr2.append(\", Tile Table: \")\lr2.append(r6)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0054|throw new mil.nga.geopackage.GeoPackageException(r2.toString(), r0)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_12 [shape=record,label="{12\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.extension.link.FeatureTileTableCoreLinker.link((r4v0 'this' mil.nga.geopackage.extension.link.FeatureTileTableCoreLinker A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_7 -> Node_12;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+}
+

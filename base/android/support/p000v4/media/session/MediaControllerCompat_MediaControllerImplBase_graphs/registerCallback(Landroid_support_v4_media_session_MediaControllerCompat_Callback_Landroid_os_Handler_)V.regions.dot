@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v4.media.session.MediaControllerCompat.MediaControllerImplBase.registerCallback(Landroid\/support\/v4\/media\/session\/MediaControllerCompat$Callback;Landroid\/os\/Handler;)V" {
+subgraph cluster_Region_439229766 {
+label = "R(1:(1:(1:3))(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1563969441 {
+label = "IF [B:0:0x0000] THEN: R(1:(1:3)) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r4 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_887472043 {
+label = "R(1:(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_271696891 {
+label = "Try: R(1:3) catches: R(2:4|5)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2048866454 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ ?|Catch:\{ RemoteException \-\> 0x001c \}\lSplitter:B:2:0x0003\l|r3.mBinder.asBinder().linkToDeath(r4, 0)     \/\/ Catch:\{ RemoteException \-\> 0x001c \}\lr3.mBinder.registerCallbackListener((android.support.p000v4.media.session.IMediaControllerCallback) r4.mCallbackObj)     \/\/ Catch:\{ RemoteException \-\> 0x001c \}\lr4.postToHandler(13, (java.lang.Object) null, (android.os.Bundle) null)     \/\/ Catch:\{ RemoteException \-\> 0x001c \}\l}"];
+}
+subgraph cluster_Region_1694858555 {
+label = "R(2:4|5) | ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0003\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in registerCallback.\", r0)\lr4.postToHandler(8, (java.lang.Object) null, (android.os.Bundle) null)\l}"];
+}
+}
+}
+subgraph cluster_Region_2080673495 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0031|throw new java.lang.IllegalArgumentException(\"callback may not be null.\")\l}"];
+}
+}
+}
+subgraph cluster_Region_1694858555 {
+label = "R(2:4|5) | ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|ExcHandler: RemoteException (r0v0 'e' android.os.RemoteException A[CUSTOM_DECLARE])\lSplitter:B:2:0x0003\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|android.util.Log.e(android.support.p000v4.media.session.MediaControllerCompat.TAG, \"Dead object in registerCallback.\", r0)\lr4.postToHandler(8, (java.lang.Object) null, (android.os.Bundle) null)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003|SYNTHETIC\lSplitter:B:2:0x0003\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x002a}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.media.session.MediaControllerCompat.MediaControllerImplBase.registerCallback((r3v0 'this' android.support.v4.media.session.MediaControllerCompat$MediaControllerImplBase A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.v4.media.session.MediaControllerCompat$Callback A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 android.os.Handler A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_8;
+Node_4 -> Node_5;
+Node_5 -> Node_8;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_2 -> Node_4;
+Node_6 -> Node_7;
+}
+

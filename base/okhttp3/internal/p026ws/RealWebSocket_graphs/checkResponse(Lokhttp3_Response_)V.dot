@@ -1,0 +1,38 @@
+digraph "CFG forokhttp3.internal.ws.RealWebSocket.checkResponse(Lokhttp3\/Response;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r5.code() != 101) goto L_0x00ac\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|java.lang.String r0 = r5.header(\"Connection\")\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (\"Upgrade\".equalsIgnoreCase(r0) == false) goto L_0x0090\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|java.lang.String r0 = r5.header(\"Upgrade\")\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0022|if (\"websocket\".equalsIgnoreCase(r0) == false) goto L_0x0074\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0024|java.lang.String r5 = r5.header(\"Sec\-WebSocket\-Accept\")\ljava.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(r4.key)\lr0.append(\"258EAFA5\-E914\-47DA\-95CA\-C5AB0DC85B11\")\ljava.lang.String r0 = okio.ByteString.encodeUtf8(r0.toString()).sha1().base64()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x004d|if (r0.equals(r5) == false) goto L_0x0050\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004f|RETURN\l|return\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0050|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Expected 'Sec\-WebSocket\-Accept' header value '\")\lr2.append(r0)\lr2.append(\"' but was '\")\lr2.append(r5)\lr2.append(\"'\")\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0073|throw new java.net.ProtocolException(r2.toString())\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0074|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Expected 'Upgrade' header value 'websocket' but was '\")\lr1.append(r0)\lr1.append(\"'\")\l}"];
+Node_12 [shape=record,label="{12\:\ 0x008f|throw new java.net.ProtocolException(r1.toString())\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0090|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Expected 'Connection' header value 'Upgrade' but was '\")\lr1.append(r0)\lr1.append(\"'\")\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00ab|throw new java.net.ProtocolException(r1.toString())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00ac|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Expected HTTP 101 response but was '\")\lr1.append(r5.code())\lr1.append(\" \")\lr1.append(r5.message())\lr1.append(\"'\")\l}"];
+Node_16 [shape=record,label="{16\:\ 0x00d7|throw new java.net.ProtocolException(r1.toString())\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.ws.RealWebSocket.checkResponse((r4v0 'this' okhttp3.internal.ws.RealWebSocket A[IMMUTABLE_TYPE, THIS]), (r5v0 okhttp3.Response A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.net.ProtocolException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

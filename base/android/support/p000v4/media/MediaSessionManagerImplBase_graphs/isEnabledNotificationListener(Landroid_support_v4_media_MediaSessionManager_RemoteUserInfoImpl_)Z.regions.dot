@@ -1,0 +1,75 @@
+digraph "CFG forandroid.support.v4.media.MediaSessionManagerImplBase.isEnabledNotificationListener(Landroid\/support\/v4\/media\/MediaSessionManager$RemoteUserInfoImpl;)Z" {
+subgraph cluster_Region_1534604738 {
+label = "R(3:0|(2:2|(2:5|(2:(1:9)|(1:10))))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.String java.lang.String r0 = android.provider.Settings.Secure.getString(r5.mContentResolver, ENABLED_NOTIFICATION_LISTENERS)\l}"];
+subgraph cluster_IfRegion_1134503940 {
+label = "IF [B:1:0x0009] THEN: R(2:2|(2:5|(2:(1:9)|(1:10)))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r0 != null) goto L_0x000b\l}"];
+subgraph cluster_Region_1429590498 {
+label = "R(2:2|(2:5|(2:(1:9)|(1:10))))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000b|java.lang.String[] java.lang.String[] r0 = r0.split(\":\")\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1124080310 {
+label = "LOOP:0: (2:5|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r2 \< r0.length) goto L_0x0015\l}"];
+subgraph cluster_Region_1663642900 {
+label = "R(2:5|(2:(1:9)|(1:10)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|android.content.ComponentName android.content.ComponentName r3 = android.content.ComponentName.unflattenFromString(r3)\l}"];
+subgraph cluster_Region_428075624 {
+label = "R(2:(1:9)|(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_409487954 {
+label = "IF [B:6:0x001b, B:8:0x0029] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|if (r3 != null) goto L_0x001d\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|ADDED_TO_REGION\l|if (r3.getPackageName().equals(r6.getPackageName()) != false) goto L_0x002b\l}"];
+subgraph cluster_Region_1844171747 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1498214705 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002d|LOOP_END\lLOOP:0: B:3:0x0012\-\>B:10:0x002d\l|r2++\l}"];
+}
+}
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0030|RETURN\l|return false\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012|LOOP_START\lPHI: r2 \l  PHI: (r2v2 int) = (r2v1 int), (r2v3 int) binds: [B:2:0x000b, B:10:0x002d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0012\-\>B:10:0x002d\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0030|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x002b|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x002d|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x002d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{boolean android.support.v4.media.MediaSessionManagerImplBase.isEnabledNotificationListener((r5v0 'this' android.support.v4.media.MediaSessionManagerImplBase A[IMMUTABLE_TYPE, THIS]), (r6v0 android.support.v4.media.MediaSessionManager$RemoteUserInfoImpl A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_14[style=dashed];
+Node_8 -> Node_13;
+Node_8 -> Node_15[style=dashed];
+Node_10 -> Node_3;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_12 -> Node_11;
+Node_13 -> Node_9;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+}
+

@@ -1,0 +1,29 @@
+digraph "CFG forcom.google.android.exoplayer2.extractor.ts.MpegAudioReader.readHeaderRemainder(Lcom\/google\/android\/exoplayer2\/util\/ParsableByteArray;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r11 = java.lang.Math.min(r15.bytesLeft(), 4 \- r14.frameBytesRead)\lr15.readBytes(r14.headerScratch.data, r14.frameBytesRead, r11)\lr14.frameBytesRead = r14.frameBytesRead + r11\l}"];
+Node_1 [shape=record,label="{1\:\ 0x001d|if (r14.frameBytesRead \>= 4) goto L_0x0020\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0020|r14.headerScratch.setPosition(0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0032|if (com.google.android.exoplayer2.extractor.MpegAudioHeader.populateHeader(r14.headerScratch.readInt(), r14.header) != false) goto L_0x003b\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0034|r14.frameBytesRead = 0\lr14.state = 1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003b|r14.frameSize = r14.header.frameSize\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0043|if (r14.hasOutputFormat != false) goto L_0x0079\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0045|r14.frameDurationUs = (com.google.android.exoplayer2.C1260C.MICROS_PER_SECOND * ((long) r14.header.samplesPerFrame)) \/ ((long) r14.header.sampleRate)\lcom.google.android.exoplayer2.Format r12 = com.google.android.exoplayer2.Format.createAudioSampleFormat(r14.formatId, r14.header.mimeType, (java.lang.String) null, \-1, 4096, r14.header.channels, r14.header.sampleRate, (java.util.List\<byte[]\>) null, (com.google.android.exoplayer2.drm.DrmInitData) null, 0, r14.language)\lr14.output.format(r12)\lr14.hasOutputFormat = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0079|r14.headerScratch.setPosition(0)\lr14.output.sampleData(r14.headerScratch, 4)\lr14.state = 2\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.extractor.ts.MpegAudioReader.readHeaderRemainder((r14v0 'this' com.google.android.exoplayer2.extractor.ts.MpegAudioReader A[IMMUTABLE_TYPE, THIS]), (r15v0 'source' com.google.android.exoplayer2.util.ParsableByteArray A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_11;
+}
+

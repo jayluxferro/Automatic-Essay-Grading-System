@@ -1,0 +1,70 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.dispatchOptionsMenuClosed(Landroid\/view\/Menu;)V" {
+subgraph cluster_Region_614245353 {
+label = "R(1:(1:(2:3|(3:6|(1:8)(0)|9))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_709251517 {
+label = "R(1:(2:3|(3:6|(1:8)(0)|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_764489035 {
+label = "IF [B:1:0x0003] THEN: R(2:3|(3:6|(1:8)(0)|9)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r2.mCurState \>= 1) goto L_0x0006\l}"];
+subgraph cluster_Region_1418523197 {
+label = "R(2:3|(3:6|(1:8)(0)|9))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_806182084 {
+label = "LOOP:0: (3:6|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r0 \< r2.mAdded.size()) goto L_0x000f\l}"];
+subgraph cluster_Region_1597201578 {
+label = "R(3:6|(1:8)(0)|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|android.support.v4.app.Fragment android.support.p000v4.app.Fragment r1 = r2.mAdded.get(r0)\l}"];
+subgraph cluster_IfRegion_417493900 {
+label = "IF [B:7:0x0017] THEN: R(1:8) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0017|if (r1 != null) goto L_0x0019\l}"];
+subgraph cluster_Region_734820279 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|r1.performOptionsMenuClosed(r3)\l}"];
+}
+subgraph cluster_Region_471281842 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001c|LOOP_END\lLOOP:0: B:4:0x0007\-\>B:9:0x001c\l|r0++\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007|LOOP_START\lPHI: r0 \l  PHI: (r0v2 int) = (r0v1 int), (r0v3 int) binds: [B:3:0x0006, B:9:0x001c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:4:0x0007\-\>B:9:0x001c\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001f}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001f|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001c|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.app.FragmentManagerImpl.dispatchOptionsMenuClosed((r2v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.Menu A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_13[style=dashed];
+Node_8 -> Node_12;
+Node_9 -> Node_4;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_11 -> Node_10;
+Node_12 -> Node_9;
+Node_13 -> Node_9;
+}
+

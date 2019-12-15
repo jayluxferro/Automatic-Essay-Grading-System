@@ -1,0 +1,54 @@
+digraph "CFG forokhttp3.internal.http2.Hpack.nameToFirstIndex()Ljava\/util\/Map;" {
+subgraph cluster_Region_1954387074 {
+label = "R(3:0|(2:(1:5)(0)|6)|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.LinkedHashMap java.util.LinkedHashMap r0 = new java.util.LinkedHashMap(STATIC_HEADER_TABLE.length)\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_1273621675 {
+label = "LOOP:0: (2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|if (r1 \< STATIC_HEADER_TABLE.length) goto L_0x000e\l}"];
+subgraph cluster_Region_1395177680 {
+label = "R(2:(1:5)(0)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1351422877 {
+label = "IF [B:4:0x0018] THEN: R(1:5) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r0.containsKey(STATIC_HEADER_TABLE[r1].name) == false) goto L_0x001a\l}"];
+subgraph cluster_Region_1153748472 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|r0.put(STATIC_HEADER_TABLE[r1].name, java.lang.Integer.valueOf(r1))\l}"];
+}
+subgraph cluster_Region_1503000679 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0027|LOOP_END\lLOOP:0: B:1:0x0009\-\>B:6:0x0027\l|r1++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002e|RETURN\l|return java.util.Collections.unmodifiableMap(r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009|LOOP_START\lPHI: r1 \l  PHI: (r1v3 int) = (r1v2 int), (r1v4 int) binds: [B:0:0x0000, B:6:0x0027] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0009\-\>B:6:0x0027\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0027|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0027|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static java.util.Map\<okio.ByteString, java.lang.Integer\> okhttp3.internal.http2.Hpack.nameToFirstIndex()  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Ljava\/util\/Map\<, Lokio\/ByteString;, Ljava\/lang\/Integer;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_11[style=dashed];
+Node_5 -> Node_10;
+Node_6 -> Node_1;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_9 -> Node_7;
+Node_10 -> Node_6;
+Node_11 -> Node_6;
+}
+

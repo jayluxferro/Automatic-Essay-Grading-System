@@ -1,0 +1,61 @@
+digraph "CFG forandroid.support.v7.widget.StaggeredGridLayoutManager.setOrientation(I)V" {
+subgraph cluster_Region_2073355816 {
+label = "R(1:(2:(2:5|(2:(2:8|9)|(1:7)))|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1358434275 {
+label = "R(2:(2:5|(2:(2:8|9)|(1:7)))|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_659037690 {
+label = "IF [B:0:0x0000, B:2:0x0003] THEN: R(2:5|(2:(2:8|9)|(1:7))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 == 0) goto L_0x000e\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|ADDED_TO_REGION\l|if (r2 == 1) goto L_0x000e\l}"];
+subgraph cluster_Region_495757895 {
+label = "R(2:5|(2:(2:8|9)|(1:7)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|assertNotInLayoutOrScroll((java.lang.String) null)\l}"];
+subgraph cluster_Region_1106619000 {
+label = "R(2:(2:8|9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1365385906 {
+label = "IF [B:6:0x0014] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0014|if (r2 != r1.mOrientation) goto L_0x0017\l}"];
+subgraph cluster_Region_190709910 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|r1.mOrientation = r2\landroid.support.v7.widget.OrientationHelper android.support.p003v7.widget.OrientationHelper r2 = r1.mPrimaryOrientation\lr1.mPrimaryOrientation = r1.mSecondaryOrientation\lr1.mSecondaryOrientation = r2\lrequestLayout()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0024|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_908219049 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|RETURN\l|return\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1317279928 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|throw new java.lang.IllegalArgumentException(\"invalid orientation.\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.StaggeredGridLayoutManager.setOrientation((r1v0 'this' android.support.v7.widget.StaggeredGridLayoutManager A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_5;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

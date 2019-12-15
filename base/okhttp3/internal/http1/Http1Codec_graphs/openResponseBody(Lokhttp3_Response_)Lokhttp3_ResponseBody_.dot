@@ -1,0 +1,32 @@
+digraph "CFG forokhttp3.internal.http1.Http1Codec.openResponseBody(Lokhttp3\/Response;)Lokhttp3\/ResponseBody;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r6.streamAllocation.eventListener.responseBodyStart(r6.streamAllocation.call)\ljava.lang.String r0 = r7.header(p018io.fabric.sdk.android.services.network.HttpRequest.HEADER_CONTENT_TYPE)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (okhttp3.internal.http.HttpHeaders.hasBody(r7) != false) goto L_0x0027\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0017}"];
+Node_3 [shape=record,label="{3\:\ 0x0026|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, 0, okio.Okio.buffer(newFixedLengthSource(0)))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0027}"];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (\"chunked\".equalsIgnoreCase(r7.header(\"Transfer\-Encoding\")) == false) goto L_0x004d\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037}"];
+Node_7 [shape=record,label="{7\:\ 0x004c|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, \-1, okio.Okio.buffer(newChunkedSource(r7.request().url())))\l}"];
+Node_8 [shape=record,label="{8\:\ 0x004d|long r4 = okhttp3.internal.http.HttpHeaders.contentLength(r7)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0053|if ((r4 \> \-1 ? 1 : (r4 == \-1 ? 0 : \-1)) == 0) goto L_0x0063\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0055}"];
+Node_11 [shape=record,label="{11\:\ 0x0062|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, r4, okio.Okio.buffer(newFixedLengthSource(r4)))\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0063}"];
+Node_13 [shape=record,label="{13\:\ 0x0070|RETURN\l|return new okhttp3.internal.http.RealResponseBody(r0, \-1, okio.Okio.buffer(newUnknownLengthSource()))\l}"];
+MethodNode[shape=record,label="{public okhttp3.ResponseBody okhttp3.internal.http1.Http1Codec.openResponseBody((r6v0 'this' okhttp3.internal.http1.Http1Codec A[IMMUTABLE_TYPE, THIS]), (r7v0 okhttp3.Response A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_12;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+}
+

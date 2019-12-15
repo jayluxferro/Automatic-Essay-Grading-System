@@ -1,0 +1,73 @@
+digraph "CFG forandroid.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi18.setRccState(Landroid\/support\/v4\/media\/session\/PlaybackStateCompat;)V" {
+subgraph cluster_Region_703513282 {
+label = "R(3:0|(2:2|(2:(2:6|(1:10))|11))|12)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = r11.getPosition()\lfloat float r2 = r11.getPlaybackSpeed()\llong long r3 = r11.getLastPositionUpdateTime()\llong long r5 = android.os.SystemClock.elapsedRealtime()\l}"];
+subgraph cluster_IfRegion_3975279 {
+label = "IF [B:1:0x0015] THEN: R(2:2|(2:(2:6|(1:10))|11)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0015|if (r11.getState() == 3) goto L_0x0017\l}"];
+subgraph cluster_Region_1125357245 {
+label = "R(2:2|(2:(2:6|(1:10))|11))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|long r7 = 0\l}"];
+subgraph cluster_IfRegion_1265391078 {
+label = "IF [B:3:0x001b] THEN: R(2:(2:6|(1:10))|11) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|if (r0 \> 0) goto L_0x001d\l}"];
+subgraph cluster_Region_1315443353 {
+label = "R(2:(2:6|(1:10))|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1661100829 {
+label = "IF [B:5:0x001f] THEN: R(2:6|(1:10)) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|if (r3 \> 0) goto L_0x0021\l}"];
+subgraph cluster_Region_1248385534 {
+label = "R(2:6|(1:10))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|long r7 = r5 \- r3\l}"];
+subgraph cluster_IfRegion_852976826 {
+label = "IF [B:7:0x0026, B:9:0x002c] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|ADDED_TO_REGION\l|if (r2 \> 0.0f) goto L_0x0028\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002c|ADDED_TO_REGION\l|if (r2 != 1.0f) goto L_0x002e\l}"];
+subgraph cluster_Region_1836075248 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002e|long r7 = (long) (((float) r7) * r2)\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0032|PHI: r7 \l  PHI: (r7v2 long) = (r7v1 long), (r7v3 long), (r7v3 long), (r7v4 long) binds: [B:5:0x001f, B:7:0x0026, B:9:0x002c, B:10:0x002e] A[DONT_GENERATE, DONT_INLINE]\l|r0 += r7\l}"];
+}
+}
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x0034|PHI: r0 \l  PHI: (r0v1 long) = (r0v0 long), (r0v0 long), (r0v2 long) binds: [B:1:0x0015, B:3:0x001b, B:11:0x0032] A[DONT_GENERATE, DONT_INLINE]\l|r10.mRcc.setPlaybackState(getRccStateFromState(r11.getState()), r0, r2)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001d}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0028}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0041}"];
+MethodNode[shape=record,label="{void android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi18.setRccState((r10v0 'this' android.support.v4.media.session.MediaSessionCompat$MediaSessionImplApi18 A[IMMUTABLE_TYPE, THIS]), (r11v0 android.support.v4.media.session.PlaybackStateCompat A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_12[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+}
+

@@ -1,0 +1,201 @@
+digraph "CFG forcom.google.android.exoplayer2.video.MediaCodecVideoRenderer.processOutputBuffer(JJLandroid\/media\/MediaCodec;Ljava\/nio\/ByteBuffer;IIJZ)Z" {
+subgraph cluster_Region_1457541205 {
+label = "R(1:(2:1|31)(1:(2:(1:6)(1:8)|7)(1:(1:11)(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1349562322 {
+label = "IF [B:0:0x0000] THEN: R(2:1|31) ELSE: R(1:(2:(1:6)(1:8)|7)(1:(1:11)(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r34 == true) goto L_0x0002\l}"];
+subgraph cluster_Region_429859715 {
+label = "R(2:1|31)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|skipOutputBuffer(r28, r30)\l}"];
+Node_31 [shape=record,label="{31\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_644575546 {
+label = "R(1:(2:(1:6)(1:8)|7)(1:(1:11)(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1927151450 {
+label = "IF [B:3:0x0011] THEN: R(2:(1:6)(1:8)|7) ELSE: R(1:(1:11)(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0011|if (r23.renderedFirstFrame == false) goto L_0x0013\l}"];
+subgraph cluster_Region_663142636 {
+label = "R(2:(1:6)(1:8)|7)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1197833380 {
+label = "IF [B:5:0x0019] THEN: R(1:6) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0019|if (com.google.android.exoplayer2.util.Util.SDK_INT \>= 21) goto L_0x001b\l}"];
+subgraph cluster_Region_981088211 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|renderOutputBufferV21(r28, r30, java.lang.System.nanoTime())\l}"];
+}
+subgraph cluster_Region_666904809 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|renderOutputBuffer(r28, r30)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x002a|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+subgraph cluster_Region_911215965 {
+label = "R(1:(1:11)(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1522325359 {
+label = "IF [B:10:0x003e] THEN: R(1:11) ELSE: R(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x003e|if (getState() != 2) goto L_0x0040\l}"];
+subgraph cluster_Region_823375684 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0040|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+subgraph cluster_Region_1035156653 {
+label = "R(2:12|(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30)))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0042|long long r12 = (android.os.SystemClock.elapsedRealtime() * 1000) \- r26\llong long r14 = java.lang.System.nanoTime()\llong long r6 = r23.frameReleaseTimeHelper.adjustReleaseTime(r32, r14 + (1000 * ((r32 \- r24) \- r12)))\llong long r10 = (r6 \- r14) \/ 1000\l}"];
+subgraph cluster_Region_397563631 {
+label = "R(2:(2:14|32)|(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_64872199 {
+label = "IF [B:13:0x0074] THEN: R(2:14|32) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0074|if (shouldDropOutputBuffer(r10, r26) == true) goto L_0x0076\l}"];
+subgraph cluster_Region_557747105 {
+label = "R(2:14|32)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0076|dropOutputBuffer(r28, r30)\l}"];
+Node_32 [shape=record,label="{32\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_495269702 {
+label = "R(2:(1:(2:19|33))(1:(3:(1:(1:26))|27|34))|30)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_830474789 {
+label = "IF [B:16:0x0087] THEN: R(1:(2:19|33)) ELSE: R(1:(3:(1:(1:26))|27|34))";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0087|if (com.google.android.exoplayer2.util.Util.SDK_INT \>= 21) goto L_0x0089\l}"];
+subgraph cluster_Region_872429524 {
+label = "R(1:(2:19|33))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1671432570 {
+label = "IF [B:18:0x008e] THEN: R(2:19|33) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x008e|if (r10 \< 50000) goto L_0x0090\l}"];
+subgraph cluster_Region_1288964433 {
+label = "R(2:19|33)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0090|renderOutputBufferV21(r28, r30, r6)\l}"];
+Node_33 [shape=record,label="{33\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+subgraph cluster_Region_1630982518 {
+label = "R(1:(3:(1:(1:26))|27|34)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1204946935 {
+label = "IF [B:21:0x00a0] THEN: R(3:(1:(1:26))|27|34) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00a0|if (r10 \< com.google.android.exoplayer2.source.dash.DashMediaSource.DEFAULT_LIVE_PRESENTATION_DELAY_FIXED_MS) goto L_0x00a2\l}"];
+subgraph cluster_Region_1430119697 {
+label = "R(3:(1:(1:26))|27|34)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_731910365 {
+label = "IF [B:23:0x00a6] THEN: R(1:(1:26)) ELSE: null";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00a6|if (r10 \> 11000) goto L_0x00a8\l}"];
+subgraph cluster_Region_1683823793 {
+label = "R(1:(1:26))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1372989817 {
+label = "Try: R(1:26) catches: R(1:29)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1181271881 {
+label = "R(1:26)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ ?|Catch:\{ InterruptedException \-\> 0x00bf \}\lSplitter:B:25:0x00ae\l|java.lang.Thread.sleep((r10 \- 10000) \/ 1000)     \/\/ Catch:\{ InterruptedException \-\> 0x00bf \}\l}"];
+}
+subgraph cluster_Region_113045332 {
+label = "R(1:29) | ExcHandler: InterruptedException (e java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x00c0|java.lang.Thread.currentThread().interrupt()\l}"];
+}
+}
+}
+}
+Node_27 [shape=record,label="{27\:\ 0x00b3|renderOutputBuffer(r28, r30)\l}"];
+Node_34 [shape=record,label="{34\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_30 [shape=record,label="{30\:\ 0x00c8|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_113045332 {
+label = "R(1:29) | ExcHandler: InterruptedException (e java.lang.InterruptedException)\l";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x00c0|java.lang.Thread.currentThread().interrupt()\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000d}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0013}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0036}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0081}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0089}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x009c}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x00a2}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00a8}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x00ae|SYNTHETIC\lSplitter:B:25:0x00ae\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x00bf|ExcHandler: InterruptedException (e java.lang.InterruptedException)\lSplitter:B:25:0x00ae\l}"];
+MethodNode[shape=record,label="{protected boolean com.google.android.exoplayer2.video.MediaCodecVideoRenderer.processOutputBuffer((r23v0 'this' com.google.android.exoplayer2.video.MediaCodecVideoRenderer A[IMMUTABLE_TYPE, THIS]), (r24v0 'positionUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r26v0 'elapsedRealtimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r28v0 'codec' android.media.MediaCodec A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r29v0 'buffer' java.nio.ByteBuffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r30v0 'bufferIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r31v0 'bufferFlags' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r32v0 'bufferPresentationTimeUs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r34v0 'shouldSkip' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_31;
+Node_3 -> Node_4;
+Node_3 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_7;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_32;
+Node_16 -> Node_17;
+Node_16 -> Node_20[style=dashed];
+Node_18 -> Node_19;
+Node_18 -> Node_30[style=dashed];
+Node_19 -> Node_33;
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_23 -> Node_24;
+Node_23 -> Node_27[style=dashed];
+Node_26 -> Node_27;
+Node_26 -> Node_28;
+Node_29 -> Node_27;
+Node_27 -> Node_34;
+Node_29 -> Node_27;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_9 -> Node_10;
+Node_15 -> Node_16;
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_24 -> Node_25;
+Node_25 -> Node_26;
+Node_25 -> Node_28;
+Node_28 -> Node_29;
+}
+

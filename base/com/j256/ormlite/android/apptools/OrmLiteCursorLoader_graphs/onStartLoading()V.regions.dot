@@ -1,0 +1,54 @@
+digraph "CFG forcom.j256.ormlite.android.apptools.OrmLiteCursorLoader.onStartLoading()V" {
+subgraph cluster_Region_1531112529 {
+label = "R(2:0|(2:(2:2|7)|(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1.dao.registerObserver(r1)\l}"];
+subgraph cluster_Region_1985901644 {
+label = "R(2:(2:2|7)|(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_426468195 {
+label = "IF [B:1:0x0007] THEN: R(2:2|7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r1.cursor == null) goto L_0x0009\l}"];
+subgraph cluster_Region_1697429120 {
+label = "R(2:2|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|forceLoad()\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_700513808 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|deliverResult(r1.cursor)\l}"];
+subgraph cluster_Region_741933936 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1854610927 {
+label = "IF [B:4:0x0016] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (takeContentChanged() == true) goto L_0x0018\l}"];
+subgraph cluster_Region_1846754824 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|forceLoad()\l}"];
+}
+}
+}
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.j256.ormlite.android.apptools.OrmLiteCursorLoader.onStartLoading((r1v0 'this' com.j256.ormlite.android.apptools.OrmLiteCursorLoader A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_7;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_5 -> Node_6;
+}
+

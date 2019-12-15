@@ -1,0 +1,27 @@
+digraph "CFG fororg.osmdroid.views.overlay.compass.CompassOverlay.createPointerPicture()V" {
+subgraph cluster_Region_458444461 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.graphics.Paint android.graphics.Paint r0 = new android.graphics.Paint()\lr0.setColor(android.support.p000v4.view.ViewCompat.MEASURED_STATE_MASK)\lr0.setAntiAlias(true)\lr0.setStyle(android.graphics.Paint.Style.FILL)\lr0.setAlpha(220)\landroid.graphics.Paint android.graphics.Paint r3 = new android.graphics.Paint()\lr3.setColor(\-1)\lr3.setAntiAlias(true)\lr3.setStyle(android.graphics.Paint.Style.FILL)\lr3.setAlpha(220)\lint int r1 = (int) (r9.mScale * 50.0f)\lint int r2 = r1 \/ 2\l}"];
+subgraph cluster_IfRegion_1068588193 {
+label = "IF [B:1:0x0037] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0037|if (r9.mCompassRoseBitmap != null) goto L_0x0039\l}"];
+subgraph cluster_Region_1887622638 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0039|r9.mCompassRoseBitmap.recycle()\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x003e|r9.mCompassRoseBitmap = android.graphics.Bitmap.createBitmap(r1, r1, android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas android.graphics.Canvas r1 = new android.graphics.Canvas(r9.mCompassRoseBitmap)\landroid.graphics.Path android.graphics.Path r4 = new android.graphics.Path()\lfloat float r2 = (float) r2\lr4.moveTo(r2, r2 \- (r9.mScale * 17.0f))\lr4.lineTo((r9.mScale * 4.0f) + r2, (r9.mScale * 17.0f) + r2)\lr4.lineTo(r2, (r9.mScale * 8.5f) + r2)\lr4.lineTo(r2 \- (r9.mScale * 4.0f), (r9.mScale * 17.0f) + r2)\lr4.lineTo(r2, r2 \- (r9.mScale * 17.0f))\lr4.close()\lr1.drawPath(r4, r0)\lr1.drawCircle(r2, r2, 2.0f, r3)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0099}"];
+MethodNode[shape=record,label="{private void org.osmdroid.views.overlay.compass.CompassOverlay.createPointerPicture((r9v0 'this' org.osmdroid.views.overlay.compass.CompassOverlay A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

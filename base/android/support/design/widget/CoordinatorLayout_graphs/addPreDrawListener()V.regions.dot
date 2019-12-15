@@ -1,0 +1,42 @@
+digraph "CFG forandroid.support.design.widget.CoordinatorLayout.addPreDrawListener()V" {
+subgraph cluster_Region_1604931471 {
+label = "R(2:(2:(1:4)|5)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1047817766 {
+label = "IF [B:1:0x0002] THEN: R(2:(1:4)|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mIsAttachedToWindow == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1085776265 {
+label = "R(2:(1:4)|5)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1584473121 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r2.mOnPreDrawListener == null) goto L_0x0008\l}"];
+subgraph cluster_Region_1269947735 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|r2.mOnPreDrawListener = new android.support.design.widget.CoordinatorLayout.OnPreDrawListener()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x000f|getViewTreeObserver().addOnPreDrawListener(r2.mOnPreDrawListener)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0018|r2.mNeedsPreDrawListener = true\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001b}"];
+MethodNode[shape=record,label="{void android.support.design.widget.CoordinatorLayout.addPreDrawListener((r2v0 'this' android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

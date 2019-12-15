@@ -1,0 +1,36 @@
+digraph "CFG forcom.mapbox.mapboxsdk.plugins.locationlayer.PluginAnimatorCoordinator.getPreviousLayerGpsBearing()F" {
+subgraph cluster_Region_713409185 {
+label = "R(2:0|(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.mapboxsdk.plugins.locationlayer.LayerGpsBearingAnimator com.mapbox.mapboxsdk.plugins.locationlayer.LayerGpsBearingAnimator r0 = (com.mapbox.mapboxsdk.plugins.locationlayer.LayerGpsBearingAnimator) r2.animatorMap.get(2)\l}"];
+subgraph cluster_Region_1226122487 {
+label = "R(2:(1:5)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1321413677 {
+label = "IF [B:1:0x000d] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r0 != null) goto L_0x000f\l}"];
+subgraph cluster_Region_723260580 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|SYNTHETIC\lRETURN\l|return ((java.lang.Float) r0.getAnimatedValue()).floatValue()\l}"];
+}
+}
+subgraph cluster_Region_780735802 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r2.previousLocation.getBearing()\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x001a}"];
+MethodNode[shape=record,label="{private float com.mapbox.mapboxsdk.plugins.locationlayer.PluginAnimatorCoordinator.getPreviousLayerGpsBearing((r2v0 'this' com.mapbox.mapboxsdk.plugins.locationlayer.PluginAnimatorCoordinator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+}
+

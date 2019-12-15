@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.v4.view.ViewPager.onRestoreInstanceState(Landroid\/os\/Parcelable;)V" {
+subgraph cluster_Region_2143188758 {
+label = "R(1:(2:(2:2|3)|(2:4|(2:(2:6|9)|(1:7)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1092301013 {
+label = "R(2:(2:2|3)|(2:4|(2:(2:6|9)|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1022641119 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r4 instanceof android.support.p000v4.view.ViewPager.SavedState) == false) goto L_0x0004\l}"];
+subgraph cluster_Region_997324300 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|super.onRestoreInstanceState(r4)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_950941944 {
+label = "R(2:4|(2:(2:6|9)|(1:7)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|android.support.v4.view.ViewPager$SavedState android.support.p000v4.view.ViewPager.SavedState r4 = (android.support.p000v4.view.ViewPager.SavedState) r4\lsuper.onRestoreInstanceState(r4.getSuperState())\l}"];
+subgraph cluster_Region_939204787 {
+label = "R(2:(2:6|9)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_796795649 {
+label = "IF [B:5:0x0013] THEN: R(2:6|9) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r3.mAdapter != null) goto L_0x0015\l}"];
+subgraph cluster_Region_904323825 {
+label = "R(2:6|9)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|r3.mAdapter.restoreState(r4.adapterState, r4.loader)\lsetCurrentItemInternal(r4.position, false, true)\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2131455789 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0026|r3.mRestoredCurItem = r4.position\lr3.mRestoredAdapterState = r4.adapterState\lr3.mRestoredClassLoader = r4.loader\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public void android.support.v4.view.ViewPager.onRestoreInstanceState((r3v0 'this' android.support.v4.view.ViewPager A[IMMUTABLE_TYPE, THIS]), (r4v0 android.os.Parcelable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_9;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+}
+

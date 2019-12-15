@@ -1,0 +1,45 @@
+digraph "CFG formil.nga.geopackage.projection.GeometryProjectionTransform.transform(Lmil\/nga\/wkb\/geom\/Point;)Lmil\/nga\/wkb\/geom\/Point;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r10.hasZ() == false) goto L_0x0026\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|double r2 = r10.getX()\ldouble r4 = r10.getY()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r10.getZ() == null) goto L_0x001f\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|double r6 = r10.getZ().doubleValue()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|r6 = Double.NaN\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0021|PHI: r6 \l  PHI: (r6v1 double) = (r6v2 double), (r6v3 double) binds: [B:5:0x001f, B:4:0x0016] A[DONT_GENERATE, DONT_INLINE]\l|org.osgeo.proj4j.ProjCoordinate r1 = new org.osgeo.proj4j.ProjCoordinate(r2, r4, r6)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0026|org.osgeo.proj4j.ProjCoordinate r0 = new org.osgeo.proj4j.ProjCoordinate(r10.getX(), r10.getY())\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|PHI: r0 \l  PHI: (r0v1 org.osgeo.proj4j.ProjCoordinate) = (r0v7 org.osgeo.proj4j.ProjCoordinate), (r1v7 org.osgeo.proj4j.ProjCoordinate) binds: [B:7:0x0026, B:6:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|org.osgeo.proj4j.ProjCoordinate r0 = r9.transform.transform(r0)\lmil.nga.wkb.geom.Point r1 = new mil.nga.wkb.geom.Point(r10.hasZ(), r10.hasM(), r0.f294x, r0.f295y)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004f|if (r10.hasZ() == false) goto L_0x006a\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0051}"];
+Node_11 [shape=record,label="{11\:\ 0x0057|if (java.lang.Double.isNaN(r0.f296z) == false) goto L_0x0061\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0059|r1.setZ(r10.getZ())\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0061|r1.setZ(java.lang.Double.valueOf(r0.f296z))\l}"];
+Node_14 [shape=record,label="{14\:\ 0x006a}"];
+Node_15 [shape=record,label="{15\:\ 0x006e|if (r10.hasM() == false) goto L_0x0077\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0070|r1.setM(r10.getM())\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0077|RETURN\l|return r1\l}"];
+MethodNode[shape=record,label="{public mil.nga.wkb.geom.Point mil.nga.geopackage.projection.GeometryProjectionTransform.transform((r9v0 'this' mil.nga.geopackage.projection.GeometryProjectionTransform A[IMMUTABLE_TYPE, THIS]), (r10v0 mil.nga.wkb.geom.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_14;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_17;
+Node_16 -> Node_17;
+}
+

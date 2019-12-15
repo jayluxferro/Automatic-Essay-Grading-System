@@ -1,0 +1,27 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.utils.DistanceFormatter.roundToClosestIncrement(D)Ljava\/lang\/String;" {
+subgraph cluster_Region_645623154 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r1 = (((int) java.lang.Math.round(r1)) \/ r0.roundingIncrement) * r0.roundingIncrement\l}"];
+subgraph cluster_IfRegion_1111124219 {
+label = "IF [B:1:0x000e] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r1 \< r0.roundingIncrement) goto L_0x0010\l}"];
+subgraph cluster_Region_2053101804 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|int r1 = r0.roundingIncrement\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0016|RETURN\l|return java.lang.String.valueOf(r1)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0012|PHI: r1 \l  PHI: (r1v5 int) = (r1v4 int), (r1v7 int) binds: [B:1:0x000e, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private java.lang.String com.mapbox.services.android.navigation.v5.utils.DistanceFormatter.roundToClosestIncrement((r0v0 'this' com.mapbox.services.android.navigation.v5.utils.DistanceFormatter A[IMMUTABLE_TYPE, THIS]), (r1v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

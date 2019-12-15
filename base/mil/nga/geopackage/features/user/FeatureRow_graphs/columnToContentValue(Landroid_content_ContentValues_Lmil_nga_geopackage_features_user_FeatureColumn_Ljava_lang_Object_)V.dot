@@ -1,0 +1,43 @@
+digraph "CFG formil.nga.geopackage.features.user.FeatureRow.columnToContentValue(Landroid\/content\/ContentValues;Lmil\/nga\/geopackage\/features\/user\/FeatureColumn;Ljava\/lang\/Object;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4.isGeometry() == false) goto L_0x0061\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|java.lang.String r4 = r4.getName()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|if ((r5 instanceof mil.nga.geopackage.geom.GeoPackageGeometryData) == false) goto L_0x0030\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000e}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|SYNTHETIC\lSplitter:B:5:0x0010\l}"];
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ IOException \-\> 0x0018 \}\lSplitter:B:5:0x0010\l|r3.put(r4, ((mil.nga.geopackage.geom.GeoPackageGeometryData) r5).toBytes())     \/\/ Catch:\{ IOException \-\> 0x0018 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|ExcHandler: IOException (r3v2 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:5:0x0010\l|java.io.IOException r3 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0019|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Failed to write Geometry Data bytes. column: \")\lr0.append(r4)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|throw new mil.nga.geopackage.GeoPackageException(r0.toString(), r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0030}"];
+Node_11 [shape=record,label="{11\:\ 0x0032|if ((r5 instanceof byte[]) == false) goto L_0x003a\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0034|r3.put(r4, (byte[]) r5)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003a|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"Unsupported update geometry column value type. column: \")\lr0.append(r4)\lr0.append(\", value type: \")\lr0.append(r5.getClass().getName())\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0060|throw new mil.nga.geopackage.GeoPackageException(r0.toString())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0061|super.columnToContentValue(r3, r4, r5)\l}"];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+Node_17 [shape=record,label="{17\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+Node_18 [shape=record,label="{18\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+MethodNode[shape=record,label="{protected void mil.nga.geopackage.features.user.FeatureRow.columnToContentValue((r2v0 'this' mil.nga.geopackage.features.user.FeatureRow A[IMMUTABLE_TYPE, THIS]), (r3v0 android.content.ContentValues A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 mil.nga.geopackage.features.user.FeatureColumn A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_18;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

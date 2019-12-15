@@ -1,0 +1,75 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.reverse([C)V" {
+subgraph cluster_Region_1808467887 {
+label = "R(2:0|(2:3|(1:(2:5|(1:7)(1:10)))(0))(0))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"$receiver\")\lint int r0 = (r5.length \/ 2) \- 1\l}"];
+subgraph cluster_IfRegion_1280798552 {
+label = "IF [B:1:0x000a] THEN: R(2:3|(1:(2:5|(1:7)(1:10)))(0)) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r0 \>= 0) goto L_0x000d\l}"];
+subgraph cluster_Region_340896259 {
+label = "R(2:3|(1:(2:5|(1:7)(1:10)))(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000d|int int r1 = kotlin.collections.ArraysKt.getLastIndex(r5)\lint r2 = 0\l}"];
+subgraph cluster_IfRegion_307265304 {
+label = "IF [B:4:0x0012] THEN: R(1:(2:5|(1:7)(1:10))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r0 \>= 0) goto L_0x0014\l}"];
+subgraph cluster_Region_914445567 {
+label = "R(1:(2:5|(1:7)(1:10)))";
+node [shape=record,color=blue];
+subgraph cluster_LoopRegion_1326951762 {
+label = "LOOP:0: (2:5|(1:7)(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1670068862 {
+label = "R(2:5|(1:7)(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|LOOP_START\lPHI: r1 r2 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:4:0x0012, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:4:0x0012, B:7:0x0020] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0014\-\>B:7:0x0020\l|char char r3 = r5[r2]\lr5[r2] = r5[r1]\lr5[r1] = r3\lr1\-\-\l}"];
+subgraph cluster_IfRegion_664024865 {
+label = "IF [B:6:0x001e] THEN: R(1:7) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001e|if (r2 != r0) goto L_0x0020\l}"];
+subgraph cluster_Region_1915888040 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0020|LOOP_END\lLOOP:0: B:5:0x0014\-\>B:7:0x0020\l|r2++\l}"];
+}
+subgraph cluster_Region_99159176 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1987606063 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1256387251 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023|SYNTHETIC\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.collections.ArraysKt___ArraysKt.reverse((r5v0 char[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_10;
+}
+

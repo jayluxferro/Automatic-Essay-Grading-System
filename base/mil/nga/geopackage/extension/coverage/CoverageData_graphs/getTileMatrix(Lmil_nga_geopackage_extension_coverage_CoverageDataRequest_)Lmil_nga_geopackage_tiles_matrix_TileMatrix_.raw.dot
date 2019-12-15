@@ -1,0 +1,20 @@
+digraph "CFG formil.nga.geopackage.extension.coverage.CoverageData.getTileMatrix(Lmil\/nga\/geopackage\/extension\/coverage\/CoverageDataRequest;)Lmil\/nga\/geopackage\/tiles\/matrix\/TileMatrix;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:mil.nga.geopackage.BoundingBox) = (r6 I:mil.nga.geopackage.extension.coverage.CoverageData) mil.nga.geopackage.extension.coverage.CoverageData.coverageBoundingBox mil.nga.geopackage.BoundingBox \l0x0002: INVOKE  (r0 I:mil.nga.geopackage.BoundingBox) = \l  (r7 I:mil.nga.geopackage.extension.coverage.CoverageDataRequest)\l  (r0 I:mil.nga.geopackage.BoundingBox)\l mil.nga.geopackage.extension.coverage.CoverageDataRequest.overlap(mil.nga.geopackage.BoundingBox):mil.nga.geopackage.BoundingBox type: VIRTUAL \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0031 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: INVOKE  (r7 I:mil.nga.geopackage.BoundingBox) = \l  (r7 I:mil.nga.geopackage.extension.coverage.CoverageDataRequest)\l mil.nga.geopackage.extension.coverage.CoverageDataRequest.getProjectedBoundingBox():mil.nga.geopackage.BoundingBox type: VIRTUAL \l0x000c: INVOKE  (r0 I:double) = (r7 I:mil.nga.geopackage.BoundingBox) mil.nga.geopackage.BoundingBox.getMaxLongitude():double type: VIRTUAL \l0x0010: INVOKE  (r2 I:double) = (r7 I:mil.nga.geopackage.BoundingBox) mil.nga.geopackage.BoundingBox.getMinLongitude():double type: VIRTUAL \l0x0014: ARITH  (r0 I:double) = (r0 I:double) \- (r2 I:double) \l0x0015: INVOKE  (r2 I:double) = (r7 I:mil.nga.geopackage.BoundingBox) mil.nga.geopackage.BoundingBox.getMaxLatitude():double type: VIRTUAL \l0x0019: INVOKE  (r4 I:double) = (r7 I:mil.nga.geopackage.BoundingBox) mil.nga.geopackage.BoundingBox.getMinLatitude():double type: VIRTUAL \l0x001d: ARITH  (r2 I:double) = (r2 I:double) \- (r4 I:double) \l0x001e: IGET  (r7 I:mil.nga.geopackage.tiles.user.TileDao) = (r6 I:mil.nga.geopackage.extension.coverage.CoverageData) mil.nga.geopackage.extension.coverage.CoverageData.tileDao mil.nga.geopackage.tiles.user.TileDao \l0x0020: INVOKE  (r7 I:java.lang.Long) = \l  (r7 I:mil.nga.geopackage.tiles.user.TileDao)\l  (r0 I:double)\l  (r2 I:double)\l mil.nga.geopackage.tiles.user.TileDao.getClosestZoomLevel(double, double):java.lang.Long type: VIRTUAL \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0024|0x0024: IF  (r7 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0031 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0026|0x0026: IGET  (r0 I:mil.nga.geopackage.tiles.user.TileDao) = (r6 I:mil.nga.geopackage.extension.coverage.CoverageData) mil.nga.geopackage.extension.coverage.CoverageData.tileDao mil.nga.geopackage.tiles.user.TileDao \l0x0028: INVOKE  (r1 I:long) = (r7 I:java.lang.Long) java.lang.Long.longValue():long type: VIRTUAL \l0x002c: INVOKE  (r7 I:mil.nga.geopackage.tiles.matrix.TileMatrix) = (r0 I:mil.nga.geopackage.tiles.user.TileDao), (r1 I:long) mil.nga.geopackage.tiles.user.TileDao.getTileMatrix(long):mil.nga.geopackage.tiles.matrix.TileMatrix type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|0x0031: CONST  (r7 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0032|0x0032: RETURN  (r7 I:mil.nga.geopackage.tiles.matrix.TileMatrix) \l}"];
+MethodNode[shape=record,label="{private mil.nga.geopackage.tiles.matrix.TileMatrix mil.nga.geopackage.extension.coverage.CoverageData.getTileMatrix((r6 'this' I:mil.nga.geopackage.extension.coverage.CoverageData A[IMMUTABLE_TYPE, THIS]), (r7 I:mil.nga.geopackage.extension.coverage.CoverageDataRequest A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+}
+

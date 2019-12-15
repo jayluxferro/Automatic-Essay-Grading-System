@@ -1,0 +1,27 @@
+digraph "CFG forcom.google.android.exoplayer2.source.dash.manifest.DashManifestParser.buildRepresentation(Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifestParser$RepresentationInfo;Ljava\/lang\/String;Ljava\/util\/ArrayList;Ljava\/util\/ArrayList;)Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/Representation;" {
+subgraph cluster_Region_1185182459 {
+label = "R(4:0|(1:2)|3|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.Format com.google.android.exoplayer2.Format r4 = r9.format\ljava.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\> java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData.SchemeData\> r0 = r9.drmSchemeDatas\lr0.addAll(r11)\l}"];
+subgraph cluster_IfRegion_1141092859 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r0.isEmpty() == false) goto L_0x000d\l}"];
+subgraph cluster_Region_1532484048 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000d|com.google.android.exoplayer2.Format r4 = r4.copyWithDrmInitData(new com.google.android.exoplayer2.drm.DrmInitData((java.util.List\<com.google.android.exoplayer2.drm.DrmInitData.SchemeData\>) r0))\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0016|PHI: r4 \l  PHI: (r4v1 'format' com.google.android.exoplayer2.Format) = (r4v0 'format' com.google.android.exoplayer2.Format), (r4v2 'format' com.google.android.exoplayer2.Format) binds: [B:1:0x000b, B:2:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|java.util.ArrayList\<com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair\> java.util.ArrayList\<com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair\> r7 = r9.inbandEventStreams\lr7.addAll(r12)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0026|RETURN\l|return com.google.android.exoplayer2.source.dash.manifest.Representation.newInstance(r10, \-1, r4, r9.baseUrl, r9.segmentBase, r7)\l}"];
+}
+MethodNode[shape=record,label="{protected com.google.android.exoplayer2.source.dash.manifest.Representation com.google.android.exoplayer2.source.dash.manifest.DashManifestParser.buildRepresentation((r8v0 'this' com.google.android.exoplayer2.source.dash.manifest.DashManifestParser A[IMMUTABLE_TYPE, THIS]), (r9v0 'representationInfo' com.google.android.exoplayer2.source.dash.manifest.DashManifestParser$RepresentationInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 'contentId' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'extraDrmSchemeDatas' java.util.ArrayList\<com.google.android.exoplayer2.drm.DrmInitData$SchemeData\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r12v0 'extraInbandEventStreams' java.util.ArrayList\<com.google.android.exoplayer2.source.dash.manifest.SchemeValuePair\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/DashManifestParser$RepresentationInfo;, Ljava\/lang\/String;, Ljava\/util\/ArrayList, \<, Lcom\/google\/android\/exoplayer2\/drm\/DrmInitData$SchemeData;, \>;, Ljava\/util\/ArrayList, \<, Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/SchemeValuePair;, \>;), Lcom\/google\/android\/exoplayer2\/source\/dash\/manifest\/Representation;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

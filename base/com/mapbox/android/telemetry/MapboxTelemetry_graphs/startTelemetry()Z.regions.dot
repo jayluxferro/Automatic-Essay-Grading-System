@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.android.telemetry.MapboxTelemetry.startTelemetry()Z" {
+subgraph cluster_Region_1637943313 {
+label = "R(2:0|(2:(1:4)|(2:2|3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+subgraph cluster_Region_1791406287 {
+label = "R(2:(1:4)|(2:2|3))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1989904736 {
+label = "IF [B:1:0x000c] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (com.mapbox.android.telemetry.TelemetryEnabler.State.ENABLED.equals(r2.telemetryEnabler.obtainTelemetryState()) != true) goto L_0x0016\l}"];
+subgraph cluster_Region_841088574 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1529453035 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|startAlarm()\loptLocationIn()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0015|RETURN\l|return true\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{private boolean com.mapbox.android.telemetry.MapboxTelemetry.startTelemetry((r2v0 'this' com.mapbox.android.telemetry.MapboxTelemetry A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+}
+

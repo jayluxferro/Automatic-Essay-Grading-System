@@ -1,0 +1,34 @@
+digraph "CFG forokhttp3.HttpUrl.encodedQuery()Ljava\/lang\/String;" {
+subgraph cluster_Region_1763599387 {
+label = "R(1:(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1790846386 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_754227468 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.queryNamesAndValues == null) goto L_0x0004\l}"];
+subgraph cluster_Region_859731336 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_337365692 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|int int r0 = r4.url.indexOf(63) + 1\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0024|RETURN\l|return r4.url.substring(r0, okhttp3.internal.Util.delimiterOffset(r4.url, r0, r4.url.length(), '#'))\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public java.lang.String okhttp3.HttpUrl.encodedQuery((r4v0 'this' okhttp3.HttpUrl A[IMMUTABLE_TYPE, THIS]))  | Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

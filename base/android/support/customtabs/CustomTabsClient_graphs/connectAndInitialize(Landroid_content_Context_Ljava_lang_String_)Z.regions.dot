@@ -1,0 +1,60 @@
+digraph "CFG forandroid.support.customtabs.CustomTabsClient.connectAndInitialize(Landroid\/content\/Context;Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_1204145065 {
+label = "R(1:(2:(1:6)|(2:2|(1:7))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1229281229 {
+label = "R(2:(1:6)|(2:2|(1:7)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_803538807 {
+label = "IF [B:1:0x0001] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r5 == null) goto L_?\l}"];
+subgraph cluster_Region_1710733778 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1568987690 {
+label = "R(2:2|(1:7))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|android.content.Context final android.content.Context r0 = r4.getApplicationContext()\l}"];
+subgraph cluster_TryCatchRegion_201768518 {
+label = "Try: R(1:7) catches: R(1:8)";
+node [shape=record,color=blue];
+subgraph cluster_Region_446360583 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\l|return bindCustomTabsService(r0, r5, new android.support.customtabs.CustomTabsClient.C00421())\l}"];
+}
+subgraph cluster_Region_1872653108 {
+label = "R(1:8) | ExcHandler: SecurityException (e java.lang.SecurityException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1872653108 {
+label = "R(1:8) | ExcHandler: SecurityException (e java.lang.SecurityException)\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d|SYNTHETIC\lSplitter:B:3:0x000d\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|Catch:\{ SecurityException \-\> 0x0012 \}\lSplitter:B:3:0x000d\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0012|ExcHandler: SecurityException (e java.lang.SecurityException)\lSplitter:B:3:0x000d\l}"];
+MethodNode[shape=record,label="{public static boolean android.support.customtabs.CustomTabsClient.connectAndInitialize((r4v0 'context' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 'packageName' java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_8;
+}
+

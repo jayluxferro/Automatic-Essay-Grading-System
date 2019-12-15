@@ -1,0 +1,47 @@
+digraph "CFG forandroid.support.v4.text.util.FindAddress.ZipRange.matches(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_2025205282 {
+label = "R(2:0|(2:(1:8)|(1:9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r3 = java.lang.Integer.parseInt(r3.substring(0, 2))\l}"];
+subgraph cluster_Region_1496291630 {
+label = "R(2:(1:8)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_622039206 {
+label = "IF [B:1:0x000c, B:3:0x0010, B:5:0x0014, B:7:0x0018] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r2.mLow \<= r3) goto L_0x000e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r3 \<= r2.mHigh) goto L_0x001a\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|ADDED_TO_REGION\l|if (r3 == r2.mException1) goto L_0x001a\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|ADDED_TO_REGION\l|if (r3 == r2.mException2) goto L_0x001a\l}"];
+subgraph cluster_Region_822930761 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1815193092 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000e}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0016}"];
+MethodNode[shape=record,label="{boolean android.support.v4.text.util.FindAddress.ZipRange.matches((r2v0 'this' android.support.v4.text.util.FindAddress$ZipRange A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

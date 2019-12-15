@@ -1,0 +1,53 @@
+digraph "CFG forio.fabric.sdk.android.services.persistence.FileStoreImpl.prepare(Ljava\/io\/File;)Ljava\/io\/File;" {
+subgraph cluster_Region_1158955878 {
+label = "R(1:(2:7|8)(1:(1:6)(2:5|9)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1908442389 {
+label = "IF [B:0:0x0000] THEN: R(2:7|8) ELSE: R(1:(1:6)(2:5|9))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r3 == null) goto L_0x001c\l}"];
+subgraph cluster_Region_1278903344 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|p018io.fabric.sdk.android.Fabric.getLogger().mo22221d(p018io.fabric.sdk.android.Fabric.TAG, \"Null File\")\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_1516905843 {
+label = "R(1:(1:6)(2:5|9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1023558187 {
+label = "IF [B:2:0x0006, B:4:0x000c] THEN: R(1:6) ELSE: R(2:5|9) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r3.exists() == true) goto L_0x001b\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r3.mkdirs() == true) goto L_0x001b\l}"];
+subgraph cluster_Region_1218416819 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|RETURN\l|return r3\l}"];
+}
+subgraph cluster_Region_1344050836 {
+label = "R(2:5|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|p018io.fabric.sdk.android.Fabric.getLogger().mo22234w(p018io.fabric.sdk.android.Fabric.TAG, \"Couldn't create file\")\l}"];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+MethodNode[shape=record,label="{java.io.File io.fabric.sdk.android.services.persistence.FileStoreImpl.prepare((r2v0 'this' io.fabric.sdk.android.services.persistence.FileStoreImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_7;
+Node_7 -> Node_8;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_9;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

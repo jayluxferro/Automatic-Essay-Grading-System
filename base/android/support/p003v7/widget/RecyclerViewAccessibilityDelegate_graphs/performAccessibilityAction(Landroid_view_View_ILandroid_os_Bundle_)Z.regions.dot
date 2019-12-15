@@ -1,0 +1,62 @@
+digraph "CFG forandroid.support.v7.widget.RecyclerViewAccessibilityDelegate.performAccessibilityAction(Landroid\/view\/View;ILandroid\/os\/Bundle;)Z" {
+subgraph cluster_Region_105824609 {
+label = "R(1:(2:(1:2)|(1:(2:(1:10)|(1:8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2123037450 {
+label = "R(2:(1:2)|(1:(2:(1:10)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_163541602 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (super.performAccessibilityAction(r1, r2, r3) == true) goto L_0x0006\l}"];
+subgraph cluster_Region_1110446551 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_839226681 {
+label = "R(1:(2:(1:10)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_469658328 {
+label = "R(2:(1:10)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1763719079 {
+label = "IF [B:4:0x000c, B:6:0x0014] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (shouldIgnore() == true) goto L_?\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0014|ADDED_TO_REGION\l|if (r0.mRecyclerView.getLayoutManager() == null) goto L_?\l}"];
+subgraph cluster_Region_727461373 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_904841714 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|RETURN\l|return r0.mRecyclerView.getLayoutManager().performAccessibilityAction(r2, r3)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.widget.RecyclerViewAccessibilityDelegate.performAccessibilityAction((r0v0 'this' android.support.v7.widget.RecyclerViewAccessibilityDelegate A[IMMUTABLE_TYPE, THIS]), (r1v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

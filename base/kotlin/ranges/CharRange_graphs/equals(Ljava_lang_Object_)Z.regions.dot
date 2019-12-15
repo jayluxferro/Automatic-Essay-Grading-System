@@ -1,0 +1,61 @@
+digraph "CFG forkotlin.ranges.CharRange.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1021738394 {
+label = "R(2:(2:(2:6|(1:11))|10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_595054802 {
+label = "IF [B:1:0x0002] THEN: R(2:(2:6|(1:11))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r3 instanceof kotlin.ranges.CharRange) == true) goto L_0x0004\l}"];
+subgraph cluster_Region_297569693 {
+label = "R(2:(2:6|(1:11))|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_300919014 {
+label = "IF [B:3:0x0008, B:5:0x0011] THEN: R(2:6|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (isEmpty() == false) goto L_0x0013\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|ADDED_TO_REGION\l|if (((kotlin.ranges.CharRange) r3).isEmpty() == false) goto L_0x0013\l}"];
+subgraph cluster_Region_1606237468 {
+label = "R(2:6|(1:11))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|kotlin.ranges.CharRange kotlin.ranges.CharRange r3 = (kotlin.ranges.CharRange) r3\l}"];
+subgraph cluster_IfRegion_204538378 {
+label = "IF [B:7:0x001d, B:9:0x0027] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (getFirst() == r3.getFirst()) goto L_0x001f\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0027|ADDED_TO_REGION\l|if (getLast() == r3.getLast()) goto L_0x0029\l}"];
+subgraph cluster_Region_510270956 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x002b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0029|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x002b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001f}"];
+MethodNode[shape=record,label="{public boolean kotlin.ranges.CharRange.equals((r2v0 'this' kotlin.ranges.CharRange A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+}
+

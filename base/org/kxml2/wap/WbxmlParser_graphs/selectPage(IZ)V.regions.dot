@@ -1,0 +1,70 @@
+digraph "CFG fororg.kxml2.wap.WbxmlParser.selectPage(IZ)V" {
+subgraph cluster_Region_1676716402 {
+label = "R(1:(1:(3:4|(1:6)|(2:(2:8|11)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2049701533 {
+label = "R(1:(3:4|(1:6)|(2:(2:8|11)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_495036060 {
+label = "IF [B:1:0x0006, B:2:0x0008] THEN: R(3:4|(1:6)|(2:(2:8|11)|(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r3.tables.size() != 0) goto L_0x000b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|ADDED_TO_REGION\l|if (r4 != 0) goto L_0x000b\l}"];
+subgraph cluster_Region_340909124 {
+label = "R(3:4|(1:6)|(2:(2:8|11)|(1:9)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|int int r0 = r4 * 3\l}"];
+subgraph cluster_IfRegion_2124078120 {
+label = "IF [B:5:0x0013] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r0 \> r3.tables.size()) goto L_0x0015\l}"];
+subgraph cluster_Region_616759847 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|java.lang.StringBuffer java.lang.StringBuffer r1 = new java.lang.StringBuffer()\lr1.append(\"Code Page \")\lr1.append(r4)\lr1.append(\" undefined!\")\lexception(r1.toString())\l}"];
+}
+}
+subgraph cluster_Region_567936028 {
+label = "R(2:(2:8|11)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1200067180 {
+label = "IF [B:7:0x002e] THEN: R(2:8|11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|if (r5 == true) goto L_0x0030\l}"];
+subgraph cluster_Region_2050192868 {
+label = "R(2:8|11)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0030|r3.tagTable = (java.lang.String[]) r3.tables.elementAt(r0 + r3.TAG_TABLE)\l}"];
+Node_11 [shape=record,label="{11\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1055541826 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003e|r3.attrStartTable = (java.lang.String[]) r3.tables.elementAt(r3.ATTR_START_TABLE + r0)\lr3.attrValueTable = (java.lang.String[]) r3.tables.elementAt(r0 + r3.ATTR_VALUE_TABLE)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+MethodNode[shape=record,label="{private void org.kxml2.wap.WbxmlParser.selectPage((r3v0 'this' org.kxml2.wap.WbxmlParser A[IMMUTABLE_TYPE, THIS]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[org.xmlpull.v1.XmlPullParserException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+}
+

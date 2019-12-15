@@ -1,0 +1,19 @@
+digraph "CFG fororg.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.getTileSources(Ljava\/lang\/String;)Ljava\/util\/List;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r22\ljava.util.ArrayList r1 = new java.util.ArrayList()\lmil.nga.geopackage.GeoPackage r2 = r0.manager.open(r23)\ljava.util.List r10 = r2.getTileTables()\lr11 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0015|LOOP_START\lPHI: r0 r1 r11 \l  PHI: (r0v1 org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider) = (r0v0 org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider), (r0v4 org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider) binds: [B:0:0x0000, B:3:0x001b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r1v1 java.util.ArrayList) = (r1v0 java.util.ArrayList), (r1v3 java.util.ArrayList) binds: [B:0:0x0000, B:3:0x001b] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r11v1 int) = (r11v0 int), (r11v2 int) binds: [B:0:0x0000, B:3:0x001b] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0015\-\>B:3:0x001b\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0019|if (r11 \>= r10.size()) goto L_0x0086\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|LOOP_END\lLOOP:0: B:1:0x0015\-\>B:3:0x001b\l|mil.nga.geopackage.tiles.user.TileDao r3 = r2.getTileDao(r10.get(r11))\lmil.nga.geopackage.BoundingBox r4 = r3.getProjection().getTransformation(4326).transform(r3.getBoundingBox())\lr21 = r1\lorg.osmdroid.util.BoundingBox r12 = new org.osmdroid.util.BoundingBox(java.lang.Math.min(r0.tileSystem.getMaxLatitude(), r4.getMaxLatitude()), r4.getMaxLongitude(), java.lang.Math.max(r0.tileSystem.getMinLatitude(), r4.getMinLatitude()), r4.getMinLongitude())\lr4 = r23\lr1 = r21\lr1.add(new org.osmdroid.gpkg.tiles.raster.GeopackageRasterTileSource(r4, r10.get(r11), (int) r3.getMinZoom(), (int) r3.getMaxZoom(), r12))\lint r11 = r11 + 1\lr0 = r22\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0086|r2.close()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0089|RETURN\l|return r1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0086|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.util.List\<org.osmdroid.gpkg.tiles.raster.GeopackageRasterTileSource\> org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.getTileSources((r22v0 'this' org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider A[IMMUTABLE_TYPE, THIS]), (r23v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, ), Ljava\/util\/List\<, Lorg\/osmdroid\/gpkg\/tiles\/raster\/GeopackageRasterTileSource;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_4;
+}
+

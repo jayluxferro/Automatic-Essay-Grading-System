@@ -1,0 +1,50 @@
+digraph "CFG forretrofit2.Utils.WildcardTypeImpl.toString()Ljava\/lang\/String;" {
+subgraph cluster_Region_1784256445 {
+label = "R(1:(2:2|3)(1:(1:6)(2:7|8)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_374686173 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: R(1:(1:6)(2:7|8))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.lowerBound != null) goto L_0x0004\l}"];
+subgraph cluster_Region_296257182 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ 0x001b|RETURN\l|return \"? super \" + retrofit2.Utils.typeToString(r2.lowerBound)\l}"];
+}
+subgraph cluster_Region_15162012 {
+label = "R(1:(1:6)(2:7|8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_640008514 {
+label = "IF [B:5:0x0020] THEN: R(1:6) ELSE: R(2:7|8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0020|if (r2.upperBound == java.lang.Object.class) goto L_0x0022\l}"];
+subgraph cluster_Region_440547314 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0022|RETURN\l|return \"?\"\l}"];
+}
+subgraph cluster_Region_1334566482 {
+label = "R(2:7|8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0025}"];
+Node_8 [shape=record,label="{8\:\ 0x003c|RETURN\l|return \"? extends \" + retrofit2.Utils.typeToString(r2.upperBound)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001c}"];
+MethodNode[shape=record,label="{public java.lang.String retrofit2.Utils.WildcardTypeImpl.toString((r2v0 'this' retrofit2.Utils$WildcardTypeImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

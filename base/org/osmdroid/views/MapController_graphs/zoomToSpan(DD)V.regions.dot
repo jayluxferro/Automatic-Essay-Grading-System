@@ -1,0 +1,98 @@
+digraph "CFG fororg.osmdroid.views.MapController.zoomToSpan(DD)V" {
+subgraph cluster_Region_2070726132 {
+label = "R(1:(1:(2:(2:6|7)|(2:8|(1:10)(1:(1:13)(0)))))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_769352037 {
+label = "IF [B:1:0x0004, B:3:0x0008] THEN: R(1:(2:(2:6|7)|(2:8|(1:10)(1:(1:13)(0))))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r8 \> 0.0d) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r10 \> 0.0d) goto L_0x000b\l}"];
+subgraph cluster_Region_397741069 {
+label = "R(1:(2:(2:6|7)|(2:8|(1:10)(1:(1:13)(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_522010270 {
+label = "R(2:(2:6|7)|(2:8|(1:10)(1:(1:13)(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_46337004 {
+label = "IF [B:5:0x0011] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (r7.mMapView.isLayoutOccurred() == false) goto L_0x0013\l}"];
+subgraph cluster_Region_1952813720 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|r7.mReplayController.zoomToSpan(r8, r10)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1476671963 {
+label = "R(2:8|(1:10)(1:(1:13)(0)))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0019|org.osmdroid.util.BoundingBox org.osmdroid.util.BoundingBox r0 = r7.mMapView.getProjection().getBoundingBox()\ldouble double r1 = r7.mMapView.getProjection().getZoomLevel()\ldouble double r8 = java.lang.Math.max(r8 \/ r0.getLatitudeSpan(), r10 \/ r0.getLongitudeSpan())\l}"];
+subgraph cluster_IfRegion_2031697491 {
+label = "IF [B:9:0x003f] THEN: R(1:10) ELSE: R(1:(1:13)(0))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003f|if (r8 \> 1.0d) goto L_0x0041\l}"];
+subgraph cluster_Region_396133772 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|r7.mMapView.setZoomLevel(r1 \- ((double) org.osmdroid.util.MyMath.getNextSquareNumberAbove((float) r8)))\l}"];
+}
+subgraph cluster_Region_1259285885 {
+label = "R(1:(1:13)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_11143754 {
+label = "IF [B:12:0x0052] THEN: R(1:13) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0052|if (r8 \< 0.5d) goto L_0x0054\l}"];
+subgraph cluster_Region_2127547487 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0054|r7.mMapView.setZoomLevel((r1 + ((double) org.osmdroid.util.MyMath.getNextSquareNumberAbove(1.0f \/ ((float) r8)))) \- 1.0d)\l}"];
+}
+subgraph cluster_Region_1032852300 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_655815545 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000b}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004e}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.MapController.zoomToSpan((r7v0 'this' org.osmdroid.views.MapController A[IMMUTABLE_TYPE, THIS]), (r8v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_17[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_18[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_12 -> Node_13;
+Node_12 -> Node_16[style=dashed];
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_11 -> Node_12;
+}
+

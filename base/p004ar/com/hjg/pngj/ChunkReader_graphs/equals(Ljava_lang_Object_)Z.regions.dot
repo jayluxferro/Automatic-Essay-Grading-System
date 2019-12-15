@@ -1,0 +1,105 @@
+digraph "CFG forar.com.hjg.pngj.ChunkReader.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_223295464 {
+label = "R(1:(2:(1:2)|(1:(2:(1:8)|(3:9|(1:(1:13))(1:(1:16))|17)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1828978643 {
+label = "R(2:(1:2)|(1:(2:(1:8)|(3:9|(1:(1:13))(1:(1:16))|17))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1624434322 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == r5) goto L_0x0003\l}"];
+subgraph cluster_Region_1014330150 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1223811895 {
+label = "R(1:(2:(1:8)|(3:9|(1:(1:13))(1:(1:16))|17)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_989749405 {
+label = "R(2:(1:8)|(3:9|(1:(1:13))(1:(1:16))|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1307572006 {
+label = "IF [B:4:0x0005, B:7:0x0010] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|if (r5 == null) goto L_0x0007\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0010|ADDED_TO_REGION\l|if (getClass() != r5.getClass()) goto L_0x0012\l}"];
+subgraph cluster_Region_1511277054 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0012|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1171486504 {
+label = "R(3:9|(1:(1:13))(1:(1:16))|17)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0013|ar.com.hjg.pngj.ChunkReader p004ar.com.hjg.pngj.ChunkReader r5 = (p004ar.com.hjg.pngj.ChunkReader) r5\l}"];
+subgraph cluster_IfRegion_498854352 {
+label = "IF [B:10:0x0017] THEN: R(1:(1:13)) ELSE: R(1:(1:16))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0017|if (r4.chunkRaw == null) goto L_0x0019\l}"];
+subgraph cluster_Region_1418233970 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1344894289 {
+label = "IF [B:12:0x001b] THEN: R(1:13) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x001b|if (r5.chunkRaw != null) goto L_0x001d\l}"];
+subgraph cluster_Region_1718358786 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x001d|RETURN\l|return false\l}"];
+}
+}
+}
+subgraph cluster_Region_504341888 {
+label = "R(1:(1:16)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1984063327 {
+label = "IF [B:15:0x0026] THEN: R(1:16) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0026|if (r4.chunkRaw.equals(r5.chunkRaw) == false) goto L_0x0028\l}"];
+subgraph cluster_Region_1555573496 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0028|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x0029|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0007|RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0008}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0019}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001e}"];
+MethodNode[shape=record,label="{public boolean ar.com.hjg.pngj.ChunkReader.equals((r4v0 'this' ar.com.hjg.pngj.ChunkReader A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_14[style=dashed];
+Node_12 -> Node_13;
+Node_12 -> Node_17[style=dashed];
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_12;
+Node_14 -> Node_15;
+}
+

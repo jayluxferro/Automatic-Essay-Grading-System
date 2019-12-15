@@ -1,0 +1,70 @@
+digraph "CFG forcom.google.gson.internal.bind.ArrayTypeAdapter.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_2094419115 {
+label = "R(1:(2:(2:2|3)|(5:4|(1:7)|8|(1:10)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_637612117 {
+label = "R(2:(2:2|3)|(5:4|(1:7)|8|(1:10)|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2139002791 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r5.peek() == com.google.gson.stream.JsonToken.NULL) goto L_0x0008\l}"];
+subgraph cluster_Region_16172888 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r5.nextNull()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_207744337 {
+label = "R(5:4|(1:7)|8|(1:10)|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\lr5.beginArray()\l}"];
+subgraph cluster_LoopRegion_1317761273 {
+label = "LOOP:0: (1:7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|if (r5.hasNext() != false) goto L_0x001b\l}"];
+subgraph cluster_Region_1377330776 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|LOOP_END\lLOOP:0: B:5:0x0015\-\>B:7:0x001b\l|r0.add(r4.componentTypeAdapter.read(r5))\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0025|r5.endArray()\lint int r5 = r0.size()\ljava.lang.Object java.lang.Object r1 = java.lang.reflect.Array.newInstance(r4.componentType, r5)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_994817602 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0033|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:8:0x0025, B:10:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:9:0x0033\-\>B:10:0x0035\l|if (r2 \< r5) goto L_0x0035\l}"];
+subgraph cluster_Region_681383562 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0035|LOOP_END\lLOOP:1: B:9:0x0033\-\>B:10:0x0035\l|java.lang.reflect.Array.set(r1, r2, r0.get(r2))\lr2++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003f|RETURN\l|return r1\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0015|LOOP_START\lLOOP:0: B:5:0x0015\-\>B:7:0x001b\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0025|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public java.lang.Object com.google.gson.internal.bind.ArrayTypeAdapter.read((r4v0 'this' com.google.gson.internal.bind.ArrayTypeAdapter A[IMMUTABLE_TYPE, THIS]), (r5v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_5;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_13[style=dashed];
+Node_10 -> Node_9;
+Node_0 -> Node_1;
+Node_5 -> Node_6;
+Node_12 -> Node_8;
+Node_13 -> Node_11;
+}
+

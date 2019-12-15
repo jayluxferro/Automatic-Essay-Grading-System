@@ -1,0 +1,42 @@
+digraph "CFG fororg.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.\<init\>([Ljava\/io\/File;Landroid\/content\/Context;Lorg\/osmdroid\/tileprovider\/modules\/IFilesystemCache;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super(org.osmdroid.config.Configuration.getInstance().getTileFileSystemThreads(), org.osmdroid.config.Configuration.getInstance().getTileFileSystemMaxQueueSize())\lr2.tileSystem = org.osmdroid.views.MapView.getTileSystem()\lr2.tileWriter = null\lr2.tileSources = new java.util.HashSet()\landroid.util.Log.i(org.osmdroid.api.IMapView.LOGTAG, \"Geopackage support is BETA. Please report any issues\")\lr2.tileWriter = r5\lr2.manager = mil.nga.geopackage.factory.GeoPackageFactory.getManager(r4)\lr4 = 0\lr5 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0034|LOOP_START\lPHI: r5 \l  PHI: (r5v2 int) = (r5v1 int), (r5v5 int) binds: [B:0:0x0000, B:7:0x0043] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0034\-\>B:7:0x0043\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0035|if (r5 \>= r3.length) goto L_0x0046\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0037|SYNTHETIC\lSplitter:B:3:0x0037\l}"];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ Exception \-\> 0x003f \}\lSplitter:B:3:0x0037\l|r2.manager.importGeoPackage(r3[r5])     \/\/ Catch:\{ Exception \-\> 0x003f \}\l}"];
+Node_5 [shape=record,label="{5\:\ 0x003f|ExcHandler: Exception (r0v9 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:3:0x0037\l|java.lang.Exception r0 = move\-exception\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0040|r0.printStackTrace()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0043|LOOP_END\lLOOP:0: B:1:0x0034\-\>B:7:0x0043\l|int r5 = r5 + 1\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0046|java.util.List r3 = r2.manager.databases()\l}"];
+Node_9 [shape=record,label="{9\:\ 0x004c|LOOP_START\lPHI: r4 \l  PHI: (r4v3 int) = (r4v2 int), (r4v4 int) binds: [B:8:0x0046, B:11:0x0052] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:9:0x004c\-\>B:11:0x0052\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0050|if (r4 \>= r3.size()) goto L_0x0066\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0052|LOOP_END\lLOOP:1: B:9:0x004c\-\>B:11:0x0052\l|r2.tileSources.add(r2.manager.open(r3.get(r4)))\lint r4 = r4 + 1\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0066|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0046|SYNTHETIC\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0043|SYNTHETIC\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0043|SYNTHETIC\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0066|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider.\<init\>((r2v0 'this' org.osmdroid.gpkg.tiles.raster.GeoPackageMapTileModuleProvider A[IMMUTABLE_TYPE, THIS]), (r3v0 java.io.File[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 org.osmdroid.tileprovider.modules.IFilesystemCache A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_13;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_4 -> Node_15;
+Node_5 -> Node_6;
+Node_6 -> Node_14;
+Node_7 -> Node_1;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_16;
+Node_11 -> Node_9;
+Node_13 -> Node_8;
+Node_14 -> Node_7;
+Node_15 -> Node_7;
+Node_16 -> Node_12;
+}
+

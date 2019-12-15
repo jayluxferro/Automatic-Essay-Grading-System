@@ -1,0 +1,51 @@
+digraph "CFG forar.com.hjg.pngj.PngWriter.writeSignatureAndIHDR()V" {
+subgraph cluster_Region_53453653 {
+label = "R(5:0|1|(1:6)|(1:9)|10)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r4.currentChunkGroup = 0\lp004ar.com.hjg.pngj.PngHelperInternal.writeBytes(r4.f52os, p004ar.com.hjg.pngj.PngHelperInternal.getPngIdSignature())\lar.com.hjg.pngj.chunks.PngChunkIHDR p004ar.com.hjg.pngj.chunks.PngChunkIHDR r1 = new p004ar.com.hjg.pngj.chunks.PngChunkIHDR(r4.imgInfo)\lr1.setCols(r4.imgInfo.cols)\lr1.setRows(r4.imgInfo.rows)\lr1.setBitspc(r4.imgInfo.bitDepth)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x002c|int r2 = r4.imgInfo.alpha ? 4 : 0\l}"];
+subgraph cluster_IfRegion_52409688 {
+label = "IF [B:5:0x0035] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (r4.imgInfo.indexed == true) goto L_0x0037\l}"];
+subgraph cluster_Region_467785683 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|r2++\l}"];
+}
+}
+subgraph cluster_IfRegion_1901083666 {
+label = "IF [B:8:0x003d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003d|if (r4.imgInfo.greyscale == false) goto L_0x003f\l}"];
+subgraph cluster_Region_486886802 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003f|r2 += 2\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0041|PHI: r2 \l  PHI: (r2v12 int) = (r2v11 int), (r2v14 int) binds: [B:8:0x003d, B:9:0x003f] A[DONT_GENERATE, DONT_INLINE]\l|r1.setColormodel(r2)\lr1.setCompmeth(0)\lr1.setFilmeth(0)\lr1.setInterlaced(0)\lr1.createRawChunk().writeChunk(r4.f52os)\lr4.chunksList.getChunks().add(r1)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x002e}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0030}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0031|PHI: r2 \l  PHI: (r2v10 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0039|PHI: r2 \l  PHI: (r2v11 int) = (r2v10 int), (r2v15 int) binds: [B:5:0x0035, B:6:0x0037] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x005f}"];
+MethodNode[shape=record,label="{private void ar.com.hjg.pngj.PngWriter.writeSignatureAndIHDR((r4v0 'this' ar.com.hjg.pngj.PngWriter A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

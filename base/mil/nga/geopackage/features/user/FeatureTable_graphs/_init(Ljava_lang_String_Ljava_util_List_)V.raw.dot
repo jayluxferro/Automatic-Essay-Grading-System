@@ -1,0 +1,22 @@
+digraph "CFG formil.nga.geopackage.features.user.FeatureTable.\<init\>(Ljava\/lang\/String;Ljava\/util\/List;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  \l  (r3 I:mil.nga.geopackage.user.UserTable)\l  (r4 I:java.lang.String)\l  (r5 I:java.util.List)\l mil.nga.geopackage.user.UserTable.\<init\>(java.lang.String, java.util.List):void type: DIRECT \l0x0003: INVOKE  (r4 I:java.util.Iterator) = (r5 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l0x0007: CONST  (r5 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|0x0008: INVOKE  (r0 I:boolean) = (r4 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0030 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: INVOKE  (r0 I:java.lang.Object) = (r4 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0012: CHECK_CAST  (r0 I:mil.nga.geopackage.features.user.FeatureColumn) = (mil.nga.geopackage.features.user.FeatureColumn) (r0 I:?[OBJECT, ARRAY]) \l0x0014: INVOKE  (r1 I:boolean) = (r0 I:mil.nga.geopackage.features.user.FeatureColumn) mil.nga.geopackage.features.user.FeatureColumn.isGeometry():boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0018|0x0018: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x0008 \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: INVOKE  (r1 I:int) = (r0 I:mil.nga.geopackage.features.user.FeatureColumn) mil.nga.geopackage.features.user.FeatureColumn.getIndex():int type: VIRTUAL \l0x001e: SGET  (r2 I:mil.nga.wkb.geom.GeometryType) =  mil.nga.wkb.geom.GeometryType.GEOMETRY mil.nga.wkb.geom.GeometryType \l0x0020: INVOKE  (r2 I:java.lang.String) = (r2 I:mil.nga.wkb.geom.GeometryType) mil.nga.wkb.geom.GeometryType.name():java.lang.String type: VIRTUAL \l0x0024: INVOKE  \l  (r3 I:mil.nga.geopackage.features.user.FeatureTable)\l  (r1 I:int)\l  (r5 I:java.lang.Integer)\l  (r2 I:java.lang.String)\l mil.nga.geopackage.features.user.FeatureTable.duplicateCheck(int, java.lang.Integer, java.lang.String):void type: VIRTUAL \l0x0027: INVOKE  (r5 I:int) = (r0 I:mil.nga.geopackage.features.user.FeatureColumn) mil.nga.geopackage.features.user.FeatureColumn.getIndex():int type: VIRTUAL \l0x002b: INVOKE  (r5 I:java.lang.Integer) = (r5 I:int) java.lang.Integer.valueOf(int):java.lang.Integer type: STATIC \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0030|0x0030: SGET  (r4 I:mil.nga.wkb.geom.GeometryType) =  mil.nga.wkb.geom.GeometryType.GEOMETRY mil.nga.wkb.geom.GeometryType \l0x0032: INVOKE  (r4 I:java.lang.String) = (r4 I:mil.nga.wkb.geom.GeometryType) mil.nga.wkb.geom.GeometryType.name():java.lang.String type: VIRTUAL \l0x0036: INVOKE  \l  (r3 I:mil.nga.geopackage.features.user.FeatureTable)\l  (r5 I:java.lang.Integer)\l  (r4 I:java.lang.String)\l mil.nga.geopackage.features.user.FeatureTable.missingCheck(java.lang.Integer, java.lang.String):void type: VIRTUAL \l0x0039: INVOKE  (r4 I:int) = (r5 I:java.lang.Integer) java.lang.Integer.intValue():int type: VIRTUAL \l0x003d: IPUT  \l  (r4 I:int)\l  (r3 I:mil.nga.geopackage.features.user.FeatureTable)\l mil.nga.geopackage.features.user.FeatureTable.geometryIndex int \l}"];
+Node_7 [shape=record,label="{7\:\ 0x003f|0x003f: RETURN   \l}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.features.user.FeatureTable.\<init\>((r3 'this' I:mil.nga.geopackage.features.user.FeatureTable A[IMMUTABLE_TYPE, THIS]), (r4 I:java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5 I:java.util.List\<mil.nga.geopackage.features.user.FeatureColumn\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, Ljava\/util\/List\<, Lmil\/nga\/geopackage\/features\/user\/FeatureColumn;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_4 -> Node_5[style=dashed];
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+}
+

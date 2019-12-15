@@ -1,0 +1,64 @@
+digraph "CFG forcom.mapbox.geojson.utils.PolylineUtils.getSqSegDist(Lcom\/mapbox\/geojson\/Point;Lcom\/mapbox\/geojson\/Point;Lcom\/mapbox\/geojson\/Point;)D" {
+subgraph cluster_Region_109757243 {
+label = "R(4:0|(2:4|(1:6)(1:(1:9)))|10|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = r17.longitude()\ldouble double r2 = r17.latitude()\ldouble double r4 = r18.longitude() \- r0\ldouble double r6 = r18.latitude() \- r2\l}"];
+subgraph cluster_IfRegion_1476783410 {
+label = "IF [B:1:0x0016, B:3:0x001a] THEN: R(2:4|(1:6)(1:(1:9))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|ADDED_TO_REGION\l|if (r4 == 0.0d) goto L_0x0018\l}"];
+Node_3 [shape=record,label="{3\:\ 0x001a|ADDED_TO_REGION\l|if (r6 == 0.0d) goto L_0x004a\l}"];
+subgraph cluster_Region_138834970 {
+label = "R(2:4|(1:6)(1:(1:9)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|double double r10 = (((r16.longitude() \- r0) * r4) + ((r16.latitude() \- r2) * r6)) \/ ((r4 * r4) + (r6 * r6))\l}"];
+subgraph cluster_IfRegion_318172238 {
+label = "IF [B:5:0x0035] THEN: R(1:6) ELSE: R(1:(1:9))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0035|if (r10 \> SIMPLIFY_DEFAULT_TOLERANCE) goto L_0x0037\l}"];
+subgraph cluster_Region_255732331 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0037|double r0 = r18.longitude()\ldouble r2 = r18.latitude()\l}"];
+}
+subgraph cluster_Region_1812461211 {
+label = "R(1:(1:9)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1818616073 {
+label = "IF [B:8:0x0042] THEN: R(1:9) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0042|if (r10 \> 0.0d) goto L_0x0044\l}"];
+subgraph cluster_Region_1348684623 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0044|r0 += r4 * r10\lr2 += r6 * r10\l}"];
+}
+}
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x004a|PHI: r0 r2 \l  PHI: (r0v1 double) = (r0v0 double), (r0v5 double), (r0v6 double), (r0v0 double) binds: [B:8:0x0042, B:9:0x0044, B:6:0x0037, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v1 double) = (r2v0 double), (r2v2 double), (r2v3 double), (r2v0 double) binds: [B:8:0x0042, B:9:0x0044, B:6:0x0037, B:3:0x001a] A[DONT_GENERATE, DONT_INLINE]\l|double double r4 = r16.longitude() \- r0\ldouble double r0 = r16.latitude() \- r2\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0059|RETURN\l|return (r4 * r4) + (r0 * r0)\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0040}"];
+MethodNode[shape=record,label="{private static double com.mapbox.geojson.utils.PolylineUtils.getSqSegDist((r16v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r17v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r18v0 com.mapbox.geojson.Point A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_10;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,49 @@
+digraph "CFG forcom.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.lowPassFilter([F[F)[F" {
+subgraph cluster_Region_951451178 {
+label = "R(1:(2:(1:1)|(3:2|(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_772470734 {
+label = "R(2:(1:1)|(3:2|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1003525638 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_2005367393 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|RETURN\l|return r6\l}"];
+}
+}
+subgraph cluster_Region_1766401519 {
+label = "R(3:2|(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int r0 = 0\l}"];
+subgraph cluster_LoopRegion_1913059732 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0005|if (r0 \< r6.length) goto L_0x0007\l}"];
+subgraph cluster_Region_717422615 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0007|LOOP_END\lLOOP:0: B:3:0x0004\-\>B:5:0x0007\l|r7[r0] = r7[r0] + ((r6[r0] \- r7[r0]) * ALPHA)\lr0++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0019|RETURN\l|return r7\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:2:0x0003, B:5:0x0007] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0004\-\>B:5:0x0007\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0019|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private float[] com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine.lowPassFilter((r5v0 'this' com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerCompassEngine A[IMMUTABLE_TYPE, THIS]), (r6v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_3;
+Node_3 -> Node_4;
+Node_7 -> Node_6;
+}
+

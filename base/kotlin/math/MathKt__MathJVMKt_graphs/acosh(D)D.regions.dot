@@ -1,0 +1,99 @@
+digraph "CFG forkotlin.math.MathKt__MathJVMKt.acosh(D)D" {
+subgraph cluster_Region_1251691867 {
+label = "R(2:0|(2:(1:14)|(1:(2:(1:15)|(2:6|(2:(1:16)|(3:9|(1:11)|13)))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r0 = (double) 1\l}"];
+subgraph cluster_Region_1707358265 {
+label = "R(2:(1:14)|(1:(2:(1:15)|(2:6|(2:(1:16)|(3:9|(1:11)|13))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_270720213 {
+label = "IF [B:1:0x0004] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6 \< r0) goto L_0x0006\l}"];
+subgraph cluster_Region_1905648016 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return kotlin.jvm.internal.DoubleCompanionObject.INSTANCE.getNaN()\l}"];
+}
+}
+subgraph cluster_Region_329034070 {
+label = "R(1:(2:(1:15)|(2:6|(2:(1:16)|(3:9|(1:11)|13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1226517400 {
+label = "R(2:(1:15)|(2:6|(2:(1:16)|(3:9|(1:11)|13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_224053106 {
+label = "IF [B:4:0x0011] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0011|if (r6 \> kotlin.math.Constants.upper_taylor_2_bound) goto L_0x0013\l}"];
+subgraph cluster_Region_1394421288 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Math.log(r6) + kotlin.math.Constants.LN2\l}"];
+}
+}
+subgraph cluster_Region_1578955257 {
+label = "R(2:6|(2:(1:16)|(3:9|(1:11)|13)))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001b|double double r2 = r6 \- r0\l}"];
+subgraph cluster_Region_624814852 {
+label = "R(2:(1:16)|(3:9|(1:11)|13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_675101201 {
+label = "IF [B:7:0x0022] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|if (r2 \>= kotlin.math.Constants.taylor_n_bound) goto L_0x0024\l}"];
+subgraph cluster_Region_953960900 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ ?|SYNTHETIC\lRETURN\l|return java.lang.Math.log(r6 + java.lang.Math.sqrt((r6 * r6) \- r0))\l}"];
+}
+}
+subgraph cluster_Region_780115895 {
+label = "R(3:9|(1:11)|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0031|double double r6 = java.lang.Math.sqrt(r2)\l}"];
+subgraph cluster_IfRegion_1293797871 {
+label = "IF [B:10:0x0039] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0039|if (r6 \>= kotlin.math.Constants.taylor_2_bound) goto L_0x003b\l}"];
+subgraph cluster_Region_399847608 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x003b|r6 \-= ((r6 * r6) * r6) \/ ((double) 12)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r6 * java.lang.Math.sqrt(2.0d)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0024}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0044|PHI: r6 \l  PHI: (r6v2 double) = (r6v1 double), (r6v4 double) binds: [B:10:0x0039, B:11:0x003b] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{public static final double kotlin.math.MathKt__MathJVMKt.acosh((r6v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, kotlin.SinceKotlin, \{version=1.2\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_2 -> Node_14;
+Node_3 -> Node_4;
+Node_5 -> Node_15;
+Node_8 -> Node_16;
+Node_12 -> Node_13;
+}
+

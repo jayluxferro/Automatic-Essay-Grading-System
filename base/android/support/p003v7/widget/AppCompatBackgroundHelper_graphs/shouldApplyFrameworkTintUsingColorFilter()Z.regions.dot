@@ -1,0 +1,58 @@
+digraph "CFG forandroid.support.v7.widget.AppCompatBackgroundHelper.shouldApplyFrameworkTintUsingColorFilter()Z" {
+subgraph cluster_Region_363565832 {
+label = "R(2:0|(2:(1:5)|(1:(2:(1:4)|(1:8)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = android.os.Build.VERSION.SDK_INT\l}"];
+subgraph cluster_Region_1995623952 {
+label = "R(2:(1:5)|(1:(2:(1:4)|(1:8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1069249693 {
+label = "IF [B:1:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r0 \<= 21) goto L_0x000e\l}"];
+subgraph cluster_Region_1463485673 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return r0 == 21\l}"];
+}
+}
+subgraph cluster_Region_1902948835 {
+label = "R(1:(2:(1:4)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_679563122 {
+label = "R(2:(1:4)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1339132915 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r4.mInternalBackgroundTint != null) goto L_0x000c\l}"];
+subgraph cluster_Region_791895639 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1002701307 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0011}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.widget.AppCompatBackgroundHelper.shouldApplyFrameworkTintUsingColorFilter((r4v0 'this' android.support.v7.widget.AppCompatBackgroundHelper A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+}
+

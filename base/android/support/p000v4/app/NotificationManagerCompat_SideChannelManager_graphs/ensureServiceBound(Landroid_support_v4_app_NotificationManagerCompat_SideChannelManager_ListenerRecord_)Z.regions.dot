@@ -1,0 +1,55 @@
+digraph "CFG forandroid.support.v4.app.NotificationManagerCompat.SideChannelManager.ensureServiceBound(Landroid\/support\/v4\/app\/NotificationManagerCompat$SideChannelManager$ListenerRecord;)Z" {
+subgraph cluster_Region_346013328 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)(1:6)|8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1021623125 {
+label = "R(2:(1:2)|(3:3|(1:5)(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_972129753 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r4.bound == true) goto L_0x0004\l}"];
+subgraph cluster_Region_705771054 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_1133737666 {
+label = "R(3:3|(1:5)(1:6)|8)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|r4.bound = r3.mContext.bindService(new android.content.Intent(android.support.p000v4.app.NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL).setComponent(r4.componentName), r3, 33)\l}"];
+subgraph cluster_IfRegion_1521767414 {
+label = "IF [B:4:0x001f] THEN: R(1:5) ELSE: R(1:6)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f|if (r4.bound == true) goto L_0x0021\l}"];
+subgraph cluster_Region_1868483124 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|r4.retryCount = 0\l}"];
+}
+subgraph cluster_Region_1289560503 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0025|android.util.Log.w(android.support.p000v4.app.NotificationManagerCompat.TAG, \"Unable to bind to listener \" + r4.componentName)\lr3.mContext.unbindService(r3)\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0044|RETURN\l|return r4.bound\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0042}"];
+MethodNode[shape=record,label="{private boolean android.support.v4.app.NotificationManagerCompat.SideChannelManager.ensureServiceBound((r3v0 'this' android.support.v4.app.NotificationManagerCompat$SideChannelManager A[IMMUTABLE_TYPE, THIS]), (r4v0 android.support.v4.app.NotificationManagerCompat$SideChannelManager$ListenerRecord A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+}
+

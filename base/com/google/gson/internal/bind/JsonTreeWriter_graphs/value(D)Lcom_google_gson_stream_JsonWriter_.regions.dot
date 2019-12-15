@@ -1,0 +1,46 @@
+digraph "CFG forcom.google.gson.internal.bind.JsonTreeWriter.value(D)Lcom\/google\/gson\/stream\/JsonWriter;" {
+subgraph cluster_Region_1714010060 {
+label = "R(1:(2:(2:8|9)|(2:6|7)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1651338552 {
+label = "R(2:(2:8|9)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_235171531 {
+label = "IF [B:1:0x0004, B:3:0x000a, B:5:0x0010] THEN: R(2:8|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isLenient() == true) goto L_0x002a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (java.lang.Double.isNaN(r4) == false) goto L_0x000c\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (java.lang.Double.isInfinite(r4) == false) goto L_0x002a\l}"];
+subgraph cluster_Region_5972818 {
+label = "R(2:8|9)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|put(new com.google.gson.JsonPrimitive((java.lang.Number) java.lang.Double.valueOf(r4)))\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0036|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_728200002 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013}"];
+Node_7 [shape=record,label="{7\:\ 0x0029|throw new java.lang.IllegalArgumentException(\"JSON forbids NaN and infinities: \" + r4)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000c}"];
+MethodNode[shape=record,label="{public com.google.gson.stream.JsonWriter com.google.gson.internal.bind.JsonTreeWriter.value((r3v0 'this' com.google.gson.internal.bind.JsonTreeWriter A[IMMUTABLE_TYPE, THIS]), (r4v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_8 -> Node_9;
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

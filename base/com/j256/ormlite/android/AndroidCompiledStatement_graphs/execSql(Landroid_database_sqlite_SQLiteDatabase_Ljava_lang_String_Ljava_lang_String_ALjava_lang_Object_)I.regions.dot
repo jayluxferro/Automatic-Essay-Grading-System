@@ -1,0 +1,263 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidCompiledStatement.execSql(Landroid\/database\/sqlite\/SQLiteDatabase;Ljava\/lang\/String;Ljava\/lang\/String;[Ljava\/lang\/Object;)I" {
+subgraph cluster_Region_1401315199 {
+label = "R(1:(5:1|2|(2:4|(3:7|(1:9)|10))|23|24)) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1933814767 {
+label = "Try: R(5:1|2|(2:4|(3:7|(1:9)|10))|23|24) catches: R(3:25|26|27)";
+node [shape=record,color=blue];
+subgraph cluster_Region_238496400 {
+label = "R(5:1|2|(2:4|(3:7|(1:9)|10))|23|24)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x0035 \}\lSplitter:B:0:0x0000\l|r2.execSQL(r4, r5)     \/\/ Catch:\{ SQLException \-\> 0x0035 \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0003|android.database.sqlite.SQLiteStatement r5 = null\l}"];
+subgraph cluster_TryCatchRegion_564334601 {
+label = "Try: R(2:4|(3:7|(1:9)|10)) catches: R(4:20|(0)|23|24), R(3:15|(0)|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1011959908 {
+label = "R(2:4|(3:7|(1:9)|10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ SQLException \-\> 0x0022, all \-\> 0x001b \}\lSplitter:B:3:0x0006\l|android.database.sqlite.SQLiteStatement android.database.sqlite.SQLiteStatement r2 = r2.compileStatement(\"SELECT CHANGES()\")     \/\/ Catch:\{ SQLException \-\> 0x0022, all \-\> 0x001b \}\l}"];
+subgraph cluster_TryCatchRegion_328304273 {
+label = "Try: R(3:7|(1:9)|10) catches: R(5:13|20|(1:22)|23|24), R(4:11|12|(1:17)|18)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1842878254 {
+label = "R(3:7|(1:9)|10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000e|int int r5 = (int) r2.simpleQueryForLong()\l}"];
+subgraph cluster_IfRegion_926426706 {
+label = "IF [B:8:0x000f] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x000f|if (r2 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_2084776522 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0011|r2.close()\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0014|r2 = r5\l}"];
+}
+subgraph cluster_Region_894909076 {
+label = "R(5:13|20|(1:22)|23|24) | ExcHandler: SQLException (unused android.database.SQLException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0019|r5 = r2\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0023|PHI: r5 \l  PHI: (r5v4 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v6 android.database.sqlite.SQLiteStatement) binds: [B:19:?, B:13:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r2 = 1\l}"];
+subgraph cluster_IfRegion_1777642920 {
+label = "IF [B:21:0x0024] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|if (r5 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1587571116 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0026|r5.close()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0029|PHI: r2 \l  PHI: (r2v3 int) = (r2v4 int), (r2v4 int), (r2v6 int) binds: [B:21:0x0024, B:22:0x0026, B:10:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"executing statement \{\} changed \{\} rows: \{\}\", (java.lang.Object) r3, (java.lang.Object) java.lang.Integer.valueOf(r2), (java.lang.Object) r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_2067355553 {
+label = "R(4:11|12|(1:17)|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0016|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x000a\l|java.lang.Throwable r3 = th\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0017|r5 = r2\l}"];
+subgraph cluster_IfRegion_1671080653 {
+label = "IF [B:16:0x001c] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|PHI: r3 r5 \l  PHI: (r3v3 'th' java.lang.Throwable) = (r3v4 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v7 android.database.sqlite.SQLiteStatement) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_802149115 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|r5.close()\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0021|throw r3\l}"];
+}
+}
+}
+subgraph cluster_Region_1537344085 {
+label = "R(4:20|(0)|23|24) | ExcHandler: SQLException (unused android.database.SQLException)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0023|PHI: r5 \l  PHI: (r5v4 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v6 android.database.sqlite.SQLiteStatement) binds: [B:19:?, B:13:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r2 = 1\l}"];
+subgraph cluster_IfRegion_1378843510 {
+label = "IF [B:21:0x0024] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|if (r5 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1921867323 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0029|PHI: r2 \l  PHI: (r2v3 int) = (r2v4 int), (r2v4 int), (r2v6 int) binds: [B:21:0x0024, B:22:0x0026, B:10:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"executing statement \{\} changed \{\} rows: \{\}\", (java.lang.Object) r3, (java.lang.Object) java.lang.Integer.valueOf(r2), (java.lang.Object) r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_486514518 {
+label = "R(3:15|(0)|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001b|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:3:0x0006\l|java.lang.Throwable r3 = th\l}"];
+subgraph cluster_IfRegion_1920934823 {
+label = "IF [B:16:0x001c] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|PHI: r3 r5 \l  PHI: (r3v3 'th' java.lang.Throwable) = (r3v4 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v7 android.database.sqlite.SQLiteStatement) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_627435416 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0021|throw r3\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0029|PHI: r2 \l  PHI: (r2v3 int) = (r2v4 int), (r2v4 int), (r2v6 int) binds: [B:21:0x0024, B:22:0x0026, B:10:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"executing statement \{\} changed \{\} rows: \{\}\", (java.lang.Object) r3, (java.lang.Object) java.lang.Integer.valueOf(r2), (java.lang.Object) r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_979327147 {
+label = "R(3:25|26|27) | ExcHandler: SQLException (r2v1 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0035|ExcHandler: SQLException (r2v1 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0036}"];
+Node_27 [shape=record,label="{27\:\ 0x0053|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Problems executing \" + r3 + \" Android statement: \" + r4, r2)\l}"];
+}
+}
+}
+subgraph cluster_Region_979327147 {
+label = "R(3:25|26|27) | ExcHandler: SQLException (r2v1 'e' android.database.SQLException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0035|ExcHandler: SQLException (r2v1 'e' android.database.SQLException A[CUSTOM_DECLARE])\lSplitter:B:0:0x0000\l}"];
+Node_26 [shape=record,label="{26\:\ 0x0036}"];
+Node_27 [shape=record,label="{27\:\ 0x0053|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Problems executing \" + r3 + \" Android statement: \" + r4, r2)\l}"];
+}
+subgraph cluster_Region_1537344085 {
+label = "R(4:20|(0)|23|24) | ExcHandler: SQLException (unused android.database.SQLException)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0023|PHI: r5 \l  PHI: (r5v4 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v6 android.database.sqlite.SQLiteStatement) binds: [B:19:?, B:13:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r2 = 1\l}"];
+subgraph cluster_IfRegion_1378843510 {
+label = "IF [B:21:0x0024] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|if (r5 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1921867323 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0029|PHI: r2 \l  PHI: (r2v3 int) = (r2v4 int), (r2v4 int), (r2v6 int) binds: [B:21:0x0024, B:22:0x0026, B:10:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"executing statement \{\} changed \{\} rows: \{\}\", (java.lang.Object) r3, (java.lang.Object) java.lang.Integer.valueOf(r2), (java.lang.Object) r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_486514518 {
+label = "R(3:15|(0)|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x001b|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:3:0x0006\l|java.lang.Throwable r3 = th\l}"];
+subgraph cluster_IfRegion_1920934823 {
+label = "IF [B:16:0x001c] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|PHI: r3 r5 \l  PHI: (r3v3 'th' java.lang.Throwable) = (r3v4 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v7 android.database.sqlite.SQLiteStatement) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_627435416 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0021|throw r3\l}"];
+}
+subgraph cluster_Region_894909076 {
+label = "R(5:13|20|(1:22)|23|24) | ExcHandler: SQLException (unused android.database.SQLException)\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0019|r5 = r2\l}"];
+Node_20 [shape=record,label="{20\:\ 0x0023|PHI: r5 \l  PHI: (r5v4 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v6 android.database.sqlite.SQLiteStatement) binds: [B:19:?, B:13:0x0019] A[DONT_GENERATE, DONT_INLINE]\l|r2 = 1\l}"];
+subgraph cluster_IfRegion_1777642920 {
+label = "IF [B:21:0x0024] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0024|if (r5 != null) goto L_0x0026\l}"];
+subgraph cluster_Region_1587571116 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0026|r5.close()\l}"];
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0029|PHI: r2 \l  PHI: (r2v3 int) = (r2v4 int), (r2v4 int), (r2v6 int) binds: [B:21:0x0024, B:22:0x0026, B:10:0x0014] A[DONT_GENERATE, DONT_INLINE]\l|logger.trace(\"executing statement \{\} changed \{\} rows: \{\}\", (java.lang.Object) r3, (java.lang.Object) java.lang.Integer.valueOf(r2), (java.lang.Object) r4)\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0034|RETURN\l|return r2\l}"];
+}
+subgraph cluster_Region_2067355553 {
+label = "R(4:11|12|(1:17)|18) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0016|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x000a\l|java.lang.Throwable r3 = th\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0017|r5 = r2\l}"];
+subgraph cluster_IfRegion_1671080653 {
+label = "IF [B:16:0x001c] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x001c|PHI: r3 r5 \l  PHI: (r3v3 'th' java.lang.Throwable) = (r3v4 'th' java.lang.Throwable), (r3v5 'th' java.lang.Throwable) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 android.database.sqlite.SQLiteStatement) = (r5v2 android.database.sqlite.SQLiteStatement), (r5v7 android.database.sqlite.SQLiteStatement) binds: [B:15:0x001b, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x001e\l}"];
+subgraph cluster_Region_802149115 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x001e|r5.close()\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0021|throw r3\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006|SYNTHETIC\lSplitter:B:3:0x0006\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000a|SYNTHETIC\lSplitter:B:5:0x000a\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|Catch:\{ SQLException \-\> 0x0019, all \-\> 0x0016 \}\lSplitter:B:5:0x000a\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lExcHandler: SQLException (unused android.database.SQLException)\lSplitter:B:5:0x000a\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ ?|SYNTHETIC\lExcHandler: SQLException (unused android.database.SQLException)\lSplitter:B:3:0x0006\l}"];
+MethodNode[shape=record,label="{static int com.j256.ormlite.android.AndroidCompiledStatement.execSql((r2v0 android.database.sqlite.SQLiteDatabase A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.lang.Object[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:22:0x0026 \lRemoved duplicated region for block: B:17:0x001e \lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_25;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_23;
+Node_13 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_11 -> Node_12;
+Node_12 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_23 -> Node_24;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_23 -> Node_24;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_23 -> Node_24;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_13 -> Node_20;
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_11 -> Node_12;
+Node_12 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_0 -> Node_1;
+Node_0 -> Node_25;
+Node_3 -> Node_4;
+Node_3 -> Node_19;
+Node_3 -> Node_15;
+Node_5 -> Node_6;
+Node_5 -> Node_14;
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_14 -> Node_13;
+Node_19 -> Node_20;
+}
+

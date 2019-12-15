@@ -1,0 +1,58 @@
+digraph "CFG forcom.google.android.exoplayer2.source.chunk.ChunkedTrackBlacklistUtil.maybeBlacklistTrack(Lcom\/google\/android\/exoplayer2\/trackselection\/TrackSelection;ILjava\/lang\/Exception;J)Z" {
+subgraph cluster_Region_529100330 {
+label = "R(1:(2:(1:6)|(2:2|(2:(2:4|7)|(2:5|8)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2030946609 {
+label = "R(2:(1:6)|(2:2|(2:(2:4|7)|(2:5|8))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_731944646 {
+label = "IF [B:1:0x0004] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (shouldBlacklist(r7) != true) goto L_0x0068\l}"];
+subgraph cluster_Region_1436574285 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0068|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_10976684 {
+label = "R(2:2|(2:(2:4|7)|(2:5|8)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|boolean boolean r0 = r5.blacklist(r6, r8)\lint int r1 = ((com.google.android.exoplayer2.upstream.HttpDataSource.InvalidResponseCodeException) r7).responseCode\l}"];
+subgraph cluster_Region_25997037 {
+label = "R(2:(2:4|7)|(2:5|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1625864592 {
+label = "IF [B:3:0x000e] THEN: R(2:4|7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r0 == true) goto L_0x0010\l}"];
+subgraph cluster_Region_298644768 {
+label = "R(2:4|7)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|android.util.Log.w(TAG, \"Blacklisted: duration=\" + r8 + \", responseCode=\" + r1 + \", format=\" + r5.getFormat(r6))\l}"];
+Node_7 [shape=record,label="{7\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_754345335 {
+label = "R(2:5|8)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0041|android.util.Log.w(TAG, \"Blacklisting failed (cannot blacklist last enabled track): responseCode=\" + r1 + \", format=\" + r5.getFormat(r6))\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public static boolean com.google.android.exoplayer2.source.chunk.ChunkedTrackBlacklistUtil.maybeBlacklistTrack((r5v0 'trackSelection' com.google.android.exoplayer2.trackselection.TrackSelection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 'trackSelectionIndex' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'e' java.lang.Exception A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'blacklistDurationMs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_8;
+Node_0 -> Node_1;
+}
+

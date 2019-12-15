@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.exoplayer2.ExoPlayerImpl.setPlayWhenReady(Z)V" {
+subgraph cluster_Region_1851844349 {
+label = "R(1:(1:(2:2|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_708312238 {
+label = "R(1:(2:2|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1112163664 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(1:5)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.playWhenReady != r4) goto L_0x0004\l}"];
+subgraph cluster_Region_905669937 {
+label = "R(2:2|(1:5))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.playWhenReady = r4\lr3.internalPlayer.setPlayWhenReady(r4)\ljava.util.Iterator java.util.Iterator\<com.google.android.exoplayer2.ExoPlayer.EventListener\> r1 = r3.listeners.iterator()\l}"];
+subgraph cluster_LoopRegion_1505945309 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0015|if (r1.hasNext() != false) goto L_0x0017\l}"];
+subgraph cluster_Region_1403089276 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|LOOP_END\lLOOP:0: B:3:0x0011\-\>B:5:0x0017\l|r1.next().onPlayerStateChanged(r4, r3.playbackState)\l}"];
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0011|LOOP_START\lLOOP:0: B:3:0x0011\-\>B:5:0x0017\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0023|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.ExoPlayerImpl.setPlayWhenReady((r3v0 'this' com.google.android.exoplayer2.ExoPlayerImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 'playWhenReady' boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_3;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_8;
+}
+

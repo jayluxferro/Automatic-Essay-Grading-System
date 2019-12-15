@@ -1,0 +1,25 @@
+digraph "CFG forandroidx.versionedparcelable.VersionedParcel.writeSerializable(Ljava\/io\/Serializable;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 != null) goto L_0x0007\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|writeString((java.lang.String) null)\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|RETURN\l|return\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|java.lang.String r0 = r5.getClass().getName()\lwriteString(r0)\ljava.io.ByteArrayOutputStream r1 = new java.io.ByteArrayOutputStream()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0017|SYNTHETIC\lSplitter:B:4:0x0017\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ IOException \-\> 0x002a \}\lSplitter:B:4:0x0017\l|java.io.ObjectOutputStream r2 = new java.io.ObjectOutputStream(r1)     \/\/ Catch:\{ IOException \-\> 0x002a \}\lr2.writeObject(r5)     \/\/ Catch:\{ IOException \-\> 0x002a \}\lr2.close()     \/\/ Catch:\{ IOException \-\> 0x002a \}\lwriteByteArray(r1.toByteArray())     \/\/ Catch:\{ IOException \-\> 0x002a \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|RETURN\l|return\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|ExcHandler: IOException (r5v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0017\l|java.io.IOException r5 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002b|java.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"VersionedParcelable encountered IOException writing serializable object (name = \")\lr2.append(r0)\lr2.append(\")\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0046|throw new java.lang.RuntimeException(r2.toString(), r5)\l}"];
+MethodNode[shape=record,label="{private void androidx.versionedparcelable.VersionedParcel.writeSerializable((r4v0 'this' androidx.versionedparcelable.VersionedParcel A[IMMUTABLE_TYPE, THIS]), (r5v0 java.io.Serializable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_3;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+

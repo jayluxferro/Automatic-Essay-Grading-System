@@ -1,0 +1,20 @@
+digraph "CFG forcom.squareup.picasso.MarkableInputStream.skip(J)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:boolean) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.allowExpire boolean \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x0017 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IGET  (r0 I:long) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.offset long \l0x0006: ARITH  (r0 I:long) = (r0 I:long) + (r5 I:long) \l0x0007: IGET  (r2 I:long) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.limit long \l0x0009: CMP_L  (r0 I:int) = (r0 I:long), (r2 I:long) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:5:0x0017 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: IGET  (r0 I:long) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.offset long \l0x000f: ARITH  (r0 I:long) = (r0 I:long) + (r5 I:long) \l0x0010: IGET  (r2 I:int) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.limitIncrement int \l0x0012: CAST  (r2 I:long) = (long) (r2 I:int) \l0x0013: ARITH  (r0 I:long) = (r0 I:long) + (r2 I:long) \l0x0014: INVOKE  \l  (r4 I:com.squareup.picasso.MarkableInputStream)\l  (r0 I:long)\l com.squareup.picasso.MarkableInputStream.setLimit(long):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0017|0x0017: IGET  (r0 I:java.io.InputStream) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.in java.io.InputStream \l0x0019: INVOKE  (r5 I:long) = (r0 I:java.io.InputStream), (r5 I:long) java.io.InputStream.skip(long):long type: VIRTUAL \l0x001d: IGET  (r0 I:long) = (r4 I:com.squareup.picasso.MarkableInputStream) com.squareup.picasso.MarkableInputStream.offset long \l0x001f: ARITH  (r0 I:long) = (r0 I:long) + (r5 I:long) \l0x0020: IPUT  \l  (r0 I:long)\l  (r4 I:com.squareup.picasso.MarkableInputStream)\l com.squareup.picasso.MarkableInputStream.offset long \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0022|0x0022: RETURN  (r5 I:long) \l}"];
+MethodNode[shape=record,label="{public long com.squareup.picasso.MarkableInputStream.skip((r4 'this' I:com.squareup.picasso.MarkableInputStream A[IMMUTABLE_TYPE, THIS]), (r5 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

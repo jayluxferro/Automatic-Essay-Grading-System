@@ -1,0 +1,41 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.TileDependencies.getOverlappingElements(Lorg\/mapsforge\/core\/model\/Tile;Lorg\/mapsforge\/core\/model\/Tile;)Ljava\/util\/Set;" {
+subgraph cluster_Region_1252085261 {
+label = "R(1:(2:(1:7)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1440194771 {
+label = "R(2:(1:7)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_599133963 {
+label = "IF [B:1:0x0006, B:3:0x0014] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r1.overlapData.containsKey(r2) == false) goto L_0x0025\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|ADDED_TO_REGION\l|if (r1.overlapData.get(r2).containsKey(r3) == false) goto L_0x0025\l}"];
+subgraph cluster_Region_1761243744 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|RETURN\l|return new java.util.HashSet(0)\l}"];
+}
+}
+subgraph cluster_Region_678135892 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|RETURN\l|return (java.util.Set) r1.overlapData.get(r2).get(r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0025}"];
+MethodNode[shape=record,label="{java.util.Set\<org.mapsforge.core.mapelements.MapElementContainer\> org.mapsforge.map.layer.renderer.TileDependencies.getOverlappingElements((r1v0 'this' org.mapsforge.map.layer.renderer.TileDependencies A[IMMUTABLE_TYPE, THIS]), (r2v0 org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 org.mapsforge.core.model.Tile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lorg\/mapsforge\/core\/model\/Tile;, Lorg\/mapsforge\/core\/model\/Tile;, ), Ljava\/util\/Set\<, Lorg\/mapsforge\/core\/mapelements\/MapElementContainer;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

@@ -1,0 +1,45 @@
+digraph "CFG forcom.squareup.picasso.BitmapHunter.getExifTranslation(I)I" {
+subgraph cluster_Region_2068828285 {
+label = "R(2:(1:4)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_476465060 {
+label = "IF [B:1:0x0001, B:3:0x0004] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|ADDED_TO_REGION\l|if (r1 == 2) goto L_0x000b\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0004|ADDED_TO_REGION\l|if (r1 == 7) goto L_0x000b\l}"];
+subgraph cluster_Region_1438033300 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+subgraph cluster_SwitchRegion_1241603704 {
+label = "Switch: 1, default: R(1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|switch(r1) \{\l    case 4: goto L_0x000b;\l    case 5: goto L_0x000b;\l    default: goto L_0x0009;\l\}\l}"];
+subgraph cluster_Region_1338549117 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_1639814727 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_21431777 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0009|SYNTHETIC\lRETURN\l|return 1\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x000b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return \-1\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+MethodNode[shape=record,label="{static int com.squareup.picasso.BitmapHunter.getExifTranslation((r1v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_4 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

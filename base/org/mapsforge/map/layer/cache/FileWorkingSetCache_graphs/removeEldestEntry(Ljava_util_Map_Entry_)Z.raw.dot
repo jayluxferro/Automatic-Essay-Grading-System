@@ -1,0 +1,33 @@
+digraph "CFG fororg.mapsforge.map.layer.cache.FileWorkingSetCache.removeEldestEntry(Ljava\/util\/Map$Entry;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:int) = (r3 I:org.mapsforge.map.layer.cache.FileWorkingSetCache) org.mapsforge.map.layer.cache.FileWorkingSetCache.size():int type: VIRTUAL \l0x0004: IGET  (r1 I:int) = (r3 I:org.mapsforge.map.layer.cache.FileWorkingSetCache) org.mapsforge.map.layer.cache.FileWorkingSetCache.capacity int \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r0 I:?[int, byte, short, char]) \<= (r1 I:?[int, byte, short, char])  \-\> B:11:0x0034 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: INVOKE  (r4 I:java.lang.Object) = (r4 I:java.util.Map$Entry) java.util.Map.Entry.getValue():java.lang.Object type: INTERFACE \l0x000c: CHECK_CAST  (r4 I:java.io.File) = (java.io.File) (r4 I:?[OBJECT, ARRAY]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|0x000e: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0032 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|0x0010: INVOKE  (r0 I:boolean) = (r4 I:java.io.File) java.io.File.exists():boolean type: VIRTUAL \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|0x0014: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0032 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|0x0016: INVOKE  (r0 I:boolean) = (r4 I:java.io.File) java.io.File.delete():boolean type: VIRTUAL \l}"];
+Node_7 [shape=record,label="{7\:\ 0x001a|0x001a: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:9:0x0032 \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001c|0x001c: SGET  (r0 I:java.util.logging.Logger) =  org.mapsforge.map.layer.cache.FileWorkingSetCache.LOGGER java.util.logging.Logger \l0x001e: NEW_INSTANCE  (r1 I:java.lang.StringBuilder) =  java.lang.StringBuilder \l0x0020: INVOKE  (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.\<init\>():void type: DIRECT \l0x0023: CONST_STR  (r2 I:java.lang.String) =  \"could not delete file: \" \l0x0025: INVOKE  (r1 I:java.lang.StringBuilder), (r2 I:java.lang.String) java.lang.StringBuilder.append(java.lang.String):java.lang.StringBuilder type: VIRTUAL \l0x0028: INVOKE  (r1 I:java.lang.StringBuilder), (r4 I:java.lang.Object) java.lang.StringBuilder.append(java.lang.Object):java.lang.StringBuilder type: VIRTUAL \l0x002b: INVOKE  (r4 I:java.lang.String) = (r1 I:java.lang.StringBuilder) java.lang.StringBuilder.toString():java.lang.String type: VIRTUAL \l0x002f: INVOKE  (r0 I:java.util.logging.Logger), (r4 I:java.lang.String) java.util.logging.Logger.severe(java.lang.String):void type: VIRTUAL \l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|0x0032: CONST  (r4 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x0033|0x0033: RETURN  (r4 I:boolean) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0034|0x0034: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0035|0x0035: RETURN  (r4 I:boolean) \l}"];
+MethodNode[shape=record,label="{protected boolean org.mapsforge.map.layer.cache.FileWorkingSetCache.removeEldestEntry((r3 'this' I:org.mapsforge.map.layer.cache.FileWorkingSetCache A[IMMUTABLE_TYPE, THIS]), (r4 I:java.util.Map$Entry\<T, java.io.File\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map$Entry\<, TT;, Ljava\/io\/File;, \>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,101 @@
+digraph "CFG fororg.mapsforge.map.layer.cache.InMemoryTileCache.put(Lorg\/mapsforge\/map\/layer\/queue\/Job;Lorg\/mapsforge\/core\/graphics\/TileBitmap;)V" {
+subgraph cluster_Region_289534590 {
+label = "R(1:(1:(1:(1:17)(1:(4:4|(1:6)|(1:9)|10)(1:15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1200477273 {
+label = "R(1:(1:(1:17)(1:(4:4|(1:6)|(1:9)|10)(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1146276701 {
+label = "R(1:(1:17)(1:(4:4|(1:6)|(1:9)|10)(1:15)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1202653812 {
+label = "IF [B:1:0x0001] THEN: R(1:17) ELSE: R(1:(4:4|(1:6)|(1:9)|10)(1:15))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r4 == null) goto L_0x0042\l}"];
+subgraph cluster_Region_1499710205 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0049|throw new java.lang.IllegalArgumentException(\"key must not be null\")\l}"];
+}
+subgraph cluster_Region_1885727380 {
+label = "R(1:(4:4|(1:6)|(1:9)|10)(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_583000038 {
+label = "IF [B:2:0x0003] THEN: R(4:4|(1:6)|(1:9)|10) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|if (r5 != null) goto L_0x0005\l}"];
+subgraph cluster_Region_873996303 {
+label = "R(4:4|(1:6)|(1:9)|10)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|org.mapsforge.core.graphics.TileBitmap org.mapsforge.core.graphics.TileBitmap r0 = (org.mapsforge.core.graphics.TileBitmap) r3.lruCache.get(r4)\l}"];
+subgraph cluster_IfRegion_23905406 {
+label = "IF [B:5:0x000d] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|if (r0 != null) goto L_0x000f\l}"];
+subgraph cluster_Region_1939804983 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f|r0.decrementRefCount()\l}"];
+}
+}
+subgraph cluster_IfRegion_503090543 {
+label = "IF [B:8:0x0018] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0018|if (r3.lruCache.put(r4, r5) != null) goto L_0x001a\l}"];
+subgraph cluster_Region_626110054 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001a|java.util.logging.Logger java.util.logging.Logger r0 = LOGGER\lr0.warning(\"overwriting cached entry: \" + r4)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0030|r5.incrementRefCount()\lr3.observable.notifyObservers()\l}"];
+}
+subgraph cluster_Region_1515175943 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0041|throw new java.lang.IllegalArgumentException(\"bitmap must not be null\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005|SYNTHETIC\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0012}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0038|DONT_GENERATE\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0039}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003a|SYNTHETIC\lSplitter:B:13:0x003a\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|Splitter:B:13:0x003a\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0042}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x004a|REMOVE\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x004b|REMOVE\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x004c|REMOVE\l|throw r4\l}"];
+MethodNode[shape=record,label="{public synchronized void org.mapsforge.map.layer.cache.InMemoryTileCache.put((r3v0 'this' org.mapsforge.map.layer.cache.InMemoryTileCache A[IMMUTABLE_TYPE, THIS]), (r4v0 org.mapsforge.map.layer.queue.Job A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 org.mapsforge.core.graphics.TileBitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3;
+Node_2 -> Node_13[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_18;
+Node_7 -> Node_8;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_18;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+}
+

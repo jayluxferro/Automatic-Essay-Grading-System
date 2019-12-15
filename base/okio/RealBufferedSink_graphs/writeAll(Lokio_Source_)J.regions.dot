@@ -1,0 +1,63 @@
+digraph "CFG forokio.RealBufferedSink.writeAll(Lokio\/Source;)J" {
+subgraph cluster_Region_2135897588 {
+label = "R(1:(2:1|(2:2|(2:(1:5)|(1:4))))(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_622332216 {
+label = "IF [B:0:0x0000] THEN: R(2:1|(2:2|(2:(1:5)|(1:4)))) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_428676738 {
+label = "R(2:1|(2:2|(2:(1:5)|(1:4))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|long r0 = 0\l}"];
+subgraph cluster_LoopRegion_201616433 {
+label = "LOOP:0: (2:2|(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1284581008 {
+label = "R(2:2|(2:(1:5)|(1:4)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|LOOP_START\lPHI: r0 \l  PHI: (r0v2 long) = (r0v1 long), (r0v3 long) binds: [B:1:0x0002, B:4:0x0012] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:2:0x0004\-\>B:4:0x0012\l|long long r2 = r7.read(r6.buffer, android.support.p000v4.media.session.PlaybackStateCompat.ACTION_PLAY_FROM_URI)\l}"];
+subgraph cluster_Region_1163476722 {
+label = "R(2:(1:5)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1029243014 {
+label = "IF [B:3:0x0010] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|if (r2 == \-1) goto L_0x0017\l}"];
+subgraph cluster_Region_1821798180 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_81943726 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0012|LOOP_END\lLOOP:0: B:2:0x0004\-\>B:4:0x0012\l|r0 += r2\lemitCompleteSegments()\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1128219448 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001f|throw new java.lang.IllegalArgumentException(\"source == null\")\l}"];
+}
+}
+}
+Node_6 [shape=record,color=red,label="{6\:\ 0x0018}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long okio.RealBufferedSink.writeAll((r6v0 'this' okio.RealBufferedSink A[IMMUTABLE_TYPE, THIS]), (r7v0 okio.Source A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_6[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_8;
+Node_4 -> Node_2;
+Node_6 -> Node_7;
+Node_8 -> Node_5;
+}
+

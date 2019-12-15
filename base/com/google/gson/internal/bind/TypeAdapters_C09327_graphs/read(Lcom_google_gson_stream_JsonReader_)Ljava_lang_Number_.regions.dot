@@ -1,0 +1,63 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapters.7.read(Lcom\/google\/gson\/stream\/JsonReader;)Ljava\/lang\/Number;" {
+subgraph cluster_Region_2139146003 {
+label = "R(1:(2:(2:2|3)|(1:(1:6))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1783758461 {
+label = "R(2:(2:2|3)|(1:(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_75827882 {
+label = "IF [B:1:0x0006] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r3.peek() == com.google.gson.stream.JsonToken.NULL) goto L_0x0008\l}"];
+subgraph cluster_Region_1508179977 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|r3.nextNull()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_547679353 {
+label = "R(1:(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1164135430 {
+label = "Try: R(1:6) catches: R(2:7|9)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1763696218 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0015|RETURN\l|return java.lang.Integer.valueOf(r3.nextInt())\l}"];
+}
+subgraph cluster_Region_411795000 {
+label = "R(2:7|9) | ExcHandler: NumberFormatException (r3v1 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|ExcHandler: NumberFormatException (r3v1 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|throw new com.google.gson.JsonSyntaxException((java.lang.Throwable) r3)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_411795000 {
+label = "R(2:7|9) | ExcHandler: NumberFormatException (r3v1 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0016|ExcHandler: NumberFormatException (r3v1 'e' java.lang.NumberFormatException A[CUSTOM_DECLARE])\lSplitter:B:4:0x000d\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001c|throw new com.google.gson.JsonSyntaxException((java.lang.Throwable) r3)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d|SYNTHETIC\lSplitter:B:4:0x000d\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ ?|Catch:\{ NumberFormatException \-\> 0x0016 \}\lSplitter:B:4:0x000d\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017}"];
+MethodNode[shape=record,label="{public java.lang.Number com.google.gson.internal.bind.TypeAdapters.7.read((r2v0 'this' com.google.gson.internal.bind.TypeAdapters$7 A[IMMUTABLE_TYPE, THIS]), (r3v0 com.google.gson.stream.JsonReader A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+}
+

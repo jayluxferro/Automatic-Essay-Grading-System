@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.http2.Http2Connection.pushStream(ILjava\/util\/List;Z)Lokhttp3\/internal\/http2\/Http2Stream;" {
+subgraph cluster_Region_1497093556 {
+label = "R(1:(2:(1:3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_612798667 {
+label = "R(2:(1:3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1221278328 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.client == false) goto L_0x0004\l}"];
+subgraph cluster_Region_1146630260 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|RETURN\l|return newStream(r2, r3, r4)\l}"];
+}
+}
+subgraph cluster_Region_1128913726 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new java.lang.IllegalStateException(\"Client cannot push requests.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+MethodNode[shape=record,label="{public okhttp3.internal.http2.Http2Stream okhttp3.internal.http2.Http2Connection.pushStream((r1v0 'this' okhttp3.internal.http2.Http2Connection A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 java.util.List\<okhttp3.internal.http2.Header\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(I, Ljava\/util\/List\<, Lokhttp3\/internal\/http2\/Header;, \>;Z), Lokhttp3\/internal\/http2\/Http2Stream;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

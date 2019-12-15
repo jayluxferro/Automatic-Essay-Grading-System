@@ -1,0 +1,93 @@
+digraph "CFG fororg.osgeo.proj4j.proj.FoucautSinusoidalProjection.projectInverse(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1416090528 {
+label = "R(4:0|(3:2|(2:4|(2:(1:17)|(1:6)))|(1:12))(1:13)|14|15)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r16\ldouble r1 = r19\lorg.osgeo.proj4j.ProjCoordinate r3 = r21\l}"];
+subgraph cluster_IfRegion_5398607 {
+label = "IF [B:1:0x000c] THEN: R(3:2|(2:4|(2:(1:17)|(1:6)))|(1:12)) ELSE: R(1:13)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0.f366n != 0.0d) goto L_0x000e\l}"];
+subgraph cluster_Region_1018602374 {
+label = "R(3:2|(2:4|(2:(1:17)|(1:6)))|(1:12))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r3.f295y = r1\lint r4 = 10\l}"];
+subgraph cluster_LoopRegion_561599066 {
+label = "LOOP:0: (2:4|(2:(1:17)|(1:6)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|LOOP_START\lPHI: r4 \l  PHI: (r4v7 int) = (r4v6 int), (r4v9 int) binds: [B:2:0x000e, B:6:0x0047] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0012\-\>B:6:0x0047\l|if (r4 \> 0) goto L_0x0014\l}"];
+subgraph cluster_Region_149532976 {
+label = "R(2:4|(2:(1:17)|(1:6)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|double double r8 = r3.f295y\ldouble double r10 = (((r0.f366n * r3.f295y) + (r0.f367n1 * java.lang.Math.sin(r3.f295y))) \- r1) \/ (r0.f366n + (r0.f367n1 * java.lang.Math.cos(r3.f295y)))\lr3.f295y = r8 \- r10\l}"];
+subgraph cluster_Region_2084269936 {
+label = "R(2:(1:17)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1255069805 {
+label = "IF [B:5:0x0044] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0044|if (java.lang.Math.abs(r10) \< LOOP_TOL) goto L_0x004c\l}"];
+subgraph cluster_Region_1240452519 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x004c|SYNTHETIC\lEDGE_INSN: B:17:0x004c\-\>B:7:0x004c ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1692147648 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0047|LOOP_END\lLOOP:0: B:3:0x0012\-\>B:6:0x0047\l|r4\-\-\l}"];
+}
+}
+}
+}
+subgraph cluster_IfRegion_1593711779 {
+label = "IF [B:7:0x004c] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004c|EDGE_INSN: B:17:0x004c\-\>B:7:0x004c ?: BREAK  \l|if (r4 == 0) goto L_0x004e\l}"];
+subgraph cluster_Region_133108452 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x005f|PHI: r1 \l  PHI: (r1v5 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.f295y = r1 \< 0.0d ? \-1.5707963267948966d : 1.5707963267948966d\l}"];
+}
+}
+}
+subgraph cluster_Region_1845439338 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0062|r3.f295y = org.osgeo.proj4j.util.ProjectionMath.asin(r19)\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0068|double double r1 = java.lang.Math.cos(r3.f295y)\lr3.f294x = ((r0.f366n + (r0.f367n1 * r1)) * r17) \/ r1\l}"];
+Node_15 [shape=record,label="{15\:\ 0x007a|RETURN\l|return r3\l}"];
+}
+Node_8 [shape=record,color=red,label="{8\:\ 0x004e}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0052}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0054}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x005a}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x004c|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.FoucautSinusoidalProjection.projectInverse((r16v0 'this' org.osgeo.proj4j.proj.FoucautSinusoidalProjection A[IMMUTABLE_TYPE, THIS]), (r17v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r19v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r21v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_16[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_17;
+Node_17 -> Node_7;
+Node_6 -> Node_3;
+Node_7 -> Node_8;
+Node_7 -> Node_14[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11;
+Node_10 -> Node_12;
+Node_11 -> Node_12;
+Node_16 -> Node_7;
+}
+

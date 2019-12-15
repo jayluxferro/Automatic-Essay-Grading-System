@@ -1,0 +1,16 @@
+digraph "CFG forokhttp3.internal.connection.StreamAllocation.acquire(Lokhttp3\/internal\/connection\/RealConnection;Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IGET  (r0 I:okhttp3.internal.connection.RealConnection) = (r1 I:okhttp3.internal.connection.StreamAllocation) okhttp3.internal.connection.StreamAllocation.connection okhttp3.internal.connection.RealConnection \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|0x0002: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0015 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|0x0004: IPUT  \l  (r2 I:okhttp3.internal.connection.RealConnection)\l  (r1 I:okhttp3.internal.connection.StreamAllocation)\l okhttp3.internal.connection.StreamAllocation.connection okhttp3.internal.connection.RealConnection \l0x0006: IPUT  \l  (r3 I:boolean)\l  (r1 I:okhttp3.internal.connection.StreamAllocation)\l okhttp3.internal.connection.StreamAllocation.reportedAcquired boolean \l0x0008: IGET  (r2 I:java.util.List\<java.lang.ref.Reference\<okhttp3.internal.connection.StreamAllocation\>\>) = (r2 I:okhttp3.internal.connection.RealConnection) okhttp3.internal.connection.RealConnection.allocations java.util.List \l0x000a: NEW_INSTANCE  (r3 I:okhttp3.internal.connection.StreamAllocation$StreamAllocationReference) =  okhttp3.internal.connection.StreamAllocation$StreamAllocationReference \l0x000c: IGET  (r0 I:java.lang.Object) = (r1 I:okhttp3.internal.connection.StreamAllocation) okhttp3.internal.connection.StreamAllocation.callStackTrace java.lang.Object \l0x000e: INVOKE  \l  (r3 I:okhttp3.internal.connection.StreamAllocation$StreamAllocationReference)\l  (r1 I:okhttp3.internal.connection.StreamAllocation)\l  (r0 I:java.lang.Object)\l okhttp3.internal.connection.StreamAllocation.StreamAllocationReference.\<init\>(okhttp3.internal.connection.StreamAllocation, java.lang.Object):void type: DIRECT \l0x0011: INVOKE  (r2 I:java.util.List), (r3 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|0x0014: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|0x0015: NEW_INSTANCE  (r2 I:java.lang.IllegalStateException) =  java.lang.IllegalStateException \l0x0017: INVOKE  (r2 I:java.lang.IllegalStateException) java.lang.IllegalStateException.\<init\>():void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001a|0x001a: THROW  (r2 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.connection.StreamAllocation.acquire((r1 'this' I:okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, THIS]), (r2 I:okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3 I:boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

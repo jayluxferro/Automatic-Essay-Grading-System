@@ -1,0 +1,44 @@
+digraph "CFG forandroid.support.v7.widget.SimpleItemAnimator.animateAppearance(Landroid\/support\/v7\/widget\/RecyclerView$ViewHolder;Landroid\/support\/v7\/widget\/RecyclerView$ItemAnimator$ItemHolderInfo;Landroid\/support\/v7\/widget\/RecyclerView$ItemAnimator$ItemHolderInfo;)Z" {
+subgraph cluster_Region_2027384669 {
+label = "R(1:(2:(1:8)|(2:5|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1097861642 {
+label = "R(2:(1:8)|(2:5|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_527824298 {
+label = "IF [B:0:0x0000, B:2:0x0006, B:4:0x000c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r10 == null) goto L_0x001d\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|ADDED_TO_REGION\l|if (r10.left == r11.left) goto L_0x0008\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000c|ADDED_TO_REGION\l|if (r10.top == r11.top) goto L_0x001d\l}"];
+subgraph cluster_Region_874763688 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0021|RETURN\l|return animateAdd(r9)\l}"];
+}
+}
+subgraph cluster_Region_2009987574 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e}"];
+Node_6 [shape=record,label="{6\:\ 0x001c|RETURN\l|return animateMove(r9, r10.left, r10.top, r11.left, r11.top)\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001d}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.widget.SimpleItemAnimator.animateAppearance((r8v0 'this' android.support.v7.widget.SimpleItemAnimator A[IMMUTABLE_TYPE, THIS]), (r9v0 android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 android.support.v7.widget.RecyclerView$ItemAnimator$ItemHolderInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 android.support.v7.widget.RecyclerView$ItemAnimator$ItemHolderInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_7;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

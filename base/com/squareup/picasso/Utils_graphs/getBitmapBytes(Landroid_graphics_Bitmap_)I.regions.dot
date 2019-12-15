@@ -1,0 +1,41 @@
+digraph "CFG forcom.squareup.picasso.Utils.getBitmapBytes(Landroid\/graphics\/Bitmap;)I" {
+subgraph cluster_Region_731670333 {
+label = "R(2:1|(2:(1:5)|(2:6|7)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|int r0 = android.os.Build.VERSION.SDK_INT \>= 19 ? r3.getAllocationByteCount() : r3.getByteCount()\l}"];
+subgraph cluster_Region_693265509 {
+label = "R(2:(1:5)|(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_951975503 {
+label = "IF [B:4:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|PHI: r0 \l  PHI: (r0v1 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 \>= 0) goto L_0x0011\l}"];
+subgraph cluster_Region_275088168 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_892103926 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|throw new java.lang.IllegalStateException(\"Negative size: \" + r3)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000b}"];
+MethodNode[shape=record,label="{static int com.squareup.picasso.Utils.getBitmapBytes((r3v0 android.graphics.Bitmap A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+}
+

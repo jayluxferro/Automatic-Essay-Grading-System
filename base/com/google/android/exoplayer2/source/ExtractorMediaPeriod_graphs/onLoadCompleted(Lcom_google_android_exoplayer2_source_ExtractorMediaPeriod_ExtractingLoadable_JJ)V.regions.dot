@@ -1,0 +1,36 @@
+digraph "CFG forcom.google.android.exoplayer2.source.ExtractorMediaPeriod.onLoadCompleted(Lcom\/google\/android\/exoplayer2\/source\/ExtractorMediaPeriod$ExtractingLoadable;JJ)V" {
+subgraph cluster_Region_1836789868 {
+label = "R(3:0|(2:2|5)|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|copyLengthFromLoader(r8)\lr7.loadingFinished = true\l}"];
+subgraph cluster_IfRegion_205370438 {
+label = "IF [B:1:0x000f] THEN: R(2:2|5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r7.durationUs == com.google.android.exoplayer2.C1260C.TIME_UNSET) goto L_0x0011\l}"];
+subgraph cluster_Region_484869029 {
+label = "R(2:2|5)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|long long r0 = getLargestQueuedTimestampUs()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001d|PHI: r2 \l  PHI: (r2v8 long) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r7.durationUs = r0 == Long.MIN_VALUE ? 0 : DEFAULT_LAST_SAMPLE_DURATION_US + r0\lr7.sourceListener.onSourceInfoRefreshed(new com.google.android.exoplayer2.source.SinglePeriodTimeline(r7.durationUs, r7.seekMap.isSeekable()), (java.lang.Object) null)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0032|r7.callback.onContinueLoadingRequested(r7)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0019}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001b}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0037}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0038}"];
+MethodNode[shape=record,label="{public void com.google.android.exoplayer2.source.ExtractorMediaPeriod.onLoadCompleted((r7v0 'this' com.google.android.exoplayer2.source.ExtractorMediaPeriod A[IMMUTABLE_TYPE, THIS]), (r8v0 'loadable' com.google.android.exoplayer2.source.ExtractorMediaPeriod$ExtractingLoadable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 'elapsedRealtimeMs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 'loadDurationMs' long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_8;
+Node_4 -> Node_5;
+Node_8 -> Node_5;
+}
+

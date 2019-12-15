@@ -1,0 +1,41 @@
+digraph "CFG forpl.droidsonroids.gif.ReLinker.copy(Ljava\/io\/InputStream;Ljava\/io\/OutputStream;)V" {
+subgraph cluster_Region_183296243 {
+label = "R(2:0|(2:1|(1:4)(1:3)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|byte[] byte[] r0 = new byte[8192]\l}"];
+subgraph cluster_LoopRegion_2116399260 {
+label = "LOOP:0: (2:1|(1:4)(1:3))";
+node [shape=record,color=blue];
+subgraph cluster_Region_654838672 {
+label = "R(2:1|(1:4)(1:3))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lLOOP:0: B:1:0x0004\-\>B:4:0x000c\l|int int r1 = r3.read(r0)\l}"];
+subgraph cluster_IfRegion_772915046 {
+label = "IF [B:2:0x0009] THEN: R(1:4) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|if (r1 != \-1) goto L_0x000c\l}"];
+subgraph cluster_Region_1277762861 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:4:0x000c\l|r4.write(r0, 0, r1)\l}"];
+}
+subgraph cluster_Region_292989829 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000b|RETURN\l|return\l}"];
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x000b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private static void pl.droidsonroids.gif.ReLinker.copy((r3v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.io.OutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_4;
+Node_2 -> Node_5[style=dashed];
+Node_4 -> Node_1;
+Node_5 -> Node_3;
+}
+

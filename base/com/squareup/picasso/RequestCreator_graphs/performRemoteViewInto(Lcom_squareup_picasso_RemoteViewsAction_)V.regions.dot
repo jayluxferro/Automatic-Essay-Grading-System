@@ -1,0 +1,56 @@
+digraph "CFG forcom.squareup.picasso.RequestCreator.performRemoteViewInto(Lcom\/squareup\/picasso\/RemoteViewsAction;)V" {
+subgraph cluster_Region_373364534 {
+label = "R(1:(2:(3:(1:8)|9|10)|(1:4))) | DECL_VAR: android.graphics.Bitmap null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_151954640 {
+label = "R(2:(3:(1:8)|9|10)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_15211580 {
+label = "IF [B:1:0x0006, B:3:0x0012] THEN: R(3:(1:8)|9|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (com.squareup.picasso.MemoryPolicy.shouldReadFromMemoryCache(r2.memoryPolicy) == false) goto L_0x001a\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if ((r0 = r2.picasso.quickMemoryCacheCheck(r3.getKey())) == null) goto L_0x001a\l}"];
+subgraph cluster_Region_1775085228 {
+label = "R(3:(1:8)|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1999369220 {
+label = "IF [B:7:0x001c] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001c|if (r2.placeholderResId != 0) goto L_0x001e\l}"];
+subgraph cluster_Region_192935445 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001e|r3.setImageResource(r2.placeholderResId)\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0023|r2.picasso.enqueueAndSubmit(r3)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0028|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1270219450 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r3.complete(r0, com.squareup.picasso.Picasso.LoadedFrom.MEMORY)\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0019}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+MethodNode[shape=record,label="{private void com.squareup.picasso.RequestCreator.performRemoteViewInto((r2v0 'this' com.squareup.picasso.RequestCreator A[IMMUTABLE_TYPE, THIS]), (r3v0 com.squareup.picasso.RemoteViewsAction A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

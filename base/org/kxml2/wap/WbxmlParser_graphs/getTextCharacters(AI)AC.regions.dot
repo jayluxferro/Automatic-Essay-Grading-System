@@ -1,0 +1,36 @@
+digraph "CFG fororg.kxml2.wap.WbxmlParser.getTextCharacters([I)[C" {
+subgraph cluster_Region_264245017 {
+label = "R(1:(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1277221387 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_312096335 {
+label = "IF [B:1:0x0005] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r4.type \>= 4) goto L_0x0007\l}"];
+subgraph cluster_Region_1889123303 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r5[0] = 0\lr5[1] = r4.text.length()\lchar[] char[] r5 = new char[r4.text.length()]\lr4.text.getChars(0, r4.text.length(), r5, 0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0024|RETURN\l|return r5\l}"];
+}
+}
+subgraph cluster_Region_1905606645 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0025|r5[0] = \-1\lr5[1] = \-1\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002b|RETURN\l|return null\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public char[] org.kxml2.wap.WbxmlParser.getTextCharacters((r4v0 'this' org.kxml2.wap.WbxmlParser A[IMMUTABLE_TYPE, THIS]), (r5v0 int[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+}
+

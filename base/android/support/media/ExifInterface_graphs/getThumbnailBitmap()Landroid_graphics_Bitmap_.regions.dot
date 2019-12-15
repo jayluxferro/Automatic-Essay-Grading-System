@@ -1,0 +1,127 @@
+digraph "CFG forandroid.support.media.ExifInterface.getThumbnailBitmap()Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_1138288111 {
+label = "R(1:(2:(1:2)|(2:(1:5)|(2:(1:23)|(2:(4:12|(1:15)|16|(2:19|20))|21)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_844462461 {
+label = "R(2:(1:2)|(2:(1:5)|(2:(1:23)|(2:(4:12|(1:15)|16|(2:19|20))|21))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2063330468 {
+label = "IF [B:1:0x0003] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r8.mHasThumbnail == false) goto L_0x0005\l}"];
+subgraph cluster_Region_1334061025 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1266107491 {
+label = "R(2:(1:5)|(2:(1:23)|(2:(4:12|(1:15)|16|(2:19|20))|21)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1391477473 {
+label = "IF [B:4:0x0008] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|if (r8.mThumbnailBytes == null) goto L_0x000a\l}"];
+subgraph cluster_Region_2009799383 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000a|r8.mThumbnailBytes = getThumbnailBytes()\l}"];
+}
+}
+subgraph cluster_Region_421433568 {
+label = "R(2:(1:23)|(2:(4:12|(1:15)|16|(2:19|20))|21))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1757121532 {
+label = "IF [B:7:0x0014, B:9:0x0019] THEN: R(1:23) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (r8.mThumbnailCompression == 6) goto L_0x007b\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0019|ADDED_TO_REGION\l|if (r8.mThumbnailCompression == 7) goto L_0x007b\l}"];
+subgraph cluster_Region_948710208 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0083|RETURN\l|return android.graphics.BitmapFactory.decodeByteArray(r8.mThumbnailBytes, 0, r8.mThumbnailLength)\l}"];
+}
+}
+subgraph cluster_Region_389972772 {
+label = "R(2:(4:12|(1:15)|16|(2:19|20))|21)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2060093619 {
+label = "IF [B:11:0x001f] THEN: R(4:12|(1:15)|16|(2:19|20)) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001f|if (r8.mThumbnailCompression == 1) goto L_0x0021\l}"];
+subgraph cluster_Region_1447357532 {
+label = "R(4:12|(1:15)|16|(2:19|20))";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0021|int[] int[] r0 = new int[(r8.mThumbnailBytes.length \/ 3)]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_565683040 {
+label = "LOOP:0: (1:15)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002a|if (r2 \< r0.length) goto L_0x002c\l}"];
+subgraph cluster_Region_43463037 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x002c|LOOP_END\lLOOP:0: B:13:0x0029\-\>B:15:0x002c\l|int int r5 = r2 * 3\lr0[r2] = (r8.mThumbnailBytes[r5] \<\< 16) + 0 + (r8.mThumbnailBytes[r5 + 1] \<\< 8) + r8.mThumbnailBytes[r5 + 2]\lr2++\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x004a|android.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r2 = r8.mAttributes[4].get(TAG_IMAGE_LENGTH)\landroid.support.media.ExifInterface$ExifAttribute android.support.media.ExifInterface.ExifAttribute r3 = r8.mAttributes[4].get(TAG_IMAGE_WIDTH)\l}"];
+subgraph cluster_IfRegion_266560027 {
+label = "IF [B:17:0x0063, B:18:0x0065] THEN: R(2:19|20) ELSE: null";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0063|ADDED_TO_REGION\l|if (r2 == null) goto L_0x007a\l}"];
+Node_18 [shape=record,label="{18\:\ 0x0065|ADDED_TO_REGION\l|if (r3 == null) goto L_0x007a\l}"];
+subgraph cluster_Region_2125748125 {
+label = "R(2:19|20)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0067}"];
+Node_20 [shape=record,label="{20\:\ 0x0079|RETURN\l|return android.graphics.Bitmap.createBitmap(r0, r3.getIntValue(r8.mExifByteOrder), r2.getIntValue(r8.mExifByteOrder), android.graphics.Bitmap.Config.ARGB_8888)\l}"];
+}
+}
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x007a|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0006}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0010}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0016}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x001c}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029|LOOP_START\lPHI: r2 \l  PHI: (r2v4 int) = (r2v3 int), (r2v11 int) binds: [B:12:0x0021, B:15:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:13:0x0029\-\>B:15:0x002c\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x007b}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x004a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.graphics.Bitmap android.support.media.ExifInterface.getThumbnailBitmap((r8v0 'this' android.support.media.ExifInterface A[IMMUTABLE_TYPE, THIS]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_22;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_22;
+Node_11 -> Node_12;
+Node_11 -> Node_21[style=dashed];
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_24[style=dashed];
+Node_15 -> Node_13;
+Node_16 -> Node_17;
+Node_17 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19[style=dashed];
+Node_18 -> Node_21;
+Node_19 -> Node_20;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_22 -> Node_23;
+Node_24 -> Node_16;
+}
+

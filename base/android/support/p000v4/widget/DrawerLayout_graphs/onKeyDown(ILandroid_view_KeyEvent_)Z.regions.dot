@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v4.widget.DrawerLayout.onKeyDown(ILandroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_1094306998 {
+label = "R(1:(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1486142541 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_308989550 {
+label = "IF [B:1:0x0001, B:3:0x0007] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r2 != 4) goto L_0x000e\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|ADDED_TO_REGION\l|if (hasVisibleDrawer() == false) goto L_0x000e\l}"];
+subgraph cluster_Region_1417623620 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|RETURN\l|return super.onKeyDown(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_1537999361 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0009|r3.startTracking()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000d|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0003}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x000e}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.widget.DrawerLayout.onKeyDown((r1v0 'this' android.support.v4.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS]), (r2v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.view.KeyEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

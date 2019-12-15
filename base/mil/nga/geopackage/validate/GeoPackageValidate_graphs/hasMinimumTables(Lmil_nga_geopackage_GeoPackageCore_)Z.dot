@@ -1,0 +1,25 @@
+digraph "CFG formil.nga.geopackage.validate.GeoPackageValidate.hasMinimumTables(Lmil\/nga\/geopackage\/GeoPackageCore;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ SQLException \-\> 0x0018 \}\lSplitter:B:0:0x0000\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|Catch:\{ SQLException \-\> 0x0018 \}\l|if (r3.getSpatialReferenceSystemDao().isTableExists() == false) goto L_0x0016     \/\/ Catch:\{ SQLException \-\> 0x0018 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|Catch:\{ SQLException \-\> 0x0018 \}\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0012|if (r3.getContentsDao().isTableExists() == false) goto L_0x0016\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0014|SYNTHETIC\lRETURN\l|return true\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0016|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0018|java.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Failed to check for required minimum GeoPackage tables. GeoPackage Name: \")\lr1.append(r3.getName())\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lExcHandler: SQLException (unused java.sql.SQLException)\lSplitter:B:0:0x0000\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0032|throw new mil.nga.geopackage.GeoPackageException(r1.toString())\l}"];
+MethodNode[shape=record,label="{public static boolean mil.nga.geopackage.validate.GeoPackageValidate.hasMinimumTables((r3v0 mil.nga.geopackage.GeoPackageCore A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_8;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_7 -> Node_9;
+Node_8 -> Node_7;
+}
+

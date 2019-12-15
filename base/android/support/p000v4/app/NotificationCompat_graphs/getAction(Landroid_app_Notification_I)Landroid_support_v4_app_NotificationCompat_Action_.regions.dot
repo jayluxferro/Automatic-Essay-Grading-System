@@ -1,0 +1,89 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.getAction(Landroid\/app\/Notification;I)Landroid\/support\/v4\/app\/NotificationCompat$Action;" {
+subgraph cluster_Region_1180939357 {
+label = "R(1:(2:(1:3)|(2:4|(3:6|(1:8)|10)(1:(1:14)(1:15)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1547169382 {
+label = "R(2:(1:3)|(2:4|(3:6|(1:8)|10)(1:(1:14)(1:15))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_752065749 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 20) goto L_0x0006\l}"];
+subgraph cluster_Region_818650122 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return getActionCompatFromAction(r3.actions[r4])\l}"];
+}
+}
+subgraph cluster_Region_1332217797 {
+label = "R(2:4|(3:6|(1:8)|10)(1:(1:14)(1:15)))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|android.os.Bundle r2 = null\l}"];
+subgraph cluster_IfRegion_1800472338 {
+label = "IF [B:5:0x0014] THEN: R(3:6|(1:8)|10) ELSE: R(1:(1:14)(1:15))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0014|if (android.os.Build.VERSION.SDK_INT \>= 19) goto L_0x0016\l}"];
+subgraph cluster_Region_636403481 {
+label = "R(3:6|(1:8)|10)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0016|android.app.Notification.Action r0 = r3.actions[r4]\landroid.util.SparseArray android.util.SparseArray r3 = r3.extras.getSparseParcelableArray(android.support.p000v4.app.NotificationCompatExtras.EXTRA_ACTION_EXTRAS)\l}"];
+subgraph cluster_IfRegion_1143113780 {
+label = "IF [B:7:0x0022] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|if (r3 != null) goto L_0x0024\l}"];
+subgraph cluster_Region_1719163296 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0024|android.os.Bundle r2 = r3.get(r4)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0035|RETURN\l|return android.support.p000v4.app.NotificationCompatJellybean.readAction(r0.icon, r0.title, r0.actionIntent, r2)\l}"];
+}
+subgraph cluster_Region_141988032 {
+label = "R(1:(1:14)(1:15)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_955486255 {
+label = "IF [B:12:0x003a] THEN: R(1:14) ELSE: R(1:15) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x003a|if (android.os.Build.VERSION.SDK_INT \>= 16) goto L_0x003c\l}"];
+subgraph cluster_Region_1421107447 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0040|RETURN\l|return android.support.p000v4.app.NotificationCompatJellybean.getAction(r3, r4)\l}"];
+}
+subgraph cluster_Region_926844132 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0041|RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002b|PHI: r2 \l  PHI: (r2v1 android.os.Bundle) = (r2v0 android.os.Bundle), (r2v3 android.os.Bundle) binds: [B:7:0x0022, B:8:0x0024] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0036}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003c}"];
+MethodNode[shape=record,label="{public static android.support.v4.app.NotificationCompat$Action android.support.v4.app.NotificationCompat.getAction((r3v0 android.app.Notification A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r3v6, resolved type: java.lang.Object\}\lJADX DEBUG: Multi\-variable search result rejected for TypeSearchVarInfo\{r2v2, resolved type: android.os.Bundle\}\lMulti\-variable type inference failed\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_12 -> Node_15[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+}
+

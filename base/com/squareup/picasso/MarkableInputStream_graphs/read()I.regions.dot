@@ -1,0 +1,45 @@
+digraph "CFG forcom.squareup.picasso.MarkableInputStream.read()I" {
+subgraph cluster_Region_779737245 {
+label = "R(4:(1:4)|5|(1:7)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1833143188 {
+label = "IF [B:1:0x0004, B:3:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (r7.allowExpire == false) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000d|ADDED_TO_REGION\l|if ((r7.offset + 1) \> r7.limit) goto L_0x000f\l}"];
+subgraph cluster_Region_1871276393 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|setLimit(r7.limit + ((long) r7.limitIncrement))\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0018|int int r0 = r7.f218in.read()\l}"];
+subgraph cluster_IfRegion_91246536 {
+label = "IF [B:6:0x001f] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|if (r0 != \-1) goto L_0x0021\l}"];
+subgraph cluster_Region_887220455 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|r7.offset++\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0026|RETURN\l|return r0\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{public int com.squareup.picasso.MarkableInputStream.read((r7v0 'this' com.squareup.picasso.MarkableInputStream A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+}
+

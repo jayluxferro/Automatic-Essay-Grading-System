@@ -1,0 +1,110 @@
+digraph "CFG forandroid.support.v4.view.ViewCompat.UnhandledKeyEventManager.preDispatch(Landroid\/view\/KeyEvent;)Z" {
+subgraph cluster_Region_410165767 {
+label = "R(1:(2:(1:4)|(4:5|(1:9)|(1:11)|(2:(1:19)|(3:13|(1:17)|18))))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+subgraph cluster_Region_1354047115 {
+label = "R(2:(1:4)|(4:5|(1:9)|(1:11)|(2:(1:19)|(3:13|(1:17)|18))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1406617880 {
+label = "IF [B:1:0x0003, B:3:0x000b] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r5.mLastDispatchedPreViewKeyEvent != null) goto L_0x0005\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|ADDED_TO_REGION\l|if (r5.mLastDispatchedPreViewKeyEvent.get() == r6) goto L_0x000d\l}"];
+subgraph cluster_Region_1589806810 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000d|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_2078547063 {
+label = "R(4:5|(1:9)|(1:11)|(2:(1:19)|(3:13|(1:17)|18)))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r5.mLastDispatchedPreViewKeyEvent = new java.lang.ref.WeakReference\<\>(r6)\ljava.lang.ref.WeakReference r0 = null\landroid.util.SparseArray android.util.SparseArray\<java.lang.ref.WeakReference\<android.view.View\>\> r2 = getCapturedKeys()\l}"];
+subgraph cluster_IfRegion_678967701 {
+label = "IF [B:6:0x001f, B:8:0x0029] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|ADDED_TO_REGION\l|if (r6.getAction() == 1) goto L_0x0021\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0029|ADDED_TO_REGION\l|if ((r3 = r2.indexOfKey(r6.getKeyCode())) \>= 0) goto L_0x002b\l}"];
+subgraph cluster_Region_1498974686 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002b|java.lang.ref.WeakReference r0 = r2.valueAt(r3)\lr2.removeAt(r3)\l}"];
+}
+}
+subgraph cluster_IfRegion_1680826494 {
+label = "IF [B:10:0x0034] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0034|PHI: r0 \l  PHI: (r0v3 java.lang.ref.WeakReference) = (r0v2 java.lang.ref.WeakReference), (r0v2 java.lang.ref.WeakReference), (r0v11 java.lang.ref.WeakReference) binds: [B:6:0x001f, B:8:0x0029, B:9:0x002b] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L_0x0036\l}"];
+subgraph cluster_Region_1746682584 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0036|java.lang.ref.WeakReference r0 = r2.get(r6.getKeyCode())\l}"];
+}
+}
+subgraph cluster_Region_1395484063 {
+label = "R(2:(1:19)|(3:13|(1:17)|18))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1072946984 {
+label = "IF [B:12:0x0040] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0040|PHI: r0 \l  PHI: (r0v4 java.lang.ref.WeakReference) = (r0v3 java.lang.ref.WeakReference), (r0v9 java.lang.ref.WeakReference) binds: [B:10:0x0034, B:11:0x0036] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == null) goto L_0x0054\l}"];
+subgraph cluster_Region_731146295 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0054|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_905138316 {
+label = "R(3:13|(1:17)|18)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0042|android.view.View android.view.View r0 = (android.view.View) r0.get()\l}"];
+subgraph cluster_IfRegion_936087668 {
+label = "IF [B:14:0x0048, B:16:0x004e] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0048|ADDED_TO_REGION\l|if (r0 != null) goto L_0x004a\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004e|ADDED_TO_REGION\l|if (android.support.p000v4.view.ViewCompat.isAttachedToWindow(r0) == true) goto L_0x0050\l}"];
+subgraph cluster_Region_375391034 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0050|onUnhandledKeyEvent(r0, r6)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0053|RETURN\l|return true\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0005}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0021}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x004a}"];
+MethodNode[shape=record,label="{boolean android.support.v4.view.ViewCompat.UnhandledKeyEventManager.preDispatch((r5v0 'this' android.support.v4.view.ViewCompat$UnhandledKeyEventManager A[IMMUTABLE_TYPE, THIS]), (r6v0 android.view.KeyEvent A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_10[style=dashed];
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_12[style=dashed];
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_19;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_14 -> Node_18[style=dashed];
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+Node_15 -> Node_16;
+}
+

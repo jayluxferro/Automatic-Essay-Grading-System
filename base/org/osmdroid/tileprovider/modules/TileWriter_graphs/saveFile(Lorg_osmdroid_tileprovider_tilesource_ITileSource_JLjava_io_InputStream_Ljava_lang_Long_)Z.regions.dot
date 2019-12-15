@@ -1,0 +1,217 @@
+digraph "CFG fororg.osmdroid.tileprovider.modules.TileWriter.saveFile(Lorg\/osmdroid\/tileprovider\/tilesource\/ITileSource;JLjava\/io\/InputStream;Ljava\/lang\/Long;)Z" {
+subgraph cluster_Region_998805115 {
+label = "R(4:0|(1:2)|3|(2:(1:7)|(3:8|10|(4:12|(1:14)|15|16))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.io.File java.io.File r4 = getFile(r4, r5)\l}"];
+subgraph cluster_IfRegion_1573198909 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (org.osmdroid.config.Configuration.getInstance().isDebugTileProviders() == true) goto L_0x000e\l}"];
+subgraph cluster_Region_1054955402 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|android.util.Log.d(org.osmdroid.api.IMapView.LOGTAG, \"TileWrite \" + r4.getAbsolutePath())\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0028|java.io.File java.io.File r5 = r4.getParentFile()\l}"];
+subgraph cluster_Region_407658634 {
+label = "R(2:(1:7)|(3:8|10|(4:12|(1:14)|15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1379844329 {
+label = "IF [B:4:0x0031, B:6:0x0037] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0031|if (r5.exists() != true) goto L_0x0033\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0037|ADDED_TO_REGION\l|if (createFolderAndCheckIfExists(r5) != true) goto L_0x0039\l}"];
+subgraph cluster_Region_2094597066 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0039|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1346648087 {
+label = "R(3:8|10|(4:12|(1:14)|15|16))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003a|java.io.BufferedOutputStream r5 = null\l}"];
+Node_10 [shape=record,label="{10\:\ ?|Catch:\{ IOException \-\> 0x0072 \}\lSplitter:B:9:0x003c\l|java.io.BufferedOutputStream java.io.BufferedOutputStream r0 = new java.io.BufferedOutputStream(new java.io.FileOutputStream(r4.getPath()), 8192)     \/\/ Catch:\{ IOException \-\> 0x0072 \}\l}"];
+subgraph cluster_TryCatchRegion_231491790 {
+label = "Try: R(4:12|(1:14)|15|16) catches: R(4:19|23|(0)|26), R(4:17|18|(0)|29)";
+node [shape=record,color=blue];
+subgraph cluster_Region_851702554 {
+label = "R(4:12|(1:14)|15|16)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|Catch:\{ IOException \-\> 0x006e, all \-\> 0x006b \}\lSplitter:B:11:0x004c\l|mUsedCacheSpace += org.osmdroid.tileprovider.util.StreamUtils.copy(r7, r0)\l}"];
+subgraph cluster_IfRegion_2015201726 {
+label = "IF [B:13:0x0062] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0062|Catch:\{ IOException \-\> 0x006e, all \-\> 0x006b \}\l|if (mUsedCacheSpace \> org.osmdroid.config.Configuration.getInstance().getTileFileSystemCacheMaxBytes()) goto L_0x0064     \/\/ Catch:\{ IOException \-\> 0x006e, all \-\> 0x006b \}\l}"];
+subgraph cluster_Region_53411335 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0064|Catch:\{ IOException \-\> 0x006e, all \-\> 0x006b \}\l|cutCurrentCache()     \/\/ Catch:\{ IOException \-\> 0x006e, all \-\> 0x006b \}\l}"];
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0067|org.osmdroid.tileprovider.util.StreamUtils.closeStream(r0)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x006a|RETURN\l|return true\l}"];
+}
+subgraph cluster_Region_767195011 {
+label = "R(4:19|23|(0)|26) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x006e|r5 = r0\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x0070 \}\lSplitter:B:22:0x0072\l|org.osmdroid.tileprovider.util.Counters.fileCacheSaveErrors++\l}"];
+subgraph cluster_IfRegion_1287361377 {
+label = "IF [B:24:0x0077] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0077|if (r5 != null) goto L_0x0079\l}"];
+subgraph cluster_Region_928869115 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x007c|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_433273017 {
+label = "R(4:17|18|(0)|29) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006b|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:11:0x004c\l|java.lang.Throwable r4 = th\l}"];
+Node_18 [shape=record,label="{18\:\ 0x006c|r5 = r0\l}"];
+subgraph cluster_IfRegion_1755721492 {
+label = "IF [B:27:0x007d] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x007d|PHI: r4 r5 \l  PHI: (r4v2 'th' java.lang.Throwable) = (r4v5 'th' java.lang.Throwable), (r4v8 'th' java.lang.Throwable) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 java.io.BufferedOutputStream) = (r5v6 java.io.BufferedOutputStream), (r5v8 java.io.BufferedOutputStream) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x007f\l}"];
+subgraph cluster_Region_1480117990 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0082|throw r4\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1291643942 {
+label = "R(4:22|23|(1:25)|26)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0072|SYNTHETIC\lPHI: r5 \l  PHI: (r5v6 java.io.BufferedOutputStream) = (r5v4 java.io.BufferedOutputStream), (r5v4 java.io.BufferedOutputStream), (r5v7 java.io.BufferedOutputStream) binds: [B:9:0x003c, B:10:?, B:19:0x006e] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:22:0x0072\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x0070 \}\lSplitter:B:22:0x0072\l|org.osmdroid.tileprovider.util.Counters.fileCacheSaveErrors++\l}"];
+subgraph cluster_IfRegion_945220984 {
+label = "IF [B:24:0x0077] THEN: R(1:25) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0077|if (r5 != null) goto L_0x0079\l}"];
+subgraph cluster_Region_1677738555 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x0079|org.osmdroid.tileprovider.util.StreamUtils.closeStream(r5)\l}"];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x007c|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_2060578723 {
+label = "R(3:21|(1:28)|29) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0070|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:22:0x0072\l|java.lang.Throwable r4 = th\l}"];
+subgraph cluster_IfRegion_1365745923 {
+label = "IF [B:27:0x007d] THEN: R(1:28) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x007d|PHI: r4 r5 \l  PHI: (r4v2 'th' java.lang.Throwable) = (r4v5 'th' java.lang.Throwable), (r4v8 'th' java.lang.Throwable) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 java.io.BufferedOutputStream) = (r5v6 java.io.BufferedOutputStream), (r5v8 java.io.BufferedOutputStream) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x007f\l}"];
+subgraph cluster_Region_1582676858 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x007f|org.osmdroid.tileprovider.util.StreamUtils.closeStream(r5)\l}"];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0082|throw r4\l}"];
+}
+subgraph cluster_Region_767195011 {
+label = "R(4:19|23|(0)|26) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x006e|r5 = r0\l}"];
+Node_23 [shape=record,label="{23\:\ ?|Catch:\{ all \-\> 0x0070 \}\lSplitter:B:22:0x0072\l|org.osmdroid.tileprovider.util.Counters.fileCacheSaveErrors++\l}"];
+subgraph cluster_IfRegion_1287361377 {
+label = "IF [B:24:0x0077] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0077|if (r5 != null) goto L_0x0079\l}"];
+subgraph cluster_Region_928869115 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_26 [shape=record,label="{26\:\ 0x007c|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_433273017 {
+label = "R(4:17|18|(0)|29) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006b|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:11:0x004c\l|java.lang.Throwable r4 = th\l}"];
+Node_18 [shape=record,label="{18\:\ 0x006c|r5 = r0\l}"];
+subgraph cluster_IfRegion_1755721492 {
+label = "IF [B:27:0x007d] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x007d|PHI: r4 r5 \l  PHI: (r4v2 'th' java.lang.Throwable) = (r4v5 'th' java.lang.Throwable), (r4v8 'th' java.lang.Throwable) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r5v5 java.io.BufferedOutputStream) = (r5v6 java.io.BufferedOutputStream), (r5v8 java.io.BufferedOutputStream) binds: [B:21:0x0070, B:18:0x006c] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 != null) goto L_0x007f\l}"];
+subgraph cluster_Region_1480117990 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_29 [shape=record,label="{29\:\ 0x0082|throw r4\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0033}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x003c|SYNTHETIC\lSplitter:B:9:0x003c\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x004c|SYNTHETIC\lSplitter:B:11:0x004c\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:11:0x004c\l}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.tileprovider.modules.TileWriter.saveFile((r3v0 'this' org.osmdroid.tileprovider.modules.TileWriter A[IMMUTABLE_TYPE, THIS]), (r4v0 org.osmdroid.tileprovider.tilesource.ITileSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.lang.Long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lMissing exception handler attribute for start block: B:22:0x0072\lRemoved duplicated region for block: B:25:0x0079 \lRemoved duplicated region for block: B:28:0x007f \lFailed to process nested try\/catch\lCan't wrap try\/catch for region: R(6:20\|19\|22\|23\|(0)\|26)\lCode restructure failed: missing block: B:21:0x0070, code lost:\l    r4 = th;\l\lCode restructure failed: missing block: B:25:0x0079, code lost:\l    org.osmdroid.tileprovider.util.StreamUtils.closeStream(r5);\l\lCode restructure failed: missing block: B:28:0x007f, code lost:\l    org.osmdroid.tileprovider.util.StreamUtils.closeStream(r5);\l\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_22;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_19 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_21;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_22 -> Node_23;
+Node_22 -> Node_21;
+Node_23 -> Node_24;
+Node_23 -> Node_21;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_25 -> Node_26;
+Node_21 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_28 -> Node_29;
+Node_19 -> Node_22;
+Node_23 -> Node_24;
+Node_23 -> Node_21;
+Node_24 -> Node_25;
+Node_24 -> Node_26[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_27;
+Node_27 -> Node_28;
+Node_27 -> Node_29[style=dashed];
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_9 -> Node_22;
+Node_11 -> Node_12;
+Node_11 -> Node_20;
+Node_11 -> Node_17;
+Node_20 -> Node_19;
+}
+

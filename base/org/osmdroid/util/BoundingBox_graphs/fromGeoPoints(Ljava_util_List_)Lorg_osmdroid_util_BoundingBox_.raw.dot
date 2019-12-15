@@ -1,0 +1,17 @@
+digraph "CFG fororg.osmdroid.util.BoundingBox.fromGeoPoints(Ljava\/util\/List;)Lorg\/osmdroid\/util\/BoundingBox;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r13 I:java.util.Iterator) = (r13 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l0x0004: CONST  (r0 I:?[long, double]) = \l  (\-4503599627370497(0xffefffffffffffff, double:\-1.7976931348623157E308) ?[long, double])\l \l0x0009: CONST  (r2 I:?[long, double]) = \l  (9218868437227405311(0x7fefffffffffffff, double:1.7976931348623157E308) ?[long, double])\l \l0x000e: MOVE  (r5 I:?[long, double]) = (r0 I:?[long, double]) \l0x000f: MOVE  (r7 I:?[long, double]) = (r5 I:?[long, double]) \l0x0010: MOVE  (r9 I:?[long, double]) = (r2 I:?[long, double]) \l0x0011: MOVE  (r11 I:?[long, double]) = (r9 I:?[long, double]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0012|0x0012: INVOKE  (r0 I:boolean) = (r13 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0016|0x0016: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x0037 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0018|0x0018: INVOKE  (r0 I:java.lang.Object) = (r13 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x001c: CHECK_CAST  (r0 I:org.osmdroid.api.IGeoPoint) = (org.osmdroid.api.IGeoPoint) (r0 I:?[OBJECT, ARRAY]) \l0x001e: INVOKE  (r1 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLatitude():double type: INTERFACE \l0x0022: INVOKE  (r3 I:double) = (r0 I:org.osmdroid.api.IGeoPoint) org.osmdroid.api.IGeoPoint.getLongitude():double type: INTERFACE \l0x0026: INVOKE  (r9 I:double) = (r9 I:double), (r1 I:double) java.lang.Math.min(double, double):double type: STATIC \l0x002a: INVOKE  (r11 I:double) = (r11 I:double), (r3 I:double) java.lang.Math.min(double, double):double type: STATIC \l0x002e: INVOKE  (r5 I:double) = (r5 I:double), (r1 I:double) java.lang.Math.max(double, double):double type: STATIC \l0x0032: INVOKE  (r7 I:double) = (r7 I:double), (r3 I:double) java.lang.Math.max(double, double):double type: STATIC \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0037|0x0037: NEW_INSTANCE  (r13 I:org.osmdroid.util.BoundingBox) =  org.osmdroid.util.BoundingBox \l0x0039: MOVE  (r4 I:?[OBJECT, ARRAY]) = (r13 I:?[OBJECT, ARRAY]) \l0x003a: INVOKE  \l  (r4 I:org.osmdroid.util.BoundingBox)\l  (r5 I:double)\l  (r7 I:double)\l  (r9 I:double)\l  (r11 I:double)\l org.osmdroid.util.BoundingBox.\<init\>(double, double, double, double):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x003d|0x003d: RETURN  (r13 I:org.osmdroid.util.BoundingBox) \l}"];
+MethodNode[shape=record,label="{public static org.osmdroid.util.BoundingBox org.osmdroid.util.BoundingBox.fromGeoPoints((r13 I:java.util.List\<? extends org.osmdroid.api.IGeoPoint\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, +, Lorg\/osmdroid\/api\/IGeoPoint;, \>;), Lorg\/osmdroid\/util\/BoundingBox;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+}
+

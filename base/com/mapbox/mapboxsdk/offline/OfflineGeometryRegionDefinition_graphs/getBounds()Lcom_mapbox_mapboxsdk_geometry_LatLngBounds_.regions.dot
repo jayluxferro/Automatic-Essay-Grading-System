@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.mapboxsdk.offline.OfflineGeometryRegionDefinition.getBounds()Lcom\/mapbox\/mapboxsdk\/geometry\/LatLngBounds;" {
+subgraph cluster_Region_518896827 {
+label = "R(1:(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_715658746 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1269856515 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r10.geometry == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1217913298 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_174499708 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|double[] double[] r0 = com.mapbox.turf.TurfMeasurement.bbox(r10.geometry)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x001c|RETURN\l|return com.mapbox.mapboxsdk.geometry.LatLngBounds.from(r0[3], r0[2], r0[1], r0[0])\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public com.mapbox.mapboxsdk.geometry.LatLngBounds com.mapbox.mapboxsdk.offline.OfflineGeometryRegionDefinition.getBounds((r10v0 'this' com.mapbox.mapboxsdk.offline.OfflineGeometryRegionDefinition A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_0 -> Node_1;
+}
+

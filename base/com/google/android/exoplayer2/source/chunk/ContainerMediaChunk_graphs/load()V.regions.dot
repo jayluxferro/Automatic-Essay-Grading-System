@@ -1,0 +1,121 @@
+digraph "CFG forcom.google.android.exoplayer2.source.chunk.ContainerMediaChunk.load()V" {
+subgraph cluster_Region_1044401239 {
+label = "R(2:0|(7:2|(1:4)|6|(1:10)|13|15|16)) | DECL_VAR: com.google.android.exoplayer2.extractor.ExtractorInput input\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.exoplayer2.upstream.DataSpec com.google.android.exoplayer2.upstream.DataSpec r7 = com.google.android.exoplayer2.util.Util.getRemainderDataSpec(r11.dataSpec, r11.bytesLoaded)\l}"];
+subgraph cluster_TryCatchRegion_1973970018 {
+label = "Try: R(7:2|(1:4)|6|(1:10)|13|15|16) catches: R(3:19|21|22), R(3:23|24|25)";
+node [shape=record,color=blue];
+subgraph cluster_Region_723158823 {
+label = "R(7:2|(1:4)|6|(1:10)|13|15|16)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lSplitter:B:1:0x0009\l|com.google.android.exoplayer2.extractor.DefaultExtractorInput r0 = new com.google.android.exoplayer2.extractor.DefaultExtractorInput(r11.dataSource, r7.absoluteStreamPosition, r11.dataSource.open(r7))     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+subgraph cluster_IfRegion_1374362848 {
+label = "IF [B:3:0x001a] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001a|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l|if (r11.bytesLoaded == 0) goto L_0x001c     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+subgraph cluster_Region_741291605 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001c|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l|com.google.android.exoplayer2.source.chunk.BaseMediaChunkOutput com.google.android.exoplayer2.source.chunk.BaseMediaChunkOutput r8 = getOutput()     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lr8.setSampleOffsetUs(r11.sampleOffsetUs)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lr11.extractorWrapper.init(r8)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ ?|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lSplitter:B:5:0x002a\l|com.google.android.exoplayer2.extractor.Extractor com.google.android.exoplayer2.extractor.Extractor r6 = r11.extractorWrapper.extractor     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lint r9 = 0     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+subgraph cluster_LoopRegion_1400090787 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|LOOP_START\lCatch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lPHI: r9 \l  PHI: (r9v1 'result' int) = (r9v0 'result' int), (r9v2 'result' int) binds: [B:6:?, B:10:0x0035] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x002f\-\>B:10:0x0035\l|if (r9 == 0) goto L_0x0031     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+subgraph cluster_Region_391816033 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0035|LOOP_END\lCatch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lLOOP:0: B:7:0x002f\-\>B:10:0x0035\l|int r9 = r6.read(r0, (com.google.android.exoplayer2.extractor.PositionHolder) null)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x003e|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lPHI: r1 \l  PHI: (r1v7 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|com.google.android.exoplayer2.util.Assertions.checkState(r9 != 1)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lSplitter:B:14:0x0041\l|r11.bytesLoaded = (int) (r0.getPosition() \- r11.dataSpec.absoluteStreamPosition)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_16 [shape=record,label="{16\:\ 0x004d|com.google.android.exoplayer2.util.Util.closeQuietly(r11.dataSource)\lr11.loadCompleted = true\l}"];
+}
+subgraph cluster_Region_1877830653 {
+label = "R(3:19|21|22) | ExcHandler: all (r1v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0057|ExcHandler: all (r1v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:5:0x002a\l}"];
+Node_21 [shape=record,label="{21\:\ ?|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lSplitter:B:20:0x0058\l|r11.bytesLoaded = (int) (r0.getPosition() \- r11.dataSpec.absoluteStreamPosition)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0064|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l|throw r1     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+}
+subgraph cluster_Region_439523015 {
+label = "R(3:23|24|25) | ExcHandler: all (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0065|ExcHandler: all (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0009\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0066|com.google.android.exoplayer2.util.Util.closeQuietly(r11.dataSource)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x006b|throw r1\l}"];
+}
+}
+}
+subgraph cluster_Region_1877830653 {
+label = "R(3:19|21|22) | ExcHandler: all (r1v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0057|ExcHandler: all (r1v4 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:5:0x002a\l}"];
+Node_21 [shape=record,label="{21\:\ ?|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\lSplitter:B:20:0x0058\l|r11.bytesLoaded = (int) (r0.getPosition() \- r11.dataSpec.absoluteStreamPosition)     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0064|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l|throw r1     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+}
+subgraph cluster_Region_439523015 {
+label = "R(3:23|24|25) | ExcHandler: all (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0065|ExcHandler: all (r1v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:1:0x0009\l}"];
+Node_24 [shape=record,label="{24\:\ 0x0066|com.google.android.exoplayer2.util.Util.closeQuietly(r11.dataSource)\l}"];
+Node_25 [shape=record,label="{25\:\ 0x006b|throw r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009|SYNTHETIC\lSplitter:B:1:0x0009\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002a|SYNTHETIC\lSplitter:B:5:0x002a\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0031|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0033|ADDED_TO_REGION\lCatch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l|if (r11.loadCanceled == false) goto L_0x0035     \/\/ Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x003b|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x003d|Catch:\{ all \-\> 0x0057, all \-\> 0x0065 \}\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0041|SYNTHETIC\lSplitter:B:14:0x0041\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0054}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0055}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0058|SYNTHETIC\lSplitter:B:20:0x0058\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x003b|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x003b|SYNTHETIC\lADDED_TO_REGION\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.exoplayer2.source.chunk.ContainerMediaChunk.load((r11v0 'this' com.google.android.exoplayer2.source.chunk.ContainerMediaChunk A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_27[style=dashed];
+Node_10 -> Node_7;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+Node_15 -> Node_23;
+Node_16 -> Node_17;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_23 -> Node_24;
+Node_24 -> Node_25;
+Node_1 -> Node_2;
+Node_1 -> Node_23;
+Node_5 -> Node_6;
+Node_5 -> Node_19;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_26[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_18;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_23;
+Node_18 -> Node_13;
+Node_20 -> Node_21;
+Node_20 -> Node_23;
+Node_26 -> Node_11;
+Node_27 -> Node_11;
+}
+

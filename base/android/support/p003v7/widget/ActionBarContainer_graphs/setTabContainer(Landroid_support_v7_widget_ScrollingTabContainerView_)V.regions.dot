@@ -1,0 +1,45 @@
+digraph "CFG forandroid.support.v7.widget.ActionBarContainer.setTabContainer(Landroid\/support\/v7\/widget\/ScrollingTabContainerView;)V" {
+subgraph cluster_Region_1554636113 {
+label = "R(3:(1:2)|3|(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_248809145 {
+label = "IF [B:1:0x0002] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r2.mTabContainer != null) goto L_0x0004\l}"];
+subgraph cluster_Region_2078846946 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|removeView(r2.mTabContainer)\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0009|r2.mTabContainer = r3\l}"];
+subgraph cluster_Region_963386835 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_725425402 {
+label = "IF [B:4:0x000b] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r3 != null) goto L_0x000d\l}"];
+subgraph cluster_Region_1693240862 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|addView(r3)\landroid.view.ViewGroup$LayoutParams android.view.ViewGroup.LayoutParams r0 = r3.getLayoutParams()\lr0.width = \-1\lr0.height = \-2\lr3.setAllowCollapse(false)\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.ActionBarContainer.setTabContainer((r2v0 'this' android.support.v7.widget.ActionBarContainer A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.widget.ScrollingTabContainerView A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

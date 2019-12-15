@@ -1,0 +1,46 @@
+digraph "CFG forandroid.support.v7.app.AppCompatDelegateImpl.onMenuItemSelected(Landroid\/support\/v7\/view\/menu\/MenuBuilder;Landroid\/view\/MenuItem;)Z" {
+subgraph cluster_Region_1703026289 {
+label = "R(2:0|(2:(1:10)|(1:7))) | DECL_VAR: android.support.v7.app.AppCompatDelegateImpl$PanelFeatureState null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.Window$Callback android.view.Window.Callback r0 = getWindowCallback()\l}"];
+subgraph cluster_Region_368448206 {
+label = "R(2:(1:10)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1014870214 {
+label = "IF [B:1:0x0004, B:3:0x0008, B:5:0x0012] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r0 == null) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r2.mIsDestroyed == true) goto L_?\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0012|ADDED_TO_REGION\l|if ((r3 = findMenuPanel(r3.getRootMenu())) == null) goto L_?\l}"];
+subgraph cluster_Region_642400605 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1610391946 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001a|RETURN\l|return r0.onMenuItemSelected(r3.featureId, r4)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0014}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return false\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean android.support.v7.app.AppCompatDelegateImpl.onMenuItemSelected((r2v0 'this' android.support.v7.app.AppCompatDelegateImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 android.support.v7.view.menu.MenuBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.view.MenuItem A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_10;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+}
+

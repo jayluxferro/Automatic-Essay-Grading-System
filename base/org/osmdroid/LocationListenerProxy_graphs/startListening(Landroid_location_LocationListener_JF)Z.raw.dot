@@ -1,0 +1,25 @@
+digraph "CFG fororg.osmdroid.LocationListenerProxy.startListening(Landroid\/location\/LocationListener;JF)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: IPUT  \l  (r10 I:android.location.LocationListener)\l  (r9 I:org.osmdroid.LocationListenerProxy)\l org.osmdroid.LocationListenerProxy.mListener android.location.LocationListener \l0x0002: IGET  (r10 I:android.location.LocationManager) = (r9 I:org.osmdroid.LocationListenerProxy) org.osmdroid.LocationListenerProxy.mLocationManager android.location.LocationManager \l0x0004: CONST  (r0 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0005: INVOKE  (r10 I:java.util.List) = (r10 I:android.location.LocationManager), (r0 I:boolean) android.location.LocationManager.getProviders(boolean):java.util.List type: VIRTUAL \l0x0009: INVOKE  (r10 I:java.util.Iterator) = (r10 I:java.util.List) java.util.List.iterator():java.util.Iterator type: INTERFACE \l0x000d: CONST  (r1 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000e|0x000e: INVOKE  (r2 I:boolean) = (r10 I:java.util.Iterator) java.util.Iterator.hasNext():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0012|0x0012: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x0035 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|0x0014: INVOKE  (r2 I:java.lang.Object) = (r10 I:java.util.Iterator) java.util.Iterator.next():java.lang.Object type: INTERFACE \l0x0018: MOVE  (r4 I:?[OBJECT, ARRAY]) = (r2 I:?[OBJECT, ARRAY]) \l0x0019: CHECK_CAST  (r4 I:java.lang.String) = (java.lang.String) (r4 I:?[OBJECT, ARRAY]) \l0x001b: CONST_STR  (r2 I:java.lang.String) =  \"gps\" \l0x001d: INVOKE  (r2 I:boolean) = (r2 I:java.lang.String), (r4 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x002b \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|0x0023: CONST_STR  (r2 I:java.lang.String) =  \"network\" \l0x0025: INVOKE  (r2 I:boolean) = (r2 I:java.lang.String), (r4 I:java.lang.Object) java.lang.String.equals(java.lang.Object):boolean type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|0x0029: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x000e \l}"];
+Node_7 [shape=record,label="{7\:\ 0x002b|0x002b: IGET  (r3 I:android.location.LocationManager) = (r9 I:org.osmdroid.LocationListenerProxy) org.osmdroid.LocationListenerProxy.mLocationManager android.location.LocationManager \l0x002d: MOVE  (r5 I:?[long, double]) = (r11 I:?[long, double]) \l0x002e: MOVE  (r7 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (r13 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x002f: MOVE  (r8 I:?[OBJECT, ARRAY]) = (r9 I:?[OBJECT, ARRAY]) \l0x0030: INVOKE  \l  (r3 I:android.location.LocationManager)\l  (r4 I:java.lang.String)\l  (r5 I:long)\l  (r7 I:float)\l  (r8 I:android.location.LocationListener)\l android.location.LocationManager.requestLocationUpdates(java.lang.String, long, float, android.location.LocationListener):void type: VIRTUAL \l0x0033: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x0035|0x0035: RETURN  (r1 I:boolean) \l}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.LocationListenerProxy.startListening((r9 'this' I:org.osmdroid.LocationListenerProxy A[IMMUTABLE_TYPE, THIS]), (r10 I:android.location.LocationListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11 I:long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13 I:float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_1;
+Node_6 -> Node_7[style=dashed];
+Node_7 -> Node_1;
+}
+

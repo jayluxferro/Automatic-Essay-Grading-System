@@ -1,0 +1,28 @@
+digraph "CFG forkotlin.jvm.internal.Intrinsics.sanitizeStackTrace(Ljava\/lang\/Throwable;Ljava\/lang\/String;)Ljava\/lang\/Throwable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.StackTraceElement[] r0 = r5.getStackTrace()\lint r1 = r0.length\lr2 = \-1\lr3 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0007|LOOP_START\lPHI: r2 r3 \l  PHI: (r2v1 int) = (r2v0 int), (r2v3 int) binds: [B:0:0x0000, B:5:0x0016] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:5:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:5:0x0016\l|if (r3 \>= r1) goto L_0x0019\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0009}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|if (r6.equals(r0[r3].getClassName()) == false) goto L_0x0016\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0015|r2 = r3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0016|LOOP_END\lPHI: r2 \l  PHI: (r2v3 int) = (r2v1 int), (r2v4 int) binds: [B:10:0x0016, B:9:0x0016] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0007\-\>B:5:0x0016\l|int r3 = r3 + 1\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0019|java.util.List r6 = java.util.Arrays.asList(r0).subList(r2 + 1, r1)\lr5.setStackTrace((java.lang.StackTraceElement[]) r6.toArray(new java.lang.StackTraceElement[r6.size()]))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0032|RETURN\l|return r5\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0019|SYNTHETIC\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0016|SYNTHETIC\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0016|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static T kotlin.jvm.internal.Intrinsics.sanitizeStackTrace((r5v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Throwable;, \>(TT;, Ljava\/lang\/String;, )TT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_8;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_4 -> Node_9;
+Node_5 -> Node_1;
+Node_6 -> Node_7;
+Node_8 -> Node_6;
+Node_9 -> Node_5;
+Node_10 -> Node_5;
+}
+

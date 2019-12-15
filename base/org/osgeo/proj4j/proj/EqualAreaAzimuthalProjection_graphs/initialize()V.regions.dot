@@ -1,0 +1,84 @@
+digraph "CFG fororg.osgeo.proj4j.proj.EqualAreaAzimuthalProjection.initialize()V" {
+subgraph cluster_Region_1871397134 {
+label = "R(2:0|(2:5|6)(1:(1:4)(0)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.initialize()\l}"];
+subgraph cluster_IfRegion_653743929 {
+label = "IF [B:1:0x0005] THEN: R(2:5|6) ELSE: R(1:(1:4)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r10.spherical != true) goto L_0x001e\l}"];
+subgraph cluster_Region_399514467 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|r10.f356qp = org.osgeo.proj4j.util.ProjectionMath.qsfn(1.0d, r10.f423e, r10.one_es)\lr10.mmf = 0.5d \/ (1.0d \- r10.f424es)\lr10.apa = org.osgeo.proj4j.util.ProjectionMath.authset(r10.f424es)\l}"];
+subgraph cluster_SwitchRegion_211381135 {
+label = "Switch: 3, default: R(1:15)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x003e|switch(r10.mode) \{\l    case 1: goto L_0x00b3;\l    case 2: goto L_0x00b3;\l    case 3: goto L_0x009c;\l    case 4: goto L_0x0042;\l    default: goto L_0x0041;\l\}\l}"];
+subgraph cluster_Region_967821347 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x00b3|r10.f355dd = 1.0d\l}"];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+subgraph cluster_Region_932357107 {
+label = "R(2:8|14)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x009c|double double r0 = java.lang.Math.sqrt(r10.f356qp * 0.5d)\lr10.f357rq = r0\lr10.f355dd = 1.0d \/ r0\lr10.xmf = 1.0d\lr10.ymf = r10.f356qp * 0.5d\l}"];
+Node_14 [shape=record,label="{14\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_2092316319 {
+label = "R(2:7|13)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0042|r10.f357rq = java.lang.Math.sqrt(r10.f356qp * 0.5d)\ldouble double r0 = java.lang.Math.sin(r10.projectionLatitude)\lr10.sinb1 = org.osgeo.proj4j.util.ProjectionMath.qsfn(r0, r10.f423e, r10.one_es) \/ r10.f356qp\lr10.cosb1 = java.lang.Math.sqrt(1.0d \- (r10.sinb1 * r10.sinb1))\lr10.f355dd = java.lang.Math.cos(r10.projectionLatitude) \/ ((java.lang.Math.sqrt(1.0d \- ((r10.f424es * r0) * r0)) * r10.f357rq) * r10.cosb1)\ldouble double r0 = r10.f357rq\lr10.xmf = r0\lr10.ymf = r0 \/ r10.f355dd\lr10.xmf *= r10.f355dd\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+subgraph cluster_Region_637345456 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+}
+subgraph cluster_Region_853611119 {
+label = "R(1:(1:4)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1969472175 {
+label = "IF [B:3:0x000a] THEN: R(1:4) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|if (r10.mode == 4) goto L_0x000c\l}"];
+subgraph cluster_Region_852161264 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r10.sinphi0 = java.lang.Math.sin(r10.projectionLatitude)\lr10.cosphi0 = java.lang.Math.cos(r10.projectionLatitude)\l}"];
+}
+subgraph cluster_Region_2131714695 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_11 [shape=record,color=red,label="{11\:\ ?|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osgeo.proj4j.proj.EqualAreaAzimuthalProjection.initialize((r10v0 'this' org.osgeo.proj4j.proj.EqualAreaAzimuthalProjection A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_6 -> Node_9;
+Node_6 -> Node_15;
+Node_9 -> Node_10;
+Node_8 -> Node_14;
+Node_7 -> Node_13;
+Node_3 -> Node_4;
+Node_3 -> Node_11[style=dashed];
+Node_4 -> Node_12;
+Node_2 -> Node_3;
+}
+

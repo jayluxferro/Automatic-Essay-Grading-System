@@ -1,0 +1,25 @@
+digraph "CFG forokhttp3.internal.http2.Hpack.Reader.readByteString()Lokio\/ByteString;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = readByte()\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|if ((r0 & 128) != 128) goto L_0x000c\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000a|r1 = true\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|r1 = false\l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|PHI: r1 \l  PHI: (r1v1 boolean) = (r1v4 boolean), (r1v5 boolean) binds: [B:3:0x000c, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\l|int r0 = readInt(r0, okhttp3.internal.http2.Hpack.PREFIX_7_BITS)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|if (r1 == false) goto L_0x0029\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015}"];
+Node_7 [shape=record,label="{7\:\ 0x0028|RETURN\l|return okio.ByteString.m183of(okhttp3.internal.http2.Huffman.get().decode(r5.source.readByteArray((long) r0)))\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0029}"];
+Node_9 [shape=record,label="{9\:\ 0x0030|RETURN\l|return r5.source.readByteString((long) r0)\l}"];
+MethodNode[shape=record,label="{okio.ByteString okhttp3.internal.http2.Hpack.Reader.readByteString((r5v0 'this' okhttp3.internal.http2.Hpack$Reader A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_8;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+}
+

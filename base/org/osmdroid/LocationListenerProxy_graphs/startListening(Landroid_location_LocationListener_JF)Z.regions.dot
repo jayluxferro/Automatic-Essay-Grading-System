@@ -1,0 +1,57 @@
+digraph "CFG fororg.osmdroid.LocationListenerProxy.startListening(Landroid\/location\/LocationListener;JF)Z" {
+subgraph cluster_Region_545623630 {
+label = "R(3:0|(2:3|(1:7)(0))|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r9.mListener = r10\ljava.util.Iterator r10 = r9.mLocationManager.getProviders(true).iterator()\lboolean r1 = false\l}"];
+subgraph cluster_LoopRegion_400246048 {
+label = "LOOP:0: (2:3|(1:7)(0))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0012|if (r10.hasNext() != false) goto L_0x0014\l}"];
+subgraph cluster_Region_1637116665 {
+label = "R(2:3|(1:7)(0))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|java.lang.String r4 = r10.next()\l}"];
+subgraph cluster_IfRegion_2121228474 {
+label = "IF [B:4:0x0021, B:6:0x0029] THEN: R(1:7) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0021|if (\"gps\".equals(r4) == true) goto L_0x002b\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0029|ADDED_TO_REGION\l|if (\"network\".equals(r4) == true) goto L_0x002b\l}"];
+subgraph cluster_Region_577195834 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002b|r9.mLocationManager.requestLocationUpdates(r4, r11, r13, r9)\lr1 = true\l}"];
+}
+subgraph cluster_Region_727984923 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0035|RETURN\l|return r1\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x000e|LOOP_START\lPHI: r1 \l  PHI: (r1v1 boolean) = (r1v0 boolean), (r1v2 boolean) binds: [B:0:0x0000, B:9:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:9:0x000e\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0023}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x000e|LOOP_END\lSYNTHETIC\lPHI: r1 \l  PHI: (r1v2 boolean) = (r1v3 boolean), (r1v1 boolean) binds: [B:12:0x000e, B:11:0x000e] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:9:0x000e\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0035|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x000e|SYNTHETIC\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x000e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public boolean org.osmdroid.LocationListenerProxy.startListening((r9v0 'this' org.osmdroid.LocationListenerProxy A[IMMUTABLE_TYPE, THIS]), (r10v0 android.location.LocationListener A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_10[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_7;
+Node_6 -> Node_7;
+Node_6 -> Node_11[style=dashed];
+Node_7 -> Node_12;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_1;
+Node_10 -> Node_8;
+Node_11 -> Node_9;
+Node_12 -> Node_9;
+}
+

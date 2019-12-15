@@ -1,0 +1,83 @@
+digraph "CFG forcom.j256.ormlite.stmt.UpdateBuilder.appendStatementStart(Ljava\/lang\/StringBuilder;Ljava\/util\/List;)V" {
+subgraph cluster_Region_1351283436 {
+label = "R(1:(2:(1:14)|(2:4|(3:7|(1:9)(1:10)|11))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_896719069 {
+label = "R(2:(1:14)|(2:4|(3:7|(1:9)(1:10)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_696144082 {
+label = "IF [B:1:0x0002, B:3:0x000a] THEN: R(1:14) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r5.updateClauseList == null) goto L_0x0045\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000a|ADDED_TO_REGION\l|if (r5.updateClauseList.isEmpty() == true) goto L_0x0045\l}"];
+subgraph cluster_Region_831581728 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x004c|throw new java.lang.IllegalArgumentException(\"UPDATE statements must have at least one SET column\")\l}"];
+}
+}
+subgraph cluster_Region_320072229 {
+label = "R(2:4|(3:7|(1:9)(1:10)|11))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|r6.append(\"UPDATE \")\lr5.databaseType.appendEscapedEntityName(r6, r5.tableInfo.getTableName())\lr6.append(\" SET \")\lboolean r0 = true\ljava.util.Iterator r1 = r5.updateClauseList.iterator()\l}"];
+subgraph cluster_LoopRegion_915044204 {
+label = "LOOP:0: (3:7|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x002c|if (r1.hasNext() != false) goto L_0x002e\l}"];
+subgraph cluster_Region_362669392 {
+label = "R(3:7|(1:9)(1:10)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|com.j256.ormlite.stmt.query.Clause r2 = r1.next()\l}"];
+subgraph cluster_IfRegion_1484891156 {
+label = "IF [B:8:0x0034] THEN: R(1:9) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0034|if (r0 == true) goto L_0x0036\l}"];
+subgraph cluster_Region_786006422 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0036|r0 = false\l}"];
+}
+subgraph cluster_Region_1312743409 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0038|r6.append(',')\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x003d|LOOP_END\lPHI: r0 \l  PHI: (r0v8 boolean) = (r0v7 boolean), (r0v9 boolean) binds: [B:16:0x003d, B:17:0x003d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0028\-\>B:11:0x003d\l|r2.appendSql(r5.databaseType, (java.lang.String) null, r6, r7)\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0028|LOOP_START\lPHI: r0 \l  PHI: (r0v7 boolean) = (r0v6 boolean), (r0v8 boolean) binds: [B:4:0x000c, B:11:0x003d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:5:0x0028\-\>B:11:0x003d\l}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0044}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0045}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0044|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x003d|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x003d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void com.j256.ormlite.stmt.UpdateBuilder.appendStatementStart((r5v0 'this' com.j256.ormlite.stmt.UpdateBuilder A[IMMUTABLE_TYPE, THIS]), (r6v0 java.lang.StringBuilder A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.util.List\<com.j256.ormlite.stmt.ArgumentHolder\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/StringBuilder;, Ljava\/util\/List\<, Lcom\/j256\/ormlite\/stmt\/ArgumentHolder;, \>;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_13;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_13;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_17;
+Node_10 -> Node_16;
+Node_11 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_13 -> Node_14;
+Node_15 -> Node_12;
+Node_16 -> Node_11;
+Node_17 -> Node_11;
+}
+

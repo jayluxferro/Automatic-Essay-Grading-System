@@ -1,0 +1,25 @@
+digraph "CFG forcom.google.gson.JsonPrimitive.isPrimitiveOrString(Ljava\/lang\/Object;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INSTANCE_OF  (r0 I:boolean) = (r6 I:?[OBJECT, ARRAY]) java.lang.String \l0x0002: CONST  (r1 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:3:0x0006 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: RETURN  (r1 I:boolean) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|0x0006: INVOKE  (r6 I:java.lang.Class) = (r6 I:java.lang.Object) java.lang.Object.getClass():java.lang.Class type: VIRTUAL \l0x000a: SGET  (r0 I:java.lang.Class\<?\>[]) =  com.google.gson.JsonPrimitive.PRIMITIVE_TYPES java.lang.Class[] \l0x000c: ARRAY_LENGTH  (r2 I:int) = (r0 I:?[]) \l0x000d: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x000e: CONST  (r4 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000f|0x000f: IF  (r4 I:?[int, byte, short, char]) \>= (r2 I:?[int, byte, short, char])  \-\> B:9:0x001d \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|0x0011: AGET  (r5 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r4 I:?[int, short, byte, char]) \l0x0013: INVOKE  (r5 I:boolean) = (r5 I:java.lang.Class), (r6 I:java.lang.Class) java.lang.Class.isAssignableFrom(java.lang.Class):boolean type: VIRTUAL \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0017|0x0017: IF  (r5 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:8:0x001a \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|0x0019: RETURN  (r1 I:boolean) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001a|0x001a: ARITH  (r4 I:int) = (r4 I:int) + (1 int) \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|0x001d: RETURN  (r3 I:boolean) \l}"];
+MethodNode[shape=record,label="{private static boolean com.google.gson.JsonPrimitive.isPrimitiveOrString((r6 I:java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_4;
+}
+

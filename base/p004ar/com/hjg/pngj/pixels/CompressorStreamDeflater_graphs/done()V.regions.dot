@@ -1,0 +1,62 @@
+digraph "CFG forar.com.hjg.pngj.pixels.CompressorStreamDeflater.done()V" {
+subgraph cluster_Region_132225620 {
+label = "R(1:(1:(2:(2:5|(1:8))|9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1620916578 {
+label = "R(1:(2:(2:5|(1:8))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1950440040 {
+label = "IF [B:1:0x0002] THEN: R(2:(2:5|(1:8))|9) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.done != true) goto L_0x0005\l}"];
+subgraph cluster_Region_1249154517 {
+label = "R(2:(2:5|(1:8))|9)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1095538165 {
+label = "IF [B:4:0x000b] THEN: R(2:5|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|if (r1.deflater.finished() == false) goto L_0x000d\l}"];
+subgraph cluster_Region_1217651351 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|r1.deflater.finish()\l}"];
+subgraph cluster_LoopRegion_922711031 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0018|if (r1.deflater.finished() == false) goto L_0x001a\l}"];
+subgraph cluster_Region_1489736384 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001a|LOOP_END\lLOOP:0: B:6:0x0012\-\>B:8:0x001a\l|deflate()\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x001e|r1.done = true\lflush()\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0005}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012|LOOP_START\lLOOP:0: B:6:0x0012\-\>B:8:0x001a\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0024}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void ar.com.hjg.pngj.pixels.CompressorStreamDeflater.done((r1v0 'this' ar.com.hjg.pngj.pixels.CompressorStreamDeflater A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_9[style=dashed];
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11[style=dashed];
+Node_8 -> Node_6;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_11 -> Node_9;
+}
+

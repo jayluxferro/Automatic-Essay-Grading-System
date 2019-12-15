@@ -1,0 +1,37 @@
+digraph "CFG forcom.crashlytics.android.core.CrashlyticsController.writeToCosFromFile(Lcom\/crashlytics\/android\/core\/CodedOutputStream;Ljava\/io\/File;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r5.exists() != false) goto L_0x0026\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|io.fabric.sdk.android.Logger r4 = p018io.fabric.sdk.android.Fabric.getLogger()\ljava.lang.StringBuilder r2 = new java.lang.StringBuilder()\lr2.append(\"Tried to include a file that doesn't exist: \")\lr2.append(r5.getName())\lr4.mo22224e(com.crashlytics.android.core.CrashlyticsCore.TAG, r2.toString(), (java.lang.Throwable) null)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0025|RETURN\l|return\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0026|SYNTHETIC\lSplitter:B:4:0x0026\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ all \-\> 0x003b \}\lSplitter:B:4:0x0026\l|java.io.FileInputStream r0 = new java.io.FileInputStream(r5)     \/\/ Catch:\{ all \-\> 0x003b \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x002b|SYNTHETIC\lSplitter:B:6:0x002b\l}"];
+Node_7 [shape=record,label="{7\:\ ?|Catch:\{ all \-\> 0x0039 \}\lSplitter:B:6:0x002b\l|copyToCodedOutputStream(r0, r4, (int) r5.length())     \/\/ Catch:\{ all \-\> 0x0039 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0033|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close file input stream.\")\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0038|RETURN\l|return\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0039|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:6:0x002b\l|java.lang.Throwable r4 = th\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003b|ExcHandler: all (th java.lang.Throwable)\lSplitter:B:4:0x0026\l|java.lang.Throwable r4 = th\l}"];
+Node_12 [shape=record,label="{12\:\ 0x003c|r0 = null\l}"];
+Node_13 [shape=record,label="{13\:\ 0x003d|PHI: r0 r4 \l  PHI: (r0v1 java.io.FileInputStream) = (r0v2 java.io.FileInputStream), (r0v3 java.io.FileInputStream) binds: [B:12:0x003c, B:10:0x0039] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'th' java.lang.Throwable) = (r4v2 'th' java.lang.Throwable), (r4v3 'th' java.lang.Throwable) binds: [B:12:0x003c, B:10:0x0039] A[DONT_GENERATE, DONT_INLINE]\l|p018io.fabric.sdk.android.services.common.CommonUtils.closeOrLog(r0, \"Failed to close file input stream.\")\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0042|throw r4\l}"];
+MethodNode[shape=record,label="{private static void com.crashlytics.android.core.CrashlyticsController.writeToCosFromFile((r4v0 com.crashlytics.android.core.CodedOutputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_5 -> Node_6;
+Node_5 -> Node_11;
+Node_6 -> Node_7;
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_7 -> Node_10;
+Node_8 -> Node_9;
+Node_10 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+}
+

@@ -1,0 +1,58 @@
+digraph "CFG forokio.RealBufferedSource.readUtf8Line()Ljava\/lang\/String;" {
+subgraph cluster_Region_1808072572 {
+label = "R(2:0|(2:(1:7)|(1:(2:(1:8)|(1:5)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|long long r0 = indexOf((byte) 10)\l}"];
+subgraph cluster_Region_1477833402 {
+label = "R(2:(1:7)|(1:(2:(1:8)|(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1438079669 {
+label = "IF [B:1:0x000a] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r0 != \-1) goto L_0x0021\l}"];
+subgraph cluster_Region_1310220093 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0027|RETURN\l|return r4.buffer.readUtf8Line(r0)\l}"];
+}
+}
+subgraph cluster_Region_1653364899 {
+label = "R(1:(2:(1:8)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_557448284 {
+label = "R(2:(1:8)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1801030884 {
+label = "IF [B:3:0x0014] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (r4.buffer.size != 0) goto L_0x0016\l}"];
+subgraph cluster_Region_472785687 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return readUtf8(r4.buffer.size)\l}"];
+}
+}
+subgraph cluster_Region_484915569 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001f|SYNTHETIC\lRETURN\lORIG_RETURN\l|return null\l}"];
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0016}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0021}"];
+MethodNode[shape=record,label="{public java.lang.String okio.RealBufferedSource.readUtf8Line((r4v0 'this' okio.RealBufferedSource A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[RUNTIME, javax.annotation.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_8;
+Node_6 -> Node_7;
+}
+

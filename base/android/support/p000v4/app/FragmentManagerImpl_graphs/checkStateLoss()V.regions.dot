@@ -1,0 +1,50 @@
+digraph "CFG forandroid.support.v4.app.FragmentManagerImpl.checkStateLoss()V" {
+subgraph cluster_Region_271821841 {
+label = "R(1:(1:8)(1:(2:5|6)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_188898068 {
+label = "IF [B:1:0x0004] THEN: R(1:8) ELSE: R(1:(2:5|6)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (isStateSaved() != false) goto L_0x0024\l}"];
+subgraph cluster_Region_1958723373 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002b|throw new java.lang.IllegalStateException(\"Can not perform this action after onSaveInstanceState\")\l}"];
+}
+subgraph cluster_Region_44774814 {
+label = "R(1:(2:5|6)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_267735806 {
+label = "IF [B:3:0x0008] THEN: R(2:5|6) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3.mNoTransactionsBecause != null) goto L_0x000b\l}"];
+subgraph cluster_Region_385229551 {
+label = "R(2:5|6)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000b}"];
+Node_6 [shape=record,label="{6\:\ 0x0023|throw new java.lang.IllegalStateException(\"Can not perform this action inside of \" + r3.mNoTransactionsBecause)\l}"];
+}
+subgraph cluster_Region_523874763 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0024}"];
+MethodNode[shape=record,label="{private void android.support.v4.app.FragmentManagerImpl.checkStateLoss((r3v0 'this' android.support.v4.app.FragmentManagerImpl A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_8;
+}
+

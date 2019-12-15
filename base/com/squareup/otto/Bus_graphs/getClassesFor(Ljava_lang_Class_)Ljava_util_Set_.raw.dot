@@ -1,0 +1,20 @@
+digraph "CFG forcom.squareup.otto.Bus.getClassesFor(Ljava\/lang\/Class;)Ljava\/util\/Set;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: NEW_INSTANCE  (r0 I:java.util.LinkedList) =  java.util.LinkedList \l0x0002: INVOKE  (r0 I:java.util.LinkedList) java.util.LinkedList.\<init\>():void type: DIRECT \l0x0005: NEW_INSTANCE  (r1 I:java.util.HashSet) =  java.util.HashSet \l0x0007: INVOKE  (r1 I:java.util.HashSet) java.util.HashSet.\<init\>():void type: DIRECT \l0x000a: INVOKE  (r0 I:java.util.List), (r3 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000d|0x000d: INVOKE  (r3 I:boolean) = (r0 I:java.util.List) java.util.List.isEmpty():boolean type: INTERFACE \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0011|0x0011: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:6:0x0027 \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|0x0013: CONST  (r3 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l0x0014: INVOKE  (r3 I:java.lang.Object) = (r0 I:java.util.List), (r3 I:int) java.util.List.remove(int):java.lang.Object type: INTERFACE \l0x0018: CHECK_CAST  (r3 I:java.lang.Class) = (java.lang.Class) (r3 I:?[OBJECT, ARRAY]) \l0x001a: INVOKE  (r1 I:java.util.Set), (r3 I:java.lang.Object) java.util.Set.add(java.lang.Object):boolean type: INTERFACE \l0x001d: INVOKE  (r3 I:java.lang.Class) = (r3 I:java.lang.Class) java.lang.Class.getSuperclass():java.lang.Class type: VIRTUAL \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|0x0021: IF  (r3 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:1:0x000d \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0023|0x0023: INVOKE  (r0 I:java.util.List), (r3 I:java.lang.Object) java.util.List.add(java.lang.Object):boolean type: INTERFACE \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0027|0x0027: RETURN  (r1 I:java.util.Set\<java.lang.Class\<?\>\>) \l}"];
+MethodNode[shape=record,label="{private java.util.Set\<java.lang.Class\<?\>\> com.squareup.otto.Bus.getClassesFor((r2 'this' I:com.squareup.otto.Bus A[IMMUTABLE_TYPE, THIS]), (r3 I:java.lang.Class\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/Class\<, *\>;), Ljava\/util\/Set\<, Ljava\/lang\/Class\<, *\>;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_1;
+Node_4 -> Node_5[style=dashed];
+Node_5 -> Node_1;
+}
+

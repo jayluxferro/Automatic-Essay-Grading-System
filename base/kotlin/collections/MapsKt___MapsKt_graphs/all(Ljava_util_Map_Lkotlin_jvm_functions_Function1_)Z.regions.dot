@@ -1,0 +1,65 @@
+digraph "CFG forkotlin.collections.MapsKt___MapsKt.all(Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;)Z" {
+subgraph cluster_Region_1112397821 {
+label = "R(2:0|(2:(1:2)|(3:3|(1:(1:8))|9)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r2, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, \"predicate\")\l}"];
+subgraph cluster_Region_554306737 {
+label = "R(2:(1:2)|(3:3|(1:(1:8))|9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_780794484 {
+label = "IF [B:1:0x000f] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r2.isEmpty() == true) goto L_0x0011\l}"];
+subgraph cluster_Region_1421980895 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_2015327109 {
+label = "R(3:3|(1:(1:8))|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|java.util.Iterator r2 = r2.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_151099315 {
+label = "LOOP:0: (1:(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001e|if (r2.hasNext() != false) goto L_0x0020\l}"];
+subgraph cluster_Region_1748670141 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_822390825 {
+label = "IF [B:7:0x0030] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0030|LOOP_END\lLOOP:0: B:4:0x001a\-\>B:7:0x0030\l|if (r3.invoke(r0).booleanValue() == false) goto L_0x0032\l}"];
+subgraph cluster_Region_839151319 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0032|RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0034|RETURN\l|return true\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a|LOOP_START\lLOOP:0: B:4:0x001a\-\>B:7:0x0030\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0032|SYNTHETIC\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0034|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final boolean kotlin.collections.MapsKt___MapsKt.all((r2v0 java.util.Map\<? extends K, ? extends V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 kotlin.jvm.functions.Function1\<? super java.util.Map$Entry\<? extends K, ? extends V\>, java.lang.Boolean\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, \>(, Ljava\/util\/Map\<, +TK;+TV;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-, Ljava\/util\/Map$Entry\<, +TK;+TV;\>;, Ljava\/lang\/Boolean;, \>;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_5 -> Node_11[style=dashed];
+Node_7 -> Node_4[style=dashed];
+Node_7 -> Node_10;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_10 -> Node_8;
+Node_11 -> Node_9;
+}
+

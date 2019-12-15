@@ -1,0 +1,34 @@
+digraph "CFG forokio.Okio.appendingSink(Ljava\/io\/File;)Lokio\/Sink;" {
+subgraph cluster_Region_1506454323 {
+label = "R(1:(2:(1:2)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1515552933 {
+label = "R(2:(1:2)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1898741246 {
+label = "IF [B:0:0x0000] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r2 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_267019342 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|RETURN\l|return sink((java.io.OutputStream) new java.io.FileOutputStream(r2, true))\l}"];
+}
+}
+subgraph cluster_Region_58054067 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|throw new java.lang.IllegalArgumentException(\"file == null\")\l}"];
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000d}"];
+MethodNode[shape=record,label="{public static okio.Sink okio.Okio.appendingSink((r2v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.FileNotFoundException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_3[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+}
+

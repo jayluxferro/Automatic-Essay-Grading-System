@@ -1,0 +1,36 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.sorted([F)Ljava\/util\/List;" {
+subgraph cluster_Region_842952175 {
+label = "R(2:0|(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r1, \"$receiver\")\ljava.lang.Float[] java.lang.Float[] r1 = kotlin.collections.ArraysKt.toTypedArray(r1)\ljava.lang.Comparable[] java.lang.Comparable[] r0 = (java.lang.Comparable[]) r1\l}"];
+subgraph cluster_Region_1838236263 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1930772124 {
+label = "IF [B:1:0x000c] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0 != null) goto L_0x000e\l}"];
+subgraph cluster_Region_799796257 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|kotlin.collections.ArraysKt.sort((T[]) (java.lang.Object[]) r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0019|RETURN\l|return kotlin.collections.ArraysKt.asList((T[]) (java.lang.Object[]) r1)\l}"];
+}
+}
+subgraph cluster_Region_392726720 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0021|throw new kotlin.TypeCastException(\"null cannot be cast to non\-null type kotlin.Array\<kotlin.Any?\>\")\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a}"];
+MethodNode[shape=record,label="{public static final java.util.List\<java.lang.Float\> kotlin.collections.ArraysKt___ArraysKt.sorted((r1v0 float[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[([F), Ljava\/util\/List\<, Ljava\/lang\/Float;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

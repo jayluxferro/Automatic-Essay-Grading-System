@@ -1,0 +1,22 @@
+digraph "CFG forokio.InflaterSource.\<init\>(Lokio\/BufferedSource;Ljava\/util\/zip\/Inflater;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:java.lang.Object) java.lang.Object.\<init\>():void type: DIRECT \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0003|0x0003: IF  (r1 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:7:0x0014 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0005|0x0005: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:5:0x000c \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0007|0x0007: IPUT  (r1 I:okio.BufferedSource), (r0 I:okio.InflaterSource) okio.InflaterSource.source okio.BufferedSource \l0x0009: IPUT  (r2 I:java.util.zip.Inflater), (r0 I:okio.InflaterSource) okio.InflaterSource.inflater java.util.zip.Inflater \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000b|0x000b: RETURN   \l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|0x000c: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x000e: CONST_STR  (r2 I:java.lang.String) =  \"inflater == null\" \l0x0010: INVOKE  \l  (r1 I:java.lang.IllegalArgumentException)\l  (r2 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0013|0x0013: THROW  (r1 I:java.lang.Throwable) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0014|0x0014: NEW_INSTANCE  (r1 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x0016: CONST_STR  (r2 I:java.lang.String) =  \"source == null\" \l0x0018: INVOKE  \l  (r1 I:java.lang.IllegalArgumentException)\l  (r2 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|0x001b: THROW  (r1 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{void okio.InflaterSource.\<init\>((r0 'this' I:okio.InflaterSource A[IMMUTABLE_TYPE, THIS]), (r1 I:okio.BufferedSource A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2 I:java.util.zip.Inflater A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+}
+

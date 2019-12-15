@@ -1,0 +1,19 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.ifExists(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/lang\/Object;)Z" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6.ifExistsQuery != null) goto L_0x0042\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|com.j256.ormlite.stmt.QueryBuilder r0 = new com.j256.ormlite.stmt.QueryBuilder(r6.databaseType, r6.tableInfo, r6.dao)\lr0.selectRaw(\"COUNT(*)\")\lr0.where().mo17213eq(r6.tableInfo.getIdField().getColumnName(), new com.j256.ormlite.stmt.SelectArg())\lr6.ifExistsQuery = r0.prepareStatementString()\lcom.j256.ormlite.field.FieldType[] r0 = new com.j256.ormlite.field.FieldType[]\{r6.tableInfo.getIdField()\}\lr6.ifExistsFieldTypes = r0\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0042|java.lang.Object r8 = r6.tableInfo.getIdField().convertJavaFieldToSqlArgValue(r8)\ljava.lang.String r0 = r6.ifExistsQuery\ljava.lang.Object[] r3 = new java.lang.Object[]\{r8\}\llong r7 = r7.queryForLong(r0, r3, r6.ifExistsFieldTypes)\llogger.debug(\"query of '\{\}' returned \{\}\", (java.lang.Object) r6.ifExistsQuery, (java.lang.Object) java.lang.Long.valueOf(r7))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0069|if ((r7 \> 0 ? 1 : (r7 == 0 ? 0 : \-1)) == 0) goto L_?\l}"];
+Node_5 [shape=record,label="{5\:\ 0x006b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.stmt.StatementExecutor.ifExists((r6v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r7v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 ID A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, TID;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+}
+

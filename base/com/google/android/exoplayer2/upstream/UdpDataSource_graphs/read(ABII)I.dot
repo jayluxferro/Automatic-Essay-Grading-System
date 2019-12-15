@@ -1,0 +1,35 @@
+digraph "CFG forcom.google.android.exoplayer2.upstream.UdpDataSource.read([BII)I" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 != 0) goto L_0x0004\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|SYNTHETIC\lRETURN\lORIG_RETURN\l|return 0\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r5.packetRemaining != 0) goto L_0x0022\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0008|SYNTHETIC\lSplitter:B:4:0x0008\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ IOException \-\> 0x003d \}\lSplitter:B:4:0x0008\l|r5.socket.receive(r5.packet)     \/\/ Catch:\{ IOException \-\> 0x003d \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000f|r5.packetRemaining = r5.packet.getLength()\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0019|if (r5.listener == null) goto L_0x0022\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|r5.listener.onBytesTransferred(r5, r5.packetRemaining)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0022|int r2 = r5.packet.getLength() \- r5.packetRemaining\lint r0 = java.lang.Math.min(r5.packetRemaining, r8)\ljava.lang.System.arraycopy(r5.packetBuffer, r2, r6, r7, r0)\lr5.packetRemaining = r5.packetRemaining \- r0\l}"];
+Node_10 [shape=record,label="{10\:\ 0x003d|ExcHandler: IOException (r1v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:4:0x0008\l|java.io.IOException r1 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003e}"];
+Node_12 [shape=record,label="{12\:\ 0x0043|throw new com.google.android.exoplayer2.upstream.UdpDataSource.UdpDataSourceException(r1)\l}"];
+Node_13 [shape=record,label="{13\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+MethodNode[shape=record,label="{public int com.google.android.exoplayer2.upstream.UdpDataSource.read((r5v0 'this' com.google.android.exoplayer2.upstream.UdpDataSource A[IMMUTABLE_TYPE, THIS]), (r6v0 'buffer' byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 'offset' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 'readLength' int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[com.google.android.exoplayer2.upstream.UdpDataSource$UdpDataSourceException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_9;
+Node_4 -> Node_5;
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_5 -> Node_10;
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_9 -> Node_13;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+}
+

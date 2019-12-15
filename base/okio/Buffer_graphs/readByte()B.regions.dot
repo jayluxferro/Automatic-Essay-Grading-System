@@ -1,0 +1,55 @@
+digraph "CFG forokio.Buffer.readByte()B" {
+subgraph cluster_Region_627466724 {
+label = "R(1:(2:(3:2|(1:4)(1:5)|6)|(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_921471480 {
+label = "R(2:(3:2|(1:4)(1:5)|6)|(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1033633666 {
+label = "IF [B:1:0x0006] THEN: R(3:2|(1:4)(1:5)|6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r9.size != 0) goto L_0x0008\l}"];
+subgraph cluster_Region_1956010322 {
+label = "R(3:2|(1:4)(1:5)|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|okio.Segment okio.Segment r0 = r9.head\lint int r1 = r0.pos\lint int r2 = r0.limit\lint int r4 = r1 + 1\lbyte byte r1 = r0.data[r1]\lr9.size\-\-\l}"];
+subgraph cluster_IfRegion_1968323155 {
+label = "IF [B:3:0x001b] THEN: R(1:4) ELSE: R(1:5)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001b|if (r4 == r2) goto L_0x001d\l}"];
+subgraph cluster_Region_1218823403 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001d|r9.head = r0.pop()\lokio.SegmentPool.recycle(r0)\l}"];
+}
+subgraph cluster_Region_1692472072 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|r0.pos = r4\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0029|RETURN\l|return r1\l}"];
+}
+}
+subgraph cluster_Region_1940176216 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0031|throw new java.lang.IllegalStateException(\"size == 0\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x002a}"];
+MethodNode[shape=record,label="{public byte okio.Buffer.readByte((r9v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+}
+

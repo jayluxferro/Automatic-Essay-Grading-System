@@ -1,0 +1,106 @@
+digraph "CFG forcom.ghanapostgps.ghanapost.util.AsaaseApi.postEncrypted(Ljava\/util\/Map;Lcom\/ghanapostgps\/ghanapost\/util\/AsaaseApiResponse;)V" {
+subgraph cluster_Region_267235741 {
+label = "R(3:0|(3:3|(2:5|(1:7)(1:8))|13)|14)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.HashMap final java.util.HashMap r6 = new java.util.HashMap()\ljava.lang.StringBuilder java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr9.put(\"AsaaseLogs\", com.ghanapostgps.ghanapost.util.AsaaseLog.fetch(r8.context))\ljava.util.Iterator r9 = r9.entrySet().iterator()\lint r1 = 1\l}"];
+subgraph cluster_LoopRegion_324086699 {
+label = "LOOP:0: (3:3|(2:5|(1:7)(1:8))|13)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0023|if (r9.hasNext() != false) goto L_0x0025\l}"];
+subgraph cluster_Region_406409795 {
+label = "R(3:3|(2:5|(1:7)(1:8))|13)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0025|java.util.Map$Entry r2 = r9.next()\l}"];
+subgraph cluster_TryCatchRegion_1204083906 {
+label = "Try: R(2:5|(1:7)(1:8)) catches: R(2:11|12), R(2:9|10)";
+node [shape=record,color=blue];
+subgraph cluster_Region_2044020438 {
+label = "R(2:5|(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\lSplitter:B:4:0x002b\l|java.lang.String java.lang.String r3 = java.net.URLEncoder.encode((java.lang.String) r2.getKey(), p018io.fabric.sdk.android.services.network.HttpRequest.CHARSET_UTF8)     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\ljava.lang.String java.lang.String r2 = java.net.URLEncoder.encode((java.lang.String) r2.getValue(), p018io.fabric.sdk.android.services.network.HttpRequest.CHARSET_UTF8)     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l}"];
+subgraph cluster_IfRegion_2050652544 {
+label = "IF [B:6:0x0043] THEN: R(1:7) ELSE: R(1:8)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0043|Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l|if (r1 == 1) goto L_0x0045     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l}"];
+subgraph cluster_Region_1388979421 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0045|Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l|r0.append(r3 + com.j256.ormlite.stmt.query.SimpleComparison.EQUAL_TO_OPERATION + r2)     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l}"];
+}
+subgraph cluster_Region_1145576253 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x005d|Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l|r0.append(\"&\" + r3 + com.j256.ormlite.stmt.query.SimpleComparison.EQUAL_TO_OPERATION + r2)     \/\/ Catch:\{ UnsupportedEncodingException \-\> 0x007f, Exception \-\> 0x007a \}\l}"];
+}
+}
+}
+subgraph cluster_Region_1908684220 {
+label = "R(2:11|12) | ExcHandler: UnsupportedEncodingException (r2v5 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007f|ExcHandler: UnsupportedEncodingException (r2v5 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\lSplitter:B:4:0x002b\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0080|r2.printStackTrace()\l}"];
+}
+subgraph cluster_Region_41462424 {
+label = "R(2:9|10) | ExcHandler: Exception (r2v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x007a|ExcHandler: Exception (r2v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:4:0x002b\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007b|r2.printStackTrace()\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0083|LOOP_END\lLOOP:0: B:1:0x001f\-\>B:13:0x0083\l|r1++\l}"];
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0086|r6.put(\"DataRequest\", r8.aes.encrypt(r0.toString()))\lcom.ghanapostgps.ghanapost.util.AsaaseApi$9 com.ghanapostgps.ghanapost.util.AsaaseApi.C08109 r0 = new com.ghanapostgps.ghanapost.util.AsaaseApi.C08109(1, r8.encryptedUrl + r8.path, new com.ghanapostgps.ghanapost.util.AsaaseApi.C08087(), new com.ghanapostgps.ghanapost.util.AsaaseApi.C08098())\lr0.setRetryPolicy(new com.android.volley.DefaultRetryPolicy(TIMEOUTINMS, 1, 1.0f))\lr0.setShouldCache(false)\lcom.ghanapostgps.ghanapost.MyApplication.getInstance().addToRequestQueue(r0, \"asaasiApi_request_queue_encrypted\")\l}"];
+}
+subgraph cluster_Region_1908684220 {
+label = "R(2:11|12) | ExcHandler: UnsupportedEncodingException (r2v5 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x007f|ExcHandler: UnsupportedEncodingException (r2v5 'e' java.io.UnsupportedEncodingException A[CUSTOM_DECLARE])\lSplitter:B:4:0x002b\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0080|r2.printStackTrace()\l}"];
+}
+subgraph cluster_Region_41462424 {
+label = "R(2:9|10) | ExcHandler: Exception (r2v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x007a|ExcHandler: Exception (r2v6 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:4:0x002b\l}"];
+Node_10 [shape=record,label="{10\:\ 0x007b|r2.printStackTrace()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001f|LOOP_START\lPHI: r1 \l  PHI: (r1v3 int) = (r1v2 int), (r1v8 int) binds: [B:0:0x0000, B:13:0x0083] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001f\-\>B:13:0x0083\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x002b|SYNTHETIC\lSplitter:B:4:0x002b\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x00d3}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0086|SYNTHETIC\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x0083|SYNTHETIC\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0083|SYNTHETIC\l}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0083|SYNTHETIC\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0083|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.ghanapostgps.ghanapost.util.AsaaseApi.postEncrypted((r8v0 'this' com.ghanapostgps.ghanapost.util.AsaaseApi A[IMMUTABLE_TYPE, THIS]), (r9v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 com.ghanapostgps.ghanapost.util.AsaaseApiResponse A[DONT_INLINE, IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;, Lcom\/ghanapostgps\/ghanapost\/util\/AsaaseApiResponse;, )V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_16[style=dashed];
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_18;
+Node_8 -> Node_20;
+Node_11 -> Node_12;
+Node_12 -> Node_17;
+Node_9 -> Node_10;
+Node_10 -> Node_19;
+Node_13 -> Node_1;
+Node_14 -> Node_15;
+Node_11 -> Node_12;
+Node_12 -> Node_17;
+Node_9 -> Node_10;
+Node_10 -> Node_19;
+Node_1 -> Node_2;
+Node_4 -> Node_5;
+Node_4 -> Node_11;
+Node_4 -> Node_9;
+Node_16 -> Node_14;
+Node_17 -> Node_13;
+Node_18 -> Node_13;
+Node_19 -> Node_13;
+Node_20 -> Node_13;
+}
+

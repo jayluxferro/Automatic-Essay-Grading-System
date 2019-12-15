@@ -1,0 +1,18 @@
+digraph "CFG forokhttp3.internal.http2.Http2Connection.start(Z)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 == false) goto L_0x0021\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0002|r5.writer.connectionPreface()\lr5.writer.settings(r5.okHttpSettings)\lint r6 = r5.okHttpSettings.getInitialWindowSize()\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0017|if (r6 == 65535) goto L_0x0021\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0019|r5.writer.windowUpdate(0, (long) (r6 \- 65535))\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0021|new java.lang.Thread(r5.readerRunnable).start()\l}"];
+Node_5 [shape=record,label="{5\:\ 0x002b|RETURN\l|return\l}"];
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Http2Connection.start((r5v0 'this' okhttp3.internal.http2.Http2Connection A[IMMUTABLE_TYPE, THIS]), (r6v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_4;
+Node_1 -> Node_2;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,317 @@
+digraph "CFG forcom.google.android.exoplayer2.text.cea.Cea708Decoder.processCurrentPacket()V" {
+subgraph cluster_Region_898429924 {
+label = "R(1:(2:(2:2|49)|(3:3|(1:5)|(1:(1:(1:8)))(1:(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))(0)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1858177521 {
+label = "R(2:(2:2|49)|(3:3|(1:5)|(1:(1:(1:8)))(1:(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))(0))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_273313452 {
+label = "IF [B:1:0x0016] THEN: R(2:2|49) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0016|if (r12.currentDtvCcPacket.currentIndex != ((r12.currentDtvCcPacket.packetSize * 2) \- 1)) goto L_0x0018\l}"];
+subgraph cluster_Region_1308941567 {
+label = "R(2:2|49)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0018|android.util.Log.w(TAG, \"DtvCcPacket ended prematurely; size is \" + ((r12.currentDtvCcPacket.packetSize * 2) \- 1) + \", but current index is \" + r12.currentDtvCcPacket.currentIndex + \" (sequence number \" + r12.currentDtvCcPacket.sequenceNumber + \"); ignoring packet\")\l}"];
+Node_49 [shape=record,label="{49\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_381754784 {
+label = "R(3:3|(1:5)|(1:(1:(1:8)))(1:(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))(0)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x005b|r12.serviceBlockPacket.reset(r12.currentDtvCcPacket.packetData, r12.currentDtvCcPacket.currentIndex)\lint int r3 = r12.serviceBlockPacket.readBits(3)\lint int r0 = r12.serviceBlockPacket.readBits(5)\l}"];
+subgraph cluster_IfRegion_168085793 {
+label = "IF [B:4:0x0077] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0077|if (r3 == 7) goto L_0x0079\l}"];
+subgraph cluster_Region_1586508773 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0079|r12.serviceBlockPacket.skipBits(2)\lr3 += r12.serviceBlockPacket.readBits(6)\l}"];
+}
+}
+subgraph cluster_IfRegion_1480469425 {
+label = "IF [B:6:0x0087] THEN: R(1:(1:(1:8))) ELSE: R(1:(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))(0))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0087|PHI: r3 \l  PHI: (r3v1 'serviceNumber' int) = (r3v0 'serviceNumber' int), (r3v2 'serviceNumber' int) binds: [B:4:0x0077, B:5:0x0079] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == 0) goto L_0x0089\l}"];
+subgraph cluster_Region_474289416 {
+label = "R(1:(1:(1:8)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2116655472 {
+label = "R(1:(1:8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_901619535 {
+label = "IF [B:7:0x0089] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0089|if (r3 != 0) goto L_0x008b\l}"];
+subgraph cluster_Region_722450501 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x008b|android.util.Log.w(TAG, \"serviceNumber is non\-zero (\" + r3 + \") when blockSize is 0\")\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1029027607 {
+label = "R(1:(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1952426458 {
+label = "IF [B:10:0x00ac] THEN: R(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x00ac|if (r3 == r12.selectedServiceNumber) goto L_0x00ae\l}"];
+subgraph cluster_Region_18907166 {
+label = "R(3:11|(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))|(1:(1:36)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x00ae|boolean r2 = false\l}"];
+subgraph cluster_LoopRegion_1440638822 {
+label = "LOOP:0: (2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x00b5|if (r12.serviceBlockPacket.bitsLeft() \> 0) goto L_0x00b7\l}"];
+subgraph cluster_Region_83534387 {
+label = "R(2:14|(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x00b7|int int r1 = r12.serviceBlockPacket.readBits(8)\l}"];
+subgraph cluster_IfRegion_401765272 {
+label = "IF [B:15:0x00bf] THEN: R(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34))))) ELSE: R(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24)))))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x00bf|if (r1 == 16) goto L_0x00f5\l}"];
+subgraph cluster_Region_1185780955 {
+label = "R(2:25|(1:27)(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))))";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00f5|int int r1 = r12.serviceBlockPacket.readBits(8)\l}"];
+subgraph cluster_IfRegion_174846759 {
+label = "IF [B:26:0x00fb] THEN: R(1:27) ELSE: R(1:(1:29)(1:(1:31)(1:(1:33)(1:34))))";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00fb|if (r1 \<= 31) goto L_0x00fd\l}"];
+subgraph cluster_Region_1083561156 {
+label = "R(1:27)";
+node [shape=record,color=blue];
+Node_27 [shape=record,label="{27\:\ 0x00fd|handleC2Command(r1)\l}"];
+}
+subgraph cluster_Region_1627899264 {
+label = "R(1:(1:29)(1:(1:31)(1:(1:33)(1:34)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_181524935 {
+label = "IF [B:28:0x0101] THEN: R(1:29) ELSE: R(1:(1:31)(1:(1:33)(1:34))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0101|if (r1 \<= 127) goto L_0x0103\l}"];
+subgraph cluster_Region_1579401147 {
+label = "R(1:29)";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0103|handleG2Character(r1)\lr2 = true\l}"];
+}
+subgraph cluster_Region_1398219465 {
+label = "R(1:(1:31)(1:(1:33)(1:34))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_544247562 {
+label = "IF [B:30:0x0108] THEN: R(1:31) ELSE: R(1:(1:33)(1:34)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0108|if (r1 \<= 159) goto L_0x010a\l}"];
+subgraph cluster_Region_1968681704 {
+label = "R(1:31)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x010a|handleC3Command(r1)\l}"];
+}
+subgraph cluster_Region_1135266491 {
+label = "R(1:(1:33)(1:34)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_462056306 {
+label = "IF [B:32:0x010e] THEN: R(1:33) ELSE: R(1:34) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x010e|if (r1 \<= 255) goto L_0x0110\l}"];
+subgraph cluster_Region_1471929839 {
+label = "R(1:33)";
+node [shape=record,color=blue];
+Node_33 [shape=record,label="{33\:\ 0x0110|handleG3Character(r1)\lr2 = true\l}"];
+}
+subgraph cluster_Region_529634853 {
+label = "R(1:34)";
+node [shape=record,color=blue];
+Node_34 [shape=record,label="{34\:\ 0x0115|android.util.Log.w(TAG, \"Invalid extended command: \" + r1)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1701409023 {
+label = "R(1:(1:17)(1:(1:19)(1:(1:21)(1:(1:23)(1:24))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1656349222 {
+label = "IF [B:16:0x00c1] THEN: R(1:17) ELSE: R(1:(1:19)(1:(1:21)(1:(1:23)(1:24)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x00c1|if (r1 \<= 31) goto L_0x00c3\l}"];
+subgraph cluster_Region_972293081 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x00c3|handleC0Command(r1)\l}"];
+}
+subgraph cluster_Region_983405079 {
+label = "R(1:(1:19)(1:(1:21)(1:(1:23)(1:24)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1758385646 {
+label = "IF [B:18:0x00c7] THEN: R(1:19) ELSE: R(1:(1:21)(1:(1:23)(1:24))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00c7|if (r1 \<= 127) goto L_0x00c9\l}"];
+subgraph cluster_Region_2064762349 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x00c9|handleG0Character(r1)\lr2 = true\l}"];
+}
+subgraph cluster_Region_1345760999 {
+label = "R(1:(1:21)(1:(1:23)(1:24))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1814304220 {
+label = "IF [B:20:0x00ce] THEN: R(1:21) ELSE: R(1:(1:23)(1:24)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00ce|if (r1 \<= 159) goto L_0x00d0\l}"];
+subgraph cluster_Region_1925987070 {
+label = "R(1:21)";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00d0|handleC1Command(r1)\lr2 = true\l}"];
+}
+subgraph cluster_Region_1172064584 {
+label = "R(1:(1:23)(1:24)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1092706988 {
+label = "IF [B:22:0x00d5] THEN: R(1:23) ELSE: R(1:24) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00d5|if (r1 \<= 255) goto L_0x00d7\l}"];
+subgraph cluster_Region_2011784301 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00d7|handleG1Character(r1)\lr2 = true\l}"];
+}
+subgraph cluster_Region_1481792410 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00dc|android.util.Log.w(TAG, \"Invalid base command: \" + r1)\l}"];
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_1797007236 {
+label = "R(1:(1:36))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_940335955 {
+label = "IF [B:35:0x012e] THEN: R(1:36) ELSE: null";
+node [shape=record,color=blue];
+Node_35 [shape=record,label="{35\:\ 0x012e|if (r2 == true) goto L_0x0130\l}"];
+subgraph cluster_Region_1028066778 {
+label = "R(1:36)";
+node [shape=record,color=blue];
+Node_36 [shape=record,label="{36\:\ 0x0130|r12.cues = getDisplayCues()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1491328259 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x00aa}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x00af|LOOP_START\lPHI: r2 \l  PHI: (r2v1 'cuesNeedUpdate' boolean) = (r2v0 'cuesNeedUpdate' boolean), (r2v2 'cuesNeedUpdate' boolean) binds: [B:11:0x00ae, B:37:0x00af] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:12:0x00af\-\>B:37:0x00af\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ 0x00af|LOOP_END\lSYNTHETIC\lPHI: r2 \l  PHI: (r2v2 'cuesNeedUpdate' boolean) = (r2v1 'cuesNeedUpdate' boolean), (r2v3 'cuesNeedUpdate' boolean), (r2v1 'cuesNeedUpdate' boolean), (r2v4 'cuesNeedUpdate' boolean), (r2v1 'cuesNeedUpdate' boolean), (r2v1 'cuesNeedUpdate' boolean), (r2v5 'cuesNeedUpdate' boolean), (r2v6 'cuesNeedUpdate' boolean), (r2v7 'cuesNeedUpdate' boolean), (r2v1 'cuesNeedUpdate' boolean) binds: [B:48:0x00af, B:47:0x00af, B:46:0x00af, B:45:0x00af, B:44:0x00af, B:43:0x00af, B:42:0x00af, B:41:0x00af, B:40:0x00af, B:39:0x00af] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:12:0x00af\-\>B:37:0x00af\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ 0x012e|SYNTHETIC\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ 0x00af|SYNTHETIC\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ 0x00af|SYNTHETIC\l}"];
+Node_41 [shape=record,color=red,label="{41\:\ 0x00af|SYNTHETIC\l}"];
+Node_42 [shape=record,color=red,label="{42\:\ 0x00af|SYNTHETIC\l}"];
+Node_43 [shape=record,color=red,label="{43\:\ 0x00af|SYNTHETIC\l}"];
+Node_44 [shape=record,color=red,label="{44\:\ 0x00af|SYNTHETIC\l}"];
+Node_45 [shape=record,color=red,label="{45\:\ 0x00af|SYNTHETIC\l}"];
+Node_46 [shape=record,color=red,label="{46\:\ 0x00af|SYNTHETIC\l}"];
+Node_47 [shape=record,color=red,label="{47\:\ 0x00af|SYNTHETIC\l}"];
+Node_48 [shape=record,color=red,label="{48\:\ 0x00af|SYNTHETIC\l}"];
+Node_50 [shape=record,color=red,label="{50\:\ ?|SYNTHETIC\l}"];
+Node_51 [shape=record,color=red,label="{51\:\ ?|SYNTHETIC\l}"];
+Node_52 [shape=record,color=red,label="{52\:\ ?|SYNTHETIC\l}"];
+Node_53 [shape=record,color=red,label="{53\:\ ?|SYNTHETIC\l}"];
+Node_54 [shape=record,color=red,label="{54\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.google.android.exoplayer2.text.cea.Cea708Decoder.processCurrentPacket((r12v0 'this' com.google.android.exoplayer2.text.cea.Cea708Decoder A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_49;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_9[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_50[style=dashed];
+Node_8 -> Node_51;
+Node_10 -> Node_11;
+Node_10 -> Node_52[style=dashed];
+Node_11 -> Node_12;
+Node_13 -> Node_14;
+Node_13 -> Node_38[style=dashed];
+Node_14 -> Node_15;
+Node_15 -> Node_16[style=dashed];
+Node_15 -> Node_25;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_28[style=dashed];
+Node_27 -> Node_44;
+Node_28 -> Node_29;
+Node_28 -> Node_30[style=dashed];
+Node_29 -> Node_45;
+Node_30 -> Node_31;
+Node_30 -> Node_32[style=dashed];
+Node_31 -> Node_46;
+Node_32 -> Node_33;
+Node_32 -> Node_34[style=dashed];
+Node_33 -> Node_47;
+Node_34 -> Node_48;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_39;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_40;
+Node_20 -> Node_21;
+Node_20 -> Node_22[style=dashed];
+Node_21 -> Node_41;
+Node_22 -> Node_23;
+Node_22 -> Node_24[style=dashed];
+Node_23 -> Node_42;
+Node_24 -> Node_43;
+Node_35 -> Node_36;
+Node_35 -> Node_53[style=dashed];
+Node_36 -> Node_54;
+Node_0 -> Node_1;
+Node_9 -> Node_10;
+Node_12 -> Node_13;
+Node_37 -> Node_12;
+Node_38 -> Node_35;
+Node_39 -> Node_37;
+Node_40 -> Node_37;
+Node_41 -> Node_37;
+Node_42 -> Node_37;
+Node_43 -> Node_37;
+Node_44 -> Node_37;
+Node_45 -> Node_37;
+Node_46 -> Node_37;
+Node_47 -> Node_37;
+Node_48 -> Node_37;
+}
+

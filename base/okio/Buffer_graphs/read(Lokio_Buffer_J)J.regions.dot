@@ -1,0 +1,83 @@
+digraph "CFG forokio.Buffer.read(Lokio\/Buffer;J)J" {
+subgraph cluster_Region_433235543 {
+label = "R(1:(1:14)(1:(2:11|12)(1:(1:5)(3:(1:8)|9|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1640184409 {
+label = "IF [B:0:0x0000] THEN: R(1:14) ELSE: R(1:(2:11|12)(1:(1:5)(3:(1:8)|9|10)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r5 == null) goto L_0x0034\l}"];
+subgraph cluster_Region_1205943907 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x003b|throw new java.lang.IllegalArgumentException(\"sink == null\")\l}"];
+}
+subgraph cluster_Region_204828271 {
+label = "R(1:(2:11|12)(1:(1:5)(3:(1:8)|9|10))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_5869984 {
+label = "IF [B:2:0x0006] THEN: R(2:11|12) ELSE: R(1:(1:5)(3:(1:8)|9|10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r6 \< 0) goto L_0x001d\l}"];
+subgraph cluster_Region_2024825344 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001d}"];
+Node_12 [shape=record,label="{12\:\ 0x0033|throw new java.lang.IllegalArgumentException(\"byteCount \< 0: \" + r6)\l}"];
+}
+subgraph cluster_Region_913070419 {
+label = "R(1:(1:5)(3:(1:8)|9|10)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_294461415 {
+label = "IF [B:4:0x000c] THEN: R(1:5) ELSE: R(3:(1:8)|9|10) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r4.size == 0) goto L_0x000e\l}"];
+subgraph cluster_Region_1561680103 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|RETURN\l|return \-1\l}"];
+}
+subgraph cluster_Region_642683175 {
+label = "R(3:(1:8)|9|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1916592764 {
+label = "IF [B:7:0x0015] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|if (r6 \> r4.size) goto L_0x0017\l}"];
+subgraph cluster_Region_188201467 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0017|long r6 = r4.size\l}"];
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0019|PHI: r6 \l  PHI: (r6v3 long) = (r6v0 long), (r6v4 long) binds: [B:7:0x0015, B:8:0x0017] A[DONT_GENERATE, DONT_INLINE]\l|r5.write(r4, r6)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001c|RETURN\l|return r6\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0034}"];
+MethodNode[shape=record,label="{public long okio.Buffer.read((r4v0 'this' okio.Buffer A[IMMUTABLE_TYPE, THIS]), (r5v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1[style=dashed];
+Node_0 -> Node_13;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_11;
+Node_11 -> Node_12;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_13 -> Node_14;
+}
+

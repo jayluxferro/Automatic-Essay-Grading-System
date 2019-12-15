@@ -1,0 +1,60 @@
+digraph "CFG forcom.mapbox.api.geocoding.v5.MapboxGeocoding.getBatchCall()Lretrofit2\/Call;" {
+subgraph cluster_Region_1123665873 {
+label = "R(1:(2:(1:3)|(1:(2:(2:6|7)|(1:9)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1816498781 {
+label = "R(2:(1:3)|(1:(2:(2:6|7)|(1:9))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1398277533 {
+label = "IF [B:1:0x0002] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r14.batchCall != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1805629245 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|RETURN\l|return r14.batchCall\l}"];
+}
+}
+subgraph cluster_Region_1741959888 {
+label = "R(1:(2:(2:6|7)|(1:9)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_667124493 {
+label = "R(2:(2:6|7)|(1:9))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_874782341 {
+label = "IF [B:5:0x0011] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|if (mode().equals(com.mapbox.api.geocoding.p009v5.GeocodingCriteria.MODE_PLACES) == false) goto L_0x0013\l}"];
+subgraph cluster_Region_580153699 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|r14.batchCall = ((com.mapbox.api.geocoding.p009v5.GeocodingService) getService()).getBatchCall(com.mapbox.core.utils.ApiCallHelper.getHeaderUserAgent(clientAppName()), mode(), query(), accessToken(), country(), proximity(), geocodingTypes(), autocomplete(), bbox(), limit(), languages(), reverseMode())\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0056|RETURN\l|return r14.batchCall\l}"];
+}
+}
+subgraph cluster_Region_1687192915 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x005e|throw new com.mapbox.core.exceptions.ServicesException(\"Use getCall() for non\-batch calls.\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0007}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0057}"];
+MethodNode[shape=record,label="{private retrofit2.Call\<java.util.List\<com.mapbox.api.geocoding.v5.models.GeocodingResponse\>\> com.mapbox.api.geocoding.v5.MapboxGeocoding.getBatchCall((r14v0 'this' com.mapbox.api.geocoding.v5.MapboxGeocoding A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(), Lretrofit2\/Call\<, Ljava\/util\/List\<, Lcom\/mapbox\/api\/geocoding\/v5\/models\/GeocodingResponse;, \>;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_8[style=dashed];
+Node_6 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+}
+

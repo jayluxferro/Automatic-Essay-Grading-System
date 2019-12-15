@@ -1,0 +1,40 @@
+digraph "CFG forokio.Okio.2.read(Lokio\/Buffer;J)J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r2 = (r5 \> 0 ? 1 : (r5 == 0 ? 0 : \-1))\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r2 \< 0) goto L_0x0047\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|if (r2 != 0) goto L_0x0009\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|RETURN\l|return 0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0009|SYNTHETIC\lSplitter:B:4:0x0009\l}"];
+Node_5 [shape=record,label="{5\:\ ?|Catch:\{ AssertionError \-\> 0x0039 \}\lSplitter:B:4:0x0009\l|r2.throwIfReached()     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\lokio.Segment r0 = r4.writableSegment(1)     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\ljava.io.InputStream r6 = r1     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\lbyte[] r1 = r0.data     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\lint r2 = r0.limit     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\lint r5 = r6.read(r1, r2, (int) java.lang.Math.min(r5, (long) (8192 \- r0.limit)))     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0028|Catch:\{ AssertionError \-\> 0x0039 \}\l|if (r5 != \-1) goto L_0x002d     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|RETURN\lCatch:\{ AssertionError \-\> 0x0039 \}\l|return \-1     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\l}"];
+Node_8 [shape=record,label="{8\:\ 0x002d|Catch:\{ AssertionError \-\> 0x0039 \}\l|r0.limit = r0.limit + r5     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\llong r5 = (long) r5     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\lr4.size = r4.size + r5     \/\/ Catch:\{ AssertionError \-\> 0x0039 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0038|RETURN\l|return r5\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0039|ExcHandler: AssertionError (r4v2 'e' java.lang.AssertionError A[CUSTOM_DECLARE])\lSplitter:B:4:0x0009\l|java.lang.AssertionError r4 = move\-exception\l}"];
+Node_11 [shape=record,label="{11\:\ 0x003a}"];
+Node_12 [shape=record,label="{12\:\ 0x003e|if (okio.Okio.isAndroidGetsocknameError(r4) == false) goto L_0x0046\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0040}"];
+Node_14 [shape=record,label="{14\:\ 0x0045|throw new java.io.IOException(r4)\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0046|throw r4\l}"];
+Node_16 [shape=record,label="{16\:\ 0x0047|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"byteCount \< 0: \")\lr0.append(r5)\l}"];
+Node_17 [shape=record,label="{17\:\ 0x005d|throw new java.lang.IllegalArgumentException(r0.toString())\l}"];
+MethodNode[shape=record,label="{public long okio.Okio.2.read((r3v0 'this' okio.Okio$2 A[IMMUTABLE_TYPE, THIS]), (r4v0 okio.Buffer A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_16;
+Node_2 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_15;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+}
+

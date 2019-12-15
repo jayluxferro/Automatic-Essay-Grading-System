@@ -1,0 +1,27 @@
+digraph "CFG forcom.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute.drawRoutes()V" {
+subgraph cluster_Region_2140544882 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r11.featureCollections.size() \- 1\l}"];
+subgraph cluster_LoopRegion_372726459 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|LOOP_START\lPHI: r0 \l  PHI: (r0v3 int) = (r0v2 int), (r0v4 int) binds: [B:0:0x0000, B:2:0x000a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0008\-\>B:2:0x000a\l|if (r0 \>= 0) goto L_0x000a\l}"];
+subgraph cluster_Region_1058653393 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|LOOP_END\lLOOP:0: B:1:0x0008\-\>B:2:0x000a\l|com.mapbox.services.android.navigation.p015ui.p016v5.utils.MapUtils.updateMapSourceFromFeatureCollection(r11.mapboxMap, r11.featureCollections.get(r0), r11.featureCollections.get(r0).features().get(0).getStringProperty(\"source\"))\ljava.lang.String java.lang.String r2 = r11.featureCollections.get(r0).features().get(0).getStringProperty(\"source\")\lint int r3 = r11.featureCollections.indexOf(r11.featureCollections.get(r0))\lr11.layerIds.add(java.lang.String.format(java.util.Locale.US, ID_FORMAT, new java.lang.Object[]\{GENERIC_ROUTE_SHIELD_LAYER_ID, java.lang.Integer.valueOf(r3)\}))\lr11.layerIds.add(java.lang.String.format(java.util.Locale.US, ID_FORMAT, new java.lang.Object[]\{GENERIC_ROUTE_LAYER_ID, java.lang.Integer.valueOf(r3)\}))\laddRouteShieldLayer(r11.layerIds.get(r11.layerIds.size() \- 2), r2, r3)\laddRouteLayer(r11.layerIds.get(r11.layerIds.size() \- 1), r2, r3)\lr0\-\-\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x00af}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x00af|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute.drawRoutes((r11v0 'this' com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

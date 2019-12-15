@@ -1,0 +1,34 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationHelper.isUserOffRoute(Lcom\/mapbox\/services\/android\/navigation\/v5\/navigation\/NavigationLocationUpdate;Lcom\/mapbox\/services\/android\/navigation\/v5\/routeprogress\/RouteProgress;Lcom\/mapbox\/services\/android\/navigation\/v5\/offroute\/OffRouteCallback;)Z" {
+subgraph cluster_Region_2084615018 {
+label = "R(2:0|(2:(1:2)|(2:3|4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.mapbox.services.android.navigation.v5.navigation.MapboxNavigationOptions com.mapbox.services.android.navigation.p017v5.navigation.MapboxNavigationOptions r0 = r2.mapboxNavigation().options()\l}"];
+subgraph cluster_Region_1686817966 {
+label = "R(2:(1:2)|(2:3|4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1895555417 {
+label = "IF [B:1:0x000c] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000c|if (r0.enableOffRouteDetection() == false) goto L_0x000e\l}"];
+subgraph cluster_Region_1857191930 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_1371167802 {
+label = "R(2:3|4)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0010|com.mapbox.services.android.navigation.v5.offroute.OffRoute com.mapbox.services.android.navigation.p017v5.offroute.OffRoute r1 = r2.mapboxNavigation().getOffRouteEngine()\lsetOffRouteDetectorCallback(r1, r4)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|RETURN\l|return r1.isUserOffRoute(r2.location(), r3, r0)\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{static boolean com.mapbox.services.android.navigation.v5.navigation.NavigationHelper.isUserOffRoute((r2v0 com.mapbox.services.android.navigation.v5.navigation.NavigationLocationUpdate A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.mapbox.services.android.navigation.v5.offroute.OffRouteCallback A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+}
+

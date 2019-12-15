@@ -1,0 +1,124 @@
+digraph "CFG formil.nga.tiff.Rasters.getPixelRow(ILjava\/nio\/ByteOrder;)[B" {
+subgraph cluster_Region_999969691 {
+label = "R(3:0|(4:2|(1:5)|6|(3:9|(1:12)|13))(2:14|(3:17|(1:20)|21))|23)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.nio.ByteBuffer java.nio.ByteBuffer r0 = java.nio.ByteBuffer.allocate(getWidth() * sizePixel())\lr0.order(r7)\l}"];
+subgraph cluster_IfRegion_1782487907 {
+label = "IF [B:1:0x0014] THEN: R(4:2|(1:5)|6|(3:9|(1:12)|13)) ELSE: R(2:14|(3:17|(1:20)|21))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0014|if (r5.sampleValues != null) goto L_0x0016\l}"];
+subgraph cluster_Region_1331675486 {
+label = "R(4:2|(1:5)|6|(3:9|(1:12)|13))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0016|int r7 = 0\l}"];
+subgraph cluster_LoopRegion_2122257587 {
+label = "LOOP:0: (1:5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001b|if (r7 \< getSamplesPerPixel()) goto L_0x001d\l}"];
+subgraph cluster_Region_1295640408 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001d|LOOP_END\lLOOP:0: B:3:0x0017\-\>B:5:0x001d\l|r5.sampleValues[r7].position(getWidth() * r6 * r5.fieldTypes[r7].getBytes())\lr7++\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0037|int r6 = 0\l}"];
+subgraph cluster_LoopRegion_1820737219 {
+label = "LOOP:1: (3:9|(1:12)|13)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003c|if (r6 \< getWidth()) goto L_0x003e\l}"];
+subgraph cluster_Region_1575110460 {
+label = "R(3:9|(1:12)|13)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x003e|int r7 = 0\l}"];
+subgraph cluster_LoopRegion_1539181247 {
+label = "LOOP:2: (1:12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0043|if (r7 \< getSamplesPerPixel()) goto L_0x0045\l}"];
+subgraph cluster_Region_339846002 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0045|LOOP_END\lLOOP:2: B:10:0x003f\-\>B:12:0x0045\l|writeSample(r0, r5.sampleValues[r7], r5.fieldTypes[r7])\lr7++\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0053|LOOP_END\lLOOP:1: B:7:0x0038\-\>B:13:0x0053\l|r6++\l}"];
+}
+}
+}
+subgraph cluster_Region_72620225 {
+label = "R(2:14|(3:17|(1:20)|21))";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0056|r5.interleaveValues.position(r6 * getWidth() * sizePixel())\lint r6 = 0\l}"];
+subgraph cluster_LoopRegion_1841005915 {
+label = "LOOP:3: (3:17|(1:20)|21)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x006c|if (r6 \< getWidth()) goto L_0x006e\l}"];
+subgraph cluster_Region_1954079149 {
+label = "R(3:17|(1:20)|21)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x006e|int r7 = 0\l}"];
+subgraph cluster_LoopRegion_1810456306 {
+label = "LOOP:4: (1:20)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0073|if (r7 \< getSamplesPerPixel()) goto L_0x0075\l}"];
+subgraph cluster_Region_288479231 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0075|LOOP_END\lLOOP:4: B:18:0x006f\-\>B:20:0x0075\l|writeSample(r0, r5.interleaveValues, r5.fieldTypes[r7])\lr7++\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x0081|LOOP_END\lLOOP:3: B:15:0x0068\-\>B:21:0x0081\l|r6++\l}"];
+}
+}
+}
+}
+Node_23 [shape=record,label="{23\:\ 0x0088|RETURN\l|return r0.array()\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0017|LOOP_START\lPHI: r7 \l  PHI: (r7v8 int) = (r7v7 int), (r7v13 int) binds: [B:2:0x0016, B:5:0x001d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x0017\-\>B:5:0x001d\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0038|LOOP_START\lPHI: r6 \l  PHI: (r6v8 int) = (r6v7 int), (r6v9 int) binds: [B:6:0x0037, B:13:0x0053] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:7:0x0038\-\>B:13:0x0053\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x003f|LOOP_START\lPHI: r7 \l  PHI: (r7v11 int) = (r7v10 int), (r7v12 int) binds: [B:9:0x003e, B:12:0x0045] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:10:0x003f\-\>B:12:0x0045\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0068|LOOP_START\lPHI: r6 \l  PHI: (r6v5 int) = (r6v4 int), (r6v6 int) binds: [B:14:0x0056, B:21:0x0081] A[DONT_GENERATE, DONT_INLINE]\lLOOP:3: B:15:0x0068\-\>B:21:0x0081\l}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x006f|LOOP_START\lPHI: r7 \l  PHI: (r7v5 int) = (r7v4 int), (r7v6 int) binds: [B:17:0x006e, B:20:0x0075] A[DONT_GENERATE, DONT_INLINE]\lLOOP:4: B:18:0x006f\-\>B:20:0x0075\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x0084}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0037|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x0084|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x0053|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0084|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0081|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public byte[] mil.nga.tiff.Rasters.getPixelRow((r5v0 'this' mil.nga.tiff.Rasters A[IMMUTABLE_TYPE, THIS]), (r6v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.nio.ByteOrder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_14[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_24[style=dashed];
+Node_5 -> Node_3;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_25[style=dashed];
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_11 -> Node_26[style=dashed];
+Node_12 -> Node_10;
+Node_13 -> Node_7;
+Node_14 -> Node_15;
+Node_16 -> Node_17;
+Node_16 -> Node_27[style=dashed];
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_28[style=dashed];
+Node_20 -> Node_18;
+Node_21 -> Node_15;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+Node_10 -> Node_11;
+Node_15 -> Node_16;
+Node_18 -> Node_19;
+Node_22 -> Node_23;
+Node_24 -> Node_6;
+Node_25 -> Node_22;
+Node_26 -> Node_13;
+Node_27 -> Node_22;
+Node_28 -> Node_21;
+}
+

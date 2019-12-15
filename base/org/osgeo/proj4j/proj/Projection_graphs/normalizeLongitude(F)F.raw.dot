@@ -1,0 +1,33 @@
+digraph "CFG fororg.osgeo.proj4j.proj.Projection.normalizeLongitude(F)F" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: CAST  (r0 I:double) = (double) (r3 I:float) \l0x0001: INVOKE  (r2 I:boolean) = (r0 I:double) java.lang.Double.isInfinite(double):boolean type: STATIC \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0005|0x0005: IF  (r2 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0020 \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0007|0x0007: INVOKE  (r0 I:boolean) = (r0 I:double) java.lang.Double.isNaN(double):boolean type: STATIC \l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|0x000b: IF  (r0 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) != (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:11:0x0020 \l}"];
+Node_4 [shape=record,label="{4\:\ 0x000d|0x000d: CONST  (r0 I:?[int, float, short, byte, char]) = \l  (1127481344(0x43340000, float:180.0) ?[int, float, short, byte, char])\l \l0x000f: CONST  (r1 I:?[int, float, short, byte, char]) = \l  (1135869952(0x43b40000, float:360.0) ?[int, float, short, byte, char])\l \l0x0011: CMP_L  (r0 I:int) = (r3 I:float), (r0 I:float) \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0013|0x0013: IF  (r0 I:?[int, byte, short, char]) \<= (0 ?[int, byte, short, char])  \-\> B:7:0x0017 \l}"];
+Node_6 [shape=record,label="{6\:\ 0x0015|0x0015: ARITH  (r3 I:float) = (r3 I:float) \- (r1 I:float) \l}"];
+Node_7 [shape=record,label="{7\:\ 0x0017|0x0017: CONST  (r0 I:?[int, float, short, byte, char]) = \l  (\-1020002304(0xffffffffc3340000, float:\-180.0) ?[int, float, short, byte, char])\l \l0x0019: CMP_G  (r0 I:int) = (r3 I:float), (r0 I:float) \l}"];
+Node_8 [shape=record,label="{8\:\ 0x001b|0x001b: IF  (r0 I:?[int, byte, short, char]) \>= (0 ?[int, byte, short, char])  \-\> B:10:0x001f \l}"];
+Node_9 [shape=record,label="{9\:\ 0x001d|0x001d: ARITH  (r3 I:float) = (r3 I:float) + (r1 I:float) \l}"];
+Node_10 [shape=record,label="{10\:\ 0x001f|0x001f: RETURN  (r3 I:float) \l}"];
+Node_11 [shape=record,label="{11\:\ 0x0020|0x0020: NEW_INSTANCE  (r3 I:org.osgeo.proj4j.InvalidValueException) =  org.osgeo.proj4j.InvalidValueException \l0x0022: CONST_STR  (r0 I:java.lang.String) =  \"Infinite or NaN longitude\" \l0x0024: INVOKE  \l  (r3 I:org.osgeo.proj4j.InvalidValueException)\l  (r0 I:java.lang.String)\l org.osgeo.proj4j.InvalidValueException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_12 [shape=record,label="{12\:\ 0x0027|0x0027: THROW  (r3 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public static float org.osgeo.proj4j.proj.Projection.normalizeLongitude((r3 I:float A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_11;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_11;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_4;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_10;
+Node_9 -> Node_7;
+Node_11 -> Node_12;
+}
+

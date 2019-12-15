@@ -1,0 +1,41 @@
+digraph "CFG forcom.google.android.gms.common.internal.ClientSettings.getApplicableScopes(Lcom\/google\/android\/gms\/common\/api\/Api;)Ljava\/util\/Set;" {
+subgraph cluster_Region_1317271262 {
+label = "R(2:0|(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.gms.common.internal.ClientSettings$OptionalApiSettings com.google.android.gms.common.internal.ClientSettings.OptionalApiSettings r3 = r2.zaob.get(r3)\l}"];
+subgraph cluster_Region_1547334303 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1230106780 {
+label = "IF [B:1:0x0008, B:3:0x0010] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r3 == null) goto L_0x0020\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0010|ADDED_TO_REGION\l|if (r3.mScopes.isEmpty() == true) goto L_0x0020\l}"];
+subgraph cluster_Region_1417103270 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0022|RETURN\l|return r2.zabr\l}"];
+}
+}
+subgraph cluster_Region_566505686 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|java.util.HashSet java.util.HashSet r0 = new java.util.HashSet(r2.zabr)\lr0.addAll(r3.mScopes)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|RETURN\l|return r0\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0020}"];
+MethodNode[shape=record,label="{public final java.util.Set\<com.google.android.gms.common.api.Scope\> com.google.android.gms.common.internal.ClientSettings.getApplicableScopes((r2v0 'this' com.google.android.gms.common.internal.ClientSettings A[IMMUTABLE_TYPE, THIS]), (r3v0 com.google.android.gms.common.api.Api\<?\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, com.google.android.gms.common.annotation.KeepForSdk, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/android\/gms\/common\/api\/Api\<, *\>;), Ljava\/util\/Set\<, Lcom\/google\/android\/gms\/common\/api\/Scope;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

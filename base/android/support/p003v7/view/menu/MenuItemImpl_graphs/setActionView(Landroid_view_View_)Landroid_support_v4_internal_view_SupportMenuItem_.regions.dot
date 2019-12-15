@@ -1,0 +1,37 @@
+digraph "CFG forandroid.support.v7.view.menu.MenuItemImpl.setActionView(Landroid\/view\/View;)Landroid\/support\/v4\/internal\/view\/SupportMenuItem;" {
+subgraph cluster_Region_695022624 {
+label = "R(4:0|(1:6)|7|8)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.mActionView = r3\lr2.mActionProvider = null\l}"];
+subgraph cluster_IfRegion_452024978 {
+label = "IF [B:1:0x0005, B:3:0x000c, B:5:0x0010] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|ADDED_TO_REGION\l|if (r3 != null) goto L_0x0007\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000c|ADDED_TO_REGION\l|if (r3.getId() == \-1) goto L_0x000e\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0010|ADDED_TO_REGION\l|if (r2.mId \> 0) goto L_0x0012\l}"];
+subgraph cluster_Region_479253184 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0012|r3.setId(r2.mId)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0017|r2.mMenu.onItemActionRequestChanged(r2)\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001c|RETURN\l|return r2\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0007}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000e}"];
+MethodNode[shape=record,label="{public android.support.v4.internal.view.SupportMenuItem android.support.v7.view.menu.MenuItemImpl.setActionView((r2v0 'this' android.support.v7.view.menu.MenuItemImpl A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,86 @@
+digraph "CFG forandroid.support.constraint.solver.widgets.ConstraintWidget.getOptimizerWrapWidth()I" {
+subgraph cluster_Region_1465867868 {
+label = "R(2:0|(2:(1:15)|(2:(1:4)(1:(1:7)(1:8))|10))) | DECL_VAR: int null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r4.mWidth\l}"];
+subgraph cluster_Region_305246788 {
+label = "R(2:(1:15)|(2:(1:4)(1:(1:7)(1:8))|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1115095203 {
+label = "IF [B:1:0x0009] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0009|if (r4.mListDimensionBehaviors[0] != android.support.constraint.solver.widgets.ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) goto L_?\l}"];
+subgraph cluster_Region_1286234797 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_1602477193 {
+label = "R(2:(1:4)(1:(1:7)(1:8))|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1901126454 {
+label = "IF [B:3:0x000e] THEN: R(1:4) ELSE: R(1:(1:7)(1:8))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (r4.mMatchConstraintDefaultWidth == 1) goto L_0x0010\l}"];
+subgraph cluster_Region_163792671 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|int r0 = java.lang.Math.max(r4.mMatchConstraintMinWidth, r0)\l}"];
+}
+subgraph cluster_Region_1852628170 {
+label = "R(1:(1:7)(1:8)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_350530492 {
+label = "IF [B:6:0x0019] THEN: R(1:7) ELSE: R(1:8) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0019|if (r4.mMatchConstraintMinWidth \> 0) goto L_0x001b\l}"];
+subgraph cluster_Region_1136023853 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|int r0 = r4.mMatchConstraintMinWidth\lr4.mWidth = r0\l}"];
+}
+subgraph cluster_Region_1849050889 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|r0 = 0\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0023|RETURN\l|return (r4.mMatchConstraintMaxWidth \<= 0 \|\| r4.mMatchConstraintMaxWidth \>= r0) ? r0 : r4.mMatchConstraintMaxWidth\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000b}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0017}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0021|PHI: r0 \l  PHI: (r0v1 int) = (r0v4 int), (r0v5 int), (r0v6 int) binds: [B:8:0x0020, B:7:0x001b, B:4:0x0010] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0025}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0027|REMOVE\lADDED_TO_REGION\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0029}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return r0\l}"];
+Node_17 [shape=record,color=red,label="{17\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public int android.support.constraint.solver.widgets.ConstraintWidget.getOptimizerWrapWidth((r4v0 'this' android.support.constraint.solver.widgets.ConstraintWidget A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_15;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_16;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_12 -> Node_17;
+Node_13 -> Node_14;
+}
+

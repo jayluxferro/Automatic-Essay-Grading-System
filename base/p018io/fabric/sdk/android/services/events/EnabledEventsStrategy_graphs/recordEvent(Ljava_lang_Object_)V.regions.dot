@@ -1,0 +1,44 @@
+digraph "CFG forio.fabric.sdk.android.services.events.EnabledEventsStrategy.recordEvent(Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_113299988 {
+label = "R(3:0|(1:2)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|p018io.fabric.sdk.android.services.common.CommonUtils.logControlled(r2.context, r3.toString())\l}"];
+subgraph cluster_TryCatchRegion_915505247 {
+label = "Try: R(1:2) catches: R(2:3|4)";
+node [shape=record,color=blue];
+subgraph cluster_Region_922901537 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x000f \}\lSplitter:B:1:0x0009\l|r2.filesManager.writeEvent(r3)     \/\/ Catch:\{ IOException \-\> 0x000f \}\l}"];
+}
+subgraph cluster_Region_237138590 {
+label = "R(2:3|4) | ExcHandler: IOException (r3v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ExcHandler: IOException (r3v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0009\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|p018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r2.context, \"Failed to write event.\", r3)\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0017|scheduleTimeBasedRollOverIfNeeded()\l}"];
+}
+subgraph cluster_Region_237138590 {
+label = "R(2:3|4) | ExcHandler: IOException (r3v1 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|ExcHandler: IOException (r3v1 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0009\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0010|p018io.fabric.sdk.android.services.common.CommonUtils.logControlledError(r2.context, \"Failed to write event.\", r3)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0009|SYNTHETIC\lSplitter:B:1:0x0009\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001a}"];
+MethodNode[shape=record,label="{public void io.fabric.sdk.android.services.events.EnabledEventsStrategy.recordEvent((r2v0 'this' io.fabric.sdk.android.services.events.EnabledEventsStrategy A[IMMUTABLE_TYPE, THIS]), (r3v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+}
+

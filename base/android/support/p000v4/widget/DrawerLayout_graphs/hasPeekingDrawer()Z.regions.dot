@@ -1,0 +1,51 @@
+digraph "CFG forandroid.support.v4.widget.DrawerLayout.hasPeekingDrawer()Z" {
+subgraph cluster_Region_1652329520 {
+label = "R(3:0|(1:(2:(1:4)|(1:5)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getChildCount()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1399331977 {
+label = "LOOP:0: (1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:5:0x0018] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0006\-\>B:5:0x0018\l|if (r2 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_2038741862 {
+label = "R(1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_976923938 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1419692500 {
+label = "IF [B:3:0x0014] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0014|if (((android.support.p000v4.widget.DrawerLayout.LayoutParams) getChildAt(r2).getLayoutParams()).isPeeking == true) goto L_0x0016\l}"];
+subgraph cluster_Region_1596708756 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_458302978 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|LOOP_END\lLOOP:0: B:1:0x0006\-\>B:5:0x0018\l|r2++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x001b|RETURN\l|return false\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0016|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x001b|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private boolean android.support.v4.widget.DrawerLayout.hasPeekingDrawer((r4v0 'this' android.support.v4.widget.DrawerLayout A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_7;
+Node_5 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_4;
+Node_8 -> Node_6;
+}
+

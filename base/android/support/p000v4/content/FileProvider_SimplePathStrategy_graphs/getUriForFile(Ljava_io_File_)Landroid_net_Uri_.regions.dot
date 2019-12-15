@@ -1,0 +1,132 @@
+digraph "CFG forandroid.support.v4.content.FileProvider.SimplePathStrategy.getUriForFile(Ljava\/io\/File;)Landroid\/net\/Uri;" {
+subgraph cluster_Region_1473195877 {
+label = "R(1:(4:1|2|(2:5|(1:10))|(2:(4:12|(1:14)(1:15)|16|17)|(2:18|19)))) | DECL_VAR: java.lang.String null\l";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_662707451 {
+label = "Try: R(4:1|2|(2:5|(1:10))|(2:(4:12|(1:14)(1:15)|16|17)|(2:18|19))) catches: R(2:20|22)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1073381857 {
+label = "R(4:1|2|(2:5|(1:10))|(2:(4:12|(1:14)(1:15)|16|17)|(2:18|19)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ ?|Catch:\{ IOException \-\> 0x00bf \}\lSplitter:B:0:0x0000\l|java.lang.String java.lang.String r0 = r6.getCanonicalPath()     \/\/ Catch:\{ IOException \-\> 0x00bf \}\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0004|java.util.Map.Entry r6 = null\ljava.util.Iterator r1 = r5.mRoots.entrySet().iterator()\l}"];
+subgraph cluster_LoopRegion_1699722463 {
+label = "LOOP:0: (2:5|(1:10))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0013|if (r1.hasNext() != false) goto L_0x0015\l}"];
+subgraph cluster_Region_5774577 {
+label = "R(2:5|(1:10))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|java.util.Map$Entry r2 = r1.next()\ljava.lang.String java.lang.String r3 = ((java.io.File) r2.getValue()).getPath()\l}"];
+subgraph cluster_IfRegion_2001952886 {
+label = "IF [B:6:0x0029, B:7:0x002b, B:9:0x003f] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|ADDED_TO_REGION\l|if (r0.startsWith(r3) == true) goto L_0x002b\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002b|ADDED_TO_REGION\l|if (r6 == null) goto L_0x0041\l}"];
+Node_9 [shape=record,label="{9\:\ 0x003f|ADDED_TO_REGION\l|if (r3.length() \> ((java.io.File) r6.getValue()).getPath().length()) goto L_0x0041\l}"];
+subgraph cluster_Region_1701347783 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|r6 = r2\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1358118471 {
+label = "R(2:(4:12|(1:14)(1:15)|16|17)|(2:18|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_966272586 {
+label = "IF [B:11:0x0043] THEN: R(4:12|(1:14)(1:15)|16|17) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0043|if (r6 != null) goto L_0x0045\l}"];
+subgraph cluster_Region_148953123 {
+label = "R(4:12|(1:14)(1:15)|16|17)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0045|java.lang.String java.lang.String r1 = ((java.io.File) r6.getValue()).getPath()\l}"];
+subgraph cluster_IfRegion_564119484 {
+label = "IF [B:13:0x0055] THEN: R(1:14) ELSE: R(1:15)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0055|if (r1.endsWith(\"\/\") == true) goto L_0x0057\l}"];
+subgraph cluster_Region_1431383991 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0057|java.lang.String r0 = r0.substring(r1.length())\l}"];
+}
+subgraph cluster_Region_1657430122 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x0060|java.lang.String r0 = r0.substring(r1.length() + 1)\l}"];
+}
+}
+Node_16 [shape=record,label="{16\:\ 0x006a|PHI: r0 \l  PHI: (r0v3 java.lang.String) = (r0v7 java.lang.String), (r0v8 java.lang.String) binds: [B:15:0x0060, B:14:0x0057] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_17 [shape=record,label="{17\:\ 0x00a7|RETURN\l|return new android.net.Uri.Builder().scheme(com.google.firebase.analytics.FirebaseAnalytics.Param.CONTENT).authority(r5.mAuthority).encodedPath(android.net.Uri.encode((java.lang.String) r6.getKey()) + '\/' + android.net.Uri.encode(r0, \"\/\")).build()\l}"];
+}
+}
+subgraph cluster_Region_164888667 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x00a8}"];
+Node_19 [shape=record,label="{19\:\ 0x00be|throw new java.lang.IllegalArgumentException(\"Failed to find configured root that contains \" + r0)\l}"];
+}
+}
+}
+subgraph cluster_Region_2129233723 {
+label = "R(2:20|22) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00bf}"];
+Node_22 [shape=record,label="{22\:\ 0x00d5|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r6)\l}"];
+}
+}
+}
+subgraph cluster_Region_2129233723 {
+label = "R(2:20|22) | ExcHandler: IOException (unused java.io.IOException)\l";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x00bf}"];
+Node_22 [shape=record,label="{22\:\ 0x00d5|throw new java.lang.IllegalArgumentException(\"Failed to resolve canonical path for \" + r6)\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\lSYNTHETIC\lSplitter:B:0:0x0000\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000f|LOOP_START\lPHI: r6 \l  PHI: (r6v3 java.util.Map$Entry) = (r6v2 java.util.Map$Entry), (r6v14 java.util.Map$Entry) binds: [B:2:0x0004, B:23:0x000f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000f\-\>B:23:0x000f\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x002d}"];
+Node_21 [shape=record,color=red,label="{21\:\ ?|SYNTHETIC\lExcHandler: IOException (unused java.io.IOException)\lSplitter:B:0:0x0000\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x000f|LOOP_END\lSYNTHETIC\lPHI: r6 \l  PHI: (r6v14 java.util.Map$Entry) = (r6v3 java.util.Map$Entry), (r6v15 java.util.Map$Entry), (r6v3 java.util.Map$Entry) binds: [B:25:0x000f, B:27:0x000f, B:26:0x000f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000f\-\>B:23:0x000f\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x0043|SYNTHETIC\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x000f|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x000f|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x000f|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.net.Uri android.support.v4.content.FileProvider.SimplePathStrategy.getUriForFile((r5v0 'this' android.support.v4.content.FileProvider$SimplePathStrategy A[IMMUTABLE_TYPE, THIS]), (r6v0 java.io.File A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_24[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_25[style=dashed];
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_10;
+Node_9 -> Node_10;
+Node_9 -> Node_26[style=dashed];
+Node_10 -> Node_27;
+Node_11 -> Node_12;
+Node_11 -> Node_18[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_13 -> Node_15[style=dashed];
+Node_14 -> Node_16;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_20 -> Node_22;
+Node_20 -> Node_22;
+Node_0 -> Node_1;
+Node_0 -> Node_21;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_21 -> Node_20;
+Node_23 -> Node_3;
+Node_24 -> Node_11;
+Node_25 -> Node_23;
+Node_26 -> Node_23;
+Node_27 -> Node_23;
+}
+

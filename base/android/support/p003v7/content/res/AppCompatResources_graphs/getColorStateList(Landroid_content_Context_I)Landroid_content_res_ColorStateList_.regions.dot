@@ -1,0 +1,82 @@
+digraph "CFG forandroid.support.v7.content.res.AppCompatResources.getColorStateList(Landroid\/content\/Context;I)Landroid\/content\/res\/ColorStateList;" {
+subgraph cluster_Region_1967928623 {
+label = "R(1:(2:(1:3)|(2:4|(2:(1:6)|(2:7|(2:(1:12)|(2:9|10)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_508951071 {
+label = "R(2:(1:3)|(2:4|(2:(1:6)|(2:7|(2:(1:12)|(2:9|10))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_218382614 {
+label = "IF [B:1:0x0004] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (android.os.Build.VERSION.SDK_INT \>= 23) goto L_0x0006\l}"];
+subgraph cluster_Region_1300390757 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|RETURN\l|return r2.getColorStateList(r3)\l}"];
+}
+}
+subgraph cluster_Region_728812349 {
+label = "R(2:4|(2:(1:6)|(2:7|(2:(1:12)|(2:9|10)))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|android.content.res.ColorStateList android.content.res.ColorStateList r0 = getCachedColorStateList(r2, r3)\l}"];
+subgraph cluster_Region_1500758711 {
+label = "R(2:(1:6)|(2:7|(2:(1:12)|(2:9|10))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1790923699 {
+label = "IF [B:5:0x000f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000f|if (r0 != null) goto L_0x0011\l}"];
+subgraph cluster_Region_975295084 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0011|RETURN\l|return r0\l}"];
+}
+}
+subgraph cluster_Region_233159335 {
+label = "R(2:7|(2:(1:12)|(2:9|10)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0012|android.content.res.ColorStateList android.content.res.ColorStateList r0 = inflateColorStateList(r2, r3)\l}"];
+subgraph cluster_Region_1757892228 {
+label = "R(2:(1:12)|(2:9|10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_543269125 {
+label = "IF [B:8:0x0016] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|if (r0 == null) goto L_0x001c\l}"];
+subgraph cluster_Region_1206173307 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0020|RETURN\l|return android.support.p000v4.content.ContextCompat.getColorStateList(r2, r3)\l}"];
+}
+}
+subgraph cluster_Region_819154033 {
+label = "R(2:9|10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0018|addColorStateListToCache(r2, r3, r0)\l}"];
+Node_10 [shape=record,label="{10\:\ 0x001b|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x001c}"];
+MethodNode[shape=record,label="{public static android.content.res.ColorStateList android.support.v7.content.res.AppCompatResources.getColorStateList((r2v0 android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.ColorRes, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_11;
+Node_9 -> Node_10;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,22 @@
+digraph "CFG forokhttp3.internal.cache.CacheStrategy.Factory.cacheResponseAge()J" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r1 = 0\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r9.servedDate == null) goto L_0x0013\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|long r1 = java.lang.Math.max(0, r9.receivedResponseMillis \- r9.servedDate.getTime())\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|PHI: r1 \l  PHI: (r1v1 long) = (r1v0 long), (r1v6 long) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (r9.ageSeconds == \-1) goto L_0x0025\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0018|long r1 = java.lang.Math.max(r1, java.util.concurrent.TimeUnit.SECONDS.toMillis((long) r9.ageSeconds))\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0025|PHI: r1 \l  PHI: (r1v2 long) = (r1v1 long), (r1v5 long) binds: [B:4:0x0016, B:5:0x0018] A[DONT_GENERATE, DONT_INLINE]\l|long r3 = r9.receivedResponseMillis \- r9.sentRequestMillis\llong r1 = r1 + r3\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0031|RETURN\l|return r1 + (r9.nowMillis \- r9.receivedResponseMillis)\l}"];
+MethodNode[shape=record,label="{private long okhttp3.internal.cache.CacheStrategy.Factory.cacheResponseAge((r9v0 'this' okhttp3.internal.cache.CacheStrategy$Factory A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_6;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+}
+

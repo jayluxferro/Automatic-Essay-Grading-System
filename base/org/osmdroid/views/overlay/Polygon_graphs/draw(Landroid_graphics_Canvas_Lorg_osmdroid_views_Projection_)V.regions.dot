@@ -1,0 +1,140 @@
+digraph "CFG fororg.osmdroid.views.overlay.Polygon.draw(Landroid\/graphics\/Canvas;Lorg\/osmdroid\/views\/Projection;)V" {
+subgraph cluster_Region_1314752865 {
+label = "R(8:0|4|(3:7|(1:10)|11)|12|(2:15|19)|20|(1:23)|(1:(1:30)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r11.mPath.rewind()\lr11.mOutline.setClipArea(r13)\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0019|PHI: r1 \l  PHI: (r1v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|org.osmdroid.util.PointL org.osmdroid.util.PointL r0 = r11.mOutline.buildPathPortion(r13, (org.osmdroid.util.PointL) null, r11.mMilestoneManagers.size() \> 0)\ljava.util.Iterator r1 = r11.mMilestoneManagers.iterator()\l}"];
+subgraph cluster_LoopRegion_1900974140 {
+label = "LOOP:0: (3:7|(1:10)|11)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0028|if (r1.hasNext() != false) goto L_0x002a\l}"];
+subgraph cluster_Region_594394885 {
+label = "R(3:7|(1:10)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002a|org.osmdroid.views.overlay.milestones.MilestoneManager r4 = r1.next()\lr4.init()\lr4.setDistances(r11.mOutline.getDistances())\ljava.util.Iterator java.util.Iterator\<org.osmdroid.util.PointL\> r5 = r11.mOutline.getPointsForMilestones().iterator()\l}"];
+subgraph cluster_LoopRegion_31014024 {
+label = "LOOP:1: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004a|if (r5.hasNext() != false) goto L_0x004c\l}"];
+subgraph cluster_Region_57566766 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x004c|LOOP_END\lLOOP:1: B:8:0x0046\-\>B:10:0x004c\l|org.osmdroid.util.PointL org.osmdroid.util.PointL r6 = r5.next()\lr4.add(r6.f444x, r6.f445y)\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x005a|LOOP_END\lLOOP:0: B:5:0x0024\-\>B:11:0x005a\l|r4.end()\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x005e|java.util.Iterator java.util.Iterator\<org.osmdroid.views.overlay.LinearRing\> r1 = r11.mHoles.iterator()\l}"];
+subgraph cluster_LoopRegion_1784217827 {
+label = "LOOP:2: (2:15|19)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0068|if (r1.hasNext() != false) goto L_0x006a\l}"];
+subgraph cluster_Region_1439367154 {
+label = "R(2:15|19)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x006a|org.osmdroid.views.overlay.LinearRing org.osmdroid.views.overlay.LinearRing r4 = r1.next()\lr4.setClipArea(r13)\l}"];
+Node_19 [shape=record,label="{19\:\ 0x007e|LOOP_END\lPHI: r5 \l  PHI: (r5v2 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\lLOOP:2: B:13:0x0064\-\>B:19:0x007e\l|r4.buildPathPortion(r13, r0, r11.mMilestoneManagers.size() \> 0)\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0082|r11.mPath.setFillType(android.graphics.Path.FillType.EVEN_ODD)\lr12.drawPath(r11.mPath, r11.mFillPaint)\lr12.drawPath(r11.mPath, r11.mOutlinePaint)\ljava.util.Iterator r13 = r11.mMilestoneManagers.iterator()\l}"];
+subgraph cluster_LoopRegion_882253092 {
+label = "LOOP:3: (1:23)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00a1|if (r13.hasNext() != false) goto L_0x00a3\l}"];
+subgraph cluster_Region_1469395683 {
+label = "R(1:23)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x00a3|LOOP_END\lLOOP:3: B:21:0x009d\-\>B:23:0x00a3\l|r0.draw(r12)\l}"];
+}
+}
+subgraph cluster_Region_1938085434 {
+label = "R(1:(1:30))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1993238278 {
+label = "IF [B:25:0x00b1, B:27:0x00b5, B:29:0x00bd] THEN: R(1:30) ELSE: null";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00b1|if (isInfoWindowOpen() != false) goto L_0x00b3\l}"];
+Node_27 [shape=record,label="{27\:\ 0x00b5|ADDED_TO_REGION\l|if (r11.mInfoWindow != null) goto L_0x00b7\l}"];
+Node_29 [shape=record,label="{29\:\ 0x00bd|ADDED_TO_REGION\l|if (r11.mInfoWindow.getRelatedObject() == r11) goto L_0x00bf\l}"];
+subgraph cluster_Region_1916091334 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00bf|r11.mInfoWindow.draw()\l}"];
+}
+}
+}
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0014}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0016}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0018}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0024|LOOP_START\lLOOP:0: B:5:0x0024\-\>B:11:0x005a\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0046|LOOP_START\lLOOP:1: B:8:0x0046\-\>B:10:0x004c\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0064|LOOP_START\lLOOP:2: B:13:0x0064\-\>B:19:0x007e\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0079}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x007b}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x007d}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x009d|LOOP_START\lLOOP:3: B:21:0x009d\-\>B:23:0x00a3\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x00ad}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x00b3}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x00b7}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x005e|SYNTHETIC\l}"];
+Node_32 [shape=record,color=red,label="{32\:\ 0x005a|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x0082|SYNTHETIC\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x007e|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x007e|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x00ad|SYNTHETIC\l}"];
+Node_37 [shape=record,color=red,label="{37\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_38 [shape=record,color=red,label="{38\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_39 [shape=record,color=red,label="{39\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return\l}"];
+Node_40 [shape=record,color=red,label="{40\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.osmdroid.views.overlay.Polygon.draw((r11v0 'this' org.osmdroid.views.overlay.Polygon A[IMMUTABLE_TYPE, THIS]), (r12v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 org.osmdroid.views.Projection A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_6 -> Node_31[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_32[style=dashed];
+Node_10 -> Node_8;
+Node_11 -> Node_5;
+Node_12 -> Node_13;
+Node_14 -> Node_15;
+Node_14 -> Node_33[style=dashed];
+Node_15 -> Node_16;
+Node_19 -> Node_13;
+Node_20 -> Node_21;
+Node_22 -> Node_23;
+Node_22 -> Node_36[style=dashed];
+Node_23 -> Node_21;
+Node_25 -> Node_26;
+Node_25 -> Node_38[style=dashed];
+Node_27 -> Node_28;
+Node_27 -> Node_39[style=dashed];
+Node_29 -> Node_30;
+Node_29 -> Node_40[style=dashed];
+Node_30 -> Node_37;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_8 -> Node_9;
+Node_13 -> Node_14;
+Node_16 -> Node_17;
+Node_16 -> Node_18;
+Node_17 -> Node_35;
+Node_18 -> Node_34;
+Node_21 -> Node_22;
+Node_24 -> Node_25;
+Node_26 -> Node_27;
+Node_28 -> Node_29;
+Node_31 -> Node_12;
+Node_32 -> Node_11;
+Node_33 -> Node_20;
+Node_34 -> Node_19;
+Node_35 -> Node_19;
+Node_36 -> Node_24;
+}
+

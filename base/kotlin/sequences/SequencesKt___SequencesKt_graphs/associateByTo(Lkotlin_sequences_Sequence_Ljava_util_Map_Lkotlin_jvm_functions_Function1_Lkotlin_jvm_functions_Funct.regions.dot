@@ -1,0 +1,29 @@
+digraph "CFG forkotlin.sequences.SequencesKt___SequencesKt.associateByTo(Lkotlin\/sequences\/Sequence;Ljava\/util\/Map;Lkotlin\/jvm\/functions\/Function1;Lkotlin\/jvm\/functions\/Function1;)Ljava\/util\/Map;" {
+subgraph cluster_Region_664895933 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r2, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r3, com.google.firebase.analytics.FirebaseAnalytics.Param.DESTINATION)\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r4, \"keySelector\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"valueTransform\")\ljava.util.Iterator r2 = r2.iterator()\l}"];
+subgraph cluster_LoopRegion_549459790 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001c|if (r2.hasNext() != false) goto L_0x001e\l}"];
+subgraph cluster_Region_569624951 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|LOOP_END\lLOOP:0: B:1:0x0018\-\>B:3:0x001e\l|java.lang.Object r0 = r2.next()\lr3.put(r4.invoke(r0), r5.invoke(r0))\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x002e|RETURN\l|return r3\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0018|LOOP_START\lLOOP:0: B:1:0x0018\-\>B:3:0x001e\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final M kotlin.sequences.SequencesKt___SequencesKt.associateByTo((r2v0 kotlin.sequences.Sequence\<? extends T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 M A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 kotlin.jvm.functions.Function1\<? super T, ? extends K\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 kotlin.jvm.functions.Function1\<? super T, ? extends V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, K:, Ljava\/lang\/Object;, V:, Ljava\/lang\/Object;, M::, Ljava\/util\/Map\<, \-TK;\-TV;\>;\>(, Lkotlin\/sequences\/Sequence\<, +TT;\>;TM;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;+TK;\>;, Lkotlin\/jvm\/functions\/Function1\<, \-TT;+TV;\>;)TM;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_5[style=dashed];
+Node_3 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_4;
+}
+

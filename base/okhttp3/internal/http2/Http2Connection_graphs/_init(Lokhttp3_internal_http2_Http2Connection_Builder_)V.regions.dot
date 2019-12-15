@@ -1,0 +1,66 @@
+digraph "CFG forokhttp3.internal.http2.Http2Connection.\<init\>(Lokhttp3\/internal\/http2\/Http2Connection$Builder;)V" {
+subgraph cluster_Region_1963014515 {
+label = "R(7:0|4|(1:6)|(1:9)|10|(1:12)|13)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r21\lokhttp3.internal.http2.Http2Connection.Builder r1 = r22\lr0.pushObserver = r1.pushObserver\lr0.client = r1.client\lr0.listener = r1.listener\l}"];
+Node_4 [shape=record,label="{4\:\ 0x003f|PHI: r3 \l  PHI: (r3v5 int) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r0.nextStreamId = r1.client ? 1 : 2\l}"];
+subgraph cluster_IfRegion_1017548828 {
+label = "IF [B:5:0x0043] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0043|if (r1.client == true) goto L_0x0045\l}"];
+subgraph cluster_Region_1068931118 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0045|r0.nextStreamId += 2\l}"];
+}
+}
+subgraph cluster_IfRegion_1649922911 {
+label = "IF [B:8:0x004d] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x004d|if (r1.client == true) goto L_0x004f\l}"];
+subgraph cluster_Region_1528035408 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x004f|r0.okHttpSettings.set(7, 16777216)\l}"];
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0056|r0.hostname = r1.hostname\lr0.writerExecutor = new java.util.concurrent.ScheduledThreadPoolExecutor(1, okhttp3.internal.Util.threadFactory(okhttp3.internal.Util.format(\"OkHttp %s Writer\", r0.hostname), false))\l}"];
+subgraph cluster_IfRegion_233841217 {
+label = "IF [B:11:0x0073] THEN: R(1:12) ELSE: null";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0073|if (r1.pingIntervalMillis != 0) goto L_0x0075\l}"];
+subgraph cluster_Region_1900435501 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0075|r0.writerExecutor.scheduleAtFixedRate(new okhttp3.internal.http2.Http2Connection.PingRunnable(false, 0, 0), (long) r1.pingIntervalMillis, (long) r1.pingIntervalMillis, java.util.concurrent.TimeUnit.MILLISECONDS)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0087|r0.pushExecutor = new java.util.concurrent.ThreadPoolExecutor(0, 1, 60, java.util.concurrent.TimeUnit.SECONDS, new java.util.concurrent.LinkedBlockingQueue(), okhttp3.internal.Util.threadFactory(okhttp3.internal.Util.format(\"OkHttp %s Push Observer\", r0.hostname), true))\lr0.peerSettings.set(7, 65535)\lr0.peerSettings.set(5, 16384)\lr0.bytesLeftInWriteWindow = (long) r0.peerSettings.getInitialWindowSize()\lr0.socket = r1.socket\lr0.writer = new okhttp3.internal.http2.Http2Writer(r1.sink, r0.client)\lr0.readerRunnable = new okhttp3.internal.http2.Http2Connection.ReaderRunnable(new okhttp3.internal.http2.Http2Reader(r1.source, r0.client))\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x003a}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x003c}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x003e}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x004a}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x00e2}"];
+MethodNode[shape=record,label="{void okhttp3.internal.http2.Http2Connection.\<init\>((r21v0 'this' okhttp3.internal.http2.Http2Connection A[IMMUTABLE_TYPE, THIS]), (r22v0 okhttp3.internal.http2.Http2Connection$Builder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_1 -> Node_2;
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_7 -> Node_8;
+}
+

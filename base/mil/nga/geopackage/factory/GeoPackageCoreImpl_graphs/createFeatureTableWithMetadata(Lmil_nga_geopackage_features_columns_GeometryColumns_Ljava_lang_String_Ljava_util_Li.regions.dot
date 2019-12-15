@@ -1,0 +1,40 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageCoreImpl.createFeatureTableWithMetadata(Lmil\/nga\/geopackage\/features\/columns\/GeometryColumns;Ljava\/lang\/String;Ljava\/util\/List;Lmil\/nga\/geopackage\/BoundingBox;J)Lmil\/nga\/geopackage\/features\/columns\/GeometryColumns;" {
+subgraph cluster_Region_1636433581 {
+label = "R(4:(1:1)|2|(1:4)|6)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_32188065 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 == null) goto L_0x0002\l}"];
+subgraph cluster_Region_813640123 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|java.lang.String r8 = \"id\"\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0004|PHI: r8 \l  PHI: (r8v1 java.lang.String) = (r8v0 java.lang.String), (r8v5 java.lang.String) binds: [B:0:0x0000, B:1:0x0002] A[DONT_GENERATE, DONT_INLINE]\l|java.util.ArrayList java.util.ArrayList r5 = new java.util.ArrayList()\lr5.add(mil.nga.geopackage.features.user.FeatureColumn.createPrimaryKeyColumn(0, r8))\lr5.add(mil.nga.geopackage.features.user.FeatureColumn.createGeometryColumn(1, r7.getColumnName(), r7.getGeometryType(), false, (java.lang.Object) null))\l}"];
+subgraph cluster_IfRegion_254910128 {
+label = "IF [B:3:0x0022] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0022|if (r9 != null) goto L_0x0024\l}"];
+subgraph cluster_Region_671799360 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0024|r5.addAll(r9)\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002f|RETURN\l|return createFeatureTableWithMetadata(r7, r10, r11, (java.util.List\<mil.nga.geopackage.features.user.FeatureColumn\>) r5)\l}"];
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0027}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.features.columns.GeometryColumns mil.nga.geopackage.factory.GeoPackageCoreImpl.createFeatureTableWithMetadata((r6v0 'this' mil.nga.geopackage.factory.GeoPackageCoreImpl A[IMMUTABLE_TYPE, THIS]), (r7v0 mil.nga.geopackage.features.columns.GeometryColumns A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 java.util.List\<mil.nga.geopackage.features.user.FeatureColumn\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r10v0 mil.nga.geopackage.BoundingBox A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r11v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lmil\/nga\/geopackage\/features\/columns\/GeometryColumns;, Ljava\/lang\/String;, Ljava\/util\/List\<, Lmil\/nga\/geopackage\/features\/user\/FeatureColumn;, \>;, Lmil\/nga\/geopackage\/BoundingBox;, J), Lmil\/nga\/geopackage\/features\/columns\/GeometryColumns;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+}
+

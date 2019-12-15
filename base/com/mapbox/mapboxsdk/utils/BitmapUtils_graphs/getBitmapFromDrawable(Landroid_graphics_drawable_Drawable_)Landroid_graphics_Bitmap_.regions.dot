@@ -1,0 +1,80 @@
+digraph "CFG forcom.mapbox.mapboxsdk.utils.BitmapUtils.getBitmapFromDrawable(Landroid\/graphics\/drawable\/Drawable;)Landroid\/graphics\/Bitmap;" {
+subgraph cluster_Region_1352376189 {
+label = "R(1:(2:(1:2)|(1:(2:(1:6)|(2:7|(2:(1:9)|(2:10|11)))))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_228101168 {
+label = "R(2:(1:2)|(1:(2:(1:6)|(2:7|(2:(1:9)|(2:10|11))))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1305985425 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r5 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_1919340515 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_2123024037 {
+label = "R(1:(2:(1:6)|(2:7|(2:(1:9)|(2:10|11)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_934952008 {
+label = "R(2:(1:6)|(2:7|(2:(1:9)|(2:10|11))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1142077543 {
+label = "IF [B:4:0x0006] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0006|if ((r5 instanceof android.graphics.drawable.BitmapDrawable) == true) goto L_0x0008\l}"];
+subgraph cluster_Region_13594321 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000e|RETURN\l|return ((android.graphics.drawable.BitmapDrawable) r5).getBitmap()\l}"];
+}
+}
+subgraph cluster_Region_1407774265 {
+label = "R(2:7|(2:(1:9)|(2:10|11)))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x000f|android.graphics.drawable.Drawable$ConstantState android.graphics.drawable.Drawable.ConstantState r5 = r5.getConstantState()\l}"];
+subgraph cluster_Region_676872067 {
+label = "R(2:(1:9)|(2:10|11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1415488914 {
+label = "IF [B:8:0x0013] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0013|if (r5 == null) goto L_0x0015\l}"];
+subgraph cluster_Region_1315315388 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0015|RETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_329454100 {
+label = "R(2:10|11)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0016|android.graphics.drawable.Drawable android.graphics.drawable.Drawable r5 = r5.newDrawable().mutate()\landroid.graphics.Bitmap android.graphics.Bitmap r0 = android.graphics.Bitmap.createBitmap(r5.getIntrinsicWidth(), r5.getIntrinsicHeight(), android.graphics.Bitmap.Config.ARGB_8888)\landroid.graphics.Canvas android.graphics.Canvas r1 = new android.graphics.Canvas(r0)\lr5.setBounds(0, 0, r1.getWidth(), r1.getHeight())\lr5.draw(r1)\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0040|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0004}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0008}"];
+MethodNode[shape=record,label="{public static android.graphics.Bitmap com.mapbox.mapboxsdk.utils.BitmapUtils.getBitmapFromDrawable((r5v0 android.graphics.drawable.Drawable A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_8 -> Node_10[style=dashed];
+Node_10 -> Node_11;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+}
+

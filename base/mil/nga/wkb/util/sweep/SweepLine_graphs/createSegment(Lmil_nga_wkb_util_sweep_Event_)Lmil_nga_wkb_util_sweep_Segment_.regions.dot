@@ -1,0 +1,27 @@
+digraph "CFG formil.nga.wkb.util.sweep.SweepLine.createSegment(Lmil\/nga\/wkb\/util\/sweep\/Event;)Lmil\/nga\/wkb\/util\/sweep\/Segment;" {
+subgraph cluster_Region_1023231037 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r7.getEdge()\lint int r7 = r7.getRing()\ljava.util.List java.util.List\<mil.nga.wkb.geom.Point\> r1 = r6.rings.get(r7).getPoints()\lmil.nga.wkb.geom.Point mil.nga.wkb.geom.Point r2 = r1.get(r0)\lmil.nga.wkb.geom.Point mil.nga.wkb.geom.Point r1 = r1.get((r0 + 1) % r1.size())\l}"];
+subgraph cluster_IfRegion_1520328353 {
+label = "IF [B:1:0x002b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x002b|if (xyOrder(r2, r1) \< 0) goto L_0x002d\l}"];
+subgraph cluster_Region_599681388 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x002d|mil.nga.wkb.geom.Point r5 = r2\lr2 = r1\lr1 = r5\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0035|RETURN\l|return new mil.nga.wkb.util.sweep.Segment(r0, r7, r1, r2)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0030|PHI: r1 r2 \l  PHI: (r1v6 mil.nga.wkb.geom.Point) = (r1v5 mil.nga.wkb.geom.Point), (r1v7 mil.nga.wkb.geom.Point) binds: [B:1:0x002b, B:2:0x002d] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v2 mil.nga.wkb.geom.Point) = (r2v1 mil.nga.wkb.geom.Point), (r2v3 mil.nga.wkb.geom.Point) binds: [B:1:0x002b, B:2:0x002d] A[DONT_GENERATE, DONT_INLINE]\l}"];
+MethodNode[shape=record,label="{private mil.nga.wkb.util.sweep.Segment mil.nga.wkb.util.sweep.SweepLine.createSegment((r6v0 'this' mil.nga.wkb.util.sweep.SweepLine A[IMMUTABLE_TYPE, THIS]), (r7v0 mil.nga.wkb.util.sweep.Event A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+}
+

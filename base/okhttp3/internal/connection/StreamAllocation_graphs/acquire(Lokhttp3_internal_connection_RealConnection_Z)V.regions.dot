@@ -1,0 +1,36 @@
+digraph "CFG forokhttp3.internal.connection.StreamAllocation.acquire(Lokhttp3\/internal\/connection\/RealConnection;Z)V" {
+subgraph cluster_Region_1586361047 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1685544719 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1562549162 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.connection == null) goto L_0x0004\l}"];
+subgraph cluster_Region_1459053622 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r1.connection = r2\lr1.reportedAcquired = r3\lr2.allocations.add(new okhttp3.internal.connection.StreamAllocation.StreamAllocationReference(r1, r1.callStackTrace))\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1742552949 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|throw new java.lang.IllegalStateException()\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void okhttp3.internal.connection.StreamAllocation.acquire((r1v0 'this' okhttp3.internal.connection.StreamAllocation A[IMMUTABLE_TYPE, THIS]), (r2v0 okhttp3.internal.connection.RealConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,36 @@
+digraph "CFG fororg.spatialite.database.SQLiteConnection.throwIfStatementForbidden(Lorg\/spatialite\/database\/SQLiteConnection$PreparedStatement;)V" {
+subgraph cluster_Region_1239483158 {
+label = "R(1:(1:(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_2138295546 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1601663376 {
+label = "IF [B:1:0x0002, B:3:0x0006] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r1.mOnlyAllowReadOnlyOperations != false) goto L_0x0004\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0006|ADDED_TO_REGION\l|if (r2.mReadOnly != true) goto L_0x0009\l}"];
+subgraph cluster_Region_1326541306 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|throw new android.database.sqlite.SQLiteException(\"Cannot execute this statement because it might modify the database but the connection is read\-only.\")\l}"];
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0009}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteConnection.throwIfStatementForbidden((r1v0 'this' org.spatialite.database.SQLiteConnection A[IMMUTABLE_TYPE, THIS]), (r2v0 org.spatialite.database.SQLiteConnection$PreparedStatement A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_6[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

@@ -1,0 +1,78 @@
+digraph "CFG forio.fabric.sdk.android.services.network.PinningTrustManager.checkPinTrust([Ljava\/security\/cert\/X509Certificate;)V" {
+subgraph cluster_Region_2001981553 {
+label = "R(1:(2:(3:6|(1:(1:11)(1:10))|13)|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_921776071 {
+label = "R(2:(3:6|(1:(1:11)(1:10))|13)|(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_285555134 {
+label = "IF [B:1:0x0006, B:3:0x0016] THEN: R(3:6|(1:(1:11)(1:10))|13) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r8.pinCreationTimeMillis == \-1) goto L_0x0047\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0016|ADDED_TO_REGION\l|if ((java.lang.System.currentTimeMillis() \- r8.pinCreationTimeMillis) \<= PIN_FRESHNESS_DURATION_MILLIS) goto L_0x0047\l}"];
+subgraph cluster_Region_152705481 {
+label = "R(3:6|(1:(1:11)(1:10))|13)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0047|java.security.cert.X509Certificate[] java.security.cert.X509Certificate[] r9 = p018io.fabric.sdk.android.services.network.CertificateChainCleaner.getCleanChain(r9, r8.systemKeyStore)\lint int r0 = r9.length\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_400786239 {
+label = "LOOP:0: (1:(1:11)(1:10))";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x004f|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:6:0x0047, B:11:0x005a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:7:0x004f\-\>B:11:0x005a\l|if (r1 \< r0) goto L_0x0051\l}"];
+subgraph cluster_Region_1559719171 {
+label = "R(1:(1:11)(1:10))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_710798300 {
+label = "IF [B:9:0x0057] THEN: R(1:11) ELSE: R(1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0057|if (isValidPin(r9[r1]) != true) goto L_0x005a\l}"];
+subgraph cluster_Region_1183796142 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x005a|LOOP_END\lLOOP:0: B:7:0x004f\-\>B:11:0x005a\l|r1++\l}"];
+}
+subgraph cluster_Region_894365364 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0059|RETURN\l|return\l}"];
+}
+}
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0064|throw new java.security.cert.CertificateException(\"No valid pins found in chain!\")\l}"];
+}
+}
+subgraph cluster_Region_520279783 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|io.fabric.sdk.android.Logger p018io.fabric.sdk.android.Logger r9 = p018io.fabric.sdk.android.Fabric.getLogger()\lr9.mo22234w(p018io.fabric.sdk.android.Fabric.TAG, \"Certificate pins are stale, (\" + (java.lang.System.currentTimeMillis() \- r8.pinCreationTimeMillis) + \" millis vs \" + PIN_FRESHNESS_DURATION_MILLIS + \" millis) falling back to system trust.\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0046}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0051}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x005d}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0059|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x005d|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void io.fabric.sdk.android.services.network.PinningTrustManager.checkPinTrust((r8v0 'this' io.fabric.sdk.android.services.network.PinningTrustManager A[IMMUTABLE_TYPE, THIS]), (r9v0 java.security.cert.X509Certificate[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.security.cert.CertificateException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_15[style=dashed];
+Node_9 -> Node_11;
+Node_9 -> Node_14[style=dashed];
+Node_11 -> Node_7;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_14 -> Node_10;
+Node_15 -> Node_12;
+}
+

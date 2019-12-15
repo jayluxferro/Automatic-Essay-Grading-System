@@ -1,0 +1,205 @@
+digraph "CFG forokio.Buffer.UnsafeCursor.resizeBuffer(J)J" {
+subgraph cluster_Region_788615419 {
+label = "R(1:(1:30)(1:(4:4|(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))(1:(2:19|(2:22|(1:24)(0))))|25|26)(1:28)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1649030912 {
+label = "IF [B:1:0x0002] THEN: R(1:30) ELSE: R(1:(4:4|(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))(1:(2:19|(2:22|(1:24)(0))))|25|26)(1:28))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r12.buffer == null) goto L_0x00a7\l}"];
+subgraph cluster_Region_100609501 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x00ae|throw new java.lang.IllegalStateException(\"not attached to a buffer\")\l}"];
+}
+subgraph cluster_Region_1392139136 {
+label = "R(1:(4:4|(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))(1:(2:19|(2:22|(1:24)(0))))|25|26)(1:28)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2010734508 {
+label = "IF [B:3:0x0006] THEN: R(4:4|(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))(1:(2:19|(2:22|(1:24)(0))))|25|26) ELSE: R(1:28) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|if (r12.readWrite == true) goto L_0x0008\l}"];
+subgraph cluster_Region_1239690382 {
+label = "R(4:4|(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))(1:(2:19|(2:22|(1:24)(0))))|25|26)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|long long r0 = r12.buffer.size\lint int r4 = (r13 \> r0 ? 1 : (r13 == r0 ? 0 : \-1))\l}"];
+subgraph cluster_IfRegion_980051013 {
+label = "IF [B:5:0x0010] THEN: R(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17)) ELSE: R(1:(2:19|(2:22|(1:24)(0))))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0010|if (r4 \<= 0) goto L_0x0012\l}"];
+subgraph cluster_Region_1150846048 {
+label = "R(1:(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)(2:16|17))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_947247339 {
+label = "IF [B:7:0x0014] THEN: R(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15) ELSE: R(2:16|17)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0014|if (r13 \>= 0) goto L_0x0016\l}"];
+subgraph cluster_Region_16615206 {
+label = "R(3:8|(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))|15)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0016|long long r4 = r0 \- r13\l}"];
+subgraph cluster_LoopRegion_953393726 {
+label = "LOOP:0: (1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_97169079 {
+label = "R(1:(2:(1:32)|(2:11|(2:(2:14|1)|(1:13)))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_99713514 {
+label = "R(2:(1:32)|(2:11|(2:(2:14|1)|(1:13))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_866047759 {
+label = "IF [B:10:0x001a] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001a|if (r4 \<= 0) goto L_0x0040\l}"];
+subgraph cluster_Region_332772159 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0040|SYNTHETIC\lEDGE_INSN: B:32:0x0040\-\>B:15:0x0040 ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_48043215 {
+label = "R(2:11|(2:(2:14|1)|(1:13)))";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001c|okio.Segment okio.Segment r6 = r12.buffer.head.prev\llong long r7 = (long) (r6.limit \- r6.pos)\l}"];
+subgraph cluster_Region_909259049 {
+label = "R(2:(2:14|1)|(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1085573187 {
+label = "IF [B:12:0x002a] THEN: R(2:14|1) ELSE: null";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002a|if (r7 \> r4) goto L_0x0039\l}"];
+subgraph cluster_Region_1380854306 {
+label = "R(2:14|1)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0039|EDGE_INSN: B:14:0x0039\-\>B:15:0x0040 ?: BREAK  \l|r6.limit = (int) (((long) r6.limit) \- r4)\l}"];
+Node_InsnContainer_1717407310 [shape=record,label="{|break\l}"];
+}
+}
+subgraph cluster_Region_523894595 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x002c|LOOP_END\lLOOP:0: B:9:0x0018\-\>B:13:0x002c\l|r12.buffer.head = r6.pop()\lokio.SegmentPool.recycle(r6)\lr4 \-= r7\l}"];
+}
+}
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0040|EDGE_INSN: B:14:0x0039\-\>B:15:0x0040 ?: BREAK  \lEDGE_INSN: B:32:0x0040\-\>B:15:0x0040 ?: BREAK  \l|r12.segment = null\lr12.offset = r13\lr12.data = null\lr12.start = \-1\lr12.end = \-1\l}"];
+}
+subgraph cluster_Region_1865067966 {
+label = "R(2:16|17)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x004d}"];
+Node_17 [shape=record,label="{17\:\ 0x0063|throw new java.lang.IllegalArgumentException(\"newSize \< 0: \" + r13)\l}"];
+}
+}
+}
+subgraph cluster_Region_1364768559 {
+label = "R(1:(2:19|(2:22|(1:24)(0)))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1455558809 {
+label = "IF [B:18:0x0064] THEN: R(2:19|(2:22|(1:24)(0))) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0064|if (r4 \> 0) goto L_0x0066\l}"];
+subgraph cluster_Region_1677220352 {
+label = "R(2:19|(2:22|(1:24)(0)))";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0066|long long r4 = r13 \- r0\lboolean r7 = true\l}"];
+subgraph cluster_LoopRegion_806905903 {
+label = "LOOP:1: (2:22|(1:24)(0))";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x006c|if (r4 \> 0) goto L_0x006e\l}"];
+subgraph cluster_Region_2009819163 {
+label = "R(2:22|(1:24)(0))";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x006e|okio.Segment okio.Segment r8 = r12.buffer.writableSegment(1)\lint int r9 = (int) java.lang.Math.min(r4, (long) (8192 \- r8.limit))\lr8.limit += r9\lr4 \-= (long) r9\l}"];
+subgraph cluster_IfRegion_1496939045 {
+label = "IF [B:23:0x0085] THEN: R(1:24) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x0085|if (r7 == true) goto L_0x0087\l}"];
+subgraph cluster_Region_1375904471 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x0087|r12.segment = r8\lr12.offset = r0\lr12.data = r8.data\lr12.start = r8.limit \- r9\lr12.end = r8.limit\lr7 = false\l}"];
+}
+subgraph cluster_Region_1992585044 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+}
+}
+}
+Node_25 [shape=record,label="{25\:\ 0x009a|r12.buffer.size = r13\l}"];
+Node_26 [shape=record,label="{26\:\ 0x009e|RETURN\l|return r0\l}"];
+}
+subgraph cluster_Region_2086772796 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00a6|throw new java.lang.IllegalStateException(\"resizeBuffer() only permitted for read\/write buffers\")\l}"];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0012}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0018|LOOP_START\lPHI: r4 \l  PHI: (r4v6 long) = (r4v5 long), (r4v7 long) binds: [B:8:0x0016, B:13:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:9:0x0018\-\>B:13:0x002c\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x006a|LOOP_START\lPHI: r4 r7 \l  PHI: (r4v2 long) = (r4v1 long), (r4v3 long) binds: [B:19:0x0066, B:33:0x006a] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v1 boolean) = (r7v0 boolean), (r7v2 boolean) binds: [B:19:0x0066, B:33:0x006a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:20:0x006a\-\>B:33:0x006a\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x009f}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00a7}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0039|SYNTHETIC\l}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x006a|LOOP_END\lSYNTHETIC\lPHI: r7 \l  PHI: (r7v2 boolean) = (r7v1 boolean), (r7v7 boolean) binds: [B:35:0x006a, B:36:0x006a] A[DONT_GENERATE, DONT_INLINE]\lLOOP:1: B:20:0x006a\-\>B:33:0x006a\l}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x009a|SYNTHETIC\l}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x006a|SYNTHETIC\l}"];
+Node_36 [shape=record,color=red,label="{36\:\ 0x006a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public long okio.Buffer.UnsafeCursor.resizeBuffer((r12v0 'this' okio.Buffer$UnsafeCursor A[IMMUTABLE_TYPE, THIS]), (r13v0 long A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_29;
+Node_3 -> Node_4;
+Node_3 -> Node_27[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_5 -> Node_18[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_16[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_32;
+Node_32 -> Node_15;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_31;
+Node_14 -> Node_15;
+Node_13 -> Node_9;
+Node_15 -> Node_25;
+Node_16 -> Node_17;
+Node_18 -> Node_19;
+Node_18 -> Node_25[style=dashed];
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_21 -> Node_34[style=dashed];
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_35[style=dashed];
+Node_24 -> Node_36;
+Node_25 -> Node_26;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+Node_20 -> Node_21;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_31 -> Node_14;
+Node_33 -> Node_20;
+Node_34 -> Node_25;
+Node_35 -> Node_33;
+Node_36 -> Node_33;
+}
+

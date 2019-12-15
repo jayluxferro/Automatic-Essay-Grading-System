@@ -1,0 +1,50 @@
+digraph "CFG forcom.mapbox.mapboxsdk.annotations.MarkerViewManager.addMarkerViewAdapter(Lcom\/mapbox\/mapboxsdk\/maps\/MapboxMap$MarkerViewAdapter;)V" {
+subgraph cluster_Region_548053220 {
+label = "R(1:(1:6)(1:(1:4)(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1695347445 {
+label = "IF [B:1:0x000a] THEN: R(1:6) ELSE: R(1:(1:4)(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r3.getMarkerClass().equals(com.mapbox.mapboxsdk.annotations.MarkerView.class) != false) goto L_0x001d\l}"];
+subgraph cluster_Region_1371529007 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0024|throw new java.lang.RuntimeException(\"Providing a custom MarkerViewAdapter requires subclassing MarkerView\")\l}"];
+}
+subgraph cluster_Region_1311203077 {
+label = "R(1:(1:4)(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1006599077 {
+label = "IF [B:3:0x0012] THEN: R(1:4) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0012|if (r2.markerViewAdapters.contains(r3) == false) goto L_0x0014\l}"];
+subgraph cluster_Region_971423093 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|r2.markerViewAdapters.add(r3)\linvalidateViewMarkersInVisibleRegion()\l}"];
+}
+subgraph cluster_Region_378489793 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x001d}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void com.mapbox.mapboxsdk.annotations.MarkerViewManager.addMarkerViewAdapter((r2v0 'this' com.mapbox.mapboxsdk.annotations.MarkerViewManager A[IMMUTABLE_TYPE, THIS]), (r3v0 com.mapbox.mapboxsdk.maps.MapboxMap$MarkerViewAdapter A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_5;
+Node_3 -> Node_4;
+Node_3 -> Node_8[style=dashed];
+Node_4 -> Node_7;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+}
+

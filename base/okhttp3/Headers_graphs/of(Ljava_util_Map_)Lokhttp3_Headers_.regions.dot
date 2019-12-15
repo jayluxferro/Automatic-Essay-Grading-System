@@ -1,0 +1,122 @@
+digraph "CFG forokhttp3.Headers.of(Ljava\/util\/Map;)Lokhttp3\/Headers;" {
+subgraph cluster_Region_1633869527 {
+label = "R(1:(2:(3:1|(2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))|20)|(1:22)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1469266178 {
+label = "R(2:(3:1|(2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))|20)|(1:22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_837815103 {
+label = "IF [B:0:0x0000] THEN: R(3:1|(2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))|20) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r7 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1265575802 {
+label = "R(3:1|(2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))|20)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|java.lang.String[] java.lang.String[] r0 = new java.lang.String[(r7.size() * 2)]\ljava.util.Iterator r7 = r7.entrySet().iterator()\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_1127424210 {
+label = "LOOP:0: (2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|if (r7.hasNext() != false) goto L_0x001a\l}"];
+subgraph cluster_Region_886102533 {
+label = "R(2:4|(2:(1:18)|(2:8|(1:14)(2:15|16))))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001a|java.util.Map$Entry r3 = r7.next()\l}"];
+subgraph cluster_Region_2059775668 {
+label = "R(2:(1:18)|(2:8|(1:14)(2:15|16)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1272838944 {
+label = "IF [B:5:0x0024, B:7:0x002a] THEN: R(1:18) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0024|if (r3.getKey() == null) goto L_0x007b\l}"];
+Node_7 [shape=record,label="{7\:\ 0x002a|ADDED_TO_REGION\l|if (r3.getValue() == null) goto L_0x007b\l}"];
+subgraph cluster_Region_288515897 {
+label = "R(1:18)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0082|throw new java.lang.IllegalArgumentException(\"Headers cannot be null\")\l}"];
+}
+}
+subgraph cluster_Region_226799524 {
+label = "R(2:8|(1:14)(2:15|16))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002c|java.lang.String java.lang.String r4 = ((java.lang.String) r3.getKey()).trim()\ljava.lang.String java.lang.String r3 = ((java.lang.String) r3.getValue()).trim()\l}"];
+subgraph cluster_IfRegion_1929884683 {
+label = "IF [B:9:0x0044, B:11:0x004b, B:13:0x0051] THEN: R(1:14) ELSE: R(2:15|16)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0044|if (r4.length() != 0) goto L_0x0046\l}"];
+Node_11 [shape=record,label="{11\:\ 0x004b|ADDED_TO_REGION\l|if (r4.indexOf(0) == \-1) goto L_0x004d\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0051|ADDED_TO_REGION\l|if (r3.indexOf(0) == \-1) goto L_0x0053\l}"];
+subgraph cluster_Region_868320766 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0053|LOOP_END\lLOOP:0: B:2:0x0014\-\>B:14:0x0053\l|r0[r2] = r4\lr0[r2 + 1] = r3\lr2 += 2\l}"];
+}
+subgraph cluster_Region_1096882662 {
+label = "R(2:15|16)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x005c}"];
+Node_16 [shape=record,label="{16\:\ 0x007a|throw new java.lang.IllegalArgumentException(\"Unexpected header: \" + r4 + \": \" + r3)\l}"];
+}
+}
+}
+}
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0088|RETURN\l|return new okhttp3.Headers(r0)\l}"];
+}
+}
+subgraph cluster_Region_595630056 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0090|throw new java.lang.NullPointerException(\"headers == null\")\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0014|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:1:0x0002, B:14:0x0053] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:2:0x0014\-\>B:14:0x0053\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0046}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x004d}"];
+Node_17 [shape=record,color=red,label="{17\:\ 0x007b}"];
+Node_19 [shape=record,color=red,label="{19\:\ 0x0083}"];
+Node_21 [shape=record,color=red,label="{21\:\ 0x0089}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x005c|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x007b|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_25 [shape=record,color=red,label="{25\:\ 0x007b|SYNTHETIC\l}"];
+Node_26 [shape=record,color=red,label="{26\:\ 0x005c|SYNTHETIC\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x005c|SYNTHETIC\l}"];
+Node_28 [shape=record,color=red,label="{28\:\ 0x0083|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static okhttp3.Headers okhttp3.Headers.of((r7v0 java.util.Map\<java.lang.String, java.lang.String\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/Map\<, Ljava\/lang\/String;, Ljava\/lang\/String;, \>;), Lokhttp3\/Headers;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_21[style=dashed];
+Node_1 -> Node_2;
+Node_3 -> Node_4;
+Node_3 -> Node_28[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_24;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_25;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_23[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_26[style=dashed];
+Node_13 -> Node_14;
+Node_13 -> Node_27[style=dashed];
+Node_14 -> Node_2;
+Node_15 -> Node_16;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_21 -> Node_22;
+Node_23 -> Node_15;
+Node_24 -> Node_17;
+Node_25 -> Node_17;
+Node_26 -> Node_15;
+Node_27 -> Node_15;
+Node_28 -> Node_19;
+}
+

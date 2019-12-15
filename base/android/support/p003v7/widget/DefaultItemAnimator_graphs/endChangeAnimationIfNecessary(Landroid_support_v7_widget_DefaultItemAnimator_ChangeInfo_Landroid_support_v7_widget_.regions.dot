@@ -1,0 +1,51 @@
+digraph "CFG forandroid.support.v7.widget.DefaultItemAnimator.endChangeAnimationIfNecessary(Landroid\/support\/v7\/widget\/DefaultItemAnimator$ChangeInfo;Landroid\/support\/v7\/widget\/RecyclerView$ViewHolder;)Z" {
+subgraph cluster_Region_1040294120 {
+label = "R(4:0|(1:2)(1:(1:8)(1:5))|6|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r3 = false\l}"];
+subgraph cluster_IfRegion_777662020 {
+label = "IF [B:1:0x0005] THEN: R(1:2) ELSE: R(1:(1:8)(1:5))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0005|if (r5.newHolder == r6) goto L_0x0007\l}"];
+subgraph cluster_Region_44767258 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0007|r5.newHolder = null\l}"];
+}
+subgraph cluster_Region_1420991052 {
+label = "R(1:(1:8)(1:5)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1493565549 {
+label = "IF [B:4:0x000c] THEN: R(1:8) ELSE: R(1:5) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|if (r5.oldHolder != r6) goto L_0x0027\l}"];
+subgraph cluster_Region_651246855 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0027|RETURN\l|return false\l}"];
+}
+subgraph cluster_Region_425124211 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000e|r5.oldHolder = null\lr3 = true\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0011|PHI: r3 \l  PHI: (r3v1 boolean) = (r3v2 boolean), (r3v0 boolean) binds: [B:5:0x000e, B:2:0x0007] A[DONT_GENERATE, DONT_INLINE]\l|r6.itemView.setAlpha(1.0f)\lr6.itemView.setTranslationX(0.0f)\lr6.itemView.setTranslationY(0.0f)\ldispatchChangeFinished(r6, r3)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0026|RETURN\l|return true\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a}"];
+MethodNode[shape=record,label="{private boolean android.support.v7.widget.DefaultItemAnimator.endChangeAnimationIfNecessary((r4v0 'this' android.support.v7.widget.DefaultItemAnimator A[IMMUTABLE_TYPE, THIS]), (r5v0 android.support.v7.widget.DefaultItemAnimator$ChangeInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 android.support.v7.widget.RecyclerView$ViewHolder A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_6;
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+}
+

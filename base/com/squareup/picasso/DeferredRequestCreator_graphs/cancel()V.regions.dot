@@ -1,0 +1,48 @@
+digraph "CFG forcom.squareup.picasso.DeferredRequestCreator.cancel()V" {
+subgraph cluster_Region_1370065763 {
+label = "R(2:0|(1:(2:3|(1:(1:5)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.creator.clearTag()\lr2.callback = null\landroid.widget.ImageView android.widget.ImageView r0 = (android.widget.ImageView) r2.target.get()\l}"];
+subgraph cluster_Region_1434982156 {
+label = "R(1:(2:3|(1:(1:5))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2112367829 {
+label = "IF [B:1:0x0010] THEN: R(2:3|(1:(1:5))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0010|if (r0 != null) goto L_0x0013\l}"];
+subgraph cluster_Region_1992666472 {
+label = "R(2:3|(1:(1:5)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|r2.target.clear()\lr0.removeOnAttachStateChangeListener(r2)\landroid.view.ViewTreeObserver android.view.ViewTreeObserver r0 = r0.getViewTreeObserver()\l}"];
+subgraph cluster_Region_957239603 {
+label = "R(1:(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1888010017 {
+label = "IF [B:4:0x0023] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0023|if (r0.isAlive() == true) goto L_0x0025\l}"];
+subgraph cluster_Region_1843904704 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0025|r0.removeOnPreDrawListener(r2)\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0012}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{void com.squareup.picasso.DeferredRequestCreator.cancel((r2v0 'this' com.squareup.picasso.DeferredRequestCreator A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+}
+

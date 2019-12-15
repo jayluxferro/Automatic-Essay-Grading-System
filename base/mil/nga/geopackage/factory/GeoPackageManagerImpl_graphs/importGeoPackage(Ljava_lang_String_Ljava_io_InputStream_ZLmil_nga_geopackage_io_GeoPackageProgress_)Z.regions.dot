@@ -1,0 +1,65 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageManagerImpl.importGeoPackage(Ljava\/lang\/String;Ljava\/io\/InputStream;ZLmil\/nga\/geopackage\/io\/GeoPackageProgress;)Z" {
+subgraph cluster_Region_581411126 {
+label = "R(2:(1:(2:2|(1:4)))|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1121566155 {
+label = "IF [B:0:0x0000] THEN: R(1:(2:2|(1:4))) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r8 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1283150727 {
+label = "R(1:(2:2|(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_991933639 {
+label = "Try: R(2:2|(1:4)) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1588487590 {
+label = "R(2:2|(1:4))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ IOException \-\> 0x000c \}\lSplitter:B:1:0x0002\l|int int r0 = r6.available()     \/\/ Catch:\{ IOException \-\> 0x000c \}\l}"];
+subgraph cluster_IfRegion_1565644405 {
+label = "IF [B:3:0x0006] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0006|Catch:\{ IOException \-\> 0x000c \}\l|if (r0 \> 0) goto L_0x0008     \/\/ Catch:\{ IOException \-\> 0x000c \}\l}"];
+subgraph cluster_Region_1989100384 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0008|Catch:\{ IOException \-\> 0x000c \}\l|r8.setMax(r0)     \/\/ Catch:\{ IOException \-\> 0x000c \}\l}"];
+}
+}
+}
+subgraph cluster_Region_2033476142 {
+label = "R(2:5|6) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|java.lang.String java.lang.String r1 = mil.nga.geopackage.factory.GeoPackageManagerImpl.class.getSimpleName()\landroid.util.Log.w(r1, \"Could not determine stream available size. Database: \" + r5, r0)\l}"];
+}
+}
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x002b|RETURN\l|return importGeoPackage(r5, r7, r6, r8)\l}"];
+}
+subgraph cluster_Region_2033476142 {
+label = "R(2:5|6) | ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|ExcHandler: IOException (r0v0 'e' java.io.IOException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0002\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000d|java.lang.String java.lang.String r1 = mil.nga.geopackage.factory.GeoPackageManagerImpl.class.getSimpleName()\landroid.util.Log.w(r1, \"Could not determine stream available size. Database: \" + r5, r0)\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0002|SYNTHETIC\lSplitter:B:1:0x0002\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0027}"];
+MethodNode[shape=record,label="{public boolean mil.nga.geopackage.factory.GeoPackageManagerImpl.importGeoPackage((r4v0 'this' mil.nga.geopackage.factory.GeoPackageManagerImpl A[IMMUTABLE_TYPE, THIS]), (r5v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.io.InputStream A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 mil.nga.geopackage.io.GeoPackageProgress A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_1 -> Node_2;
+Node_1 -> Node_5;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,27 @@
+digraph "CFG fororg.mapsforge.map.layer.hills.HgtCache.MergeOverlapFuture.calculate()Lorg\/mapsforge\/core\/graphics\/HillshadingBitmap;" {
+subgraph cluster_Region_2088331742 {
+label = "R(3:0|(1:2)|3)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|org.mapsforge.core.graphics.HillshadingBitmap org.mapsforge.core.graphics.HillshadingBitmap r0 = (org.mapsforge.core.graphics.HillshadingBitmap) r6.loadFuture.get()\lint int r2 = org.mapsforge.core.graphics.HillshadingBitmap.Border.values().length\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1479769131 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:2:0x0010] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:2:0x0010\l|if (r3 \< r2) goto L_0x0010\l}"];
+subgraph cluster_Region_987419949 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:2:0x0010\l|r4 = r1[r3]\lmergePaddingOnBitmap(r0, r6.hgtFileInfo.getNeighbor(r4), r4)\lr3++\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x001e|RETURN\l|return r0\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001e|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public org.mapsforge.core.graphics.HillshadingBitmap org.mapsforge.map.layer.hills.HgtCache.MergeOverlapFuture.calculate((r6v0 'this' org.mapsforge.map.layer.hills.HgtCache$MergeOverlapFuture A[IMMUTABLE_TYPE, THIS]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.util.concurrent.ExecutionException, java.lang.InterruptedException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

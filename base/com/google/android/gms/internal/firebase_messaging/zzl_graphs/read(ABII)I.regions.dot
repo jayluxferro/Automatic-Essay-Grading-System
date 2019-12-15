@@ -1,0 +1,47 @@
+digraph "CFG forcom.google.android.gms.internal.firebase_messaging.zzl.read([BII)I" {
+subgraph cluster_Region_445295525 {
+label = "R(1:(2:(1:2)|(3:3|(1:5)|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1452288174 {
+label = "R(2:(1:2)|(3:3|(1:5)|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1874124206 {
+label = "IF [B:1:0x0007] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0007|if (r5.zzh == 0) goto L_0x0009\l}"];
+subgraph cluster_Region_56519763 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0009|RETURN\l|return \-1\l}"];
+}
+}
+subgraph cluster_Region_1808755537 {
+label = "R(3:3|(1:5)|6)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|int int r6 = r5.in.read(r6, r7, (int) java.lang.Math.min((long) r8, r5.zzh))\l}"];
+subgraph cluster_IfRegion_1324859807 {
+label = "IF [B:4:0x0018] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0018|if (r6 != \-1) goto L_0x001a\l}"];
+subgraph cluster_Region_889363565 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001a|r5.zzh \-= (long) r6\l}"];
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0020|RETURN\l|return r6\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public final int com.google.android.gms.internal.firebase_messaging.zzl.read((r5v0 'this' com.google.android.gms.internal.firebase_messaging.zzl A[IMMUTABLE_TYPE, THIS]), (r6v0 byte[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_5 -> Node_6;
+Node_0 -> Node_1;
+}
+

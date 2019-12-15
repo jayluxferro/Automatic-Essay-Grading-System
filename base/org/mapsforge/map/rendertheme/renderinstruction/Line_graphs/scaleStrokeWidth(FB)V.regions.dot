@@ -1,0 +1,76 @@
+digraph "CFG fororg.mapsforge.map.rendertheme.renderinstruction.Line.scaleStrokeWidth(FB)V" {
+subgraph cluster_Region_1249142108 {
+label = "R(3:(1:2)|(3:5|(3:7|(1:10)|11)|12)|13)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1207664944 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r4.scale == org.mapsforge.map.rendertheme.renderinstruction.RenderInstruction.Scale.NONE) goto L_0x0006\l}"];
+subgraph cluster_Region_183908931 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|r5 = 1.0f\l}"];
+}
+}
+subgraph cluster_IfRegion_1586320260 {
+label = "IF [B:4:0x000a] THEN: R(3:5|(3:7|(1:10)|11)|12) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|if (r4.stroke != null) goto L_0x000c\l}"];
+subgraph cluster_Region_1929351652 {
+label = "R(3:5|(3:7|(1:10)|11)|12)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000c|org.mapsforge.core.graphics.Paint org.mapsforge.core.graphics.Paint r0 = r4.graphicFactory.createPaint(r4.stroke)\lr0.setStrokeWidth(r4.strokeWidth * r5)\l}"];
+subgraph cluster_IfRegion_934970252 {
+label = "IF [B:6:0x001f] THEN: R(3:7|(1:10)|11) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x001f|if (r4.scale == org.mapsforge.map.rendertheme.renderinstruction.RenderInstruction.Scale.ALL) goto L_0x0021\l}"];
+subgraph cluster_Region_590932856 {
+label = "R(3:7|(1:10)|11)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|float[] float[] r1 = new float[r4.strokeDasharray.length]\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_19785550 {
+label = "LOOP:0: (1:10)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x002a|if (r2 \< r4.strokeDasharray.length) goto L_0x002c\l}"];
+subgraph cluster_Region_1740489849 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x002c|LOOP_END\lLOOP:0: B:8:0x0027\-\>B:10:0x002c\l|r1[r2] = r4.strokeDasharray[r2] * r5\lr2++\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0037|r0.setDashPathEffect(r1)\l}"];
+}
+}
+Node_12 [shape=record,label="{12\:\ 0x003a|r4.strokes.put(java.lang.Byte.valueOf(r6), r0)\l}"];
+}
+}
+Node_13 [shape=record,label="{13\:\ 0x0043|r4.dyScaled.put(java.lang.Byte.valueOf(r6), java.lang.Float.valueOf(r4.f275dy * r5))\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0008|PHI: r5 \l  PHI: (r5v1 float) = (r5v0 float), (r5v3 float) binds: [B:1:0x0004, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0027|LOOP_START\lPHI: r2 \l  PHI: (r2v3 int) = (r2v2 int), (r2v4 int) binds: [B:7:0x0021, B:10:0x002c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:8:0x0027\-\>B:10:0x002c\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0054}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0037|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void org.mapsforge.map.rendertheme.renderinstruction.Line.scaleStrokeWidth((r4v0 'this' org.mapsforge.map.rendertheme.renderinstruction.Line A[IMMUTABLE_TYPE, THIS]), (r5v0 float A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 byte A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_13[style=dashed];
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_12[style=dashed];
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_10 -> Node_8;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_13 -> Node_14;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_8 -> Node_9;
+Node_15 -> Node_11;
+}
+

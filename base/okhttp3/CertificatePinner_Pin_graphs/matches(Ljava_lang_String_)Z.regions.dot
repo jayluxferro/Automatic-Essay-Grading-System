@@ -1,0 +1,61 @@
+digraph "CFG forokhttp3.CertificatePinner.Pin.matches(Ljava\/lang\/String;)Z" {
+subgraph cluster_Region_291013045 {
+label = "R(1:(2:(1:8)|(3:2|(2:4|(1:9))|6)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1076361373 {
+label = "R(2:(1:8)|(3:2|(2:4|(1:9))|6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1123048675 {
+label = "IF [B:1:0x0008] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r10.pattern.startsWith(WILDCARD) != true) goto L_0x0035\l}"];
+subgraph cluster_Region_292141375 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x003b|RETURN\l|return r11.equals(r10.canonicalHostname)\l}"];
+}
+}
+subgraph cluster_Region_1385393551 {
+label = "R(3:2|(2:4|(1:9))|6)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000a|int int r0 = r11.indexOf(46)\l}"];
+subgraph cluster_IfRegion_404172966 {
+label = "IF [B:3:0x001d] THEN: R(2:4|(1:9)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001d|if (((r11.length() \- r0) \- 1) == r10.canonicalHostname.length()) goto L_0x001f\l}"];
+subgraph cluster_Region_1147783054 {
+label = "R(2:4|(1:9))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x001f}"];
+subgraph cluster_IfRegion_1404795147 {
+label = "IF [B:5:0x0030] THEN: R(1:9) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0030|if (r11.regionMatches(false, r0 + 1, r10.canonicalHostname, 0, r10.canonicalHostname.length()) == true) goto L_?\l}"];
+subgraph cluster_Region_997538958 {
+label = "R(1:9)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ ?|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0033|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0035}"];
+MethodNode[shape=record,label="{boolean okhttp3.CertificatePinner.Pin.matches((r10v0 'this' okhttp3.CertificatePinner$Pin A[IMMUTABLE_TYPE, THIS]), (r11v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_7;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_9;
+Node_0 -> Node_1;
+Node_7 -> Node_8;
+}
+

@@ -1,0 +1,71 @@
+digraph "CFG forandroid.support.design.widget.AppBarLayout.BaseBehavior.onSaveInstanceState(Landroid\/support\/design\/widget\/CoordinatorLayout;Landroid\/support\/design\/widget\/AppBarLayout;)Landroid\/os\/Parcelable;" {
+subgraph cluster_Region_1189369559 {
+label = "R(3:0|(2:2|(1:10)(4:5|(1:7)|8|9))|11)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.os.Parcelable android.os.Parcelable r8 = super.onSaveInstanceState(r8, r9)\lint int r0 = getTopAndBottomOffset()\lint int r1 = r9.getChildCount()\lboolean r2 = false\lint r3 = 0\l}"];
+subgraph cluster_LoopRegion_1639358377 {
+label = "LOOP:0: (2:2|(1:10)(4:5|(1:7)|8|9))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v2 int) binds: [B:0:0x0000, B:10:0x0041] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000e\-\>B:10:0x0041\l|if (r3 \< r1) goto L_0x0010\l}"];
+subgraph cluster_Region_161129552 {
+label = "R(2:2|(1:10)(4:5|(1:7)|8|9))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|android.view.View android.view.View r4 = r9.getChildAt(r3)\lint int r5 = r4.getBottom() + r0\l}"];
+subgraph cluster_IfRegion_83895088 {
+label = "IF [B:3:0x001e, B:4:0x0020] THEN: R(1:10) ELSE: R(4:5|(1:7)|8|9)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001e|if ((r4.getTop() + r0) \> 0) goto L_0x0041\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0020|ADDED_TO_REGION\l|if (r5 \< 0) goto L_0x0041\l}"];
+subgraph cluster_Region_1710343169 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0041|LOOP_END\lLOOP:0: B:1:0x000e\-\>B:10:0x0041\l|r3++\l}"];
+}
+subgraph cluster_Region_1585504111 {
+label = "R(4:5|(1:7)|8|9)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0022|android.support.design.widget.AppBarLayout$BaseBehavior$SavedState android.support.design.widget.AppBarLayout.BaseBehavior.SavedState r0 = new android.support.design.widget.AppBarLayout.BaseBehavior.SavedState(r8)\lr0.firstVisibleChildIndex = r3\l}"];
+subgraph cluster_IfRegion_1642885676 {
+label = "IF [B:6:0x0032] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0032|if (r5 == (android.support.p000v4.view.ViewCompat.getMinimumHeight(r4) + r9.getTopInset())) goto L_0x0034\l}"];
+subgraph cluster_Region_957701975 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0034|r2 = true\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0035|PHI: r2 \l  PHI: (r2v1 boolean) = (r2v0 boolean), (r2v2 boolean) binds: [B:6:0x0032, B:7:0x0034] A[DONT_GENERATE, DONT_INLINE]\l|r0.firstVisibleChildAtMinimumHeight = r2\lr0.firstVisibleChildPercentageShown = ((float) r5) \/ ((float) r4.getHeight())\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0040|RETURN\l|return r0\l}"];
+}
+}
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0044|RETURN\l|return r8\l}"];
+}
+Node_12 [shape=record,color=red,label="{12\:\ 0x0022|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0044|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x0041|SYNTHETIC\lADDED_TO_REGION\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0041|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public android.os.Parcelable android.support.design.widget.AppBarLayout.BaseBehavior.onSaveInstanceState((r7v0 'this' android.support.design.widget.AppBarLayout$BaseBehavior A[IMMUTABLE_TYPE, THIS]), (r8v0 android.support.design.widget.CoordinatorLayout A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/support\/design\/widget\/CoordinatorLayout;, TT;), Landroid\/os\/Parcelable;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_13[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_14;
+Node_4 -> Node_12[style=dashed];
+Node_4 -> Node_15;
+Node_10 -> Node_1;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8[style=dashed];
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+Node_12 -> Node_5;
+Node_13 -> Node_11;
+Node_14 -> Node_10;
+Node_15 -> Node_10;
+}
+

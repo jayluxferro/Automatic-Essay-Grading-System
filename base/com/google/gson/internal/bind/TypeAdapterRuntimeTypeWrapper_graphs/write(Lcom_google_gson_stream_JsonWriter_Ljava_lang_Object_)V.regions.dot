@@ -1,0 +1,45 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(Lcom\/google\/gson\/stream\/JsonWriter;Ljava\/lang\/Object;)V" {
+subgraph cluster_Region_626615726 {
+label = "R(3:0|(2:2|(1:6))|7)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.gson.TypeAdapter\<T\> com.google.gson.TypeAdapter\<T\> r0 = r3.delegate\ljava.lang.reflect.Type java.lang.reflect.Type r1 = getRuntimeTypeIfMoreSpecific(r3.type, r5)\l}"];
+subgraph cluster_IfRegion_1706624566 {
+label = "IF [B:1:0x000a] THEN: R(2:2|(1:6)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (r1 != r3.type) goto L_0x000c\l}"];
+subgraph cluster_Region_1100849952 {
+label = "R(2:2|(1:6))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|com.google.gson.TypeAdapter r0 = r3.context.getAdapter(com.google.gson.reflect.TypeToken.get(r1))\l}"];
+subgraph cluster_IfRegion_195262201 {
+label = "IF [B:3:0x0018, B:5:0x001f] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0018|ADDED_TO_REGION\l|if ((r0 instanceof com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.C0893Adapter) == true) goto L_0x001b\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001f|ADDED_TO_REGION\l|if ((r3.delegate instanceof com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.C0893Adapter) == false) goto L_0x0021\l}"];
+subgraph cluster_Region_1619699395 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0021|com.google.gson.TypeAdapter\<T\> r0 = r3.delegate\l}"];
+}
+}
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0023|PHI: r0 \l  PHI: (r0v1 com.google.gson.TypeAdapter\<T\>) = (r0v0 com.google.gson.TypeAdapter\<T\>), (r0v3 com.google.gson.TypeAdapter\<T\>), (r0v3 com.google.gson.TypeAdapter\<T\>), (r0v4 com.google.gson.TypeAdapter\<T\>) binds: [B:1:0x000a, B:3:0x0018, B:5:0x001f, B:6:0x0021] A[DONT_GENERATE, DONT_INLINE]\l|r0.write(r4, r5)\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x001b}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+MethodNode[shape=record,label="{public void com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write((r3v0 'this' com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper A[IMMUTABLE_TYPE, THIS]), (r4v0 com.google.gson.stream.JsonWriter A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 T A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/google\/gson\/stream\/JsonWriter;, TT;)V]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_7[style=dashed];
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_4 -> Node_5;
+}
+

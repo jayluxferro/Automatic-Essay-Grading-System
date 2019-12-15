@@ -1,0 +1,36 @@
+digraph "CFG formil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource.create(Lmil\/nga\/geopackage\/db\/metadata\/GeoPackageMetadata;)V" {
+subgraph cluster_Region_2043849873 {
+label = "R(2:0|(2:(2:2|3)|(2:4|5)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.content.ContentValues android.content.ContentValues r0 = new android.content.ContentValues()\lr0.put(\"name\", r5.getName())\lr0.put(mil.nga.geopackage.p021db.metadata.GeoPackageMetadata.COLUMN_EXTERNAL_PATH, r5.getExternalPath())\llong long r0 = r4.f234db.insert(\"geopackage\", (java.lang.String) null, r0)\l}"];
+subgraph cluster_Region_924339920 {
+label = "R(2:(2:2|3)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_274785386 {
+label = "IF [B:1:0x0024] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0024|if (r0 != \-1) goto L_0x0026\l}"];
+subgraph cluster_Region_669329478 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0026|r5.setId(r0)\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0029|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1944912246 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x002a}"];
+Node_5 [shape=record,label="{5\:\ 0x0050|throw new mil.nga.geopackage.GeoPackageException(\"Failed to insert GeoPackage metadata. Name: \" + r5.getName() + \", External Path: \" + r5.getExternalPath())\l}"];
+}
+}
+}
+MethodNode[shape=record,label="{public void mil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource.create((r4v0 'this' mil.nga.geopackage.db.metadata.GeoPackageMetadataDataSource A[IMMUTABLE_TYPE, THIS]), (r5v0 mil.nga.geopackage.db.metadata.GeoPackageMetadata A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

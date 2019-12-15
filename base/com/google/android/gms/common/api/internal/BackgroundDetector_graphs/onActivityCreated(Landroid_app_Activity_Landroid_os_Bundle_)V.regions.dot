@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.android.gms.common.api.internal.BackgroundDetector.onActivityCreated(Landroid\/app\/Activity;Landroid\/os\/Bundle;)V" {
+subgraph cluster_Region_1191736192 {
+label = "R(2:0|(1:(1:2)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean boolean r3 = r2.zzau.compareAndSet(true, false)\lr2.zzav.set(true)\l}"];
+subgraph cluster_Region_1454195531 {
+label = "R(1:(1:2))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1401759896 {
+label = "IF [B:1:0x000d] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (r3 == true) goto L_0x000f\l}"];
+subgraph cluster_Region_1119466384 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000f|onBackgroundStateChanged(false)\l}"];
+}
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public final void com.google.android.gms.common.api.internal.BackgroundDetector.onActivityCreated((r2v0 'this' com.google.android.gms.common.api.internal.BackgroundDetector A[IMMUTABLE_TYPE, THIS]), (r3v0 android.app.Activity A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+}
+

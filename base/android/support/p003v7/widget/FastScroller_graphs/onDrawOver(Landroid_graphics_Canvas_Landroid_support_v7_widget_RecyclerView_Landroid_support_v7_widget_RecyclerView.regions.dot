@@ -1,0 +1,88 @@
+digraph "CFG forandroid.support.v7.widget.FastScroller.onDrawOver(Landroid\/graphics\/Canvas;Landroid\/support\/v7\/widget\/RecyclerView;Landroid\/support\/v7\/widget\/RecyclerView$State;)V" {
+subgraph cluster_Region_1441473594 {
+label = "R(1:(1:12)(1:(2:(1:8)|(1:(1:11)))(0)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1213294319 {
+label = "IF [B:1:0x0008, B:3:0x0012] THEN: R(1:12) ELSE: R(1:(2:(1:8)|(1:(1:11)))(0))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0008|if (r0.mRecyclerViewWidth != r0.mRecyclerView.getWidth()) goto L_0x0028\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0012|ADDED_TO_REGION\l|if (r0.mRecyclerViewHeight != r0.mRecyclerView.getHeight()) goto L_0x0028\l}"];
+subgraph cluster_Region_1006569310 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0028|r0.mRecyclerViewWidth = r0.mRecyclerView.getWidth()\lr0.mRecyclerViewHeight = r0.mRecyclerView.getHeight()\lsetState(0)\l}"];
+}
+subgraph cluster_Region_1044074836 {
+label = "R(1:(2:(1:8)|(1:(1:11)))(0)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_855472221 {
+label = "IF [B:5:0x0017] THEN: R(2:(1:8)|(1:(1:11))) ELSE: R(0) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|if (r0.mAnimationState != 0) goto L_0x0019\l}"];
+subgraph cluster_Region_1901598451 {
+label = "R(2:(1:8)|(1:(1:11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_853420657 {
+label = "IF [B:7:0x001b] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001b|if (r0.mNeedVerticalScrollbar == true) goto L_0x001d\l}"];
+subgraph cluster_Region_1443589263 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001d|drawVerticalScrollbar(r1)\l}"];
+}
+}
+subgraph cluster_Region_258853251 {
+label = "R(1:(1:11))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1043573011 {
+label = "IF [B:10:0x0022] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0022|if (r0.mNeedHorizontalScrollbar == true) goto L_0x0024\l}"];
+subgraph cluster_Region_2105381126 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0024|drawHorizontalScrollbar(r1)\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1881138482 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x000a}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x003c}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.v7.widget.FastScroller.onDrawOver((r0v0 'this' android.support.v7.widget.FastScroller A[IMMUTABLE_TYPE, THIS]), (r1v0 android.graphics.Canvas A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 android.support.v7.widget.RecyclerView A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r3v0 android.support.v7.widget.RecyclerView$State A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_12;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_12;
+Node_12 -> Node_13;
+Node_5 -> Node_6;
+Node_5 -> Node_15[style=dashed];
+Node_7 -> Node_8;
+Node_7 -> Node_9[style=dashed];
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_16[style=dashed];
+Node_11 -> Node_14;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_6 -> Node_7;
+Node_9 -> Node_10;
+}
+

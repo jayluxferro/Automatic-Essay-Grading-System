@@ -1,0 +1,132 @@
+digraph "CFG forandroid.support.v4.util.ArraySet.add(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_371709711 {
+label = "R(2:(1:2)(1:3)|(2:(1:5)|(5:6|(5:8|(1:10)(1:(1:13))|14|(1:16)|17)|(1:20)|21|22))) | DECL_VAR: int null, int null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_501034508 {
+label = "IF [B:1:0x0001] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0001|if (r10 == null) goto L_0x0003\l}"];
+subgraph cluster_Region_1706653753 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0003|int r1 = indexOfNull()\lr2 = 0\l}"];
+}
+subgraph cluster_Region_1431127132 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0009|int int r1 = r10.hashCode()\lr2 = r1\lr1 = indexOf(r10, r1)\l}"];
+}
+}
+subgraph cluster_Region_1940566947 {
+label = "R(2:(1:5)|(5:6|(5:8|(1:10)(1:(1:13))|14|(1:16)|17)|(1:20)|21|22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1308762923 {
+label = "IF [B:4:0x0014] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0014|PHI: r1 r2 \l  PHI: (r1v0 int) = (r1v3 int), (r1v4 int) binds: [B:3:0x0009, B:2:0x0003] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r2v0 int) = (r2v2 int), (r2v3 int) binds: [B:3:0x0009, B:2:0x0003] A[DONT_GENERATE, DONT_INLINE]\l|if (r1 \>= 0) goto L_0x0016\l}"];
+subgraph cluster_Region_1714752075 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0016|RETURN\l|return false\l}"];
+}
+}
+subgraph cluster_Region_684431105 {
+label = "R(5:6|(5:8|(1:10)(1:(1:13))|14|(1:16)|17)|(1:20)|21|22)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|int int r1 = ~r1\l}"];
+subgraph cluster_IfRegion_317515215 {
+label = "IF [B:7:0x001e] THEN: R(5:8|(1:10)(1:(1:13))|14|(1:16)|17) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|if (r9.mSize \>= r9.mHashes.length) goto L_0x0020\l}"];
+subgraph cluster_Region_1289776623 {
+label = "R(5:8|(1:10)(1:(1:13))|14|(1:16)|17)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x0020|int r4 = 4\l}"];
+subgraph cluster_IfRegion_889027482 {
+label = "IF [B:9:0x0025] THEN: R(1:10) ELSE: R(1:(1:13))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0025|if (r9.mSize \>= 8) goto L_0x0027\l}"];
+subgraph cluster_Region_1445231564 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0027|int r4 = (r9.mSize \>\> 1) + r9.mSize\l}"];
+}
+subgraph cluster_Region_1798905173 {
+label = "R(1:(1:13)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_630207787 {
+label = "IF [B:12:0x0030] THEN: R(1:13) ELSE: null | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0030|if (r9.mSize \>= 4) goto L_0x0032\l}"];
+subgraph cluster_Region_954702061 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0032|r4 = 8\l}"];
+}
+}
+}
+}
+Node_14 [shape=record,label="{14\:\ 0x0034|PHI: r4 \l  PHI: (r4v4 int) = (r4v3 int), (r4v9 int), (r4v12 int) binds: [B:12:0x0030, B:13:0x0032, B:10:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|int[] int[] r3 = r9.mHashes\ljava.lang.Object[] java.lang.Object[] r6 = r9.mArray\lallocArrays(r4)\l}"];
+subgraph cluster_IfRegion_1344761547 {
+label = "IF [B:15:0x003e] THEN: R(1:16) ELSE: null";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x003e|if (r9.mHashes.length \> 0) goto L_0x0040\l}"];
+subgraph cluster_Region_17573633 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0040|java.lang.System.arraycopy(r3, 0, r9.mHashes, 0, r3.length)\ljava.lang.System.arraycopy(r6, 0, r9.mArray, 0, r6.length)\l}"];
+}
+}
+Node_17 [shape=record,label="{17\:\ 0x004c|freeArrays(r3, r6, r9.mSize)\l}"];
+}
+}
+subgraph cluster_IfRegion_1566996836 {
+label = "IF [B:19:0x0053] THEN: R(1:20) ELSE: null";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0053|if (r1 \< r9.mSize) goto L_0x0055\l}"];
+subgraph cluster_Region_1656142128 {
+label = "R(1:20)";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0055|int int r4 = r1 + 1\ljava.lang.System.arraycopy(r9.mHashes, r1, r9.mHashes, r4, r9.mSize \- r1)\ljava.lang.System.arraycopy(r9.mArray, r1, r9.mArray, r4, r9.mSize \- r1)\l}"];
+}
+}
+Node_21 [shape=record,label="{21\:\ 0x006b|r9.mHashes[r1] = r2\lr9.mArray[r1] = r10\lr9.mSize++\l}"];
+Node_22 [shape=record,label="{22\:\ 0x0078|RETURN\l|return true\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x002e}"];
+Node_18 [shape=record,color=red,label="{18\:\ 0x0051}"];
+MethodNode[shape=record,label="{public boolean android.support.v4.util.ArraySet.add((r9v0 'this' android.support.v4.util.ArraySet A[IMMUTABLE_TYPE, THIS]), (r10v0 E A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.Nullable, \{\}]\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(TE;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_7 -> Node_18[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_11[style=dashed];
+Node_10 -> Node_14;
+Node_12 -> Node_13;
+Node_12 -> Node_14[style=dashed];
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_15 -> Node_16;
+Node_15 -> Node_17[style=dashed];
+Node_16 -> Node_17;
+Node_17 -> Node_18;
+Node_19 -> Node_20;
+Node_19 -> Node_21[style=dashed];
+Node_20 -> Node_21;
+Node_21 -> Node_22;
+Node_0 -> Node_1;
+Node_11 -> Node_12;
+Node_18 -> Node_19;
+}
+

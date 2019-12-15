@@ -1,0 +1,29 @@
+digraph "CFG forkotlin.collections.ArraysKt___ArraysKt.zip([Z[ZLkotlin\/jvm\/functions\/Function2;)Ljava\/util\/List;" {
+subgraph cluster_Region_1870963648 {
+label = "R(3:0|(1:2)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|kotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r5, \"$receiver\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r6, \"other\")\lkotlin.jvm.internal.Intrinsics.checkParameterIsNotNull(r7, \"transform\")\lint int r0 = java.lang.Math.min(r5.length, r6.length)\ljava.util.ArrayList java.util.ArrayList r1 = new java.util.ArrayList(r0)\lint r2 = 0\l}"];
+subgraph cluster_LoopRegion_321833478 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x001b|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:0:0x0000, B:2:0x001d] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001b\-\>B:2:0x001d\l|if (r2 \< r0) goto L_0x001d\l}"];
+subgraph cluster_Region_2029734219 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|LOOP_END\lLOOP:0: B:1:0x001b\-\>B:2:0x001d\l|r1.add(r7.invoke(java.lang.Boolean.valueOf(r5[r2]), java.lang.Boolean.valueOf(r6[r2])))\lr2++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0035|RETURN\l|return r1\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0033}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0033|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final java.util.List\<V\> kotlin.collections.ArraysKt___ArraysKt.zip((r5v0 boolean[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 boolean[] A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 kotlin.jvm.functions.Function2\<? super java.lang.Boolean, ? super java.lang.Boolean, ? extends V\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[BUILD, org.jetbrains.annotations.NotNull, \{\}]\lAnnotation[BUILD, org.jetbrains.annotations.NotNull, \{\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<V:, Ljava\/lang\/Object;, \>([Z[Z, Lkotlin\/jvm\/functions\/Function2\<, \-, Ljava\/lang\/Boolean;, \-, Ljava\/lang\/Boolean;, +TV;\>;), Ljava\/util\/List\<, TV;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_2 -> Node_1;
+Node_3 -> Node_4;
+Node_5 -> Node_3;
+}
+

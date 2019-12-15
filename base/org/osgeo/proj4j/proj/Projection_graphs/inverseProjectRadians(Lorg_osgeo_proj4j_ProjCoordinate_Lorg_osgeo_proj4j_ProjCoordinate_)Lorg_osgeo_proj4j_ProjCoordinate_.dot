@@ -1,0 +1,38 @@
+digraph "CFG fororg.osgeo.proj4j.proj.Projection.inverseProjectRadians(Lorg\/osgeo\/proj4j\/ProjCoordinate;Lorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r12.unit != org.osgeo.proj4j.units.Units.DEGREES) goto L_0x0016\l}"];
+Node_2 [shape=record,label="{2\:\ 0x0006|double r0 = r13.f294x * 0.017453292519943295d\ldouble r4 = r13.f295y * 0.017453292519943295d\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0013|PHI: r0 r4 \l  PHI: (r0v4 double) = (r0v3 double), (r0v12 double) binds: [B:4:0x0016, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v3 double) = (r4v2 double), (r4v5 double) binds: [B:4:0x0016, B:2:0x0006] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|double r0 = (r13.f294x \- r12.totalFalseEasting) \/ r12.totalScale\ldouble r4 = (r13.f295y \- r12.totalFalseNorthing) \/ r12.totalScale\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0028|projectInverse(r0, r4, r14)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0036|if ((r14.f294x \> \-3.141592653589793d ? 1 : (r14.f294x == \-3.141592653589793d ? 0 : \-1)) \>= 0) goto L_0x003b\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0038|r14.f294x = \-3.141592653589793d\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003b}"];
+Node_9 [shape=record,label="{9\:\ 0x0044|if ((r14.f294x \> 3.141592653589793d ? 1 : (r14.f294x == 3.141592653589793d ? 0 : \-1)) \<= 0) goto L_0x0048\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0046|r14.f294x = 3.141592653589793d\l}"];
+Node_11 [shape=record,label="{11\:\ 0x0048}"];
+Node_12 [shape=record,label="{12\:\ 0x004e|if ((r12.projectionLongitude \> 0.0d ? 1 : (r12.projectionLongitude == 0.0d ? 0 : \-1)) == 0) goto L_0x005b\l}"];
+Node_13 [shape=record,label="{13\:\ 0x0050|r14.f294x = org.osgeo.proj4j.util.ProjectionMath.normalizeLongitude(r14.f294x + r12.projectionLongitude)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x005b|RETURN\l|return r14\l}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.Projection.inverseProjectRadians((r12v0 'this' org.osgeo.proj4j.proj.Projection A[IMMUTABLE_TYPE, THIS]), (r13v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r14v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_3 -> Node_5;
+Node_4 -> Node_3;
+Node_5 -> Node_6;
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_11;
+Node_8 -> Node_9;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_10 -> Node_11;
+Node_11 -> Node_12;
+Node_12 -> Node_13[style=dashed];
+Node_12 -> Node_14;
+Node_13 -> Node_14;
+}
+

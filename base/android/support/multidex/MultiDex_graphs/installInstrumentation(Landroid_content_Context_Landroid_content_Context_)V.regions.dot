@@ -1,0 +1,134 @@
+digraph "CFG forandroid.support.multidex.MultiDex.installInstrumentation(Landroid\/content\/Context;Landroid\/content\/Context;)V" {
+subgraph cluster_Region_942302870 {
+label = "R(2:0|(1:2)(1:(1:6)(1:(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19))))))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.util.Log.i(TAG, \"Installing instrumentation\")\l}"];
+subgraph cluster_IfRegion_704204816 {
+label = "IF [B:1:0x000a] THEN: R(1:2) ELSE: R(1:(1:6)(1:(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19)))))))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (IS_VM_MULTIDEX_CAPABLE == true) goto L_0x000c\l}"];
+subgraph cluster_Region_1220129771 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|android.util.Log.i(TAG, \"VM has multidex support, MultiDex support library is disabled.\")\l}"];
+}
+subgraph cluster_Region_1506934048 {
+label = "R(1:(1:6)(1:(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19))))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_849624666 {
+label = "IF [B:4:0x0016] THEN: R(1:6) ELSE: R(1:(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19)))))) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0016|if (android.os.Build.VERSION.SDK_INT \< 4) goto L_0x0018\l}"];
+subgraph cluster_Region_1371443662 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0042|throw new java.lang.RuntimeException(\"MultiDex installation failed. SDK \" + android.os.Build.VERSION.SDK_INT + \" is unsupported. Min SDK version is \" + 4 + \".\")\l}"];
+}
+subgraph cluster_Region_1419597561 {
+label = "R(1:(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19))))))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_41130423 {
+label = "Try: R(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19))))) catches: R(3:11|12|13)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1948665540 {
+label = "R(2:8|(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19)))))";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ ?|Catch:\{ Exception \-\> 0x0051 \}\lSplitter:B:7:0x0043\l|android.content.pm.ApplicationInfo android.content.pm.ApplicationInfo r13 = getApplicationInfo(r14)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+subgraph cluster_Region_288764237 {
+label = "R(2:(2:10|23)|(2:15|(2:(2:17|21)|(2:18|19))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1164359834 {
+label = "IF [B:9:0x0047] THEN: R(2:10|23) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0047|Catch:\{ Exception \-\> 0x0051 \}\l|if (r13 == null) goto L_0x0049     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+subgraph cluster_Region_883159620 {
+label = "R(2:10|23)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0049|Catch:\{ Exception \-\> 0x0051 \}\l|android.util.Log.i(TAG, \"No ApplicationInfo available for instrumentation, i.e. running on a test Context: MultiDex support library is disabled.\")     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_23 [shape=record,label="{23\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_2146753499 {
+label = "R(2:15|(2:(2:17|21)|(2:18|19)))";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|Catch:\{ Exception \-\> 0x0051 \}\lSplitter:B:14:0x007c\l|android.content.pm.ApplicationInfo android.content.pm.ApplicationInfo r11 = getApplicationInfo(r15)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+subgraph cluster_Region_171393207 {
+label = "R(2:(2:17|21)|(2:18|19))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_958575239 {
+label = "IF [B:16:0x0080] THEN: R(2:17|21) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0080|Catch:\{ Exception \-\> 0x0051 \}\l|if (r11 == null) goto L_0x0082     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+subgraph cluster_Region_345493095 {
+label = "R(2:17|21)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0082|Catch:\{ Exception \-\> 0x0051 \}\l|android.util.Log.i(TAG, \"No ApplicationInfo available, i.e. running on a test Context: MultiDex support library is disabled.\")     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_21 [shape=record,label="{21\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_1023342247 {
+label = "R(2:18|19)";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x008a|Catch:\{ Exception \-\> 0x0051 \}\l|java.lang.String java.lang.String r4 = r14.getPackageName() + \".\"     \/\/ Catch:\{ Exception \-\> 0x0051 \}\ljava.io.File java.io.File r2 = new java.io.File(r11.dataDir)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\ldoInstallation(r15, new java.io.File(r13.sourceDir), r2, r4 + \"secondary\-dexes\", r4, false)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\ldoInstallation(r15, new java.io.File(r11.sourceDir), r2, \"secondary\-dexes\", \"\", false)     \/\/ Catch:\{ Exception \-\> 0x0051 \}\l}"];
+Node_19 [shape=record,label="{19\:\ 0x00d8|android.util.Log.i(TAG, \"Installation done\")\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_873150945 {
+label = "R(3:11|12|13) | ExcHandler: Exception (r12v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0051|ExcHandler: Exception (r12v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:7:0x0043\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0052|android.util.Log.e(TAG, \"MultiDex installation failure\", r12)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007b|throw new java.lang.RuntimeException(\"MultiDex installation failed (\" + r12.getMessage() + \").\")\l}"];
+}
+}
+}
+}
+}
+}
+}
+subgraph cluster_Region_873150945 {
+label = "R(3:11|12|13) | ExcHandler: Exception (r12v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0051|ExcHandler: Exception (r12v0 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:7:0x0043\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0052|android.util.Log.e(TAG, \"MultiDex installation failure\", r12)\l}"];
+Node_13 [shape=record,label="{13\:\ 0x007b|throw new java.lang.RuntimeException(\"MultiDex installation failed (\" + r12.getMessage() + \").\")\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0014}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0018}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0043|SYNTHETIC\lSplitter:B:7:0x0043\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x007c|SYNTHETIC\lSplitter:B:14:0x007c\l}"];
+Node_20 [shape=record,color=red,label="{20\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static void android.support.multidex.MultiDex.installInstrumentation((r14v0 'instrumentationContext' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r15v0 'targetContext' android.content.Context A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_20;
+Node_4 -> Node_5;
+Node_4 -> Node_7[style=dashed];
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_23;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_21;
+Node_18 -> Node_19;
+Node_19 -> Node_22;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_11 -> Node_12;
+Node_12 -> Node_13;
+Node_3 -> Node_4;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_11;
+Node_14 -> Node_15;
+Node_14 -> Node_11;
+}
+

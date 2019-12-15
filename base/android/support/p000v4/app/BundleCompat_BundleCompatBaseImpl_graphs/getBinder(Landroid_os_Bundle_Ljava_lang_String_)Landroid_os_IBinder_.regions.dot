@@ -1,0 +1,101 @@
+digraph "CFG forandroid.support.v4.app.BundleCompat.BundleCompatBaseImpl.getBinder(Landroid\/os\/Bundle;Ljava\/lang\/String;)Landroid\/os\/IBinder;" {
+subgraph cluster_Region_430407382 {
+label = "R(3:(3:2|(1:4)|7)|(1:(2:11|12))|15)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1588974404 {
+label = "IF [B:1:0x0004] THEN: R(3:2|(1:4)|7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (sGetIBinderMethodFetched == false) goto L_0x0006\l}"];
+subgraph cluster_Region_1545258802 {
+label = "R(3:2|(1:4)|7)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006}"];
+subgraph cluster_TryCatchRegion_1891503750 {
+label = "Try: R(1:4) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1389207433 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ NoSuchMethodException \-\> 0x001c \}\lSplitter:B:3:0x000a\l|sGetIBinderMethod = android.os.Bundle.class.getMethod(\"getIBinder\", new java.lang.Class[]\{java.lang.String.class\})     \/\/ Catch:\{ NoSuchMethodException \-\> 0x001c \}\lsGetIBinderMethod.setAccessible(true)     \/\/ Catch:\{ NoSuchMethodException \-\> 0x001c \}\l}"];
+}
+subgraph cluster_Region_580012391 {
+label = "R(2:5|6) | ExcHandler: NoSuchMethodException (r0v5 'e' java.lang.NoSuchMethodException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|ExcHandler: NoSuchMethodException (r0v5 'e' java.lang.NoSuchMethodException A[CUSTOM_DECLARE])\lSplitter:B:3:0x000a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001d|android.util.Log.i(TAG, \"Failed to retrieve getIBinder method\", r0)\l}"];
+}
+}
+Node_7 [shape=record,label="{7\:\ 0x0024|sGetIBinderMethodFetched = true\l}"];
+}
+}
+subgraph cluster_IfRegion_674969936 {
+label = "IF [B:9:0x0029] THEN: R(1:(2:11|12)) ELSE: null";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0029|if (sGetIBinderMethod != null) goto L_0x002b\l}"];
+subgraph cluster_Region_678549743 {
+label = "R(1:(2:11|12))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_377371583 {
+label = "Try: R(2:11|12) catches: R(2:13|14)";
+node [shape=record,color=blue];
+subgraph cluster_Region_639078758 {
+label = "R(2:11|12)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ ?|Catch:\{ IllegalAccessException \| IllegalArgumentException \| InvocationTargetException \-\> 0x0038 \}\lSplitter:B:10:0x002b\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0037|RETURN\l|return (android.os.IBinder) sGetIBinderMethod.invoke(r6, new java.lang.Object[]\{r7\})\l}"];
+}
+subgraph cluster_Region_1469566285 {
+label = "R(2:13|14) | ExcHandler: IllegalAccessException \| IllegalArgumentException \| InvocationTargetException (r6v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0038|ExcHandler: IllegalAccessException \| IllegalArgumentException \| InvocationTargetException (r6v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:10:0x002b\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0039|android.util.Log.i(TAG, \"Failed to invoke getIBinder via reflection\", r6)\lsGetIBinderMethod = null\l}"];
+}
+}
+}
+}
+Node_15 [shape=record,label="{15\:\ 0x0042|RETURN\l|return null\l}"];
+}
+subgraph cluster_Region_580012391 {
+label = "R(2:5|6) | ExcHandler: NoSuchMethodException (r0v5 'e' java.lang.NoSuchMethodException A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|ExcHandler: NoSuchMethodException (r0v5 'e' java.lang.NoSuchMethodException A[CUSTOM_DECLARE])\lSplitter:B:3:0x000a\l}"];
+Node_6 [shape=record,label="{6\:\ 0x001d|android.util.Log.i(TAG, \"Failed to retrieve getIBinder method\", r0)\l}"];
+}
+subgraph cluster_Region_1469566285 {
+label = "R(2:13|14) | ExcHandler: IllegalAccessException \| IllegalArgumentException \| InvocationTargetException (r6v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ 0x0038|ExcHandler: IllegalAccessException \| IllegalArgumentException \| InvocationTargetException (r6v1 'e' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:10:0x002b\l}"];
+Node_14 [shape=record,label="{14\:\ 0x0039|android.util.Log.i(TAG, \"Failed to invoke getIBinder via reflection\", r6)\lsGetIBinderMethod = null\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x000a|SYNTHETIC\lSplitter:B:3:0x000a\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0026}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x002b|SYNTHETIC\lSplitter:B:10:0x002b\l}"];
+MethodNode[shape=record,label="{public static android.os.IBinder android.support.v4.app.BundleCompat.BundleCompatBaseImpl.getBinder((r6v0 android.os.Bundle A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_4 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_9 -> Node_15[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_13 -> Node_14;
+Node_14 -> Node_15;
+Node_0 -> Node_1;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_10 -> Node_13;
+}
+

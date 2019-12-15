@@ -1,0 +1,218 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.doCallBatchTasks(Lcom\/j256\/ormlite\/support\/DatabaseConnection;ZLjava\/util\/concurrent\/Callable;)Ljava\/lang\/Object;" {
+subgraph cluster_Region_1544076064 {
+label = "R(1:(2:(1:3)|(2:4|(4:(2:10|(2:12|13))|17|(1:19)|20))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_55968722 {
+label = "R(2:(1:3)|(2:4|(4:(2:10|(2:12|13))|17|(1:19)|20)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2032532685 {
+label = "IF [B:1:0x0006] THEN: R(1:3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r3.databaseType.isBatchUseTransaction() == true) goto L_0x0008\l}"];
+subgraph cluster_Region_353761471 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|RETURN\l|return com.j256.ormlite.misc.TransactionManager.callInTransaction(r4, r5, r3.databaseType, r6)\l}"];
+}
+}
+subgraph cluster_Region_184195342 {
+label = "R(2:4|(4:(2:10|(2:12|13))|17|(1:19)|20))";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000f|boolean r5 = false\l}"];
+subgraph cluster_TryCatchRegion_215847046 {
+label = "Try: R(4:(2:10|(2:12|13))|17|(1:19)|20) catches: R(2:26|27), R(2:21|25), R(3:28|(1:30)|31)";
+node [shape=record,color=blue];
+subgraph cluster_Region_390146510 {
+label = "R(4:(2:10|(2:12|13))|17|(1:19)|20)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1059474012 {
+label = "IF [B:7:0x0015, B:9:0x001b] THEN: R(2:10|(2:12|13)) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0015|ADDED_TO_REGION\lCatch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|if (r4.isAutoCommitSupported() == true) goto L_0x0017     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+Node_9 [shape=record,label="{9\:\ 0x001b|ADDED_TO_REGION\lCatch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|if (r4.isAutoCommit() == true) goto L_0x001d     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+subgraph cluster_Region_1773341409 {
+label = "R(2:10|(2:12|13))";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001d|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|r4.setAutoCommit(false)     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+subgraph cluster_TryCatchRegion_1406781288 {
+label = "Try: R(2:12|13) catches: R(4:14|15|(0)|31)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1728714574 {
+label = "R(2:12|13)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ ?|Catch:\{ all \-\> 0x002f \}\lSplitter:B:11:0x0020\l|logger.debug(\"disabled auto\-commit on table \{\} before batch tasks\", (java.lang.Object) r3.tableInfo.getTableName())     \/\/ Catch:\{ all \-\> 0x002f \}\l}"];
+Node_13 [shape=record,label="{13\:\ 0x002d|r5 = true\l}"];
+}
+subgraph cluster_Region_291519846 {
+label = "R(4:14|15|(0)|31) | ExcHandler: all (r5v8 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002f|ExcHandler: all (r5v8 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:11:0x0020\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0030|r6 = r5\lr5 = true\l}"];
+subgraph cluster_IfRegion_1857137838 {
+label = "IF [B:29:0x0055] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0055|PHI: r5 r6 \l  PHI: (r5v2 boolean) = (r5v5 boolean), (r5v9 boolean) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'th' java.lang.Throwable) = (r6v2 'th' java.lang.Throwable), (r6v7 'th' java.lang.Throwable) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == true) goto L_0x0057\l}"];
+subgraph cluster_Region_861942837 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0067|throw r6\l}"];
+}
+}
+}
+}
+Node_17 [shape=record,label="{17\:\ ?|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\lSplitter:B:16:0x0033\l|java.lang.Object CT r6 = r6.call()     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+subgraph cluster_IfRegion_549907199 {
+label = "IF [B:18:0x0037] THEN: R(1:19) ELSE: null";
+node [shape=record,color=blue];
+Node_18 [shape=record,label="{18\:\ 0x0037|if (r5 == true) goto L_0x0039\l}"];
+subgraph cluster_Region_1050279087 {
+label = "R(1:19)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0039|r4.setAutoCommit(true)\llogger.debug(\"re\-enabled auto\-commit on table \{\} after batch tasks\", (java.lang.Object) r3.tableInfo.getTableName())\l}"];
+}
+}
+Node_20 [shape=record,label="{20\:\ 0x0049|RETURN\l|return r6\l}"];
+}
+subgraph cluster_Region_1326194079 {
+label = "R(2:26|27) | ExcHandler: SQLException (r6v3 'e' java.sql.SQLException A[CUSTOM_DECLARE, Catch:\{  \}])\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0052|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\lExcHandler: SQLException (r6v3 'e' java.sql.SQLException A[CUSTOM_DECLARE, Catch:\{  \}])\lSplitter:B:16:0x0033\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0053|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|throw r6     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+}
+subgraph cluster_Region_1383297425 {
+label = "R(2:21|25) | ExcHandler: Exception (r6v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x004a|ExcHandler: Exception (r6v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:16:0x0033\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0051|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Batch tasks callable threw non\-SQL exception\", r6)     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+}
+subgraph cluster_Region_1610626678 {
+label = "R(3:28|(1:30)|31) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0054|PHI: r5 \l  PHI: (r5v5 boolean) = (r5v1 boolean), (r5v6 boolean), (r5v6 boolean) binds: [B:5:0x0011, B:16:0x0033, B:23:0x004d] A[DONT_GENERATE, DONT_INLINE]\lExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x0011\l|java.lang.Throwable r6 = th\l}"];
+subgraph cluster_IfRegion_811432607 {
+label = "IF [B:29:0x0055] THEN: R(1:30) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0055|PHI: r5 r6 \l  PHI: (r5v2 boolean) = (r5v5 boolean), (r5v9 boolean) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'th' java.lang.Throwable) = (r6v2 'th' java.lang.Throwable), (r6v7 'th' java.lang.Throwable) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == true) goto L_0x0057\l}"];
+subgraph cluster_Region_294503005 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0057|r4.setAutoCommit(true)\llogger.debug(\"re\-enabled auto\-commit on table \{\} after batch tasks\", (java.lang.Object) r3.tableInfo.getTableName())\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0067|throw r6\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_1610626678 {
+label = "R(3:28|(1:30)|31) | ExcHandler: all (th java.lang.Throwable)\l";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0054|PHI: r5 \l  PHI: (r5v5 boolean) = (r5v1 boolean), (r5v6 boolean), (r5v6 boolean) binds: [B:5:0x0011, B:16:0x0033, B:23:0x004d] A[DONT_GENERATE, DONT_INLINE]\lExcHandler: all (th java.lang.Throwable)\lSplitter:B:5:0x0011\l|java.lang.Throwable r6 = th\l}"];
+subgraph cluster_IfRegion_811432607 {
+label = "IF [B:29:0x0055] THEN: R(1:30) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0055|PHI: r5 r6 \l  PHI: (r5v2 boolean) = (r5v5 boolean), (r5v9 boolean) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'th' java.lang.Throwable) = (r6v2 'th' java.lang.Throwable), (r6v7 'th' java.lang.Throwable) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == true) goto L_0x0057\l}"];
+subgraph cluster_Region_294503005 {
+label = "R(1:30)";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0057|r4.setAutoCommit(true)\llogger.debug(\"re\-enabled auto\-commit on table \{\} after batch tasks\", (java.lang.Object) r3.tableInfo.getTableName())\l}"];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0067|throw r6\l}"];
+}
+subgraph cluster_Region_291519846 {
+label = "R(4:14|15|(0)|31) | ExcHandler: all (r5v8 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x002f|ExcHandler: all (r5v8 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:11:0x0020\l}"];
+Node_15 [shape=record,label="{15\:\ 0x0030|r6 = r5\lr5 = true\l}"];
+subgraph cluster_IfRegion_1857137838 {
+label = "IF [B:29:0x0055] THEN: R(0) ELSE: null";
+node [shape=record,color=blue];
+Node_29 [shape=record,label="{29\:\ 0x0055|PHI: r5 r6 \l  PHI: (r5v2 boolean) = (r5v5 boolean), (r5v9 boolean) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r6v1 'th' java.lang.Throwable) = (r6v2 'th' java.lang.Throwable), (r6v7 'th' java.lang.Throwable) binds: [B:28:0x0054, B:15:0x0030] A[DONT_GENERATE, DONT_INLINE]\l|if (r5 == true) goto L_0x0057\l}"];
+subgraph cluster_Region_861942837 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_31 [shape=record,label="{31\:\ 0x0067|throw r6\l}"];
+}
+subgraph cluster_Region_1326194079 {
+label = "R(2:26|27) | ExcHandler: SQLException (r6v3 'e' java.sql.SQLException A[CUSTOM_DECLARE, Catch:\{  \}])\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0052|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\lExcHandler: SQLException (r6v3 'e' java.sql.SQLException A[CUSTOM_DECLARE, Catch:\{  \}])\lSplitter:B:16:0x0033\l}"];
+Node_27 [shape=record,label="{27\:\ 0x0053|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|throw r6     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+}
+subgraph cluster_Region_1383297425 {
+label = "R(2:21|25) | ExcHandler: Exception (r6v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x004a|ExcHandler: Exception (r6v4 'e' java.lang.Exception A[CUSTOM_DECLARE])\lSplitter:B:16:0x0033\l}"];
+Node_25 [shape=record,label="{25\:\ 0x0051|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l|throw com.j256.ormlite.misc.SqlExceptionUtil.create(\"Batch tasks callable threw non\-SQL exception\", r6)     \/\/ Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0008}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0011|SYNTHETIC\lSplitter:B:5:0x0011\l}"];
+Node_6 [shape=record,color=red,label="{6\:\ ?|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\lSplitter:B:5:0x0011\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0017|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\l}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0020|SYNTHETIC\lSplitter:B:11:0x0020\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ 0x0033|SYNTHETIC\lPHI: r5 \l  PHI: (r5v6 boolean) = (r5v1 boolean), (r5v1 boolean), (r5v11 boolean) binds: [B:7:0x0015, B:9:0x001b, B:13:0x002d] A[DONT_GENERATE, DONT_INLINE]\lSplitter:B:16:0x0033\l}"];
+Node_22 [shape=record,color=red,label="{22\:\ 0x004b}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x004d|SYNTHETIC\lSplitter:B:23:0x004d\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ ?|Catch:\{ SQLException \-\> 0x0052, Exception \-\> 0x004a, all \-\> 0x0054 \}\lSplitter:B:23:0x004d\l}"];
+MethodNode[shape=record,label="{private CT com.j256.ormlite.stmt.StatementExecutor.doCallBatchTasks((r3v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r4v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r6v0 java.util.concurrent.Callable\<CT\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lRemoved duplicated region for block: B:30:0x0057 \lAnnotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<CT:, Ljava\/lang\/Object;, \>(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, Z, Ljava\/util\/concurrent\/Callable\<, TCT;\>;)TCT;]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_7 -> Node_16[style=dashed];
+Node_9 -> Node_10;
+Node_9 -> Node_16[style=dashed];
+Node_10 -> Node_11;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_13 -> Node_16;
+Node_14 -> Node_15;
+Node_15 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_19;
+Node_18 -> Node_20[style=dashed];
+Node_19 -> Node_20;
+Node_26 -> Node_27;
+Node_21 -> Node_22;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_28 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_30 -> Node_31;
+Node_14 -> Node_15;
+Node_15 -> Node_29;
+Node_29 -> Node_30;
+Node_29 -> Node_31[style=dashed];
+Node_26 -> Node_27;
+Node_21 -> Node_22;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_28;
+Node_6 -> Node_7;
+Node_8 -> Node_9;
+Node_11 -> Node_12;
+Node_11 -> Node_14;
+Node_16 -> Node_17;
+Node_16 -> Node_26;
+Node_16 -> Node_21;
+Node_16 -> Node_28;
+Node_22 -> Node_23;
+Node_23 -> Node_24;
+Node_23 -> Node_28;
+Node_24 -> Node_25;
+}
+

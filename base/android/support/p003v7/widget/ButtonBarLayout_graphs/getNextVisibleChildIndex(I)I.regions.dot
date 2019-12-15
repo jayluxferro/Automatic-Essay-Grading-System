@@ -1,0 +1,51 @@
+digraph "CFG forandroid.support.v7.widget.ButtonBarLayout.getNextVisibleChildIndex(I)I" {
+subgraph cluster_Region_113950874 {
+label = "R(3:0|(1:(2:(1:4)|(1:5)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = getChildCount()\l}"];
+subgraph cluster_LoopRegion_242769910 {
+label = "LOOP:0: (1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|LOOP_START\lPHI: r3 \l  PHI: (r3v1 int) = (r3v0 int), (r3v3 int) binds: [B:0:0x0000, B:5:0x0011] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0004\-\>B:5:0x0011\l|if (r3 \< r0) goto L_0x0006\l}"];
+subgraph cluster_Region_2013701795 {
+label = "R(1:(2:(1:4)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_793546379 {
+label = "R(2:(1:4)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_718132518 {
+label = "IF [B:3:0x000e] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000e|if (getChildAt(r3).getVisibility() == 0) goto L_0x0010\l}"];
+subgraph cluster_Region_1683284692 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0010|RETURN\l|return r3\l}"];
+}
+}
+subgraph cluster_Region_690643779 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0011|LOOP_END\lLOOP:0: B:1:0x0004\-\>B:5:0x0011\l|r3++\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x0014|RETURN\l|return \-1\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0014|SYNTHETIC\l}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0010|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private int android.support.v7.widget.ButtonBarLayout.getNextVisibleChildIndex((r2v0 'this' android.support.v7.widget.ButtonBarLayout A[IMMUTABLE_TYPE, THIS]), (r3v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7[style=dashed];
+Node_3 -> Node_5[style=dashed];
+Node_3 -> Node_8;
+Node_5 -> Node_1;
+Node_2 -> Node_3;
+Node_7 -> Node_6;
+Node_8 -> Node_4;
+}
+

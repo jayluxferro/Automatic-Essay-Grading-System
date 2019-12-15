@@ -1,0 +1,53 @@
+digraph "CFG formil.nga.geopackage.attributes.AttributesTable.setContents(Lmil\/nga\/geopackage\/core\/contents\/Contents;)V" {
+subgraph cluster_Region_1144891680 {
+label = "R(2:0|(1:(2:2|(1:(2:6|7)))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.contents = r3\l}"];
+subgraph cluster_Region_1704544576 {
+label = "R(1:(2:2|(1:(2:6|7))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_87339011 {
+label = "IF [B:1:0x0002] THEN: R(2:2|(1:(2:6|7))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3 != null) goto L_0x0004\l}"];
+subgraph cluster_Region_1767763794 {
+label = "R(2:2|(1:(2:6|7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|mil.nga.geopackage.core.contents.ContentsDataType mil.nga.geopackage.core.contents.ContentsDataType r3 = r3.getDataType()\l}"];
+subgraph cluster_Region_541589346 {
+label = "R(1:(2:6|7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1751727498 {
+label = "IF [B:3:0x0008, B:5:0x000c] THEN: R(2:6|7) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|if (r3 == null) goto L_0x000f\l}"];
+Node_5 [shape=record,label="{5\:\ 0x000c|ADDED_TO_REGION\l|if (r3 != mil.nga.geopackage.core.contents.ContentsDataType.ATTRIBUTES) goto L_0x000f\l}"];
+subgraph cluster_Region_161097443 {
+label = "R(2:6|7)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x000f}"];
+Node_7 [shape=record,label="{7\:\ 0x0047|throw new mil.nga.geopackage.GeoPackageException(\"The \" + mil.nga.geopackage.core.contents.Contents.class.getSimpleName() + \" of a \" + mil.nga.geopackage.attributes.AttributesTable.class.getSimpleName() + \" must have a data type of \" + mil.nga.geopackage.core.contents.ContentsDataType.ATTRIBUTES.getName())\l}"];
+}
+}
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void mil.nga.geopackage.attributes.AttributesTable.setContents((r2v0 'this' mil.nga.geopackage.attributes.AttributesTable A[IMMUTABLE_TYPE, THIS]), (r3v0 mil.nga.geopackage.core.contents.Contents A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_8[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_9[style=dashed];
+Node_6 -> Node_7;
+Node_4 -> Node_5;
+}
+

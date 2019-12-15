@@ -1,0 +1,33 @@
+digraph "CFG fororg.osgeo.proj4j.proj.CollignonProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_803058913 {
+label = "R(4:0|(1:2)(1:3)|4|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|double double r7 = 1.0d \- java.lang.Math.sin(r7)\lr9.f295y = r7\l}"];
+subgraph cluster_IfRegion_340751255 {
+label = "IF [B:1:0x000e] THEN: R(1:2) ELSE: R(1:3)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000e|if (r7 \<= 0.0d) goto L_0x0010\l}"];
+subgraph cluster_Region_1817603139 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0010|r9.f295y = 0.0d\l}"];
+}
+subgraph cluster_Region_1480530321 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0013|r9.f295y = java.lang.Math.sqrt(r9.f295y)\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x001b|r9.f294x = r5 * FXC * r9.f295y\lr9.f295y = (1.0d \- r9.f295y) * FYC\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0034|RETURN\l|return r9\l}"];
+}
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.CollignonProjection.project((r4v0 'this' org.osgeo.proj4j.proj.CollignonProjection A[IMMUTABLE_TYPE, THIS]), (r5v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r9v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+}
+

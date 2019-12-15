@@ -1,0 +1,79 @@
+digraph "CFG forkotlin.io.CloseableKt.closeFinally(Ljava\/io\/Closeable;Ljava\/lang\/Throwable;)V" {
+subgraph cluster_Region_1674702087 {
+label = "R(1:(1:(2:(2:2|8)|(1:(1:4))))(0))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_919196302 {
+label = "IF [B:0:0x0000] THEN: R(1:(2:(2:2|8)|(1:(1:4)))) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r0 != null) goto L_0x0003\l}"];
+subgraph cluster_Region_454981646 {
+label = "R(1:(2:(2:2|8)|(1:(1:4))))";
+node [shape=record,color=blue];
+subgraph cluster_Region_1328063837 {
+label = "R(2:(2:2|8)|(1:(1:4)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_603836522 {
+label = "IF [B:1:0x0003] THEN: R(2:2|8) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0003|if (r1 == null) goto L_0x0005\l}"];
+subgraph cluster_Region_1532508985 {
+label = "R(2:2|8)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0005|r0.close()\l}"];
+Node_8 [shape=record,label="{8\:\ ?|SYNTHETIC\lRETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_862905940 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_971423529 {
+label = "Try: R(1:4) catches: R(2:5|6)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1960134399 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ ?|Catch:\{ Throwable \-\> 0x000d \}\lSplitter:B:3:0x0009\l|r0.close()     \/\/ Catch:\{ Throwable \-\> 0x000d \}\l}"];
+}
+subgraph cluster_Region_1859009199 {
+label = "R(2:5|6) | ExcHandler: Throwable (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|ExcHandler: Throwable (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:3:0x0009\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|kotlin.ExceptionsKt.addSuppressed(r1, r0)\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_710294884 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+}
+subgraph cluster_Region_1859009199 {
+label = "R(2:5|6) | ExcHandler: Throwable (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\l";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x000d|ExcHandler: Throwable (r0v1 'th' java.lang.Throwable A[CUSTOM_DECLARE])\lSplitter:B:3:0x0009\l}"];
+Node_6 [shape=record,label="{6\:\ 0x000e|kotlin.ExceptionsKt.addSuppressed(r1, r0)\l}"];
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x0009|SYNTHETIC\lSplitter:B:3:0x0009\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static final void kotlin.io.CloseableKt.closeFinally((r0v0 java.io.Closeable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r1v0 java.lang.Throwable A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}], Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\lAnnotation[BUILD, kotlin.SinceKotlin, \{version=1.1\}], Annotation[BUILD, kotlin.PublishedApi, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_9[style=dashed];
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_8;
+Node_4 -> Node_5;
+Node_4 -> Node_10;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+}
+

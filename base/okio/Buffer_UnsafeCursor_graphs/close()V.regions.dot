@@ -1,0 +1,36 @@
+digraph "CFG forokio.Buffer.UnsafeCursor.close()V" {
+subgraph cluster_Region_1146789161 {
+label = "R(1:(2:(2:2|3)|(1:5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_656431012 {
+label = "R(2:(2:2|3)|(1:5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1600742598 {
+label = "IF [B:1:0x0002] THEN: R(2:2|3) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.buffer != null) goto L_0x0004\l}"];
+subgraph cluster_Region_441216994 {
+label = "R(2:2|3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0004|r3.buffer = null\lr3.segment = null\lr3.offset = \-1\lr3.data = null\lr3.start = \-1\lr3.end = \-1\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0014|RETURN\l|return\l}"];
+}
+}
+subgraph cluster_Region_175049303 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x001c|throw new java.lang.IllegalStateException(\"not attached to a buffer\")\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0015}"];
+MethodNode[shape=record,label="{public void okio.Buffer.UnsafeCursor.close((r3v0 'this' okio.Buffer$UnsafeCursor A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_3;
+Node_0 -> Node_1;
+Node_4 -> Node_5;
+}
+

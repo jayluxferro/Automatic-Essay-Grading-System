@@ -1,0 +1,201 @@
+digraph "CFG fororg.spatialite.database.SQLiteSession.endTransactionUnchecked(Landroid\/support\/v4\/os\/CancellationSignal;Z)V" {
+subgraph cluster_Region_1006261180 {
+label = "R(9:(1:1)|2|3|9|(1:(1:(1:13))(1:16))|18|19|(1:(1:22))(1:(1:(1:25))(1:28))|(1:(1:32))) | DECL_VAR: java.lang.RuntimeException null\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1621539089 {
+label = "IF [B:0:0x0000] THEN: R(1:1) ELSE: null";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|if (r6 != null) goto L_0x0002\l}"];
+subgraph cluster_Region_1427399253 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|r6.throwIfCanceled()\l}"];
+}
+}
+Node_2 [shape=record,label="{2\:\ 0x0005|org.spatialite.database.SQLiteSession$Transaction org.spatialite.database.SQLiteSession.Transaction r0 = r5.mTransactionStack\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000b|boolean r7 = (r0.mMarkedSuccessful \|\| r7) && !r0.mChildFailed\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0016|PHI: r7 \l  PHI: (r7v1 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|android.database.sqlite.SQLiteTransactionListener android.database.sqlite.SQLiteTransactionListener r1 = r0.mListener\l}"];
+subgraph cluster_IfRegion_1564060401 {
+label = "IF [B:10:0x0019] THEN: R(1:(1:(1:13))(1:16)) ELSE: null";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x0019|if (r1 != null) goto L_0x001b\l}"];
+subgraph cluster_Region_857744498 {
+label = "R(1:(1:(1:13))(1:16))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_648428878 {
+label = "IF [B:11:0x001b] THEN: R(1:(1:13)) ELSE: R(1:16)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x001b|if (r7 == true) goto L_0x001d\l}"];
+subgraph cluster_Region_1422099337 {
+label = "R(1:(1:13))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_33084977 {
+label = "Try: R(1:13) catches: R(2:14|17)";
+node [shape=record,color=blue];
+subgraph cluster_Region_1247981653 {
+label = "R(1:13)";
+node [shape=record,color=blue];
+Node_13 [shape=record,label="{13\:\ ?|Catch:\{ RuntimeException \-\> 0x0021 \}\lSplitter:B:12:0x001d\l|r1.onCommit()     \/\/ Catch:\{ RuntimeException \-\> 0x0021 \}\l}"];
+}
+subgraph cluster_Region_1865636199 {
+label = "R(2:14|17) | ExcHandler: RuntimeException (r7v5 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0021 \}])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0021|Catch:\{ RuntimeException \-\> 0x0021 \}\lExcHandler: RuntimeException (r7v5 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0021 \}])\lSplitter:B:12:0x001d\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0027|r1 = r7\lr7 = false\l}"];
+}
+}
+}
+subgraph cluster_Region_1545107298 {
+label = "R(1:16)";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0023|Catch:\{ RuntimeException \-\> 0x0021 \}\l|r1.onRollback()     \/\/ Catch:\{ RuntimeException \-\> 0x0021 \}\l}"];
+}
+}
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x002a|r1 = null\l}"];
+Node_19 [shape=record,label="{19\:\ 0x002b|PHI: r1 r7 \l  PHI: (r1v2 java.lang.RuntimeException) = (r1v3 java.lang.RuntimeException), (r1v4 java.lang.RuntimeException) binds: [B:18:0x002a, B:17:0x0027] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r7v2 boolean) = (r7v1 boolean), (r7v6 boolean) binds: [B:18:0x002a, B:17:0x0027] A[DONT_GENERATE, DONT_INLINE]\l|r5.mTransactionStack = r0.mParent\lrecycleTransaction(r0)\l}"];
+subgraph cluster_IfRegion_2005408401 {
+label = "IF [B:20:0x0034] THEN: R(1:(1:22)) ELSE: R(1:(1:(1:25))(1:28))";
+node [shape=record,color=blue];
+Node_20 [shape=record,label="{20\:\ 0x0034|if (r5.mTransactionStack != null) goto L_0x0036\l}"];
+subgraph cluster_Region_1161405350 {
+label = "R(1:(1:22))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1102772937 {
+label = "IF [B:21:0x0036] THEN: R(1:22) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x0036|if (r7 == false) goto L_0x0038\l}"];
+subgraph cluster_Region_229551939 {
+label = "R(1:22)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x0038|r5.mTransactionStack.mChildFailed = true\l}"];
+}
+}
+}
+subgraph cluster_Region_1243654553 {
+label = "R(1:(1:(1:25))(1:28)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_674510577 {
+label = "IF [B:23:0x003d] THEN: R(1:(1:25)) ELSE: R(1:28) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_23 [shape=record,label="{23\:\ 0x003d|if (r7 == true) goto L_0x003f\l}"];
+subgraph cluster_Region_2102095582 {
+label = "R(1:(1:25))";
+node [shape=record,color=blue];
+subgraph cluster_TryCatchRegion_1969739330 {
+label = "Try: R(1:25) finally: R(3:26|33|34)";
+node [shape=record,color=blue];
+subgraph cluster_Region_223066906 {
+label = "R(1:25)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ ?|Catch:\{ all \-\> 0x0047 \}\lSplitter:B:24:0x003f\l|r5.mConnection.execute(\"COMMIT;\", (java.lang.Object[]) null, r6)     \/\/ Catch:\{ all \-\> 0x0047 \}\l}"];
+}
+subgraph cluster_Region_1114154827 {
+label = "R(3:26|33|34) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0047|Catch:\{ all \-\> 0x0047 \}\lExcHandler:  FINALLY\lSplitter:B:24:0x003f\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0057|FINALLY_INSNS\l|releaseConnection()\l}"];
+Node_34 [shape=record,label="{34\:\ 0x005a|throw r6\l}"];
+}
+}
+}
+subgraph cluster_Region_1685265478 {
+label = "R(1:28)";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x0049|Catch:\{ all \-\> 0x0047 \}\l|r5.mConnection.execute(\"ROLLBACK;\", (java.lang.Object[]) null, r6)     \/\/ Catch:\{ all \-\> 0x0047 \}\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_804066124 {
+label = "R(1:(1:32))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2142174912 {
+label = "IF [B:30:0x0053] THEN: R(1:32) ELSE: null";
+node [shape=record,color=blue];
+Node_30 [shape=record,label="{30\:\ 0x0053|if (r1 != null) goto L_0x0056\l}"];
+subgraph cluster_Region_2021350529 {
+label = "R(1:32)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x0056|throw r1\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_1865636199 {
+label = "R(2:14|17) | ExcHandler: RuntimeException (r7v5 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0021 \}])\l";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x0021|Catch:\{ RuntimeException \-\> 0x0021 \}\lExcHandler: RuntimeException (r7v5 'e' java.lang.RuntimeException A[CUSTOM_DECLARE, Catch:\{ RuntimeException \-\> 0x0021 \}])\lSplitter:B:12:0x001d\l}"];
+Node_17 [shape=record,label="{17\:\ 0x0027|r1 = r7\lr7 = false\l}"];
+}
+subgraph cluster_Region_1114154827 {
+label = "R(3:26|33|34) | ExcHandler:  FINALLY\l";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x0047|Catch:\{ all \-\> 0x0047 \}\lExcHandler:  FINALLY\lSplitter:B:24:0x003f\l}"];
+Node_33 [shape=record,label="{33\:\ 0x0057|FINALLY_INSNS\l|releaseConnection()\l}"];
+Node_34 [shape=record,label="{34\:\ 0x005a|throw r6\l}"];
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x000d|REMOVE\lADDED_TO_REGION\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x000f}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0011|REMOVE\lADDED_TO_REGION\l}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0013}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0015}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x001d|SYNTHETIC\lSplitter:B:12:0x001d\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ 0x0022|Catch:\{ RuntimeException \-\> 0x0021 \}\l}"];
+Node_24 [shape=record,color=red,label="{24\:\ 0x003f|SYNTHETIC\lSplitter:B:24:0x003f\l}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x0048|FINALLY_INSNS\lCatch:\{ all \-\> 0x0047 \}\l}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x0050|DONT_GENERATE\l|releaseConnection()\l}"];
+Node_31 [shape=record,color=red,label="{31\:\ 0x0055}"];
+MethodNode[shape=record,label="{private void org.spatialite.database.SQLiteSession.endTransactionUnchecked((r5v0 'this' org.spatialite.database.SQLiteSession A[IMMUTABLE_TYPE, THIS]), (r6v0 android.support.v4.os.CancellationSignal A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r7v0 boolean A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_0 -> Node_2[style=dashed];
+Node_1 -> Node_2;
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_5;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_10 -> Node_18[style=dashed];
+Node_11 -> Node_12;
+Node_11 -> Node_16[style=dashed];
+Node_13 -> Node_18;
+Node_14 -> Node_15;
+Node_17 -> Node_19;
+Node_16 -> Node_18;
+Node_18 -> Node_19;
+Node_19 -> Node_20;
+Node_20 -> Node_21;
+Node_20 -> Node_23[style=dashed];
+Node_21 -> Node_22;
+Node_21 -> Node_30[style=dashed];
+Node_22 -> Node_30;
+Node_23 -> Node_24;
+Node_23 -> Node_28[style=dashed];
+Node_25 -> Node_29;
+Node_26 -> Node_27;
+Node_33 -> Node_34;
+Node_28 -> Node_29;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_14 -> Node_15;
+Node_17 -> Node_19;
+Node_26 -> Node_27;
+Node_33 -> Node_34;
+Node_4 -> Node_5;
+Node_4 -> Node_8;
+Node_5 -> Node_6;
+Node_6 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_9;
+Node_8 -> Node_9;
+Node_12 -> Node_13;
+Node_12 -> Node_14;
+Node_15 -> Node_17;
+Node_24 -> Node_25;
+Node_24 -> Node_26;
+Node_27 -> Node_33;
+Node_29 -> Node_30;
+}
+

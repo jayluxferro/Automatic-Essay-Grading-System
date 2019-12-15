@@ -1,0 +1,47 @@
+digraph "CFG forcom.j256.ormlite.stmt.StatementExecutor.ifExists(Lcom\/j256\/ormlite\/support\/DatabaseConnection;Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_681201318 {
+label = "R(3:(1:2)|3|(2:(1:5)|(1:6)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_171837842 {
+label = "IF [B:1:0x0004] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|if (r6.ifExistsQuery == null) goto L_0x0006\l}"];
+subgraph cluster_Region_705027535 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0006|com.j256.ormlite.stmt.QueryBuilder com.j256.ormlite.stmt.QueryBuilder r0 = new com.j256.ormlite.stmt.QueryBuilder(r6.databaseType, r6.tableInfo, r6.dao)\lr0.selectRaw(\"COUNT(*)\")\lr0.where().mo17213eq(r6.tableInfo.getIdField().getColumnName(), new com.j256.ormlite.stmt.SelectArg())\lr6.ifExistsQuery = r0.prepareStatementString()\lr6.ifExistsFieldTypes = new com.j256.ormlite.field.FieldType[]\{r6.tableInfo.getIdField()\}\l}"];
+}
+}
+Node_3 [shape=record,label="{3\:\ 0x0042|java.lang.Object java.lang.Object r8 = r6.tableInfo.getIdField().convertJavaFieldToSqlArgValue(r8)\llong long r7 = r7.queryForLong(r6.ifExistsQuery, new java.lang.Object[]\{r8\}, r6.ifExistsFieldTypes)\llogger.debug(\"query of '\{\}' returned \{\}\", (java.lang.Object) r6.ifExistsQuery, (java.lang.Object) java.lang.Long.valueOf(r7))\l}"];
+subgraph cluster_Region_1678016846 {
+label = "R(2:(1:5)|(1:6))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_2059234430 {
+label = "IF [B:4:0x0069] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0069|if (r7 != 0) goto L_0x006b\l}"];
+subgraph cluster_Region_560804574 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x006b|SYNTHETIC\lRETURN\lORIG_RETURN\l|return true\l}"];
+}
+}
+subgraph cluster_Region_242347413 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ ?|SYNTHETIC\lRETURN\l|return false\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+MethodNode[shape=record,label="{public boolean com.j256.ormlite.stmt.StatementExecutor.ifExists((r6v0 'this' com.j256.ormlite.stmt.StatementExecutor A[IMMUTABLE_TYPE, THIS]), (r7v0 com.j256.ormlite.support.DatabaseConnection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r8v0 ID A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.sql.SQLException]\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Lcom\/j256\/ormlite\/support\/DatabaseConnection;, TID;)Z]\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_4 -> Node_6[style=dashed];
+Node_0 -> Node_1;
+}
+

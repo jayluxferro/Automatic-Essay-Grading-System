@@ -1,0 +1,81 @@
+digraph "CFG forcom.mapbox.services.android.navigation.v5.navigation.NavigationHelper.findUpcomingIntersection(Ljava\/util\/List;Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;Lcom\/mapbox\/api\/directions\/v5\/models\/StepIntersection;)Lcom\/mapbox\/api\/directions\/v5\/models\/StepIntersection;" {
+subgraph cluster_Region_535867704 {
+label = "R(3:0|(1:2)|(2:(1:5)|(1:(2:(1:15)|(1:12))))) | DECL_VAR: java.util.List\<com.mapbox.api.directions.v5.models.StepIntersection\> null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|boolean r0 = true\lint int r5 = r3.indexOf(r5) + 1\l}"];
+subgraph cluster_IfRegion_374187892 {
+label = "IF [B:1:0x000b] THEN: R(1:2) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r5 \>= r3.size()) goto L_0x000e\l}"];
+subgraph cluster_Region_1319227074 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000e|r0 = false\l}"];
+}
+}
+subgraph cluster_Region_54181154 {
+label = "R(2:(1:5)|(1:(2:(1:15)|(1:12))))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_526143135 {
+label = "IF [B:3:0x000f] THEN: R(1:5) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000f|PHI: r0 \l  PHI: (r0v1 boolean) = (r0v0 boolean), (r0v2 boolean) binds: [B:1:0x000b, B:2:0x000e] A[DONT_GENERATE, DONT_INLINE]\l|if (r0 == true) goto L_0x0011\l}"];
+subgraph cluster_Region_204389876 {
+label = "R(1:5)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0017|RETURN\l|return r3.get(r5)\l}"];
+}
+}
+subgraph cluster_Region_1942324618 {
+label = "R(1:(2:(1:15)|(1:12)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_264653271 {
+label = "R(2:(1:15)|(1:12))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_859116451 {
+label = "IF [B:6:0x0018, B:8:0x001e, B:10:0x0024] THEN: R(1:15) ELSE: null";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0018|if (r4 == null) goto L_?\l}"];
+Node_8 [shape=record,label="{8\:\ 0x001e|ADDED_TO_REGION\l|if ((r3 = r4.intersections()) == null) goto L_?\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0024|ADDED_TO_REGION\l|if (r3.isEmpty() == true) goto L_?\l}"];
+subgraph cluster_Region_1697676106 {
+label = "R(1:15)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_981879731 {
+label = "R(1:12)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x002c|RETURN\l|return r3.get(0)\l}"];
+}
+}
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001a}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x0020}"];
+Node_11 [shape=record,color=red,label="{11\:\ 0x0026}"];
+Node_13 [shape=record,color=red,label="{13\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ ?|SYNTHETIC\lRETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public static com.mapbox.api.directions.v5.models.StepIntersection com.mapbox.services.android.navigation.v5.navigation.NavigationHelper.findUpcomingIntersection((r3v0 java.util.List\<com.mapbox.api.directions.v5.models.StepIntersection\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 com.mapbox.api.directions.v5.models.LegStep A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 com.mapbox.api.directions.v5.models.StepIntersection A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}], Annotation[BUILD, android.support.annotation.Nullable, \{\}], \lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/util\/List\<, Lcom\/mapbox\/api\/directions\/v5\/models\/StepIntersection;, \>;, Lcom\/mapbox\/api\/directions\/v5\/models\/LegStep;, Lcom\/mapbox\/api\/directions\/v5\/models\/StepIntersection;, ), Lcom\/mapbox\/api\/directions\/v5\/models\/StepIntersection;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_6[style=dashed];
+Node_6 -> Node_7[style=dashed];
+Node_6 -> Node_13;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_14;
+Node_10 -> Node_11[style=dashed];
+Node_10 -> Node_15;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+Node_9 -> Node_10;
+Node_11 -> Node_12;
+}
+

@@ -1,0 +1,77 @@
+digraph "CFG forandroid.support.design.widget.TabLayout.setSelectedTabView(I)V" {
+subgraph cluster_Region_9495349 {
+label = "R(2:0|(1:(2:2|(4:4|8|(1:10)(0)|11))))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int int r0 = r6.slidingTabIndicator.getChildCount()\l}"];
+subgraph cluster_Region_1216743294 {
+label = "R(1:(2:2|(4:4|8|(1:10)(0)|11)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1437509594 {
+label = "IF [B:1:0x0006] THEN: R(2:2|(4:4|8|(1:10)(0)|11)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0006|if (r7 \< r0) goto L_0x0008\l}"];
+subgraph cluster_Region_63632291 {
+label = "R(2:2|(4:4|8|(1:10)(0)|11))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0008|int r2 = 0\l}"];
+subgraph cluster_LoopRegion_2005997008 {
+label = "LOOP:0: (4:4|8|(1:10)(0)|11)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x000a|LOOP_START\lPHI: r2 \l  PHI: (r2v1 int) = (r2v0 int), (r2v2 int) binds: [B:2:0x0008, B:11:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000a\-\>B:11:0x001f\l|if (r2 \< r0) goto L_0x000c\l}"];
+subgraph cluster_Region_79962532 {
+label = "R(4:4|8|(1:10)(0)|11)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000c|android.view.View android.view.View r3 = r6.slidingTabIndicator.getChildAt(r2)\lboolean r4 = true\l}"];
+Node_8 [shape=record,label="{8\:\ 0x0018|PHI: r5 \l  PHI: (r5v0 boolean) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|r3.setSelected(r2 == r7)\l}"];
+subgraph cluster_IfRegion_611632785 {
+label = "IF [B:9:0x001b] THEN: R(1:10) ELSE: R(0)";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x001b|if (r2 != r7) goto L_0x001e\l}"];
+subgraph cluster_Region_1538549850 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ 0x001e|r4 = false\l}"];
+}
+subgraph cluster_Region_551504407 {
+label = "R(0)";
+node [shape=record,color=blue];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x001f|LOOP_END\lPHI: r4 \l  PHI: (r4v1 boolean) = (r4v0 boolean), (r4v2 boolean) binds: [B:14:0x001f, B:13:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:3:0x000a\-\>B:11:0x001f\l|r3.setActivated(r4)\lr2++\l}"];
+}
+}
+}
+}
+}
+}
+Node_5 [shape=record,color=red,label="{5\:\ 0x0013}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0015}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x0017}"];
+Node_12 [shape=record,color=red,label="{12\:\ 0x0025|SYNTHETIC\l}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x001f|SYNTHETIC\l}"];
+Node_14 [shape=record,color=red,label="{14\:\ 0x001f|SYNTHETIC\l}"];
+Node_15 [shape=record,color=red,label="{15\:\ ?|SYNTHETIC\lORIG_RETURN\l}"];
+Node_16 [shape=record,color=red,label="{16\:\ ?|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{private void android.support.design.widget.TabLayout.setSelectedTabView((r6v0 'this' android.support.design.widget.TabLayout A[IMMUTABLE_TYPE, THIS]), (r7v0 int A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_15[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_12[style=dashed];
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_9 -> Node_10;
+Node_9 -> Node_14[style=dashed];
+Node_10 -> Node_13;
+Node_11 -> Node_3;
+Node_5 -> Node_6;
+Node_5 -> Node_7;
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_12 -> Node_16;
+Node_13 -> Node_11;
+Node_14 -> Node_11;
+}
+

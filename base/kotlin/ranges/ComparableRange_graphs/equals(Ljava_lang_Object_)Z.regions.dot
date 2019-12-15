@@ -1,0 +1,61 @@
+digraph "CFG forkotlin.ranges.ComparableRange.equals(Ljava\/lang\/Object;)Z" {
+subgraph cluster_Region_1460340142 {
+label = "R(2:(2:(2:6|(1:11))|10)|11)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_317240317 {
+label = "IF [B:1:0x0002] THEN: R(2:(2:6|(1:11))|10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if ((r3 instanceof kotlin.ranges.ComparableRange) == true) goto L_0x0004\l}"];
+subgraph cluster_Region_1262859668 {
+label = "R(2:(2:6|(1:11))|10)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1055822644 {
+label = "IF [B:3:0x0008, B:5:0x0011] THEN: R(2:6|(1:11)) ELSE: null";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (isEmpty() == false) goto L_0x0013\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0011|ADDED_TO_REGION\l|if (((kotlin.ranges.ComparableRange) r3).isEmpty() == false) goto L_0x0013\l}"];
+subgraph cluster_Region_303218181 {
+label = "R(2:6|(1:11))";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0013|kotlin.ranges.ComparableRange kotlin.ranges.ComparableRange r3 = (kotlin.ranges.ComparableRange) r3\l}"];
+subgraph cluster_IfRegion_49756807 {
+label = "IF [B:7:0x0021, B:9:0x002f] THEN: R(1:11) ELSE: null";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x0021|if (kotlin.jvm.internal.Intrinsics.areEqual((java.lang.Object) getStart(), (java.lang.Object) r3.getStart()) == false) goto L_0x0033\l}"];
+Node_9 [shape=record,label="{9\:\ 0x002f|ADDED_TO_REGION\l|if (kotlin.jvm.internal.Intrinsics.areEqual((java.lang.Object) getEndInclusive(), (java.lang.Object) r3.getEndInclusive()) == false) goto L_0x0033\l}"];
+subgraph cluster_Region_835176242 {
+label = "R(1:11)";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0033|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+}
+}
+}
+Node_10 [shape=record,label="{10\:\ 0x0031|SYNTHETIC\lRETURN\l|return true\l}"];
+}
+}
+Node_11 [shape=record,label="{11\:\ 0x0033|SYNTHETIC\lRETURN\lORIG_RETURN\l|return false\l}"];
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x000a}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x0023}"];
+MethodNode[shape=record,label="{public boolean kotlin.ranges.ComparableRange.equals((r2v0 'this' kotlin.ranges.ComparableRange A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.Object A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, org.jetbrains.annotations.Nullable, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_1 -> Node_2;
+Node_1 -> Node_11[style=dashed];
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_5 -> Node_6;
+Node_5 -> Node_10[style=dashed];
+Node_6 -> Node_7;
+Node_7 -> Node_8[style=dashed];
+Node_7 -> Node_11;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_11;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+}
+

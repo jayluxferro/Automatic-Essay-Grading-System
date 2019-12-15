@@ -1,0 +1,30 @@
+digraph "CFG forandroid.support.design.widget.TextInputEditText.onCreateInputConnection(Landroid\/view\/inputmethod\/EditorInfo;)Landroid\/view\/inputmethod\/InputConnection;" {
+subgraph cluster_Region_931235917 {
+label = "R(3:0|(1:4)|5)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|android.view.inputmethod.InputConnection android.view.inputmethod.InputConnection r0 = super.onCreateInputConnection(r3)\l}"];
+subgraph cluster_IfRegion_913985627 {
+label = "IF [B:1:0x0004, B:3:0x0008] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0004|ADDED_TO_REGION\l|if (r0 != null) goto L_0x0006\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (r3.hintText == null) goto L_0x000a\l}"];
+subgraph cluster_Region_2067616183 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000a|r3.hintText = getHintFromLayout()\l}"];
+}
+}
+Node_5 [shape=record,label="{5\:\ 0x0010|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x0006}"];
+MethodNode[shape=record,label="{public android.view.inputmethod.InputConnection android.support.design.widget.TextInputEditText.onCreateInputConnection((r2v0 'this' android.support.design.widget.TextInputEditText A[IMMUTABLE_TYPE, THIS]), (r3v0 android.view.inputmethod.EditorInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_5[style=dashed];
+Node_3 -> Node_4;
+Node_3 -> Node_5[style=dashed];
+Node_4 -> Node_5;
+Node_2 -> Node_3;
+}
+

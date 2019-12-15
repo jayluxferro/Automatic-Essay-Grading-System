@@ -1,0 +1,30 @@
+digraph "CFG forcom.google.firebase.provider.FirebaseInitProvider.checkContentProviderAuthority(Landroid\/content\/pm\/ProviderInfo;)V" {
+subgraph cluster_Region_954749377 {
+label = "R(2:0|(1:(1:4)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|com.google.android.gms.common.internal.Preconditions.checkNotNull(r1, \"FirebaseInitProvider ProviderInfo cannot be null.\")\l}"];
+subgraph cluster_Region_13709401 {
+label = "R(1:(1:4))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_702278707 {
+label = "IF [B:1:0x000d] THEN: R(1:4) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|if (EMPTY_APPLICATION_ID_PROVIDER_AUTHORITY.equals(r1.authority) != false) goto L_0x0010\l}"];
+subgraph cluster_Region_1709547178 {
+label = "R(1:4)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0017|throw new java.lang.IllegalStateException(\"Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.\")\l}"];
+}
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+MethodNode[shape=record,label="{private static void com.google.firebase.provider.FirebaseInitProvider.checkContentProviderAuthority((r1v0 android.content.pm.ProviderInfo A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.NonNull, \{\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_3 -> Node_4;
+}
+

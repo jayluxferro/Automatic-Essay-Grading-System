@@ -1,0 +1,40 @@
+digraph "CFG forokhttp3.CertificatePinner.Pin.\<init\>(Ljava\/lang\/String;Ljava\/lang\/String;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r2.pattern = r3\l}"];
+Node_1 [shape=record,label="{1\:\ 0x000b|if (r3.startsWith(WILDCARD) == false) goto L_0x0031\l}"];
+Node_2 [shape=record,label="{2\:\ 0x000d|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"http:\/\/\")\lr0.append(r3.substring(WILDCARD.length()))\ljava.lang.String r3 = okhttp3.HttpUrl.get(r0.toString()).host()\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0031|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"http:\/\/\")\lr0.append(r3)\ljava.lang.String r3 = okhttp3.HttpUrl.get(r0.toString()).host()\l}"];
+Node_4 [shape=record,label="{4\:\ 0x004a|PHI: r3 \l  PHI: (r3v1 java.lang.String) = (r3v21 java.lang.String), (r3v25 java.lang.String) binds: [B:3:0x0031, B:2:0x000d] A[DONT_GENERATE, DONT_INLINE]\l|r2.canonicalHostname = r3\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0052|if (r4.startsWith(\"sha1\/\") == false) goto L_0x0069\l}"];
+Node_6 [shape=record,label="{6\:\ 0x0054|r2.hashAlgorithm = \"sha1\/\"\lr2.hash = okio.ByteString.decodeBase64(r4.substring(\"sha1\/\".length()))\l}"];
+Node_7 [shape=record,label="{7\:\ 0x0069}"];
+Node_8 [shape=record,label="{8\:\ 0x006f|if (r4.startsWith(\"sha256\/\") == false) goto L_0x00a1\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0071|r2.hashAlgorithm = \"sha256\/\"\lr2.hash = okio.ByteString.decodeBase64(r4.substring(\"sha256\/\".length()))\l}"];
+Node_10 [shape=record,label="{10\:\ 0x0085}"];
+Node_11 [shape=record,label="{11\:\ 0x0087|if (r2.hash == null) goto L_0x008a\l}"];
+Node_12 [shape=record,label="{12\:\ 0x0089|RETURN\l|return\l}"];
+Node_13 [shape=record,label="{13\:\ 0x008a|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"pins must be base64: \")\lr0.append(r4)\l}"];
+Node_14 [shape=record,label="{14\:\ 0x00a0|throw new java.lang.IllegalArgumentException(r0.toString())\l}"];
+Node_15 [shape=record,label="{15\:\ 0x00a1|java.lang.StringBuilder r0 = new java.lang.StringBuilder()\lr0.append(\"pins must start with 'sha256\/' or 'sha1\/': \")\lr0.append(r4)\l}"];
+Node_16 [shape=record,label="{16\:\ 0x00b7|throw new java.lang.IllegalArgumentException(r0.toString())\l}"];
+MethodNode[shape=record,label="{void okhttp3.CertificatePinner.Pin.\<init\>((r2v0 'this' okhttp3.CertificatePinner$Pin A[IMMUTABLE_TYPE, THIS]), (r3v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_3;
+Node_2 -> Node_4;
+Node_3 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6[style=dashed];
+Node_5 -> Node_7;
+Node_6 -> Node_10;
+Node_7 -> Node_8;
+Node_8 -> Node_9[style=dashed];
+Node_8 -> Node_15;
+Node_9 -> Node_10;
+Node_10 -> Node_11;
+Node_11 -> Node_12[style=dashed];
+Node_11 -> Node_13;
+Node_13 -> Node_14;
+Node_15 -> Node_16;
+}
+

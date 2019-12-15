@@ -1,0 +1,20 @@
+digraph "CFG forcom.j256.ormlite.android.AndroidLog.refreshLevelCache()V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r0 I:com.j256.ormlite.logger.Log$Level[]) =  com.j256.ormlite.logger.Log.Level.values():com.j256.ormlite.logger.Log$Level[] type: STATIC \l0x0004: ARRAY_LENGTH  (r1 I:int) = (r0 I:?[]) \l0x0005: CONST  (r2 I:?[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = \l  (0 ?[int, float, boolean, short, byte, char, OBJECT, ARRAY])\l \l}"];
+Node_1 [shape=record,label="{1\:\ 0x0006|0x0006: IF  (r2 I:?[int, byte, short, char]) \>= (r1 I:?[int, byte, short, char])  \-\> B:6:0x001e \l}"];
+Node_2 [shape=record,label="{2\:\ 0x0008|0x0008: AGET  (r3 I:?[OBJECT, ARRAY]) = (r0 I:?[OBJECT, ARRAY][]), (r2 I:?[int, short, byte, char]) \l0x000a: INVOKE  (r3 I:int) = \l  (r6 I:com.j256.ormlite.android.AndroidLog)\l  (r3 I:com.j256.ormlite.logger.Log$Level)\l com.j256.ormlite.android.AndroidLog.levelToAndroidLevel(com.j256.ormlite.logger.Log$Level):int type: DIRECT \l0x000e: IGET  (r4 I:boolean[]) = (r6 I:com.j256.ormlite.android.AndroidLog) com.j256.ormlite.android.AndroidLog.levelCache boolean[] \l0x0010: ARRAY_LENGTH  (r4 I:int) = (r4 I:?[]) \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0011|0x0011: IF  (r3 I:?[int, byte, short, char]) \>= (r4 I:?[int, byte, short, char])  \-\> B:5:0x001b \l}"];
+Node_4 [shape=record,label="{4\:\ 0x0013|0x0013: IGET  (r4 I:boolean[]) = (r6 I:com.j256.ormlite.android.AndroidLog) com.j256.ormlite.android.AndroidLog.levelCache boolean[] \l0x0015: INVOKE  (r5 I:boolean) = (r6 I:com.j256.ormlite.android.AndroidLog), (r3 I:int) com.j256.ormlite.android.AndroidLog.isLevelEnabledInternal(int):boolean type: DIRECT \l0x0019: APUT  \l  (r4 I:boolean[] A[IMMUTABLE_TYPE])\l  (r3 I:?[int, short, byte, char])\l  (r5 I:boolean A[IMMUTABLE_TYPE])\l \l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|0x001b: ARITH  (r2 I:int) = (r2 I:int) + (1 int) \l}"];
+Node_6 [shape=record,label="{6\:\ 0x001e|0x001e: RETURN   \l}"];
+MethodNode[shape=record,label="{private void com.j256.ormlite.android.AndroidLog.refreshLevelCache((r6 'this' I:com.j256.ormlite.android.AndroidLog A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_2 -> Node_3;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_5;
+Node_4 -> Node_5;
+Node_5 -> Node_1;
+}
+

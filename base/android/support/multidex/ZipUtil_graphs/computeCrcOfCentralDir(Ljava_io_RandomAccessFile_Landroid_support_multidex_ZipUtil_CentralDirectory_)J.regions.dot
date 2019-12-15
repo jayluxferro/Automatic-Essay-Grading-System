@@ -1,0 +1,54 @@
+digraph "CFG forandroid.support.multidex.ZipUtil.computeCrcOfCentralDir(Ljava\/io\/RandomAccessFile;Landroid\/support\/multidex\/ZipUtil$CentralDirectory;)J" {
+subgraph cluster_Region_1091319310 {
+label = "R(3:0|(2:3|(2:(1:8)|(1:7)))|6)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.zip.CRC32 java.util.zip.CRC32 r1 = new java.util.zip.CRC32()\llong long r4 = r13.size\lr12.seek(r13.offset)\lbyte[] byte[] r0 = new byte[16384]\lint int r2 = r12.read(r0, 0, (int) java.lang.Math.min(android.support.p000v4.media.session.PlaybackStateCompat.ACTION_PREPARE, r4))\l}"];
+subgraph cluster_LoopRegion_1726387611 {
+label = "LOOP:0: (2:3|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x001d|if (r2 != \-1) goto L_0x001f\l}"];
+subgraph cluster_Region_2020073624 {
+label = "R(2:3|(2:(1:8)|(1:7)))";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001f|r1.update(r0, 0, r2)\lr4 \-= (long) r2\l}"];
+subgraph cluster_Region_338295609 {
+label = "R(2:(1:8)|(1:7))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_305860120 {
+label = "IF [B:4:0x0028] THEN: R(1:8) ELSE: null";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x0028|if (r4 == 0) goto L_0x002a\l}"];
+subgraph cluster_Region_38881968 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x002a|SYNTHETIC\lEDGE_INSN: B:8:0x002a\-\>B:5:0x002a ?: BREAK  \l|break\l}"];
+}
+}
+subgraph cluster_Region_1182431004 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002f|LOOP_END\lLOOP:0: B:1:0x001c\-\>B:7:0x002f\l|int r2 = r12.read(r0, 0, (int) java.lang.Math.min(android.support.p000v4.media.session.PlaybackStateCompat.ACTION_PREPARE, r4))\l}"];
+}
+}
+}
+}
+Node_6 [shape=record,label="{6\:\ 0x002e|RETURN\l|return r1.getValue()\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x001c|LOOP_START\lPHI: r2 r4 \l  PHI: (r2v2 'length' int) = (r2v1 'length' int), (r2v4 'length' int) binds: [B:0:0x0000, B:7:0x002f] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r4v1 'stillToRead' long) = (r4v0 'stillToRead' long), (r4v2 'stillToRead' long) binds: [B:0:0x0000, B:7:0x002f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x001c\-\>B:7:0x002f\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x002a|EDGE_INSN: B:8:0x002a\-\>B:5:0x002a ?: BREAK  \l}"];
+Node_9 [shape=record,color=red,label="{9\:\ 0x002a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{static long android.support.multidex.ZipUtil.computeCrcOfCentralDir((r12v0 'raf' java.io.RandomAccessFile A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r13v0 'dir' android.support.multidex.ZipUtil$CentralDirectory A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Throws, \{value=[java.io.IOException]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_9[style=dashed];
+Node_3 -> Node_4;
+Node_4 -> Node_7[style=dashed];
+Node_4 -> Node_8;
+Node_8 -> Node_5;
+Node_7 -> Node_1;
+Node_1 -> Node_2;
+Node_5 -> Node_6;
+Node_9 -> Node_5;
+}
+

@@ -1,0 +1,31 @@
+digraph "CFG fororg.mapsforge.map.layer.renderer.StandardRenderer.renderWaterBackground(Lorg\/mapsforge\/map\/rendertheme\/RenderContext;)V" {
+subgraph cluster_Region_570969367 {
+label = "R(3:0|(1:3)|4)";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|int r0 = 0\lr9.setDrawingLayers((byte) 0)\lorg.mapsforge.core.model.Point[] org.mapsforge.core.model.Point[] r1 = getTilePixelCoordinates(r9.rendererJob.tile.tileSize)\lorg.mapsforge.core.model.Point org.mapsforge.core.model.Point r2 = r9.rendererJob.tile.getOrigin()\l}"];
+subgraph cluster_LoopRegion_1978017354 {
+label = "LOOP:0: (1:3)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0017|if (r0 \< r1.length) goto L_0x0019\l}"];
+subgraph cluster_Region_1057841719 {
+label = "R(1:3)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x0019|LOOP_END\lLOOP:0: B:1:0x0016\-\>B:3:0x0019\l|r1[r0] = r1[r0].offset(r2.f266x, r2.f267y)\lr0++\l}"];
+}
+}
+Node_4 [shape=record,label="{4\:\ 0x0028|r9.renderTheme.matchClosedWay(r8, r9, new org.mapsforge.map.layer.renderer.PolylineContainer(r1, r9.rendererJob.tile, r9.rendererJob.tile, java.util.Collections.singletonList(TAG_NATURAL_WATER)))\l}"];
+}
+Node_1 [shape=record,color=red,label="{1\:\ 0x0016|LOOP_START\lPHI: r0 \l  PHI: (r0v1 int) = (r0v0 int), (r0v3 int) binds: [B:0:0x0000, B:3:0x0019] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x0016\-\>B:3:0x0019\l}"];
+Node_5 [shape=record,color=red,label="{5\:\ 0x0040}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0028|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{protected void org.mapsforge.map.layer.renderer.StandardRenderer.renderWaterBackground((r8v0 'this' org.mapsforge.map.layer.renderer.StandardRenderer A[IMMUTABLE_TYPE, THIS]), (r9v0 org.mapsforge.map.rendertheme.RenderContext A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_2 -> Node_6[style=dashed];
+Node_3 -> Node_1;
+Node_4 -> Node_5;
+Node_1 -> Node_2;
+Node_6 -> Node_4;
+}
+

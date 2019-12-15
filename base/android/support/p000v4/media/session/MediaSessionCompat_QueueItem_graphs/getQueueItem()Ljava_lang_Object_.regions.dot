@@ -1,0 +1,41 @@
+digraph "CFG forandroid.support.v4.media.session.MediaSessionCompat.QueueItem.getQueueItem()Ljava\/lang\/Object;" {
+subgraph cluster_Region_70792767 {
+label = "R(1:(2:(1:7)|(2:4|5)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_589341538 {
+label = "R(2:(1:7)|(2:4|5))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_42307078 {
+label = "IF [B:1:0x0002, B:3:0x0008] THEN: R(1:7) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x0002|if (r3.mItem != null) goto L_0x001c\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0008|ADDED_TO_REGION\l|if (android.os.Build.VERSION.SDK_INT \< 21) goto L_0x001c\l}"];
+subgraph cluster_Region_448549641 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001e|RETURN\l|return r3.mItem\l}"];
+}
+}
+subgraph cluster_Region_1609570223 {
+label = "R(2:4|5)";
+node [shape=record,color=blue];
+Node_4 [shape=record,label="{4\:\ 0x000b|r3.mItem = android.support.p000v4.media.session.MediaSessionCompatApi21.QueueItem.createItem(r3.mDescription.getMediaDescription(), r3.mId)\l}"];
+Node_5 [shape=record,label="{5\:\ 0x001b|RETURN\l|return r3.mItem\l}"];
+}
+}
+}
+Node_0 [shape=record,color=red,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l}"];
+Node_2 [shape=record,color=red,label="{2\:\ 0x0004}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x001c}"];
+MethodNode[shape=record,label="{public java.lang.Object android.support.v4.media.session.MediaSessionCompat.QueueItem.getQueueItem((r3v0 'this' android.support.v4.media.session.MediaSessionCompat$QueueItem A[IMMUTABLE_TYPE, THIS])) }"];
+MethodNode -> Node_0;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_6;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_6;
+Node_4 -> Node_5;
+Node_0 -> Node_1;
+Node_2 -> Node_3;
+Node_6 -> Node_7;
+}
+

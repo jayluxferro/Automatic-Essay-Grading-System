@@ -1,0 +1,55 @@
+digraph "CFG forcom.google.gson.internal.bind.TypeAdapters.30.create(Lcom\/google\/gson\/Gson;Lcom\/google\/gson\/reflect\/TypeToken;)Lcom\/google\/gson\/TypeAdapter;" {
+subgraph cluster_Region_1696320912 {
+label = "R(2:0|(2:(1:10)|(2:(1:6)|8)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.lang.Class java.lang.Class\<? super java.lang.Enum\> r1 = r2.getRawType()\l}"];
+subgraph cluster_Region_459748773 {
+label = "R(2:(1:10)|(2:(1:6)|8))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_931133812 {
+label = "IF [B:1:0x000a, B:3:0x000e] THEN: R(1:10) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|if (java.lang.Enum.class.isAssignableFrom(r1) == false) goto L_?\l}"];
+Node_3 [shape=record,label="{3\:\ 0x000e|ADDED_TO_REGION\l|if (r1 == java.lang.Enum.class) goto L_?\l}"];
+subgraph cluster_Region_1981221676 {
+label = "R(1:10)";
+node [shape=record,color=blue];
+Node_10 [shape=record,label="{10\:\ ?|SYNTHETIC\lRETURN\l|return null\l}"];
+}
+}
+subgraph cluster_Region_1213627136 {
+label = "R(2:(1:6)|8)";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1931104190 {
+label = "IF [B:5:0x0015] THEN: R(1:6) ELSE: null";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0015|if (r1.isEnum() == false) goto L_0x0017\l}"];
+subgraph cluster_Region_442044134 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0017|java.lang.Class r1 = r1.getSuperclass()\l}"];
+}
+}
+Node_8 [shape=record,label="{8\:\ 0x0020|RETURN\l|return new com.google.gson.internal.bind.TypeAdapters.EnumTypeAdapter(r1)\l}"];
+}
+}
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000c}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x0011}"];
+Node_7 [shape=record,color=red,label="{7\:\ 0x001b|PHI: r1 \l  PHI: (r1v4 java.lang.Class\<? super java.lang.Enum\>) = (r1v1 java.lang.Class\<java.lang.Enum\>), (r1v5 java.lang.Class\<? super java.lang.Enum\>) binds: [B:5:0x0015, B:6:0x0017] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_9 [shape=record,color=red,label="{9\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\lADDED_TO_REGION\l|return null\l}"];
+MethodNode[shape=record,label="{public com.google.gson.TypeAdapter\<T\> com.google.gson.internal.bind.TypeAdapters.30.create((r0v0 'this' com.google.gson.internal.bind.TypeAdapters$30 A[IMMUTABLE_TYPE, THIS]), (r1v0 com.google.gson.Gson A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r2v0 ? I:com.google.gson.reflect.TypeToken\<T\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | INCONSISTENT_CODE\lJADX WARNING: type inference failed for: r2v0, types: [com.google.gson.reflect.TypeToken\<T\>, com.google.gson.reflect.TypeToken]\lUnknown variable types count: 1\lAnnotation[SYSTEM, dalvik.annotation.Signature, \{value=[\<T:, Ljava\/lang\/Object;, \>(, Lcom\/google\/gson\/Gson;, Lcom\/google\/gson\/reflect\/TypeToken\<, TT;\>;), Lcom\/google\/gson\/TypeAdapter\<, TT;\>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_9;
+Node_3 -> Node_4[style=dashed];
+Node_3 -> Node_10;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_7;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+Node_7 -> Node_8;
+}
+

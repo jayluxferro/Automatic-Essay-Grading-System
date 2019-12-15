@@ -1,0 +1,48 @@
+digraph "CFG forandroid.support.v4.app.NotificationCompat.getInvisibleActions(Landroid\/app\/Notification;)Ljava\/util\/List;" {
+subgraph cluster_Region_28674405 {
+label = "R(3:0|(2:5|(1:8))|9) | DECL_VAR: android.os.Bundle null\l";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|java.util.ArrayList java.util.ArrayList r0 = new java.util.ArrayList()\landroid.os.Bundle android.os.Bundle r3 = r3.extras.getBundle(\"android.car.EXTENSIONS\")\l}"];
+subgraph cluster_IfRegion_297882015 {
+label = "IF [B:1:0x000d, B:4:0x0016] THEN: R(2:5|(1:8)) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000d|ADDED_TO_REGION\l|if (r3 == null) goto L_0x000f\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0016|ADDED_TO_REGION\l|if ((r3 = r3.getBundle(\"invisible_actions\")) == null) goto L_0x0031\l}"];
+subgraph cluster_Region_1222275632 {
+label = "R(2:5|(1:8))";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0018|int r1 = 0\l}"];
+subgraph cluster_LoopRegion_1695102191 {
+label = "LOOP:0: (1:8)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x001d|if (r1 \< r3.size()) goto L_0x001f\l}"];
+subgraph cluster_Region_11624342 {
+label = "R(1:8)";
+node [shape=record,color=blue];
+Node_8 [shape=record,label="{8\:\ 0x001f|LOOP_END\lLOOP:0: B:6:0x0019\-\>B:8:0x001f\l|r0.add(android.support.p000v4.app.NotificationCompatJellybean.getActionFromBundle(r3.getBundle(java.lang.Integer.toString(r1))))\lr1++\l}"];
+}
+}
+}
+}
+Node_9 [shape=record,label="{9\:\ 0x0031|RETURN\l|return r0\l}"];
+}
+Node_2 [shape=record,color=red,label="{2\:\ 0x000f|RETURN\lADDED_TO_REGION\l|return r0\l}"];
+Node_3 [shape=record,color=red,label="{3\:\ 0x0010}"];
+Node_6 [shape=record,color=red,label="{6\:\ 0x0019|LOOP_START\lPHI: r1 \l  PHI: (r1v3 int) = (r1v2 int), (r1v4 int) binds: [B:5:0x0018, B:8:0x001f] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:6:0x0019\-\>B:8:0x001f\l}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x0031|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public static java.util.List\<android.support.v4.app.NotificationCompat$Action\> android.support.v4.app.NotificationCompat.getInvisibleActions((r3v0 android.app.Notification A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RequiresApi, \{value=21\}], Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Landroid\/app\/Notification;, ), Ljava\/util\/List\<, Landroid\/support\/v4\/app\/NotificationCompat$Action;, \>;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_3[style=dashed];
+Node_4 -> Node_5[style=dashed];
+Node_4 -> Node_9;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_7 -> Node_10[style=dashed];
+Node_8 -> Node_6;
+Node_3 -> Node_4;
+Node_6 -> Node_7;
+Node_10 -> Node_9;
+}
+

@@ -1,0 +1,246 @@
+digraph "CFG fororg.osgeo.proj4j.proj.EquidistantAzimuthalProjection.project(DDLorg\/osgeo\/proj4j\/ProjCoordinate;)Lorg\/osgeo\/proj4j\/ProjCoordinate;" {
+subgraph cluster_Region_1907616196 {
+label = "R(2:0|(2:(3:2|3|(2:(2:22|43)|(1:24)))|(5:25|26|37|39|40)))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|r0 = r27\ldouble r1 = r30\lorg.osgeo.proj4j.ProjCoordinate r8 = r32\l}"];
+subgraph cluster_Region_2047666712 {
+label = "R(2:(3:2|3|(2:(2:22|43)|(1:24)))|(5:25|26|37|39|40))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1930916114 {
+label = "IF [B:1:0x000f] THEN: R(3:2|3|(2:(2:22|43)|(1:24))) ELSE: null";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000f|if (r0.spherical == true) goto L_0x0011\l}"];
+subgraph cluster_Region_1276291799 {
+label = "R(3:2|3|(2:(2:22|43)|(1:24)))";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x0011|double double r13 = java.lang.Math.sin(r30)\ldouble double r15 = java.lang.Math.cos(r30)\ldouble double r9 = java.lang.Math.cos(r28)\l}"];
+subgraph cluster_SwitchRegion_2146445629 {
+label = "Switch: 3, default: R(1:46)";
+node [shape=record,color=blue];
+Node_3 [shape=record,label="{3\:\ 0x001f|switch(r0.mode) \{\l    case 1: goto L_0x0097;\l    case 2: goto L_0x0099;\l    case 3: goto L_0x0024;\l    case 4: goto L_0x0024;\l    default: goto L_0x0022;\l\}\l}"];
+subgraph cluster_Region_604979875 {
+label = "R(2:19|1)";
+node [shape=record,color=blue];
+Node_19 [shape=record,label="{19\:\ 0x0097|double r1 = \-r1\ldouble r9 = \-r9\l}"];
+Node_InsnContainer_1410314177 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_1238291314 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_18461880 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_2136923239 {
+label = "R(2:(1:6)(1:7)|(4:15|(1:17)|18|42)(1:(2:12|41)(1:14)))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1443235306 {
+label = "IF [B:5:0x0027] THEN: R(1:6) ELSE: R(1:7)";
+node [shape=record,color=blue];
+Node_5 [shape=record,label="{5\:\ 0x0027|if (r0.mode == 3) goto L_0x0029\l}"];
+subgraph cluster_Region_491231797 {
+label = "R(1:6)";
+node [shape=record,color=blue];
+Node_6 [shape=record,label="{6\:\ 0x0029|r8.f295y = r15 * r9\l}"];
+}
+subgraph cluster_Region_1317631259 {
+label = "R(1:7)";
+node [shape=record,color=blue];
+Node_7 [shape=record,label="{7\:\ 0x002e|r8.f295y = (r0.sinphi0 * r13) + (r0.cosphi0 * r15 * r9)\l}"];
+}
+}
+subgraph cluster_IfRegion_1688968994 {
+label = "IF [B:9:0x0048] THEN: R(4:15|(1:17)|18|42) ELSE: R(1:(2:12|41)(1:14))";
+node [shape=record,color=blue];
+Node_9 [shape=record,label="{9\:\ 0x0048|if (java.lang.Math.abs(java.lang.Math.abs(r8.f295y) \- 1.0d) \>= TOL) goto L_0x005e\l}"];
+subgraph cluster_Region_971028281 {
+label = "R(4:15|(1:17)|18|42)";
+node [shape=record,color=blue];
+Node_15 [shape=record,label="{15\:\ 0x005e|r8.f295y = java.lang.Math.acos(r8.f295y)\lr8.f295y \/= java.lang.Math.sin(r8.f295y)\lr8.f294x = r8.f295y * r15 * java.lang.Math.sin(r28)\ldouble double r1 = r8.f295y\l}"];
+subgraph cluster_IfRegion_1777080603 {
+label = "IF [B:16:0x0082] THEN: R(1:17) ELSE: null";
+node [shape=record,color=blue];
+Node_16 [shape=record,label="{16\:\ 0x0082|if (r0.mode != 3) goto L_0x0085\l}"];
+subgraph cluster_Region_1445253785 {
+label = "R(1:17)";
+node [shape=record,color=blue];
+Node_17 [shape=record,label="{17\:\ 0x0085|double r13 = (r0.cosphi0 * r13) \- ((r0.sinphi0 * r15) * r9)\l}"];
+}
+}
+Node_18 [shape=record,label="{18\:\ 0x0091|PHI: r13 \l  PHI: (r13v20 double) = (r13v19 double), (r13v21 double) binds: [B:16:0x0082, B:17:0x0085] A[DONT_GENERATE, DONT_INLINE]\l|r8.f295y = r1 * r13\l}"];
+Node_42 [shape=record,label="{42\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+subgraph cluster_Region_622644458 {
+label = "R(1:(2:12|41)(1:14)) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_416748546 {
+label = "IF [B:11:0x0050] THEN: R(2:12|41) ELSE: R(1:14) | ELSE_IF_CHAIN\l";
+node [shape=record,color=blue];
+Node_11 [shape=record,label="{11\:\ 0x0050|if (r8.f295y \>= 0.0d) goto L_0x0052\l}"];
+subgraph cluster_Region_502500270 {
+label = "R(2:12|41)";
+node [shape=record,color=blue];
+Node_12 [shape=record,label="{12\:\ 0x0052|r8.f295y = 0.0d\lr8.f294x = 0.0d\l}"];
+Node_41 [shape=record,label="{41\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+subgraph cluster_Region_740852170 {
+label = "R(1:14)";
+node [shape=record,color=blue];
+Node_14 [shape=record,label="{14\:\ 0x005d|throw new org.osgeo.proj4j.ProjectionException()\l}"];
+}
+}
+}
+}
+}
+subgraph cluster_Region_630801853 {
+label = "R(1:46)";
+node [shape=record,color=blue];
+Node_46 [shape=record,label="{46\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+subgraph cluster_Region_1248327920 {
+label = "R(2:(2:22|43)|(1:24))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_764474115 {
+label = "IF [B:21:0x00ab] THEN: R(2:22|43) ELSE: null";
+node [shape=record,color=blue];
+Node_21 [shape=record,label="{21\:\ 0x00ab|if (java.lang.Math.abs(r1 \- 1.5707963267948966d) \>= 1.0E\-10d) goto L_0x00ad\l}"];
+subgraph cluster_Region_1132712636 {
+label = "R(2:22|43)";
+node [shape=record,color=blue];
+Node_22 [shape=record,label="{22\:\ 0x00ad|double double r1 = r1 + 1.5707963267948966d\lr8.f295y = r1\lr8.f294x = r1 * java.lang.Math.sin(r28)\lr8.f295y *= r9\l}"];
+Node_43 [shape=record,label="{43\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+subgraph cluster_Region_1137316966 {
+label = "R(1:24)";
+node [shape=record,color=blue];
+Node_24 [shape=record,label="{24\:\ 0x00c5|throw new org.osgeo.proj4j.ProjectionException()\l}"];
+}
+}
+}
+}
+subgraph cluster_Region_939808017 {
+label = "R(5:25|26|37|39|40)";
+node [shape=record,color=blue];
+Node_25 [shape=record,label="{25\:\ 0x00c6|double double r6 = java.lang.Math.cos(r28)\ldouble double r9 = java.lang.Math.cos(r30)\ldouble double r13 = java.lang.Math.sin(r30)\l}"];
+subgraph cluster_SwitchRegion_15919977 {
+label = "Switch: 3, default: R(1:47)";
+node [shape=record,color=blue];
+Node_26 [shape=record,label="{26\:\ 0x00d4|switch(r0.mode) \{\l    case 1: goto L_0x01d8;\l    case 2: goto L_0x01d6;\l    case 3: goto L_0x00d9;\l    case 4: goto L_0x00d9;\l    default: goto L_0x00d7;\l\}\l}"];
+subgraph cluster_Region_1474255617 {
+label = "R(2:38|1)";
+node [shape=record,color=blue];
+Node_38 [shape=record,label="{38\:\ 0x01d8|double r6 = \-r6\l}"];
+Node_InsnContainer_1757154412 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_493472243 {
+label = "R(1:1)";
+node [shape=record,color=blue];
+Node_InsnContainer_244553500 [shape=record,label="{|break\l}"];
+}
+subgraph cluster_Region_422419460 {
+label = "R(1:(2:(3:32|36|45)|(2:31|44)))";
+node [shape=record,color=blue];
+subgraph cluster_Region_301607969 {
+label = "R(2:(3:32|36|45)|(2:31|44))";
+node [shape=record,color=blue];
+subgraph cluster_IfRegion_1708579175 {
+label = "IF [B:28:0x00e4, B:30:0x00ef] THEN: R(3:32|36|45) ELSE: null";
+node [shape=record,color=blue];
+Node_28 [shape=record,label="{28\:\ 0x00e4|if (java.lang.Math.abs(r28) \>= 1.0E\-10d) goto L_0x00f9\l}"];
+Node_30 [shape=record,label="{30\:\ 0x00ef|ADDED_TO_REGION\l|if (java.lang.Math.abs(r1 \- r0.projectionLatitude) \>= 1.0E\-10d) goto L_0x00f9\l}"];
+subgraph cluster_Region_769863813 {
+label = "R(3:32|36|45)";
+node [shape=record,color=blue];
+Node_32 [shape=record,label="{32\:\ 0x00f9|double double r1 = java.lang.Math.atan2((r0.one_es * r13) + (r0.f424es * r0.f362N1 * r0.sinphi0 * java.lang.Math.sqrt(1.0d \- ((r0.f424es * r13) * r13))), r9)\ldouble double r3 = java.lang.Math.cos(r1)\ldouble double r1 = java.lang.Math.sin(r1)\ldouble double r9 = java.lang.Math.atan2(java.lang.Math.sin(r28) * r3, (r0.cosphi0 * r1) \- ((r0.sinphi0 * r6) * r3))\ldouble double r11 = java.lang.Math.cos(r9)\ldouble double r9 = java.lang.Math.sin(r9)\l}"];
+Node_36 [shape=record,label="{36\:\ 0x0163|PHI: r13 \l  PHI: (r13v7 double) =  binds: [] A[DONT_GENERATE, DONT_INLINE]\l|double double r1 = org.osgeo.proj4j.util.ProjectionMath.asin(java.lang.Math.abs(r9) \< TOL ? ((r0.cosphi0 * r1) \- ((r0.sinphi0 * r6) * r3)) \/ r11 : (java.lang.Math.sin(r28) * r3) \/ r9)\ldouble double r3 = r0.f359He * r11\ldouble double r5 = r3 * r3\ldouble double r19 = 7.0d * r5\ldouble double r13 = r0.f362N1 * r1 * ((r1 * r1 * ((((\-r5) * (1.0d \- r5)) \/ 6.0d) + (r1 * ((((r0.f358G * r3) * (1.0d \- ((2.0d * r5) * r5))) \/ 8.0d) + (((((r5 * (4.0d \- r19)) \- (((r0.f358G * 3.0d) * r0.f358G) * (1.0d \- r19))) \/ 120.0d) \- (((r0.f358G * r1) * r3) \/ 48.0d)) * r1))))) + 1.0d)\lorg.osgeo.proj4j.ProjCoordinate r8 = r32\lr8.f294x = r13 * r9\lr8.f295y = r13 * r11\l}"];
+Node_45 [shape=record,label="{45\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+subgraph cluster_Region_435976008 {
+label = "R(2:31|44)";
+node [shape=record,color=blue];
+Node_31 [shape=record,label="{31\:\ 0x00f1|r8.f295y = 0.0d\lr8.f294x = 0.0d\l}"];
+Node_44 [shape=record,label="{44\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+}
+subgraph cluster_Region_967513969 {
+label = "R(1:47)";
+node [shape=record,color=blue];
+Node_47 [shape=record,label="{47\:\ ?|SYNTHETIC\lRETURN\l|return r8\l}"];
+}
+}
+Node_37 [shape=record,label="{37\:\ 0x01d6|PHI: r6 \l  PHI: (r6v2 double) = (r6v0 double), (r6v1 double) binds: [B:26:0x00d4, B:38:0x01d8] A[DONT_GENERATE, DONT_INLINE]\l|double r11 = r6\l}"];
+Node_39 [shape=record,label="{39\:\ 0x01da|double double r1 = java.lang.Math.abs(r0.f361Mp \- org.osgeo.proj4j.util.ProjectionMath.mlfn(r30, r13, r9, r0.f363en))\lr8.f294x = java.lang.Math.sin(r28) * r1\lr8.f295y = r1 * r11\l}"];
+Node_40 [shape=record,label="{40\:\ ?|SYNTHETIC\lRETURN\lORIG_RETURN\l|return r8\l}"];
+}
+}
+}
+Node_4 [shape=record,color=red,label="{4\:\ 0x0024}"];
+Node_8 [shape=record,color=red,label="{8\:\ 0x003b}"];
+Node_10 [shape=record,color=red,label="{10\:\ 0x004a}"];
+Node_13 [shape=record,color=red,label="{13\:\ 0x0058}"];
+Node_20 [shape=record,color=red,label="{20\:\ 0x0099|PHI: r1 r9 \l  PHI: (r1v22 double) = (r1v0 double), (r1v28 double) binds: [B:3:0x001f, B:19:0x0097] A[DONT_GENERATE, DONT_INLINE]\l  PHI: (r9v16 double) = (r9v15 double), (r9v17 double) binds: [B:3:0x001f, B:19:0x0097] A[DONT_GENERATE, DONT_INLINE]\l}"];
+Node_23 [shape=record,color=red,label="{23\:\ 0x00c0}"];
+Node_27 [shape=record,color=red,label="{27\:\ 0x00d9}"];
+Node_29 [shape=record,color=red,label="{29\:\ 0x00e6}"];
+Node_33 [shape=record,color=red,label="{33\:\ 0x014c}"];
+Node_34 [shape=record,color=red,label="{34\:\ 0x014e}"];
+Node_35 [shape=record,color=red,label="{35\:\ 0x015b}"];
+MethodNode[shape=record,label="{public org.osgeo.proj4j.ProjCoordinate org.osgeo.proj4j.proj.EquidistantAzimuthalProjection.project((r27v0 'this' org.osgeo.proj4j.proj.EquidistantAzimuthalProjection A[IMMUTABLE_TYPE, THIS]), (r28v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r30v0 double A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r32v0 org.osgeo.proj4j.ProjCoordinate A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_25[style=dashed];
+Node_2 -> Node_3;
+Node_3 -> Node_4;
+Node_3 -> Node_19;
+Node_3 -> Node_20;
+Node_3 -> Node_46;
+Node_19 -> Node_20;
+Node_5 -> Node_6;
+Node_5 -> Node_7[style=dashed];
+Node_6 -> Node_8;
+Node_7 -> Node_8;
+Node_9 -> Node_10[style=dashed];
+Node_9 -> Node_15;
+Node_15 -> Node_16;
+Node_16 -> Node_17;
+Node_16 -> Node_18[style=dashed];
+Node_17 -> Node_18;
+Node_18 -> Node_42;
+Node_11 -> Node_12;
+Node_11 -> Node_13[style=dashed];
+Node_12 -> Node_41;
+Node_21 -> Node_22;
+Node_21 -> Node_23[style=dashed];
+Node_22 -> Node_43;
+Node_25 -> Node_26;
+Node_26 -> Node_27;
+Node_26 -> Node_37;
+Node_26 -> Node_38;
+Node_26 -> Node_47;
+Node_38 -> Node_37;
+Node_28 -> Node_29[style=dashed];
+Node_28 -> Node_32;
+Node_30 -> Node_31[style=dashed];
+Node_30 -> Node_32;
+Node_32 -> Node_33;
+Node_36 -> Node_45;
+Node_31 -> Node_44;
+Node_37 -> Node_39;
+Node_39 -> Node_40;
+Node_4 -> Node_5;
+Node_8 -> Node_9;
+Node_10 -> Node_11;
+Node_13 -> Node_14;
+Node_20 -> Node_21;
+Node_23 -> Node_24;
+Node_27 -> Node_28;
+Node_29 -> Node_30;
+Node_33 -> Node_34;
+Node_33 -> Node_35;
+Node_34 -> Node_36;
+Node_35 -> Node_36;
+}
+

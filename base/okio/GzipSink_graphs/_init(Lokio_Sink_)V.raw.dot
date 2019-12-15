@@ -1,0 +1,16 @@
+digraph "CFG forokio.GzipSink.\<init\>(Lokio\/Sink;)V" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|0x0000: INVOKE  (r3 I:java.lang.Object) java.lang.Object.\<init\>():void type: DIRECT \l0x0003: NEW_INSTANCE  (r0 I:java.util.zip.CRC32) =  java.util.zip.CRC32 \l0x0005: INVOKE  (r0 I:java.util.zip.CRC32) java.util.zip.CRC32.\<init\>():void type: DIRECT \l0x0008: IPUT  (r0 I:java.util.zip.CRC32), (r3 I:okio.GzipSink) okio.GzipSink.crc java.util.zip.CRC32 \l}"];
+Node_1 [shape=record,label="{1\:\ 0x000a|0x000a: IF  (r4 I:?[int, boolean, OBJECT, ARRAY, byte, short, char]) == (0 ?[int, boolean, OBJECT, ARRAY, byte, short, char])  \-\> B:4:0x002a \l}"];
+Node_2 [shape=record,label="{2\:\ 0x000c|0x000c: NEW_INSTANCE  (r0 I:java.util.zip.Deflater) =  java.util.zip.Deflater \l0x000e: CONST  (r1 I:?[int, float, short, byte, char]) = (\-1 ?[int, float, short, byte, char]) \l0x000f: CONST  (r2 I:?[boolean, int, float, short, byte, char]) = (1 ?[boolean, int, float, short, byte, char]) \l0x0010: INVOKE  (r0 I:java.util.zip.Deflater), (r1 I:int), (r2 I:boolean) java.util.zip.Deflater.\<init\>(int, boolean):void type: DIRECT \l0x0013: IPUT  (r0 I:java.util.zip.Deflater), (r3 I:okio.GzipSink) okio.GzipSink.deflater java.util.zip.Deflater \l0x0015: INVOKE  (r4 I:okio.BufferedSink) = (r4 I:okio.Sink) okio.Okio.buffer(okio.Sink):okio.BufferedSink type: STATIC \l0x0019: IPUT  (r4 I:okio.BufferedSink), (r3 I:okio.GzipSink) okio.GzipSink.sink okio.BufferedSink \l0x001b: NEW_INSTANCE  (r4 I:okio.DeflaterSink) =  okio.DeflaterSink \l0x001d: IGET  (r0 I:okio.BufferedSink) = (r3 I:okio.GzipSink) okio.GzipSink.sink okio.BufferedSink \l0x001f: IGET  (r1 I:java.util.zip.Deflater) = (r3 I:okio.GzipSink) okio.GzipSink.deflater java.util.zip.Deflater \l0x0021: INVOKE  \l  (r4 I:okio.DeflaterSink)\l  (r0 I:okio.BufferedSink)\l  (r1 I:java.util.zip.Deflater)\l okio.DeflaterSink.\<init\>(okio.BufferedSink, java.util.zip.Deflater):void type: DIRECT \l0x0024: IPUT  (r4 I:okio.DeflaterSink), (r3 I:okio.GzipSink) okio.GzipSink.deflaterSink okio.DeflaterSink \l0x0026: INVOKE  (r3 I:okio.GzipSink) okio.GzipSink.writeHeader():void type: DIRECT \l}"];
+Node_3 [shape=record,label="{3\:\ 0x0029|0x0029: RETURN   \l}"];
+Node_4 [shape=record,label="{4\:\ 0x002a|0x002a: NEW_INSTANCE  (r4 I:java.lang.IllegalArgumentException) =  java.lang.IllegalArgumentException \l0x002c: CONST_STR  (r0 I:java.lang.String) =  \"sink == null\" \l0x002e: INVOKE  \l  (r4 I:java.lang.IllegalArgumentException)\l  (r0 I:java.lang.String)\l java.lang.IllegalArgumentException.\<init\>(java.lang.String):void type: DIRECT \l}"];
+Node_5 [shape=record,label="{5\:\ 0x0031|0x0031: THROW  (r4 I:java.lang.Throwable) \l}"];
+MethodNode[shape=record,label="{public void okio.GzipSink.\<init\>((r3 'this' I:okio.GzipSink A[IMMUTABLE_TYPE, THIS]), (r4 I:okio.Sink A[IMMUTABLE_TYPE, METHOD_ARGUMENT])) }"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2[style=dashed];
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_4 -> Node_5;
+}
+

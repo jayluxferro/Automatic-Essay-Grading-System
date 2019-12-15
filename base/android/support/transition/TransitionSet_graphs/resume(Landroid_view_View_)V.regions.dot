@@ -1,0 +1,27 @@
+digraph "CFG forandroid.support.transition.TransitionSet.resume(Landroid\/view\/View;)V" {
+subgraph cluster_Region_1668733681 {
+label = "R(2:0|(1:2))";
+node [shape=record,color=blue];
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|super.resume(r4)\lint int r0 = r3.mTransitions.size()\lint r1 = 0\l}"];
+subgraph cluster_LoopRegion_115703205 {
+label = "LOOP:0: (1:2)";
+node [shape=record,color=blue];
+Node_1 [shape=record,label="{1\:\ 0x000a|LOOP_START\lPHI: r1 \l  PHI: (r1v1 int) = (r1v0 int), (r1v2 int) binds: [B:0:0x0000, B:2:0x000c] A[DONT_GENERATE, DONT_INLINE]\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|if (r1 \< r0) goto L_0x000c\l}"];
+subgraph cluster_Region_612150666 {
+label = "R(1:2)";
+node [shape=record,color=blue];
+Node_2 [shape=record,label="{2\:\ 0x000c|LOOP_END\lLOOP:0: B:1:0x000a\-\>B:2:0x000c\l|r3.mTransitions.get(r1).resume(r4)\lr1++\l}"];
+}
+}
+}
+Node_3 [shape=record,color=red,label="{3\:\ 0x001a}"];
+Node_4 [shape=record,color=red,label="{4\:\ 0x001a|SYNTHETIC\l}"];
+MethodNode[shape=record,label="{public void android.support.transition.TransitionSet.resume((r3v0 'this' android.support.transition.TransitionSet A[IMMUTABLE_TYPE, THIS]), (r4v0 android.view.View A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[BUILD, android.support.annotation.RestrictTo, \{value=[android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP android.support.annotation.RestrictTo$Scope]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_4[style=dashed];
+Node_2 -> Node_1;
+Node_4 -> Node_3;
+}
+

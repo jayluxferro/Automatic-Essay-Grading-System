@@ -1,0 +1,26 @@
+digraph "CFG formil.nga.geopackage.factory.GeoPackageCoreImpl.createAttributesTable(Ljava\/lang\/String;Ljava\/util\/List;)Lmil\/nga\/geopackage\/attributes\/AttributesTable;" {
+Node_0 [shape=record,label="{0\:\ 0x0000|MTH_ENTER_BLOCK\l|mil.nga.geopackage.attributes.AttributesTable r0 = new mil.nga.geopackage.attributes.AttributesTable(r4, r5)\lcreateAttributesTable(r0)\l}"];
+Node_1 [shape=record,label="{1\:\ 0x0008|SYNTHETIC\lSplitter:B:1:0x0008\l}"];
+Node_2 [shape=record,label="{2\:\ ?|Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lSplitter:B:1:0x0008\l|mil.nga.geopackage.core.contents.Contents r5 = new mil.nga.geopackage.core.contents.Contents()     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lr5.setTableName(r4)     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lr5.setDataType(mil.nga.geopackage.core.contents.ContentsDataType.ATTRIBUTES)     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lr5.setIdentifier(r4)     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lgetContentsDao().create(r5)     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\lr0.setContents(r5)     \/\/ Catch:\{ RuntimeException \-\> 0x003e, SQLException \-\> 0x0023 \}\l}"];
+Node_3 [shape=record,label="{3\:\ 0x0022|RETURN\l|return r0\l}"];
+Node_4 [shape=record,label="{4\:\ 0x0023|ExcHandler: SQLException (r5v2 'e' java.sql.SQLException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0008\l|java.sql.SQLException r5 = move\-exception\l}"];
+Node_5 [shape=record,label="{5\:\ 0x0024|deleteTableQuietly(r4)\ljava.lang.StringBuilder r1 = new java.lang.StringBuilder()\lr1.append(\"Failed to create table and metadata: \")\lr1.append(r4)\l}"];
+Node_6 [shape=record,label="{6\:\ 0x003d|throw new mil.nga.geopackage.GeoPackageException(r1.toString(), r5)\l}"];
+Node_7 [shape=record,label="{7\:\ 0x003e|ExcHandler: RuntimeException (r5v1 'e' java.lang.RuntimeException A[CUSTOM_DECLARE])\lSplitter:B:1:0x0008\l|java.lang.RuntimeException r5 = move\-exception\l}"];
+Node_8 [shape=record,label="{8\:\ 0x003f|deleteTableQuietly(r4)\l}"];
+Node_9 [shape=record,label="{9\:\ 0x0042|throw r5\l}"];
+MethodNode[shape=record,label="{public mil.nga.geopackage.attributes.AttributesTable mil.nga.geopackage.factory.GeoPackageCoreImpl.createAttributesTable((r3v0 'this' mil.nga.geopackage.factory.GeoPackageCoreImpl A[IMMUTABLE_TYPE, THIS]), (r4v0 java.lang.String A[IMMUTABLE_TYPE, METHOD_ARGUMENT]), (r5v0 java.util.List\<mil.nga.geopackage.attributes.AttributesColumn\> A[IMMUTABLE_TYPE, METHOD_ARGUMENT]))  | Annotation[SYSTEM, dalvik.annotation.Signature, \{value=[(, Ljava\/lang\/String;, Ljava\/util\/List\<, Lmil\/nga\/geopackage\/attributes\/AttributesColumn;, \>;), Lmil\/nga\/geopackage\/attributes\/AttributesTable;]\}]\l}"];
+MethodNode -> Node_0;
+Node_0 -> Node_1;
+Node_1 -> Node_2;
+Node_1 -> Node_7;
+Node_1 -> Node_4;
+Node_2 -> Node_3;
+Node_2 -> Node_7;
+Node_2 -> Node_4;
+Node_4 -> Node_5;
+Node_5 -> Node_6;
+Node_7 -> Node_8;
+Node_8 -> Node_9;
+}
+
