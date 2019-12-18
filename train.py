@@ -43,7 +43,7 @@ y_pred_list = []
 count = 1
 
 # model
-#model = gm.KeyedVectors.load_word2vec_format('embeddings.w2v.txt')
+model = gm.KeyedVectors.load_word2vec_format('word2vecmodel.bin', binary=True)
 best_model = 0
 batch_size = 64
 epochs = 100
@@ -69,12 +69,13 @@ for traincv, testcv in cv:
             sentences += utl.essay_to_sentences(essay, remove_stopwords = True)
 
     print("Training Word2Vec Model...")
-
+    
+    """
     model = Word2Vec(sentences, workers=num_workers, size=num_features, min_count = min_word_count, window = context, sample = downsampling)
 
     model.init_sims(replace=True)
     model.wv.save_word2vec_format('word2vecmodel.bin', binary=True)
-
+    """
 
     clean_train_essays = []
 
@@ -94,48 +95,10 @@ for traincv, testcv in cv:
     trainDataVecs = np.reshape(trainDataVecs, (trainDataVecs.shape[0], 1, trainDataVecs.shape[1]))
     testDataVecs = np.reshape(testDataVecs, (testDataVecs.shape[0], 1, testDataVecs.shape[1]))
 
-    """ 
-    valDataNum = int(trainDataVecs.shape[0] * 0.8)
-    valDataVecs = trainDataVecs[valDataNum:]
-    y_val = y_train[valDataNum:]
-    y_train = y_train[:valDataNum]
-    trainDataVecs = trainDataVecs[:valDataNum]
-    """
-
-    rnn_model = mdl.lstm(num_features)
+    rnn_model = mdl.gru_lstm(num_features)
     plot_model(rnn_model, to_file=output_dir + '/model.eps')
-    #rnn_model.fit(trainDataVecs, y_train, batch_size=batch_size, epochs=epochs, validation_data=(valDataVecs, y_val))
     rnn_model.fit(trainDataVecs, y_train, batch_size=batch_size, epochs=epochs)
     
-    """
-    # saving history
-    history = rnn_model.history.history
-
-    loss_values = history['loss']
-    val_loss_values = history['val_loss']
-    epochs_values = range(1, epochs + 1)
-    
-    fig = plt.figure()
-    plt.plot(epochs_values, loss_values, 'bo', label='Training Loss')
-    plt.plot(epochs_values, val_loss_values, 'b', label='Validation Loss')
-    plt.title('Training and Validation Loss')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.legend()
-    fig.savefig(output_dir + '/train_valid_loss.eps')
-
-    plt.clf()
-    acc_values = history['acc']
-    val_acc_values = history['val_acc']
-    plt.plot(epochs_values, acc_values, 'bo', label='Training acc')
-    plt.plot(epochs_values, val_acc_values, 'b', label='Validation acc')
-    plt.title('Traning and Validation Accuracy')
-    plt.xlabel('Epochs')
-    plt.ylabel('Accuracy')
-    plt.legend()
-    fig.savefig(output_dir + '/train_valid_acc.eps')
-    #lstm_model.load_weights('./model_weights/final_lstm.h5')
-    """
     y_pred = rnn_model.predict(testDataVecs)
 
 
@@ -146,11 +109,6 @@ for traincv, testcv in cv:
     result = cohen_kappa_score(y_test.values,y_pred,weights='quadratic')
     print("Kappa Score: {}".format(result))
     results.append(result)
-   
-    # confusion matrix
-    # print(tf.confusion_matrix(y_test.values, y_pred))
-
-    
 
     # Save best model.
     if result > best_model:
@@ -159,7 +117,5 @@ for traincv, testcv in cv:
 
     count += 1
 
-    # checking perf
-    sys.exit(1)
 
 print("Average Kappa score after a 5-fold cross validation: ", np.around(np.array(results).mean(),decimals=4))
