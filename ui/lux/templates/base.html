@@ -1,0 +1,29 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}AEGS{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">Automated Essay Grading System (AEGS)</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        {% block breadcrumb %}
+        {% endblock %}
+      </ol>
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <div class="footer" style="text-align: center; text-decoration: none; margin-top: 50px;">
+    <a href="https://github.com/jayluxferro/Automatic-Essay-Grading-System" target="_blank"> Developed by Jay Lux Ferro &amp; Ronit Mankad</a>
+    </div>
+  </body>
+</html>

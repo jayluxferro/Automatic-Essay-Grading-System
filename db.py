@@ -23,3 +23,10 @@ def add_data(emb, model, folds, fold, kappa, weight):
     cursor.execute("insert into results(emb, model, folds, fold, kappa, weight) values(?, ?, ?, ?, ?, ?)", (emb, model, folds, fold, kappa, weight))
     conn.commit()
     log.success("[+] Data added...")
+
+
+def getAvg(word_embeddings, model_name, folds):
+    conn = init()
+    cursor = conn.cursor()
+    cursor.execute("select avg(kappa) from results where emb=? and model=? and folds=?", (word_embeddings, model_name, folds))
+    return cursor.fetchone()[0]
